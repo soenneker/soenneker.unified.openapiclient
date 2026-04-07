@@ -144,6 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             [QueryParameter("state")]
             public string State { get; set; }
 #endif
+            /// <summary>Optional tenant domain or subdomain for integrations that require it to build the authorize, token, or API URL. Depending on the integration, this may be a bare subdomain or a full domain/URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("subdomain")]
