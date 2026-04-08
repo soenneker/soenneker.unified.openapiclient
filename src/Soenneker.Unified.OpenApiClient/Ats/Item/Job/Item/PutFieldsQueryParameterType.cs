@@ -36,6 +36,10 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Job.Item
         #pragma warning disable CS1591
         Hiring_manager_ids,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hiring_managers")]
+        #pragma warning disable CS1591
+        Hiring_managers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "status")]
         #pragma warning disable CS1591
         Status,

@@ -8318,6 +8318,23 @@
                "type": "string"
             }
          },
+         "AtsReference": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_AtsJob_hiring_managers": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AtsReference"
+            }
+         },
          "AtsAddress": {
             "type": "object",
             "properties": {
@@ -8633,6 +8650,9 @@
                },
                "hiring_manager_ids": {
                   "$ref": "#/components/schemas/property_AtsJob_hiring_manager_ids"
+               },
+               "hiring_managers": {
+                  "$ref": "#/components/schemas/property_AtsJob_hiring_managers"
                },
                "status": {
                   "type": "string",
@@ -38268,6 +38288,7 @@
                            "description",
                            "recruiter_ids",
                            "hiring_manager_ids",
+                           "hiring_managers",
                            "status",
                            "closed_at",
                            "addresses",
@@ -38441,6 +38462,7 @@
                            "description",
                            "recruiter_ids",
                            "hiring_manager_ids",
+                           "hiring_managers",
                            "status",
                            "closed_at",
                            "addresses",
@@ -38528,6 +38550,7 @@
                            "description",
                            "recruiter_ids",
                            "hiring_manager_ids",
+                           "hiring_managers",
                            "status",
                            "closed_at",
                            "addresses",
@@ -38623,6 +38646,7 @@
                            "description",
                            "recruiter_ids",
                            "hiring_manager_ids",
+                           "hiring_managers",
                            "status",
                            "closed_at",
                            "addresses",
@@ -38728,6 +38752,7 @@
                            "description",
                            "recruiter_ids",
                            "hiring_manager_ids",
+                           "hiring_managers",
                            "status",
                            "closed_at",
                            "addresses",
@@ -46640,6 +46665,24 @@
                   "in": "query",
                   "required": false,
                   "description": "The benefit ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
                },
                {
                   "schema": {

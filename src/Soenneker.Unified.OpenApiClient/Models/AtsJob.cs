@@ -68,6 +68,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> HiringManagerIds { get; set; }
 #endif
+        /// <summary>The hiring_managers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>? HiringManagers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsReference> HiringManagers { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -208,6 +216,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "employment_type", n => { EmploymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_employment_type>(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>(global::Soenneker.Unified.OpenApiClient.Models.AtsGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hiring_manager_ids", n => { HiringManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "hiring_managers", n => { HiringManagers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>(global::Soenneker.Unified.OpenApiClient.Models.AtsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -243,6 +252,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_employment_type>("employment_type", EmploymentType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>("groups", Groups);
             writer.WriteCollectionOfPrimitiveValues<string>("hiring_manager_ids", HiringManagerIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>("hiring_managers", HiringManagers);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
