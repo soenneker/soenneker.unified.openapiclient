@@ -105,6 +105,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The interval property</summary>
         public double? Interval { get; set; }
+        /// <summary>The is_beta property</summary>
+        public bool? IsBeta { get; set; }
         /// <summary>The is_healthy property</summary>
         public bool? IsHealthy { get; set; }
         /// <summary>The is_paused property</summary>
@@ -174,6 +176,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integration_type", n => { IntegrationType = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
+                { "is_beta", n => { IsBeta = n.GetBoolValue(); } },
                 { "is_healthy", n => { IsHealthy = n.GetBoolValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_object_type>(); } },
@@ -206,6 +209,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("integration_type", IntegrationType);
             writer.WriteDoubleValue("interval", Interval);
+            writer.WriteBoolValue("is_beta", IsBeta);
             writer.WriteBoolValue("is_healthy", IsHealthy);
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_object_type>("object_type", ObjectType);

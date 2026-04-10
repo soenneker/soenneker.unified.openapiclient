@@ -4023,6 +4023,9 @@
                },
                "is_paused": {
                   "type": "boolean"
+               },
+               "is_beta": {
+                  "type": "boolean"
                }
             },
             "required": [
