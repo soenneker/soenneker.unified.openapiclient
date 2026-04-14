@@ -3540,6 +3540,15 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "native_webhook_list_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -8927,6 +8936,9 @@
             "type": "object",
             "properties": {
                "question_id": {
+                  "type": "string"
+               },
+               "question": {
                   "type": "string"
                },
                "answers": {

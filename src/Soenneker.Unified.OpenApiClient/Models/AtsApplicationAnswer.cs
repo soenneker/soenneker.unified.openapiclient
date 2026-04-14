@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Answers { get; set; }
 #endif
+        /// <summary>The question property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Question { get; set; }
+#nullable restore
+#else
+        public string Question { get; set; }
+#endif
         /// <summary>The question_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "answers", n => { Answers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "question", n => { Question = n.GetStringValue(); } },
                 { "question_id", n => { QuestionId = n.GetStringValue(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("answers", Answers);
+            writer.WriteStringValue("question", Question);
             writer.WriteStringValue("question_id", QuestionId);
             writer.WriteAdditionalData(AdditionalData);
         }
