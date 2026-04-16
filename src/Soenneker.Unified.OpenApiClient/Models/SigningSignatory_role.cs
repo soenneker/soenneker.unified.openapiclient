@@ -5,20 +5,28 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GenaiContent_role
+    public enum SigningSignatory_role
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "SYSTEM")]
+        [EnumMember(Value = "SIGNER")]
         #pragma warning disable CS1591
-        SYSTEM,
+        SIGNER,
         #pragma warning restore CS1591
-        [EnumMember(Value = "USER")]
+        [EnumMember(Value = "CC")]
         #pragma warning disable CS1591
-        USER,
+        CC,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ASSISTANT")]
+        [EnumMember(Value = "APPROVER")]
         #pragma warning disable CS1591
-        ASSISTANT,
+        APPROVER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IN_PERSON_SIGNER")]
+        #pragma warning disable CS1591
+        IN_PERSON_SIGNER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEWER")]
+        #pragma warning disable CS1591
+        VIEWER,
         #pragma warning restore CS1591
     }
 }

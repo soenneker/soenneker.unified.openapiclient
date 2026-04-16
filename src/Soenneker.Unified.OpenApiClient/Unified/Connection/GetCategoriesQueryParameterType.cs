@@ -116,5 +116,9 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
         #pragma warning disable CS1591
         Assessment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "signing")]
+        #pragma warning disable CS1591
+        Signing,
+        #pragma warning restore CS1591
     }
 }

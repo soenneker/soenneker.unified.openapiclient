@@ -419,6 +419,15 @@
          "name": "carrier"
       },
       {
+         "name": "signing"
+      },
+      {
+         "name": "signatory"
+      },
+      {
+         "name": "template"
+      },
+      {
          "name": "scim"
       },
       {
@@ -1473,6 +1482,26 @@
                }
             }
          },
+         "SigningDocument": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/SigningDocument"
+                  }
+               }
+            }
+         },
+         "SigningSignatory": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/SigningSignatory"
+                  }
+               }
+            }
+         },
          "ScimUser": {
             "required": true,
             "content": {
@@ -1736,7 +1765,12 @@
                   "shipping_label_write",
                   "shipping_tracking_read",
                   "shipping_rate_read",
-                  "shipping_carrier_read"
+                  "shipping_carrier_read",
+                  "signing_document_read",
+                  "signing_document_write",
+                  "signing_signatory_read",
+                  "signing_signatory_write",
+                  "signing_template_read"
                ],
                "x-speakeasy-unknown-values": "allow"
             }
@@ -1772,7 +1806,8 @@
                   "ads",
                   "forms",
                   "shipping",
-                  "assessment"
+                  "assessment",
+                  "signing"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -2054,7 +2089,8 @@
                   "ads",
                   "forms",
                   "shipping",
-                  "assessment"
+                  "assessment",
+                  "signing"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -3541,6 +3577,33 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "list_template_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_template_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "native_webhook_template_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "native_webhook_list_id": {
                   "type": "string",
                   "enum": [
@@ -3959,7 +4022,10 @@
                      "shipping_rate",
                      "shipping_shipment",
                      "shipping_label",
-                     "shipping_tracking"
+                     "shipping_tracking",
+                     "signing_document",
+                     "signing_signatory",
+                     "signing_template"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -15461,7 +15527,8 @@
                   "type": "string",
                   "enum": [
                      "SYSTEM",
-                     "USER"
+                     "USER",
+                     "ASSISTANT"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -23731,6 +23798,179 @@
                "$ref": "#/components/schemas/ShippingCarrier"
             }
          },
+         "SigningDocument": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "DRAFT",
+                     "SENT",
+                     "DELIVERED",
+                     "IN_PROGRESS",
+                     "COMPLETED",
+                     "DECLINED",
+                     "VOIDED",
+                     "EXPIRED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "completed_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "expires_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "template_id": {
+                  "type": "string"
+               },
+               "download_url": {
+                  "type": "string"
+               },
+               "creator_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SigningDocuments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SigningDocument"
+            }
+         },
+         "SigningSignatory": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "document_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "email": {
+                  "type": "string"
+               },
+               "role": {
+                  "type": "string",
+                  "enum": [
+                     "SIGNER",
+                     "CC",
+                     "APPROVER",
+                     "IN_PERSON_SIGNER",
+                     "VIEWER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "PENDING",
+                     "SENT",
+                     "DELIVERED",
+                     "SIGNED",
+                     "DECLINED",
+                     "ERROR"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "order": {
+                  "type": "number"
+               },
+               "signed_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "decline_reason": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SigningSignatories": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SigningSignatory"
+            }
+         },
+         "SigningTemplate": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "creator_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SigningTemplates": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SigningTemplate"
+            }
+         },
          "property_ScimUser_schemas": {
             "type": "array",
             "items": {
@@ -24577,7 +24817,8 @@
                            "ads",
                            "forms",
                            "shipping",
-                           "assessment"
+                           "assessment",
+                           "signing"
                         ]
                      }
                   },
@@ -24960,7 +25201,8 @@
                            "ads",
                            "forms",
                            "shipping",
-                           "assessment"
+                           "assessment",
+                           "signing"
                         ]
                      }
                   },
@@ -25088,7 +25330,8 @@
                            "ads",
                            "forms",
                            "shipping",
-                           "assessment"
+                           "assessment",
+                           "signing"
                         ]
                      }
                   },
@@ -85131,6 +85374,1276 @@
                }
             ],
             "operationId": "listShippingCarriers"
+         }
+      },
+      "/signing/{connection_id}/document": {
+         "post": {
+            "summary": "Create a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "status",
+                           "sent_at",
+                           "completed_at",
+                           "expires_at",
+                           "template_id",
+                           "download_url",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createSigningDocument"
+         },
+         "get": {
+            "summary": "List all documents",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "template_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The signing template ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "status",
+                           "sent_at",
+                           "completed_at",
+                           "expires_at",
+                           "template_id",
+                           "download_url",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningDocuments"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSigningDocuments"
+         }
+      },
+      "/signing/{connection_id}/document/{id}": {
+         "get": {
+            "summary": "Retrieve a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "status",
+                           "sent_at",
+                           "completed_at",
+                           "expires_at",
+                           "template_id",
+                           "download_url",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSigningDocument"
+         },
+         "put": {
+            "summary": "Update a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "status",
+                           "sent_at",
+                           "completed_at",
+                           "expires_at",
+                           "template_id",
+                           "download_url",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateSigningDocument"
+         },
+         "patch": {
+            "summary": "Update a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "status",
+                           "sent_at",
+                           "completed_at",
+                           "expires_at",
+                           "template_id",
+                           "download_url",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchSigningDocument"
+         },
+         "delete": {
+            "summary": "Remove a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeSigningDocument"
+         }
+      },
+      "/signing/{connection_id}/signatory": {
+         "post": {
+            "summary": "Create a signatory",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_id",
+                           "name",
+                           "email",
+                           "role",
+                           "status",
+                           "order",
+                           "signed_at",
+                           "decline_reason",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningSignatory"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningSignatory"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createSigningSignatory"
+         },
+         "get": {
+            "summary": "List all signatories",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "document_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The document ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_id",
+                           "name",
+                           "email",
+                           "role",
+                           "status",
+                           "order",
+                           "signed_at",
+                           "decline_reason",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningSignatories"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSigningSignatories"
+         }
+      },
+      "/signing/{connection_id}/signatory/{id}": {
+         "get": {
+            "summary": "Retrieve a signatory",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_id",
+                           "name",
+                           "email",
+                           "role",
+                           "status",
+                           "order",
+                           "signed_at",
+                           "decline_reason",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Signatory",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningSignatory"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSigningSignatory"
+         },
+         "put": {
+            "summary": "Update a signatory",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_id",
+                           "name",
+                           "email",
+                           "role",
+                           "status",
+                           "order",
+                           "signed_at",
+                           "decline_reason",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Signatory",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningSignatory"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningSignatory"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateSigningSignatory"
+         },
+         "patch": {
+            "summary": "Update a signatory",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_id",
+                           "name",
+                           "email",
+                           "role",
+                           "status",
+                           "order",
+                           "signed_at",
+                           "decline_reason",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Signatory",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SigningSignatory"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningSignatory"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchSigningSignatory"
+         },
+         "delete": {
+            "summary": "Remove a signatory",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Signatory",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "signatory"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeSigningSignatory"
+         }
+      },
+      "/signing/{connection_id}/template/{id}": {
+         "get": {
+            "summary": "Retrieve a template",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "is_active",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Template",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "template"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningTemplate"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSigningTemplate"
+         }
+      },
+      "/signing/{connection_id}/template": {
+         "get": {
+            "summary": "List all templates",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "is_active",
+                           "creator_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "signing",
+               "template"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SigningTemplates"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSigningTemplates"
          }
       },
       "/scim/{connection_id}/users": {

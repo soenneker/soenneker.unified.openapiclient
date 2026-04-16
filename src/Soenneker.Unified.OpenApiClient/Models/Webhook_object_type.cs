@@ -524,5 +524,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Shipping_tracking,
         #pragma warning restore CS1591
+        [EnumMember(Value = "signing_document")]
+        #pragma warning disable CS1591
+        Signing_document,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "signing_signatory")]
+        #pragma warning disable CS1591
+        Signing_signatory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "signing_template")]
+        #pragma warning disable CS1591
+        Signing_template,
+        #pragma warning restore CS1591
     }
 }
