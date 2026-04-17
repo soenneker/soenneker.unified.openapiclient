@@ -58,13 +58,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The instructor_ids property</summary>
+        /// <summary>@deprecated; use instructors</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InstructorIds { get; set; }
 #nullable restore
 #else
         public List<string> InstructorIds { get; set; }
+#endif
+        /// <summary>The instructors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>? Instructors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor> Instructors { get; set; }
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
@@ -104,6 +112,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProviderName { get; set; }
 #endif
+        /// <summary>The published_at property</summary>
+        public DateTimeOffset? PublishedAt { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Skills { get; set; }
 #endif
-        /// <summary>The student_ids property</summary>
+        /// <summary>@deprecated; use students</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? StudentIds { get; set; }
@@ -128,6 +138,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> StudentIds { get; set; }
 #endif
+        /// <summary>The students property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>? Students { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent> Students { get; set; }
+#endif
+        /// <summary>The time_estimate_minutes property</summary>
+        public double? TimeEstimateMinutes { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -163,6 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instructor_ids", n => { InstructorIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -170,9 +191,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "price_amount", n => { PriceAmount = n.GetDoubleValue(); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
+                { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw>(global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "student_ids", n => { StudentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>(global::Soenneker.Unified.OpenApiClient.Models.LmsStudent.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "time_estimate_minutes", n => { TimeEstimateMinutes = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -191,6 +215,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("instructor_ids", InstructorIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>("instructors", Instructors);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
@@ -198,9 +223,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("price_amount", PriceAmount);
             writer.WriteStringValue("provider_name", ProviderName);
+            writer.WriteDateTimeOffsetValue("published_at", PublishedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteCollectionOfPrimitiveValues<string>("student_ids", StudentIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>("students", Students);
+            writer.WriteDoubleValue("time_estimate_minutes", TimeEstimateMinutes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -60,9 +60,17 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Course.Item
         #pragma warning disable CS1591
         Instructor_ids,
         #pragma warning restore CS1591
+        [EnumMember(Value = "instructors")]
+        #pragma warning disable CS1591
+        Instructors,
+        #pragma warning restore CS1591
         [EnumMember(Value = "student_ids")]
         #pragma warning disable CS1591
         Student_ids,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "students")]
+        #pragma warning disable CS1591
+        Students,
         #pragma warning restore CS1591
         [EnumMember(Value = "content_ids")]
         #pragma warning disable CS1591
@@ -83,6 +91,14 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Course.Item
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "published_at")]
+        #pragma warning disable CS1591
+        Published_at,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "time_estimate_minutes")]
+        #pragma warning disable CS1591
+        Time_estimate_minutes,
         #pragma warning restore CS1591
     }
 }

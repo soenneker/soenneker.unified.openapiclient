@@ -21544,6 +21544,13 @@
                "type": "string"
             }
          },
+         "property_LmsMedia_languages": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "ISO 2-digit language codes"
+         },
          "LmsMedia": {
             "type": "object",
             "properties": {
@@ -21575,11 +21582,11 @@
                },
                "content": {
                   "type": "string"
+               },
+               "languages": {
+                  "$ref": "#/components/schemas/property_LmsMedia_languages"
                }
-            },
-            "required": [
-               "url"
-            ]
+            }
          },
          "property_LmsCourse_media": {
             "type": "array",
@@ -21591,12 +21598,187 @@
             "type": "array",
             "items": {
                "type": "string"
+            },
+            "description": "@deprecated; use instructors"
+         },
+         "LmsEmail": {
+            "type": "object",
+            "properties": {}
+         },
+         "property_LmsInstructor_emails": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsEmail"
+            }
+         },
+         "LmsTelephone": {
+            "type": "object",
+            "properties": {
+               "telephone": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "WORK",
+                     "HOME",
+                     "OTHER",
+                     "FAX",
+                     "MOBILE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               }
+            },
+            "required": [
+               "telephone"
+            ]
+         },
+         "property_LmsInstructor_telephones": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsTelephone"
+            }
+         },
+         "LmsInstructor": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "first_name": {
+                  "type": "string"
+               },
+               "last_name": {
+                  "type": "string"
+               },
+               "emails": {
+                  "$ref": "#/components/schemas/property_LmsInstructor_emails"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "telephones": {
+                  "$ref": "#/components/schemas/property_LmsInstructor_telephones"
+               },
+               "image_url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "property_LmsCourse_instructors": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsInstructor"
             }
          },
          "property_LmsCourse_student_ids": {
             "type": "array",
             "items": {
                "type": "string"
+            },
+            "description": "@deprecated; use students"
+         },
+         "property_LmsStudent_emails": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsEmail"
+            }
+         },
+         "property_LmsStudent_telephones": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsTelephone"
+            }
+         },
+         "property_LmsStudent_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "region_code": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               },
+               "country_code": {
+                  "type": "string"
+               }
+            }
+         },
+         "LmsStudent": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "first_name": {
+                  "type": "string"
+               },
+               "last_name": {
+                  "type": "string"
+               },
+               "emails": {
+                  "$ref": "#/components/schemas/property_LmsStudent_emails"
+               },
+               "telephones": {
+                  "$ref": "#/components/schemas/property_LmsStudent_telephones"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_LmsStudent_address"
+               },
+               "image_url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "property_LmsCourse_students": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsStudent"
             }
          },
          "property_LmsCourse_content_ids": {
@@ -21655,8 +21837,14 @@
                "instructor_ids": {
                   "$ref": "#/components/schemas/property_LmsCourse_instructor_ids"
                },
+               "instructors": {
+                  "$ref": "#/components/schemas/property_LmsCourse_instructors"
+               },
                "student_ids": {
                   "$ref": "#/components/schemas/property_LmsCourse_student_ids"
+               },
+               "students": {
+                  "$ref": "#/components/schemas/property_LmsCourse_students"
                },
                "content_ids": {
                   "$ref": "#/components/schemas/property_LmsCourse_content_ids"
@@ -21673,6 +21861,13 @@
                "raw": {
                   "type": "object",
                   "additionalProperties": true
+               },
+               "published_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "time_estimate_minutes": {
+                  "type": "number"
                }
             },
             "required": [
@@ -21760,171 +21955,10 @@
                "$ref": "#/components/schemas/LmsClass"
             }
          },
-         "LmsEmail": {
-            "type": "object",
-            "properties": {}
-         },
-         "property_LmsStudent_emails": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsEmail"
-            }
-         },
-         "LmsTelephone": {
-            "type": "object",
-            "properties": {
-               "telephone": {
-                  "type": "string"
-               },
-               "type": {
-                  "type": "string",
-                  "enum": [
-                     "WORK",
-                     "HOME",
-                     "OTHER",
-                     "FAX",
-                     "MOBILE"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               }
-            },
-            "required": [
-               "telephone"
-            ]
-         },
-         "property_LmsStudent_telephones": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsTelephone"
-            }
-         },
-         "property_LmsStudent_address": {
-            "type": "object",
-            "properties": {
-               "address1": {
-                  "type": "string"
-               },
-               "address2": {
-                  "type": "string"
-               },
-               "city": {
-                  "type": "string"
-               },
-               "region": {
-                  "type": "string"
-               },
-               "region_code": {
-                  "type": "string"
-               },
-               "postal_code": {
-                  "type": "string"
-               },
-               "country": {
-                  "type": "string"
-               },
-               "country_code": {
-                  "type": "string"
-               }
-            }
-         },
-         "LmsStudent": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "first_name": {
-                  "type": "string"
-               },
-               "last_name": {
-                  "type": "string"
-               },
-               "emails": {
-                  "$ref": "#/components/schemas/property_LmsStudent_emails"
-               },
-               "telephones": {
-                  "$ref": "#/components/schemas/property_LmsStudent_telephones"
-               },
-               "address": {
-                  "$ref": "#/components/schemas/property_LmsStudent_address"
-               },
-               "image_url": {
-                  "type": "string"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
          "LmsStudents": {
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/LmsStudent"
-            }
-         },
-         "property_LmsInstructor_emails": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsEmail"
-            }
-         },
-         "property_LmsInstructor_telephones": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsTelephone"
-            }
-         },
-         "LmsInstructor": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "first_name": {
-                  "type": "string"
-               },
-               "last_name": {
-                  "type": "string"
-               },
-               "emails": {
-                  "$ref": "#/components/schemas/property_LmsInstructor_emails"
-               },
-               "title": {
-                  "type": "string"
-               },
-               "telephones": {
-                  "$ref": "#/components/schemas/property_LmsInstructor_telephones"
-               },
-               "image_url": {
-                  "type": "string"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
             }
          },
          "LmsInstructors": {
@@ -76179,12 +76213,16 @@
                            "currency",
                            "media",
                            "instructor_ids",
+                           "instructors",
                            "student_ids",
+                           "students",
                            "content_ids",
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw"
+                           "raw",
+                           "published_at",
+                           "time_estimate_minutes"
                         ]
                      }
                   },
@@ -76336,12 +76374,16 @@
                            "currency",
                            "media",
                            "instructor_ids",
+                           "instructors",
                            "student_ids",
+                           "students",
                            "content_ids",
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw"
+                           "raw",
+                           "published_at",
+                           "time_estimate_minutes"
                         ]
                      }
                   },
@@ -76416,12 +76458,16 @@
                            "currency",
                            "media",
                            "instructor_ids",
+                           "instructors",
                            "student_ids",
+                           "students",
                            "content_ids",
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw"
+                           "raw",
+                           "published_at",
+                           "time_estimate_minutes"
                         ]
                      }
                   },
@@ -76504,12 +76550,16 @@
                            "currency",
                            "media",
                            "instructor_ids",
+                           "instructors",
                            "student_ids",
+                           "students",
                            "content_ids",
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw"
+                           "raw",
+                           "published_at",
+                           "time_estimate_minutes"
                         ]
                      }
                   },
@@ -76602,12 +76652,16 @@
                            "currency",
                            "media",
                            "instructor_ids",
+                           "instructors",
                            "student_ids",
+                           "students",
                            "content_ids",
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw"
+                           "raw",
+                           "published_at",
+                           "time_estimate_minutes"
                         ]
                      }
                   },

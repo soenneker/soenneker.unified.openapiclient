@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>ISO 2-digit language codes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Languages { get; set; }
+#nullable restore
+#else
+        public List<string> Languages { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "thumbnail_url", n => { ThumbnailUrl = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia_type>(); } },
@@ -98,6 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("thumbnail_url", ThumbnailUrl);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia_type>("type", Type);
