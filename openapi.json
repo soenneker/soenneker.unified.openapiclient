@@ -11339,12 +11339,12 @@
                "taxonomy": {
                   "$ref": "#/components/schemas/property_AccountingAccount_taxonomy"
                },
+               "organization_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
-               },
-               "organization_id": {
-                  "type": "string"
                }
             },
             "description": "Chart of accounts"
@@ -11582,6 +11582,9 @@
                },
                "contacts": {
                   "$ref": "#/components/schemas/property_AccountingTransaction_contacts"
+               },
+               "organization_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -11848,12 +11851,12 @@
                "associated_contacts": {
                   "$ref": "#/components/schemas/property_AccountingContact_associated_contacts"
                },
+               "organization_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
-               },
-               "organization_id": {
-                  "type": "string"
                }
             }
          },
@@ -12364,6 +12367,9 @@
                "send": {
                   "type": "boolean"
                },
+               "organization_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -12401,6 +12407,9 @@
                },
                "is_active": {
                   "type": "boolean"
+               },
+               "organization_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -49380,8 +49389,8 @@
                            "subgroup",
                            "parent_id",
                            "taxonomy",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -49538,8 +49547,8 @@
                            "subgroup",
                            "parent_id",
                            "taxonomy",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -49618,8 +49627,8 @@
                            "subgroup",
                            "parent_id",
                            "taxonomy",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -49706,8 +49715,8 @@
                            "subgroup",
                            "parent_id",
                            "taxonomy",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -49805,8 +49814,8 @@
                            "subgroup",
                            "parent_id",
                            "taxonomy",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -50499,6 +50508,7 @@
                            "lineitems",
                            "currency",
                            "contacts",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -50682,6 +50692,7 @@
                            "lineitems",
                            "currency",
                            "contacts",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -50761,6 +50772,7 @@
                            "lineitems",
                            "currency",
                            "contacts",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -50848,6 +50860,7 @@
                            "lineitems",
                            "currency",
                            "contacts",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -50945,6 +50958,7 @@
                            "lineitems",
                            "currency",
                            "contacts",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -51098,8 +51112,8 @@
                            "company_name",
                            "identification",
                            "associated_contacts",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -51258,8 +51272,8 @@
                            "company_name",
                            "identification",
                            "associated_contacts",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -51342,8 +51356,8 @@
                            "company_name",
                            "identification",
                            "associated_contacts",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -51434,8 +51448,8 @@
                            "company_name",
                            "identification",
                            "associated_contacts",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -51536,8 +51550,8 @@
                            "company_name",
                            "identification",
                            "associated_contacts",
-                           "raw",
-                           "organization_id"
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -52938,6 +52952,7 @@
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53102,6 +53117,7 @@
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53189,6 +53205,7 @@
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53284,6 +53301,7 @@
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53389,6 +53407,7 @@
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53528,6 +53547,7 @@
                            "description",
                            "rate",
                            "is_active",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53665,6 +53685,7 @@
                            "description",
                            "rate",
                            "is_active",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53734,6 +53755,7 @@
                            "description",
                            "rate",
                            "is_active",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53811,6 +53833,7 @@
                            "description",
                            "rate",
                            "is_active",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53898,6 +53921,7 @@
                            "description",
                            "rate",
                            "is_active",
+                           "organization_id",
                            "raw"
                         ]
                      }

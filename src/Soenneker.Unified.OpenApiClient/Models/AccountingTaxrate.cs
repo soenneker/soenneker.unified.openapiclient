@@ -42,6 +42,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The organization_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The rate property</summary>
         public double? Rate { get; set; }
         /// <summary>The raw property</summary>
@@ -84,6 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "rate", n => { Rate = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate_raw.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -101,6 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDoubleValue("rate", Rate);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

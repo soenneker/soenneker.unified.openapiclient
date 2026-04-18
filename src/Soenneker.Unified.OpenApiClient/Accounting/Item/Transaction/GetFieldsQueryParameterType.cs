@@ -76,6 +76,10 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
         #pragma warning disable CS1591
         Contacts,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization_id")]
+        #pragma warning disable CS1591
+        Organization_id,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

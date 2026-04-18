@@ -80,6 +80,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
+        /// <summary>The organization_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The paid_amount property</summary>
         public double? PaidAmount { get; set; }
         /// <summary>The paid_at property</summary>
@@ -163,6 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
+                { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "paid_amount", n => { PaidAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
                 { "payment_collection_method", n => { PaymentCollectionMethod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditmemo_payment_collection_method>(); } },
@@ -198,6 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDoubleValue("paid_amount", PaidAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditmemo_payment_collection_method>("payment_collection_method", PaymentCollectionMethod);
