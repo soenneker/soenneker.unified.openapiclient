@@ -12331,6 +12331,9 @@
                "refund_reason": {
                   "type": "string"
                },
+               "organization_id": {
+                  "type": "string"
+               },
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingCreditmemo_lineitems"
                },
@@ -12366,9 +12369,6 @@
                },
                "send": {
                   "type": "boolean"
-               },
-               "organization_id": {
-                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -52946,13 +52946,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
-                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53111,13 +53111,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
-                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53199,13 +53199,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
-                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53295,13 +53295,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
-                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53401,13 +53401,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
-                           "organization_id",
                            "raw"
                         ]
                      }
