@@ -3612,6 +3612,24 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "list_reference": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_reference": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -13880,6 +13898,26 @@
                "$ref": "#/components/schemas/StoragePermission"
             }
          },
+         "StorageReference": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_StorageFile_references": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/StorageReference"
+            }
+         },
          "StorageFile": {
             "type": "object",
             "properties": {
@@ -13937,6 +13975,9 @@
                },
                "web_url": {
                   "type": "string"
+               },
+               "references": {
+                  "$ref": "#/components/schemas/property_StorageFile_references"
                },
                "raw": {
                   "type": "object",
@@ -58270,6 +58311,7 @@
                            "data",
                            "version",
                            "web_url",
+                           "references",
                            "raw"
                         ]
                      }
@@ -58398,6 +58440,15 @@
                   "schema": {
                      "type": "string"
                   },
+                  "name": "reference",
+                  "in": "query",
+                  "required": false,
+                  "description": "The referenced entity ID to filter by (e.g. linked accounting record for storage_file)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
                   "name": "type",
                   "in": "query",
                   "required": false,
@@ -58443,6 +58494,7 @@
                            "data",
                            "version",
                            "web_url",
+                           "references",
                            "raw"
                         ]
                      }
@@ -58521,6 +58573,7 @@
                            "data",
                            "version",
                            "web_url",
+                           "references",
                            "raw"
                         ]
                      }
@@ -58607,6 +58660,7 @@
                            "data",
                            "version",
                            "web_url",
+                           "references",
                            "raw"
                         ]
                      }
@@ -58703,6 +58757,7 @@
                            "data",
                            "version",
                            "web_url",
+                           "references",
                            "raw"
                         ]
                      }

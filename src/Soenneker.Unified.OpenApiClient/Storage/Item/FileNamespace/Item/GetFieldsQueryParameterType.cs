@@ -72,6 +72,10 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace.Item
         #pragma warning disable CS1591
         Web_url,
         #pragma warning restore CS1591
+        [EnumMember(Value = "references")]
+        #pragma warning disable CS1591
+        References,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

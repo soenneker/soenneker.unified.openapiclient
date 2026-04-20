@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connection_id}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
+        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connection_id}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,reference*,sort*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connection_id}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
+        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connection_id}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,reference*,sort*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -206,6 +206,16 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace
 #else
             [QueryParameter("raw")]
             public string Raw { get; set; }
+#endif
+            /// <summary>The referenced entity ID to filter by (e.g. linked accounting record for storage_file)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("reference")]
+            public string? Reference { get; set; }
+#nullable restore
+#else
+            [QueryParameter("reference")]
+            public string Reference { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

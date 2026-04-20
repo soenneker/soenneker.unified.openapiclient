@@ -96,6 +96,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw Raw { get; set; }
 #endif
+        /// <summary>The references property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>? References { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.StorageReference> References { get; set; }
+#endif
         /// <summary>The size property</summary>
         public double? Size { get; set; }
         /// <summary>The type property</summary>
@@ -162,6 +170,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission>(global::Soenneker.Unified.OpenApiClient.Models.StoragePermission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw>(global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>(global::Soenneker.Unified.OpenApiClient.Models.StorageReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -188,6 +197,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission>("permissions", Permissions);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw>("raw", Raw);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>("references", References);
             writer.WriteDoubleValue("size", Size);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
