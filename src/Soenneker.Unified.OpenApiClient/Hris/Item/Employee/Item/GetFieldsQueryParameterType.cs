@@ -164,6 +164,14 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee.Item
         #pragma warning disable CS1591
         Has_mfa,
         #pragma warning restore CS1591
+        [EnumMember(Value = "timeoff_days_total")]
+        #pragma warning disable CS1591
+        Timeoff_days_total,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "timeoff_days_used")]
+        #pragma warning disable CS1591
+        Timeoff_days_used,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

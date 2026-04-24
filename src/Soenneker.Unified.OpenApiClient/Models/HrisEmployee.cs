@@ -238,6 +238,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TerminationReason { get; set; }
 #endif
+        /// <summary>The timeoff_days_total property</summary>
+        public double? TimeoffDaysTotal { get; set; }
+        /// <summary>The timeoff_days_used property</summary>
+        public double? TimeoffDaysUsed { get; set; }
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -318,6 +322,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>(global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "terminated_at", n => { TerminatedAt = n.GetDateTimeOffsetValue(); } },
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
+                { "timeoff_days_total", n => { TimeoffDaysTotal = n.GetDoubleValue(); } },
+                { "timeoff_days_used", n => { TimeoffDaysUsed = n.GetDoubleValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -367,6 +373,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("terminated_at", TerminatedAt);
             writer.WriteStringValue("termination_reason", TerminationReason);
+            writer.WriteDoubleValue("timeoff_days_total", TimeoffDaysTotal);
+            writer.WriteDoubleValue("timeoff_days_used", TimeoffDaysUsed);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -10049,6 +10049,12 @@
                "has_mfa": {
                   "type": "boolean"
                },
+               "timeoff_days_total": {
+                  "type": "number"
+               },
+               "timeoff_days_used": {
+                  "type": "number"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10194,7 +10200,10 @@
                "reason": {
                   "type": "string"
                }
-            }
+            },
+            "required": [
+               "start_at"
+            ]
          },
          "HrisTimeoffs": {
             "type": "array",
@@ -42133,6 +42142,8 @@
                            "storage_quota_available",
                            "relationships",
                            "has_mfa",
+                           "timeoff_days_total",
+                           "timeoff_days_used",
                            "raw"
                         ]
                      }
@@ -42302,6 +42313,8 @@
                            "storage_quota_available",
                            "relationships",
                            "has_mfa",
+                           "timeoff_days_total",
+                           "timeoff_days_used",
                            "raw"
                         ]
                      }
@@ -42403,6 +42416,8 @@
                            "storage_quota_available",
                            "relationships",
                            "has_mfa",
+                           "timeoff_days_total",
+                           "timeoff_days_used",
                            "raw"
                         ]
                      }
@@ -42512,6 +42527,8 @@
                            "storage_quota_available",
                            "relationships",
                            "has_mfa",
+                           "timeoff_days_total",
+                           "timeoff_days_used",
                            "raw"
                         ]
                      }
@@ -42631,6 +42648,8 @@
                            "storage_quota_available",
                            "relationships",
                            "has_mfa",
+                           "timeoff_days_total",
+                           "timeoff_days_used",
                            "raw"
                         ]
                      }
@@ -51892,6 +51911,24 @@
                   "name": "type",
                   "in": "query",
                   "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
                },
                {
                   "schema": {
