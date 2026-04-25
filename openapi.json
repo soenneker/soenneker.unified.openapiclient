@@ -21553,18 +21553,18 @@
                "type": {
                   "type": "string",
                   "enum": [
-                     "interests",
-                     "behaviors",
-                     "locales",
-                     "countries",
-                     "regions",
-                     "cities",
-                     "zips",
-                     "us_dmas",
-                     "topics",
-                     "user_lists",
-                     "age_ranges",
-                     "genders"
+                     "INTERESTS",
+                     "BEHAVIORS",
+                     "LOCALES",
+                     "COUNTRIES",
+                     "REGIONS",
+                     "CITIES",
+                     "ZIPS",
+                     "US_DMAS",
+                     "TOPICS",
+                     "USER_LISTS",
+                     "AGE_RANGES",
+                     "GENDERS"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },

@@ -8,53 +8,53 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public enum AdsTarget_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "interests")]
+        [EnumMember(Value = "INTERESTS")]
         #pragma warning disable CS1591
-        Interests,
+        INTERESTS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "behaviors")]
+        [EnumMember(Value = "BEHAVIORS")]
         #pragma warning disable CS1591
-        Behaviors,
+        BEHAVIORS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "locales")]
+        [EnumMember(Value = "LOCALES")]
         #pragma warning disable CS1591
-        Locales,
+        LOCALES,
         #pragma warning restore CS1591
-        [EnumMember(Value = "countries")]
+        [EnumMember(Value = "COUNTRIES")]
         #pragma warning disable CS1591
-        Countries,
+        COUNTRIES,
         #pragma warning restore CS1591
-        [EnumMember(Value = "regions")]
+        [EnumMember(Value = "REGIONS")]
         #pragma warning disable CS1591
-        Regions,
+        REGIONS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "cities")]
+        [EnumMember(Value = "CITIES")]
         #pragma warning disable CS1591
-        Cities,
+        CITIES,
         #pragma warning restore CS1591
-        [EnumMember(Value = "zips")]
+        [EnumMember(Value = "ZIPS")]
         #pragma warning disable CS1591
-        Zips,
+        ZIPS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "us_dmas")]
+        [EnumMember(Value = "US_DMAS")]
         #pragma warning disable CS1591
-        Us_dmas,
+        US_DMAS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "topics")]
+        [EnumMember(Value = "TOPICS")]
         #pragma warning disable CS1591
-        Topics,
+        TOPICS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_lists")]
+        [EnumMember(Value = "USER_LISTS")]
         #pragma warning disable CS1591
-        User_lists,
+        USER_LISTS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "age_ranges")]
+        [EnumMember(Value = "AGE_RANGES")]
         #pragma warning disable CS1591
-        Age_ranges,
+        AGE_RANGES,
         #pragma warning restore CS1591
-        [EnumMember(Value = "genders")]
+        [EnumMember(Value = "GENDERS")]
         #pragma warning disable CS1591
-        Genders,
+        GENDERS,
         #pragma warning restore CS1591
     }
 }
