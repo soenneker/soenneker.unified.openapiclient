@@ -8,53 +8,65 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public enum AdsTarget_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "INTERESTS")]
+        [EnumMember(Value = "INTEREST")]
         #pragma warning disable CS1591
-        INTERESTS,
+        INTEREST,
         #pragma warning restore CS1591
-        [EnumMember(Value = "BEHAVIORS")]
+        [EnumMember(Value = "BEHAVIOR")]
         #pragma warning disable CS1591
-        BEHAVIORS,
+        BEHAVIOR,
         #pragma warning restore CS1591
-        [EnumMember(Value = "LOCALES")]
+        [EnumMember(Value = "LOCALE")]
         #pragma warning disable CS1591
-        LOCALES,
+        LOCALE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "COUNTRIES")]
+        [EnumMember(Value = "COUNTRY")]
         #pragma warning disable CS1591
-        COUNTRIES,
+        COUNTRY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "REGIONS")]
+        [EnumMember(Value = "REGION")]
         #pragma warning disable CS1591
-        REGIONS,
+        REGION,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CITIES")]
+        [EnumMember(Value = "CITY")]
         #pragma warning disable CS1591
-        CITIES,
+        CITY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ZIPS")]
+        [EnumMember(Value = "ZIP")]
         #pragma warning disable CS1591
-        ZIPS,
+        ZIP,
         #pragma warning restore CS1591
-        [EnumMember(Value = "US_DMAS")]
+        [EnumMember(Value = "US_DMA")]
         #pragma warning disable CS1591
-        US_DMAS,
+        US_DMA,
         #pragma warning restore CS1591
-        [EnumMember(Value = "TOPICS")]
+        [EnumMember(Value = "TOPIC")]
         #pragma warning disable CS1591
-        TOPICS,
+        TOPIC,
         #pragma warning restore CS1591
-        [EnumMember(Value = "USER_LISTS")]
+        [EnumMember(Value = "USER_LIST")]
         #pragma warning disable CS1591
-        USER_LISTS,
+        USER_LIST,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AGE_RANGES")]
+        [EnumMember(Value = "AGE_RANGE")]
         #pragma warning disable CS1591
-        AGE_RANGES,
+        AGE_RANGE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "GENDERS")]
+        [EnumMember(Value = "GENDER")]
         #pragma warning disable CS1591
-        GENDERS,
+        GENDER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CARRIER")]
+        #pragma warning disable CS1591
+        CARRIER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEVICE_MODEL")]
+        #pragma warning disable CS1591
+        DEVICE_MODEL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OS_VERSION")]
+        #pragma warning disable CS1591
+        OS_VERSION,
         #pragma warning restore CS1591
     }
 }

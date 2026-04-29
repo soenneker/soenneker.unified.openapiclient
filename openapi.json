@@ -18252,6 +18252,10 @@
                      "AD_GROUP_TYPE"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
                }
             },
             "required": [
@@ -21547,26 +21551,32 @@
                "name": {
                   "type": "string"
                },
-               "value": {
-                  "type": "string"
-               },
                "type": {
                   "type": "string",
                   "enum": [
-                     "INTERESTS",
-                     "BEHAVIORS",
-                     "LOCALES",
-                     "COUNTRIES",
-                     "REGIONS",
-                     "CITIES",
-                     "ZIPS",
-                     "US_DMAS",
-                     "TOPICS",
-                     "USER_LISTS",
-                     "AGE_RANGES",
-                     "GENDERS"
+                     "INTEREST",
+                     "BEHAVIOR",
+                     "LOCALE",
+                     "COUNTRY",
+                     "REGION",
+                     "CITY",
+                     "ZIP",
+                     "US_DMA",
+                     "TOPIC",
+                     "USER_LIST",
+                     "AGE_RANGE",
+                     "GENDER",
+                     "CARRIER",
+                     "DEVICE_MODEL",
+                     "OS_VERSION"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "parent_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -21574,8 +21584,7 @@
                }
             },
             "required": [
-               "id",
-               "value"
+               "id"
             ],
             "description": "Targeting search result (for ads_target list endpoint)"
          },
@@ -73043,6 +73052,24 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -74818,6 +74845,24 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -76042,6 +76087,83 @@
             "operationId": "listAdsReports"
          }
       },
+      "/ads/{connection_id}/target/{id}": {
+         "get": {
+            "summary": "Retrieve a target",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "name",
+                           "type",
+                           "is_active",
+                           "parent_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Target",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "ads",
+               "target"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AdsTarget"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAdsTarget"
+         }
+      },
       "/ads/{connection_id}/target": {
          "get": {
             "summary": "List all targets",
@@ -76121,8 +76243,9 @@
                         "enum": [
                            "id",
                            "name",
-                           "value",
                            "type",
+                           "is_active",
+                           "parent_id",
                            "raw"
                         ]
                      }
@@ -76173,6 +76296,81 @@
                }
             ],
             "operationId": "listAdsTargets"
+         }
+      },
+      "/ads/{connection_id}/promoted/{id}": {
+         "get": {
+            "summary": "Retrieve a promoted",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "name",
+                           "type",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Promoted",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "ads",
+               "promoted"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AdsPromoted"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAdsPromoted"
          }
       },
       "/ads/{connection_id}/promoted": {
@@ -76254,7 +76452,8 @@
                         "enum": [
                            "id",
                            "name",
-                           "type"
+                           "type",
+                           "raw"
                         ]
                      }
                   },

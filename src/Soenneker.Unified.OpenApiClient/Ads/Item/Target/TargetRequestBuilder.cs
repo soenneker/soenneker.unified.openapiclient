@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item;
 using Soenneker.Unified.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.ads.item.target.item collection</summary>
+        /// <param name="position">ID of the Target</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item.TargetItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item.TargetItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item.TargetItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.TargetRequestBuilder"/> and sets the default values.
         /// </summary>

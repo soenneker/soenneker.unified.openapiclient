@@ -16,13 +16,17 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
         #pragma warning disable CS1591
         Name,
         #pragma warning restore CS1591
-        [EnumMember(Value = "value")]
-        #pragma warning disable CS1591
-        Value,
-        #pragma warning restore CS1591
         [EnumMember(Value = "type")]
         #pragma warning disable CS1591
         Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "is_active")]
+        #pragma warning disable CS1591
+        Is_active,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "parent_id")]
+        #pragma warning disable CS1591
+        Parent_id,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

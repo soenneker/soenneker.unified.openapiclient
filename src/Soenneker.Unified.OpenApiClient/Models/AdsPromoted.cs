@@ -31,6 +31,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The raw property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw? Raw { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw Raw { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type? Type { get; set; }
         /// <summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type>(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
