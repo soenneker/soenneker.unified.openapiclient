@@ -8189,6 +8189,12 @@
                "type": "string"
             }
          },
+         "property_AtsCandidate_job_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "AtsMetadata": {
             "type": "object",
             "properties": {
@@ -8386,6 +8392,9 @@
                },
                "skills": {
                   "$ref": "#/components/schemas/property_AtsCandidate_skills"
+               },
+               "job_ids": {
+                  "$ref": "#/components/schemas/property_AtsCandidate_job_ids"
                },
                "metadata": {
                   "$ref": "#/components/schemas/property_AtsCandidate_metadata"
@@ -38066,6 +38075,7 @@
                            "experiences",
                            "education",
                            "skills",
+                           "job_ids",
                            "metadata",
                            "raw"
                         ]
@@ -38221,6 +38231,7 @@
                            "experiences",
                            "education",
                            "skills",
+                           "job_ids",
                            "metadata",
                            "raw"
                         ]
@@ -38308,6 +38319,7 @@
                            "experiences",
                            "education",
                            "skills",
+                           "job_ids",
                            "metadata",
                            "raw"
                         ]
@@ -38403,6 +38415,7 @@
                            "experiences",
                            "education",
                            "skills",
+                           "job_ids",
                            "metadata",
                            "raw"
                         ]
@@ -38508,6 +38521,7 @@
                            "experiences",
                            "education",
                            "skills",
+                           "job_ids",
                            "metadata",
                            "raw"
                         ]
@@ -40626,6 +40640,15 @@
                   "in": "query",
                   "required": false,
                   "description": "The company ID to filter by (reference to AtsCompany)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
                },
                {
                   "schema": {

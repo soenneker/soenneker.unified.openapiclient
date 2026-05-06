@@ -104,6 +104,10 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Candidate.Item
         #pragma warning disable CS1591
         Skills,
         #pragma warning restore CS1591
+        [EnumMember(Value = "job_ids")]
+        #pragma warning disable CS1591
+        Job_ids,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

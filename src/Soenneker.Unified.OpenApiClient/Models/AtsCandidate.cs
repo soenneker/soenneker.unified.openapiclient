@@ -98,6 +98,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ImageUrl { get; set; }
 #endif
+        /// <summary>The job_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? JobIds { get; set; }
+#nullable restore
+#else
+        public List<string> JobIds { get; set; }
+#endif
         /// <summary>The last_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,6 +243,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
+                { "job_ids", n => { JobIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "link_urls", n => { LinkUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -270,6 +279,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);
+            writer.WriteCollectionOfPrimitiveValues<string>("job_ids", JobIds);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfPrimitiveValues<string>("link_urls", LinkUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
