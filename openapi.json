@@ -10202,12 +10202,26 @@
                "comments": {
                   "type": "string"
                },
+               "reason": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "VACATION",
+                     "SICK",
+                     "HOLIDAY",
+                     "BEREAVEMENT",
+                     "PARENTAL",
+                     "UNPAID",
+                     "IN_LIEU",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
-               },
-               "reason": {
-                  "type": "string"
                }
             },
             "required": [
@@ -44408,8 +44422,9 @@
                            "approver_user_id",
                            "approved_at",
                            "comments",
-                           "raw",
-                           "reason"
+                           "reason",
+                           "type",
+                           "raw"
                         ]
                      }
                   },
@@ -44578,8 +44593,9 @@
                            "approver_user_id",
                            "approved_at",
                            "comments",
-                           "raw",
-                           "reason"
+                           "reason",
+                           "type",
+                           "raw"
                         ]
                      }
                   },
@@ -44653,8 +44669,9 @@
                            "approver_user_id",
                            "approved_at",
                            "comments",
-                           "raw",
-                           "reason"
+                           "reason",
+                           "type",
+                           "raw"
                         ]
                      }
                   },
@@ -44736,8 +44753,9 @@
                            "approver_user_id",
                            "approved_at",
                            "comments",
-                           "raw",
-                           "reason"
+                           "reason",
+                           "type",
+                           "raw"
                         ]
                      }
                   },
@@ -44829,8 +44847,9 @@
                            "approver_user_id",
                            "approved_at",
                            "comments",
-                           "raw",
-                           "reason"
+                           "reason",
+                           "type",
+                           "raw"
                         ]
                      }
                   },

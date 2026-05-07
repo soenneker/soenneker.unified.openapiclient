@@ -74,6 +74,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_status? Status { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_type? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -121,6 +123,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_status>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -144,6 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoff_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

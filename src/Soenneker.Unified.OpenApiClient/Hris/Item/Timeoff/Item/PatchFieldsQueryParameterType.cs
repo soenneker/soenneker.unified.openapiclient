@@ -56,13 +56,17 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff.Item
         #pragma warning disable CS1591
         Comments,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "reason")]
         #pragma warning disable CS1591
         Reason,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }
