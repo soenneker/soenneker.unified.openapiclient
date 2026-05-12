@@ -39984,8 +39984,7 @@
                   },
                   "name": "type",
                   "in": "query",
-                  "required": false,
-                  "description": "The type to filter by"
+                  "required": false
                },
                {
                   "schema": {

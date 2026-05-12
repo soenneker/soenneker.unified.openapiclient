@@ -223,7 +223,6 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Document
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>The type to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
