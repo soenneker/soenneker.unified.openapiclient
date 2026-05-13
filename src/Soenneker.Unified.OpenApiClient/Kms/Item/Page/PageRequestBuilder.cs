@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connection_id}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*}", pathParameters)
+        public PageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connection_id}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connection_id}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*}", rawUrl)
+        public PageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connection_id}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -222,6 +222,16 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
 #else
             [QueryParameter("updated_gte")]
             public string UpdatedGte { get; set; }
+#endif
+            /// <summary>The user/employee ID to filter by (reference to HrisEmployee)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
 #endif
         }
         /// <summary>

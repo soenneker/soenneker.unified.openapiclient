@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail> Cc { get; set; }
 #endif
+        /// <summary>The company_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CompanyId { get; set; }
+#nullable restore
+#else
+        public string CompanyId { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
@@ -171,6 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "bcc", n => { Bcc = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>(global::Soenneker.Unified.OpenApiClient.Models.AtsEmail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "candidate_id", n => { CandidateId = n.GetStringValue(); } },
                 { "cc", n => { Cc = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>(global::Soenneker.Unified.OpenApiClient.Models.AtsEmail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "document_ids", n => { DocumentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -199,6 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>("bcc", Bcc);
             writer.WriteStringValue("candidate_id", CandidateId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>("cc", Cc);
+            writer.WriteStringValue("company_id", CompanyId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("document_ids", DocumentIds);

@@ -80,6 +80,10 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Activity
         #pragma warning disable CS1591
         Sub_type,
         #pragma warning restore CS1591
+        [EnumMember(Value = "company_id")]
+        #pragma warning disable CS1591
+        Company_id,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

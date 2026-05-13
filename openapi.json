@@ -3630,6 +3630,15 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_account_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -8033,6 +8042,9 @@
                "sub_type": {
                   "type": "string"
                },
+               "company_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -8834,6 +8846,9 @@
                },
                "metadata": {
                   "$ref": "#/components/schemas/property_AtsJob_metadata"
+               },
+               "user_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -23636,6 +23651,12 @@
                }
             }
          },
+         "ShippingTrackings": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ShippingTracking"
+            }
+         },
          "property_ShippingRate_from_address": {
             "type": "object",
             "properties": {
@@ -37465,6 +37486,7 @@
                            "cc",
                            "bcc",
                            "sub_type",
+                           "company_id",
                            "raw"
                         ]
                      }
@@ -37667,6 +37689,7 @@
                            "cc",
                            "bcc",
                            "sub_type",
+                           "company_id",
                            "raw"
                         ]
                      }
@@ -37747,6 +37770,7 @@
                            "cc",
                            "bcc",
                            "sub_type",
+                           "company_id",
                            "raw"
                         ]
                      }
@@ -37835,6 +37859,7 @@
                            "cc",
                            "bcc",
                            "sub_type",
+                           "company_id",
                            "raw"
                         ]
                      }
@@ -37933,6 +37958,7 @@
                            "cc",
                            "bcc",
                            "sub_type",
+                           "company_id",
                            "raw"
                         ]
                      }
@@ -38695,6 +38721,7 @@
                            "minimum_degree",
                            "skills",
                            "metadata",
+                           "user_id",
                            "raw"
                         ]
                      }
@@ -38869,6 +38896,7 @@
                            "minimum_degree",
                            "skills",
                            "metadata",
+                           "user_id",
                            "raw"
                         ]
                      }
@@ -38957,6 +38985,7 @@
                            "minimum_degree",
                            "skills",
                            "metadata",
+                           "user_id",
                            "raw"
                         ]
                      }
@@ -39053,6 +39082,7 @@
                            "minimum_degree",
                            "skills",
                            "metadata",
+                           "user_id",
                            "raw"
                         ]
                      }
@@ -39159,6 +39189,7 @@
                            "minimum_degree",
                            "skills",
                            "metadata",
+                           "user_id",
                            "raw"
                         ]
                      }
@@ -66969,6 +67000,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -85502,6 +85542,131 @@
                }
             ],
             "operationId": "getShippingTracking"
+         }
+      },
+      "/shipping/{connection_id}/tracking": {
+         "get": {
+            "summary": "List all trackings",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "shipment_id",
+                           "tracking_number",
+                           "status",
+                           "events",
+                           "estimated_delivery",
+                           "actual_delivery_at",
+                           "status_description",
+                           "carrier_id",
+                           "carrier_status_code",
+                           "carrier_status_description",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "shipping",
+               "tracking"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ShippingTrackings"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listShippingTrackings"
          }
       },
       "/shipping/{connection_id}/rate": {

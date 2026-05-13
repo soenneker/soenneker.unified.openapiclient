@@ -112,6 +112,10 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Job.Item
         #pragma warning disable CS1591
         Metadata,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user_id")]
+        #pragma warning disable CS1591
+        User_id,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
