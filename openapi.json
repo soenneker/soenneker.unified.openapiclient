@@ -10238,10 +10238,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "start_at"
-            ]
+            }
          },
          "HrisTimeoffs": {
             "type": "array",
