@@ -17325,13 +17325,7 @@
                "$ref": "#/components/schemas/AdsOrganization"
             }
          },
-         "property_AdsCampaign_targeting_geographic_countries": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "RegionTarget": {
+         "TargetRef": {
             "type": "object",
             "properties": {
                "id": {
@@ -17340,16 +17334,18 @@
                "name": {
                   "type": "string"
                }
-            },
-            "required": [
-               "id"
-            ],
-            "description": "states, provinces, regions"
+            }
+         },
+         "property_AdsCampaign_targeting_geographic_countries": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/TargetRef"
+            }
          },
          "property_AdsCampaign_targeting_geographic_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "CityTarget": {
@@ -17386,25 +17382,25 @@
          "property_AdsCampaign_targeting_geographic_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_excluded_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_excluded_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_excluded_cities": {
@@ -17416,13 +17412,13 @@
          "property_AdsCampaign_targeting_geographic_excluded_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_excluded_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_geographic_location_types": {
@@ -17501,31 +17497,16 @@
             },
             "description": "Demographic targeting (Meta: age_min, age_max, genders)"
          },
-         "AudienceSegment": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "name": {
-                  "type": "string"
-               }
-            },
-            "required": [
-               "id"
-            ],
-            "description": "Audience targeting (Meta: custom_audiences, lookalike_audiences, flexible_spec)"
-         },
          "property_AdsCampaign_targeting_audience_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_audience_excluded_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "LookalikeAudience": {
@@ -17557,49 +17538,49 @@
          "property_AdsCampaign_targeting_audience_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_audience_excluded_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_audience_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_audience_excluded_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AudienceCombination_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AudienceCombination_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
-         "property_AudienceCombination_demographics": {
+         "property_AudienceCombination_references": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AudienceCombination_life_events": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "AudienceCombination": {
@@ -17611,8 +17592,8 @@
                "behaviors": {
                   "$ref": "#/components/schemas/property_AudienceCombination_behaviors"
                },
-               "demographics": {
-                  "$ref": "#/components/schemas/property_AudienceCombination_demographics"
+               "references": {
+                  "$ref": "#/components/schemas/property_AudienceCombination_references"
                },
                "life_events": {
                   "$ref": "#/components/schemas/property_AudienceCombination_life_events"
@@ -17707,25 +17688,25 @@
          "property_AdsCampaign_targeting_device_types": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_device_user_device": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_device_user_os": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_device_carriers": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_device": {
@@ -17745,29 +17726,11 @@
                }
             }
          },
-         "property_AdsCampaign_targeting_language_codes": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_AdsCampaign_targeting_language_locale_ids": {
-            "type": "array",
-            "items": {
-               "type": "number"
-            }
-         },
          "property_AdsCampaign_targeting_language": {
-            "type": "object",
-            "properties": {
-               "codes": {
-                  "$ref": "#/components/schemas/property_AdsCampaign_targeting_language_codes"
-               },
-               "locale_ids": {
-                  "$ref": "#/components/schemas/property_AdsCampaign_targeting_language_locale_ids"
-               }
-            },
-            "description": "Language targeting (Meta"
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/TargetRef"
+            }
          },
          "AdsKeyword": {
             "type": "object",
@@ -17805,13 +17768,13 @@
          "property_AdsCampaign_targeting_content_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_content_excluded_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsCampaign_targeting_content_urls": {
@@ -18700,13 +18663,13 @@
          "property_AdsGroup_targeting_geographic_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_cities": {
@@ -18718,25 +18681,25 @@
          "property_AdsGroup_targeting_geographic_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_excluded_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_excluded_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_excluded_cities": {
@@ -18748,13 +18711,13 @@
          "property_AdsGroup_targeting_geographic_excluded_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_excluded_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_geographic_location_types": {
@@ -18836,13 +18799,13 @@
          "property_AdsGroup_targeting_audience_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_excluded_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_lookalike_audiences": {
@@ -18854,25 +18817,25 @@
          "property_AdsGroup_targeting_audience_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_excluded_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_excluded_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_audience_combination_spec": {
@@ -18963,25 +18926,25 @@
          "property_AdsGroup_targeting_device_types": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_device_user_device": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_device_user_os": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_device_carriers": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_device": {
@@ -19001,29 +18964,11 @@
                }
             }
          },
-         "property_AdsGroup_targeting_language_codes": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_AdsGroup_targeting_language_locale_ids": {
-            "type": "array",
-            "items": {
-               "type": "number"
-            }
-         },
          "property_AdsGroup_targeting_language": {
-            "type": "object",
-            "properties": {
-               "codes": {
-                  "$ref": "#/components/schemas/property_AdsGroup_targeting_language_codes"
-               },
-               "locale_ids": {
-                  "$ref": "#/components/schemas/property_AdsGroup_targeting_language_locale_ids"
-               }
-            },
-            "description": "Language targeting (Meta"
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/TargetRef"
+            }
          },
          "property_AdsGroup_targeting_content_keywords": {
             "type": "array",
@@ -19040,13 +18985,13 @@
          "property_AdsGroup_targeting_content_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_content_excluded_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsGroup_targeting_content_urls": {
@@ -19727,13 +19672,13 @@
          "property_AdsReportMetrics_campaign_targeting_geographic_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_cities": {
@@ -19745,25 +19690,25 @@
          "property_AdsReportMetrics_campaign_targeting_geographic_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_excluded_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_excluded_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_excluded_cities": {
@@ -19775,13 +19720,13 @@
          "property_AdsReportMetrics_campaign_targeting_geographic_excluded_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_excluded_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_geographic_location_types": {
@@ -19863,13 +19808,13 @@
          "property_AdsReportMetrics_campaign_targeting_audience_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_excluded_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_lookalike_audiences": {
@@ -19881,25 +19826,25 @@
          "property_AdsReportMetrics_campaign_targeting_audience_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_excluded_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_excluded_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_audience_combination_spec": {
@@ -19990,25 +19935,25 @@
          "property_AdsReportMetrics_campaign_targeting_device_types": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_device_user_device": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_device_user_os": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_device_carriers": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_device": {
@@ -20028,29 +19973,11 @@
                }
             }
          },
-         "property_AdsReportMetrics_campaign_targeting_language_codes": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_AdsReportMetrics_campaign_targeting_language_locale_ids": {
-            "type": "array",
-            "items": {
-               "type": "number"
-            }
-         },
          "property_AdsReportMetrics_campaign_targeting_language": {
-            "type": "object",
-            "properties": {
-               "codes": {
-                  "$ref": "#/components/schemas/property_AdsReportMetrics_campaign_targeting_language_codes"
-               },
-               "locale_ids": {
-                  "$ref": "#/components/schemas/property_AdsReportMetrics_campaign_targeting_language_locale_ids"
-               }
-            },
-            "description": "Language targeting (Meta"
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/TargetRef"
+            }
          },
          "property_AdsReportMetrics_campaign_targeting_content_keywords": {
             "type": "array",
@@ -20067,13 +19994,13 @@
          "property_AdsReportMetrics_campaign_targeting_content_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_content_excluded_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_campaign_targeting_content_urls": {
@@ -20472,13 +20399,13 @@
          "property_AdsReportMetrics_group_targeting_geographic_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_cities": {
@@ -20490,25 +20417,25 @@
          "property_AdsReportMetrics_group_targeting_geographic_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_excluded_countries": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_excluded_regions": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/RegionTarget"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_excluded_cities": {
@@ -20520,13 +20447,13 @@
          "property_AdsReportMetrics_group_targeting_geographic_excluded_postal_codes": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_excluded_us_dmas": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_geographic_location_types": {
@@ -20608,13 +20535,13 @@
          "property_AdsReportMetrics_group_targeting_audience_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_excluded_custom_audiences": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_lookalike_audiences": {
@@ -20626,25 +20553,25 @@
          "property_AdsReportMetrics_group_targeting_audience_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_excluded_interests": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_excluded_behaviors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/AudienceSegment"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_audience_combination_spec": {
@@ -20735,25 +20662,25 @@
          "property_AdsReportMetrics_group_targeting_device_types": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_device_user_device": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_device_user_os": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_device_carriers": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_device": {
@@ -20773,29 +20700,11 @@
                }
             }
          },
-         "property_AdsReportMetrics_group_targeting_language_codes": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_AdsReportMetrics_group_targeting_language_locale_ids": {
-            "type": "array",
-            "items": {
-               "type": "number"
-            }
-         },
          "property_AdsReportMetrics_group_targeting_language": {
-            "type": "object",
-            "properties": {
-               "codes": {
-                  "$ref": "#/components/schemas/property_AdsReportMetrics_group_targeting_language_codes"
-               },
-               "locale_ids": {
-                  "$ref": "#/components/schemas/property_AdsReportMetrics_group_targeting_language_locale_ids"
-               }
-            },
-            "description": "Language targeting (Meta"
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/TargetRef"
+            }
          },
          "property_AdsReportMetrics_group_targeting_content_keywords": {
             "type": "array",
@@ -20812,13 +20721,13 @@
          "property_AdsReportMetrics_group_targeting_content_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_content_excluded_topics": {
             "type": "array",
             "items": {
-               "type": "string"
+               "$ref": "#/components/schemas/TargetRef"
             }
          },
          "property_AdsReportMetrics_group_targeting_content_urls": {
@@ -21599,8 +21508,6 @@
                      "US_DMA",
                      "TOPIC",
                      "USER_LIST",
-                     "AGE_RANGE",
-                     "GENDER",
                      "CARRIER",
                      "DEVICE_MODEL",
                      "OS_VERSION"
@@ -21612,6 +21519,12 @@
                },
                "parent_id": {
                   "type": "string"
+               },
+               "audience_count_min": {
+                  "type": "number"
+               },
+               "audience_count_max": {
+                  "type": "number"
                },
                "raw": {
                   "type": "object",
@@ -73148,6 +73061,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -73734,6 +73656,15 @@
                   "in": "query",
                   "required": false,
                   "description": "The group ID to filter by (reference to AdsGroup)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
                },
                {
                   "schema": {
@@ -74941,6 +74872,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -75565,6 +75505,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false,
+                  "description": "The status to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -76180,6 +76129,8 @@
                            "type",
                            "is_active",
                            "parent_id",
+                           "audience_count_min",
+                           "audience_count_max",
                            "raw"
                         ]
                      }
@@ -76324,6 +76275,8 @@
                            "type",
                            "is_active",
                            "parent_id",
+                           "audience_count_min",
+                           "audience_count_max",
                            "raw"
                         ]
                      }

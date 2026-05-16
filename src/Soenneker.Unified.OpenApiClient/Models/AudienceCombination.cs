@@ -17,34 +17,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? Behaviors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Behaviors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> Behaviors { get; set; }
-#endif
-        /// <summary>The demographics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? Demographics { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> Demographics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Behaviors { get; set; }
 #endif
         /// <summary>The interests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? Interests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Interests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> Interests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Interests { get; set; }
 #endif
         /// <summary>The life_events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? LifeEvents { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? LifeEvents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> LifeEvents { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> LifeEvents { get; set; }
+#endif
+        /// <summary>The references property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? References { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> References { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behaviors", n => { Behaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "demographics", n => { Demographics = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "interests", n => { Interests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "life_events", n => { LifeEvents = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "behaviors", n => { Behaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "interests", n => { Interests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "life_events", n => { LifeEvents = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("behaviors", Behaviors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("demographics", Demographics);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("interests", Interests);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("life_events", LifeEvents);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("behaviors", Behaviors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("interests", Interests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("life_events", LifeEvents);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("references", References);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

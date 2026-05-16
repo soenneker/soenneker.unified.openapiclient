@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? Behaviors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Behaviors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> Behaviors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Behaviors { get; set; }
 #endif
         /// <summary>The combination_spec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,42 +33,42 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The custom_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? CustomAudiences { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? CustomAudiences { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> CustomAudiences { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> CustomAudiences { get; set; }
 #endif
         /// <summary>The excluded_behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? ExcludedBehaviors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedBehaviors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> ExcludedBehaviors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedBehaviors { get; set; }
 #endif
         /// <summary>The excluded_custom_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? ExcludedCustomAudiences { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedCustomAudiences { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> ExcludedCustomAudiences { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedCustomAudiences { get; set; }
 #endif
         /// <summary>The excluded_interests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? ExcludedInterests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedInterests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> ExcludedInterests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedInterests { get; set; }
 #endif
         /// <summary>The interests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>? Interests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Interests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment> Interests { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Interests { get; set; }
 #endif
         /// <summary>The lookalike_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,13 +103,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behaviors", n => { Behaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "behaviors", n => { Behaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "combination_spec", n => { CombinationSpec = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination>(global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "custom_audiences", n => { CustomAudiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "excluded_behaviors", n => { ExcludedBehaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "excluded_custom_audiences", n => { ExcludedCustomAudiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "excluded_interests", n => { ExcludedInterests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "interests", n => { Interests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>(global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "custom_audiences", n => { CustomAudiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "excluded_behaviors", n => { ExcludedBehaviors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "excluded_custom_audiences", n => { ExcludedCustomAudiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "excluded_interests", n => { ExcludedInterests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "interests", n => { Interests = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lookalike_audiences", n => { LookalikeAudiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience>(global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -120,13 +120,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("behaviors", Behaviors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("behaviors", Behaviors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination>("combination_spec", CombinationSpec);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("custom_audiences", CustomAudiences);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("excluded_behaviors", ExcludedBehaviors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("excluded_custom_audiences", ExcludedCustomAudiences);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("excluded_interests", ExcludedInterests);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment>("interests", Interests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("custom_audiences", CustomAudiences);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_behaviors", ExcludedBehaviors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_custom_audiences", ExcludedCustomAudiences);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_interests", ExcludedInterests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("interests", Interests);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience>("lookalike_audiences", LookalikeAudiences);
             writer.WriteAdditionalData(AdditionalData);
         }

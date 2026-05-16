@@ -25,10 +25,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The excluded_topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedTopics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedTopics { get; set; }
 #nullable restore
 #else
-        public List<string> ExcludedTopics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedTopics { get; set; }
 #endif
         /// <summary>The excluded_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Topics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Topics { get; set; }
 #nullable restore
 #else
-        public List<string> Topics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Topics { get; set; }
 #endif
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,10 +96,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "excluded_keywords", n => { ExcludedKeywords = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>(global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "excluded_topics", n => { ExcludedTopics = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "excluded_topics", n => { ExcludedTopics = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "excluded_urls", n => { ExcludedUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>(global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "topics", n => { Topics = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign_targeting_content_video>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign_targeting_content_video.CreateFromDiscriminatorValue); } },
             };
@@ -112,10 +112,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>("excluded_keywords", ExcludedKeywords);
-            writer.WriteCollectionOfPrimitiveValues<string>("excluded_topics", ExcludedTopics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_topics", ExcludedTopics);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_urls", ExcludedUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>("keywords", Keywords);
-            writer.WriteCollectionOfPrimitiveValues<string>("topics", Topics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("topics", Topics);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign_targeting_content_video>("video", Video);
             writer.WriteAdditionalData(AdditionalData);

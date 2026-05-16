@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
-    /// <summary>
-    /// Audience targeting (Meta: custom_audiences, lookalike_audiences, flexible_spec)
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AudienceSegment : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class TargetRef : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -32,21 +31,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.TargetRef"/> and sets the default values.
         /// </summary>
-        public AudienceSegment()
+        public TargetRef()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.TargetRef"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.TargetRef CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.AudienceSegment();
+            return new global::Soenneker.Unified.OpenApiClient.Models.TargetRef();
         }
         /// <summary>
         /// The deserialization information for the current model

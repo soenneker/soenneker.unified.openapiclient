@@ -28,6 +28,14 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
         #pragma warning disable CS1591
         Parent_id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "audience_count_min")]
+        #pragma warning disable CS1591
+        Audience_count_min,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "audience_count_max")]
+        #pragma warning disable CS1591
+        Audience_count_max,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

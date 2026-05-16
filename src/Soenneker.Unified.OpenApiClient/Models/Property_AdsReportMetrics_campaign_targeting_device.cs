@@ -17,34 +17,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The carriers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Carriers { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Carriers { get; set; }
 #nullable restore
 #else
-        public List<string> Carriers { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Carriers { get; set; }
 #endif
         /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Types { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Types { get; set; }
 #nullable restore
 #else
-        public List<string> Types { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Types { get; set; }
 #endif
         /// <summary>The user_device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserDevice { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserDevice { get; set; }
 #nullable restore
 #else
-        public List<string> UserDevice { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserDevice { get; set; }
 #endif
         /// <summary>The user_os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserOs { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserOs { get; set; }
 #nullable restore
 #else
-        public List<string> UserOs { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserOs { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign_targeting_device"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "carriers", n => { Carriers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "user_device", n => { UserDevice = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "user_os", n => { UserOs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "carriers", n => { Carriers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "types", n => { Types = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "user_device", n => { UserDevice = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "user_os", n => { UserOs = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("carriers", Carriers);
-            writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
-            writer.WriteCollectionOfPrimitiveValues<string>("user_device", UserDevice);
-            writer.WriteCollectionOfPrimitiveValues<string>("user_os", UserOs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("carriers", Carriers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("types", Types);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("user_device", UserDevice);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("user_os", UserOs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

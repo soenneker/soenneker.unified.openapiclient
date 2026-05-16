@@ -62,13 +62,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_geographic Geographic { get; set; }
 #endif
-        /// <summary>Language targeting (Meta</summary>
+        /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_language? Language { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_language Language { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Language { get; set; }
 #endif
         /// <summary>Optimization (Meta: targeting_automation; Google: observation vs targeting mode)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "demographic", n => { Demographic = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_demographic>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_demographic.CreateFromDiscriminatorValue); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_device>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_device.CreateFromDiscriminatorValue); } },
                 { "geographic", n => { Geographic = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_geographic>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_geographic.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_language>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_language.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_optimization>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_optimization.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_placement>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_placement.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>(global::Soenneker.Unified.OpenApiClient.Models.AdSchedule.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -144,7 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_demographic>("demographic", Demographic);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_device>("device", Device);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_geographic>("geographic", Geographic);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_language>("language", Language);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("language", Language);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_optimization>("optimization", Optimization);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group_targeting_placement>("placement", Placement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>("schedule", Schedule);

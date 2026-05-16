@@ -48,14 +48,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         USER_LIST,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AGE_RANGE")]
-        #pragma warning disable CS1591
-        AGE_RANGE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "GENDER")]
-        #pragma warning disable CS1591
-        GENDER,
-        #pragma warning restore CS1591
         [EnumMember(Value = "CARRIER")]
         #pragma warning disable CS1591
         CARRIER,
