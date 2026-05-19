@@ -10238,7 +10238,10 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            }
+            },
+            "required": [
+               "start_at"
+            ]
          },
          "HrisTimeoffs": {
             "type": "array",
@@ -10602,9 +10605,7 @@
                }
             },
             "required": [
-               "employee_user_id",
-               "start_at",
-               "end_at"
+               "employee_user_id"
             ]
          },
          "HrisTimeshifts": {
