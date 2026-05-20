@@ -26241,6 +26241,15 @@
                   "schema": {
                      "type": "string"
                   },
+                  "name": "region",
+                  "in": "query",
+                  "required": false,
+                  "description": "Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true."
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
                   "description": "The ID of the workspace",
                   "name": "workspace_id",
                   "in": "path",

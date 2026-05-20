@@ -21,7 +21,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegration_typeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspace_id}/{integration_type}{?env*,external_xref*,failure_redirect*,lang*,redirect*,scopes*,state*,subdomain*,success_redirect*}", pathParameters)
+        public WithIntegration_typeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspace_id}/{integration_type}{?env*,external_xref*,failure_redirect*,lang*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegration_typeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspace_id}/{integration_type}{?env*,external_xref*,failure_redirect*,lang*,redirect*,scopes*,state*,subdomain*,success_redirect*}", rawUrl)
+        public WithIntegration_typeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspace_id}/{integration_type}{?env*,external_xref*,failure_redirect*,lang*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", rawUrl)
         {
         }
         /// <summary>
@@ -125,6 +125,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
 #endif
             [QueryParameter("redirect")]
             public bool? Redirect { get; set; }
+            /// <summary>Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("region")]
+            public string? Region { get; set; }
+#nullable restore
+#else
+            [QueryParameter("region")]
+            public string Region { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("scopes")]
