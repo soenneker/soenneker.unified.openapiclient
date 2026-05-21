@@ -60,13 +60,13 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Payslip.Item
         #pragma warning disable CS1591
         Details,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "deduction")]
         #pragma warning disable CS1591
         Deduction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }

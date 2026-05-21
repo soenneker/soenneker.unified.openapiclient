@@ -4316,10 +4316,7 @@
                "is_required": {
                   "type": "boolean"
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "property_AssessmentPackage_parameters": {
             "type": "array",
@@ -4350,11 +4347,7 @@
                "processing_time": {
                   "type": "number"
                }
-            },
-            "required": [
-               "regions",
-               "cost_amount"
-            ]
+            }
          },
          "property_AssessmentPackage_regions": {
             "type": "array",
@@ -4436,8 +4429,6 @@
                }
             },
             "required": [
-               "id",
-               "name",
                "type"
             ],
             "description": "Used by assessment providers to SUBMIT packages to ATS systems"
@@ -4842,10 +4833,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "MessagingChannels": {
             "type": "array",
@@ -5144,10 +5132,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "property_MessagingEvent_message_channel_ids": {
             "type": "array",
@@ -7753,10 +7738,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "content"
-            ]
+            }
          },
          "UcComments": {
             "type": "array",
@@ -9383,10 +9365,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "AtsCompanies": {
             "type": "array",
@@ -10240,7 +10219,7 @@
                }
             },
             "required": [
-               "start_at"
+               "user_id"
             ]
          },
          "HrisTimeoffs": {
@@ -10435,17 +10414,14 @@
                "details": {
                   "$ref": "#/components/schemas/property_HrisPayslip_details"
                },
+               "deduction": {
+                  "$ref": "#/components/schemas/property_HrisPayslip_deduction"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
-               },
-               "deduction": {
-                  "$ref": "#/components/schemas/property_HrisPayslip_deduction"
                }
-            },
-            "required": [
-               "raw"
-            ]
+            }
          },
          "HrisPayslips": {
             "type": "array",
@@ -10532,10 +10508,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "HrisDevices": {
             "type": "array",
@@ -11064,7 +11037,6 @@
                }
             },
             "required": [
-               "id",
                "name",
                "type"
             ]
@@ -12394,9 +12366,6 @@
                "refund_reason": {
                   "type": "string"
                },
-               "organization_id": {
-                  "type": "string"
-               },
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingCreditmemo_lineitems"
                },
@@ -12432,6 +12401,9 @@
                },
                "send": {
                   "type": "boolean"
+               },
+               "organization_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -14680,10 +14652,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "available"
-            ]
+            }
          },
          "CommerceInventories": {
             "type": "array",
@@ -14840,10 +14809,7 @@
                "categories": {
                   "$ref": "#/components/schemas/property_CommerceLocation_categories"
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "CommerceLocations": {
             "type": "array",
@@ -14922,10 +14888,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "content"
-            ]
+            }
          },
          "property_CommerceReview_comments": {
             "type": "array",
@@ -15027,10 +14990,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "item_id"
-            ]
+            }
          },
          "CommerceReviews": {
             "type": "array",
@@ -15222,6 +15182,9 @@
                "contact_id": {
                   "type": "string"
                },
+               "payment_method": {
+                  "type": "string"
+               },
                "type": {
                   "type": "string",
                   "enum": [
@@ -15229,9 +15192,6 @@
                      "BILL"
                   ],
                   "x-speakeasy-unknown-values": "allow"
-               },
-               "payment_method": {
-                  "type": "string"
                },
                "currency": {
                   "type": "string",
@@ -15246,10 +15206,16 @@
                "bill_id": {
                   "type": "string"
                },
+               "link_id": {
+                  "type": "string"
+               },
                "account_id": {
                   "type": "string"
                },
                "reference": {
+                  "type": "string"
+               },
+               "organization_id": {
                   "type": "string"
                },
                "raw": {
@@ -15425,11 +15391,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "total_amount",
-               "payment_id"
-            ]
+            }
          },
          "PaymentRefunds": {
             "type": "array",
@@ -15472,10 +15434,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "total_amount"
-            ]
+            }
          },
          "PaymentPayouts": {
             "type": "array",
@@ -15787,10 +15746,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "KmsSpaces": {
             "type": "array",
@@ -15971,7 +15927,6 @@
                }
             },
             "required": [
-               "title",
                "type"
             ]
          },
@@ -16029,10 +15984,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "content"
-            ]
+            }
          },
          "KmsComments": {
             "type": "array",
@@ -16371,10 +16323,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "text"
-            ]
+            }
          },
          "TaskComments": {
             "type": "array",
@@ -16470,10 +16419,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "CalendarCalendars": {
             "type": "array",
@@ -21886,10 +21832,7 @@
                "time_estimate_minutes": {
                   "type": "number"
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "LmsCourses": {
             "type": "array",
@@ -21960,11 +21903,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name",
-               "course_id"
-            ]
+            }
          },
          "LmsClasses": {
             "type": "array",
@@ -22687,10 +22626,7 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            },
-            "required": [
-               "name"
-            ]
+            }
          },
          "FormsForms": {
             "type": "array",
@@ -44944,8 +44880,8 @@
                            "gross_amount",
                            "net_amount",
                            "details",
-                           "raw",
-                           "deduction"
+                           "deduction",
+                           "raw"
                         ]
                      }
                   },
@@ -45098,8 +45034,8 @@
                            "gross_amount",
                            "net_amount",
                            "details",
-                           "raw",
-                           "deduction"
+                           "deduction",
+                           "raw"
                         ]
                      }
                   },
@@ -53025,13 +52961,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
-                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53190,13 +53126,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
-                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53278,13 +53214,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
-                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53374,13 +53310,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
-                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -53480,13 +53416,13 @@
                            "currency",
                            "notes",
                            "refund_reason",
-                           "organization_id",
                            "lineitems",
                            "status",
                            "url",
                            "payment_collection_method",
                            "attachments",
                            "send",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -63757,14 +63693,16 @@
                            "updated_at",
                            "total_amount",
                            "contact_id",
-                           "type",
                            "payment_method",
+                           "type",
                            "currency",
                            "notes",
                            "invoice_id",
                            "bill_id",
+                           "link_id",
                            "account_id",
                            "reference",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -63963,14 +63901,16 @@
                            "updated_at",
                            "total_amount",
                            "contact_id",
-                           "type",
                            "payment_method",
+                           "type",
                            "currency",
                            "notes",
                            "invoice_id",
                            "bill_id",
+                           "link_id",
                            "account_id",
                            "reference",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -64038,14 +63978,16 @@
                            "updated_at",
                            "total_amount",
                            "contact_id",
-                           "type",
                            "payment_method",
+                           "type",
                            "currency",
                            "notes",
                            "invoice_id",
                            "bill_id",
+                           "link_id",
                            "account_id",
                            "reference",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -64121,14 +64063,16 @@
                            "updated_at",
                            "total_amount",
                            "contact_id",
-                           "type",
                            "payment_method",
+                           "type",
                            "currency",
                            "notes",
                            "invoice_id",
                            "bill_id",
+                           "link_id",
                            "account_id",
                            "reference",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -64214,14 +64158,16 @@
                            "updated_at",
                            "total_amount",
                            "contact_id",
-                           "type",
                            "payment_method",
+                           "type",
                            "currency",
                            "notes",
                            "invoice_id",
                            "bill_id",
+                           "link_id",
                            "account_id",
                            "reference",
+                           "organization_id",
                            "raw"
                         ]
                      }

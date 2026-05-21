@@ -28,13 +28,13 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
         #pragma warning disable CS1591
         Contact_id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "type")]
-        #pragma warning disable CS1591
-        Type,
-        #pragma warning restore CS1591
         [EnumMember(Value = "payment_method")]
         #pragma warning disable CS1591
         Payment_method,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
         #pragma warning restore CS1591
         [EnumMember(Value = "currency")]
         #pragma warning disable CS1591
@@ -52,6 +52,10 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
         #pragma warning disable CS1591
         Bill_id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "link_id")]
+        #pragma warning disable CS1591
+        Link_id,
+        #pragma warning restore CS1591
         [EnumMember(Value = "account_id")]
         #pragma warning disable CS1591
         Account_id,
@@ -59,6 +63,10 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
         [EnumMember(Value = "reference")]
         #pragma warning disable CS1591
         Reference,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization_id")]
+        #pragma warning disable CS1591
+        Organization_id,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
