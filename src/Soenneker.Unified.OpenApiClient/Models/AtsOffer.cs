@@ -50,14 +50,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The raw property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_raw? Raw { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_raw Raw { get; set; }
-#endif
         /// <summary>The rejected_at property</summary>
         public DateTimeOffset? RejectedAt { get; set; }
         /// <summary>The sent_at property</summary>
@@ -99,7 +91,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },
                 { "employee_user_id", n => { EmployeeUserId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_raw.CreateFromDiscriminatorValue); } },
                 { "rejected_at", n => { RejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -120,7 +111,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("creator_user_id", CreatorUserId);
             writer.WriteStringValue("employee_user_id", EmployeeUserId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("rejected_at", RejectedAt);
             writer.WriteDateTimeOffsetValue("sent_at", SentAt);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

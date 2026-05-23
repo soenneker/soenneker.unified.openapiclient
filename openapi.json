@@ -9101,10 +9101,6 @@
                      "REJECTED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
                }
             }
          },
