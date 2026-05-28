@@ -18,10 +18,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichCompany_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichCompany_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress Address { get; set; }
 #endif
         /// <summary>The alexa_rank property</summary>
         public double? AlexaRank { get; set; }
@@ -220,7 +220,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichCompany_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichCompany_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress.CreateFromDiscriminatorValue); } },
                 { "alexa_rank", n => { AlexaRank = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "crunchbase_url", n => { CrunchbaseUrl = n.GetStringValue(); } },
@@ -256,7 +256,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichCompany_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress>("address", Address);
             writer.WriteDoubleValue("alexa_rank", AlexaRank);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("crunchbase_url", CrunchbaseUrl);

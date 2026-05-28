@@ -18,10 +18,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmCompany_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmCompanyAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmCompany_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmCompanyAddress Address { get; set; }
 #endif
         /// <summary>An array of contact IDs associated with this company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -184,7 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmCompany_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmCompany_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmCompanyAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmCompanyAddress.CreateFromDiscriminatorValue); } },
                 { "contact_ids", n => { ContactIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deal_ids", n => { DealIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -214,7 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmCompany_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmCompanyAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("contact_ids", ContactIds);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("deal_ids", DealIds);

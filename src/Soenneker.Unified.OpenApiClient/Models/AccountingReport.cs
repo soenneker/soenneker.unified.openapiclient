@@ -18,10 +18,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The balance_sheet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_balance_sheet? BalanceSheet { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportBalanceSheet? BalanceSheet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_balance_sheet BalanceSheet { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportBalanceSheet BalanceSheet { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -54,10 +54,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The profit_and_loss property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_profit_and_loss? ProfitAndLoss { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss? ProfitAndLoss { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_profit_and_loss ProfitAndLoss { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss ProfitAndLoss { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,10 +72,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The trial_balance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_trial_balance? TrialBalance { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance? TrialBalance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_trial_balance TrialBalance { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance TrialBalance { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type? Type { get; set; }
@@ -106,16 +106,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "balance_sheet", n => { BalanceSheet = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_balance_sheet>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_balance_sheet.CreateFromDiscriminatorValue); } },
+                { "balance_sheet", n => { BalanceSheet = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportBalanceSheet>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportBalanceSheet.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "profit_and_loss", n => { ProfitAndLoss = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_profit_and_loss>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_profit_and_loss.CreateFromDiscriminatorValue); } },
+                { "profit_and_loss", n => { ProfitAndLoss = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "trial_balance", n => { TrialBalance = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_trial_balance>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_trial_balance.CreateFromDiscriminatorValue); } },
+                { "trial_balance", n => { TrialBalance = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -127,16 +127,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_balance_sheet>("balance_sheet", BalanceSheet);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportBalanceSheet>("balance_sheet", BalanceSheet);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_profit_and_loss>("profit_and_loss", ProfitAndLoss);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss>("profit_and_loss", ProfitAndLoss);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingReport_trial_balance>("trial_balance", TrialBalance);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance>("trial_balance", TrialBalance);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

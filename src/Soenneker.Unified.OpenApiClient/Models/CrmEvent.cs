@@ -18,10 +18,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The call object, when type = call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_call? Call { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventCall? Call { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_call Call { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventCall Call { get; set; }
 #endif
         /// <summary>An array of company IDs associated with this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,18 +52,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The email object, when type = email</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_email? Email { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventEmail? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_email Email { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventEmail Email { get; set; }
 #endif
         /// <summary>The form property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_form? Form { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventForm? Form { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_form Form { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventForm Form { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,34 +84,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The marketing_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_marketing_email? MarketingEmail { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail? MarketingEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_marketing_email MarketingEmail { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail MarketingEmail { get; set; }
 #endif
         /// <summary>The meeting object, when type = meeting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_meeting? Meeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting? Meeting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_meeting Meeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting Meeting { get; set; }
 #endif
         /// <summary>The note object, when type = note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_note? Note { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote? Note { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_note Note { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote Note { get; set; }
 #endif
         /// <summary>The page_view property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_page_view? PageView { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView? PageView { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_page_view PageView { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView PageView { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,10 +124,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The task object, when type = task</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_task? Task { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask? Task { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_task Task { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask Task { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type? Type { get; set; }
@@ -166,21 +166,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "call", n => { Call = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_call>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_call.CreateFromDiscriminatorValue); } },
+                { "call", n => { Call = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventCall>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventCall.CreateFromDiscriminatorValue); } },
                 { "company_ids", n => { CompanyIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contact_ids", n => { ContactIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deal_ids", n => { DealIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_email>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_email.CreateFromDiscriminatorValue); } },
-                { "form", n => { Form = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_form>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_form.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventEmail>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventEmail.CreateFromDiscriminatorValue); } },
+                { "form", n => { Form = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventForm>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventForm.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lead_ids", n => { LeadIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "marketing_email", n => { MarketingEmail = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_marketing_email>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_marketing_email.CreateFromDiscriminatorValue); } },
-                { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_meeting>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_meeting.CreateFromDiscriminatorValue); } },
-                { "note", n => { Note = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_note>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_note.CreateFromDiscriminatorValue); } },
-                { "page_view", n => { PageView = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_page_view>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_page_view.CreateFromDiscriminatorValue); } },
+                { "marketing_email", n => { MarketingEmail = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail.CreateFromDiscriminatorValue); } },
+                { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting.CreateFromDiscriminatorValue); } },
+                { "note", n => { Note = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote.CreateFromDiscriminatorValue); } },
+                { "page_view", n => { PageView = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw.CreateFromDiscriminatorValue); } },
-                { "task", n => { Task = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_task>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_task.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -193,21 +193,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_call>("call", Call);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventCall>("call", Call);
             writer.WriteCollectionOfPrimitiveValues<string>("company_ids", CompanyIds);
             writer.WriteCollectionOfPrimitiveValues<string>("contact_ids", ContactIds);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("deal_ids", DealIds);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_email>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_form>("form", Form);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventEmail>("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventForm>("form", Form);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("lead_ids", LeadIds);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_marketing_email>("marketing_email", MarketingEmail);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_meeting>("meeting", Meeting);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_note>("note", Note);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_page_view>("page_view", PageView);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail>("marketing_email", MarketingEmail);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>("meeting", Meeting);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>("note", Note);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>("page_view", PageView);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw>("raw", Raw);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmEvent_task>("task", Task);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask>("task", Task);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

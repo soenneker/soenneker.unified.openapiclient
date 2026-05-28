@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CommerceLocation_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceLocationAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CommerceLocation_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceLocationAddress Address { get; set; }
 #endif
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +167,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CommerceLocation_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_CommerceLocation_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceLocationAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceLocationAddress.CreateFromDiscriminatorValue); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -198,7 +198,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CommerceLocation_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceLocationAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);

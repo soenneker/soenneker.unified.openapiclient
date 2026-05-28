@@ -57,10 +57,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The telephone number called</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_UcCall_telephone? Telephone { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone? Telephone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_UcCall_telephone Telephone { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone Telephone { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.UcCall_type? Type { get; set; }
@@ -123,7 +123,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCall_raw>(global::Soenneker.Unified.OpenApiClient.Models.UcCall_raw.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "telephone", n => { Telephone = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_UcCall_telephone>(global::Soenneker.Unified.OpenApiClient.Models.Property_UcCall_telephone.CreateFromDiscriminatorValue); } },
+                { "telephone", n => { Telephone = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone>(global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCall_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -146,7 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCall_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_UcCall_telephone>("telephone", Telephone);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone>("telephone", Telephone);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCall_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

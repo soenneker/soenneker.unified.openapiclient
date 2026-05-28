@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The attendee property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarRecordingTranscript_attendee? Attendee { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarRecordingTranscriptAttendee? Attendee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarRecordingTranscript_attendee Attendee { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarRecordingTranscriptAttendee Attendee { get; set; }
 #endif
         /// <summary>The end_at property</summary>
         public DateTimeOffset? EndAt { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendee", n => { Attendee = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarRecordingTranscript_attendee>(global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarRecordingTranscript_attendee.CreateFromDiscriminatorValue); } },
+                { "attendee", n => { Attendee = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarRecordingTranscriptAttendee>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarRecordingTranscriptAttendee.CreateFromDiscriminatorValue); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarRecordingTranscript_attendee>("attendee", Attendee);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarRecordingTranscriptAttendee>("attendee", Attendee);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("language", Language);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

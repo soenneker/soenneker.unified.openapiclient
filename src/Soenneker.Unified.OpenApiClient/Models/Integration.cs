@@ -20,10 +20,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The api property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api? Api { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_api? Api { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api Api { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_api Api { get; set; }
 #endif
         /// <summary>The api_docs_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,10 +38,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The categories of support solutions that this integration has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration>? Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration> Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories?> Categories { get; set; }
 #endif
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,10 +102,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The partnership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership? Partnership { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership? Partnership { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership Partnership { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership Partnership { get; set; }
 #endif
         /// <summary>The popularity property</summary>
         public double? Popularity { get; set; }
@@ -120,26 +120,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The saml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml? Saml { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_saml? Saml { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml Saml { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_saml Saml { get; set; }
 #endif
         /// <summary>The sandbox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox? Sandbox { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox? Sandbox { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox Sandbox { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox Sandbox { get; set; }
 #endif
         /// <summary>The support property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_Integration_support? Support { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_support? Support { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_Integration_support Support { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Integration_support Support { get; set; }
 #endif
         /// <summary>The tested_at property</summary>
         public DateTimeOffset? TestedAt { get; set; }
@@ -217,10 +217,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active_healthy_connections", n => { ActiveHealthyConnections = n.GetDoubleValue(); } },
-                { "api", n => { Api = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api>(global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api.CreateFromDiscriminatorValue); } },
+                { "api", n => { Api = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_api>(global::Soenneker.Unified.OpenApiClient.Models.Integration_api.CreateFromDiscriminatorValue); } },
                 { "api_docs_url", n => { ApiDocsUrl = n.GetStringValue(); } },
                 { "beta", n => { Beta = n.GetBoolValue(); } },
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration>(global::Soenneker.Unified.OpenApiClient.Models.Integration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories>()?.AsList(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -231,12 +231,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_hidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "partnership", n => { Partnership = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership>(global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership.CreateFromDiscriminatorValue); } },
+                { "partnership", n => { Partnership = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership>(global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership.CreateFromDiscriminatorValue); } },
                 { "popularity", n => { Popularity = n.GetDoubleValue(); } },
                 { "rate_limit_description", n => { RateLimitDescription = n.GetStringValue(); } },
-                { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml>(global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml.CreateFromDiscriminatorValue); } },
-                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox>(global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox.CreateFromDiscriminatorValue); } },
-                { "support", n => { Support = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_Integration_support>(global::Soenneker.Unified.OpenApiClient.Models.Property_Integration_support.CreateFromDiscriminatorValue); } },
+                { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_saml>(global::Soenneker.Unified.OpenApiClient.Models.Integration_saml.CreateFromDiscriminatorValue); } },
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox>(global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox.CreateFromDiscriminatorValue); } },
+                { "support", n => { Support = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_support>(global::Soenneker.Unified.OpenApiClient.Models.Integration_support.CreateFromDiscriminatorValue); } },
                 { "tested_at", n => { TestedAt = n.GetDateTimeOffsetValue(); } },
                 { "text_color", n => { TextColor = n.GetStringValue(); } },
                 { "token_instructions", n => { TokenInstructions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -254,10 +254,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("active_healthy_connections", ActiveHealthyConnections);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api>("api", Api);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_api>("api", Api);
             writer.WriteStringValue("api_docs_url", ApiDocsUrl);
             writer.WriteBoolValue("beta", Beta);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories>("categories", Categories);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
@@ -268,12 +268,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_hidden", IsHidden);
             writer.WriteStringValue("logo_url", LogoUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership>("partnership", Partnership);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership>("partnership", Partnership);
             writer.WriteDoubleValue("popularity", Popularity);
             writer.WriteStringValue("rate_limit_description", RateLimitDescription);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml>("saml", Saml);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox>("sandbox", Sandbox);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_Integration_support>("support", Support);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_saml>("saml", Saml);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox>("sandbox", Sandbox);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_support>("support", Support);
             writer.WriteDateTimeOffsetValue("tested_at", TestedAt);
             writer.WriteStringValue("text_color", TextColor);
             writer.WriteCollectionOfPrimitiveValues<string>("token_instructions", TokenInstructions);
@@ -282,422 +282,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("web_url", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Integration_api : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1? IntegrationApiMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1 IntegrationApiMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2>? IntegrationApiMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2> IntegrationApiMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_api();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2>(global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2> integrationApiMember2Value)
-                {
-                    result.IntegrationApiMember2 = integrationApiMember2Value;
-                }
-                else {
-                    result.IntegrationApiMember1 = new global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IntegrationApiMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationApiMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(IntegrationApiMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember2>(null, IntegrationApiMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_apiMember1>(null, IntegrationApiMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Integration_partnership : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1? IntegrationPartnershipMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1 IntegrationPartnershipMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2>? IntegrationPartnershipMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2> IntegrationPartnershipMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_partnership();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2>(global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2> integrationPartnershipMember2Value)
-                {
-                    result.IntegrationPartnershipMember2 = integrationPartnershipMember2Value;
-                }
-                else {
-                    result.IntegrationPartnershipMember1 = new global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IntegrationPartnershipMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationPartnershipMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(IntegrationPartnershipMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember2>(null, IntegrationPartnershipMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnershipMember1>(null, IntegrationPartnershipMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Integration_saml : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1? IntegrationSamlMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1 IntegrationSamlMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2>? IntegrationSamlMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2> IntegrationSamlMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_saml();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2>(global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2> integrationSamlMember2Value)
-                {
-                    result.IntegrationSamlMember2 = integrationSamlMember2Value;
-                }
-                else {
-                    result.IntegrationSamlMember1 = new global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IntegrationSamlMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationSamlMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(IntegrationSamlMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember2>(null, IntegrationSamlMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_samlMember1>(null, IntegrationSamlMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Integration_sandbox : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1? IntegrationSandboxMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1 IntegrationSandboxMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2>? IntegrationSandboxMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2> IntegrationSandboxMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.Integration.Integration_sandbox();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2>(global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2> integrationSandboxMember2Value)
-                {
-                    result.IntegrationSandboxMember2 = integrationSandboxMember2Value;
-                }
-                else {
-                    result.IntegrationSandboxMember1 = new global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IntegrationSandboxMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationSandboxMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(IntegrationSandboxMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember2>(null, IntegrationSandboxMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandboxMember1>(null, IntegrationSandboxMember1);
-                }
-            }
         }
     }
 }

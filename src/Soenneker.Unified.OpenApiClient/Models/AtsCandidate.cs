@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AtsCandidate_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsCandidateAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AtsCandidate_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsCandidateAddress Address { get; set; }
 #endif
         /// <summary>The company_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -231,7 +231,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AtsCandidate_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_AtsCandidate_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsCandidateAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsCandidateAddress.CreateFromDiscriminatorValue); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -267,7 +267,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AtsCandidate_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsCandidateAddress>("address", Address);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteStringValue("company_name", CompanyName);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

@@ -27,18 +27,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Customs information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_customs? Customs { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms? Customs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_customs Customs { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms Customs { get; set; }
 #endif
         /// <summary>Origin address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_from_address? FromAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress? FromAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_from_address FromAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress FromAddress { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Insurance details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_insurance? Insurance { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance? Insurance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_insurance Insurance { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance Insurance { get; set; }
 #endif
         /// <summary>The is_adult_signature_required property</summary>
         public bool? IsAdultSignatureRequired { get; set; }
@@ -147,10 +147,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Return address (may differ from from_address)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_return_address? ReturnAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress? ReturnAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_return_address ReturnAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress ReturnAddress { get; set; }
 #endif
         /// <summary>The return_authorization_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,10 +193,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Destination address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_to_address? ToAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress? ToAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_to_address ToAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress ToAddress { get; set; }
 #endif
         /// <summary>The tracking_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -251,10 +251,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "carrier_id", n => { CarrierId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "customs", n => { Customs = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_customs>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_customs.CreateFromDiscriminatorValue); } },
-                { "from_address", n => { FromAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_from_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_from_address.CreateFromDiscriminatorValue); } },
+                { "customs", n => { Customs = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms.CreateFromDiscriminatorValue); } },
+                { "from_address", n => { FromAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "insurance", n => { Insurance = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_insurance>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_insurance.CreateFromDiscriminatorValue); } },
+                { "insurance", n => { Insurance = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance.CreateFromDiscriminatorValue); } },
                 { "is_adult_signature_required", n => { IsAdultSignatureRequired = n.GetBoolValue(); } },
                 { "is_international", n => { IsInternational = n.GetBoolValue(); } },
                 { "is_rate_guaranteed", n => { IsRateGuaranteed = n.GetBoolValue(); } },
@@ -272,7 +272,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "rate_service_name", n => { RateServiceName = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw>(global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw.CreateFromDiscriminatorValue); } },
                 { "reference_number", n => { ReferenceNumber = n.GetStringValue(); } },
-                { "return_address", n => { ReturnAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_return_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_return_address.CreateFromDiscriminatorValue); } },
+                { "return_address", n => { ReturnAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress.CreateFromDiscriminatorValue); } },
                 { "return_authorization_number", n => { ReturnAuthorizationNumber = n.GetStringValue(); } },
                 { "return_reason", n => { ReturnReason = n.GetStringValue(); } },
                 { "return_type", n => { ReturnType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_return_type>(); } },
@@ -280,7 +280,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "shipped_at", n => { ShippedAt = n.GetDateTimeOffsetValue(); } },
                 { "special_instructions", n => { SpecialInstructions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_status>(); } },
-                { "to_address", n => { ToAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_to_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_to_address.CreateFromDiscriminatorValue); } },
+                { "to_address", n => { ToAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress.CreateFromDiscriminatorValue); } },
                 { "tracking_id", n => { TrackingId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "warehouse_location_id", n => { WarehouseLocationId = n.GetStringValue(); } },
@@ -296,10 +296,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("carrier_id", CarrierId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_customs>("customs", Customs);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_from_address>("from_address", FromAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms>("customs", Customs);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress>("from_address", FromAddress);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_insurance>("insurance", Insurance);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance>("insurance", Insurance);
             writer.WriteBoolValue("is_adult_signature_required", IsAdultSignatureRequired);
             writer.WriteBoolValue("is_international", IsInternational);
             writer.WriteBoolValue("is_rate_guaranteed", IsRateGuaranteed);
@@ -317,7 +317,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("rate_service_name", RateServiceName);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw>("raw", Raw);
             writer.WriteStringValue("reference_number", ReferenceNumber);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_return_address>("return_address", ReturnAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress>("return_address", ReturnAddress);
             writer.WriteStringValue("return_authorization_number", ReturnAuthorizationNumber);
             writer.WriteStringValue("return_reason", ReturnReason);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_return_type>("return_type", ReturnType);
@@ -325,7 +325,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("shipped_at", ShippedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("special_instructions", SpecialInstructions);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingShipment_to_address>("to_address", ToAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress>("to_address", ToAddress);
             writer.WriteStringValue("tracking_id", TrackingId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("warehouse_location_id", WarehouseLocationId);

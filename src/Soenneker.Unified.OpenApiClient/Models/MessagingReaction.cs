@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The member property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingReaction_member? Member { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingReactionMember? Member { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingReaction_member Member { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingReactionMember Member { get; set; }
 #endif
         /// <summary>The reaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "member", n => { Member = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingReaction_member>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingReaction_member.CreateFromDiscriminatorValue); } },
+                { "member", n => { Member = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingReactionMember>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingReactionMember.CreateFromDiscriminatorValue); } },
                 { "reaction", n => { Reaction = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingReaction_member>("member", Member);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingReactionMember>("member", Member);
             writer.WriteStringValue("reaction", Reaction);
             writer.WriteAdditionalData(AdditionalData);
         }

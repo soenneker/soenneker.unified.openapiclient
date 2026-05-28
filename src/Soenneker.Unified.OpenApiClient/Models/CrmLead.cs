@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmLead_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmLeadAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CrmLead_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmLeadAddress Address { get; set; }
 #endif
         /// <summary>The company_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmLead_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_CrmLead_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmLeadAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmLeadAddress.CreateFromDiscriminatorValue); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
@@ -210,7 +210,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CrmLead_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmLeadAddress>("address", Address);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteStringValue("company_name", CompanyName);
             writer.WriteStringValue("contact_id", ContactId);

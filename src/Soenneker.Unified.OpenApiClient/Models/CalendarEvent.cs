@@ -97,10 +97,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The organizer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarEvent_organizer? Organizer { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer? Organizer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarEvent_organizer Organizer { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer Organizer { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,7 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarEvent_organizer>(global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarEvent_organizer.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw.CreateFromDiscriminatorValue); } },
                 { "recurrence", n => { Recurrence = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recurring_event_id", n => { RecurringEventId = n.GetStringValue(); } },
@@ -241,7 +241,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarEvent_organizer>("organizer", Organizer);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>("organizer", Organizer);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>("recurrence", Recurrence);
             writer.WriteStringValue("recurring_event_id", RecurringEventId);

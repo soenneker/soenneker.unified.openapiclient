@@ -25,10 +25,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>for email systems, this field represents the From value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingMessage_author_member? AuthorMember { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingMessageAuthorMember? AuthorMember { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingMessage_author_member AuthorMember { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingMessageAuthorMember AuthorMember { get; set; }
 #endif
         /// <summary>The buttons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -216,7 +216,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "author_member", n => { AuthorMember = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingMessage_author_member>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingMessage_author_member.CreateFromDiscriminatorValue); } },
+                { "author_member", n => { AuthorMember = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingMessageAuthorMember>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingMessageAuthorMember.CreateFromDiscriminatorValue); } },
                 { "buttons", n => { Buttons = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton>(global::Soenneker.Unified.OpenApiClient.Models.MessagingButton.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "channel_id", n => { ChannelId = n.GetStringValue(); } },
                 { "channel_ids", n => { ChannelIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -250,7 +250,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment>("attachments", Attachments);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingMessage_author_member>("author_member", AuthorMember);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingMessageAuthorMember>("author_member", AuthorMember);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton>("buttons", Buttons);
             writer.WriteStringValue("channel_id", ChannelId);
             writer.WriteCollectionOfPrimitiveValues<string>("channel_ids", ChannelIds);

@@ -15,28 +15,28 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The ad property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_ad? Ad { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd? Ad { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_ad Ad { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd Ad { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The campaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign? Campaign { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign? Campaign { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign Campaign { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign Campaign { get; set; }
 #endif
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group? Group { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup? Group { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group Group { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup Group { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics_type? Type { get; set; }
@@ -67,9 +67,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ad", n => { Ad = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_ad>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_ad.CreateFromDiscriminatorValue); } },
-                { "campaign", n => { Campaign = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign.CreateFromDiscriminatorValue); } },
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group.CreateFromDiscriminatorValue); } },
+                { "ad", n => { Ad = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd.CreateFromDiscriminatorValue); } },
+                { "campaign", n => { Campaign = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics_type>(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
@@ -81,9 +81,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_ad>("ad", Ad);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_campaign>("campaign", Campaign);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsReportMetrics_group>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd>("ad", Ad);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>("campaign", Campaign);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics_type>("type", Type);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

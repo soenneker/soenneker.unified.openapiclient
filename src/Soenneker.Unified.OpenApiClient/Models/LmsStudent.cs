@@ -17,20 +17,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_LmsStudent_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyLmsStudentAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_LmsStudent_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyLmsStudentAddress Address { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>? Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent_emails>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail> Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent_emails> Emails { get; set; }
 #endif
         /// <summary>The first_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,9 +115,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_LmsStudent_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_LmsStudent_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyLmsStudentAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyLmsStudentAddress.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>(global::Soenneker.Unified.OpenApiClient.Models.LmsEmail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent_emails>(global::Soenneker.Unified.OpenApiClient.Models.LmsStudent_emails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
@@ -135,9 +135,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_LmsStudent_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyLmsStudentAddress>("address", Address);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent_emails>("emails", Emails);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);

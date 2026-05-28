@@ -91,18 +91,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_meta? Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_meta Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserMeta Meta { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_name? Name { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_name Name { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserName Name { get; set; }
 #endif
         /// <summary>The nickName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,10 +163,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Users?>? Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas?>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Users?> Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas?> Schemas { get; set; }
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,26 +187,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_enterprise_2_0_User? UrnIetfParamsScimSchemasExtensionEnterprise20User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User? UrnIetfParamsScimSchemasExtensionEnterprise20User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_enterprise_2_0_User UrnIetfParamsScimSchemasExtensionEnterprise20User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User UrnIetfParamsScimSchemasExtensionEnterprise20User { get; set; }
 #endif
         /// <summary>The urnIetfParamsScimSchemasExtensionLatticeAttributes10User property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_lattice_attributes_1_0_User? UrnIetfParamsScimSchemasExtensionLatticeAttributes10User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User? UrnIetfParamsScimSchemasExtensionLatticeAttributes10User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_lattice_attributes_1_0_User UrnIetfParamsScimSchemasExtensionLatticeAttributes10User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User UrnIetfParamsScimSchemasExtensionLatticeAttributes10User { get; set; }
 #endif
         /// <summary>The urnIetfParamsScimSchemasExtensionPeakon20User property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_peakon_2_0_User? UrnIetfParamsScimSchemasExtensionPeakon20User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User? UrnIetfParamsScimSchemasExtensionPeakon20User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_peakon_2_0_User UrnIetfParamsScimSchemasExtensionPeakon20User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User UrnIetfParamsScimSchemasExtensionPeakon20User { get; set; }
 #endif
         /// <summary>The userName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -267,8 +267,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ims", n => { Ims = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimIms>(global::Soenneker.Unified.OpenApiClient.Models.ScimIms.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_meta>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_meta.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_name>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_name.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserMeta>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserMeta.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserName>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserName.CreateFromDiscriminatorValue); } },
                 { "nickName", n => { NickName = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimPhoneNumber>(global::Soenneker.Unified.OpenApiClient.Models.ScimPhoneNumber.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -276,12 +276,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "profileUrl", n => { ProfileUrl = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>(global::Soenneker.Unified.OpenApiClient.Models.ScimRole.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Users>()?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas>()?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", n => { UrnIetfParamsScimSchemasExtensionEnterprise20User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_enterprise_2_0_User>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_enterprise_2_0_User.CreateFromDiscriminatorValue); } },
-                { "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User", n => { UrnIetfParamsScimSchemasExtensionLatticeAttributes10User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_lattice_attributes_1_0_User>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_lattice_attributes_1_0_User.CreateFromDiscriminatorValue); } },
-                { "urn:ietf:params:scim:schemas:extension:peakon:2.0:User", n => { UrnIetfParamsScimSchemasExtensionPeakon20User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_peakon_2_0_User>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_peakon_2_0_User.CreateFromDiscriminatorValue); } },
+                { "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", n => { UrnIetfParamsScimSchemasExtensionEnterprise20User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User.CreateFromDiscriminatorValue); } },
+                { "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User", n => { UrnIetfParamsScimSchemasExtensionLatticeAttributes10User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.CreateFromDiscriminatorValue); } },
+                { "urn:ietf:params:scim:schemas:extension:peakon:2.0:User", n => { UrnIetfParamsScimSchemasExtensionPeakon20User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User.CreateFromDiscriminatorValue); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
                 { "userType", n => { UserType = n.GetStringValue(); } },
                 { "x509Certificates", n => { X509Certificates = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>(global::Soenneker.Unified.OpenApiClient.Models.ScimRole.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -304,8 +304,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimIms>("ims", Ims);
             writer.WriteStringValue("locale", Locale);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_meta>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserMeta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserName>("name", Name);
             writer.WriteStringValue("nickName", NickName);
             writer.WriteStringValue("password", Password);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimPhoneNumber>("phoneNumbers", PhoneNumbers);
@@ -313,12 +313,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("profileUrl", ProfileUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>("roles", Roles);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Users>("schemas", Schemas);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas>("schemas", Schemas);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_enterprise_2_0_User>("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", UrnIetfParamsScimSchemasExtensionEnterprise20User);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_lattice_attributes_1_0_User>("urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User", UrnIetfParamsScimSchemasExtensionLatticeAttributes10User);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimUser_urn_ietf_params_scim_schemas_extension_peakon_2_0_User>("urn:ietf:params:scim:schemas:extension:peakon:2.0:User", UrnIetfParamsScimSchemasExtensionPeakon20User);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User>("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", UrnIetfParamsScimSchemasExtensionEnterprise20User);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User>("urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User", UrnIetfParamsScimSchemasExtensionLatticeAttributes10User);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User>("urn:ietf:params:scim:schemas:extension:peakon:2.0:User", UrnIetfParamsScimSchemasExtensionPeakon20User);
             writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("userType", UserType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>("x509Certificates", X509Certificates);

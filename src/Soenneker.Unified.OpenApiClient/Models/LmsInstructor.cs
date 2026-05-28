@@ -19,10 +19,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>? Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail> Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails> Emails { get; set; }
 #endif
         /// <summary>The first_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>(global::Soenneker.Unified.OpenApiClient.Models.LmsEmail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsEmail>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>("emails", Emails);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);

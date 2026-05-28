@@ -17,18 +17,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The button property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_button? Button { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventButton? Button { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_button Button { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventButton Button { get; set; }
 #endif
         /// <summary>The channel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_channel? Channel { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventChannel? Channel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_channel Channel { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventChannel Channel { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_message? Message { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_message Message { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage Message { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,10 +63,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_user? User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_user User { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent"/> and sets the default values.
@@ -93,15 +93,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "button", n => { Button = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_button>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_button.CreateFromDiscriminatorValue); } },
-                { "channel", n => { Channel = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_channel>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_channel.CreateFromDiscriminatorValue); } },
+                { "button", n => { Button = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventButton>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventButton.CreateFromDiscriminatorValue); } },
+                { "channel", n => { Channel = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventChannel>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventChannel.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_replacing_original", n => { IsReplacingOriginal = n.GetBoolValue(); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_message>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_message.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_type>(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_user>(global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,15 +111,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_button>("button", Button);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_channel>("channel", Channel);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventButton>("button", Button);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventChannel>("channel", Channel);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_replacing_original", IsReplacingOriginal);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_message>("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage>("message", Message);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MessagingEvent_user>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

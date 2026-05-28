@@ -75,10 +75,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The organizer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarWebinar_organizer? Organizer { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer? Organizer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarWebinar_organizer Organizer { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer Organizer { get; set; }
 #endif
         /// <summary>The panelist_password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +211,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_webcast", n => { IsWebcast = n.GetBoolValue(); } },
                 { "join_url", n => { JoinUrl = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarWebinar_organizer>(global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarWebinar_organizer.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer.CreateFromDiscriminatorValue); } },
                 { "panelist_password", n => { PanelistPassword = n.GetStringValue(); } },
                 { "panelists", n => { Panelists = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw.CreateFromDiscriminatorValue); } },
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_webcast", IsWebcast);
             writer.WriteStringValue("join_url", JoinUrl);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_CalendarWebinar_organizer>("organizer", Organizer);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>("organizer", Organizer);
             writer.WriteStringValue("panelist_password", PanelistPassword);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist>("panelists", Panelists);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw>("raw", Raw);

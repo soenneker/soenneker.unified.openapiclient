@@ -35,10 +35,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The ID (and optionally name) of the employee deduction (if this detail represents a deduction)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_HrisPayslip_deduction? Deduction { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction? Deduction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_HrisPayslip_deduction Deduction { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction Deduction { get; set; }
 #endif
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "deduction", n => { Deduction = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_HrisPayslip_deduction>(global::Soenneker.Unified.OpenApiClient.Models.Property_HrisPayslip_deduction.CreateFromDiscriminatorValue); } },
+                { "deduction", n => { Deduction = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "gross_amount", n => { GrossAmount = n.GetDoubleValue(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_HrisPayslip_deduction>("deduction", Deduction);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction>("deduction", Deduction);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail>("details", Details);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteDoubleValue("gross_amount", GrossAmount);

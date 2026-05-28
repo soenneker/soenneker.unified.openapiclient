@@ -25,10 +25,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_billing_address? BillingAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress? BillingAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_billing_address BillingAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress BillingAddress { get; set; }
 #endif
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,10 +93,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The shipping_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_shipping_address? ShippingAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress? ShippingAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_shipping_address ShippingAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress ShippingAddress { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_status? Status { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_billing_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_billing_address.CreateFromDiscriminatorValue); } },
+                { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress.CreateFromDiscriminatorValue); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_raw.CreateFromDiscriminatorValue); } },
                 { "sales_channel", n => { SalesChannel = n.GetStringValue(); } },
-                { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_shipping_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_shipping_address.CreateFromDiscriminatorValue); } },
+                { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_status>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_billing_address>("billing_address", BillingAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>("billing_address", BillingAddress);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_raw>("raw", Raw);
             writer.WriteStringValue("sales_channel", SalesChannel);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingSalesorder_shipping_address>("shipping_address", ShippingAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress>("shipping_address", ShippingAddress);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorder_status>("status", Status);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

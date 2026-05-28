@@ -74,10 +74,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_Webhook_filters? Filters { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_Webhook_filters Filters { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters Filters { get; set; }
 #endif
         /// <summary>The hook_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -171,7 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_event>(); } },
                 { "fields", n => { Fields = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_Webhook_filters>(global::Soenneker.Unified.OpenApiClient.Models.Property_Webhook_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters>(global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters.CreateFromDiscriminatorValue); } },
                 { "hook_url", n => { HookUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integration_type", n => { IntegrationType = n.GetStringValue(); } },
@@ -204,7 +204,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("environment", Environment);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_event>("event", Event);
             writer.WriteStringValue("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_Webhook_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters>("filters", Filters);
             writer.WriteStringValue("hook_url", HookUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("integration_type", IntegrationType);

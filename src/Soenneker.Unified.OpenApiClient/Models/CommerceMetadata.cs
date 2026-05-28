@@ -25,10 +25,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The extra_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data? ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data? ExtraData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data ExtraData { get; set; }
 #endif
         /// <summary>The format property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format? Format { get; set; }
@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value? Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata"/> and sets the default values.
@@ -92,13 +92,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data.CreateFromDiscriminatorValue); } },
+                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_required", n => { IsRequired = n.GetBoolValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,222 +109,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data>("extra_data", ExtraData);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data>("extra_data", ExtraData);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format>("format", Format);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_required", IsRequired);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CommerceMetadata_extra_data : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1? CommerceMetadataExtraDataMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1 CommerceMetadataExtraDataMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2>? CommerceMetadataExtraDataMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2> CommerceMetadataExtraDataMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_extra_data();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2> commerceMetadataExtraDataMember2Value)
-                {
-                    result.CommerceMetadataExtraDataMember2 = commerceMetadataExtraDataMember2Value;
-                }
-                else {
-                    result.CommerceMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CommerceMetadataExtraDataMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CommerceMetadataExtraDataMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(CommerceMetadataExtraDataMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember2>(null, CommerceMetadataExtraDataMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_dataMember1>(null, CommerceMetadataExtraDataMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CommerceMetadata_value : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1? CommerceMetadataValueMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1 CommerceMetadataValueMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2>? CommerceMetadataValueMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2> CommerceMetadataValueMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CommerceMetadata_value();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2> commerceMetadataValueMember2Value)
-                {
-                    result.CommerceMetadataValueMember2 = commerceMetadataValueMember2Value;
-                }
-                else {
-                    result.CommerceMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CommerceMetadataValueMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CommerceMetadataValueMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(CommerceMetadataValueMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember2>(null, CommerceMetadataValueMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_valueMember1>(null, CommerceMetadataValueMember1);
-                }
-            }
         }
     }
 }

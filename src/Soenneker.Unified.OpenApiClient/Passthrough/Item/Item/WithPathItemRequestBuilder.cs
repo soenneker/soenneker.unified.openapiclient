@@ -35,93 +35,133 @@ namespace Soenneker.Unified.OpenApiClient.Passthrough.Item.Item
         /// <summary>
         /// Passthrough DELETE
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Passthrough GET
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Passthrough PUT
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PatchAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PatchAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PatchAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PatchAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Passthrough POST
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Passthrough PUT
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPath5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Passthrough DELETE
@@ -169,11 +209,11 @@ namespace Soenneker.Unified.OpenApiClient.Passthrough.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -191,11 +231,11 @@ namespace Soenneker.Unified.OpenApiClient.Passthrough.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -213,11 +253,11 @@ namespace Soenneker.Unified.OpenApiClient.Passthrough.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Passthrough.Item.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -29,10 +29,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.FileObject?>? Roles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission_roles?>? Roles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.FileObject?> Roles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission_roles?> Roles { get; set; }
 #endif
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "is_hidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.FileObject>()?.AsList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission_roles>()?.AsList(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteBoolValue("is_hidden", IsHidden);
             writer.WriteBoolValue("is_public", IsPublic);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.FileObject>("roles", Roles);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission_roles>("roles", Roles);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

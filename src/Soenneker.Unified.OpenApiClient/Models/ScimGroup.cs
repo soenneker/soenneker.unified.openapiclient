@@ -57,18 +57,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimGroup_meta? Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ScimGroup_meta Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta Meta { get; set; }
 #endif
         /// <summary>Array of schema URIs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Groups?>? Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas?>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Groups?> Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas?> Schemas { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ScimGroup"/> and sets the default values.
@@ -100,8 +100,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "groupType", n => { GroupType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember>(global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimGroup_meta>(global::Soenneker.Unified.OpenApiClient.Models.Property_ScimGroup_meta.CreateFromDiscriminatorValue); } },
-                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Groups>()?.AsList(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta.CreateFromDiscriminatorValue); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -116,8 +116,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("groupType", GroupType);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember>("members", Members);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ScimGroup_meta>("meta", Meta);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Groups>("schemas", Schemas);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta>("meta", Meta);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas>("schemas", Schemas);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

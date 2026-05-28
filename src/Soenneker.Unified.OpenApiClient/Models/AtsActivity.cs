@@ -75,10 +75,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AtsActivity_from? From { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsActivityFrom? From { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AtsActivity_from From { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsActivityFrom From { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "document_ids", n => { DocumentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AtsActivity_from>(global::Soenneker.Unified.OpenApiClient.Models.Property_AtsActivity_from.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsActivityFrom>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsActivityFrom.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interview_id", n => { InterviewId = n.GetStringValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
@@ -212,7 +212,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("document_ids", DocumentIds);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AtsActivity_from>("from", From);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAtsActivityFrom>("from", From);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interview_id", InterviewId);
             writer.WriteBoolValue("is_private", IsPrivate);

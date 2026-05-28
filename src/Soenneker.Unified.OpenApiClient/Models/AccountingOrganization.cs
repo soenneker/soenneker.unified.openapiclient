@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingOrganization_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingOrganization_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress Address { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingOrganization_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingOrganization_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "fiscal_year_end_month", n => { FiscalYearEndMonth = n.GetDoubleValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AccountingOrganization_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress>("address", Address);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("fiscal_year_end_month", FiscalYearEndMonth);

@@ -51,10 +51,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The frequency_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_frequency_cap? FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap? FrequencyCap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_frequency_cap FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap FrequencyCap { get; set; }
 #endif
         /// <summary>The goal property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal? Goal { get; set; }
@@ -101,10 +101,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_targeting? Targeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting? Targeting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_targeting Targeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting Targeting { get; set; }
 #endif
         /// <summary>The total_spend_amount property</summary>
         public double? TotalSpendAmount { get; set; }
@@ -143,7 +143,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
-                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_frequency_cap>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_frequency_cap.CreateFromDiscriminatorValue); } },
+                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap.CreateFromDiscriminatorValue); } },
                 { "goal", n => { Goal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal>(); } },
                 { "has_eu_political_ads", n => { HasEuPoliticalAds = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -153,7 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_status>(); } },
-                { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_targeting>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_targeting.CreateFromDiscriminatorValue); } },
+                { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting.CreateFromDiscriminatorValue); } },
                 { "total_spend_amount", n => { TotalSpendAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -173,7 +173,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_frequency_cap>("frequency_cap", FrequencyCap);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>("frequency_cap", FrequencyCap);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal>("goal", Goal);
             writer.WriteBoolValue("has_eu_political_ads", HasEuPoliticalAds);
             writer.WriteStringValue("id", Id);
@@ -183,7 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsCampaign_targeting>("targeting", Targeting);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting>("targeting", Targeting);
             writer.WriteDoubleValue("total_spend_amount", TotalSpendAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

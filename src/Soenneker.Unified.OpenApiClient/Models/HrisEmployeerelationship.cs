@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_HrisEmployeerelationship_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeerelationshipAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_HrisEmployeerelationship_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeerelationshipAddress Address { get; set; }
 #endif
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_HrisEmployeerelationship_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_HrisEmployeerelationship_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeerelationshipAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeerelationshipAddress.CreateFromDiscriminatorValue); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_HrisEmployeerelationship_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeerelationshipAddress>("address", Address);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>("emails", Emails);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("first_name", FirstName);

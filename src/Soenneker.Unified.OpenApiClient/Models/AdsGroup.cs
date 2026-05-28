@@ -19,10 +19,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>YOUTUBE_AND_PARTNERS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_bid_strategy? BidStrategy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy? BidStrategy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_bid_strategy BidStrategy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy BidStrategy { get; set; }
 #endif
         /// <summary>The billing_event property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event? BillingEvent { get; set; }
@@ -67,10 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The frequency_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_frequency_cap? FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap? FrequencyCap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_frequency_cap FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap FrequencyCap { get; set; }
 #endif
         /// <summary>The has_eu_political_ads property</summary>
         public bool? HasEuPoliticalAds { get; set; }
@@ -111,10 +111,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The pacing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_pacing? Pacing { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing? Pacing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_pacing Pacing { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing Pacing { get; set; }
 #endif
         /// <summary>The parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,10 +147,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_targeting? Targeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting? Targeting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_targeting Targeting { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting Targeting { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type? Type { get; set; }
@@ -182,7 +182,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bid_amount", n => { BidAmount = n.GetDoubleValue(); } },
-                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_bid_strategy>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_bid_strategy.CreateFromDiscriminatorValue); } },
+                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy.CreateFromDiscriminatorValue); } },
                 { "billing_event", n => { BillingEvent = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event>(); } },
                 { "budget_allocation_type", n => { BudgetAllocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_allocation_type>(); } },
                 { "budget_amount", n => { BudgetAmount = n.GetDoubleValue(); } },
@@ -194,20 +194,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "creative_ids", n => { CreativeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
-                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_frequency_cap>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_frequency_cap.CreateFromDiscriminatorValue); } },
+                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap.CreateFromDiscriminatorValue); } },
                 { "has_eu_political_ads", n => { HasEuPoliticalAds = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "insertionorder_id", n => { InsertionorderId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_optimization_goal>(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
-                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_pacing>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_pacing.CreateFromDiscriminatorValue); } },
+                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing.CreateFromDiscriminatorValue); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "promoted", n => { Promoted = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_status>(); } },
-                { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_targeting>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_targeting.CreateFromDiscriminatorValue); } },
+                { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -220,7 +220,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("bid_amount", BidAmount);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_bid_strategy>("bid_strategy", BidStrategy);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy>("bid_strategy", BidStrategy);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event>("billing_event", BillingEvent);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_allocation_type>("budget_allocation_type", BudgetAllocationType);
             writer.WriteDoubleValue("budget_amount", BudgetAmount);
@@ -232,20 +232,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("creative_ids", CreativeIds);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_frequency_cap>("frequency_cap", FrequencyCap);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap>("frequency_cap", FrequencyCap);
             writer.WriteBoolValue("has_eu_political_ads", HasEuPoliticalAds);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("insertionorder_id", InsertionorderId);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_optimization_goal>("optimization_goal", OptimizationGoal);
             writer.WriteStringValue("organization_id", OrganizationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_pacing>("pacing", Pacing);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing>("pacing", Pacing);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>("promoted", Promoted);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsGroup_targeting>("targeting", Targeting);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting>("targeting", Targeting);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

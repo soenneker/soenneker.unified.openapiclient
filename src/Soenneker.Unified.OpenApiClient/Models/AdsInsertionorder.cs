@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>YOUTUBE_AND_PARTNERS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_bid_strategy? BidStrategy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy? BidStrategy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_bid_strategy BidStrategy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy BidStrategy { get; set; }
 #endif
         /// <summary>The budget_segments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The frequency_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_frequency_cap? FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap? FrequencyCap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_frequency_cap FrequencyCap { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap FrequencyCap { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The kpi property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_kpi? Kpi { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi? Kpi { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_kpi Kpi { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi Kpi { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,10 +85,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The pacing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_pacing? Pacing { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing? Pacing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_pacing Pacing { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing Pacing { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,17 +135,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_bid_strategy>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_bid_strategy.CreateFromDiscriminatorValue); } },
+                { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy.CreateFromDiscriminatorValue); } },
                 { "budget_segments", n => { BudgetSegments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_budget_unit>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_frequency_cap>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_frequency_cap.CreateFromDiscriminatorValue); } },
+                { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kpi", n => { Kpi = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_kpi>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_kpi.CreateFromDiscriminatorValue); } },
+                { "kpi", n => { Kpi = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
-                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_pacing>(global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_pacing.CreateFromDiscriminatorValue); } },
+                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_status>(); } },
@@ -159,17 +159,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_bid_strategy>("bid_strategy", BidStrategy);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy>("bid_strategy", BidStrategy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment>("budget_segments", BudgetSegments);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_budget_unit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_frequency_cap>("frequency_cap", FrequencyCap);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap>("frequency_cap", FrequencyCap);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_kpi>("kpi", Kpi);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi>("kpi", Kpi);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_AdsInsertionorder_pacing>("pacing", Pacing);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing>("pacing", Pacing);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_status>("status", Status);

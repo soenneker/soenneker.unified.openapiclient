@@ -18,10 +18,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The address of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichPerson_address? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichPerson_address Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress Address { get; set; }
 #endif
         /// <summary>The bio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -224,7 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichPerson_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichPerson_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress.CreateFromDiscriminatorValue); } },
                 { "bio", n => { Bio = n.GetStringValue(); } },
                 { "birthdate", n => { Birthdate = n.GetStringValue(); } },
                 { "company", n => { Company = n.GetStringValue(); } },
@@ -259,7 +259,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_EnrichPerson_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress>("address", Address);
             writer.WriteStringValue("bio", Bio);
             writer.WriteStringValue("birthdate", Birthdate);
             writer.WriteStringValue("company", Company);

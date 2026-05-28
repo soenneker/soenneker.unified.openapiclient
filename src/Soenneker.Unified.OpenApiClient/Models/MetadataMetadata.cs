@@ -39,10 +39,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The objects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MetadataMetadata_objects? Objects { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects? Objects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_MetadataMetadata_objects Objects { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects Objects { get; set; }
 #endif
         /// <summary>The object_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_required", n => { IsRequired = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object_type", n => { ObjectType = n.GetStringValue(); } },
-                { "objects", n => { Objects = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MetadataMetadata_objects>(global::Soenneker.Unified.OpenApiClient.Models.Property_MetadataMetadata_objects.CreateFromDiscriminatorValue); } },
+                { "objects", n => { Objects = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects.CreateFromDiscriminatorValue); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "original_format", n => { OriginalFormat = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw.CreateFromDiscriminatorValue); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_required", IsRequired);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_MetadataMetadata_objects>("objects", Objects);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects>("objects", Objects);
             writer.WriteStringValue("object_type", ObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteStringValue("original_format", OriginalFormat);

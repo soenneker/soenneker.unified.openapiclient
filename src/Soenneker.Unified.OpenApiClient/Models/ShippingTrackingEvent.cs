@@ -43,10 +43,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The location_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingTrackingEvent_location_address? LocationAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingTrackingEventLocationAddress? LocationAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingTrackingEvent_location_address LocationAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingTrackingEventLocationAddress LocationAddress { get; set; }
 #endif
         /// <summary>The location_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "event_code", n => { EventCode = n.GetStringValue(); } },
-                { "location_address", n => { LocationAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingTrackingEvent_location_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingTrackingEvent_location_address.CreateFromDiscriminatorValue); } },
+                { "location_address", n => { LocationAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingTrackingEventLocationAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingTrackingEventLocationAddress.CreateFromDiscriminatorValue); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "location_name", n => { LocationName = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("event_code", EventCode);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingTrackingEvent_location_address>("location_address", LocationAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingTrackingEventLocationAddress>("location_address", LocationAddress);
             writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("location_name", LocationName);
             writer.WriteStringValue("notes", Notes);

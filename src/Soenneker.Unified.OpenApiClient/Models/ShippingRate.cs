@@ -33,10 +33,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Origin address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_from_address? FromAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress? FromAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_from_address FromAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress FromAddress { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,10 +83,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Destination address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_to_address? ToAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateToAddress? ToAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_to_address ToAddress { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateToAddress ToAddress { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingRate"/> and sets the default values.
@@ -115,14 +115,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "carrier_id", n => { CarrierId = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "from_address", n => { FromAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_from_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_from_address.CreateFromDiscriminatorValue); } },
+                { "from_address", n => { FromAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "packages", n => { Packages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage>(global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rates", n => { Rates = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate>(global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingRate_raw>(global::Soenneker.Unified.OpenApiClient.Models.ShippingRate_raw.CreateFromDiscriminatorValue); } },
                 { "ship_by_at", n => { ShipByAt = n.GetDateTimeOffsetValue(); } },
                 { "shipment_id", n => { ShipmentId = n.GetStringValue(); } },
-                { "to_address", n => { ToAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_to_address>(global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_to_address.CreateFromDiscriminatorValue); } },
+                { "to_address", n => { ToAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateToAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateToAddress.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -134,14 +134,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("carrier_id", CarrierId);
             writer.WriteStringValue("currency", Currency);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_from_address>("from_address", FromAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress>("from_address", FromAddress);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage>("packages", Packages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate>("rates", Rates);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingRate_raw>("raw", Raw);
             writer.WriteDateTimeOffsetValue("ship_by_at", ShipByAt);
             writer.WriteStringValue("shipment_id", ShipmentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Property_ShippingRate_to_address>("to_address", ToAddress);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateToAddress>("to_address", ToAddress);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

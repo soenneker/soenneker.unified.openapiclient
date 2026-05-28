@@ -204,7 +204,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Document
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw")]
@@ -259,7 +259,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Document
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Ats.Item.Document.PostFieldsQueryParameterType[] Fields { get; set; }
 #endif
-            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw")]
