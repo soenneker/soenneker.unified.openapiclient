@@ -17,14 +17,14 @@ namespace Soenneker.Unified.OpenApiClient.Ads
     {
         /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.ads.item collection</summary>
         /// <param name="position">ID of the connection</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnection_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnection_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnectionItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("connection_id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnection_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("connectionId", position);
+                return new global::Soenneker.Unified.OpenApiClient.Ads.Item.WithConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannel_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannelRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannel_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannelRawProperty Raw { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannel_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannel_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannelRawProperty.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannel_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceSaleschannelRawProperty>("raw", Raw);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

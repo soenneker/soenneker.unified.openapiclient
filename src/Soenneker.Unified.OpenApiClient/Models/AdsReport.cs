@@ -53,10 +53,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsReport_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsReport_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics>(global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReport_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsReport_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics>("metrics", Metrics);
             writer.WriteStringValue("organization_id", OrganizationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReport_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

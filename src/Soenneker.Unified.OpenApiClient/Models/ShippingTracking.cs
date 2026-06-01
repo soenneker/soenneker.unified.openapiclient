@@ -63,10 +63,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty Raw { get; set; }
 #endif
         /// <summary>The shipment_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ShipmentId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus? Status { get; set; }
         /// <summary>The status_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,9 +129,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "estimated_delivery", n => { EstimatedDelivery = n.GetDateTimeOffsetValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent>(global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_raw>(global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipment_id", n => { ShipmentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus>(); } },
                 { "status_description", n => { StatusDescription = n.GetStringValue(); } },
                 { "tracking_number", n => { TrackingNumber = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -152,9 +152,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("estimated_delivery", EstimatedDelivery);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent>("events", Events);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty>("raw", Raw);
             writer.WriteStringValue("shipment_id", ShipmentId);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus>("status", Status);
             writer.WriteStringValue("status_description", StatusDescription);
             writer.WriteStringValue("tracking_number", TrackingNumber);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

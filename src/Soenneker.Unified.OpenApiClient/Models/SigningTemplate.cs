@@ -53,10 +53,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningTemplate_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningTemplateRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningTemplate_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningTemplateRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningTemplate_raw>(global::Soenneker.Unified.OpenApiClient.Models.SigningTemplate_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningTemplateRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SigningTemplateRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningTemplate_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningTemplateRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

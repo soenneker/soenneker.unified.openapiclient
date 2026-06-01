@@ -64,10 +64,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingList_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingList_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty Raw { get; set; }
 #endif
         /// <summary>The sender_company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingList_raw>(global::Soenneker.Unified.OpenApiClient.Models.MarketingList_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty.CreateFromDiscriminatorValue); } },
                 { "sender_company", n => { SenderCompany = n.GetStringValue(); } },
                 { "sender_email", n => { SenderEmail = n.GetStringValue(); } },
                 { "sender_name", n => { SenderName = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingList_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty>("raw", Raw);
             writer.WriteStringValue("sender_company", SenderCompany);
             writer.WriteStringValue("sender_email", SenderEmail);
             writer.WriteStringValue("sender_name", SenderName);

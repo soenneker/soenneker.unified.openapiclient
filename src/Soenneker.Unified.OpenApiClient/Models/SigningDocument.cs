@@ -63,15 +63,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty Raw { get; set; }
 #endif
         /// <summary>The sent_at property</summary>
         public DateTimeOffset? SentAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentStatus? Status { get; set; }
         /// <summary>The template_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,9 +115,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_raw>(global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty.CreateFromDiscriminatorValue); } },
                 { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentStatus>(); } },
                 { "template_id", n => { TemplateId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -137,9 +137,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("sent_at", SentAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocument_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentStatus>("status", Status);
             writer.WriteStringValue("template_id", TemplateId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

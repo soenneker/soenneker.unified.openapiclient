@@ -129,10 +129,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty Raw { get; set; }
 #endif
         /// <summary>The shipping_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress ShippingAddress { get; set; }
 #endif
         /// <summary>The tax_exemption property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_tax_exemption? TaxExemption { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactTaxExemption? TaxExemption { get; set; }
         /// <summary>The tax_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,9 +205,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_methods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "portal_url", n => { PortalUrl = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress.CreateFromDiscriminatorValue); } },
-                { "tax_exemption", n => { TaxExemption = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_tax_exemption>(); } },
+                { "tax_exemption", n => { TaxExemption = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactTaxExemption>(); } },
                 { "tax_number", n => { TaxNumber = n.GetStringValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -237,9 +237,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>("payment_methods", PaymentMethods);
             writer.WriteStringValue("portal_url", PortalUrl);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress>("shipping_address", ShippingAddress);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContact_tax_exemption>("tax_exemption", TaxExemption);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactTaxExemption>("tax_exemption", TaxExemption);
             writer.WriteStringValue("tax_number", TaxNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

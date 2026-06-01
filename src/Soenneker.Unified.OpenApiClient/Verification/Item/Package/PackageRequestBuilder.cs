@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Verification.Item.Package
 {
     /// <summary>
-    /// Builds and executes requests for operations under \verification\{connection_id}\package
+    /// Builds and executes requests for operations under \verification\{connectionId}\package
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PackageRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Verification.Item.Package
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/verification/{connection_id}/package{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public PackageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/verification/{connectionId}/package{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Verification.Item.Package
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/verification/{connection_id}/package{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public PackageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/verification/{connectionId}/package{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Verification.Item.Package
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Verification.Item.Package.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackagesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Verification.Item.Package.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackagesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

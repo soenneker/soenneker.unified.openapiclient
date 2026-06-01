@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The endDate property</summary>
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>The gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User_gender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender? Gender { get; set; }
         /// <summary>The level property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "division", n => { Division = n.GetStringValue(); } },
                 { "employeeNumber", n => { EmployeeNumber = n.GetStringValue(); } },
                 { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User_gender>(); } },
+                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender>(); } },
                 { "level", n => { Level = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "manager", n => { Manager = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.CreateFromDiscriminatorValue); } },
@@ -159,7 +159,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("division", Division);
             writer.WriteStringValue("employeeNumber", EmployeeNumber);
             writer.WriteDateTimeOffsetValue("endDate", EndDate);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User_gender>("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender>("gender", Gender);
             writer.WriteStringValue("level", Level);
             writer.WriteStringValue("location", Location);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager>("manager", Manager);

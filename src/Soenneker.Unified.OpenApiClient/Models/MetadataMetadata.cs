@@ -17,7 +17,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_format? Format { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataFormat? Format { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,10 +39,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The objects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects? Objects { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects? Objects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects Objects { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects Objects { get; set; }
 #endif
         /// <summary>The object_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataRawProperty Raw { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,15 +112,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_format>(); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_required", n => { IsRequired = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object_type", n => { ObjectType = n.GetStringValue(); } },
-                { "objects", n => { Objects = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects.CreateFromDiscriminatorValue); } },
+                { "objects", n => { Objects = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects.CreateFromDiscriminatorValue); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "original_format", n => { OriginalFormat = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataRawProperty.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -133,15 +133,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_format>("format", Format);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataFormat>("format", Format);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_required", IsRequired);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_objects>("objects", Objects);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects>("objects", Objects);
             writer.WriteStringValue("object_type", ObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteStringValue("original_format", OriginalFormat);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadata_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataRawProperty>("raw", Raw);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

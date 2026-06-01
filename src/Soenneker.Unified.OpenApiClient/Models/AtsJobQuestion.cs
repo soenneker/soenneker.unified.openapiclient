@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestionType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "question", n => { Question = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestionType>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteStringValue("question", Question);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestionType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

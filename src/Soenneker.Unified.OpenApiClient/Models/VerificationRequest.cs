@@ -73,7 +73,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> ProfileEmails { get; set; }
 #endif
         /// <summary>The profile_gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_profile_gender? ProfileGender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender? ProfileGender { get; set; }
         /// <summary>The profile_ip_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,10 +109,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty Raw { get; set; }
 #endif
         /// <summary>The response_completed_at property</summary>
         public DateTimeOffset? ResponseCompletedAt { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ResponseSource { get; set; }
 #endif
         /// <summary>The response_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_response_status? ResponseStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus? ResponseStatus { get; set; }
         /// <summary>The target_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,12 +199,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "profile_addresses", n => { ProfileAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>(global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_date_of_birth", n => { ProfileDateOfBirth = n.GetStringValue(); } },
                 { "profile_emails", n => { ProfileEmails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "profile_gender", n => { ProfileGender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_profile_gender>(); } },
+                { "profile_gender", n => { ProfileGender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender>(); } },
                 { "profile_ip_address", n => { ProfileIpAddress = n.GetStringValue(); } },
                 { "profile_name", n => { ProfileName = n.GetStringValue(); } },
                 { "profile_national_identifier", n => { ProfileNationalIdentifier = n.GetStringValue(); } },
                 { "profile_telephones", n => { ProfileTelephones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_raw>(global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty.CreateFromDiscriminatorValue); } },
                 { "response_completed_at", n => { ResponseCompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "response_details", n => { ResponseDetails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail>(global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "response_download_urls", n => { ResponseDownloadUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "response_redirect_url", n => { ResponseRedirectUrl = n.GetStringValue(); } },
                 { "response_score", n => { ResponseScore = n.GetDoubleValue(); } },
                 { "response_source", n => { ResponseSource = n.GetStringValue(); } },
-                { "response_status", n => { ResponseStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_response_status>(); } },
+                { "response_status", n => { ResponseStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus>(); } },
                 { "target_url", n => { TargetUrl = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -233,12 +233,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>("profile_addresses", ProfileAddresses);
             writer.WriteStringValue("profile_date_of_birth", ProfileDateOfBirth);
             writer.WriteCollectionOfPrimitiveValues<string>("profile_emails", ProfileEmails);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_profile_gender>("profile_gender", ProfileGender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender>("profile_gender", ProfileGender);
             writer.WriteStringValue("profile_ip_address", ProfileIpAddress);
             writer.WriteStringValue("profile_name", ProfileName);
             writer.WriteStringValue("profile_national_identifier", ProfileNationalIdentifier);
             writer.WriteCollectionOfPrimitiveValues<string>("profile_telephones", ProfileTelephones);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("response_completed_at", ResponseCompletedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail>("response_details", ResponseDetails);
             writer.WriteCollectionOfPrimitiveValues<string>("response_download_urls", ResponseDownloadUrls);
@@ -247,7 +247,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("response_redirect_url", ResponseRedirectUrl);
             writer.WriteDoubleValue("response_score", ResponseScore);
             writer.WriteStringValue("response_source", ResponseSource);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest_response_status>("response_status", ResponseStatus);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus>("response_status", ResponseStatus);
             writer.WriteStringValue("target_url", TargetUrl);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

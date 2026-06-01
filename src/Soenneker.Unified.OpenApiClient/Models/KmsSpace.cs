@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsSpace_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.KmsSpaceRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsSpace_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.KmsSpaceRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "parent_page_id", n => { ParentPageId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsSpace_raw>(global::Soenneker.Unified.OpenApiClient.Models.KmsSpace_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsSpaceRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.KmsSpaceRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -127,7 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("parent_page_id", ParentPageId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsSpace_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsSpaceRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

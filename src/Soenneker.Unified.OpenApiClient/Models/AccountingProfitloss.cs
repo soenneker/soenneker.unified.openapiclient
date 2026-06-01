@@ -113,10 +113,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitloss_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitloss_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -165,7 +165,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_income_amount", n => { NetIncomeAmount = n.GetDoubleValue(); } },
                 { "net_profit_amount", n => { NetProfitAmount = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitloss_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitloss_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -195,7 +195,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_income_amount", NetIncomeAmount);
             writer.WriteDoubleValue("net_profit_amount", NetProfitAmount);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitloss_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -83,10 +83,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshift_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshiftRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshift_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshiftRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -129,7 +129,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_approved", n => { IsApproved = n.GetBoolValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshift_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshift_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshiftRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshiftRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -153,7 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_approved", IsApproved);
             writer.WriteStringValue("location_id", LocationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshift_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeshiftRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

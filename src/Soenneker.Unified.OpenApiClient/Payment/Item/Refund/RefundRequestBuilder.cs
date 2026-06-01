@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Payment.Item.Refund
 {
     /// <summary>
-    /// Builds and executes requests for operations under \payment\{connection_id}\refund
+    /// Builds and executes requests for operations under \payment\{connectionId}\refund
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RefundRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Refund
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefundRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connection_id}/refund{?fields*,limit*,offset*,order*,payment_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public RefundRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/refund{?fields*,limit*,offset*,order*,payment_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Refund
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefundRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connection_id}/refund{?fields*,limit*,offset*,order*,payment_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public RefundRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/refund{?fields*,limit*,offset*,order*,payment_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Refund
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Payment.Item.Refund.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPaymentRefundsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Payment.Item.Refund.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPaymentRefundsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

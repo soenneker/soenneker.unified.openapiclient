@@ -108,10 +108,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmDeal_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmDeal_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty Raw { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +211,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "pipeline_id", n => { PipelineId = n.GetStringValue(); } },
                 { "pipelines", n => { Pipelines = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>(global::Soenneker.Unified.OpenApiClient.Models.CrmReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "probability", n => { Probability = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDeal_raw>(global::Soenneker.Unified.OpenApiClient.Models.CrmDeal_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "stage", n => { Stage = n.GetStringValue(); } },
                 { "stage_id", n => { StageId = n.GetStringValue(); } },
@@ -244,7 +244,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("pipeline_id", PipelineId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>("pipelines", Pipelines);
             writer.WriteDoubleValue("probability", Probability);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDeal_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty>("raw", Raw);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("stage", Stage);
             writer.WriteStringValue("stage_id", StageId);

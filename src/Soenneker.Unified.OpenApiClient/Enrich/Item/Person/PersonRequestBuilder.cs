@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Person
 {
     /// <summary>
-    /// Builds and executes requests for operations under \enrich\{connection_id}\person
+    /// Builds and executes requests for operations under \enrich\{connectionId}\person
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PersonRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Person
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connection_id}/person{?company_name*,email*,linkedin_url*,name*,twitter*}", pathParameters)
+        public PersonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connectionId}/person{?company_name*,email*,linkedin_url*,name*,twitter*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Person
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connection_id}/person{?company_name*,email*,linkedin_url*,name*,twitter*}", rawUrl)
+        public PersonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connectionId}/person{?company_name*,email*,linkedin_url*,name*,twitter*}", rawUrl)
         {
         }
         /// <summary>

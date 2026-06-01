@@ -53,13 +53,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEventRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEventRawProperty Raw { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MessagingEventType? Type { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,8 +99,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_replacing_original", n => { IsReplacingOriginal = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage.CreateFromDiscriminatorValue); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_type>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MessagingEventRawProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEventType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser.CreateFromDiscriminatorValue); } },
             };
         }
@@ -117,8 +117,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_replacing_original", IsReplacingOriginal);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessage>("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEventRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingEventType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

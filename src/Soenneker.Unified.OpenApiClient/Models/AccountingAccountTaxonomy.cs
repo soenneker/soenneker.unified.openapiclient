@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string OriginalType { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomyType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "original_type", n => { OriginalType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomyType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("original_type", OriginalType);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomyType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

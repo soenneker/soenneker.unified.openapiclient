@@ -117,10 +117,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty Raw { get; set; }
 #endif
         /// <summary>The skills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,7 +192,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "price_amount", n => { PriceAmount = n.GetDoubleValue(); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
                 { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw>(global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "student_ids", n => { StudentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>(global::Soenneker.Unified.OpenApiClient.Models.LmsStudent.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -224,7 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("price_amount", PriceAmount);
             writer.WriteStringValue("provider_name", ProviderName);
             writer.WriteDateTimeOffsetValue("published_at", PublishedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourse_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteCollectionOfPrimitiveValues<string>("student_ids", StudentIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>("students", Students);

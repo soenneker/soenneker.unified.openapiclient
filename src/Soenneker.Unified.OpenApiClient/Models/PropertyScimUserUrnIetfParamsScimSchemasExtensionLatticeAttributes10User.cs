@@ -17,9 +17,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The birthDate property</summary>
         public DateTimeOffset? BirthDate { get; set; }
         /// <summary>The ethnicity property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_ethnicity? Ethnicity { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity? Ethnicity { get; set; }
         /// <summary>The gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_gender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender? Gender { get; set; }
         /// <summary>The JobLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string SalaryInformation { get; set; }
 #endif
         /// <summary>The sexualOrientation property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_sexualOrientation? SexualOrientation { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation? SexualOrientation { get; set; }
         /// <summary>The startDate property</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>The SubDepartments property</summary>
@@ -90,13 +90,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "birthDate", n => { BirthDate = n.GetDateTimeOffsetValue(); } },
-                { "ethnicity", n => { Ethnicity = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_ethnicity>(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_gender>(); } },
+                { "ethnicity", n => { Ethnicity = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity>(); } },
+                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender>(); } },
                 { "Job Level", n => { JobLevel = n.GetStringValue(); } },
                 { "People Manager (Reviews)", n => { PeopleManagerReviews = n.GetStringValue(); } },
                 { "Remote Work - Location", n => { RemoteWorkLocation = n.GetStringValue(); } },
                 { "Salary Information", n => { SalaryInformation = n.GetStringValue(); } },
-                { "sexualOrientation", n => { SexualOrientation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_sexualOrientation>(); } },
+                { "sexualOrientation", n => { SexualOrientation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation>(); } },
                 { "startDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "Sub Departments", n => { SubDepartments = n.GetStringValue(); } },
             };
@@ -109,13 +109,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("birthDate", BirthDate);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_ethnicity>("ethnicity", Ethnicity);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_gender>("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity>("ethnicity", Ethnicity);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender>("gender", Gender);
             writer.WriteStringValue("Job Level", JobLevel);
             writer.WriteStringValue("People Manager (Reviews)", PeopleManagerReviews);
             writer.WriteStringValue("Remote Work - Location", RemoteWorkLocation);
             writer.WriteStringValue("Salary Information", SalaryInformation);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User_sexualOrientation>("sexualOrientation", SexualOrientation);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation>("sexualOrientation", SexualOrientation);
             writer.WriteDateTimeOffsetValue("startDate", StartDate);
             writer.WriteStringValue("Sub Departments", SubDepartments);
             writer.WriteAdditionalData(AdditionalData);

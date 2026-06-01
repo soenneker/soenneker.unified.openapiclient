@@ -17,14 +17,14 @@ namespace Soenneker.Unified.OpenApiClient.Accounting
     {
         /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item collection</summary>
         /// <param name="position">ID of the connection</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnection_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnection_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnectionItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("connection_id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnection_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("connectionId", position);
+                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

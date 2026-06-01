@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
 {
     /// <summary>
-    /// Builds and executes requests for operations under \commerce\{connection_id}\collection
+    /// Builds and executes requests for operations under \commerce\{connectionId}\collection
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CollectionRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/collection{?fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,saleschannel_id*,sort*,type*,updated_gte*}", pathParameters)
+        public CollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/collection{?fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,saleschannel_id*,sort*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/collection{?fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,saleschannel_id*,sort*,type*,updated_gte*}", rawUrl)
+        public CollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/collection{?fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,saleschannel_id*,sort*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -145,11 +145,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Collection.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceCollectionsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Collection.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceCollectionsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -253,11 +253,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Collection.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCommerceCollectionFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Collection.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCommerceCollectionFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

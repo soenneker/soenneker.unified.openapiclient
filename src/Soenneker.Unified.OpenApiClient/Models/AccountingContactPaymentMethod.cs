@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethodType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethodType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethodType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

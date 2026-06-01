@@ -99,10 +99,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -155,10 +155,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_raw>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -180,10 +180,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteDoubleValue("total_amount", TotalAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

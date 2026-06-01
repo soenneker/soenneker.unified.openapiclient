@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
 {
     /// <summary>
-    /// Builds and executes requests for operations under \crm\{connection_id}\deal
+    /// Builds and executes requests for operations under \crm\{connectionId}\deal
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DealRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connection_id}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public DealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connection_id}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public DealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -165,11 +165,11 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Deal.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmDealsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Deal.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmDealsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -254,11 +254,11 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Deal.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCrmDealFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Deal.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCrmDealFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

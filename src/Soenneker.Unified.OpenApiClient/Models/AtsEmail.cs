@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsEmail_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsEmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsEmail"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsEmailType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsEmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

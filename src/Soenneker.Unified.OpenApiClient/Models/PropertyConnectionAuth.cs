@@ -118,10 +118,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth_meta? Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuthMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth_meta Meta { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuthMetaProperty Meta { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -238,7 +238,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "expires_in", n => { ExpiresIn = n.GetDoubleValue(); } },
                 { "expiry_date", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth_meta>(global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuthMetaProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuthMetaProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "other_auth_info", n => { OtherAuthInfo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pem", n => { Pem = n.GetStringValue(); } },
@@ -273,7 +273,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("expires_in", ExpiresIn);
             writer.WriteDateTimeOffsetValue("expiry_date", ExpiryDate);
             writer.WriteStringValue("key", Key);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuthMetaProperty>("meta", Meta);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("other_auth_info", OtherAuthInfo);
             writer.WriteStringValue("pem", Pem);

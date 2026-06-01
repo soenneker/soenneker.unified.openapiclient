@@ -77,10 +77,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganization_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganization_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty Raw { get; set; }
 #endif
         /// <summary>The tax_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_code", n => { OrganizationCode = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganization_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganization_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty.CreateFromDiscriminatorValue); } },
                 { "tax_number", n => { TaxNumber = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -165,7 +165,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_code", OrganizationCode);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganization_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty>("raw", Raw);
             writer.WriteStringValue("tax_number", TaxNumber);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

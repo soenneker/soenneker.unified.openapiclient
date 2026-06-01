@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingEmail_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingEmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.MarketingEmail"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingEmail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingEmailType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingEmail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingEmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

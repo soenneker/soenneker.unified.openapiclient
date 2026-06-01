@@ -111,11 +111,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("categories")]
-            public global::Soenneker.Unified.OpenApiClient.Unified.Integration.GetCategoriesQueryParameterType[]? Categories { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedIntegrationsCategoriesParameterItem[]? Categories { get; set; }
 #nullable restore
 #else
             [QueryParameter("categories")]
-            public global::Soenneker.Unified.OpenApiClient.Unified.Integration.GetCategoriesQueryParameterType[] Categories { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedIntegrationsCategoriesParameterItem[] Categories { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

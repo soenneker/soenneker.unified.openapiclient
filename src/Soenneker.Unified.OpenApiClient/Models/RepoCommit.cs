@@ -43,10 +43,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoCommit_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoCommit_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty Raw { get; set; }
 #endif
         /// <summary>The repo_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommit_raw>(global::Soenneker.Unified.OpenApiClient.Models.RepoCommit_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty.CreateFromDiscriminatorValue); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommit_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>("raw", Raw);
             writer.WriteStringValue("repo_id", RepoId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

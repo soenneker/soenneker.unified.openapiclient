@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Forms.Item.Submission
 {
     /// <summary>
-    /// Builds and executes requests for operations under \forms\{connection_id}\submission
+    /// Builds and executes requests for operations under \forms\{connectionId}\submission
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubmissionRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Forms.Item.Submission
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forms/{connection_id}/submission{?fields*,form_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public SubmissionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forms/{connectionId}/submission{?fields*,form_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Forms.Item.Submission
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forms/{connection_id}/submission{?fields*,form_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public SubmissionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forms/{connectionId}/submission{?fields*,form_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Forms.Item.Submission
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Forms.Item.Submission.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListFormsSubmissionsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Forms.Item.Submission.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListFormsSubmissionsFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The form ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

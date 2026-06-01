@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
 {
     /// <summary>
-    /// Builds and executes requests for operations under \commerce\{connection_id}\review
+    /// Builds and executes requests for operations under \commerce\{connectionId}\review
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReviewRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ReviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ReviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -155,11 +155,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceReviewsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceReviewsFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The item ID to filter by (reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,11 +244,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCommerceReviewFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCommerceReviewFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

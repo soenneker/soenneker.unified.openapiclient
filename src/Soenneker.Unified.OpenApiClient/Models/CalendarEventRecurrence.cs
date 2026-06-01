@@ -27,7 +27,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> ExcludedDates { get; set; }
 #endif
         /// <summary>The frequency property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_frequency? Frequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceFrequency? Frequency { get; set; }
         /// <summary>dates to include in the recurrence, defaults to undefined (no inclusions)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,10 +41,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_on_days?>? OnDays { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem?>? OnDays { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_on_days?> OnDays { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem?> OnDays { get; set; }
 #endif
         /// <summary>days of the month to repeat on, defaults to undefined (every day), only used if frequency is MONTHLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Timezone { get; set; }
 #endif
         /// <summary>The week_start property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_week_start? WeekStart { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceWeekStart? WeekStart { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence"/> and sets the default values.
         /// </summary>
@@ -116,16 +116,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "excluded_dates", n => { ExcludedDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceFrequency>(); } },
                 { "included_dates", n => { IncludedDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
-                { "on_days", n => { OnDays = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_on_days>()?.AsList(); } },
+                { "on_days", n => { OnDays = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem>()?.AsList(); } },
                 { "on_month_days", n => { OnMonthDays = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "on_months", n => { OnMonths = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "on_weeks", n => { OnWeeks = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "on_year_days", n => { OnYearDays = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
-                { "week_start", n => { WeekStart = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_week_start>(); } },
+                { "week_start", n => { WeekStart = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceWeekStart>(); } },
             };
         }
         /// <summary>
@@ -138,16 +138,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("count", Count);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_dates", ExcludedDates);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceFrequency>("frequency", Frequency);
             writer.WriteCollectionOfPrimitiveValues<string>("included_dates", IncludedDates);
             writer.WriteDoubleValue("interval", Interval);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_on_days>("on_days", OnDays);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem>("on_days", OnDays);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_month_days", OnMonthDays);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_months", OnMonths);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_weeks", OnWeeks);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_year_days", OnYearDays);
             writer.WriteStringValue("timezone", Timezone);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence_week_start>("week_start", WeekStart);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceWeekStart>("week_start", WeekStart);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

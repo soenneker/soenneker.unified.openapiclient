@@ -119,10 +119,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsContent_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsContent_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty Raw { get; set; }
 #endif
         /// <summary>The short_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -184,7 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>(global::Soenneker.Unified.OpenApiClient.Models.LmsMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContent_raw>(global::Soenneker.Unified.OpenApiClient.Models.LmsContent_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty.CreateFromDiscriminatorValue); } },
                 { "short_description", n => { ShortDescription = n.GetStringValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sort_order", n => { SortOrder = n.GetDoubleValue(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>("media", Media);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider_name", ProviderName);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContent_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty>("raw", Raw);
             writer.WriteStringValue("short_description", ShortDescription);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteDoubleValue("sort_order", SortOrder);

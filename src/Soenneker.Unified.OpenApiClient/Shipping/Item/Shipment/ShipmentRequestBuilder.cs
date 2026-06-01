@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
 {
     /// <summary>
-    /// Builds and executes requests for operations under \shipping\{connection_id}\shipment
+    /// Builds and executes requests for operations under \shipping\{connectionId}\shipment
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShipmentRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShipmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connection_id}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ShipmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShipmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connection_id}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ShipmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -155,11 +155,11 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListShippingShipmentsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListShippingShipmentsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -234,11 +234,11 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateShippingShipmentFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateShippingShipmentFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

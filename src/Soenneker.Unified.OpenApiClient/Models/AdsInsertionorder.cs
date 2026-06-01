@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment> BudgetSegments { get; set; }
 #endif
         /// <summary>The budget_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_budget_unit? BudgetUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetUnit? BudgetUnit { get; set; }
         /// <summary>The campaign_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,10 +93,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy.CreateFromDiscriminatorValue); } },
                 { "budget_segments", n => { BudgetSegments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_budget_unit>(); } },
+                { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetUnit>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap.CreateFromDiscriminatorValue); } },
@@ -146,9 +146,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing.CreateFromDiscriminatorValue); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -161,7 +161,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy>("bid_strategy", BidStrategy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment>("budget_segments", BudgetSegments);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_budget_unit>("budget_unit", BudgetUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetUnit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderFrequencyCap>("frequency_cap", FrequencyCap);
@@ -170,9 +170,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing>("pacing", Pacing);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorder_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

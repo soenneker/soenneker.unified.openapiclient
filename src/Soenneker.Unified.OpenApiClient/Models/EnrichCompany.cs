@@ -128,10 +128,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompany_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompany_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty Raw { get; set; }
 #endif
         /// <summary>The revenue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +236,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
                 { "naics_code", n => { NaicsCode = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichCompany_raw>(global::Soenneker.Unified.OpenApiClient.Models.EnrichCompany_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty.CreateFromDiscriminatorValue); } },
                 { "revenue", n => { Revenue = n.GetStringValue(); } },
                 { "sic_code", n => { SicCode = n.GetDoubleValue(); } },
                 { "stock", n => { Stock = n.GetStringValue(); } },
@@ -272,7 +272,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("logo_url", LogoUrl);
             writer.WriteDoubleValue("naics_code", NaicsCode);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichCompany_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty>("raw", Raw);
             writer.WriteStringValue("revenue", Revenue);
             writer.WriteDoubleValue("sic_code", SicCode);
             writer.WriteStringValue("stock", Stock);

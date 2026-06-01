@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connection_id}\trialbalance
+    /// Builds and executes requests for operations under \accounting\{connectionId}\trialbalance
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrialbalanceRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrialbalanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/trialbalance{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public TrialbalanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/trialbalance{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrialbalanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/trialbalance{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public TrialbalanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/trialbalance{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -113,11 +113,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalancesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalancesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

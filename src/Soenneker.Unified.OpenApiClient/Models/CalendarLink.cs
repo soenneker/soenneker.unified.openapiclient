@@ -63,10 +63,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarLink_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarLinkRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarLink_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarLinkRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "price_amount", n => { PriceAmount = n.GetDoubleValue(); } },
                 { "price_currency", n => { PriceCurrency = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarLink_raw>(global::Soenneker.Unified.OpenApiClient.Models.CalendarLink_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarLinkRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarLinkRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -137,7 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("price_amount", PriceAmount);
             writer.WriteStringValue("price_currency", PriceCurrency);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarLink_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarLinkRawProperty>("raw", Raw);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar
 {
     /// <summary>
-    /// Builds and executes requests for operations under \calendar\{connection_id}\webinar
+    /// Builds and executes requests for operations under \calendar\{connectionId}\webinar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebinarRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebinarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connection_id}/webinar{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public WebinarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/webinar{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebinarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connection_id}/webinar{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public WebinarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/webinar{?end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -155,11 +155,11 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCalendarWebinarsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCalendarWebinarsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -244,11 +244,11 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCalendarWebinarFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCalendarWebinarFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

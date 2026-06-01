@@ -61,17 +61,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty Raw { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_role? Role { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRole? Role { get; set; }
         /// <summary>The signed_at property</summary>
         public DateTimeOffset? SignedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_raw>(global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_raw.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_role>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRole>(); } },
                 { "signed_at", n => { SignedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -127,10 +127,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("order", Order);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_role>("role", Role);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRole>("role", Role);
             writer.WriteDateTimeOffsetValue("signed_at", SignedAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

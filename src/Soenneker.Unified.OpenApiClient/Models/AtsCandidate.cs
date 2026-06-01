@@ -139,14 +139,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The origin property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_origin? Origin { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateOrigin? Origin { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty Raw { get; set; }
 #endif
         /// <summary>The skills property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,8 +248,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "link_urls", n => { LinkUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_origin>(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_raw.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateOrigin>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -284,8 +284,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("link_urls", LinkUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_origin>("origin", Origin);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidate_raw>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateOrigin>("origin", Origin);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);

@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Embeddings { get; set; }
 #endif
         /// <summary>The enconding_format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_enconding_format? EncondingFormat { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat? EncondingFormat { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,10 +55,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingRawProperty Raw { get; set; }
 #endif
         /// <summary>The tokens_used property</summary>
         public double? TokensUsed { get; set; }
@@ -98,11 +98,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dimension", n => { Dimension = n.GetDoubleValue(); } },
                 { "embeddings", n => { Embeddings = n.GetStringValue(); } },
-                { "enconding_format", n => { EncondingFormat = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_enconding_format>(); } },
+                { "enconding_format", n => { EncondingFormat = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_raw>(global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingRawProperty.CreateFromDiscriminatorValue); } },
                 { "tokens_used", n => { TokensUsed = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -117,11 +117,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent>("content", Content);
             writer.WriteDoubleValue("dimension", Dimension);
             writer.WriteStringValue("embeddings", Embeddings);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_enconding_format>("enconding_format", EncondingFormat);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat>("enconding_format", EncondingFormat);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingRawProperty>("raw", Raw);
             writer.WriteDoubleValue("tokens_used", TokensUsed);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

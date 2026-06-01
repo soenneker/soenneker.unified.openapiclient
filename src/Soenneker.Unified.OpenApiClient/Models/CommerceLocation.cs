@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The latitude property</summary>
         public double? Latitude { get; set; }
         /// <summary>The location_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_location_type? LocationType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationLocationType? LocationType { get; set; }
         /// <summary>The longitude property</summary>
         public double? Longitude { get; set; }
         /// <summary>The media property</summary>
@@ -117,10 +117,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationRawProperty Raw { get; set; }
 #endif
         /// <summary>The review_count property</summary>
         public double? ReviewCount { get; set; }
@@ -177,14 +177,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
-                { "location_type", n => { LocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_location_type>(); } },
+                { "location_type", n => { LocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationLocationType>(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "price_level", n => { PriceLevel = n.GetStringValue(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationRawProperty.CreateFromDiscriminatorValue); } },
                 { "review_count", n => { ReviewCount = n.GetDoubleValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceTelephone>(global::Soenneker.Unified.OpenApiClient.Models.CommerceTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -208,14 +208,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteDoubleValue("latitude", Latitude);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_location_type>("location_type", LocationType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationLocationType>("location_type", LocationType);
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>("media", Media);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("price_level", PriceLevel);
             writer.WriteDoubleValue("rating", Rating);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocation_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationRawProperty>("raw", Raw);
             writer.WriteDoubleValue("review_count", ReviewCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

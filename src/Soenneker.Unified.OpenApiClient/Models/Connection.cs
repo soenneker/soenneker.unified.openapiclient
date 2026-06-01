@@ -58,10 +58,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The Integration categories that this connection supports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Connection_categories?>? Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Connection_categories?> Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -114,10 +114,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Connection_permissions?>? Permissions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Connection_permissions?> Permissions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?> Permissions { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -160,7 +160,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "auth_azure_keyvault_id", n => { AuthAzureKeyvaultId = n.GetStringValue(); } },
                 { "auth_gcp_secret_name", n => { AuthGcpSecretName = n.GetStringValue(); } },
                 { "auth_hashi_vault_path", n => { AuthHashiVaultPath = n.GetStringValue(); } },
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Connection_categories>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "external_xref", n => { ExternalXref = n.GetStringValue(); } },
@@ -170,7 +170,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "last_healthy_at", n => { LastHealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "last_unhealthy_at", n => { LastUnhealthyAt = n.GetDateTimeOffsetValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Connection_permissions>()?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -187,7 +187,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("auth_azure_keyvault_id", AuthAzureKeyvaultId);
             writer.WriteStringValue("auth_gcp_secret_name", AuthGcpSecretName);
             writer.WriteStringValue("auth_hashi_vault_path", AuthHashiVaultPath);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Connection_categories>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>("categories", Categories);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("external_xref", ExternalXref);
@@ -197,7 +197,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteDateTimeOffsetValue("last_healthy_at", LastHealthyAt);
             writer.WriteDateTimeOffsetValue("last_unhealthy_at", LastUnhealthyAt);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Connection_permissions>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>("permissions", Permissions);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

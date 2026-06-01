@@ -95,10 +95,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty Raw { get; set; }
 #endif
         /// <summary>The reimbursed_amount property</summary>
         public double? ReimbursedAmount { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty.CreateFromDiscriminatorValue); } },
                 { "reimbursed_amount", n => { ReimbursedAmount = n.GetDoubleValue(); } },
                 { "reimbursed_at", n => { ReimbursedAt = n.GetDateTimeOffsetValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
@@ -183,7 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>("raw", Raw);
             writer.WriteDoubleValue("reimbursed_amount", ReimbursedAmount);
             writer.WriteDateTimeOffsetValue("reimbursed_at", ReimbursedAt);
             writer.WriteDoubleValue("tax_amount", TaxAmount);

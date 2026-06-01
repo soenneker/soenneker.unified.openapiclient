@@ -93,16 +93,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The paid_at property</summary>
         public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_collection_method property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_payment_collection_method? PaymentCollectionMethod { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod? PaymentCollectionMethod { get; set; }
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,13 +127,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The send property</summary>
         public bool? Send { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The url property</summary>
@@ -184,18 +184,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "paid_amount", n => { PaidAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
-                { "payment_collection_method", n => { PaymentCollectionMethod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_payment_collection_method>(); } },
+                { "payment_collection_method", n => { PaymentCollectionMethod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod>(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "refund_amount", n => { RefundAmount = n.GetDoubleValue(); } },
                 { "refund_reason", n => { RefundReason = n.GetStringValue(); } },
                 { "refunded_at", n => { RefundedAt = n.GetDateTimeOffsetValue(); } },
                 { "send", n => { Send = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -222,18 +222,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDoubleValue("paid_amount", PaidAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_payment_collection_method>("payment_collection_method", PaymentCollectionMethod);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod>("payment_collection_method", PaymentCollectionMethod);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteDoubleValue("refund_amount", RefundAmount);
             writer.WriteDateTimeOffsetValue("refunded_at", RefundedAt);
             writer.WriteStringValue("refund_reason", RefundReason);
             writer.WriteBoolValue("send", Send);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoice_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

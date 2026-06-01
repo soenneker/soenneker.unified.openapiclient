@@ -35,10 +35,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskChange_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskChangeRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskChange_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskChangeRawProperty Raw { get; set; }
 #endif
         /// <summary>The task_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskChangeItem>(global::Soenneker.Unified.OpenApiClient.Models.TaskChangeItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskChange_raw>(global::Soenneker.Unified.OpenApiClient.Models.TaskChange_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskChangeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TaskChangeRawProperty.CreateFromDiscriminatorValue); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -102,7 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskChangeItem>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskChange_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskChangeRawProperty>("raw", Raw);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

@@ -73,10 +73,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReport_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReport_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty Raw { get; set; }
 #endif
         /// <summary>The sent_at property</summary>
         public DateTimeOffset? SentAt { get; set; }
@@ -135,7 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "list_id", n => { ListId = n.GetStringValue(); } },
                 { "open_rate", n => { OpenRate = n.GetDoubleValue(); } },
                 { "opens_total", n => { OpensTotal = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReport_raw>(global::Soenneker.Unified.OpenApiClient.Models.MarketingReport_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty.CreateFromDiscriminatorValue); } },
                 { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
                 { "soft_bounces", n => { SoftBounces = n.GetDoubleValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("list_id", ListId);
             writer.WriteDoubleValue("open_rate", OpenRate);
             writer.WriteDoubleValue("opens_total", OpensTotal);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReport_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("sent_at", SentAt);
             writer.WriteDoubleValue("soft_bounces", SoftBounces);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

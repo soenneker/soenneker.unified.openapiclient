@@ -15,11 +15,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The advertising_channel_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_advertising_channel_type? AdvertisingChannelType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignAdvertisingChannelType? AdvertisingChannelType { get; set; }
         /// <summary>The budget_amount property</summary>
         public double? BudgetAmount { get; set; }
         /// <summary>The budget_period property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_budget_period? BudgetPeriod { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod? BudgetPeriod { get; set; }
         /// <summary>The campaign_budget_identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap FrequencyCap { get; set; }
 #endif
         /// <summary>The goal property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal? Goal { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignGoal? Goal { get; set; }
         /// <summary>The has_eu_political_ads property</summary>
         public bool? HasEuPoliticalAds { get; set; }
         /// <summary>The id property</summary>
@@ -89,15 +89,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignStatus? Status { get; set; }
         /// <summary>The targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,24 +135,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advertising_channel_type", n => { AdvertisingChannelType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_advertising_channel_type>(); } },
+                { "advertising_channel_type", n => { AdvertisingChannelType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignAdvertisingChannelType>(); } },
                 { "budget_amount", n => { BudgetAmount = n.GetDoubleValue(); } },
-                { "budget_period", n => { BudgetPeriod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_budget_period>(); } },
+                { "budget_period", n => { BudgetPeriod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod>(); } },
                 { "campaign_budget_identifier", n => { CampaignBudgetIdentifier = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap.CreateFromDiscriminatorValue); } },
-                { "goal", n => { Goal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal>(); } },
+                { "goal", n => { Goal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignGoal>(); } },
                 { "has_eu_political_ads", n => { HasEuPoliticalAds = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "planned_spend_amount", n => { PlannedSpendAmount = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignStatus>(); } },
                 { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting.CreateFromDiscriminatorValue); } },
                 { "total_spend_amount", n => { TotalSpendAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -165,24 +165,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_advertising_channel_type>("advertising_channel_type", AdvertisingChannelType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignAdvertisingChannelType>("advertising_channel_type", AdvertisingChannelType);
             writer.WriteDoubleValue("budget_amount", BudgetAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_budget_period>("budget_period", BudgetPeriod);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod>("budget_period", BudgetPeriod);
             writer.WriteStringValue("campaign_budget_identifier", CampaignBudgetIdentifier);
             writer.WriteStringValue("category", Category);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>("frequency_cap", FrequencyCap);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_goal>("goal", Goal);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignGoal>("goal", Goal);
             writer.WriteBoolValue("has_eu_political_ads", HasEuPoliticalAds);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDoubleValue("planned_spend_amount", PlannedSpendAmount);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargeting>("targeting", Targeting);
             writer.WriteDoubleValue("total_spend_amount", TotalSpendAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

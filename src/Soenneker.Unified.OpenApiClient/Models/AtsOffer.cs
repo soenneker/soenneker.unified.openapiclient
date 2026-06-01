@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsOfferStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "rejected_at", n => { RejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOfferStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("rejected_at", RejectedAt);
             writer.WriteDateTimeOffsetValue("sent_at", SentAt);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsOfferStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

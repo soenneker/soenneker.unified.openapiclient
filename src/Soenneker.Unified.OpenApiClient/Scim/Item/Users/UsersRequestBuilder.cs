@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Scim.Item.Users
 {
     /// <summary>
-    /// Builds and executes requests for operations under \scim\{connection_id}\users
+    /// Builds and executes requests for operations under \scim\{connectionId}\users
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Scim.Item.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connection_id}/users{?count*,filter*,sortBy*,sortOrder*,startIndex*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connectionId}/users{?count*,filter*,sortBy*,sortOrder*,startIndex*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Scim.Item.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connection_id}/users{?count*,filter*,sortBy*,sortOrder*,startIndex*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connectionId}/users{?count*,filter*,sortBy*,sortOrder*,startIndex*}", rawUrl)
         {
         }
         /// <summary>

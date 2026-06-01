@@ -49,13 +49,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutStatus? Status { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
@@ -95,8 +95,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_raw>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutStatus>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -112,8 +112,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayout_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutStatus>("status", Status);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

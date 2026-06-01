@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoRepository_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoRepositoryRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoRepository_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoRepositoryRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "org_id", n => { OrgId = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoRepository_raw>(global::Soenneker.Unified.OpenApiClient.Models.RepoRepository_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoRepositoryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoRepositoryRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "web_url", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -127,7 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("org_id", OrgId);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoRepository_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoRepositoryRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("web_url", WebUrl);
             writer.WriteAdditionalData(AdditionalData);

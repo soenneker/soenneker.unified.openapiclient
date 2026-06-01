@@ -65,10 +65,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Array of schema URIs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas?>? Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupSchemasItem?>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas?> Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupSchemasItem?> Schemas { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ScimGroup"/> and sets the default values.
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember>(global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta.CreateFromDiscriminatorValue); } },
-                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas>()?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupSchemasItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember>("members", Members);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta>("meta", Meta);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimGroup_schemas>("schemas", Schemas);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupSchemasItem>("schemas", Schemas);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

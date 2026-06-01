@@ -27,10 +27,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskComment_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskCommentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskComment_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskCommentRawProperty Raw { get; set; }
 #endif
         /// <summary>The task_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskComment_raw>(global::Soenneker.Unified.OpenApiClient.Models.TaskComment_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskCommentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TaskCommentRawProperty.CreateFromDiscriminatorValue); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskComment_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskCommentRawProperty>("raw", Raw);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteStringValue("text", Text);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

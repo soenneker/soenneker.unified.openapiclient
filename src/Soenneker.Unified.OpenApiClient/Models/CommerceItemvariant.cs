@@ -119,15 +119,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantRawProperty Raw { get; set; }
 #endif
         /// <summary>The requires_shipping property</summary>
         public bool? RequiresShipping { get; set; }
         /// <summary>The size_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_size_unit? SizeUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantSizeUnit? SizeUnit { get; set; }
         /// <summary>The sku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,7 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The weight property</summary>
         public double? Weight { get; set; }
         /// <summary>The weight_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_weight_unit? WeightUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantWeightUnit? WeightUnit { get; set; }
         /// <summary>The width property</summary>
         public double? Width { get; set; }
         /// <summary>
@@ -197,15 +197,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "prices", n => { Prices = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_description", n => { PublicDescription = n.GetStringValue(); } },
                 { "public_name", n => { PublicName = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantRawProperty.CreateFromDiscriminatorValue); } },
                 { "requires_shipping", n => { RequiresShipping = n.GetBoolValue(); } },
-                { "size_unit", n => { SizeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_size_unit>(); } },
+                { "size_unit", n => { SizeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantSizeUnit>(); } },
                 { "sku", n => { Sku = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "total_stock", n => { TotalStock = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
-                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_weight_unit>(); } },
+                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantWeightUnit>(); } },
                 { "width", n => { Width = n.GetDoubleValue(); } },
             };
         }
@@ -234,15 +234,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice>("prices", Prices);
             writer.WriteStringValue("public_description", PublicDescription);
             writer.WriteStringValue("public_name", PublicName);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantRawProperty>("raw", Raw);
             writer.WriteBoolValue("requires_shipping", RequiresShipping);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_size_unit>("size_unit", SizeUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantSizeUnit>("size_unit", SizeUnit);
             writer.WriteStringValue("sku", Sku);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDoubleValue("total_stock", TotalStock);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDoubleValue("weight", Weight);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant_weight_unit>("weight_unit", WeightUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantWeightUnit>("weight_unit", WeightUnit);
             writer.WriteDoubleValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

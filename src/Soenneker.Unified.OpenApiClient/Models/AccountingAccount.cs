@@ -88,10 +88,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty Raw { get; set; }
 #endif
         /// <summary>The section property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Section { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus? Status { get; set; }
         /// <summary>The subgroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy> Taxonomy { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -167,13 +167,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty.CreateFromDiscriminatorValue); } },
                 { "section", n => { Section = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus>(); } },
                 { "subgroup", n => { Subgroup = n.GetStringValue(); } },
                 { "subsection", n => { Subsection = n.GetStringValue(); } },
                 { "taxonomy", n => { Taxonomy = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -195,13 +195,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty>("raw", Raw);
             writer.WriteStringValue("section", Section);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus>("status", Status);
             writer.WriteStringValue("subgroup", Subgroup);
             writer.WriteStringValue("subsection", Subsection);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy>("taxonomy", Taxonomy);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

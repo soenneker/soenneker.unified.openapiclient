@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ads\{connection_id}\report
+    /// Builds and executes requests for operations under \ads\{connectionId}\report
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connection_id}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", pathParameters)
+        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connection_id}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", rawUrl)
+        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -120,11 +120,11 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ads.Item.Report.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAdsReportsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ads.Item.Report.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAdsReportsFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The group ID to filter by (reference to AdsGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

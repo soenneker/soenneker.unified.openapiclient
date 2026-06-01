@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The primary property</summary>
         public bool? Primary { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ScimIms_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ScimImsType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "display", n => { Display = n.GetStringValue(); } },
                 { "primary", n => { Primary = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimIms_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimImsType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display", Display);
             writer.WriteBoolValue("primary", Primary);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimIms_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimImsType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

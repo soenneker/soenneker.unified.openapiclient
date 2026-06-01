@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ads\{connection_id}\target
+    /// Builds and executes requests for operations under \ads\{connectionId}\target
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connection_id}/target{?fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
+        public TargetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/target{?fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connection_id}/target{?fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
+        public TargetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/target{?fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAdsTargetsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAdsTargetsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

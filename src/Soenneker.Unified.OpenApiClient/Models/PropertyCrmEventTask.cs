@@ -34,9 +34,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The priority property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_priority? Priority { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskPriority? Priority { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask"/> and sets the default values.
         /// </summary>
@@ -65,8 +65,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_priority>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_status>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskPriority>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskStatus>(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_priority>("priority", Priority);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskPriority>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

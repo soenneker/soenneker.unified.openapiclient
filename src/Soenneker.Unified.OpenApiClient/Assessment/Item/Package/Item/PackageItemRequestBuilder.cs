@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Package.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \assessment\{connection_id}\package\{id}
+    /// Builds and executes requests for operations under \assessment\{connectionId}\package\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PackageItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Package.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assessment/{connection_id}/package/{id}", pathParameters)
+        public PackageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assessment/{connectionId}/package/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Package.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assessment/{connection_id}/package/{id}", rawUrl)
+        public PackageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assessment/{connectionId}/package/{id}", rawUrl)
         {
         }
         /// <summary>

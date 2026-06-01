@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModel_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModel_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty Raw { get; set; }
 #endif
         /// <summary>The web_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModel_raw>(global::Soenneker.Unified.OpenApiClient.Models.GenaiModel_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty.CreateFromDiscriminatorValue); } },
                 { "web_url", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModel_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty>("raw", Raw);
             writer.WriteStringValue("web_url", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

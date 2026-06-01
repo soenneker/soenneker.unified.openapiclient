@@ -69,10 +69,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty Raw { get; set; }
 #endif
         /// <summary>The shipping_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,11 +83,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress ShippingAddress { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderStatus? Status { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -123,11 +123,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderStatus>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -146,11 +146,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress>("shipping_address", ShippingAddress);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderStatus>("status", Status);
             writer.WriteDoubleValue("total_amount", TotalAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

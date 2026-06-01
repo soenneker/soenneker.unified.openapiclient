@@ -85,10 +85,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationRawProperty Raw { get; set; }
 #endif
         /// <summary>The size property</summary>
         public double? Size { get; set; }
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The url property</summary>
@@ -157,12 +157,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "item_name", n => { ItemName = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationRawProperty.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
                 { "staff_name", n => { StaffName = n.GetStringValue(); } },
                 { "staff_user_id", n => { StaffUserId = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -184,12 +184,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("item_name", ItemName);
             writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationRawProperty>("raw", Raw);
             writer.WriteDoubleValue("size", Size);
             writer.WriteStringValue("staff_name", StaffName);
             writer.WriteStringValue("staff_user_id", StaffUserId);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservation_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReservationStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

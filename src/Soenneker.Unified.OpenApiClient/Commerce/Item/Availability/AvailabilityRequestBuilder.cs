@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Availability
 {
     /// <summary>
-    /// Builds and executes requests for operations under \commerce\{connection_id}\availability
+    /// Builds and executes requests for operations under \commerce\{connectionId}\availability
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AvailabilityRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Availability
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AvailabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/availability{?end_lt*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,size*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public AvailabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/availability{?end_lt*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,size*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Availability
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AvailabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/availability{?end_lt*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,size*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public AvailabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/availability{?end_lt*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,size*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,11 +100,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Availability
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Availability.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceAvailabilitiesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Availability.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceAvailabilitiesFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The item ID to filter by (reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

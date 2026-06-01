@@ -81,13 +81,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentStatus? Status { get; set; }
         /// <summary>The unhelpful_votes property</summary>
         public double? UnhelpfulVotes { get; set; }
         /// <summary>The updated_at property</summary>
@@ -128,8 +128,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
                 { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentStatus>(); } },
                 { "unhelpful_votes", n => { UnhelpfulVotes = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -152,8 +152,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_public", IsPublic);
             writer.WriteBoolValue("is_verified", IsVerified);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewComment_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewCommentStatus>("status", Status);
             writer.WriteDoubleValue("unhelpful_votes", UnhelpfulVotes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -34,13 +34,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty Raw { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted"/> and sets the default values.
         /// </summary>
@@ -68,8 +68,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedType>(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

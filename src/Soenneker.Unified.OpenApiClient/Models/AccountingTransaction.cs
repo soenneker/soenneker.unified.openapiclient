@@ -99,10 +99,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -172,7 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "split_account_id", n => { SplitAccountId = n.GetStringValue(); } },
                 { "sub_total_amount", n => { SubTotalAmount = n.GetDoubleValue(); } },
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteStringValue("payment_terms", PaymentTerms);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("split_account_id", SplitAccountId);
             writer.WriteDoubleValue("sub_total_amount", SubTotalAmount);

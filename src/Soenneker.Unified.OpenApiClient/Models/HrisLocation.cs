@@ -95,10 +95,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisLocation_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisLocationRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisLocation_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisLocationRawProperty Raw { get; set; }
 #endif
         /// <summary>The telephones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisLocation_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisLocationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisLocationRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>(global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisLocationRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>("telephones", Telephones);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

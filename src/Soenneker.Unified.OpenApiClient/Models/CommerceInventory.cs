@@ -59,10 +59,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -97,7 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "item_option_id", n => { ItemOptionId = n.GetStringValue(); } },
                 { "item_variant_id", n => { ItemVariantId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("item_option_id", ItemOptionId);
             writer.WriteStringValue("item_variant_id", ItemVariantId);
             writer.WriteStringValue("location_id", LocationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,13 +34,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string CompanyId { get; set; }
 #endif
         /// <summary>The coverage_level property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_coverage_level? CoverageLevel { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionCoverageLevel? CoverageLevel { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The end_at property</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The frequency property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_frequency? Frequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionFrequency? Frequency { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,15 +62,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -109,16 +109,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "benefit_id", n => { BenefitId = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
-                { "coverage_level", n => { CoverageLevel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_coverage_level>(); } },
+                { "coverage_level", n => { CoverageLevel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionCoverageLevel>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionFrequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_raw>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -133,16 +133,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("benefit_id", BenefitId);
             writer.WriteStringValue("company_id", CompanyId);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_coverage_level>("coverage_level", CoverageLevel);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionCoverageLevel>("coverage_level", CoverageLevel);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionFrequency>("frequency", Frequency);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

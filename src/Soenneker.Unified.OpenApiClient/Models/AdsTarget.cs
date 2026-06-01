@@ -48,13 +48,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty Raw { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsTargetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsTarget"/> and sets the default values.
         /// </summary>
@@ -86,8 +86,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_raw.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_type>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTargetType>(); } },
             };
         }
         /// <summary>
@@ -103,8 +103,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTarget_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsTargetType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.FormField_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.FormFieldType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetDoubleValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.FormField_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.FormFieldType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -146,7 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("order", Order);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.FormField_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.FormFieldType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

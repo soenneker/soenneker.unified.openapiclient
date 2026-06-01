@@ -50,10 +50,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The publisher_visibility_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety_publisher_visibility_categories?>? PublisherVisibilityCategories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafetyPublisherVisibilityCategoriesItem?>? PublisherVisibilityCategories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety_publisher_visibility_categories?> PublisherVisibilityCategories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafetyPublisherVisibilityCategoriesItem?> PublisherVisibilityCategories { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety"/> and sets the default values.
@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "brand_safety_content_filter_levels", n => { BrandSafetyContentFilterLevels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_content_labels", n => { ExcludedContentLabels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_publisher_categories", n => { ExcludedPublisherCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "publisher_visibility_categories", n => { PublisherVisibilityCategories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety_publisher_visibility_categories>()?.AsList(); } },
+                { "publisher_visibility_categories", n => { PublisherVisibilityCategories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafetyPublisherVisibilityCategoriesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("brand_safety_content_filter_levels", BrandSafetyContentFilterLevels);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_content_labels", ExcludedContentLabels);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_publisher_categories", ExcludedPublisherCategories);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety_publisher_visibility_categories>("publisher_visibility_categories", PublisherVisibilityCategories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafetyPublisherVisibilityCategoriesItem>("publisher_visibility_categories", PublisherVisibilityCategories);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

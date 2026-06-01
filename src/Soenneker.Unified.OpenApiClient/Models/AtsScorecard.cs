@@ -83,13 +83,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty Raw { get; set; }
 #endif
         /// <summary>The recommendation property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_recommendation? Recommendation { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRecommendation? Recommendation { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -126,8 +126,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "interviewer_id", n => { InterviewerId = n.GetStringValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion>(global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_raw.CreateFromDiscriminatorValue); } },
-                { "recommendation", n => { Recommendation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_recommendation>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty.CreateFromDiscriminatorValue); } },
+                { "recommendation", n => { Recommendation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRecommendation>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -147,8 +147,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("interview_id", InterviewId);
             writer.WriteStringValue("job_id", JobId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion>("questions", Questions);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecard_recommendation>("recommendation", Recommendation);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRecommendation>("recommendation", Recommendation);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string FirstName { get; set; }
 #endif
         /// <summary>The gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_gender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonGender? Gender { get; set; }
         /// <summary>The github_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,10 +142,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty Raw { get; set; }
 #endif
         /// <summary>An array of telephones for this person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -233,7 +233,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail>(global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "facebook_url", n => { FacebookUrl = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_gender>(); } },
+                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonGender>(); } },
                 { "github_url", n => { GithubUrl = n.GetStringValue(); } },
                 { "github_username", n => { GithubUsername = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -241,7 +241,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "linkedin_url", n => { LinkedinUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_raw>(global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichTelephone>(global::Soenneker.Unified.OpenApiClient.Models.EnrichTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -268,7 +268,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail>("emails", Emails);
             writer.WriteStringValue("facebook_url", FacebookUrl);
             writer.WriteStringValue("first_name", FirstName);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_gender>("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonGender>("gender", Gender);
             writer.WriteStringValue("github_url", GithubUrl);
             writer.WriteStringValue("github_username", GithubUsername);
             writer.WriteStringValue("id", Id);
@@ -276,7 +276,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("linkedin_url", LinkedinUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPerson_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichTelephone>("telephones", Telephones);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);

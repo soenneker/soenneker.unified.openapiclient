@@ -17,14 +17,14 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace
     {
         /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.unified.integration.workspace.item collection</summary>
         /// <param name="position">The ID of the workspace</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspace_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspace_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspaceItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspaceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("workspace_id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspace_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("workspaceId", position);
+                return new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.Item.WithWorkspaceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -18,7 +18,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The coverage_amount property</summary>
         public double? CoverageAmount { get; set; }
         /// <summary>The coverage_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance_coverage_type? CoverageType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType? CoverageType { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +81,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "coverage_amount", n => { CoverageAmount = n.GetDoubleValue(); } },
-                { "coverage_type", n => { CoverageType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance_coverage_type>(); } },
+                { "coverage_type", n => { CoverageType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "insurance_cost", n => { InsuranceCost = n.GetDoubleValue(); } },
                 { "insurance_cost_currency", n => { InsuranceCostCurrency = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("coverage_amount", CoverageAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance_coverage_type>("coverage_type", CoverageType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType>("coverage_type", CoverageType);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("insurance_cost", InsuranceCost);
             writer.WriteStringValue("insurance_cost_currency", InsuranceCostCurrency);

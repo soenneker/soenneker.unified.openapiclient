@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Crm.Item.Event
 {
     /// <summary>
-    /// Builds and executes requests for operations under \crm\{connection_id}\event
+    /// Builds and executes requests for operations under \crm\{connectionId}\event
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connection_id}/event{?company_id*,contact_id*,deal_id*,fields*,lead_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", pathParameters)
+        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/event{?company_id*,contact_id*,deal_id*,fields*,lead_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connection_id}/event{?company_id*,contact_id*,deal_id*,fields*,lead_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", rawUrl)
+        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/event{?company_id*,contact_id*,deal_id*,fields*,lead_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -175,11 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Event
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Event.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmEventsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Event.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmEventsFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The CRM lead ID to filter by (reference to CrmLead)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -273,11 +273,11 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Event
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Event.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCrmEventFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Crm.Item.Event.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateCrmEventFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

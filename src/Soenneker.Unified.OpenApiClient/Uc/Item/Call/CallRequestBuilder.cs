@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
 {
     /// <summary>
-    /// Builds and executes requests for operations under \uc\{connection_id}\call
+    /// Builds and executes requests for operations under \uc\{connectionId}\call
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connection_id}/call{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public CallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/call{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connection_id}/call{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public CallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/call{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -123,11 +123,11 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUcCallsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUcCallsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

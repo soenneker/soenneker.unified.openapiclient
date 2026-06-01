@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskProject_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskProjectRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskProject_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskProjectRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -120,7 +120,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskProject_raw>(global::Soenneker.Unified.OpenApiClient.Models.TaskProject_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskProjectRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TaskProjectRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -141,7 +141,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskProject_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskProjectRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteAdditionalData(AdditionalData);

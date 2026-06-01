@@ -30,15 +30,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The performance_goal_amount property</summary>
         public double? PerformanceGoalAmount { get; set; }
         /// <summary>The performance_goal_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_performance_goal_type? PerformanceGoalType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType? PerformanceGoalType { get; set; }
         /// <summary>The raise_bid_for_deals property</summary>
         public bool? RaiseBidForDeals { get; set; }
         /// <summary>The target_roas property</summary>
         public double? TargetRoas { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyType? Type { get; set; }
         /// <summary>The youtube_and_partners_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_youtube_and_partners_type? YoutubeAndPartnersType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
         /// <summary>The youtube_and_partners_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,11 +76,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "fixed_bid_amount", n => { FixedBidAmount = n.GetDoubleValue(); } },
                 { "max_average_cpm_bid_amount", n => { MaxAverageCpmBidAmount = n.GetDoubleValue(); } },
                 { "performance_goal_amount", n => { PerformanceGoalAmount = n.GetDoubleValue(); } },
-                { "performance_goal_type", n => { PerformanceGoalType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_performance_goal_type>(); } },
+                { "performance_goal_type", n => { PerformanceGoalType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType>(); } },
                 { "raise_bid_for_deals", n => { RaiseBidForDeals = n.GetBoolValue(); } },
                 { "target_roas", n => { TargetRoas = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_type>(); } },
-                { "youtube_and_partners_type", n => { YoutubeAndPartnersType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_youtube_and_partners_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyType>(); } },
+                { "youtube_and_partners_type", n => { YoutubeAndPartnersType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType>(); } },
                 { "youtube_and_partners_value", n => { YoutubeAndPartnersValue = n.GetStringValue(); } },
             };
         }
@@ -95,11 +95,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("fixed_bid_amount", FixedBidAmount);
             writer.WriteDoubleValue("max_average_cpm_bid_amount", MaxAverageCpmBidAmount);
             writer.WriteDoubleValue("performance_goal_amount", PerformanceGoalAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_performance_goal_type>("performance_goal_type", PerformanceGoalType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType>("performance_goal_type", PerformanceGoalType);
             writer.WriteBoolValue("raise_bid_for_deals", RaiseBidForDeals);
             writer.WriteDoubleValue("target_roas", TargetRoas);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_type>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategy_youtube_and_partners_type>("youtube_and_partners_type", YoutubeAndPartnersType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType>("youtube_and_partners_type", YoutubeAndPartnersType);
             writer.WriteStringValue("youtube_and_partners_value", YoutubeAndPartnersValue);
             writer.WriteAdditionalData(AdditionalData);
         }

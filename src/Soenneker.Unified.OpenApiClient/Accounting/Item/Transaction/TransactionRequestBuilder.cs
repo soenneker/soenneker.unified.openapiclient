@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connection_id}\transaction
+    /// Builds and executes requests for operations under \accounting\{connectionId}\transaction
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public TransactionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public TransactionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -175,11 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTransactionsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTransactionsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -264,11 +264,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingTransactionFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingTransactionFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -59,10 +59,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty Raw { get; set; }
 #endif
         /// <summary>The responses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "mcp_url", n => { McpUrl = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt_raw>(global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty.CreateFromDiscriminatorValue); } },
                 { "responses", n => { Responses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tokens_used", n => { TokensUsed = n.GetDoubleValue(); } },
@@ -126,7 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("mcp_url", McpUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>("messages", Messages);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("responses", Responses);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteDoubleValue("tokens_used", TokensUsed);

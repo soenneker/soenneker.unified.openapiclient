@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Currency { get; set; }
 #endif
         /// <summary>The frequency property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_frequency? Frequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationFrequency? Frequency { get; set; }
         /// <summary>The group_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Notes { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation"/> and sets the default values.
         /// </summary>
@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationFrequency>(); } },
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationType>(); } },
             };
         }
         /// <summary>
@@ -86,10 +86,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("currency", Currency);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationFrequency>("frequency", Frequency);
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

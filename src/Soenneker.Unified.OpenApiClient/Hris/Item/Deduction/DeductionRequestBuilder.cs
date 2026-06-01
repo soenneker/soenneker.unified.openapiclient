@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
 {
     /// <summary>
-    /// Builds and executes requests for operations under \hris\{connection_id}\deduction
+    /// Builds and executes requests for operations under \hris\{connectionId}\deduction
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeductionRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeductionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connection_id}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public DeductionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeductionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connection_id}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public DeductionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -175,11 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Hris.Item.Deduction.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListHrisDeductionsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Hris.Item.Deduction.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListHrisDeductionsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -274,11 +274,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Hris.Item.Deduction.PostFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateHrisDeductionFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Hris.Item.Deduction.PostFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateHrisDeductionFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

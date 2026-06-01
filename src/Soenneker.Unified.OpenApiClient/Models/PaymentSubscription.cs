@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The interval property</summary>
         public double? Interval { get; set; }
         /// <summary>The interval_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_interval_unit? IntervalUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionIntervalUnit? IntervalUnit { get; set; }
         /// <summary>The invoice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,15 +85,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -133,13 +133,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
-                { "interval_unit", n => { IntervalUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_interval_unit>(); } },
+                { "interval_unit", n => { IntervalUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionIntervalUnit>(); } },
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem>(global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "month", n => { Month = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_raw>(global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -162,13 +162,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("interval", Interval);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_interval_unit>("interval_unit", IntervalUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionIntervalUnit>("interval_unit", IntervalUnit);
             writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem>("lineitems", Lineitems);
             writer.WriteDoubleValue("month", Month);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

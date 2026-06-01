@@ -17,13 +17,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The extra_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_extra_data? ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData? ExtraData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_extra_data ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData ExtraData { get; set; }
 #endif
         /// <summary>The format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_format? Format { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataFormat? Format { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,10 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_value? Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_value Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata"/> and sets the default values.
@@ -97,14 +97,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_extra_data>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_extra_data.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_format>(); } },
+                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_value>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -114,14 +114,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_extra_data>("extra_data", ExtraData);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_format>("format", Format);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData>("extra_data", ExtraData);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataFormat>("format", Format);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadata_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

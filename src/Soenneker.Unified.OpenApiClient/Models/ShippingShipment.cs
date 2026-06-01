@@ -131,10 +131,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ReturnReason { get; set; }
 #endif
         /// <summary>The return_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_return_type? ReturnType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentReturnType? ReturnType { get; set; }
         /// <summary>The service_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,7 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> SpecialInstructions { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentStatus? Status { get; set; }
         /// <summary>Destination address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,16 +270,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "rate_estimated_delivery_at", n => { RateEstimatedDeliveryAt = n.GetDateTimeOffsetValue(); } },
                 { "rate_id", n => { RateId = n.GetStringValue(); } },
                 { "rate_service_name", n => { RateServiceName = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw>(global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference_number", n => { ReferenceNumber = n.GetStringValue(); } },
                 { "return_address", n => { ReturnAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress.CreateFromDiscriminatorValue); } },
                 { "return_authorization_number", n => { ReturnAuthorizationNumber = n.GetStringValue(); } },
                 { "return_reason", n => { ReturnReason = n.GetStringValue(); } },
-                { "return_type", n => { ReturnType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_return_type>(); } },
+                { "return_type", n => { ReturnType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentReturnType>(); } },
                 { "service_code", n => { ServiceCode = n.GetStringValue(); } },
                 { "shipped_at", n => { ShippedAt = n.GetDateTimeOffsetValue(); } },
                 { "special_instructions", n => { SpecialInstructions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentStatus>(); } },
                 { "to_address", n => { ToAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress.CreateFromDiscriminatorValue); } },
                 { "tracking_id", n => { TrackingId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -315,16 +315,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("rate_estimated_delivery_at", RateEstimatedDeliveryAt);
             writer.WriteStringValue("rate_id", RateId);
             writer.WriteStringValue("rate_service_name", RateServiceName);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty>("raw", Raw);
             writer.WriteStringValue("reference_number", ReferenceNumber);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress>("return_address", ReturnAddress);
             writer.WriteStringValue("return_authorization_number", ReturnAuthorizationNumber);
             writer.WriteStringValue("return_reason", ReturnReason);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_return_type>("return_type", ReturnType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentReturnType>("return_type", ReturnType);
             writer.WriteStringValue("service_code", ServiceCode);
             writer.WriteDateTimeOffsetValue("shipped_at", ShippedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("special_instructions", SpecialInstructions);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipment_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress>("to_address", ToAddress);
             writer.WriteStringValue("tracking_id", TrackingId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

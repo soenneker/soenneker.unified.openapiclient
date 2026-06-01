@@ -49,10 +49,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.UcComment_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.UcCommentRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.UcComment_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.UcCommentRawProperty Raw { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcComment_raw>(global::Soenneker.Unified.OpenApiClient.Models.UcComment_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCommentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.UcCommentRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -115,7 +115,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcComment_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCommentRawProperty>("raw", Raw);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

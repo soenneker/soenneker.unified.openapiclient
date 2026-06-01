@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsAd_ad_type? AdType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsAdAdType? AdType { get; set; }
         /// <summary>The campaign_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,13 +149,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsAd_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsAdRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsAd_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsAdRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsAd_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsAdStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -184,7 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ad_copy", n => { AdCopy = n.GetStringValue(); } },
-                { "ad_type", n => { AdType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_ad_type>(); } },
+                { "ad_type", n => { AdType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdAdType>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_asset_url", n => { CreativeAssetUrl = n.GetStringValue(); } },
@@ -201,8 +201,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "path1", n => { Path1 = n.GetStringValue(); } },
                 { "path2", n => { Path2 = n.GetStringValue(); } },
                 { "promoted", n => { Promoted = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsAd_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsAdRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -214,7 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ad_copy", AdCopy);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_ad_type>("ad_type", AdType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdAdType>("ad_type", AdType);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("creative_asset_url", CreativeAssetUrl);
@@ -231,8 +231,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("path1", Path1);
             writer.WriteStringValue("path2", Path2);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>("promoted", Promoted);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAd_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsAdStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

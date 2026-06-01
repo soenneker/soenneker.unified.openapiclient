@@ -29,7 +29,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string AccountNumberLast4 { get; set; }
 #endif
         /// <summary>The account_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_account_type? AccountType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountAccountType? AccountType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bank_name property</summary>
@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty Raw { get; set; }
 #endif
         /// <summary>The routing_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,14 +121,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "account_number", n => { AccountNumber = n.GetStringValue(); } },
                 { "account_number_last4", n => { AccountNumberLast4 = n.GetStringValue(); } },
-                { "account_type", n => { AccountType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_account_type>(); } },
+                { "account_type", n => { AccountType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountAccountType>(); } },
                 { "bank_name", n => { BankName = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_primary", n => { IsPrimary = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty.CreateFromDiscriminatorValue); } },
                 { "routing_number", n => { RoutingNumber = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -143,14 +143,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_number", AccountNumber);
             writer.WriteStringValue("account_number_last4", AccountNumberLast4);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_account_type>("account_type", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountAccountType>("account_type", AccountType);
             writer.WriteStringValue("bank_name", BankName);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_primary", IsPrimary);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccount_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>("raw", Raw);
             writer.WriteStringValue("routing_number", RoutingNumber);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

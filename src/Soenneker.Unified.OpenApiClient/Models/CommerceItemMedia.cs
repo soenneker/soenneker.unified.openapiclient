@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The position property</summary>
         public double? Position { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMediaType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "position", n => { Position = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMediaType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "width", n => { Width = n.GetDoubleValue(); } },
             };
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("position", Position);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMediaType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteDoubleValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);

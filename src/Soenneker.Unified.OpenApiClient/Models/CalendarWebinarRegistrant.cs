@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string RegistrationReference { get; set; }
 #endif
         /// <summary>The registration_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant_registration_status? RegistrationStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus? RegistrationStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant"/> and sets the default values.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "registered_at", n => { RegisteredAt = n.GetDateTimeOffsetValue(); } },
                 { "registration_reference", n => { RegistrationReference = n.GetStringValue(); } },
-                { "registration_status", n => { RegistrationStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant_registration_status>(); } },
+                { "registration_status", n => { RegistrationStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus>(); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("registered_at", RegisteredAt);
             writer.WriteStringValue("registration_reference", RegistrationReference);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant_registration_status>("registration_status", RegistrationStatus);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus>("registration_status", RegistrationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

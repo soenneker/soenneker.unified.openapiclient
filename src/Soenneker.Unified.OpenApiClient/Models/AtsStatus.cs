@@ -41,13 +41,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatusRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatusRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsStatusStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsStatus"/> and sets the default values.
         /// </summary>
@@ -76,8 +76,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "original_status", n => { OriginalStatus = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatusRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsStatusRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatusStatus>(); } },
             };
         }
         /// <summary>
@@ -90,8 +90,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("original_status", OriginalStatus);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatus_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatusRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsStatusStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -69,10 +69,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty Raw { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string SourceRef { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketStatus? Status { get; set; }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,10 +159,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_raw>(global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "source_ref", n => { SourceRef = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -185,10 +185,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>("raw", Raw);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("source_ref", SourceRef);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicket_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

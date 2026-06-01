@@ -67,10 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty Raw { get; set; }
 #endif
         /// <summary>The reply_to_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The send_at property</summary>
         public DateTimeOffset? SendAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignStatus? Status { get; set; }
         /// <summary>The subject_line property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,10 +134,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "preview_text", n => { PreviewText = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_raw>(global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty.CreateFromDiscriminatorValue); } },
                 { "reply_to_email", n => { ReplyToEmail = n.GetStringValue(); } },
                 { "send_at", n => { SendAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignStatus>(); } },
                 { "subject_line", n => { SubjectLine = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -157,10 +157,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("list_ids", ListIds);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("preview_text", PreviewText);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty>("raw", Raw);
             writer.WriteStringValue("reply_to_email", ReplyToEmail);
             writer.WriteDateTimeOffsetValue("send_at", SendAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaign_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignStatus>("status", Status);
             writer.WriteStringValue("subject_line", SubjectLine);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

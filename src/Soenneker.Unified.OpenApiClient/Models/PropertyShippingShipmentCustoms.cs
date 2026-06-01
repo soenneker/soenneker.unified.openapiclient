@@ -18,7 +18,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The amount property</summary>
         public double? Amount { get; set; }
         /// <summary>The contents_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_contents_type? ContentsType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType? ContentsType { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The duties_paid_by property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_duties_paid_by? DutiesPaidBy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy? DutiesPaidBy { get; set; }
         /// <summary>Customs items</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem> Items { get; set; }
 #endif
         /// <summary>The non_delivery_option property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_non_delivery_option? NonDeliveryOption { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption? NonDeliveryOption { get; set; }
         /// <summary>The recipient_eori property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ShipperTaxNumber { get; set; }
 #endif
         /// <summary>The taxes_paid_by property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_taxes_paid_by? TaxesPaidBy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy? TaxesPaidBy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms"/> and sets the default values.
         /// </summary>
@@ -115,18 +115,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "contents_type", n => { ContentsType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_contents_type>(); } },
+                { "contents_type", n => { ContentsType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "duties_paid_by", n => { DutiesPaidBy = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_duties_paid_by>(); } },
+                { "duties_paid_by", n => { DutiesPaidBy = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy>(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem>(global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "non_delivery_option", n => { NonDeliveryOption = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_non_delivery_option>(); } },
+                { "non_delivery_option", n => { NonDeliveryOption = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption>(); } },
                 { "recipient_eori", n => { RecipientEori = n.GetStringValue(); } },
                 { "recipient_tax_number", n => { RecipientTaxNumber = n.GetStringValue(); } },
                 { "restrictions", n => { Restrictions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "shipper_eori", n => { ShipperEori = n.GetStringValue(); } },
                 { "shipper_tax_number", n => { ShipperTaxNumber = n.GetStringValue(); } },
-                { "taxes_paid_by", n => { TaxesPaidBy = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_taxes_paid_by>(); } },
+                { "taxes_paid_by", n => { TaxesPaidBy = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy>(); } },
             };
         }
         /// <summary>
@@ -137,18 +137,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_contents_type>("contents_type", ContentsType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType>("contents_type", ContentsType);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_duties_paid_by>("duties_paid_by", DutiesPaidBy);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy>("duties_paid_by", DutiesPaidBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem>("items", Items);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_non_delivery_option>("non_delivery_option", NonDeliveryOption);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption>("non_delivery_option", NonDeliveryOption);
             writer.WriteStringValue("recipient_eori", RecipientEori);
             writer.WriteStringValue("recipient_tax_number", RecipientTaxNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("restrictions", Restrictions);
             writer.WriteStringValue("shipper_eori", ShipperEori);
             writer.WriteStringValue("shipper_tax_number", ShipperTaxNumber);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms_taxes_paid_by>("taxes_paid_by", TaxesPaidBy);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy>("taxes_paid_by", TaxesPaidBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

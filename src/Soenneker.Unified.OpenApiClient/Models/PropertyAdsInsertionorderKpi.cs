@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string StringValue { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpiType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi"/> and sets the default values.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
                 { "string_value", n => { StringValue = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpiType>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteDoubleValue("percentage", Percentage);
             writer.WriteStringValue("string_value", StringValue);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpi_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderKpiType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

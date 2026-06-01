@@ -37,7 +37,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The length property</summary>
         public double? Length { get; set; }
         /// <summary>The size_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_size_unit? SizeUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageSizeUnit? SizeUnit { get; set; }
         /// <summary>The tracking_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The weight property</summary>
         public double? Weight { get; set; }
         /// <summary>The weight_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_weight_unit? WeightUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageWeightUnit? WeightUnit { get; set; }
         /// <summary>The width property</summary>
         public double? Width { get; set; }
         /// <summary>
@@ -84,11 +84,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "height", n => { Height = n.GetDoubleValue(); } },
                 { "insured_amount", n => { InsuredAmount = n.GetDoubleValue(); } },
                 { "length", n => { Length = n.GetDoubleValue(); } },
-                { "size_unit", n => { SizeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_size_unit>(); } },
+                { "size_unit", n => { SizeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageSizeUnit>(); } },
                 { "tracking_number", n => { TrackingNumber = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
-                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_weight_unit>(); } },
+                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageWeightUnit>(); } },
                 { "width", n => { Width = n.GetDoubleValue(); } },
             };
         }
@@ -104,11 +104,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("height", Height);
             writer.WriteDoubleValue("insured_amount", InsuredAmount);
             writer.WriteDoubleValue("length", Length);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_size_unit>("size_unit", SizeUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageSizeUnit>("size_unit", SizeUnit);
             writer.WriteStringValue("tracking_number", TrackingNumber);
             writer.WriteDoubleValue("value", Value);
             writer.WriteDoubleValue("weight", Weight);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage_weight_unit>("weight_unit", WeightUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageWeightUnit>("weight_unit", WeightUnit);
             writer.WriteDoubleValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

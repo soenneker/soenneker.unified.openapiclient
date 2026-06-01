@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string CompanyId { get; set; }
 #endif
         /// <summary>The coverage_level property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_coverage_level? CoverageLevel { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel? CoverageLevel { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The employer_contribution_max_amount property</summary>
         public double? EmployerContributionMaxAmount { get; set; }
         /// <summary>The employer_contribution_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_employer_contribution_type? EmployerContributionType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType? EmployerContributionType { get; set; }
         /// <summary>The frequency property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_frequency? Frequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency? Frequency { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,15 +72,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty Raw { get; set; }
 #endif
         /// <summary>The tax property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_tax? Tax { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax? Tax { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -109,20 +109,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
-                { "coverage_level", n => { CoverageLevel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_coverage_level>(); } },
+                { "coverage_level", n => { CoverageLevel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "employer_contribution_amount", n => { EmployerContributionAmount = n.GetDoubleValue(); } },
                 { "employer_contribution_max_amount", n => { EmployerContributionMaxAmount = n.GetDoubleValue(); } },
-                { "employer_contribution_type", n => { EmployerContributionType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_employer_contribution_type>(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_frequency>(); } },
+                { "employer_contribution_type", n => { EmployerContributionType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_raw.CreateFromDiscriminatorValue); } },
-                { "tax", n => { Tax = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_tax>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_type>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty.CreateFromDiscriminatorValue); } },
+                { "tax", n => { Tax = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -134,20 +134,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("company_id", CompanyId);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_coverage_level>("coverage_level", CoverageLevel);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel>("coverage_level", CoverageLevel);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("employer_contribution_amount", EmployerContributionAmount);
             writer.WriteDoubleValue("employer_contribution_max_amount", EmployerContributionMaxAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_employer_contribution_type>("employer_contribution_type", EmployerContributionType);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType>("employer_contribution_type", EmployerContributionType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency>("frequency", Frequency);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_tax>("tax", Tax);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax>("tax", Tax);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

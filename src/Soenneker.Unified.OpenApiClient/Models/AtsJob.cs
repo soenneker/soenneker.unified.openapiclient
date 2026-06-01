@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The employment_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJob_employment_type? EmploymentType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType? EmploymentType { get; set; }
         /// <summary>The departments/divisions/teams that this job belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,10 +155,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJob_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJob_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobRawProperty Raw { get; set; }
 #endif
         /// <summary>The recruiter_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> Skills { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJob_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -221,7 +221,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "compensation", n => { Compensation = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation>(global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "employment_type", n => { EmploymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_employment_type>(); } },
+                { "employment_type", n => { EmploymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType>(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>(global::Soenneker.Unified.OpenApiClient.Models.AtsGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hiring_manager_ids", n => { HiringManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hiring_managers", n => { HiringManagers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>(global::Soenneker.Unified.OpenApiClient.Models.AtsReference.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -236,11 +236,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "postings", n => { Postings = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsJobPosting>(global::Soenneker.Unified.OpenApiClient.Models.AtsJobPosting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_job_urls", n => { PublicJobUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion>(global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsJob_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsJobRawProperty.CreateFromDiscriminatorValue); } },
                 { "recruiter_ids", n => { RecruiterIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "remote", n => { Remote = n.GetBoolValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -258,7 +258,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation>("compensation", Compensation);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_employment_type>("employment_type", EmploymentType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType>("employment_type", EmploymentType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>("groups", Groups);
             writer.WriteCollectionOfPrimitiveValues<string>("hiring_manager_ids", HiringManagerIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>("hiring_managers", HiringManagers);
@@ -273,11 +273,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsJobPosting>("postings", Postings);
             writer.WriteCollectionOfPrimitiveValues<string>("public_job_urls", PublicJobUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsJobQuestion>("questions", Questions);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("recruiter_ids", RecruiterIds);
             writer.WriteBoolValue("remote", Remote);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJob_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

@@ -35,10 +35,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailability_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailability_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty Raw { get; set; }
 #endif
         /// <summary>The size property</summary>
         public double? Size { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailability_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailability_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
                 { "staff_user_id", n => { StaffUserId = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("location_id", LocationId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailability_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty>("raw", Raw);
             writer.WriteDoubleValue("size", Size);
             writer.WriteStringValue("staff_user_id", StaffUserId);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

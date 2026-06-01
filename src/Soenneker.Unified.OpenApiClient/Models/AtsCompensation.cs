@@ -23,13 +23,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Currency { get; set; }
 #endif
         /// <summary>The frequency property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_frequency? Frequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationFrequency? Frequency { get; set; }
         /// <summary>The max property</summary>
         public double? Max { get; set; }
         /// <summary>The min property</summary>
         public double? Min { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation"/> and sets the default values.
         /// </summary>
@@ -56,10 +56,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationFrequency>(); } },
                 { "max", n => { Max = n.GetDoubleValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationType>(); } },
             };
         }
         /// <summary>
@@ -70,10 +70,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currency", Currency);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationFrequency>("frequency", Frequency);
             writer.WriteDoubleValue("max", Max);
             writer.WriteDoubleValue("min", Min);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensation_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompensationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

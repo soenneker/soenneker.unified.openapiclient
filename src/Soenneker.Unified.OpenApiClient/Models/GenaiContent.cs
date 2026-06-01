@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Content { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiContent_role? Role { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiContent"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

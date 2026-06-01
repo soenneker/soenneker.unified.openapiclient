@@ -163,10 +163,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas?>? Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserSchemasItem?>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas?> Schemas { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserSchemasItem?> Schemas { get; set; }
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -276,7 +276,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "profileUrl", n => { ProfileUrl = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>(global::Soenneker.Unified.OpenApiClient.Models.ScimRole.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas>()?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserSchemasItem>()?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", n => { UrnIetfParamsScimSchemasExtensionEnterprise20User = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User>(global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User.CreateFromDiscriminatorValue); } },
@@ -313,7 +313,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("profileUrl", ProfileUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ScimRole>("roles", Roles);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ScimUser_schemas>("schemas", Schemas);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserSchemasItem>("schemas", Schemas);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User>("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", UrnIetfParamsScimSchemasExtensionEnterprise20User);

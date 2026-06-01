@@ -83,10 +83,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.FormsForm_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.FormsForm_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty Raw { get; set; }
 #endif
         /// <summary>The response_count property</summary>
         public double? ResponseCount { get; set; }
@@ -129,7 +129,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "published_url", n => { PublishedUrl = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsForm_raw>(global::Soenneker.Unified.OpenApiClient.Models.FormsForm_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty.CreateFromDiscriminatorValue); } },
                 { "response_count", n => { ResponseCount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -153,7 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("published_url", PublishedUrl);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsForm_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty>("raw", Raw);
             writer.WriteDoubleValue("response_count", ResponseCount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

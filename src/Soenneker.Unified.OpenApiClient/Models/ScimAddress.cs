@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string StreetAddress { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ScimAddress_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ScimAddressType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ScimAddress"/> and sets the default values.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "streetAddress", n => { StreetAddress = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimAddress_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimAddressType>(); } },
             };
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("streetAddress", StreetAddress);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimAddress_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimAddressType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

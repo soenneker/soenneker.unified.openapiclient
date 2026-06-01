@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Scim.Item.Groups.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \scim\{connection_id}\groups\{id}
+    /// Builds and executes requests for operations under \scim\{connectionId}\groups\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupsItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Scim.Item.Groups.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connection_id}/groups/{id}", pathParameters)
+        public GroupsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connectionId}/groups/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Scim.Item.Groups.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connection_id}/groups/{id}", rawUrl)
+        public GroupsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scim/{connectionId}/groups/{id}", rawUrl)
         {
         }
         /// <summary>

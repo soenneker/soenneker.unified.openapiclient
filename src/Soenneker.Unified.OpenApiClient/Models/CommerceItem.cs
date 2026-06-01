@@ -141,10 +141,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemRawProperty Raw { get; set; }
 #endif
         /// <summary>The requires_shipping property</summary>
         public bool? RequiresShipping { get; set; }
@@ -203,7 +203,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The weight property</summary>
         public double? Weight { get; set; }
         /// <summary>The weight_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_weight_unit? WeightUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemWeightUnit? WeightUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceItem"/> and sets the default values.
         /// </summary>
@@ -249,7 +249,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "prices", n => { Prices = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_description", n => { PublicDescription = n.GetStringValue(); } },
                 { "public_name", n => { PublicName = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemRawProperty.CreateFromDiscriminatorValue); } },
                 { "requires_shipping", n => { RequiresShipping = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -260,7 +260,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vendor_name", n => { VendorName = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
-                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_weight_unit>(); } },
+                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemWeightUnit>(); } },
             };
         }
         /// <summary>
@@ -290,7 +290,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemPrice>("prices", Prices);
             writer.WriteStringValue("public_description", PublicDescription);
             writer.WriteStringValue("public_name", PublicName);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemRawProperty>("raw", Raw);
             writer.WriteBoolValue("requires_shipping", RequiresShipping);
             writer.WriteStringValue("slug", Slug);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
@@ -301,7 +301,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant>("variants", Variants);
             writer.WriteStringValue("vendor_name", VendorName);
             writer.WriteDoubleValue("weight", Weight);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem_weight_unit>("weight_unit", WeightUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemWeightUnit>("weight_unit", WeightUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

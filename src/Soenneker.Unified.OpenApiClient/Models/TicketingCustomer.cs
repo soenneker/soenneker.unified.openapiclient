@@ -43,10 +43,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomerRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomerRawProperty Raw { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingEmail>(global::Soenneker.Unified.OpenApiClient.Models.TicketingEmail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer_raw>(global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomerRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomerRawProperty.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingTelephone>(global::Soenneker.Unified.OpenApiClient.Models.TicketingTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingEmail>("emails", Emails);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomerRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

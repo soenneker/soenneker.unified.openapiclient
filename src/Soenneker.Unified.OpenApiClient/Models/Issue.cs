@@ -37,7 +37,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The size property</summary>
         public double? Size { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.Issue_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IssueStatus? Status { get; set; }
         /// <summary>The ticket_ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "importance", n => { Importance = n.GetDoubleValue(); } },
                 { "resolution_time", n => { ResolutionTime = n.GetDoubleValue(); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Issue_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IssueStatus>(); } },
                 { "ticket_ref", n => { TicketRef = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("importance", Importance);
             writer.WriteDoubleValue("resolution_time", ResolutionTime);
             writer.WriteDoubleValue("size", Size);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Issue_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IssueStatus>("status", Status);
             writer.WriteStringValue("ticket_ref", TicketRef);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfPrimitiveValues<string>("type", Type);

@@ -121,7 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ProfileFirstName { get; set; }
 #endif
         /// <summary>The profile_gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_profile_gender? ProfileGender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderProfileGender? ProfileGender { get; set; }
         /// <summary>The profile_ip_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,10 +181,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -245,7 +245,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ResponseSource { get; set; }
 #endif
         /// <summary>The response_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_response_status? ResponseStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderResponseStatus? ResponseStatus { get; set; }
         /// <summary>The response_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -255,7 +255,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ResponseUrl { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderStatus? Status { get; set; }
         /// <summary>The target_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -321,7 +321,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "profile_date_of_birth", n => { ProfileDateOfBirth = n.GetStringValue(); } },
                 { "profile_emails", n => { ProfileEmails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "profile_first_name", n => { ProfileFirstName = n.GetStringValue(); } },
-                { "profile_gender", n => { ProfileGender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_profile_gender>(); } },
+                { "profile_gender", n => { ProfileGender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderProfileGender>(); } },
                 { "profile_ip_address", n => { ProfileIpAddress = n.GetStringValue(); } },
                 { "profile_last_name", n => { ProfileLastName = n.GetStringValue(); } },
                 { "profile_name", n => { ProfileName = n.GetStringValue(); } },
@@ -329,7 +329,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "profile_resume_url", n => { ProfileResumeUrl = n.GetStringValue(); } },
                 { "profile_social_media_urls", n => { ProfileSocialMediaUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "profile_telephones", n => { ProfileTelephones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_raw>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "response_attributes", n => { ResponseAttributes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "response_completed_at", n => { ResponseCompletedAt = n.GetDateTimeOffsetValue(); } },
@@ -341,9 +341,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "response_redirect_url", n => { ResponseRedirectUrl = n.GetStringValue(); } },
                 { "response_score", n => { ResponseScore = n.GetDoubleValue(); } },
                 { "response_source", n => { ResponseSource = n.GetStringValue(); } },
-                { "response_status", n => { ResponseStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_response_status>(); } },
+                { "response_status", n => { ResponseStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderResponseStatus>(); } },
                 { "response_url", n => { ResponseUrl = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderStatus>(); } },
                 { "target_url", n => { TargetUrl = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -371,7 +371,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("profile_date_of_birth", ProfileDateOfBirth);
             writer.WriteCollectionOfPrimitiveValues<string>("profile_emails", ProfileEmails);
             writer.WriteStringValue("profile_first_name", ProfileFirstName);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_profile_gender>("profile_gender", ProfileGender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderProfileGender>("profile_gender", ProfileGender);
             writer.WriteStringValue("profile_ip_address", ProfileIpAddress);
             writer.WriteStringValue("profile_last_name", ProfileLastName);
             writer.WriteStringValue("profile_name", ProfileName);
@@ -379,7 +379,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("profile_resume_url", ProfileResumeUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("profile_social_media_urls", ProfileSocialMediaUrls);
             writer.WriteCollectionOfPrimitiveValues<string>("profile_telephones", ProfileTelephones);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute>("response_attributes", ResponseAttributes);
             writer.WriteDateTimeOffsetValue("response_completed_at", ResponseCompletedAt);
@@ -391,9 +391,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("response_redirect_url", ResponseRedirectUrl);
             writer.WriteDoubleValue("response_score", ResponseScore);
             writer.WriteStringValue("response_source", ResponseSource);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_response_status>("response_status", ResponseStatus);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderResponseStatus>("response_status", ResponseStatus);
             writer.WriteStringValue("response_url", ResponseUrl);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderStatus>("status", Status);
             writer.WriteStringValue("target_url", TargetUrl);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("webhook_id", WebhookId);

@@ -125,13 +125,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewStatus? Status { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,8 +197,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "unhelpful_votes", n => { UnhelpfulVotes = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -231,8 +231,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>("media", Media);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("rating", Rating);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteDoubleValue("unhelpful_votes", UnhelpfulVotes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

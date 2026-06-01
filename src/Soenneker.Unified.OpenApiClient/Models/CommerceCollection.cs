@@ -98,10 +98,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionRawProperty Raw { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> Tags { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -153,9 +153,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "public_description", n => { PublicDescription = n.GetStringValue(); } },
                 { "public_name", n => { PublicName = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_raw>(global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionRawProperty.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -179,9 +179,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("public_description", PublicDescription);
             writer.WriteStringValue("public_name", PublicName);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollectionType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

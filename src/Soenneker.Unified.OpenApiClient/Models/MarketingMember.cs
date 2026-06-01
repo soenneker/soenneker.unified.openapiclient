@@ -68,13 +68,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberStatus? Status { get; set; }
         /// <summary>An array of tags associated with this member</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,8 +117,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_raw>(global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberStatus>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -137,8 +137,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfPrimitiveValues<string>("list_ids", ListIds);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMember_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingMemberStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

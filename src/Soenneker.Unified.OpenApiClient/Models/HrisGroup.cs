@@ -69,13 +69,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty Raw { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroupType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_ids property</summary>
@@ -119,8 +119,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "manager_ids", n => { ManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_raw.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_type>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -140,8 +140,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("manager_ids", ManagerIds);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteAdditionalData(AdditionalData);

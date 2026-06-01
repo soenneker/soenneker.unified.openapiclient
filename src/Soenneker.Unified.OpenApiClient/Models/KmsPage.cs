@@ -55,10 +55,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPage_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPage_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageRawProperty Raw { get; set; }
 #endif
         /// <summary>The space_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPage_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -128,10 +128,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>(global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPage_raw>(global::Soenneker.Unified.OpenApiClient.Models.KmsPage_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.KmsPageRawProperty.CreateFromDiscriminatorValue); } },
                 { "space_id", n => { SpaceId = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPage_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "web_url", n => { WebUrl = n.GetStringValue(); } },
@@ -151,10 +151,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>("metadata", Metadata);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPage_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageRawProperty>("raw", Raw);
             writer.WriteStringValue("space_id", SpaceId);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPage_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("web_url", WebUrl);

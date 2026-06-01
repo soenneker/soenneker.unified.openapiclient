@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty Raw { get; set; }
 #endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
@@ -148,7 +148,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("source", Source);
             writer.WriteDoubleValue("tax_amount", TaxAmount);

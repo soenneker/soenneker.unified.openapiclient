@@ -65,10 +65,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentLink_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentLinkRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PaymentLink_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentLinkRawProperty Raw { get; set; }
 #endif
         /// <summary>The success_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_chargeable_now", n => { IsChargeableNow = n.GetBoolValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem>(global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payment_id", n => { PaymentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentLink_raw>(global::Soenneker.Unified.OpenApiClient.Models.PaymentLink_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentLinkRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentLinkRawProperty.CreateFromDiscriminatorValue); } },
                 { "success_url", n => { SuccessUrl = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -144,7 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_chargeable_now", IsChargeableNow);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("payment_id", PaymentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentLink_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentLinkRawProperty>("raw", Raw);
             writer.WriteStringValue("success_url", SuccessUrl);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

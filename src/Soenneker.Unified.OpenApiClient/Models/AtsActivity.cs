@@ -109,10 +109,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty Raw { get; set; }
 #endif
         /// <summary>The sub_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail> To { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsActivityType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>id values of the recruiters associated with the activity.</summary>
@@ -188,11 +188,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "interview_id", n => { InterviewId = n.GetStringValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty.CreateFromDiscriminatorValue); } },
                 { "sub_type", n => { SubType = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "to", n => { To = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>(global::Soenneker.Unified.OpenApiClient.Models.AtsEmail.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -217,11 +217,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("interview_id", InterviewId);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("job_id", JobId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty>("raw", Raw);
             writer.WriteStringValue("sub_type", SubType);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail>("to", To);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivity_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteAdditionalData(AdditionalData);

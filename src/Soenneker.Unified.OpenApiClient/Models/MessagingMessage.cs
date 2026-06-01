@@ -143,10 +143,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MessagingMessage_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MessagingMessage_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty Raw { get; set; }
 #endif
         /// <summary>The reactions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -233,7 +233,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "message_markdown", n => { MessageMarkdown = n.GetStringValue(); } },
                 { "message_thread_identifier", n => { MessageThreadIdentifier = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessage_raw>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMessage_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty.CreateFromDiscriminatorValue); } },
                 { "reactions", n => { Reactions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>(global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "root_message_id", n => { RootMessageId = n.GetStringValue(); } },
@@ -267,7 +267,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("message_markdown", MessageMarkdown);
             writer.WriteStringValue("message_thread_identifier", MessageThreadIdentifier);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessage_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>("reactions", Reactions);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("root_message_id", RootMessageId);

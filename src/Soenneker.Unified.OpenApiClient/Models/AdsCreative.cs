@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The creative_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_creative_type? CreativeType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType? CreativeType { get; set; }
         /// <summary>The cta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The height property</summary>
         public double? Height { get; set; }
         /// <summary>The hosting_source property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_hosting_source? HostingSource { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeHostingSource? HostingSource { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,13 +153,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeRawProperty Raw { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeStatus? Status { get; set; }
         /// <summary>The third_party_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,14 +217,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_creative_type>(); } },
+                { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType>(); } },
                 { "cta", n => { Cta = n.GetStringValue(); } },
                 { "external_ad_reference", n => { ExternalAdReference = n.GetStringValue(); } },
                 { "external_creative_reference", n => { ExternalCreativeReference = n.GetStringValue(); } },
                 { "external_placement_reference", n => { ExternalPlacementReference = n.GetStringValue(); } },
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetDoubleValue(); } },
-                { "hosting_source", n => { HostingSource = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_hosting_source>(); } },
+                { "hosting_source", n => { HostingSource = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeHostingSource>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "link_url", n => { LinkUrl = n.GetStringValue(); } },
@@ -233,8 +233,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "path1", n => { Path1 = n.GetStringValue(); } },
                 { "path2", n => { Path2 = n.GetStringValue(); } },
                 { "promoted", n => { Promoted = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_raw.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_status>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeRawProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeStatus>(); } },
                 { "third_party_tag", n => { ThirdPartyTag = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -253,14 +253,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_creative_type>("creative_type", CreativeType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType>("creative_type", CreativeType);
             writer.WriteStringValue("cta", Cta);
             writer.WriteStringValue("external_ad_reference", ExternalAdReference);
             writer.WriteStringValue("external_creative_reference", ExternalCreativeReference);
             writer.WriteStringValue("external_placement_reference", ExternalPlacementReference);
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteDoubleValue("height", Height);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_hosting_source>("hosting_source", HostingSource);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeHostingSource>("hosting_source", HostingSource);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("link_url", LinkUrl);
@@ -269,8 +269,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("path1", Path1);
             writer.WriteStringValue("path2", Path2);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>("promoted", Promoted);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_raw>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreative_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeStatus>("status", Status);
             writer.WriteStringValue("third_party_tag", ThirdPartyTag);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

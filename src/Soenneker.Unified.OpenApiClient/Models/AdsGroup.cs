@@ -25,17 +25,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy BidStrategy { get; set; }
 #endif
         /// <summary>The billing_event property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event? BillingEvent { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBillingEvent? BillingEvent { get; set; }
         /// <summary>The budget_allocation_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_allocation_type? BudgetAllocationType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetAllocationType? BudgetAllocationType { get; set; }
         /// <summary>The budget_amount property</summary>
         public double? BudgetAmount { get; set; }
         /// <summary>The budget_max_amount property</summary>
         public double? BudgetMaxAmount { get; set; }
         /// <summary>The budget_period property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_period? BudgetPeriod { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetPeriod? BudgetPeriod { get; set; }
         /// <summary>The budget_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_unit? BudgetUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetUnit? BudgetUnit { get; set; }
         /// <summary>The campaign_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The optimization_goal property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_optimization_goal? OptimizationGoal { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupOptimizationGoal? OptimizationGoal { get; set; }
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,15 +135,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupStatus? Status { get; set; }
         /// <summary>The targeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,7 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting Targeting { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -183,12 +183,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "bid_amount", n => { BidAmount = n.GetDoubleValue(); } },
                 { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy.CreateFromDiscriminatorValue); } },
-                { "billing_event", n => { BillingEvent = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event>(); } },
-                { "budget_allocation_type", n => { BudgetAllocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_allocation_type>(); } },
+                { "billing_event", n => { BillingEvent = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBillingEvent>(); } },
+                { "budget_allocation_type", n => { BudgetAllocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetAllocationType>(); } },
                 { "budget_amount", n => { BudgetAmount = n.GetDoubleValue(); } },
                 { "budget_max_amount", n => { BudgetMaxAmount = n.GetDoubleValue(); } },
-                { "budget_period", n => { BudgetPeriod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_period>(); } },
-                { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_unit>(); } },
+                { "budget_period", n => { BudgetPeriod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetPeriod>(); } },
+                { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetUnit>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_ids", n => { CreativeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -199,16 +199,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "insertionorder_id", n => { InsertionorderId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_optimization_goal>(); } },
+                { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupOptimizationGoal>(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing.CreateFromDiscriminatorValue); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "promoted", n => { Promoted = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw>(global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupStatus>(); } },
                 { "targeting", n => { Targeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -221,12 +221,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("bid_amount", BidAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy>("bid_strategy", BidStrategy);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_billing_event>("billing_event", BillingEvent);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_allocation_type>("budget_allocation_type", BudgetAllocationType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBillingEvent>("billing_event", BillingEvent);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetAllocationType>("budget_allocation_type", BudgetAllocationType);
             writer.WriteDoubleValue("budget_amount", BudgetAmount);
             writer.WriteDoubleValue("budget_max_amount", BudgetMaxAmount);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_period>("budget_period", BudgetPeriod);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_budget_unit>("budget_unit", BudgetUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetPeriod>("budget_period", BudgetPeriod);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetUnit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("creative_ids", CreativeIds);
@@ -237,16 +237,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("insertionorder_id", InsertionorderId);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_optimization_goal>("optimization_goal", OptimizationGoal);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupOptimizationGoal>("optimization_goal", OptimizationGoal);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupPacing>("pacing", Pacing);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>("promoted", Promoted);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting>("targeting", Targeting);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroup_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsGroupType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

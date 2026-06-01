@@ -99,10 +99,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRawProperty Raw { get; set; }
 #endif
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarStatus? Status { get; set; }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,7 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer.CreateFromDiscriminatorValue); } },
                 { "panelist_password", n => { PanelistPassword = n.GetStringValue(); } },
                 { "panelists", n => { Panelists = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRawProperty.CreateFromDiscriminatorValue); } },
                 { "recurrence", n => { Recurrence = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrant_password", n => { RegistrantPassword = n.GetStringValue(); } },
                 { "registrants", n => { Registrants = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant>(global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -226,7 +226,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "require_last_name", n => { RequireLastName = n.GetBoolValue(); } },
                 { "require_phone", n => { RequirePhone = n.GetBoolValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -257,7 +257,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>("organizer", Organizer);
             writer.WriteStringValue("panelist_password", PanelistPassword);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist>("panelists", Panelists);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>("recurrence", Recurrence);
             writer.WriteStringValue("registrant_password", RegistrantPassword);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant>("registrants", Registrants);
@@ -269,7 +269,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("require_last_name", RequireLastName);
             writer.WriteBoolValue("require_phone", RequirePhone);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinar_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

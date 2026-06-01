@@ -145,11 +145,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("categories")]
-            public global::Soenneker.Unified.OpenApiClient.Unified.Connection.GetCategoriesQueryParameterType[]? Categories { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedConnectionsCategoriesParameterItem[]? Categories { get; set; }
 #nullable restore
 #else
             [QueryParameter("categories")]
-            public global::Soenneker.Unified.OpenApiClient.Unified.Connection.GetCategoriesQueryParameterType[] Categories { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedConnectionsCategoriesParameterItem[] Categories { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

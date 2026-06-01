@@ -105,10 +105,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty Raw { get; set; }
 #endif
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string StartAt { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus? Status { get; set; }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,12 +209,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer.CreateFromDiscriminatorValue); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty.CreateFromDiscriminatorValue); } },
                 { "recurrence", n => { Recurrence = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recurring_event_id", n => { RecurringEventId = n.GetStringValue(); } },
                 { "send_notifications", n => { SendNotifications = n.GetBoolValue(); } },
                 { "start_at", n => { StartAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -242,12 +242,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>("organizer", Organizer);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>("recurrence", Recurrence);
             writer.WriteStringValue("recurring_event_id", RecurringEventId);
             writer.WriteBoolValue("send_notifications", SendNotifications);
             writer.WriteStringValue("start_at", StartAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("updated_at", UpdatedAt);

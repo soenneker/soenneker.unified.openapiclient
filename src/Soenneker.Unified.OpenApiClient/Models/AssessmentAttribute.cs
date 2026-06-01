@@ -35,9 +35,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The score_value property</summary>
         public double? ScoreValue { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeStatus? Status { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,8 +75,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "score_max", n => { ScoreMax = n.GetDoubleValue(); } },
                 { "score_value", n => { ScoreValue = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_status>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_type>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeStatus>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -91,8 +91,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteDoubleValue("score_max", ScoreMax);
             writer.WriteDoubleValue("score_value", ScoreValue);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

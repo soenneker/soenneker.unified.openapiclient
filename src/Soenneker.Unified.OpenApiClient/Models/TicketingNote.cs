@@ -43,10 +43,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingNote_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.TicketingNote_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty Raw { get; set; }
 #endif
         /// <summary>The ticket_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNote_raw>(global::Soenneker.Unified.OpenApiClient.Models.TicketingNote_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty.CreateFromDiscriminatorValue); } },
                 { "ticket_id", n => { TicketId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNote_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty>("raw", Raw);
             writer.WriteStringValue("ticket_id", TicketId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

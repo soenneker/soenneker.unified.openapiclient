@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone> Telephones { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationshipType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship"/> and sets the default values.
         /// </summary>
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>(global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationshipType>(); } },
             };
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>("telephones", Telephones);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationshipType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

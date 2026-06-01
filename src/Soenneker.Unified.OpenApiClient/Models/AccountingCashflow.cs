@@ -92,10 +92,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflow_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflow_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -139,7 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_change_in_cash_amount", n => { NetChangeInCashAmount = n.GetDoubleValue(); } },
                 { "operating_sections", n => { OperatingSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflow_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflow_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_change_in_cash_amount", NetChangeInCashAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>("operating_sections", OperatingSections);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflow_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

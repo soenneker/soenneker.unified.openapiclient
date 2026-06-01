@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Company
 {
     /// <summary>
-    /// Builds and executes requests for operations under \enrich\{connection_id}\company
+    /// Builds and executes requests for operations under \enrich\{connectionId}\company
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompanyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Company
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connection_id}/company{?domain*,name*}", pathParameters)
+        public CompanyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connectionId}/company{?domain*,name*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Enrich.Item.Company
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connection_id}/company{?domain*,name*}", rawUrl)
+        public CompanyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enrich/{connectionId}/company{?domain*,name*}", rawUrl)
         {
         }
         /// <summary>

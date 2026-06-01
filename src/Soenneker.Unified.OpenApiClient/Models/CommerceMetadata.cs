@@ -25,13 +25,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The extra_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data? ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataExtraData? ExtraData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data ExtraData { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataExtraData ExtraData { get; set; }
 #endif
         /// <summary>The format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format? Format { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataFormat? Format { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,10 +61,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value? Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value Value { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata"/> and sets the default values.
@@ -92,13 +92,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format>(); } },
+                { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataExtraData>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataExtraData.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_required", n => { IsRequired = n.GetBoolValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataValue>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,13 +109,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_extra_data>("extra_data", ExtraData);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_format>("format", Format);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataExtraData>("extra_data", ExtraData);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataFormat>("format", Format);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_required", IsRequired);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadataValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

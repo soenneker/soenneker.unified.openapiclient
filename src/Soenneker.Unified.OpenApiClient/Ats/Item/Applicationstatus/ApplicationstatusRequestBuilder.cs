@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ats\{connection_id}\applicationstatus
+    /// Builds and executes requests for operations under \ats\{connectionId}\applicationstatus
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationstatusRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationstatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connection_id}/applicationstatus{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ApplicationstatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/applicationstatus{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationstatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connection_id}/applicationstatus{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ApplicationstatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/applicationstatus{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,11 +90,11 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAtsApplicationstatusesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAtsApplicationstatusesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

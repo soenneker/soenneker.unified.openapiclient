@@ -20,7 +20,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The advantage_placements property</summary>
         public bool? AdvantagePlacements { get; set; }
         /// <summary>The mode property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimization_mode? Mode { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimizationMode? Mode { get; set; }
         /// <summary>The targeting_optimization_expansion_all property</summary>
         public bool? TargetingOptimizationExpansionAll { get; set; }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "advantage_audience", n => { AdvantageAudience = n.GetBoolValue(); } },
                 { "advantage_placements", n => { AdvantagePlacements = n.GetBoolValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimization_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimizationMode>(); } },
                 { "targeting_optimization_expansion_all", n => { TargetingOptimizationExpansionAll = n.GetBoolValue(); } },
             };
         }
@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("advantage_audience", AdvantageAudience);
             writer.WriteBoolValue("advantage_placements", AdvantagePlacements);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimization_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimizationMode>("mode", Mode);
             writer.WriteBoolValue("targeting_optimization_expansion_all", TargetingOptimizationExpansionAll);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ThumbnailUrl { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsMedia_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsMediaType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "thumbnail_url", n => { ThumbnailUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMediaType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("thumbnail_url", ThumbnailUrl);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.LmsMediaType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -81,7 +81,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string SignedBy { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEventStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent"/> and sets the default values.
         /// </summary>
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "location_name", n => { LocationName = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "signed_by", n => { SignedBy = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEventStatus>(); } },
             };
         }
         /// <summary>
@@ -135,7 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("location_name", LocationName);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("signed_by", SignedBy);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEventStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

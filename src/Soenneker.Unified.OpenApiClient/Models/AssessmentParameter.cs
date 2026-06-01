@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string PublicQuestion { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterType? Type { get; set; }
         /// <summary>Regions where this parameter is valid ({country}-{state} or {country})</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "public_question", n => { PublicQuestion = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterType>(); } },
                 { "valid_regions", n => { ValidRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteStringValue("public_question", PublicQuestion);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("valid_regions", ValidRegions);
             writer.WriteAdditionalData(AdditionalData);
         }

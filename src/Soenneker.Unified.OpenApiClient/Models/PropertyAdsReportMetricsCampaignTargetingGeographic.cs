@@ -73,10 +73,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The location_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_location_types?>? LocationTypes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypesItem?>? LocationTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_location_types?> LocationTypes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypesItem?> LocationTypes { get; set; }
 #endif
         /// <summary>The postal_codes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> PostalCodes { get; set; }
 #endif
         /// <summary>The presence_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_presence_type? PresenceType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType? PresenceType { get; set; }
         /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,9 +136,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "excluded_postal_codes", n => { ExcludedPostalCodes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "excluded_regions", n => { ExcludedRegions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "excluded_us_dmas", n => { ExcludedUsDmas = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "location_types", n => { LocationTypes = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_location_types>()?.AsList(); } },
+                { "location_types", n => { LocationTypes = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypesItem>()?.AsList(); } },
                 { "postal_codes", n => { PostalCodes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "presence_type", n => { PresenceType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_presence_type>(); } },
+                { "presence_type", n => { PresenceType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType>(); } },
                 { "regions", n => { Regions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "us_dmas", n => { UsDmas = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -157,9 +157,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_postal_codes", ExcludedPostalCodes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_regions", ExcludedRegions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("excluded_us_dmas", ExcludedUsDmas);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_location_types>("location_types", LocationTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypesItem>("location_types", LocationTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("postal_codes", PostalCodes);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic_presence_type>("presence_type", PresenceType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType>("presence_type", PresenceType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("regions", Regions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("us_dmas", UsDmas);
             writer.WriteAdditionalData(AdditionalData);

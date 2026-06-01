@@ -92,10 +92,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRawProperty Raw { get; set; }
 #endif
         /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<string> Tags { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The workspace_id property</summary>
@@ -163,10 +163,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needs_ip_address", n => { NeedsIpAddress = n.GetBoolValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_raw>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRawProperty.CreateFromDiscriminatorValue); } },
                 { "regions", n => { Regions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRegion>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRegion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -191,10 +191,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needs_ip_address", NeedsIpAddress);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter>("parameters", Parameters);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageRegion>("regions", Regions);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackage_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

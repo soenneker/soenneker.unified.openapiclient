@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The weight property</summary>
         public double? Weight { get; set; }
         /// <summary>The weight_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem_weight_unit? WeightUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItemWeightUnit? WeightUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem"/> and sets the default values.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "sku", n => { Sku = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
-                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem_weight_unit>(); } },
+                { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItemWeightUnit>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("sku", Sku);
             writer.WriteDoubleValue("weight", Weight);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem_weight_unit>("weight_unit", WeightUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItemWeightUnit>("weight_unit", WeightUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -67,10 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompany_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompanyRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompany_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsCompanyRawProperty Raw { get; set; }
 #endif
         /// <summary>The recruiter_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompany_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsCompany_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompanyRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsCompanyRawProperty.CreateFromDiscriminatorValue); } },
                 { "recruiter_ids", n => { RecruiterIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "website_url", n => { WebsiteUrl = n.GetStringValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompany_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCompanyRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("recruiter_ids", RecruiterIds);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("website_url", WebsiteUrl);

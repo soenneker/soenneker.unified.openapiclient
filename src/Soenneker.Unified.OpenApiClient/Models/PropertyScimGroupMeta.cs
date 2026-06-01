@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Location { get; set; }
 #endif
         /// <summary>The resourceType property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta_resourceType? ResourceType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMetaResourceType? ResourceType { get; set; }
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created", n => { Created = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
-                { "resourceType", n => { ResourceType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta_resourceType>(); } },
+                { "resourceType", n => { ResourceType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMetaResourceType>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("created", Created);
             writer.WriteStringValue("lastModified", LastModified);
             writer.WriteStringValue("location", Location);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMeta_resourceType>("resourceType", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimGroupMetaResourceType>("resourceType", ResourceType);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

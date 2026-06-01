@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_verified property</summary>
         public bool? IsVerified { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.EnrichEmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmailType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("is_verified", IsVerified);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

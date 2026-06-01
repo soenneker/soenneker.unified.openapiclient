@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Ref { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "managerId", n => { ManagerId = n.GetStringValue(); } },
                 { "$ref", n => { Ref = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("managerId", ManagerId);
             writer.WriteStringValue("$ref", Ref);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -62,10 +62,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReportRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReportRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance TrialBalance { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingReportType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -113,10 +113,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "profit_and_loss", n => { ProfitAndLoss = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss.CreateFromDiscriminatorValue); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReportRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReportRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "trial_balance", n => { TrialBalance = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReportType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -134,10 +134,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportProfitAndLoss>("profit_and_loss", ProfitAndLoss);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReportRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingReportTrialBalance>("trial_balance", TrialBalance);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReport_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingReportType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

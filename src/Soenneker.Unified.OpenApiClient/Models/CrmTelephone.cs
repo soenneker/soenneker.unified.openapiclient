@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Telephone { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmTelephoneType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "telephone", n => { Telephone = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephoneType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("telephone", Telephone);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephoneType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

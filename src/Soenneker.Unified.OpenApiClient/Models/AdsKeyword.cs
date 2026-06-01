@@ -16,7 +16,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The match_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword_match_type? MatchType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsKeywordMatchType? MatchType { get; set; }
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "match_type", n => { MatchType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword_match_type>(); } },
+                { "match_type", n => { MatchType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsKeywordMatchType>(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword_match_type>("match_type", MatchType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsKeywordMatchType>("match_type", MatchType);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The opened_at property</summary>
         public DateTimeOffset? OpenedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpening_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpeningStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpening"/> and sets the default values.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "close_reason", n => { CloseReason = n.GetStringValue(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
                 { "opened_at", n => { OpenedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpening_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpeningStatus>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);
             writer.WriteStringValue("close_reason", CloseReason);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpening_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpeningStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

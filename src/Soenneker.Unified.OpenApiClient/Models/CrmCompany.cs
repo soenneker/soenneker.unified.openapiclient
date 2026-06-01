@@ -112,10 +112,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmCompany_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmCompany_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty Raw { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,7 +198,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "link_urls", n => { LinkUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmCompany_raw>(global::Soenneker.Unified.OpenApiClient.Models.CrmCompany_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>(global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -228,7 +228,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("link_urls", LinkUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmCompany_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>("telephones", Telephones);
             writer.WriteStringValue("timezone", Timezone);

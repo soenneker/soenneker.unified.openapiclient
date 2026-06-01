@@ -19,10 +19,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>? Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails> Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem> Emails { get; set; }
 #endif
         /// <summary>The first_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty Raw { get; set; }
 #endif
         /// <summary>The telephones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,13 +116,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_raw>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>(global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -136,13 +136,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_emails>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem>("emails", Emails);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>("telephones", Telephones);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event
 {
     /// <summary>
-    /// Builds and executes requests for operations under \messaging\{connection_id}\event
+    /// Builds and executes requests for operations under \messaging\{connectionId}\event
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connection_id}/event", pathParameters)
+        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connectionId}/event", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connection_id}/event", rawUrl)
+        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connectionId}/event", rawUrl)
         {
         }
     }

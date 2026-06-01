@@ -116,10 +116,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty Raw { get; set; }
 #endif
         /// <summary>The task object, when type = task</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask Task { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmEventType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -179,9 +179,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting.CreateFromDiscriminatorValue); } },
                 { "note", n => { Note = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote.CreateFromDiscriminatorValue); } },
                 { "page_view", n => { PageView = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView.CreateFromDiscriminatorValue); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw>(global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty.CreateFromDiscriminatorValue); } },
                 { "task", n => { Task = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -206,9 +206,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>("meeting", Meeting);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>("note", Note);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>("page_view", PageView);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask>("task", Task);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEvent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

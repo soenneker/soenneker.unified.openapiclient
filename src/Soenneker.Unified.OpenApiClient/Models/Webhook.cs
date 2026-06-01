@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string DbSchema { get; set; }
 #endif
         /// <summary>The db_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_db_type? DbType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookDbType? DbType { get; set; }
         /// <summary>The db_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Environment { get; set; }
 #endif
         /// <summary>The event property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_event? Event { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookEvent? Event { get; set; }
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,10 +74,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters? Filters { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters Filters { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters Filters { get; set; }
 #endif
         /// <summary>The hook_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_paused property</summary>
         public bool? IsPaused { get; set; }
         /// <summary>The object_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_object_type? ObjectType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookObjectType? ObjectType { get; set; }
         /// <summary>The page_max_limit property</summary>
         public double? PageMaxLimit { get; set; }
         /// <summary>An array of the most revent virtual webhook runs</summary>
@@ -126,7 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The webhook_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.Webhook_webhook_type? WebhookType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.WebhookWebhookType? WebhookType { get; set; }
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,12 +166,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "db_name_prefix", n => { DbNamePrefix = n.GetStringValue(); } },
                 { "db_schema", n => { DbSchema = n.GetStringValue(); } },
-                { "db_type", n => { DbType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_db_type>(); } },
+                { "db_type", n => { DbType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookDbType>(); } },
                 { "db_url", n => { DbUrl = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_event>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookEvent>(); } },
                 { "fields", n => { Fields = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters>(global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters>(global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters.CreateFromDiscriminatorValue); } },
                 { "hook_url", n => { HookUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integration_type", n => { IntegrationType = n.GetStringValue(); } },
@@ -179,11 +179,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_beta", n => { IsBeta = n.GetBoolValue(); } },
                 { "is_healthy", n => { IsHealthy = n.GetBoolValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
-                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_object_type>(); } },
+                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookObjectType>(); } },
                 { "page_max_limit", n => { PageMaxLimit = n.GetDoubleValue(); } },
                 { "runs", n => { Runs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "webhook_type", n => { WebhookType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_webhook_type>(); } },
+                { "webhook_type", n => { WebhookType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookWebhookType>(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -199,12 +199,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("db_name_prefix", DbNamePrefix);
             writer.WriteStringValue("db_schema", DbSchema);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_db_type>("db_type", DbType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookDbType>("db_type", DbType);
             writer.WriteStringValue("db_url", DbUrl);
             writer.WriteStringValue("environment", Environment);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_event>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookEvent>("event", Event);
             writer.WriteStringValue("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters>("filters", Filters);
             writer.WriteStringValue("hook_url", HookUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("integration_type", IntegrationType);
@@ -212,11 +212,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_beta", IsBeta);
             writer.WriteBoolValue("is_healthy", IsHealthy);
             writer.WriteBoolValue("is_paused", IsPaused);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_object_type>("object_type", ObjectType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookObjectType>("object_type", ObjectType);
             writer.WriteDoubleValue("page_max_limit", PageMaxLimit);
             writer.WriteCollectionOfPrimitiveValues<string>("runs", Runs);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.Webhook_webhook_type>("webhook_type", WebhookType);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.WebhookWebhookType>("webhook_type", WebhookType);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

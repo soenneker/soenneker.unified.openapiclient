@@ -37,7 +37,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string LabelCostCurrency { get; set; }
 #endif
         /// <summary>The label_format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_label_format? LabelFormat { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat? LabelFormat { get; set; }
         /// <summary>The label_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,10 +57,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty Raw { get; set; }
 #endif
         /// <summary>The service_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ShipmentId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelStatus? Status { get; set; }
         /// <summary>The tracking_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,13 +120,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_voided", n => { IsVoided = n.GetBoolValue(); } },
                 { "label_cost", n => { LabelCost = n.GetDoubleValue(); } },
                 { "label_cost_currency", n => { LabelCostCurrency = n.GetStringValue(); } },
-                { "label_format", n => { LabelFormat = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_label_format>(); } },
+                { "label_format", n => { LabelFormat = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat>(); } },
                 { "label_url", n => { LabelUrl = n.GetStringValue(); } },
                 { "rate_id", n => { RateId = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_raw>(global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty.CreateFromDiscriminatorValue); } },
                 { "service_code", n => { ServiceCode = n.GetStringValue(); } },
                 { "shipment_id", n => { ShipmentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelStatus>(); } },
                 { "tracking_number", n => { TrackingNumber = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -143,13 +143,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_voided", IsVoided);
             writer.WriteDoubleValue("label_cost", LabelCost);
             writer.WriteStringValue("label_cost_currency", LabelCostCurrency);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_label_format>("label_format", LabelFormat);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat>("label_format", LabelFormat);
             writer.WriteStringValue("label_url", LabelUrl);
             writer.WriteStringValue("rate_id", RateId);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty>("raw", Raw);
             writer.WriteStringValue("service_code", ServiceCode);
             writer.WriteStringValue("shipment_id", ShipmentId);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelStatus>("status", Status);
             writer.WriteStringValue("tracking_number", TrackingNumber);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

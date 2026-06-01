@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connection_id}\balancesheet
+    /// Builds and executes requests for operations under \accounting\{connectionId}\balancesheet
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalancesheetRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BalancesheetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/balancesheet{?category_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public BalancesheetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/balancesheet{?category_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BalancesheetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connection_id}/balancesheet{?category_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public BalancesheetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/balancesheet{?category_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -133,11 +133,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingBalancesheetsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingBalancesheetsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

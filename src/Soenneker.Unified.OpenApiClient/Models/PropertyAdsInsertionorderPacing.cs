@@ -19,7 +19,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The daily_max_impressions property</summary>
         public double? DailyMaxImpressions { get; set; }
         /// <summary>The period property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing_period? Period { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacingPeriod? Period { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "daily_max_amount", n => { DailyMaxAmount = n.GetDoubleValue(); } },
                 { "daily_max_impressions", n => { DailyMaxImpressions = n.GetDoubleValue(); } },
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing_period>(); } },
+                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacingPeriod>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("daily_max_amount", DailyMaxAmount);
             writer.WriteDoubleValue("daily_max_impressions", DailyMaxImpressions);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacing_period>("period", Period);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderPacingPeriod>("period", Period);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

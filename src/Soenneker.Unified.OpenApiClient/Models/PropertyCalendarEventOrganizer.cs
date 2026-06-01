@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizerStatus? Status { get; set; }
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_cohost", n => { IsCohost = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizerStatus>(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_cohost", IsCohost);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizerStatus>("status", Status);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

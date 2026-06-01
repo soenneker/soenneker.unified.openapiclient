@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ApiCall_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ApiCallType? Type { get; set; }
         /// <summary>The unified_response_time property</summary>
         public double? UnifiedResponseTime { get; set; }
         /// <summary>The user_agent property</summary>
@@ -179,7 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ApiCall_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ApiCallType>(); } },
                 { "unified_response_time", n => { UnifiedResponseTime = n.GetDoubleValue(); } },
                 { "user_agent", n => { UserAgent = n.GetStringValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -208,7 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("path", Path);
             writer.WriteDoubleValue("size", Size);
             writer.WriteStringValue("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ApiCall_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ApiCallType>("type", Type);
             writer.WriteDoubleValue("unified_response_time", UnifiedResponseTime);
             writer.WriteStringValue("user_agent", UserAgent);
             writer.WriteStringValue("webhook_id", WebhookId);

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
 {
     /// <summary>
-    /// Builds and executes requests for operations under \calendar\{connection_id}\busy
+    /// Builds and executes requests for operations under \calendar\{connectionId}\busy
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connection_id}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public BusyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connection_id}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public BusyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -110,11 +110,11 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Busy.GetFieldsQueryParameterType[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCalendarBusiesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Busy.GetFieldsQueryParameterType[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCalendarBusiesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

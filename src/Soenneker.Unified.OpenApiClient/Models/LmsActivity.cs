@@ -59,10 +59,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsActivity_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.LmsActivity_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty Raw { get; set; }
 #endif
         /// <summary>The started_at property</summary>
         public DateTimeOffset? StartedAt { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_completed", n => { IsCompleted = n.GetBoolValue(); } },
                 { "progress_percentage", n => { ProgressPercentage = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivity_raw>(global::Soenneker.Unified.OpenApiClient.Models.LmsActivity_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "student_id", n => { StudentId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_completed", IsCompleted);
             writer.WriteDoubleValue("progress_percentage", ProgressPercentage);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivity_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
             writer.WriteStringValue("student_id", StudentId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

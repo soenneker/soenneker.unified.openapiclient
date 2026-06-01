@@ -79,10 +79,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty Raw { get; set; }
 #endif
         /// <summary>The rejected_at property</summary>
         public DateTimeOffset? RejectedAt { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Source { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -149,11 +149,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "offers", n => { Offers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer>(global::Soenneker.Unified.OpenApiClient.Models.AtsOffer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "original_status", n => { OriginalStatus = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_raw>(global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty.CreateFromDiscriminatorValue); } },
                 { "rejected_at", n => { RejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "rejected_reason", n => { RejectedReason = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -175,11 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer>("offers", Offers);
             writer.WriteStringValue("original_status", OriginalStatus);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("rejected_at", RejectedAt);
             writer.WriteStringValue("rejected_reason", RejectedReason);
             writer.WriteStringValue("source", Source);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplication_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

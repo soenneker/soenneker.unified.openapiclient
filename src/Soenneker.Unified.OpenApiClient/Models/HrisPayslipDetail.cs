@@ -37,7 +37,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "employee_amount", n => { EmployeeAmount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>(); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("employee_amount", EmployeeAmount);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -91,10 +91,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty Raw { get; set; }
 #endif
         /// <summary>The references property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The size property</summary>
         public double? Size { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.StorageFile_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.StorageFileType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -169,10 +169,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission>(global::Soenneker.Unified.OpenApiClient.Models.StoragePermission.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw>(global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty.CreateFromDiscriminatorValue); } },
                 { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>(global::Soenneker.Unified.OpenApiClient.Models.StorageReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -196,10 +196,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermission>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>("references", References);
             writer.WriteDoubleValue("size", Size);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFile_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("version", Version);

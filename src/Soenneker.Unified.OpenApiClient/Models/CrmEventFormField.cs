@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormField_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormFieldType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormField"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormOption>(global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormField_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormFieldType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormOption>("options", Options);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormField_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventFormFieldType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

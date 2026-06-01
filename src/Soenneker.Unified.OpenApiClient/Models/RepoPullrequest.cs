@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty Raw { get; set; }
 #endif
         /// <summary>The repo_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string RepoId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_ids property</summary>
@@ -100,9 +100,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_raw>(global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty.CreateFromDiscriminatorValue); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -119,9 +119,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty>("raw", Raw);
             writer.WriteStringValue("repo_id", RepoId);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequest_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteAdditionalData(AdditionalData);

@@ -20,10 +20,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The api property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_api? Api { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi? Api { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_api Api { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi Api { get; set; }
 #endif
         /// <summary>The api_docs_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,10 +38,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The categories of support solutions that this integration has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories?>? Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories?> Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,10 +102,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The partnership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership? Partnership { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership? Partnership { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership Partnership { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership Partnership { get; set; }
 #endif
         /// <summary>The popularity property</summary>
         public double? Popularity { get; set; }
@@ -120,26 +120,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The saml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_saml? Saml { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml? Saml { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_saml Saml { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml Saml { get; set; }
 #endif
         /// <summary>The sandbox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox? Sandbox { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox? Sandbox { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox Sandbox { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox Sandbox { get; set; }
 #endif
         /// <summary>The support property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_support? Support { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty? Support { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.Integration_support Support { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty Support { get; set; }
 #endif
         /// <summary>The tested_at property</summary>
         public DateTimeOffset? TestedAt { get; set; }
@@ -217,10 +217,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active_healthy_connections", n => { ActiveHealthyConnections = n.GetDoubleValue(); } },
-                { "api", n => { Api = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_api>(global::Soenneker.Unified.OpenApiClient.Models.Integration_api.CreateFromDiscriminatorValue); } },
+                { "api", n => { Api = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi.CreateFromDiscriminatorValue); } },
                 { "api_docs_url", n => { ApiDocsUrl = n.GetStringValue(); } },
                 { "beta", n => { Beta = n.GetBoolValue(); } },
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem>()?.AsList(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -231,12 +231,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_hidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "partnership", n => { Partnership = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership>(global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership.CreateFromDiscriminatorValue); } },
+                { "partnership", n => { Partnership = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership.CreateFromDiscriminatorValue); } },
                 { "popularity", n => { Popularity = n.GetDoubleValue(); } },
                 { "rate_limit_description", n => { RateLimitDescription = n.GetStringValue(); } },
-                { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_saml>(global::Soenneker.Unified.OpenApiClient.Models.Integration_saml.CreateFromDiscriminatorValue); } },
-                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox>(global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox.CreateFromDiscriminatorValue); } },
-                { "support", n => { Support = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_support>(global::Soenneker.Unified.OpenApiClient.Models.Integration_support.CreateFromDiscriminatorValue); } },
+                { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml.CreateFromDiscriminatorValue); } },
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox.CreateFromDiscriminatorValue); } },
+                { "support", n => { Support = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty.CreateFromDiscriminatorValue); } },
                 { "tested_at", n => { TestedAt = n.GetDateTimeOffsetValue(); } },
                 { "text_color", n => { TextColor = n.GetStringValue(); } },
                 { "token_instructions", n => { TokenInstructions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -254,10 +254,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("active_healthy_connections", ActiveHealthyConnections);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_api>("api", Api);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi>("api", Api);
             writer.WriteStringValue("api_docs_url", ApiDocsUrl);
             writer.WriteBoolValue("beta", Beta);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.Integration_categories>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem>("categories", Categories);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
@@ -268,12 +268,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_hidden", IsHidden);
             writer.WriteStringValue("logo_url", LogoUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_partnership>("partnership", Partnership);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership>("partnership", Partnership);
             writer.WriteDoubleValue("popularity", Popularity);
             writer.WriteStringValue("rate_limit_description", RateLimitDescription);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_saml>("saml", Saml);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_sandbox>("sandbox", Sandbox);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.Integration_support>("support", Support);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml>("saml", Saml);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox>("sandbox", Sandbox);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty>("support", Support);
             writer.WriteDateTimeOffsetValue("tested_at", TestedAt);
             writer.WriteStringValue("text_color", TextColor);
             writer.WriteCollectionOfPrimitiveValues<string>("token_instructions", TokenInstructions);

@@ -21,7 +21,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The max_views property</summary>
         public double? MaxViews { get; set; }
         /// <summary>The time_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap_time_unit? TimeUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCapTimeUnit? TimeUnit { get; set; }
         /// <summary>The time_unit_count property</summary>
         public double? TimeUnitCount { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_unlimited", n => { IsUnlimited = n.GetBoolValue(); } },
                 { "max_impressions", n => { MaxImpressions = n.GetDoubleValue(); } },
                 { "max_views", n => { MaxViews = n.GetDoubleValue(); } },
-                { "time_unit", n => { TimeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap_time_unit>(); } },
+                { "time_unit", n => { TimeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCapTimeUnit>(); } },
                 { "time_unit_count", n => { TimeUnitCount = n.GetDoubleValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_unlimited", IsUnlimited);
             writer.WriteDoubleValue("max_impressions", MaxImpressions);
             writer.WriteDoubleValue("max_views", MaxViews);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap_time_unit>("time_unit", TimeUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCapTimeUnit>("time_unit", TimeUnit);
             writer.WriteDoubleValue("time_unit_count", TimeUnitCount);
             writer.WriteAdditionalData(AdditionalData);
         }

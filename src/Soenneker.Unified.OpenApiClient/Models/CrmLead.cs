@@ -117,10 +117,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmLead_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmLeadRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmLead_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CrmLeadRawProperty Raw { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,7 +195,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "link_urls", n => { LinkUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmLead_raw>(global::Soenneker.Unified.OpenApiClient.Models.CrmLead_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmLeadRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmLeadRawProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>(global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -224,7 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("link_urls", LinkUrls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmLead_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmLeadRawProperty>("raw", Raw);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>("telephones", Telephones);

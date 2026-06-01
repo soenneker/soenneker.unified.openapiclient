@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id
 {
     /// <summary>
-    /// Builds and executes requests for operations under \commerce\{connection_id}\item_by_id
+    /// Builds and executes requests for operations under \commerce\{connectionId}\item_by_id
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Item_by_idRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_by_idRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/item_by_id", pathParameters)
+        public Item_by_idRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/item_by_id", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_by_idRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connection_id}/item_by_id", rawUrl)
+        public Item_by_idRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/item_by_id", rawUrl)
         {
         }
     }

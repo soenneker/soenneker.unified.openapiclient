@@ -65,14 +65,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The paid_at property</summary>
         public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_payment_type? PaymentType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType? PaymentType { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -121,8 +121,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
-                { "payment_type", n => { PaymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_payment_type>(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_raw>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_raw.CreateFromDiscriminatorValue); } },
+                { "payment_type", n => { PaymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -145,8 +145,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_payment_type>("payment_type", PaymentType);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslip_raw>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>("payment_type", PaymentType);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

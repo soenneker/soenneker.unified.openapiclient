@@ -49,7 +49,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist_status? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelistStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "join_password", n => { JoinPassword = n.GetStringValue(); } },
                 { "join_url", n => { JoinUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelistStatus>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("join_password", JoinPassword);
             writer.WriteStringValue("join_url", JoinUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelist_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarPanelistStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

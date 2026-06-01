@@ -71,10 +71,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheet_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheet_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "liabilities", n => { Liabilities = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_assets_amount", n => { NetAssetsAmount = n.GetDoubleValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheet_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheet_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -135,7 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>("liabilities", Liabilities);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_assets_amount", NetAssetsAmount);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheet_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

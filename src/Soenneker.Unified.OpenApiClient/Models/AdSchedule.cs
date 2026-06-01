@@ -17,7 +17,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The bid_modifier property</summary>
         public double? BidModifier { get; set; }
         /// <summary>The day_of_week property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.AdSchedule_day_of_week? DayOfWeek { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AdScheduleDayOfWeek? DayOfWeek { get; set; }
         /// <summary>The end_hour property</summary>
         public double? EndHour { get; set; }
         /// <summary>The end_minute property</summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bid_modifier", n => { BidModifier = n.GetDoubleValue(); } },
-                { "day_of_week", n => { DayOfWeek = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule_day_of_week>(); } },
+                { "day_of_week", n => { DayOfWeek = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdScheduleDayOfWeek>(); } },
                 { "end_hour", n => { EndHour = n.GetDoubleValue(); } },
                 { "end_minute", n => { EndMinute = n.GetDoubleValue(); } },
                 { "start_hour", n => { StartHour = n.GetDoubleValue(); } },
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("bid_modifier", BidModifier);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule_day_of_week>("day_of_week", DayOfWeek);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdScheduleDayOfWeek>("day_of_week", DayOfWeek);
             writer.WriteDoubleValue("end_hour", EndHour);
             writer.WriteDoubleValue("end_minute", EndMinute);
             writer.WriteDoubleValue("start_hour", StartHour);

@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The radius property</summary>
         public double? Radius { get; set; }
         /// <summary>The radius_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CityTarget_radius_unit? RadiusUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.CityTargetRadiusUnit? RadiusUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CityTarget"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "radius", n => { Radius = n.GetDoubleValue(); } },
-                { "radius_unit", n => { RadiusUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CityTarget_radius_unit>(); } },
+                { "radius_unit", n => { RadiusUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CityTargetRadiusUnit>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("radius", Radius);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CityTarget_radius_unit>("radius_unit", RadiusUnit);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CityTargetRadiusUnit>("radius_unit", RadiusUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,7 +17,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The DateOfBirth property</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
         /// <summary>The Gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User_Gender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender? Gender { get; set; }
         /// <summary>The Manager property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Date of Birth", n => { DateOfBirth = n.GetDateTimeOffsetValue(); } },
-                { "Gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User_Gender>(); } },
+                { "Gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender>(); } },
                 { "Manager", n => { Manager = n.GetStringValue(); } },
                 { "Team", n => { Team = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("Date of Birth", DateOfBirth);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User_Gender>("Gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender>("Gender", Gender);
             writer.WriteStringValue("Manager", Manager);
             writer.WriteStringValue("Team", Team);
             writer.WriteAdditionalData(AdditionalData);

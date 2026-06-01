@@ -45,10 +45,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalance_raw? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalance_raw Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceRawProperty Raw { get; set; }
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalance_raw>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalance_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "sub_items", n => { SubItems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceSubItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceSubItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_credit_amount", n => { TotalCreditAmount = n.GetDoubleValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalance_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTrialbalanceSubItem>("sub_items", SubItems);
             writer.WriteDoubleValue("total_credit_amount", TotalCreditAmount);

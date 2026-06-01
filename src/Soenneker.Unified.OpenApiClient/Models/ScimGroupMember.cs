@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Display { get; set; }
 #endif
         /// <summary>The operation property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_operation? Operation { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberOperation? Operation { get; set; }
         /// <summary>The Ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Ref { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_type? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,9 +68,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display", n => { Display = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_operation>(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberOperation>(); } },
                 { "$ref", n => { Ref = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -82,9 +82,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display", Display);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_operation>("operation", Operation);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberOperation>("operation", Operation);
             writer.WriteStringValue("$ref", Ref);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMember_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
