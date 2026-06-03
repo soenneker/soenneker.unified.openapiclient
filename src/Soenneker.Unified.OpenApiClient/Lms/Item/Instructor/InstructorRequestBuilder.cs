@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Instructor
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstructorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lms/{connectionId}/instructor{?class_id*,company_id*,course_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public InstructorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Instructor
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstructorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lms/{connectionId}/instructor{?class_id*,company_id*,course_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public InstructorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

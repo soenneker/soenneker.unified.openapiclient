@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connectionId}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*,user_id*}", pathParameters)
+        public PageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connectionId}/page{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,space_id*,updated_gte*,user_id*}", rawUrl)
+        public PageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

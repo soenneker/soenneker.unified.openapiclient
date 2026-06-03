@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public TransactionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/transaction{?account_id*,contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public TransactionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Label
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/label{?fields*,limit*,offset*,order*,query*,raw*,shipment_id*,sort*,updated_gte*}", pathParameters)
+        public LabelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Label
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/label{?fields*,limit*,offset*,order*,query*,raw*,shipment_id*,sort*,updated_gte*}", rawUrl)
+        public LabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

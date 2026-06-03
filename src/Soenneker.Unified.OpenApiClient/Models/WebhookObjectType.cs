@@ -536,5 +536,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SigningTemplate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_group")]
+        #pragma warning disable CS1591
+        ClubsGroup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_member")]
+        #pragma warning disable CS1591
+        ClubsMember,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_activity")]
+        #pragma warning disable CS1591
+        ClubsActivity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_location")]
+        #pragma warning disable CS1591
+        ClubsLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_event")]
+        #pragma warning disable CS1591
+        ClubsEvent,
+        #pragma warning restore CS1591
     }
 }

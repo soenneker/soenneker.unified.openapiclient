@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ReviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/review{?contact_id*,fields*,item_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ReviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

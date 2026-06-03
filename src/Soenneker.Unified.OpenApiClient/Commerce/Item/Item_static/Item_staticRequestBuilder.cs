@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_staticRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/item_static{?collection_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public Item_staticRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_staticRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/item_static{?collection_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public Item_staticRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

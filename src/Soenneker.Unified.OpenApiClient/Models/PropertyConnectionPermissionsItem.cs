@@ -976,5 +976,45 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SigningTemplateRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_group_read")]
+        #pragma warning disable CS1591
+        ClubsGroupRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_group_write")]
+        #pragma warning disable CS1591
+        ClubsGroupWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_member_read")]
+        #pragma warning disable CS1591
+        ClubsMemberRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_member_write")]
+        #pragma warning disable CS1591
+        ClubsMemberWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_activity_read")]
+        #pragma warning disable CS1591
+        ClubsActivityRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_activity_write")]
+        #pragma warning disable CS1591
+        ClubsActivityWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_location_read")]
+        #pragma warning disable CS1591
+        ClubsLocationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_location_write")]
+        #pragma warning disable CS1591
+        ClubsLocationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_event_read")]
+        #pragma warning disable CS1591
+        ClubsEventRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clubs_event_write")]
+        #pragma warning disable CS1591
+        ClubsEventWrite,
+        #pragma warning restore CS1591
     }
 }

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/payment{?bill_id*,contact_id*,end_lt*,fields*,invoice_id*,limit*,link_id*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", pathParameters)
+        public PaymentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/payment{?bill_id*,contact_id*,end_lt*,fields*,invoice_id*,limit*,link_id*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", rawUrl)
+        public PaymentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

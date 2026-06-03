@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Repo.Item.Branch
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repo/{connectionId}/branch{?fields*,limit*,offset*,order*,query*,raw*,repo_id*,sort*,updated_gte*}", pathParameters)
+        public BranchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Repo.Item.Branch
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repo/{connectionId}/branch{?fields*,limit*,offset*,order*,query*,raw*,repo_id*,sort*,updated_gte*}", rawUrl)
+        public BranchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

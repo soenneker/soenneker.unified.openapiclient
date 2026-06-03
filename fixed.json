@@ -49193,6 +49193,889 @@
         ]
       }
     },
+    "/clubs/{connectionId}/group/{id}": {
+      "get": {
+        "tags": [
+          "clubs",
+          "group"
+        ],
+        "summary": "Retrieve a group",
+        "operationId": "GetClubsGroup",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetClubsGroupFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubsGroup"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/group": {
+      "get": {
+        "tags": [
+          "clubs",
+          "group"
+        ],
+        "summary": "List all groups",
+        "operationId": "ListClubsGroups",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListClubsGroupsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListClubsGroups200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/member/{id}": {
+      "get": {
+        "tags": [
+          "clubs",
+          "member"
+        ],
+        "summary": "Retrieve a member",
+        "operationId": "GetClubsMember",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetClubsMemberFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Member",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubsMember"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/member": {
+      "get": {
+        "tags": [
+          "clubs",
+          "member"
+        ],
+        "summary": "List all members",
+        "operationId": "ListClubsMembers",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "description": "The group ID to filter by (reference to HrisGroup)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListClubsMembersFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListClubsMembers200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/activity/{id}": {
+      "get": {
+        "tags": [
+          "clubs",
+          "activity"
+        ],
+        "summary": "Retrieve an activity",
+        "operationId": "GetClubsActivity",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetClubsActivityFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Activity",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubsActivity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/activity": {
+      "get": {
+        "tags": [
+          "clubs",
+          "activity"
+        ],
+        "summary": "List all activities",
+        "operationId": "ListClubsActivities",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "description": "The group ID to filter by (reference to HrisGroup)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListClubsActivitiesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListClubsActivities200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/event/{id}": {
+      "get": {
+        "tags": [
+          "clubs",
+          "event"
+        ],
+        "summary": "Retrieve an event",
+        "operationId": "GetClubsEvent",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetClubsEventFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubsEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/event": {
+      "get": {
+        "tags": [
+          "clubs",
+          "event"
+        ],
+        "summary": "List all events",
+        "operationId": "ListClubsEvents",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "description": "The group ID to filter by (reference to HrisGroup)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListClubsEventsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListClubsEvents200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/location/{id}": {
+      "get": {
+        "tags": [
+          "clubs",
+          "location"
+        ],
+        "summary": "Retrieve a location",
+        "operationId": "GetClubsLocation",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetClubsLocationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Location",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClubsLocation"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/clubs/{connectionId}/location": {
+      "get": {
+        "tags": [
+          "clubs",
+          "location"
+        ],
+        "summary": "List all locations",
+        "operationId": "ListClubsLocations",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "description": "The group ID to filter by (reference to HrisGroup)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListClubsLocationsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListClubsLocations200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/scim/{connectionId}/users": {
       "post": {
         "tags": [
@@ -69787,6 +70670,485 @@
           "$ref": "#/components/schemas/SigningTemplate"
         }
       },
+      "PropertyClubsGroupAddress": {
+        "type": "object",
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          }
+        },
+        "description": "The group\u0027s address"
+      },
+      "PropertyClubsGroupActivityTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The activity types the group focuses on"
+      },
+      "ClubsGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "sport_type": {
+            "$ref": "#/components/schemas/ClubsGroupSportType"
+          },
+          "group_type": {
+            "$ref": "#/components/schemas/ClubsGroupGroupType"
+          },
+          "address": {
+            "$ref": "#/components/schemas/PropertyClubsGroupAddress"
+          },
+          "member_count": {
+            "type": "number"
+          },
+          "following_count": {
+            "type": "number"
+          },
+          "post_count": {
+            "type": "number"
+          },
+          "is_private": {
+            "type": "boolean"
+          },
+          "is_verified": {
+            "type": "boolean"
+          },
+          "is_featured": {
+            "type": "boolean"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "is_owner": {
+            "type": "boolean"
+          },
+          "membership_status": {
+            "$ref": "#/components/schemas/ClubsGroupMembershipStatus"
+          },
+          "url": {
+            "type": "string"
+          },
+          "profile_image_url": {
+            "type": "string"
+          },
+          "cover_image_url": {
+            "type": "string"
+          },
+          "activity_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The activity types the group focuses on"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ClubsGroupRawProperty"
+          }
+        },
+        "description": "SummaryClub / DetailedClub, but generic across providers (TeamSnap team, PlayHQ org, etc.)."
+      },
+      "ClubsGroups": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsGroup"
+        }
+      },
+      "ClubsMember": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "is_owner": {
+            "type": "boolean"
+          },
+          "membership_status": {
+            "$ref": "#/components/schemas/ClubsMemberMembershipStatus"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ClubsMemberRawProperty"
+          }
+        },
+        "description": "\u0060lastname\u0060 is only a single initial. We do not synthesize an id, so \u0060id\u0060 is typically absent."
+      },
+      "ClubsMembers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsMember"
+        }
+      },
+      "ClubsActivity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ClubsActivityType"
+          },
+          "athlete_id": {
+            "type": "string"
+          },
+          "athlete_name": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "number"
+          },
+          "moving_time": {
+            "type": "number"
+          },
+          "elapsed_time": {
+            "type": "number"
+          },
+          "total_elevation_gain": {
+            "type": "number"
+          },
+          "elevation_high": {
+            "type": "number"
+          },
+          "elevation_low": {
+            "type": "number"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "achievement_count": {
+            "type": "number"
+          },
+          "kudos_count": {
+            "type": "number"
+          },
+          "comment_count": {
+            "type": "number"
+          },
+          "athlete_count": {
+            "type": "number"
+          },
+          "photo_count": {
+            "type": "number"
+          },
+          "average_speed": {
+            "type": "number"
+          },
+          "max_speed": {
+            "type": "number"
+          },
+          "average_cadence": {
+            "type": "number"
+          },
+          "average_heartrate": {
+            "type": "number"
+          },
+          "max_heartrate": {
+            "type": "number"
+          },
+          "average_watts": {
+            "type": "number"
+          },
+          "max_watts": {
+            "type": "number"
+          },
+          "weighted_average_watts": {
+            "type": "number"
+          },
+          "kilojoules": {
+            "type": "number"
+          },
+          "calories": {
+            "type": "number"
+          },
+          "has_heartrate": {
+            "type": "boolean"
+          },
+          "is_trainer": {
+            "type": "boolean"
+          },
+          "is_commute": {
+            "type": "boolean"
+          },
+          "is_manual": {
+            "type": "boolean"
+          },
+          "is_private": {
+            "type": "boolean"
+          },
+          "map_polyline": {
+            "type": "string"
+          },
+          "map_summary_polyline": {
+            "type": "string"
+          },
+          "workout_type": {
+            "type": "number"
+          },
+          "suffer_score": {
+            "type": "number"
+          },
+          "pr_count": {
+            "type": "number"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ClubsActivityRawProperty"
+          }
+        },
+        "description": "ClubActivity (getClubActivitiesById, NO id) and the full DetailedActivity (getActivityById)."
+      },
+      "ClubsActivities": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsActivity"
+        }
+      },
+      "ClubsEvent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ClubsEventType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ClubsEventStatus"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "duration_minutes": {
+            "type": "number"
+          },
+          "location_id": {
+            "type": "string"
+          },
+          "location_name": {
+            "type": "string"
+          },
+          "opponent_id": {
+            "type": "string"
+          },
+          "opponent_name": {
+            "type": "string"
+          },
+          "home_team_name": {
+            "type": "string"
+          },
+          "away_team_name": {
+            "type": "string"
+          },
+          "home_score": {
+            "type": "number"
+          },
+          "away_score": {
+            "type": "number"
+          },
+          "score_for": {
+            "type": "number"
+          },
+          "score_against": {
+            "type": "number"
+          },
+          "is_home": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ClubsEventRawProperty"
+          }
+        },
+        "description": "(home-vs-away competitors with scores). Distinct from the fitness-oriented IClubsActivity."
+      },
+      "ClubsEvents": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsEvent"
+        }
+      },
+      "PropertyClubsLocationAddress": {
+        "type": "object",
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          }
+        }
+      },
+      "ClubsLocation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/PropertyClubsLocationAddress"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/ClubsLocationRawProperty"
+          }
+        },
+        "description": "formatted address string \u002B lat/long) and PlayHQ venues (structured address parts)."
+      },
+      "ClubsLocations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsLocation"
+        }
+      },
       "PropertyScimUserSchemas": {
         "type": "array",
         "items": {
@@ -72031,6 +73393,21 @@
         "type": "object"
       },
       "SigningTemplateRaw": {
+        "type": "object"
+      },
+      "ClubsGroupRaw": {
+        "type": "object"
+      },
+      "ClubsMemberRaw": {
+        "type": "object"
+      },
+      "ClubsActivityRaw": {
+        "type": "object"
+      },
+      "ClubsEventRaw": {
+        "type": "object"
+      },
+      "ClubsLocationRaw": {
         "type": "object"
       },
       "GetUnifiedIntegrationAuth200Response": {
@@ -74783,6 +76160,36 @@
           "$ref": "#/components/schemas/SigningTemplate"
         }
       },
+      "ListClubsGroups200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsGroup"
+        }
+      },
+      "ListClubsMembers200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsMember"
+        }
+      },
+      "ListClubsActivities200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsActivity"
+        }
+      },
+      "ListClubsEvents200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsEvent"
+        }
+      },
+      "ListClubsLocations200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ClubsLocation"
+        }
+      },
       "ListScimUsers200Response": {
         "type": "array",
         "items": {
@@ -75277,6 +76684,21 @@
       "SigningTemplateRawProperty": {
         "type": "object"
       },
+      "ClubsGroupRawProperty": {
+        "type": "object"
+      },
+      "ClubsMemberRawProperty": {
+        "type": "object"
+      },
+      "ClubsActivityRawProperty": {
+        "type": "object"
+      },
+      "ClubsEventRawProperty": {
+        "type": "object"
+      },
+      "ClubsLocationRawProperty": {
+        "type": "object"
+      },
       "PropertyConnectionPermissionsItem": {
         "enum": [
           "accounting_account_read",
@@ -75520,7 +76942,17 @@
           "signing_document_write",
           "signing_signatory_read",
           "signing_signatory_write",
-          "signing_template_read"
+          "signing_template_read",
+          "clubs_group_read",
+          "clubs_group_write",
+          "clubs_member_read",
+          "clubs_member_write",
+          "clubs_activity_read",
+          "clubs_activity_write",
+          "clubs_location_read",
+          "clubs_location_write",
+          "clubs_event_read",
+          "clubs_event_write"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -76496,6 +77928,46 @@
             {
               "value": "signing_template_read",
               "name": "SigningTemplateRead"
+            },
+            {
+              "value": "clubs_group_read",
+              "name": "ClubsGroupRead"
+            },
+            {
+              "value": "clubs_group_write",
+              "name": "ClubsGroupWrite"
+            },
+            {
+              "value": "clubs_member_read",
+              "name": "ClubsMemberRead"
+            },
+            {
+              "value": "clubs_member_write",
+              "name": "ClubsMemberWrite"
+            },
+            {
+              "value": "clubs_activity_read",
+              "name": "ClubsActivityRead"
+            },
+            {
+              "value": "clubs_activity_write",
+              "name": "ClubsActivityWrite"
+            },
+            {
+              "value": "clubs_location_read",
+              "name": "ClubsLocationRead"
+            },
+            {
+              "value": "clubs_location_write",
+              "name": "ClubsLocationWrite"
+            },
+            {
+              "value": "clubs_event_read",
+              "name": "ClubsEventRead"
+            },
+            {
+              "value": "clubs_event_write",
+              "name": "ClubsEventWrite"
             }
           ]
         }
@@ -76529,7 +78001,8 @@
           "forms",
           "shipping",
           "assessment",
-          "signing"
+          "signing",
+          "clubs"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -76649,6 +78122,10 @@
             {
               "value": "signing",
               "name": "Signing"
+            },
+            {
+              "value": "clubs",
+              "name": "Clubs"
             }
           ]
         }
@@ -76730,7 +78207,8 @@
           "forms",
           "shipping",
           "assessment",
-          "signing"
+          "signing",
+          "clubs"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -76850,6 +78328,10 @@
             {
               "value": "signing",
               "name": "Signing"
+            },
+            {
+              "value": "clubs",
+              "name": "Clubs"
             }
           ]
         }
@@ -81508,7 +82990,12 @@
           "shipping_tracking",
           "signing_document",
           "signing_signatory",
-          "signing_template"
+          "signing_template",
+          "clubs_group",
+          "clubs_member",
+          "clubs_activity",
+          "clubs_location",
+          "clubs_event"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -82044,6 +83531,26 @@
             {
               "value": "signing_template",
               "name": "SigningTemplate"
+            },
+            {
+              "value": "clubs_group",
+              "name": "ClubsGroup"
+            },
+            {
+              "value": "clubs_member",
+              "name": "ClubsMember"
+            },
+            {
+              "value": "clubs_activity",
+              "name": "ClubsActivity"
+            },
+            {
+              "value": "clubs_location",
+              "name": "ClubsLocation"
+            },
+            {
+              "value": "clubs_event",
+              "name": "ClubsEvent"
             }
           ]
         }
@@ -92488,6 +93995,257 @@
           ]
         }
       },
+      "ClubsGroupSportType": {
+        "enum": [
+          "RUNNING",
+          "CYCLING",
+          "SWIMMING",
+          "TRIATHLON",
+          "WALKING",
+          "HIKING",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsGroupSportType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "RUNNING",
+              "name": "Running"
+            },
+            {
+              "value": "CYCLING",
+              "name": "Cycling"
+            },
+            {
+              "value": "SWIMMING",
+              "name": "Swimming"
+            },
+            {
+              "value": "TRIATHLON",
+              "name": "Triathlon"
+            },
+            {
+              "value": "WALKING",
+              "name": "Walking"
+            },
+            {
+              "value": "HIKING",
+              "name": "Hiking"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "ClubsGroupGroupType": {
+        "enum": [
+          "CASUAL_CLUB",
+          "RACING_TEAM",
+          "SHOP",
+          "COMPANY",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsGroupGroupType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CASUAL_CLUB",
+              "name": "CasualClub"
+            },
+            {
+              "value": "RACING_TEAM",
+              "name": "RacingTeam"
+            },
+            {
+              "value": "SHOP",
+              "name": "Shop"
+            },
+            {
+              "value": "COMPANY",
+              "name": "Company"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "ClubsGroupMembershipStatus": {
+        "enum": [
+          "MEMBER",
+          "PENDING",
+          "NONE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsGroupMembershipStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "NONE",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "ClubsMemberMembershipStatus": {
+        "enum": [
+          "MEMBER",
+          "PENDING",
+          "NONE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsMemberMembershipStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "NONE",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "ClubsActivityType": {
+        "enum": [
+          "RUNNING",
+          "CYCLING",
+          "SWIMMING",
+          "TRIATHLON",
+          "WALKING",
+          "HIKING",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsActivityType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "RUNNING",
+              "name": "Running"
+            },
+            {
+              "value": "CYCLING",
+              "name": "Cycling"
+            },
+            {
+              "value": "SWIMMING",
+              "name": "Swimming"
+            },
+            {
+              "value": "TRIATHLON",
+              "name": "Triathlon"
+            },
+            {
+              "value": "WALKING",
+              "name": "Walking"
+            },
+            {
+              "value": "HIKING",
+              "name": "Hiking"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "ClubsEventType": {
+        "enum": [
+          "GAME",
+          "PRACTICE",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsEventType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "GAME",
+              "name": "Game"
+            },
+            {
+              "value": "PRACTICE",
+              "name": "Practice"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "ClubsEventStatus": {
+        "enum": [
+          "SCHEDULED",
+          "CANCELED",
+          "TBD",
+          "FINAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "ClubsEventStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SCHEDULED",
+              "name": "Scheduled"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
+            },
+            {
+              "value": "TBD",
+              "name": "Tbd"
+            },
+            {
+              "value": "FINAL",
+              "name": "Final"
+            }
+          ]
+        }
+      },
       "PropertyScimUserSchemasItem": {
         "enum": [
           "urn:ietf:params:scim:schemas:core:2.0:User",
@@ -92966,7 +94724,8 @@
           "forms",
           "shipping",
           "assessment",
-          "signing"
+          "signing",
+          "clubs"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -93085,6 +94844,10 @@
             {
               "value": "signing",
               "name": "Signing"
+            },
+            {
+              "value": "clubs",
+              "name": "Clubs"
             }
           ]
         }
@@ -93118,7 +94881,8 @@
           "forms",
           "shipping",
           "assessment",
-          "signing"
+          "signing",
+          "clubs"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -93237,6 +95001,10 @@
             {
               "value": "signing",
               "name": "Signing"
+            },
+            {
+              "value": "clubs",
+              "name": "Clubs"
             }
           ]
         }
@@ -93270,7 +95038,8 @@
           "forms",
           "shipping",
           "assessment",
-          "signing"
+          "signing",
+          "clubs"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -93389,6 +95158,10 @@
             {
               "value": "signing",
               "name": "Signing"
+            },
+            {
+              "value": "clubs",
+              "name": "Clubs"
             }
           ]
         }
@@ -142215,6 +143988,1246 @@
             }
           ]
         }
+      },
+      "GetClubsGroupFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "sport_type",
+          "group_type",
+          "address",
+          "member_count",
+          "following_count",
+          "post_count",
+          "is_private",
+          "is_verified",
+          "is_featured",
+          "is_admin",
+          "is_owner",
+          "membership_status",
+          "url",
+          "profile_image_url",
+          "cover_image_url",
+          "activity_types",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetClubsGroupFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "sport_type",
+              "name": "SportType"
+            },
+            {
+              "value": "group_type",
+              "name": "GroupType"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "member_count",
+              "name": "MemberCount"
+            },
+            {
+              "value": "following_count",
+              "name": "FollowingCount"
+            },
+            {
+              "value": "post_count",
+              "name": "PostCount"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "is_verified",
+              "name": "IsVerified"
+            },
+            {
+              "value": "is_featured",
+              "name": "IsFeatured"
+            },
+            {
+              "value": "is_admin",
+              "name": "IsAdmin"
+            },
+            {
+              "value": "is_owner",
+              "name": "IsOwner"
+            },
+            {
+              "value": "membership_status",
+              "name": "MembershipStatus"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "profile_image_url",
+              "name": "ProfileImageUrl"
+            },
+            {
+              "value": "cover_image_url",
+              "name": "CoverImageUrl"
+            },
+            {
+              "value": "activity_types",
+              "name": "ActivityTypes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListClubsGroupsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "sport_type",
+          "group_type",
+          "address",
+          "member_count",
+          "following_count",
+          "post_count",
+          "is_private",
+          "is_verified",
+          "is_featured",
+          "is_admin",
+          "is_owner",
+          "membership_status",
+          "url",
+          "profile_image_url",
+          "cover_image_url",
+          "activity_types",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListClubsGroupsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "sport_type",
+              "name": "SportType"
+            },
+            {
+              "value": "group_type",
+              "name": "GroupType"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "member_count",
+              "name": "MemberCount"
+            },
+            {
+              "value": "following_count",
+              "name": "FollowingCount"
+            },
+            {
+              "value": "post_count",
+              "name": "PostCount"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "is_verified",
+              "name": "IsVerified"
+            },
+            {
+              "value": "is_featured",
+              "name": "IsFeatured"
+            },
+            {
+              "value": "is_admin",
+              "name": "IsAdmin"
+            },
+            {
+              "value": "is_owner",
+              "name": "IsOwner"
+            },
+            {
+              "value": "membership_status",
+              "name": "MembershipStatus"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "profile_image_url",
+              "name": "ProfileImageUrl"
+            },
+            {
+              "value": "cover_image_url",
+              "name": "CoverImageUrl"
+            },
+            {
+              "value": "activity_types",
+              "name": "ActivityTypes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetClubsMemberFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "group_id",
+          "is_admin",
+          "is_owner",
+          "membership_status",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetClubsMemberFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "is_admin",
+              "name": "IsAdmin"
+            },
+            {
+              "value": "is_owner",
+              "name": "IsOwner"
+            },
+            {
+              "value": "membership_status",
+              "name": "MembershipStatus"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListClubsMembersFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "group_id",
+          "is_admin",
+          "is_owner",
+          "membership_status",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListClubsMembersFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "is_admin",
+              "name": "IsAdmin"
+            },
+            {
+              "value": "is_owner",
+              "name": "IsOwner"
+            },
+            {
+              "value": "membership_status",
+              "name": "MembershipStatus"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetClubsActivityFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "description",
+          "type",
+          "athlete_id",
+          "athlete_name",
+          "distance",
+          "moving_time",
+          "elapsed_time",
+          "total_elevation_gain",
+          "elevation_high",
+          "elevation_low",
+          "start_at",
+          "timezone",
+          "achievement_count",
+          "kudos_count",
+          "comment_count",
+          "athlete_count",
+          "photo_count",
+          "average_speed",
+          "max_speed",
+          "average_cadence",
+          "average_heartrate",
+          "max_heartrate",
+          "average_watts",
+          "max_watts",
+          "weighted_average_watts",
+          "kilojoules",
+          "calories",
+          "has_heartrate",
+          "is_trainer",
+          "is_commute",
+          "is_manual",
+          "is_private",
+          "map_polyline",
+          "map_summary_polyline",
+          "workout_type",
+          "suffer_score",
+          "pr_count",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetClubsActivityFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "athlete_id",
+              "name": "AthleteId"
+            },
+            {
+              "value": "athlete_name",
+              "name": "AthleteName"
+            },
+            {
+              "value": "distance",
+              "name": "Distance"
+            },
+            {
+              "value": "moving_time",
+              "name": "MovingTime"
+            },
+            {
+              "value": "elapsed_time",
+              "name": "ElapsedTime"
+            },
+            {
+              "value": "total_elevation_gain",
+              "name": "TotalElevationGain"
+            },
+            {
+              "value": "elevation_high",
+              "name": "ElevationHigh"
+            },
+            {
+              "value": "elevation_low",
+              "name": "ElevationLow"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "achievement_count",
+              "name": "AchievementCount"
+            },
+            {
+              "value": "kudos_count",
+              "name": "KudosCount"
+            },
+            {
+              "value": "comment_count",
+              "name": "CommentCount"
+            },
+            {
+              "value": "athlete_count",
+              "name": "AthleteCount"
+            },
+            {
+              "value": "photo_count",
+              "name": "PhotoCount"
+            },
+            {
+              "value": "average_speed",
+              "name": "AverageSpeed"
+            },
+            {
+              "value": "max_speed",
+              "name": "MaxSpeed"
+            },
+            {
+              "value": "average_cadence",
+              "name": "AverageCadence"
+            },
+            {
+              "value": "average_heartrate",
+              "name": "AverageHeartrate"
+            },
+            {
+              "value": "max_heartrate",
+              "name": "MaxHeartrate"
+            },
+            {
+              "value": "average_watts",
+              "name": "AverageWatts"
+            },
+            {
+              "value": "max_watts",
+              "name": "MaxWatts"
+            },
+            {
+              "value": "weighted_average_watts",
+              "name": "WeightedAverageWatts"
+            },
+            {
+              "value": "kilojoules",
+              "name": "Kilojoules"
+            },
+            {
+              "value": "calories",
+              "name": "Calories"
+            },
+            {
+              "value": "has_heartrate",
+              "name": "HasHeartrate"
+            },
+            {
+              "value": "is_trainer",
+              "name": "IsTrainer"
+            },
+            {
+              "value": "is_commute",
+              "name": "IsCommute"
+            },
+            {
+              "value": "is_manual",
+              "name": "IsManual"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "map_polyline",
+              "name": "MapPolyline"
+            },
+            {
+              "value": "map_summary_polyline",
+              "name": "MapSummaryPolyline"
+            },
+            {
+              "value": "workout_type",
+              "name": "WorkoutType"
+            },
+            {
+              "value": "suffer_score",
+              "name": "SufferScore"
+            },
+            {
+              "value": "pr_count",
+              "name": "PrCount"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListClubsActivitiesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "description",
+          "type",
+          "athlete_id",
+          "athlete_name",
+          "distance",
+          "moving_time",
+          "elapsed_time",
+          "total_elevation_gain",
+          "elevation_high",
+          "elevation_low",
+          "start_at",
+          "timezone",
+          "achievement_count",
+          "kudos_count",
+          "comment_count",
+          "athlete_count",
+          "photo_count",
+          "average_speed",
+          "max_speed",
+          "average_cadence",
+          "average_heartrate",
+          "max_heartrate",
+          "average_watts",
+          "max_watts",
+          "weighted_average_watts",
+          "kilojoules",
+          "calories",
+          "has_heartrate",
+          "is_trainer",
+          "is_commute",
+          "is_manual",
+          "is_private",
+          "map_polyline",
+          "map_summary_polyline",
+          "workout_type",
+          "suffer_score",
+          "pr_count",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListClubsActivitiesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "athlete_id",
+              "name": "AthleteId"
+            },
+            {
+              "value": "athlete_name",
+              "name": "AthleteName"
+            },
+            {
+              "value": "distance",
+              "name": "Distance"
+            },
+            {
+              "value": "moving_time",
+              "name": "MovingTime"
+            },
+            {
+              "value": "elapsed_time",
+              "name": "ElapsedTime"
+            },
+            {
+              "value": "total_elevation_gain",
+              "name": "TotalElevationGain"
+            },
+            {
+              "value": "elevation_high",
+              "name": "ElevationHigh"
+            },
+            {
+              "value": "elevation_low",
+              "name": "ElevationLow"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "achievement_count",
+              "name": "AchievementCount"
+            },
+            {
+              "value": "kudos_count",
+              "name": "KudosCount"
+            },
+            {
+              "value": "comment_count",
+              "name": "CommentCount"
+            },
+            {
+              "value": "athlete_count",
+              "name": "AthleteCount"
+            },
+            {
+              "value": "photo_count",
+              "name": "PhotoCount"
+            },
+            {
+              "value": "average_speed",
+              "name": "AverageSpeed"
+            },
+            {
+              "value": "max_speed",
+              "name": "MaxSpeed"
+            },
+            {
+              "value": "average_cadence",
+              "name": "AverageCadence"
+            },
+            {
+              "value": "average_heartrate",
+              "name": "AverageHeartrate"
+            },
+            {
+              "value": "max_heartrate",
+              "name": "MaxHeartrate"
+            },
+            {
+              "value": "average_watts",
+              "name": "AverageWatts"
+            },
+            {
+              "value": "max_watts",
+              "name": "MaxWatts"
+            },
+            {
+              "value": "weighted_average_watts",
+              "name": "WeightedAverageWatts"
+            },
+            {
+              "value": "kilojoules",
+              "name": "Kilojoules"
+            },
+            {
+              "value": "calories",
+              "name": "Calories"
+            },
+            {
+              "value": "has_heartrate",
+              "name": "HasHeartrate"
+            },
+            {
+              "value": "is_trainer",
+              "name": "IsTrainer"
+            },
+            {
+              "value": "is_commute",
+              "name": "IsCommute"
+            },
+            {
+              "value": "is_manual",
+              "name": "IsManual"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "map_polyline",
+              "name": "MapPolyline"
+            },
+            {
+              "value": "map_summary_polyline",
+              "name": "MapSummaryPolyline"
+            },
+            {
+              "value": "workout_type",
+              "name": "WorkoutType"
+            },
+            {
+              "value": "suffer_score",
+              "name": "SufferScore"
+            },
+            {
+              "value": "pr_count",
+              "name": "PrCount"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetClubsEventFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "description",
+          "type",
+          "status",
+          "start_at",
+          "end_at",
+          "timezone",
+          "duration_minutes",
+          "location_id",
+          "location_name",
+          "opponent_id",
+          "opponent_name",
+          "home_team_name",
+          "away_team_name",
+          "home_score",
+          "away_score",
+          "score_for",
+          "score_against",
+          "is_home",
+          "url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetClubsEventFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "duration_minutes",
+              "name": "DurationMinutes"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "location_name",
+              "name": "LocationName"
+            },
+            {
+              "value": "opponent_id",
+              "name": "OpponentId"
+            },
+            {
+              "value": "opponent_name",
+              "name": "OpponentName"
+            },
+            {
+              "value": "home_team_name",
+              "name": "HomeTeamName"
+            },
+            {
+              "value": "away_team_name",
+              "name": "AwayTeamName"
+            },
+            {
+              "value": "home_score",
+              "name": "HomeScore"
+            },
+            {
+              "value": "away_score",
+              "name": "AwayScore"
+            },
+            {
+              "value": "score_for",
+              "name": "ScoreFor"
+            },
+            {
+              "value": "score_against",
+              "name": "ScoreAgainst"
+            },
+            {
+              "value": "is_home",
+              "name": "IsHome"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListClubsEventsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "description",
+          "type",
+          "status",
+          "start_at",
+          "end_at",
+          "timezone",
+          "duration_minutes",
+          "location_id",
+          "location_name",
+          "opponent_id",
+          "opponent_name",
+          "home_team_name",
+          "away_team_name",
+          "home_score",
+          "away_score",
+          "score_for",
+          "score_against",
+          "is_home",
+          "url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListClubsEventsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "duration_minutes",
+              "name": "DurationMinutes"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "location_name",
+              "name": "LocationName"
+            },
+            {
+              "value": "opponent_id",
+              "name": "OpponentId"
+            },
+            {
+              "value": "opponent_name",
+              "name": "OpponentName"
+            },
+            {
+              "value": "home_team_name",
+              "name": "HomeTeamName"
+            },
+            {
+              "value": "away_team_name",
+              "name": "AwayTeamName"
+            },
+            {
+              "value": "home_score",
+              "name": "HomeScore"
+            },
+            {
+              "value": "away_score",
+              "name": "AwayScore"
+            },
+            {
+              "value": "score_for",
+              "name": "ScoreFor"
+            },
+            {
+              "value": "score_against",
+              "name": "ScoreAgainst"
+            },
+            {
+              "value": "is_home",
+              "name": "IsHome"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetClubsLocationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "address",
+          "latitude",
+          "longitude",
+          "telephone",
+          "url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetClubsLocationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "latitude",
+              "name": "Latitude"
+            },
+            {
+              "value": "longitude",
+              "name": "Longitude"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListClubsLocationsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "group_id",
+          "name",
+          "address",
+          "latitude",
+          "longitude",
+          "telephone",
+          "url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListClubsLocationsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "latitude",
+              "name": "Latitude"
+            },
+            {
+              "value": "longitude",
+              "name": "Longitude"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
       }
     },
     "requestBodies": {
@@ -143710,6 +146723,9 @@
     },
     {
       "name": "template"
+    },
+    {
+      "name": "clubs"
     },
     {
       "name": "scim"

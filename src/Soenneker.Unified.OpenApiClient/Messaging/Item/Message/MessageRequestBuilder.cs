@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Message
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connectionId}/message{?channel_id*,end_lt*,expand*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*,user_id*,user_mentioned_id*}", pathParameters)
+        public MessageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Message
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/messaging/{connectionId}/message{?channel_id*,end_lt*,expand*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*,user_id*,user_mentioned_id*}", rawUrl)
+        public MessageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

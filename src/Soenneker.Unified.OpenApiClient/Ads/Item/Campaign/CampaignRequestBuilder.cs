@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Campaign
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", pathParameters)
+        public CampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Campaign
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", rawUrl)
+        public CampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

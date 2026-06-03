@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Activity
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/activity{?application_id*,candidate_id*,document_id*,fields*,interview_id*,job_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", pathParameters)
+        public ActivityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Activity
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/activity{?application_id*,candidate_id*,document_id*,fields*,interview_id*,job_id*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", rawUrl)
+        public ActivityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

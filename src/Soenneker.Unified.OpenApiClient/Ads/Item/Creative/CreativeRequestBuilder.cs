@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Creative
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/creative{?fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,status*,updated_gte*}", pathParameters)
+        public CreativeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Creative
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreativeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/creative{?fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,status*,updated_gte*}", rawUrl)
+        public CreativeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

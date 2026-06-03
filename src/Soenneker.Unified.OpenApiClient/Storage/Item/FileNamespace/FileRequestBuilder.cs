@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connectionId}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,reference*,sort*,type*,updated_gte*}", pathParameters)
+        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Storage.Item.FileNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/{connectionId}/file{?expand*,fields*,fulltext*,limit*,offset*,order*,parent_id*,query*,raw*,reference*,sort*,type*,updated_gte*}", rawUrl)
+        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

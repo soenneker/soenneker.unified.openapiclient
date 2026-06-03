@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeductionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public DeductionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Deduction
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeductionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/deduction{?benefit_id*,company_id*,end_lt*,fields*,limit*,offset*,order*,payslip_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public DeductionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

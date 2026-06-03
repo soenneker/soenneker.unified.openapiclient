@@ -11,6 +11,7 @@ using Soenneker.Unified.OpenApiClient.Ads;
 using Soenneker.Unified.OpenApiClient.Assessment;
 using Soenneker.Unified.OpenApiClient.Ats;
 using Soenneker.Unified.OpenApiClient.Calendar;
+using Soenneker.Unified.OpenApiClient.Clubs;
 using Soenneker.Unified.OpenApiClient.Commerce;
 using Soenneker.Unified.OpenApiClient.Crm;
 using Soenneker.Unified.OpenApiClient.Enrich;
@@ -70,6 +71,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Calendar.CalendarRequestBuilder Calendar
         {
             get => new global::Soenneker.Unified.OpenApiClient.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The clubs property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Clubs.ClubsRequestBuilder Clubs
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Clubs.ClubsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commerce property</summary>
         public global::Soenneker.Unified.OpenApiClient.Commerce.CommerceRequestBuilder Commerce

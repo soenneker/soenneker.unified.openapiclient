@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

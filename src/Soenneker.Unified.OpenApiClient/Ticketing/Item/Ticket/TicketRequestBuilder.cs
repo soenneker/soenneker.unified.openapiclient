@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Ticket
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TicketRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ticketing/{connectionId}/ticket{?customer_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public TicketRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Ticket
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TicketRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ticketing/{connectionId}/ticket{?customer_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public TicketRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

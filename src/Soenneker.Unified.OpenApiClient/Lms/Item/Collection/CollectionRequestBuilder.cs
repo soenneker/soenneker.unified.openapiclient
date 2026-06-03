@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Collection
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lms/{connectionId}/collection{?course_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public CollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Collection
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/lms/{connectionId}/collection{?course_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public CollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

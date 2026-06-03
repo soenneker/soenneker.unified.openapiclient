@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Category
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ticketing/{connectionId}/category{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public CategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Category
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ticketing/{connectionId}/category{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public CategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Comment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connectionId}/comment{?fields*,limit*,offset*,order*,page_id*,parent_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
+        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Comment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/kms/{connectionId}/comment{?fields*,limit*,offset*,order*,page_id*,parent_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
+        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

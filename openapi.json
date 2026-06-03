@@ -428,6 +428,9 @@
          "name": "template"
       },
       {
+         "name": "clubs"
+      },
+      {
          "name": "scim"
       },
       {
@@ -1770,7 +1773,17 @@
                   "signing_document_write",
                   "signing_signatory_read",
                   "signing_signatory_write",
-                  "signing_template_read"
+                  "signing_template_read",
+                  "clubs_group_read",
+                  "clubs_group_write",
+                  "clubs_member_read",
+                  "clubs_member_write",
+                  "clubs_activity_read",
+                  "clubs_activity_write",
+                  "clubs_location_read",
+                  "clubs_location_write",
+                  "clubs_event_read",
+                  "clubs_event_write"
                ],
                "x-speakeasy-unknown-values": "allow"
             }
@@ -1807,7 +1820,8 @@
                   "forms",
                   "shipping",
                   "assessment",
-                  "signing"
+                  "signing",
+                  "clubs"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -2090,7 +2104,8 @@
                   "forms",
                   "shipping",
                   "assessment",
-                  "signing"
+                  "signing",
+                  "clubs"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -4052,7 +4067,12 @@
                      "shipping_tracking",
                      "signing_document",
                      "signing_signatory",
-                     "signing_template"
+                     "signing_template",
+                     "clubs_group",
+                     "clubs_member",
+                     "clubs_activity",
+                     "clubs_location",
+                     "clubs_event"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -23960,6 +23980,539 @@
                "$ref": "#/components/schemas/SigningTemplate"
             }
          },
+         "property_ClubsGroup_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "region_code": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               },
+               "country_code": {
+                  "type": "string"
+               }
+            },
+            "description": "The group's address"
+         },
+         "property_ClubsGroup_activity_types": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "The activity types the group focuses on"
+         },
+         "ClubsGroup": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "sport_type": {
+                  "type": "string",
+                  "enum": [
+                     "RUNNING",
+                     "CYCLING",
+                     "SWIMMING",
+                     "TRIATHLON",
+                     "WALKING",
+                     "HIKING",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "group_type": {
+                  "type": "string",
+                  "enum": [
+                     "CASUAL_CLUB",
+                     "RACING_TEAM",
+                     "SHOP",
+                     "COMPANY",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_ClubsGroup_address"
+               },
+               "member_count": {
+                  "type": "number"
+               },
+               "following_count": {
+                  "type": "number"
+               },
+               "post_count": {
+                  "type": "number"
+               },
+               "is_private": {
+                  "type": "boolean"
+               },
+               "is_verified": {
+                  "type": "boolean"
+               },
+               "is_featured": {
+                  "type": "boolean"
+               },
+               "is_admin": {
+                  "type": "boolean"
+               },
+               "is_owner": {
+                  "type": "boolean"
+               },
+               "membership_status": {
+                  "type": "string",
+                  "enum": [
+                     "MEMBER",
+                     "PENDING",
+                     "NONE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "profile_image_url": {
+                  "type": "string"
+               },
+               "cover_image_url": {
+                  "type": "string"
+               },
+               "activity_types": {
+                  "$ref": "#/components/schemas/property_ClubsGroup_activity_types"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "description": "SummaryClub / DetailedClub, but generic across providers (TeamSnap team, PlayHQ org, etc.)."
+         },
+         "ClubsGroups": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ClubsGroup"
+            }
+         },
+         "ClubsMember": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "first_name": {
+                  "type": "string"
+               },
+               "last_name": {
+                  "type": "string"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "is_admin": {
+                  "type": "boolean"
+               },
+               "is_owner": {
+                  "type": "boolean"
+               },
+               "membership_status": {
+                  "type": "string",
+                  "enum": [
+                     "MEMBER",
+                     "PENDING",
+                     "NONE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "description": "`lastname` is only a single initial. We do not synthesize an id, so `id` is typically absent."
+         },
+         "ClubsMembers": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ClubsMember"
+            }
+         },
+         "ClubsActivity": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "RUNNING",
+                     "CYCLING",
+                     "SWIMMING",
+                     "TRIATHLON",
+                     "WALKING",
+                     "HIKING",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "athlete_id": {
+                  "type": "string"
+               },
+               "athlete_name": {
+                  "type": "string"
+               },
+               "distance": {
+                  "type": "number"
+               },
+               "moving_time": {
+                  "type": "number"
+               },
+               "elapsed_time": {
+                  "type": "number"
+               },
+               "total_elevation_gain": {
+                  "type": "number"
+               },
+               "elevation_high": {
+                  "type": "number"
+               },
+               "elevation_low": {
+                  "type": "number"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "timezone": {
+                  "type": "string"
+               },
+               "achievement_count": {
+                  "type": "number"
+               },
+               "kudos_count": {
+                  "type": "number"
+               },
+               "comment_count": {
+                  "type": "number"
+               },
+               "athlete_count": {
+                  "type": "number"
+               },
+               "photo_count": {
+                  "type": "number"
+               },
+               "average_speed": {
+                  "type": "number"
+               },
+               "max_speed": {
+                  "type": "number"
+               },
+               "average_cadence": {
+                  "type": "number"
+               },
+               "average_heartrate": {
+                  "type": "number"
+               },
+               "max_heartrate": {
+                  "type": "number"
+               },
+               "average_watts": {
+                  "type": "number"
+               },
+               "max_watts": {
+                  "type": "number"
+               },
+               "weighted_average_watts": {
+                  "type": "number"
+               },
+               "kilojoules": {
+                  "type": "number"
+               },
+               "calories": {
+                  "type": "number"
+               },
+               "has_heartrate": {
+                  "type": "boolean"
+               },
+               "is_trainer": {
+                  "type": "boolean"
+               },
+               "is_commute": {
+                  "type": "boolean"
+               },
+               "is_manual": {
+                  "type": "boolean"
+               },
+               "is_private": {
+                  "type": "boolean"
+               },
+               "map_polyline": {
+                  "type": "string"
+               },
+               "map_summary_polyline": {
+                  "type": "string"
+               },
+               "workout_type": {
+                  "type": "number"
+               },
+               "suffer_score": {
+                  "type": "number"
+               },
+               "pr_count": {
+                  "type": "number"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "description": "ClubActivity (getClubActivitiesById, NO id) and the full DetailedActivity (getActivityById)."
+         },
+         "ClubsActivities": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ClubsActivity"
+            }
+         },
+         "ClubsEvent": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "GAME",
+                     "PRACTICE",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "SCHEDULED",
+                     "CANCELED",
+                     "TBD",
+                     "FINAL"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "timezone": {
+                  "type": "string"
+               },
+               "duration_minutes": {
+                  "type": "number"
+               },
+               "location_id": {
+                  "type": "string"
+               },
+               "location_name": {
+                  "type": "string"
+               },
+               "opponent_id": {
+                  "type": "string"
+               },
+               "opponent_name": {
+                  "type": "string"
+               },
+               "home_team_name": {
+                  "type": "string"
+               },
+               "away_team_name": {
+                  "type": "string"
+               },
+               "home_score": {
+                  "type": "number"
+               },
+               "away_score": {
+                  "type": "number"
+               },
+               "score_for": {
+                  "type": "number"
+               },
+               "score_against": {
+                  "type": "number"
+               },
+               "is_home": {
+                  "type": "boolean"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "description": "(home-vs-away competitors with scores). Distinct from the fitness-oriented IClubsActivity."
+         },
+         "ClubsEvents": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ClubsEvent"
+            }
+         },
+         "property_ClubsLocation_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "region_code": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               },
+               "country_code": {
+                  "type": "string"
+               }
+            }
+         },
+         "ClubsLocation": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_ClubsLocation_address"
+               },
+               "latitude": {
+                  "type": "number"
+               },
+               "longitude": {
+                  "type": "number"
+               },
+               "telephone": {
+                  "type": "string"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "description": "formatted address string + lat/long) and PlayHQ venues (structured address parts)."
+         },
+         "ClubsLocations": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ClubsLocation"
+            }
+         },
          "property_ScimUser_schemas": {
             "type": "array",
             "items": {
@@ -24807,7 +25360,8 @@
                            "forms",
                            "shipping",
                            "assessment",
-                           "signing"
+                           "signing",
+                           "clubs"
                         ]
                      }
                   },
@@ -25191,7 +25745,8 @@
                            "forms",
                            "shipping",
                            "assessment",
-                           "signing"
+                           "signing",
+                           "clubs"
                         ]
                      }
                   },
@@ -25320,7 +25875,8 @@
                            "forms",
                            "shipping",
                            "assessment",
-                           "signing"
+                           "signing",
+                           "clubs"
                         ]
                      }
                   },
@@ -87121,6 +87677,1194 @@
                }
             ],
             "operationId": "listSigningTemplates"
+         }
+      },
+      "/clubs/{connection_id}/group/{id}": {
+         "get": {
+            "summary": "Retrieve a group",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "sport_type",
+                           "group_type",
+                           "address",
+                           "member_count",
+                           "following_count",
+                           "post_count",
+                           "is_private",
+                           "is_verified",
+                           "is_featured",
+                           "is_admin",
+                           "is_owner",
+                           "membership_status",
+                           "url",
+                           "profile_image_url",
+                           "cover_image_url",
+                           "activity_types",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Group",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "group"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsGroup"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getClubsGroup"
+         }
+      },
+      "/clubs/{connection_id}/group": {
+         "get": {
+            "summary": "List all groups",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "sport_type",
+                           "group_type",
+                           "address",
+                           "member_count",
+                           "following_count",
+                           "post_count",
+                           "is_private",
+                           "is_verified",
+                           "is_featured",
+                           "is_admin",
+                           "is_owner",
+                           "membership_status",
+                           "url",
+                           "profile_image_url",
+                           "cover_image_url",
+                           "activity_types",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "group"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsGroups"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listClubsGroups"
+         }
+      },
+      "/clubs/{connection_id}/member/{id}": {
+         "get": {
+            "summary": "Retrieve a member",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "first_name",
+                           "last_name",
+                           "group_id",
+                           "is_admin",
+                           "is_owner",
+                           "membership_status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Member",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "member"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsMember"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getClubsMember"
+         }
+      },
+      "/clubs/{connection_id}/member": {
+         "get": {
+            "summary": "List all members",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "group_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The group ID to filter by (reference to HrisGroup)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "first_name",
+                           "last_name",
+                           "group_id",
+                           "is_admin",
+                           "is_owner",
+                           "membership_status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "member"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsMembers"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listClubsMembers"
+         }
+      },
+      "/clubs/{connection_id}/activity/{id}": {
+         "get": {
+            "summary": "Retrieve an activity",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "description",
+                           "type",
+                           "athlete_id",
+                           "athlete_name",
+                           "distance",
+                           "moving_time",
+                           "elapsed_time",
+                           "total_elevation_gain",
+                           "elevation_high",
+                           "elevation_low",
+                           "start_at",
+                           "timezone",
+                           "achievement_count",
+                           "kudos_count",
+                           "comment_count",
+                           "athlete_count",
+                           "photo_count",
+                           "average_speed",
+                           "max_speed",
+                           "average_cadence",
+                           "average_heartrate",
+                           "max_heartrate",
+                           "average_watts",
+                           "max_watts",
+                           "weighted_average_watts",
+                           "kilojoules",
+                           "calories",
+                           "has_heartrate",
+                           "is_trainer",
+                           "is_commute",
+                           "is_manual",
+                           "is_private",
+                           "map_polyline",
+                           "map_summary_polyline",
+                           "workout_type",
+                           "suffer_score",
+                           "pr_count",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Activity",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "activity"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsActivity"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getClubsActivity"
+         }
+      },
+      "/clubs/{connection_id}/activity": {
+         "get": {
+            "summary": "List all activities",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "group_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The group ID to filter by (reference to HrisGroup)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "description",
+                           "type",
+                           "athlete_id",
+                           "athlete_name",
+                           "distance",
+                           "moving_time",
+                           "elapsed_time",
+                           "total_elevation_gain",
+                           "elevation_high",
+                           "elevation_low",
+                           "start_at",
+                           "timezone",
+                           "achievement_count",
+                           "kudos_count",
+                           "comment_count",
+                           "athlete_count",
+                           "photo_count",
+                           "average_speed",
+                           "max_speed",
+                           "average_cadence",
+                           "average_heartrate",
+                           "max_heartrate",
+                           "average_watts",
+                           "max_watts",
+                           "weighted_average_watts",
+                           "kilojoules",
+                           "calories",
+                           "has_heartrate",
+                           "is_trainer",
+                           "is_commute",
+                           "is_manual",
+                           "is_private",
+                           "map_polyline",
+                           "map_summary_polyline",
+                           "workout_type",
+                           "suffer_score",
+                           "pr_count",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "activity"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsActivities"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listClubsActivities"
+         }
+      },
+      "/clubs/{connection_id}/event/{id}": {
+         "get": {
+            "summary": "Retrieve an event",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "description",
+                           "type",
+                           "status",
+                           "start_at",
+                           "end_at",
+                           "timezone",
+                           "duration_minutes",
+                           "location_id",
+                           "location_name",
+                           "opponent_id",
+                           "opponent_name",
+                           "home_team_name",
+                           "away_team_name",
+                           "home_score",
+                           "away_score",
+                           "score_for",
+                           "score_against",
+                           "is_home",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Event",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "event"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsEvent"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getClubsEvent"
+         }
+      },
+      "/clubs/{connection_id}/event": {
+         "get": {
+            "summary": "List all events",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "group_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The group ID to filter by (reference to HrisGroup)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "description",
+                           "type",
+                           "status",
+                           "start_at",
+                           "end_at",
+                           "timezone",
+                           "duration_minutes",
+                           "location_id",
+                           "location_name",
+                           "opponent_id",
+                           "opponent_name",
+                           "home_team_name",
+                           "away_team_name",
+                           "home_score",
+                           "away_score",
+                           "score_for",
+                           "score_against",
+                           "is_home",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "event"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsEvents"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listClubsEvents"
+         }
+      },
+      "/clubs/{connection_id}/location/{id}": {
+         "get": {
+            "summary": "Retrieve a location",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "address",
+                           "latitude",
+                           "longitude",
+                           "telephone",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "type": "array",
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Location",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "location"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsLocation"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getClubsLocation"
+         }
+      },
+      "/clubs/{connection_id}/location": {
+         "get": {
+            "summary": "List all locations",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "group_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The group ID to filter by (reference to HrisGroup)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "group_id",
+                           "name",
+                           "address",
+                           "latitude",
+                           "longitude",
+                           "telephone",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "clubs",
+               "location"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/ClubsLocations"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listClubsLocations"
          }
       },
       "/scim/{connection_id}/users": {

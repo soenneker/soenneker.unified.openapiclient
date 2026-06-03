@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Project
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/project{?company_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public ProjectRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Project
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/project{?company_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public ProjectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

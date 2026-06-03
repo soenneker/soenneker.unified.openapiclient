@@ -120,5 +120,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Signing,
         #pragma warning restore CS1591
+        [EnumMember(Value = "clubs")]
+        #pragma warning disable CS1591
+        Clubs,
+        #pragma warning restore CS1591
     }
 }

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Itemvariant
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemvariantRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/itemvariant{?collection_id*,fields*,item_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ItemvariantRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Itemvariant
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemvariantRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/itemvariant{?collection_id*,fields*,item_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ItemvariantRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

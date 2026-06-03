@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public DealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/{connectionId}/deal{?company_id*,contact_id*,fields*,limit*,offset*,order*,pipeline_id*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public DealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

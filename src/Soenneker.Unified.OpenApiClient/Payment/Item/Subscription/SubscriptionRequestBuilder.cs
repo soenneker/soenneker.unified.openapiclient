@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Subscription
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/subscription{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public SubscriptionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Subscription
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/payment/{connectionId}/subscription{?contact_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public SubscriptionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
