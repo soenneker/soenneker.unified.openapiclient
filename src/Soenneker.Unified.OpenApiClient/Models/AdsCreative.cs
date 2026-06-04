@@ -50,6 +50,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Cta { get; set; }
 #endif
+        /// <summary>The data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Data { get; set; }
+#nullable restore
+#else
+        public string Data { get; set; }
+#endif
         /// <summary>The external_ad_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,6 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType>(); } },
                 { "cta", n => { Cta = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetStringValue(); } },
                 { "external_ad_reference", n => { ExternalAdReference = n.GetStringValue(); } },
                 { "external_creative_reference", n => { ExternalCreativeReference = n.GetStringValue(); } },
                 { "external_placement_reference", n => { ExternalPlacementReference = n.GetStringValue(); } },
@@ -255,6 +264,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType>("creative_type", CreativeType);
             writer.WriteStringValue("cta", Cta);
+            writer.WriteStringValue("data", Data);
             writer.WriteStringValue("external_ad_reference", ExternalAdReference);
             writer.WriteStringValue("external_creative_reference", ExternalCreativeReference);
             writer.WriteStringValue("external_placement_reference", ExternalPlacementReference);

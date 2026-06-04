@@ -44,6 +44,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Status,
         #pragma warning restore CS1591
+        [EnumMember(Value = "data")]
+        #pragma warning disable CS1591
+        Data,
+        #pragma warning restore CS1591
         [EnumMember(Value = "creative_type")]
         #pragma warning disable CS1591
         CreativeType,

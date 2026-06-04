@@ -119,6 +119,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?> Permissions { get; set; }
 #endif
+        /// <summary>The secretsmanager_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecretsmanagerId { get; set; }
+#nullable restore
+#else
+        public string SecretsmanagerId { get; set; }
+#endif
+        /// <summary>The secretsmanager_key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecretsmanagerKey { get; set; }
+#nullable restore
+#else
+        public string SecretsmanagerKey { get; set; }
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The workspace_id property</summary>
@@ -171,6 +187,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "last_healthy_at", n => { LastHealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "last_unhealthy_at", n => { LastUnhealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>()?.AsList(); } },
+                { "secretsmanager_id", n => { SecretsmanagerId = n.GetStringValue(); } },
+                { "secretsmanager_key", n => { SecretsmanagerKey = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
@@ -198,6 +216,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_healthy_at", LastHealthyAt);
             writer.WriteDateTimeOffsetValue("last_unhealthy_at", LastUnhealthyAt);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>("permissions", Permissions);
+            writer.WriteStringValue("secretsmanager_id", SecretsmanagerId);
+            writer.WriteStringValue("secretsmanager_key", SecretsmanagerKey);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

@@ -28,9 +28,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Native,
         #pragma warning restore CS1591
+        [EnumMember(Value = "IMAGE")]
+        #pragma warning disable CS1591
+        Image,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AUDIO")]
         #pragma warning disable CS1591
         Audio,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOCUMENT")]
+        #pragma warning disable CS1591
+        Document,
         #pragma warning restore CS1591
         [EnumMember(Value = "PUBLISHER_HOSTED")]
         #pragma warning disable CS1591

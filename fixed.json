@@ -50942,6 +50942,12 @@
           "last_unhealthy_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "secretsmanager_id": {
+            "type": "string"
+          },
+          "secretsmanager_key": {
+            "type": "string"
           }
         },
         "description": "A connection represents a specific authentication of an integration."
@@ -65226,6 +65232,9 @@
           },
           "status": {
             "$ref": "#/components/schemas/AdsCreativeStatus"
+          },
+          "data": {
+            "type": "string"
           },
           "creative_type": {
             "$ref": "#/components/schemas/AdsCreativeCreativeType"
@@ -89604,6 +89613,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -89629,6 +89640,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -89894,6 +89913,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -89921,6 +89942,14 @@
               "name": "Archived"
             },
             {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
+            },
+            {
               "value": "DRAFT",
               "name": "Draft"
             },
@@ -89938,7 +89967,9 @@
           "EXPANDABLE",
           "VIDEO",
           "NATIVE",
+          "IMAGE",
           "AUDIO",
+          "DOCUMENT",
           "PUBLISHER_HOSTED",
           "ASSET_BASED"
         ],
@@ -89970,8 +90001,16 @@
               "name": "Native"
             },
             {
+              "value": "IMAGE",
+              "name": "Image"
+            },
+            {
               "value": "AUDIO",
               "name": "Audio"
+            },
+            {
+              "value": "DOCUMENT",
+              "name": "Document"
             },
             {
               "value": "PUBLISHER_HOSTED",
@@ -90386,6 +90425,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -90411,6 +90452,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -90888,6 +90937,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -90913,6 +90964,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -91239,6 +91298,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -91264,6 +91325,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -91604,6 +91673,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -91629,6 +91700,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -92237,6 +92316,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -92262,6 +92343,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -92588,6 +92677,8 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
+          "PROCESSING",
+          "PROCESSING_FAILED",
           "DRAFT",
           "SCHEDULED_FOR_DELETION"
         ],
@@ -92613,6 +92704,14 @@
             {
               "value": "ARCHIVED",
               "name": "Archived"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             },
             {
               "value": "DRAFT",
@@ -133532,6 +133631,7 @@
           "item_id",
           "organization_id",
           "status",
+          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133592,6 +133692,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "creative_type",
@@ -133679,6 +133783,7 @@
           "item_id",
           "organization_id",
           "status",
+          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133739,6 +133844,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "creative_type",
@@ -133826,6 +133935,7 @@
           "item_id",
           "organization_id",
           "status",
+          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133886,6 +133996,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "creative_type",
@@ -133973,6 +134087,7 @@
           "item_id",
           "organization_id",
           "status",
+          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -134033,6 +134148,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "creative_type",
@@ -134120,6 +134239,7 @@
           "item_id",
           "organization_id",
           "status",
+          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -134180,6 +134300,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "creative_type",

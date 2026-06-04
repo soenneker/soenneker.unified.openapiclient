@@ -1988,6 +1988,12 @@
                "last_unhealthy_at": {
                   "type": "string",
                   "format": "date-time"
+               },
+               "secretsmanager_id": {
+                  "type": "string"
+               },
+               "secretsmanager_key": {
+                  "type": "string"
                }
             },
             "required": [
@@ -18083,6 +18089,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -18267,10 +18275,15 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "data": {
+                  "type": "string"
                },
                "creative_type": {
                   "type": "string",
@@ -18280,7 +18293,9 @@
                      "EXPANDABLE",
                      "VIDEO",
                      "NATIVE",
+                     "IMAGE",
                      "AUDIO",
+                     "DOCUMENT",
                      "PUBLISHER_HOSTED",
                      "ASSET_BASED"
                   ],
@@ -18579,6 +18594,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -19378,6 +19395,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -19563,6 +19582,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -20271,6 +20292,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -21114,6 +21137,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -21293,6 +21318,8 @@
                      "ACTIVE",
                      "PAUSED",
                      "ARCHIVED",
+                     "PROCESSING",
+                     "PROCESSING_FAILED",
                      "DRAFT",
                      "SCHEDULED_FOR_DELETION"
                   ],
@@ -74015,6 +74042,7 @@
                            "item_id",
                            "organization_id",
                            "status",
+                           "data",
                            "creative_type",
                            "hosting_source",
                            "width",
@@ -74189,6 +74217,7 @@
                            "item_id",
                            "organization_id",
                            "status",
+                           "data",
                            "creative_type",
                            "hosting_source",
                            "width",
@@ -74277,6 +74306,7 @@
                            "item_id",
                            "organization_id",
                            "status",
+                           "data",
                            "creative_type",
                            "hosting_source",
                            "width",
@@ -74373,6 +74403,7 @@
                            "item_id",
                            "organization_id",
                            "status",
+                           "data",
                            "creative_type",
                            "hosting_source",
                            "width",
@@ -74479,6 +74510,7 @@
                            "item_id",
                            "organization_id",
                            "status",
+                           "data",
                            "creative_type",
                            "hosting_source",
                            "width",
