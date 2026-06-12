@@ -32,5 +32,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Supabase,
         #pragma warning restore CS1591
+        [EnumMember(Value = "snowflake")]
+        #pragma warning disable CS1591
+        Snowflake,
+        #pragma warning restore CS1591
     }
 }

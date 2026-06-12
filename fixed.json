@@ -46890,6 +46890,1370 @@
         ]
       }
     },
+    "/datastore/{connectionId}/database": {
+      "post": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "Create a database",
+        "operationId": "CreateDatastoreDatabase",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateDatastoreDatabaseFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreDatabase"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreDatabase"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "List all databases",
+        "operationId": "ListDatastoreDatabases",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListDatastoreDatabasesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListDatastoreDatabases200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/database/{id}": {
+      "get": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "Retrieve a database",
+        "operationId": "GetDatastoreDatabase",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetDatastoreDatabaseFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreDatabase"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "Update a database",
+        "operationId": "UpdateDatastoreDatabase",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateDatastoreDatabaseFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreDatabase"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreDatabase"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "Update a database",
+        "operationId": "PatchDatastoreDatabase",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchDatastoreDatabaseFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreDatabase"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreDatabase"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "datastore",
+          "database"
+        ],
+        "summary": "Remove a database",
+        "operationId": "RemoveDatastoreDatabase",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/table": {
+      "post": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "Create a table",
+        "operationId": "CreateDatastoreTable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateDatastoreTableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreTable"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreTable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "List all tables",
+        "operationId": "ListDatastoreTables",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database_id",
+            "in": "query",
+            "description": "The Database ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListDatastoreTablesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListDatastoreTables200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/table/{id}": {
+      "get": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "Retrieve a table",
+        "operationId": "GetDatastoreTable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetDatastoreTableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Table",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreTable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "Update a table",
+        "operationId": "UpdateDatastoreTable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateDatastoreTableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Table",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreTable"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreTable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "Update a table",
+        "operationId": "PatchDatastoreTable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchDatastoreTableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Table",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreTable"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreTable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "datastore",
+          "table"
+        ],
+        "summary": "Remove a table",
+        "operationId": "RemoveDatastoreTable",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Table",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/record": {
+      "post": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "Create a record",
+        "operationId": "CreateDatastoreRecord",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateDatastoreRecordFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreRecord"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreRecord"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "List all records",
+        "operationId": "ListDatastoreRecords",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "database_id",
+            "in": "query",
+            "description": "The Database ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "table_id",
+            "in": "query",
+            "description": "The Database Table ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListDatastoreRecordsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListDatastoreRecords200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/record/{id}": {
+      "get": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "Retrieve a record",
+        "operationId": "GetDatastoreRecord",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetDatastoreRecordFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Record",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreRecord"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "Update a record",
+        "operationId": "UpdateDatastoreRecord",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateDatastoreRecordFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Record",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreRecord"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreRecord"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "Update a record",
+        "operationId": "PatchDatastoreRecord",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchDatastoreRecordFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Record",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreRecord"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreRecord"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "datastore",
+          "record"
+        ],
+        "summary": "Remove a record",
+        "operationId": "RemoveDatastoreRecord",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Record",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/datastore/{connectionId}/query": {
+      "post": {
+        "tags": [
+          "datastore",
+          "query"
+        ],
+        "summary": "Create a query",
+        "operationId": "CreateDatastoreQuery",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateDatastoreQueryFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatastoreQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatastoreQuery"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/shipping/{connectionId}/shipment": {
       "post": {
         "tags": [
@@ -47315,7 +48679,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
                 }
               }
             }
@@ -47745,7 +49109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
                 }
               }
             }
@@ -48583,7 +49947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
                 }
               }
             }
@@ -49013,7 +50377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
                 }
               }
             }
@@ -50416,7 +51780,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
                 }
               }
             }
@@ -50734,7 +52098,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
                 }
               }
             }
@@ -51617,6 +52981,24 @@
           },
           "virtual_webhook_account_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookAccountId"
+          },
+          "list_database_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListDatabaseId"
+          },
+          "virtual_webhook_database_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookDatabaseId"
+          },
+          "native_webhook_database_id": {
+            "$ref": "#/components/schemas/IntegrationSupportNativeWebhookDatabaseId"
+          },
+          "list_table_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListTableId"
+          },
+          "virtual_webhook_table_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookTableId"
+          },
+          "native_webhook_table_id": {
+            "$ref": "#/components/schemas/IntegrationSupportNativeWebhookTableId"
           }
         }
       },
@@ -56739,6 +58121,9 @@
               "$ref": "#/components/schemas/AtsMetadata"
             }
           },
+          "original_substatus": {
+            "type": "string"
+          },
           "raw": {
             "$ref": "#/components/schemas/AtsApplicationRawProperty"
           }
@@ -59174,6 +60559,33 @@
           "$ref": "#/components/schemas/AccountingReference"
         }
       },
+      "AccountingFee": {
+        "required": [
+          "type",
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/AccountingFeeType"
+          },
+          "original_type": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAccountingLineitemFees": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingFee"
+        }
+      },
       "AccountingLineitem": {
         "type": "object",
         "properties": {
@@ -59247,6 +60659,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AccountingReference"
+            }
+          },
+          "fees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingFee"
             }
           }
         }
@@ -60059,6 +61477,12 @@
           "$ref": "#/components/schemas/AccountingLineitem"
         }
       },
+      "PropertyAccountingSalesorderFees": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingFee"
+        }
+      },
       "AccountingSalesorder": {
         "type": "object",
         "properties": {
@@ -60109,6 +61533,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "fees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingFee"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingSalesorderRawProperty"
@@ -65233,9 +66663,6 @@
           "status": {
             "$ref": "#/components/schemas/AdsCreativeStatus"
           },
-          "data": {
-            "type": "string"
-          },
           "creative_type": {
             "$ref": "#/components/schemas/AdsCreativeCreativeType"
           },
@@ -65292,6 +66719,9 @@
             "type": "string"
           },
           "path2": {
+            "type": "string"
+          },
+          "data": {
             "type": "string"
           },
           "raw": {
@@ -69567,6 +70997,1059 @@
           "$ref": "#/components/schemas/FormsSubmission"
         }
       },
+      "DatastoreDatabase": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "password": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/DatastoreDatabaseRawProperty"
+          }
+        }
+      },
+      "DatastoreDatabases": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreDatabase"
+        }
+      },
+      "PropertyDatastoreFieldDefaultValueSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFieldDefaultValue": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DatastoreField": {
+        "required": [
+          "name",
+          "type",
+          "original_type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DatastoreFieldType"
+          },
+          "original_type": {
+            "type": "string"
+          },
+          "is_required": {
+            "type": "boolean"
+          },
+          "is_indexed": {
+            "type": "boolean"
+          },
+          "is_primary_key": {
+            "type": "boolean"
+          },
+          "is_unique": {
+            "type": "boolean"
+          },
+          "is_nullable": {
+            "type": "boolean"
+          },
+          "max_length": {
+            "type": "number"
+          },
+          "precision": {
+            "type": "number"
+          },
+          "scale": {
+            "type": "number"
+          },
+          "default_value": {
+            "$ref": "#/components/schemas/PropertyDatastoreFieldDefaultValue"
+          },
+          "description": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/DatastoreFieldRawProperty"
+          }
+        }
+      },
+      "PropertyDatastoreTableFields": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreField"
+        }
+      },
+      "DatastoreRelationship": {
+        "required": [
+          "name",
+          "field",
+          "table_id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "table_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DatastoreRelationshipType"
+          }
+        }
+      },
+      "PropertyDatastoreTableRelationships": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreRelationship"
+        }
+      },
+      "DatastoreTable": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "database_id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreField"
+            }
+          },
+          "relationships": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreRelationship"
+            }
+          },
+          "web_url": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/DatastoreTableRawProperty"
+          }
+        }
+      },
+      "DatastoreTables": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreTable"
+        }
+      },
+      "PropertyDatastoreFieldValueSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "DatastoreFieldValue": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreRecordFields": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatastoreFieldValue"
+        }
+      },
+      "DatastoreRecord": {
+        "required": [
+          "fields"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "database_id": {
+            "type": "string"
+          },
+          "table_id": {
+            "type": "string"
+          },
+          "fields": {
+            "$ref": "#/components/schemas/DatastoreRecordFields"
+          },
+          "row_number": {
+            "type": "number"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/DatastoreRecordRawProperty"
+          }
+        }
+      },
+      "DatastoreRecords": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreRecord"
+        }
+      },
+      "PropertyDatastoreQueryQuerySelect": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryExpandSelect": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionEqSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionEq": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionNeqSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionNeq": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionGtSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionGt": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionGteSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionGte": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionLtSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionLt": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionLteSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionLte": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionLikeSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionLike": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionIlikeSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionIlike": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionIn": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreFieldValue"
+        }
+      },
+      "PropertyDatastoreFilterConditionContainsSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionContains": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterConditionNotContainsSelection": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreFilterConditionNotContains": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          },
+          "number": {
+            "type": "number"
+          },
+          "boolean": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string"
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreFilterCondition": {
+        "type": "object",
+        "properties": {
+          "eq": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionEq"
+          },
+          "neq": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionNeq"
+          },
+          "gt": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionGt"
+          },
+          "gte": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionGte"
+          },
+          "lt": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionLt"
+          },
+          "lte": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionLte"
+          },
+          "like": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionLike"
+          },
+          "ilike": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionIlike"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreFieldValue"
+            }
+          },
+          "contains": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionContains"
+          },
+          "not_contains": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterConditionNotContains"
+          },
+          "is_null": {
+            "type": "boolean"
+          },
+          "is_not_null": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DatastoreFilter": {
+        "required": [
+          "field",
+          "condition"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "condition": {
+            "$ref": "#/components/schemas/PropertyDatastoreFilterCondition"
+          }
+        }
+      },
+      "PropertyDatastoreQueryExpandFilterFilters": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreFilter"
+        }
+      },
+      "PropertyDatastoreQueryExpandFilterAnd": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryExpandFilterOr": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryExpandFilter": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryExpandFilterType"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreFilter"
+            }
+          },
+          "and": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "or": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PropertyDatastoreQueryExpandExpand": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PropertyDatastoreQueryExpandExpandAdditionalProperties"
+        }
+      },
+      "DatastoreQueryExpand": {
+        "type": "object",
+        "properties": {
+          "select": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filter": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryExpandFilter"
+          },
+          "limit": {
+            "type": "number"
+          },
+          "expand": {
+            "$ref": "#/components/schemas/DatastoreQueryExpandExpand"
+          }
+        }
+      },
+      "PropertyDatastoreQueryQueryExpand": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatastoreQueryExpand"
+        }
+      },
+      "PropertyDatastoreQueryQueryFilterFilters": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreFilter"
+        }
+      },
+      "PropertyDatastoreQueryQueryFilterAnd": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryQueryFilterOr": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryQueryFilter": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryFilterType"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreFilter"
+            }
+          },
+          "and": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "or": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PropertyDatastoreQueryQuerySortFields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregateSum": {
+        "required": [
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregateAvg": {
+        "required": [
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregateMin": {
+        "required": [
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregateMax": {
+        "required": [
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregateGroupBy": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyDatastoreQueryQueryAggregate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "boolean"
+          },
+          "sum": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryAggregateSum"
+          },
+          "avg": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryAggregateAvg"
+          },
+          "min": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryAggregateMin"
+          },
+          "max": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryAggregateMax"
+          },
+          "group_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PropertyDatastoreQueryQuery": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string"
+          },
+          "select": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expand": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryExpandProperty"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryFilter"
+          },
+          "sort_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sort_order": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQuerySortOrder"
+          },
+          "limit": {
+            "type": "number"
+          },
+          "offset": {
+            "type": "number"
+          },
+          "aggregate": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQueryAggregate"
+          },
+          "is_count_only": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PropertyDatastoreQueryResponseItems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreRecord"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesSum": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesAvg": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesMin": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesMax": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesGroups": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "description": "Fallback array item schema"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregates": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number"
+          },
+          "sum": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregatesSumProperty"
+          },
+          "avg": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregatesAvgProperty"
+          },
+          "min": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregatesMinProperty"
+          },
+          "max": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregatesMaxProperty"
+          },
+          "groups": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregatesGroups"
+          }
+        }
+      },
+      "PropertyDatastoreQueryResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DatastoreRecord"
+            }
+          },
+          "aggregates": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponseAggregates"
+          },
+          "total_count": {
+            "type": "number"
+          }
+        }
+      },
+      "DatastoreQuery": {
+        "type": "object",
+        "properties": {
+          "table_id": {
+            "type": "string"
+          },
+          "database_id": {
+            "type": "string"
+          },
+          "query": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryQuery"
+          },
+          "response": {
+            "$ref": "#/components/schemas/PropertyDatastoreQueryResponse"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/DatastoreQueryRawProperty"
+          }
+        }
+      },
       "PropertyShippingShipmentFromAddress": {
         "type": "object",
         "properties": {
@@ -73380,6 +75863,21 @@
       "FormsSubmissionRaw": {
         "type": "object"
       },
+      "DatastoreDatabaseRaw": {
+        "type": "object"
+      },
+      "DatastoreFieldRaw": {
+        "type": "object"
+      },
+      "DatastoreTableRaw": {
+        "type": "object"
+      },
+      "DatastoreRecordRaw": {
+        "type": "object"
+      },
+      "DatastoreQueryRaw": {
+        "type": "object"
+      },
       "ShippingShipmentRaw": {
         "type": "object"
       },
@@ -76107,13 +78605,46 @@
           "$ref": "#/components/schemas/FormsSubmission"
         }
       },
+      "ListDatastoreDatabases200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreDatabase"
+        }
+      },
+      "DefaultResponseResponseJson96": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListDatastoreTables200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreTable"
+        }
+      },
+      "DefaultResponseResponseJson97": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListDatastoreRecords200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DatastoreRecord"
+        }
+      },
+      "DefaultResponseResponseJson98": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListShippingShipments200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ShippingShipment"
         }
       },
-      "DefaultResponseResponseJson96": {
+      "DefaultResponseResponseJson99": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76124,7 +78655,7 @@
           "$ref": "#/components/schemas/ShippingLabel"
         }
       },
-      "DefaultResponseResponseJson97": {
+      "DefaultResponseResponseJson100": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76147,7 +78678,7 @@
           "$ref": "#/components/schemas/SigningDocument"
         }
       },
-      "DefaultResponseResponseJson98": {
+      "DefaultResponseResponseJson101": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76158,7 +78689,7 @@
           "$ref": "#/components/schemas/SigningSignatory"
         }
       },
-      "DefaultResponseResponseJson99": {
+      "DefaultResponseResponseJson102": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76205,7 +78736,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson100": {
+      "DefaultResponseResponseJson103": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76216,7 +78747,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson101": {
+      "DefaultResponseResponseJson104": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -76669,6 +79200,66 @@
       "FormsSubmissionRawProperty": {
         "type": "object"
       },
+      "DatastoreDatabaseRawProperty": {
+        "type": "object"
+      },
+      "DatastoreFieldRawProperty": {
+        "type": "object"
+      },
+      "DatastoreTableRawProperty": {
+        "type": "object"
+      },
+      "DatastoreRecordFields": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatastoreFieldValue"
+        }
+      },
+      "DatastoreRecordRawProperty": {
+        "type": "object"
+      },
+      "PropertyDatastoreQueryExpandExpandAdditionalProperties": {
+        "type": "object"
+      },
+      "DatastoreQueryExpandExpand": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatastoreQueryExpandExpandAdditionalProperties"
+        }
+      },
+      "PropertyDatastoreQueryQueryExpandProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatastoreQueryExpand"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesSumProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesAvgProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesMinProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "PropertyDatastoreQueryResponseAggregatesMaxProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "DatastoreQueryRawProperty": {
+        "type": "object"
+      },
       "ShippingShipmentRawProperty": {
         "type": "object"
       },
@@ -76706,6 +79297,9 @@
         "type": "object"
       },
       "ClubsLocationRawProperty": {
+        "type": "object"
+      },
+      "DatastoreQueryExpandExpandAdditionalProperties": {
         "type": "object"
       },
       "PropertyConnectionPermissionsItem": {
@@ -76961,7 +79555,15 @@
           "clubs_location_read",
           "clubs_location_write",
           "clubs_event_read",
-          "clubs_event_write"
+          "clubs_event_write",
+          "datastore_database_read",
+          "datastore_database_write",
+          "datastore_table_read",
+          "datastore_table_write",
+          "datastore_record_read",
+          "datastore_record_write",
+          "datastore_query_read",
+          "datastore_query_write"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -77977,6 +80579,38 @@
             {
               "value": "clubs_event_write",
               "name": "ClubsEventWrite"
+            },
+            {
+              "value": "datastore_database_read",
+              "name": "DatastoreDatabaseRead"
+            },
+            {
+              "value": "datastore_database_write",
+              "name": "DatastoreDatabaseWrite"
+            },
+            {
+              "value": "datastore_table_read",
+              "name": "DatastoreTableRead"
+            },
+            {
+              "value": "datastore_table_write",
+              "name": "DatastoreTableWrite"
+            },
+            {
+              "value": "datastore_record_read",
+              "name": "DatastoreRecordRead"
+            },
+            {
+              "value": "datastore_record_write",
+              "name": "DatastoreRecordWrite"
+            },
+            {
+              "value": "datastore_query_read",
+              "name": "DatastoreQueryRead"
+            },
+            {
+              "value": "datastore_query_write",
+              "name": "DatastoreQueryWrite"
             }
           ]
         }
@@ -77988,6 +80622,7 @@
           "ats",
           "auth",
           "crm",
+          "datastore",
           "enrich",
           "martech",
           "ticketing",
@@ -78039,6 +80674,10 @@
             {
               "value": "crm",
               "name": "Crm"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             },
             {
               "value": "enrich",
@@ -78194,6 +80833,7 @@
           "ats",
           "auth",
           "crm",
+          "datastore",
           "enrich",
           "martech",
           "ticketing",
@@ -78245,6 +80885,10 @@
             {
               "value": "crm",
               "name": "Crm"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             },
             {
               "value": "enrich",
@@ -82866,6 +85510,174 @@
           ]
         }
       },
+      "IntegrationSupportListDatabaseId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListDatabaseId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookDatabaseId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookDatabaseId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportNativeWebhookDatabaseId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportNativeWebhookDatabaseId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportListTableId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListTableId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookTableId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookTableId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportNativeWebhookTableId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportNativeWebhookTableId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -83004,7 +85816,11 @@
           "clubs_member",
           "clubs_activity",
           "clubs_location",
-          "clubs_event"
+          "clubs_event",
+          "datastore_database",
+          "datastore_table",
+          "datastore_record",
+          "datastore_query"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -83560,6 +86376,22 @@
             {
               "value": "clubs_event",
               "name": "ClubsEvent"
+            },
+            {
+              "value": "datastore_database",
+              "name": "DatastoreDatabase"
+            },
+            {
+              "value": "datastore_table",
+              "name": "DatastoreTable"
+            },
+            {
+              "value": "datastore_record",
+              "name": "DatastoreRecord"
+            },
+            {
+              "value": "datastore_query",
+              "name": "DatastoreQuery"
             }
           ]
         }
@@ -83622,7 +86454,8 @@
           "postgres",
           "mssql",
           "mariadb",
-          "supabase"
+          "supabase",
+          "snowflake"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -83654,6 +86487,10 @@
             {
               "value": "supabase",
               "name": "Supabase"
+            },
+            {
+              "value": "snowflake",
+              "name": "Snowflake"
             }
           ]
         }
@@ -87422,6 +90259,59 @@
           ]
         }
       },
+      "AccountingFeeType": {
+        "enum": [
+          "TAX",
+          "DISCOUNT",
+          "PROMOTION",
+          "SHIPPING",
+          "GIFT_WRAP",
+          "COD",
+          "SURCHARGE",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingFeeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TAX",
+              "name": "Tax"
+            },
+            {
+              "value": "DISCOUNT",
+              "name": "Discount"
+            },
+            {
+              "value": "PROMOTION",
+              "name": "Promotion"
+            },
+            {
+              "value": "SHIPPING",
+              "name": "Shipping"
+            },
+            {
+              "value": "GIFT_WRAP",
+              "name": "GiftWrap"
+            },
+            {
+              "value": "COD",
+              "name": "Cod"
+            },
+            {
+              "value": "SURCHARGE",
+              "name": "Surcharge"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "AccountingInvoiceStatus": {
         "enum": [
           "DRAFT",
@@ -89613,10 +92503,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -89642,20 +92532,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -89913,10 +92803,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -89942,20 +92832,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -89967,11 +92857,11 @@
           "EXPANDABLE",
           "VIDEO",
           "NATIVE",
-          "IMAGE",
           "AUDIO",
-          "DOCUMENT",
           "PUBLISHER_HOSTED",
-          "ASSET_BASED"
+          "ASSET_BASED",
+          "IMAGE",
+          "DOCUMENT"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -90001,16 +92891,8 @@
               "name": "Native"
             },
             {
-              "value": "IMAGE",
-              "name": "Image"
-            },
-            {
               "value": "AUDIO",
               "name": "Audio"
-            },
-            {
-              "value": "DOCUMENT",
-              "name": "Document"
             },
             {
               "value": "PUBLISHER_HOSTED",
@@ -90019,6 +92901,14 @@
             {
               "value": "ASSET_BASED",
               "name": "AssetBased"
+            },
+            {
+              "value": "IMAGE",
+              "name": "Image"
+            },
+            {
+              "value": "DOCUMENT",
+              "name": "Document"
             }
           ]
         }
@@ -90425,10 +93315,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -90454,20 +93344,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -90937,10 +93827,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -90966,20 +93856,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -91298,10 +94188,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -91327,20 +94217,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -91673,10 +94563,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -91702,20 +94592,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -92316,10 +95206,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -92345,20 +95235,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -92677,10 +95567,10 @@
           "ACTIVE",
           "PAUSED",
           "ARCHIVED",
-          "PROCESSING",
-          "PROCESSING_FAILED",
           "DRAFT",
-          "SCHEDULED_FOR_DELETION"
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -92706,20 +95596,20 @@
               "name": "Archived"
             },
             {
-              "value": "PROCESSING",
-              "name": "Processing"
-            },
-            {
-              "value": "PROCESSING_FAILED",
-              "name": "ProcessingFailed"
-            },
-            {
               "value": "DRAFT",
               "name": "Draft"
             },
             {
               "value": "SCHEDULED_FOR_DELETION",
               "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -92824,7 +95714,78 @@
           "LIKES",
           "SHARES",
           "COMMENTS",
-          "FOLLOWS"
+          "FOLLOWS",
+          "POST_CLICK_CONVERSIONS",
+          "VIEW_THROUGH_CONVERSIONS",
+          "ALL_CONVERSIONS",
+          "ALL_CONVERSION_VALUE",
+          "INTERACTIONS",
+          "REVENUE",
+          "MEDIA_COST",
+          "TOTAL_MEDIA_COST",
+          "VIDEO_PLAYS",
+          "VIDEO_QUARTILE_25",
+          "VIDEO_QUARTILE_50",
+          "VIDEO_QUARTILE_75",
+          "VIDEO_QUARTILE_100",
+          "VIDEO_AVG_TIME_WATCHED",
+          "VIDEO_THRUPLAY",
+          "VIEWABLE_IMPRESSIONS",
+          "MEASURABLE_IMPRESSIONS",
+          "VIEWABILITY_RATE",
+          "BILLABLE_IMPRESSIONS",
+          "DATA_FEES",
+          "PLATFORM_FEES",
+          "PROFIT",
+          "LANDING_PAGE_CLICKS",
+          "LEAD_FORM_OPENS",
+          "AD_UNIT_CLICKS",
+          "CARD_CLICKS",
+          "CARD_IMPRESSIONS",
+          "COMMENT_LIKES",
+          "COMPANY_PAGE_CLICKS",
+          "ACTION_CLICKS",
+          "TEXT_URL_CLICKS",
+          "OTHER_ENGAGEMENTS",
+          "OPENS",
+          "TOTAL_ENGAGEMENTS",
+          "UNIQUE_IMPRESSIONS",
+          "UNIQUE_CLICKS",
+          "VIRAL_IMPRESSIONS",
+          "VIRAL_CLICKS",
+          "VIRAL_LIKES",
+          "VIRAL_COMMENTS",
+          "VIRAL_SHARES",
+          "VIRAL_FOLLOWS",
+          "VIRAL_VIDEO_PLAYS",
+          "VIRAL_VIDEO_VIEWS",
+          "VIRAL_VIDEO_COMPLETIONS",
+          "VIRAL_VIDEO_QUARTILE_25",
+          "VIRAL_VIDEO_QUARTILE_50",
+          "VIRAL_VIDEO_QUARTILE_75",
+          "VIRAL_LEADS",
+          "VIRAL_LEAD_FORM_OPENS",
+          "VIRAL_LANDING_PAGE_CLICKS",
+          "VIRAL_CONVERSIONS",
+          "VIRAL_POST_CLICK_CONVERSIONS",
+          "VIRAL_VIEW_THROUGH_CONVERSIONS",
+          "VIRAL_ENGAGEMENTS",
+          "GMAIL_SECONDARY_CLICKS",
+          "AVERAGE_CPV",
+          "VIDEO_VIEWS_FROM_SEARCH",
+          "CROSS_DEVICE_CONVERSIONS",
+          "ABSOLUTE_TOP_IMPRESSION_SHARE",
+          "TOP_IMPRESSION_SHARE",
+          "VIDEO_FULLSCREENS",
+          "VIDEO_PAUSES",
+          "VIDEO_MUTES",
+          "VIDEO_SKIPS",
+          "COMPANION_CLICKS",
+          "COMPANION_VIEWS",
+          "ACTIVE_VIEW_AVG_TIME",
+          "ELIGIBLE_IMPRESSIONS",
+          "EARNED_VIEWS",
+          "UNIQUE_VIEWERS"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -92916,6 +95877,290 @@
             {
               "value": "FOLLOWS",
               "name": "Follows"
+            },
+            {
+              "value": "POST_CLICK_CONVERSIONS",
+              "name": "PostClickConversions"
+            },
+            {
+              "value": "VIEW_THROUGH_CONVERSIONS",
+              "name": "ViewThroughConversions"
+            },
+            {
+              "value": "ALL_CONVERSIONS",
+              "name": "AllConversions"
+            },
+            {
+              "value": "ALL_CONVERSION_VALUE",
+              "name": "AllConversionValue"
+            },
+            {
+              "value": "INTERACTIONS",
+              "name": "Interactions"
+            },
+            {
+              "value": "REVENUE",
+              "name": "Revenue"
+            },
+            {
+              "value": "MEDIA_COST",
+              "name": "MediaCost"
+            },
+            {
+              "value": "TOTAL_MEDIA_COST",
+              "name": "TotalMediaCost"
+            },
+            {
+              "value": "VIDEO_PLAYS",
+              "name": "VideoPlays"
+            },
+            {
+              "value": "VIDEO_QUARTILE_25",
+              "name": "VideoQuartile25"
+            },
+            {
+              "value": "VIDEO_QUARTILE_50",
+              "name": "VideoQuartile50"
+            },
+            {
+              "value": "VIDEO_QUARTILE_75",
+              "name": "VideoQuartile75"
+            },
+            {
+              "value": "VIDEO_QUARTILE_100",
+              "name": "VideoQuartile100"
+            },
+            {
+              "value": "VIDEO_AVG_TIME_WATCHED",
+              "name": "VideoAvgTimeWatched"
+            },
+            {
+              "value": "VIDEO_THRUPLAY",
+              "name": "VideoThruplay"
+            },
+            {
+              "value": "VIEWABLE_IMPRESSIONS",
+              "name": "ViewableImpressions"
+            },
+            {
+              "value": "MEASURABLE_IMPRESSIONS",
+              "name": "MeasurableImpressions"
+            },
+            {
+              "value": "VIEWABILITY_RATE",
+              "name": "ViewabilityRate"
+            },
+            {
+              "value": "BILLABLE_IMPRESSIONS",
+              "name": "BillableImpressions"
+            },
+            {
+              "value": "DATA_FEES",
+              "name": "DataFees"
+            },
+            {
+              "value": "PLATFORM_FEES",
+              "name": "PlatformFees"
+            },
+            {
+              "value": "PROFIT",
+              "name": "Profit"
+            },
+            {
+              "value": "LANDING_PAGE_CLICKS",
+              "name": "LandingPageClicks"
+            },
+            {
+              "value": "LEAD_FORM_OPENS",
+              "name": "LeadFormOpens"
+            },
+            {
+              "value": "AD_UNIT_CLICKS",
+              "name": "AdUnitClicks"
+            },
+            {
+              "value": "CARD_CLICKS",
+              "name": "CardClicks"
+            },
+            {
+              "value": "CARD_IMPRESSIONS",
+              "name": "CardImpressions"
+            },
+            {
+              "value": "COMMENT_LIKES",
+              "name": "CommentLikes"
+            },
+            {
+              "value": "COMPANY_PAGE_CLICKS",
+              "name": "CompanyPageClicks"
+            },
+            {
+              "value": "ACTION_CLICKS",
+              "name": "ActionClicks"
+            },
+            {
+              "value": "TEXT_URL_CLICKS",
+              "name": "TextUrlClicks"
+            },
+            {
+              "value": "OTHER_ENGAGEMENTS",
+              "name": "OtherEngagements"
+            },
+            {
+              "value": "OPENS",
+              "name": "Opens"
+            },
+            {
+              "value": "TOTAL_ENGAGEMENTS",
+              "name": "TotalEngagements"
+            },
+            {
+              "value": "UNIQUE_IMPRESSIONS",
+              "name": "UniqueImpressions"
+            },
+            {
+              "value": "UNIQUE_CLICKS",
+              "name": "UniqueClicks"
+            },
+            {
+              "value": "VIRAL_IMPRESSIONS",
+              "name": "ViralImpressions"
+            },
+            {
+              "value": "VIRAL_CLICKS",
+              "name": "ViralClicks"
+            },
+            {
+              "value": "VIRAL_LIKES",
+              "name": "ViralLikes"
+            },
+            {
+              "value": "VIRAL_COMMENTS",
+              "name": "ViralComments"
+            },
+            {
+              "value": "VIRAL_SHARES",
+              "name": "ViralShares"
+            },
+            {
+              "value": "VIRAL_FOLLOWS",
+              "name": "ViralFollows"
+            },
+            {
+              "value": "VIRAL_VIDEO_PLAYS",
+              "name": "ViralVideoPlays"
+            },
+            {
+              "value": "VIRAL_VIDEO_VIEWS",
+              "name": "ViralVideoViews"
+            },
+            {
+              "value": "VIRAL_VIDEO_COMPLETIONS",
+              "name": "ViralVideoCompletions"
+            },
+            {
+              "value": "VIRAL_VIDEO_QUARTILE_25",
+              "name": "ViralVideoQuartile25"
+            },
+            {
+              "value": "VIRAL_VIDEO_QUARTILE_50",
+              "name": "ViralVideoQuartile50"
+            },
+            {
+              "value": "VIRAL_VIDEO_QUARTILE_75",
+              "name": "ViralVideoQuartile75"
+            },
+            {
+              "value": "VIRAL_LEADS",
+              "name": "ViralLeads"
+            },
+            {
+              "value": "VIRAL_LEAD_FORM_OPENS",
+              "name": "ViralLeadFormOpens"
+            },
+            {
+              "value": "VIRAL_LANDING_PAGE_CLICKS",
+              "name": "ViralLandingPageClicks"
+            },
+            {
+              "value": "VIRAL_CONVERSIONS",
+              "name": "ViralConversions"
+            },
+            {
+              "value": "VIRAL_POST_CLICK_CONVERSIONS",
+              "name": "ViralPostClickConversions"
+            },
+            {
+              "value": "VIRAL_VIEW_THROUGH_CONVERSIONS",
+              "name": "ViralViewThroughConversions"
+            },
+            {
+              "value": "VIRAL_ENGAGEMENTS",
+              "name": "ViralEngagements"
+            },
+            {
+              "value": "GMAIL_SECONDARY_CLICKS",
+              "name": "GmailSecondaryClicks"
+            },
+            {
+              "value": "AVERAGE_CPV",
+              "name": "AverageCpv"
+            },
+            {
+              "value": "VIDEO_VIEWS_FROM_SEARCH",
+              "name": "VideoViewsFromSearch"
+            },
+            {
+              "value": "CROSS_DEVICE_CONVERSIONS",
+              "name": "CrossDeviceConversions"
+            },
+            {
+              "value": "ABSOLUTE_TOP_IMPRESSION_SHARE",
+              "name": "AbsoluteTopImpressionShare"
+            },
+            {
+              "value": "TOP_IMPRESSION_SHARE",
+              "name": "TopImpressionShare"
+            },
+            {
+              "value": "VIDEO_FULLSCREENS",
+              "name": "VideoFullscreens"
+            },
+            {
+              "value": "VIDEO_PAUSES",
+              "name": "VideoPauses"
+            },
+            {
+              "value": "VIDEO_MUTES",
+              "name": "VideoMutes"
+            },
+            {
+              "value": "VIDEO_SKIPS",
+              "name": "VideoSkips"
+            },
+            {
+              "value": "COMPANION_CLICKS",
+              "name": "CompanionClicks"
+            },
+            {
+              "value": "COMPANION_VIEWS",
+              "name": "CompanionViews"
+            },
+            {
+              "value": "ACTIVE_VIEW_AVG_TIME",
+              "name": "ActiveViewAvgTime"
+            },
+            {
+              "value": "ELIGIBLE_IMPRESSIONS",
+              "name": "EligibleImpressions"
+            },
+            {
+              "value": "EARNED_VIEWS",
+              "name": "EarnedViews"
+            },
+            {
+              "value": "UNIQUE_VIEWERS",
+              "name": "UniqueViewers"
             }
           ]
         }
@@ -93294,6 +96539,191 @@
             {
               "value": "OTHER",
               "name": "Other"
+            }
+          ]
+        }
+      },
+      "DatastoreFieldType": {
+        "enum": [
+          "TEXT",
+          "NUMBER",
+          "DATE",
+          "BOOLEAN",
+          "FILE",
+          "TEXTAREA",
+          "SINGLE_SELECT",
+          "MULTIPLE_SELECT",
+          "CURRENCY",
+          "URL",
+          "EMAIL",
+          "PHONE",
+          "LINKED_RECORD",
+          "RELATION"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "DatastoreFieldType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TEXT",
+              "name": "Text"
+            },
+            {
+              "value": "NUMBER",
+              "name": "Number"
+            },
+            {
+              "value": "DATE",
+              "name": "Date"
+            },
+            {
+              "value": "BOOLEAN",
+              "name": "Boolean"
+            },
+            {
+              "value": "FILE",
+              "name": "File"
+            },
+            {
+              "value": "TEXTAREA",
+              "name": "Textarea"
+            },
+            {
+              "value": "SINGLE_SELECT",
+              "name": "SingleSelect"
+            },
+            {
+              "value": "MULTIPLE_SELECT",
+              "name": "MultipleSelect"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "URL",
+              "name": "Url"
+            },
+            {
+              "value": "EMAIL",
+              "name": "Email"
+            },
+            {
+              "value": "PHONE",
+              "name": "Phone"
+            },
+            {
+              "value": "LINKED_RECORD",
+              "name": "LinkedRecord"
+            },
+            {
+              "value": "RELATION",
+              "name": "Relation"
+            }
+          ]
+        }
+      },
+      "DatastoreRelationshipType": {
+        "enum": [
+          "ONE",
+          "MANY"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "DatastoreRelationshipType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ONE",
+              "name": "One"
+            },
+            {
+              "value": "MANY",
+              "name": "Many"
+            }
+          ]
+        }
+      },
+      "PropertyDatastoreQueryExpandFilterType": {
+        "enum": [
+          "FILTER",
+          "AND",
+          "OR"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyDatastoreQueryExpandFilterType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "FILTER",
+              "name": "Filter"
+            },
+            {
+              "value": "AND",
+              "name": "And"
+            },
+            {
+              "value": "OR",
+              "name": "Or"
+            }
+          ]
+        }
+      },
+      "PropertyDatastoreQueryQueryFilterType": {
+        "enum": [
+          "FILTER",
+          "AND",
+          "OR"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyDatastoreQueryQueryFilterType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "FILTER",
+              "name": "Filter"
+            },
+            {
+              "value": "AND",
+              "name": "And"
+            },
+            {
+              "value": "OR",
+              "name": "Or"
+            }
+          ]
+        }
+      },
+      "PropertyDatastoreQueryQuerySortOrder": {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyDatastoreQueryQuerySortOrder",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asc",
+              "name": "Asc"
+            },
+            {
+              "value": "desc",
+              "name": "Desc"
             }
           ]
         }
@@ -94824,7 +98254,8 @@
           "shipping",
           "assessment",
           "signing",
-          "clubs"
+          "clubs",
+          "datastore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -94947,6 +98378,10 @@
             {
               "value": "clubs",
               "name": "Clubs"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             }
           ]
         }
@@ -94981,7 +98416,8 @@
           "shipping",
           "assessment",
           "signing",
-          "clubs"
+          "clubs",
+          "datastore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -95104,6 +98540,10 @@
             {
               "value": "clubs",
               "name": "Clubs"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             }
           ]
         }
@@ -95138,7 +98578,8 @@
           "shipping",
           "assessment",
           "signing",
-          "clubs"
+          "clubs",
+          "datastore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -95261,6 +98702,10 @@
             {
               "value": "clubs",
               "name": "Clubs"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             }
           ]
         }
@@ -106483,6 +109928,7 @@
           "offers",
           "user_id",
           "metadata",
+          "original_substatus",
           "raw"
         ],
         "type": "string",
@@ -106556,6 +110002,10 @@
               "name": "Metadata"
             },
             {
+              "value": "original_substatus",
+              "name": "OriginalSubstatus"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -106580,6 +110030,7 @@
           "offers",
           "user_id",
           "metadata",
+          "original_substatus",
           "raw"
         ],
         "type": "string",
@@ -106653,6 +110104,10 @@
               "name": "Metadata"
             },
             {
+              "value": "original_substatus",
+              "name": "OriginalSubstatus"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -106677,6 +110132,7 @@
           "offers",
           "user_id",
           "metadata",
+          "original_substatus",
           "raw"
         ],
         "type": "string",
@@ -106750,6 +110206,10 @@
               "name": "Metadata"
             },
             {
+              "value": "original_substatus",
+              "name": "OriginalSubstatus"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -106774,6 +110234,7 @@
           "offers",
           "user_id",
           "metadata",
+          "original_substatus",
           "raw"
         ],
         "type": "string",
@@ -106847,6 +110308,10 @@
               "name": "Metadata"
             },
             {
+              "value": "original_substatus",
+              "name": "OriginalSubstatus"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -106871,6 +110336,7 @@
           "offers",
           "user_id",
           "metadata",
+          "original_substatus",
           "raw"
         ],
         "type": "string",
@@ -106942,6 +110408,10 @@
             {
               "value": "metadata",
               "name": "Metadata"
+            },
+            {
+              "value": "original_substatus",
+              "name": "OriginalSubstatus"
             },
             {
               "value": "raw",
@@ -119223,6 +122693,7 @@
           "lineitems",
           "sales_channel",
           "organization_id",
+          "fees",
           "raw"
         ],
         "type": "string",
@@ -119288,6 +122759,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "fees",
+              "name": "Fees"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -119310,6 +122785,7 @@
           "lineitems",
           "sales_channel",
           "organization_id",
+          "fees",
           "raw"
         ],
         "type": "string",
@@ -119375,6 +122851,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "fees",
+              "name": "Fees"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -119397,6 +122877,7 @@
           "lineitems",
           "sales_channel",
           "organization_id",
+          "fees",
           "raw"
         ],
         "type": "string",
@@ -119462,6 +122943,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "fees",
+              "name": "Fees"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -119484,6 +122969,7 @@
           "lineitems",
           "sales_channel",
           "organization_id",
+          "fees",
           "raw"
         ],
         "type": "string",
@@ -119549,6 +123035,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "fees",
+              "name": "Fees"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -119571,6 +123061,7 @@
           "lineitems",
           "sales_channel",
           "organization_id",
+          "fees",
           "raw"
         ],
         "type": "string",
@@ -119634,6 +123125,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "fees",
+              "name": "Fees"
             },
             {
               "value": "raw",
@@ -133631,7 +137126,6 @@
           "item_id",
           "organization_id",
           "status",
-          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133649,6 +137143,7 @@
           "promoted",
           "path1",
           "path2",
+          "data",
           "raw"
         ],
         "type": "string",
@@ -133694,10 +137189,6 @@
               "name": "Status"
             },
             {
-              "value": "data",
-              "name": "Data"
-            },
-            {
               "value": "creative_type",
               "name": "CreativeType"
             },
@@ -133766,6 +137257,10 @@
               "name": "Path2"
             },
             {
+              "value": "data",
+              "name": "Data"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133783,7 +137278,6 @@
           "item_id",
           "organization_id",
           "status",
-          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133801,6 +137295,7 @@
           "promoted",
           "path1",
           "path2",
+          "data",
           "raw"
         ],
         "type": "string",
@@ -133846,10 +137341,6 @@
               "name": "Status"
             },
             {
-              "value": "data",
-              "name": "Data"
-            },
-            {
               "value": "creative_type",
               "name": "CreativeType"
             },
@@ -133918,6 +137409,10 @@
               "name": "Path2"
             },
             {
+              "value": "data",
+              "name": "Data"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133935,7 +137430,6 @@
           "item_id",
           "organization_id",
           "status",
-          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -133953,6 +137447,7 @@
           "promoted",
           "path1",
           "path2",
+          "data",
           "raw"
         ],
         "type": "string",
@@ -133998,10 +137493,6 @@
               "name": "Status"
             },
             {
-              "value": "data",
-              "name": "Data"
-            },
-            {
               "value": "creative_type",
               "name": "CreativeType"
             },
@@ -134070,6 +137561,10 @@
               "name": "Path2"
             },
             {
+              "value": "data",
+              "name": "Data"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134087,7 +137582,6 @@
           "item_id",
           "organization_id",
           "status",
-          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -134105,6 +137599,7 @@
           "promoted",
           "path1",
           "path2",
+          "data",
           "raw"
         ],
         "type": "string",
@@ -134150,10 +137645,6 @@
               "name": "Status"
             },
             {
-              "value": "data",
-              "name": "Data"
-            },
-            {
               "value": "creative_type",
               "name": "CreativeType"
             },
@@ -134222,6 +137713,10 @@
               "name": "Path2"
             },
             {
+              "value": "data",
+              "name": "Data"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134239,7 +137734,6 @@
           "item_id",
           "organization_id",
           "status",
-          "data",
           "creative_type",
           "hosting_source",
           "width",
@@ -134257,6 +137751,7 @@
           "promoted",
           "path1",
           "path2",
+          "data",
           "raw"
         ],
         "type": "string",
@@ -134302,10 +137797,6 @@
               "name": "Status"
             },
             {
-              "value": "data",
-              "name": "Data"
-            },
-            {
               "value": "creative_type",
               "name": "CreativeType"
             },
@@ -134372,6 +137863,10 @@
             {
               "value": "path2",
               "name": "Path2"
+            },
+            {
+              "value": "data",
+              "name": "Data"
             },
             {
               "value": "raw",
@@ -141554,6 +145049,948 @@
           ]
         }
       },
+      "CreateDatastoreDatabaseFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "web_url",
+          "is_active",
+          "password",
+          "region",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateDatastoreDatabaseFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "password",
+              "name": "Password"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListDatastoreDatabasesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "web_url",
+          "is_active",
+          "password",
+          "region",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListDatastoreDatabasesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "password",
+              "name": "Password"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetDatastoreDatabaseFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "web_url",
+          "is_active",
+          "password",
+          "region",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetDatastoreDatabaseFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "password",
+              "name": "Password"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateDatastoreDatabaseFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "web_url",
+          "is_active",
+          "password",
+          "region",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateDatastoreDatabaseFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "password",
+              "name": "Password"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchDatastoreDatabaseFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "web_url",
+          "is_active",
+          "password",
+          "region",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchDatastoreDatabaseFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "password",
+              "name": "Password"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateDatastoreTableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "database_id",
+          "fields",
+          "relationships",
+          "web_url",
+          "parent_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateDatastoreTableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "relationships",
+              "name": "Relationships"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListDatastoreTablesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "database_id",
+          "fields",
+          "relationships",
+          "web_url",
+          "parent_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListDatastoreTablesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "relationships",
+              "name": "Relationships"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetDatastoreTableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "database_id",
+          "fields",
+          "relationships",
+          "web_url",
+          "parent_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetDatastoreTableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "relationships",
+              "name": "Relationships"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateDatastoreTableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "database_id",
+          "fields",
+          "relationships",
+          "web_url",
+          "parent_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateDatastoreTableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "relationships",
+              "name": "Relationships"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchDatastoreTableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "database_id",
+          "fields",
+          "relationships",
+          "web_url",
+          "parent_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchDatastoreTableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "relationships",
+              "name": "Relationships"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateDatastoreRecordFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "database_id",
+          "table_id",
+          "fields",
+          "row_number",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateDatastoreRecordFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "row_number",
+              "name": "RowNumber"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListDatastoreRecordsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "database_id",
+          "table_id",
+          "fields",
+          "row_number",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListDatastoreRecordsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "row_number",
+              "name": "RowNumber"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetDatastoreRecordFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "database_id",
+          "table_id",
+          "fields",
+          "row_number",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetDatastoreRecordFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "row_number",
+              "name": "RowNumber"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateDatastoreRecordFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "database_id",
+          "table_id",
+          "fields",
+          "row_number",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateDatastoreRecordFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "row_number",
+              "name": "RowNumber"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchDatastoreRecordFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "database_id",
+          "table_id",
+          "fields",
+          "row_number",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchDatastoreRecordFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "fields",
+              "name": "Fields"
+            },
+            {
+              "value": "row_number",
+              "name": "RowNumber"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateDatastoreQueryFieldsParameterItem": {
+        "enum": [
+          "table_id",
+          "database_id",
+          "query",
+          "response",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateDatastoreQueryFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "table_id",
+              "name": "TableId"
+            },
+            {
+              "value": "database_id",
+              "name": "DatabaseId"
+            },
+            {
+              "value": "query",
+              "name": "Query"
+            },
+            {
+              "value": "response",
+              "name": "Response"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
       "CreateShippingShipmentFieldsParameterItem": {
         "enum": [
           "id",
@@ -146345,6 +150782,46 @@
         },
         "required": true
       },
+      "DatastoreDatabase": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DatastoreDatabase"
+            }
+          }
+        },
+        "required": true
+      },
+      "DatastoreTable": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DatastoreTable"
+            }
+          }
+        },
+        "required": true
+      },
+      "DatastoreRecord": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DatastoreRecord"
+            }
+          }
+        },
+        "required": true
+      },
+      "DatastoreQuery": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DatastoreQuery"
+            }
+          }
+        },
+        "required": true
+      },
       "ShippingShipment": {
         "content": {
           "application/json": {
@@ -146820,6 +151297,21 @@
     },
     {
       "name": "submission"
+    },
+    {
+      "name": "datastore"
+    },
+    {
+      "name": "database"
+    },
+    {
+      "name": "table"
+    },
+    {
+      "name": "record"
+    },
+    {
+      "name": "query"
     },
     {
       "name": "shipping"

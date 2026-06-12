@@ -76,6 +76,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OriginalStatus { get; set; }
 #endif
+        /// <summary>The original_substatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalSubstatus { get; set; }
+#nullable restore
+#else
+        public string OriginalSubstatus { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +157,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "offers", n => { Offers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer>(global::Soenneker.Unified.OpenApiClient.Models.AtsOffer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "original_status", n => { OriginalStatus = n.GetStringValue(); } },
+                { "original_substatus", n => { OriginalSubstatus = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty.CreateFromDiscriminatorValue); } },
                 { "rejected_at", n => { RejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "rejected_reason", n => { RejectedReason = n.GetStringValue(); } },
@@ -175,6 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer>("offers", Offers);
             writer.WriteStringValue("original_status", OriginalStatus);
+            writer.WriteStringValue("original_substatus", OriginalSubstatus);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("rejected_at", RejectedAt);
             writer.WriteStringValue("rejected_reason", RejectedReason);

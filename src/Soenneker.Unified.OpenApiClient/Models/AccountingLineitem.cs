@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
+        /// <summary>The fees property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>? Fees { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee> Fees { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +157,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
+                { "fees", n => { Fees = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>(global::Soenneker.Unified.OpenApiClient.Models.AccountingFee.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "item_description", n => { ItemDescription = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
@@ -178,6 +187,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>("fees", Fees);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("item_description", ItemDescription);
             writer.WriteStringValue("item_id", ItemId);

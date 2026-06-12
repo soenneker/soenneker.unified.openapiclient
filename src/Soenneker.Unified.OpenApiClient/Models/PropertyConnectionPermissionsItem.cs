@@ -1016,5 +1016,37 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ClubsEventWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_database_read")]
+        #pragma warning disable CS1591
+        DatastoreDatabaseRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_database_write")]
+        #pragma warning disable CS1591
+        DatastoreDatabaseWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_table_read")]
+        #pragma warning disable CS1591
+        DatastoreTableRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_table_write")]
+        #pragma warning disable CS1591
+        DatastoreTableWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_record_read")]
+        #pragma warning disable CS1591
+        DatastoreRecordRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_record_write")]
+        #pragma warning disable CS1591
+        DatastoreRecordWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_query_read")]
+        #pragma warning disable CS1591
+        DatastoreQueryRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore_query_write")]
+        #pragma warning disable CS1591
+        DatastoreQueryWrite,
+        #pragma warning restore CS1591
     }
 }

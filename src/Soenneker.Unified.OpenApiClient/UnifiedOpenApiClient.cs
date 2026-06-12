@@ -14,6 +14,7 @@ using Soenneker.Unified.OpenApiClient.Calendar;
 using Soenneker.Unified.OpenApiClient.Clubs;
 using Soenneker.Unified.OpenApiClient.Commerce;
 using Soenneker.Unified.OpenApiClient.Crm;
+using Soenneker.Unified.OpenApiClient.Datastore;
 using Soenneker.Unified.OpenApiClient.Enrich;
 using Soenneker.Unified.OpenApiClient.Forms;
 using Soenneker.Unified.OpenApiClient.Genai;
@@ -86,6 +87,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Crm.CrmRequestBuilder Crm
         {
             get => new global::Soenneker.Unified.OpenApiClient.Crm.CrmRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The datastore property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Datastore.DatastoreRequestBuilder Datastore
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Datastore.DatastoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enrich property</summary>
         public global::Soenneker.Unified.OpenApiClient.Enrich.EnrichRequestBuilder Enrich

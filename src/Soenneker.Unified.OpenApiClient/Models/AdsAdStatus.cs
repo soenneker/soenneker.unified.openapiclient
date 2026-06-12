@@ -24,14 +24,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Archived,
         #pragma warning restore CS1591
-        [EnumMember(Value = "PROCESSING")]
-        #pragma warning disable CS1591
-        Processing,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PROCESSING_FAILED")]
-        #pragma warning disable CS1591
-        ProcessingFailed,
-        #pragma warning restore CS1591
         [EnumMember(Value = "DRAFT")]
         #pragma warning disable CS1591
         Draft,
@@ -39,6 +31,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "SCHEDULED_FOR_DELETION")]
         #pragma warning disable CS1591
         ScheduledForDeletion,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROCESSING")]
+        #pragma warning disable CS1591
+        Processing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROCESSING_FAILED")]
+        #pragma warning disable CS1591
+        ProcessingFailed,
         #pragma warning restore CS1591
     }
 }

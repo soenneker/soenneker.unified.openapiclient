@@ -92,5 +92,289 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Follows,
         #pragma warning restore CS1591
+        [EnumMember(Value = "POST_CLICK_CONVERSIONS")]
+        #pragma warning disable CS1591
+        PostClickConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEW_THROUGH_CONVERSIONS")]
+        #pragma warning disable CS1591
+        ViewThroughConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ALL_CONVERSIONS")]
+        #pragma warning disable CS1591
+        AllConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ALL_CONVERSION_VALUE")]
+        #pragma warning disable CS1591
+        AllConversionValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INTERACTIONS")]
+        #pragma warning disable CS1591
+        Interactions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "REVENUE")]
+        #pragma warning disable CS1591
+        Revenue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_COST")]
+        #pragma warning disable CS1591
+        MediaCost,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_MEDIA_COST")]
+        #pragma warning disable CS1591
+        TotalMediaCost,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_PLAYS")]
+        #pragma warning disable CS1591
+        VideoPlays,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_QUARTILE_25")]
+        #pragma warning disable CS1591
+        VideoQuartile25,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_QUARTILE_50")]
+        #pragma warning disable CS1591
+        VideoQuartile50,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_QUARTILE_75")]
+        #pragma warning disable CS1591
+        VideoQuartile75,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_QUARTILE_100")]
+        #pragma warning disable CS1591
+        VideoQuartile100,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_AVG_TIME_WATCHED")]
+        #pragma warning disable CS1591
+        VideoAvgTimeWatched,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_THRUPLAY")]
+        #pragma warning disable CS1591
+        VideoThruplay,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEWABLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        ViewableImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEASURABLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        MeasurableImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEWABILITY_RATE")]
+        #pragma warning disable CS1591
+        ViewabilityRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BILLABLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        BillableImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DATA_FEES")]
+        #pragma warning disable CS1591
+        DataFees,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PLATFORM_FEES")]
+        #pragma warning disable CS1591
+        PlatformFees,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROFIT")]
+        #pragma warning disable CS1591
+        Profit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LANDING_PAGE_CLICKS")]
+        #pragma warning disable CS1591
+        LandingPageClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LEAD_FORM_OPENS")]
+        #pragma warning disable CS1591
+        LeadFormOpens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AD_UNIT_CLICKS")]
+        #pragma warning disable CS1591
+        AdUnitClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CARD_CLICKS")]
+        #pragma warning disable CS1591
+        CardClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CARD_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        CardImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMMENT_LIKES")]
+        #pragma warning disable CS1591
+        CommentLikes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMPANY_PAGE_CLICKS")]
+        #pragma warning disable CS1591
+        CompanyPageClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTION_CLICKS")]
+        #pragma warning disable CS1591
+        ActionClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TEXT_URL_CLICKS")]
+        #pragma warning disable CS1591
+        TextUrlClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OTHER_ENGAGEMENTS")]
+        #pragma warning disable CS1591
+        OtherEngagements,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPENS")]
+        #pragma warning disable CS1591
+        Opens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENTS")]
+        #pragma warning disable CS1591
+        TotalEngagements,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNIQUE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        UniqueImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNIQUE_CLICKS")]
+        #pragma warning disable CS1591
+        UniqueClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        ViralImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_CLICKS")]
+        #pragma warning disable CS1591
+        ViralClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_LIKES")]
+        #pragma warning disable CS1591
+        ViralLikes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_COMMENTS")]
+        #pragma warning disable CS1591
+        ViralComments,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_SHARES")]
+        #pragma warning disable CS1591
+        ViralShares,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_FOLLOWS")]
+        #pragma warning disable CS1591
+        ViralFollows,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_PLAYS")]
+        #pragma warning disable CS1591
+        ViralVideoPlays,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_VIEWS")]
+        #pragma warning disable CS1591
+        ViralVideoViews,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_COMPLETIONS")]
+        #pragma warning disable CS1591
+        ViralVideoCompletions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_QUARTILE_25")]
+        #pragma warning disable CS1591
+        ViralVideoQuartile25,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_QUARTILE_50")]
+        #pragma warning disable CS1591
+        ViralVideoQuartile50,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_QUARTILE_75")]
+        #pragma warning disable CS1591
+        ViralVideoQuartile75,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_LEADS")]
+        #pragma warning disable CS1591
+        ViralLeads,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_LEAD_FORM_OPENS")]
+        #pragma warning disable CS1591
+        ViralLeadFormOpens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_LANDING_PAGE_CLICKS")]
+        #pragma warning disable CS1591
+        ViralLandingPageClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_CONVERSIONS")]
+        #pragma warning disable CS1591
+        ViralConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_POST_CLICK_CONVERSIONS")]
+        #pragma warning disable CS1591
+        ViralPostClickConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIEW_THROUGH_CONVERSIONS")]
+        #pragma warning disable CS1591
+        ViralViewThroughConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_ENGAGEMENTS")]
+        #pragma warning disable CS1591
+        ViralEngagements,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "GMAIL_SECONDARY_CLICKS")]
+        #pragma warning disable CS1591
+        GmailSecondaryClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AVERAGE_CPV")]
+        #pragma warning disable CS1591
+        AverageCpv,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_VIEWS_FROM_SEARCH")]
+        #pragma warning disable CS1591
+        VideoViewsFromSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CROSS_DEVICE_CONVERSIONS")]
+        #pragma warning disable CS1591
+        CrossDeviceConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ABSOLUTE_TOP_IMPRESSION_SHARE")]
+        #pragma warning disable CS1591
+        AbsoluteTopImpressionShare,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOP_IMPRESSION_SHARE")]
+        #pragma warning disable CS1591
+        TopImpressionShare,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_FULLSCREENS")]
+        #pragma warning disable CS1591
+        VideoFullscreens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_PAUSES")]
+        #pragma warning disable CS1591
+        VideoPauses,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_MUTES")]
+        #pragma warning disable CS1591
+        VideoMutes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO_SKIPS")]
+        #pragma warning disable CS1591
+        VideoSkips,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMPANION_CLICKS")]
+        #pragma warning disable CS1591
+        CompanionClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMPANION_VIEWS")]
+        #pragma warning disable CS1591
+        CompanionViews,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_AVG_TIME")]
+        #pragma warning disable CS1591
+        ActiveViewAvgTime,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ELIGIBLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        EligibleImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNED_VIEWS")]
+        #pragma warning disable CS1591
+        EarnedViews,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNIQUE_VIEWERS")]
+        #pragma warning disable CS1591
+        UniqueViewers,
+        #pragma warning restore CS1591
     }
 }
