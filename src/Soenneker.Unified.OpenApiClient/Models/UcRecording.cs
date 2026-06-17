@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactPhone { get; set; }
 #endif
+        /// <summary>The contacts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcContact>? Contacts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcContact> Contacts { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The end_at property</summary>
@@ -143,6 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "contact_name", n => { ContactName = n.GetStringValue(); } },
                 { "contact_phone", n => { ContactPhone = n.GetStringValue(); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
@@ -169,6 +178,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteStringValue("contact_name", ContactName);
             writer.WriteStringValue("contact_phone", ContactPhone);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>("contacts", Contacts);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);

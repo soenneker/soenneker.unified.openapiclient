@@ -7896,6 +7896,12 @@
                "$ref": "#/components/schemas/UcComment"
             }
          },
+         "property_UcRecording_contacts": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/UcContact"
+            }
+         },
          "UcRecordingTranscript": {
             "type": "object",
             "properties": {
@@ -7998,6 +8004,9 @@
                },
                "contact_phone": {
                   "type": "string"
+               },
+               "contacts": {
+                  "$ref": "#/components/schemas/property_UcRecording_contacts"
                },
                "user_id": {
                   "type": "string"
@@ -38585,6 +38594,7 @@
                            "contact_id",
                            "contact_name",
                            "contact_phone",
+                           "contacts",
                            "user_id",
                            "media",
                            "user_name",
@@ -38767,6 +38777,7 @@
                            "contact_id",
                            "contact_name",
                            "contact_phone",
+                           "contacts",
                            "user_id",
                            "media",
                            "user_name",
@@ -38845,6 +38856,7 @@
                            "contact_id",
                            "contact_name",
                            "contact_phone",
+                           "contacts",
                            "user_id",
                            "media",
                            "user_name",
@@ -38931,6 +38943,7 @@
                            "contact_id",
                            "contact_name",
                            "contact_phone",
+                           "contacts",
                            "user_id",
                            "media",
                            "user_name",
@@ -39027,6 +39040,7 @@
                            "contact_id",
                            "contact_name",
                            "contact_phone",
+                           "contacts",
                            "user_id",
                            "media",
                            "user_name",

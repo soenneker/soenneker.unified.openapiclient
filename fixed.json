@@ -56820,6 +56820,12 @@
           "$ref": "#/components/schemas/UcComment"
         }
       },
+      "PropertyUcRecordingContacts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UcContact"
+        }
+      },
       "UcRecordingTranscript": {
         "required": [
           "text"
@@ -56925,6 +56931,12 @@
           },
           "contact_phone": {
             "type": "string"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UcContact"
+            }
           },
           "user_id": {
             "type": "string"
@@ -106598,6 +106610,7 @@
           "contact_id",
           "contact_name",
           "contact_phone",
+          "contacts",
           "user_id",
           "media",
           "user_name",
@@ -106656,6 +106669,10 @@
               "name": "ContactPhone"
             },
             {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
               "value": "user_id",
               "name": "UserId"
             },
@@ -106695,6 +106712,7 @@
           "contact_id",
           "contact_name",
           "contact_phone",
+          "contacts",
           "user_id",
           "media",
           "user_name",
@@ -106753,6 +106771,10 @@
               "name": "ContactPhone"
             },
             {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
               "value": "user_id",
               "name": "UserId"
             },
@@ -106792,6 +106814,7 @@
           "contact_id",
           "contact_name",
           "contact_phone",
+          "contacts",
           "user_id",
           "media",
           "user_name",
@@ -106850,6 +106873,10 @@
               "name": "ContactPhone"
             },
             {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
               "value": "user_id",
               "name": "UserId"
             },
@@ -106889,6 +106916,7 @@
           "contact_id",
           "contact_name",
           "contact_phone",
+          "contacts",
           "user_id",
           "media",
           "user_name",
@@ -106947,6 +106975,10 @@
               "name": "ContactPhone"
             },
             {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
               "value": "user_id",
               "name": "UserId"
             },
@@ -106986,6 +107018,7 @@
           "contact_id",
           "contact_name",
           "contact_phone",
+          "contacts",
           "user_id",
           "media",
           "user_name",
@@ -107042,6 +107075,10 @@
             {
               "value": "contact_phone",
               "name": "ContactPhone"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
             },
             {
               "value": "user_id",
