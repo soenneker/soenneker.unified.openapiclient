@@ -42,6 +42,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The start_at property</summary>
         public DateTimeOffset? StartAt { get; set; }
+        /// <summary>The summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
+#endif
+        /// <summary>The summary_download_url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SummaryDownloadUrl { get; set; }
+#nullable restore
+#else
+        public string SummaryDownloadUrl { get; set; }
+#endif
         /// <summary>The transcript_download_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +104,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "recording_download_url", n => { RecordingDownloadUrl = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "summary_download_url", n => { SummaryDownloadUrl = n.GetStringValue(); } },
                 { "transcript_download_url", n => { TranscriptDownloadUrl = n.GetStringValue(); } },
                 { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarRecordingTranscript>(global::Soenneker.Unified.OpenApiClient.Models.CalendarRecordingTranscript.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -104,6 +122,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("recording_download_url", RecordingDownloadUrl);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
+            writer.WriteStringValue("summary", Summary);
+            writer.WriteStringValue("summary_download_url", SummaryDownloadUrl);
             writer.WriteStringValue("transcript_download_url", TranscriptDownloadUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarRecordingTranscript>("transcripts", Transcripts);
             writer.WriteAdditionalData(AdditionalData);

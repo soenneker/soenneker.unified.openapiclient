@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public EmployeeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public EmployeeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -161,8 +161,28 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.ListHrisEmployeesFieldsParameterItem[] Fields { get; set; }
 #endif
+            /// <summary>The group ID to filter by (reference to HrisGroup)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("group_id")]
+            public string? GroupId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("group_id")]
+            public string GroupId { get; set; }
+#endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            /// <summary>The location ID to filter by (reference to HrisLocation)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("location_id")]
+            public string? LocationId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("location_id")]
+            public string LocationId { get; set; }
+#endif
             [QueryParameter("offset")]
             public double? Offset { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

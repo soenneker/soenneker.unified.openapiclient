@@ -376,5 +376,97 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UniqueViewers,
         #pragma warning restore CS1591
+        [EnumMember(Value = "COST_USD")]
+        #pragma warning disable CS1591
+        CostUsd,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_CARD_CLICKS")]
+        #pragma warning disable CS1591
+        ViralCardClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_CARD_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        ViralCardImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_COMPANY_PAGE_CLICKS")]
+        #pragma warning disable CS1591
+        ViralCompanyPageClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_VIDEO_FULLSCREENS")]
+        #pragma warning disable CS1591
+        ViralVideoFullscreens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIRAL_OTHER_ENGAGEMENTS")]
+        #pragma warning disable CS1591
+        ViralOtherEngagements,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LEAD_GEN_CONTACT_SHARES")]
+        #pragma warning disable CS1591
+        LeadGenContactShares,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LEAD_GEN_INTERESTED_CLICKS")]
+        #pragma warning disable CS1591
+        LeadGenInterestedClicks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CM360_POST_CLICK_REVENUE")]
+        #pragma warning disable CS1591
+        Cm360PostClickRevenue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CM360_POST_VIEW_REVENUE")]
+        #pragma warning disable CS1591
+        Cm360PostViewRevenue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SCROLLS")]
+        #pragma warning disable CS1591
+        Scrolls,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_FEE_1")]
+        #pragma warning disable CS1591
+        MediaFee1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_FEE_2")]
+        #pragma warning disable CS1591
+        MediaFee2,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_FEE_3")]
+        #pragma warning disable CS1591
+        MediaFee3,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_FEE_4")]
+        #pragma warning disable CS1591
+        MediaFee4,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_FEE_5")]
+        #pragma warning disable CS1591
+        MediaFee5,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_DIST_UNMEASURABLE")]
+        #pragma warning disable CS1591
+        ActiveViewDistUnmeasurable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_DIST_UNVIEWABLE")]
+        #pragma warning disable CS1591
+        ActiveViewDistUnviewable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_DIST_VIEWABLE")]
+        #pragma warning disable CS1591
+        ActiveViewDistViewable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE")]
+        #pragma warning disable CS1591
+        ActiveViewAudibleVisibleComplete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACTIVE_VIEW_VISIBLE_10S")]
+        #pragma warning disable CS1591
+        ActiveViewVisible10S,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NOT_MEASURABLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        NotMeasurableImpressions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NOT_VIEWABLE_IMPRESSIONS")]
+        #pragma warning disable CS1591
+        NotViewableImpressions,
+        #pragma warning restore CS1591
     }
 }
