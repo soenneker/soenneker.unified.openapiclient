@@ -1861,7 +1861,6 @@
                   "ats",
                   "auth",
                   "crm",
-                  "datastore",
                   "enrich",
                   "martech",
                   "ticketing",
@@ -1885,7 +1884,8 @@
                   "shipping",
                   "assessment",
                   "signing",
-                  "clubs"
+                  "clubs",
+                  "datastore"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -2152,7 +2152,6 @@
                   "ats",
                   "auth",
                   "crm",
-                  "datastore",
                   "enrich",
                   "martech",
                   "ticketing",
@@ -2176,7 +2175,8 @@
                   "shipping",
                   "assessment",
                   "signing",
-                  "clubs"
+                  "clubs",
+                  "datastore"
                ],
                "x-speakeasy-unknown-values": "allow"
             },

@@ -28,10 +28,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Crm,
         #pragma warning restore CS1591
-        [EnumMember(Value = "datastore")]
-        #pragma warning disable CS1591
-        Datastore,
-        #pragma warning restore CS1591
         [EnumMember(Value = "enrich")]
         #pragma warning disable CS1591
         Enrich,
@@ -127,6 +123,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "clubs")]
         #pragma warning disable CS1591
         Clubs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "datastore")]
+        #pragma warning disable CS1591
+        Datastore,
         #pragma warning restore CS1591
     }
 }

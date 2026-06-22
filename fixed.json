@@ -80653,7 +80653,6 @@
           "ats",
           "auth",
           "crm",
-          "datastore",
           "enrich",
           "martech",
           "ticketing",
@@ -80677,7 +80676,8 @@
           "shipping",
           "assessment",
           "signing",
-          "clubs"
+          "clubs",
+          "datastore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -80705,10 +80705,6 @@
             {
               "value": "crm",
               "name": "Crm"
-            },
-            {
-              "value": "datastore",
-              "name": "Datastore"
             },
             {
               "value": "enrich",
@@ -80805,6 +80801,10 @@
             {
               "value": "clubs",
               "name": "Clubs"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             }
           ]
         }
@@ -80864,7 +80864,6 @@
           "ats",
           "auth",
           "crm",
-          "datastore",
           "enrich",
           "martech",
           "ticketing",
@@ -80888,7 +80887,8 @@
           "shipping",
           "assessment",
           "signing",
-          "clubs"
+          "clubs",
+          "datastore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -80916,10 +80916,6 @@
             {
               "value": "crm",
               "name": "Crm"
-            },
-            {
-              "value": "datastore",
-              "name": "Datastore"
             },
             {
               "value": "enrich",
@@ -81016,6 +81012,10 @@
             {
               "value": "clubs",
               "name": "Clubs"
+            },
+            {
+              "value": "datastore",
+              "name": "Datastore"
             }
           ]
         }
