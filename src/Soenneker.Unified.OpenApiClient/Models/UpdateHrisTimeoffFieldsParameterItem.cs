@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Type,
         #pragma warning restore CS1591
+        [EnumMember(Value = "duration")]
+        #pragma warning disable CS1591
+        Duration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "duration_type")]
+        #pragma warning disable CS1591
+        DurationType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

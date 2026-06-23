@@ -23,38 +23,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth Auth { get; set; }
 #endif
-        /// <summary>The auth_aws_arn property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AuthAwsArn { get; set; }
-#nullable restore
-#else
-        public string AuthAwsArn { get; set; }
-#endif
-        /// <summary>The auth_azure_keyvault_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AuthAzureKeyvaultId { get; set; }
-#nullable restore
-#else
-        public string AuthAzureKeyvaultId { get; set; }
-#endif
-        /// <summary>The auth_gcp_secret_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AuthGcpSecretName { get; set; }
-#nullable restore
-#else
-        public string AuthGcpSecretName { get; set; }
-#endif
-        /// <summary>The auth_hashi_vault_path property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AuthHashiVaultPath { get; set; }
-#nullable restore
-#else
-        public string AuthHashiVaultPath { get; set; }
-#endif
         /// <summary>The Integration categories that this connection supports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,10 +140,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth>(global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth.CreateFromDiscriminatorValue); } },
-                { "auth_aws_arn", n => { AuthAwsArn = n.GetStringValue(); } },
-                { "auth_azure_keyvault_id", n => { AuthAzureKeyvaultId = n.GetStringValue(); } },
-                { "auth_gcp_secret_name", n => { AuthGcpSecretName = n.GetStringValue(); } },
-                { "auth_hashi_vault_path", n => { AuthHashiVaultPath = n.GetStringValue(); } },
                 { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
@@ -201,10 +165,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth>("auth", Auth);
-            writer.WriteStringValue("auth_aws_arn", AuthAwsArn);
-            writer.WriteStringValue("auth_azure_keyvault_id", AuthAzureKeyvaultId);
-            writer.WriteStringValue("auth_gcp_secret_name", AuthGcpSecretName);
-            writer.WriteStringValue("auth_hashi_vault_path", AuthHashiVaultPath);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>("categories", Categories);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("environment", Environment);

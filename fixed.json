@@ -52300,21 +52300,9 @@
           "is_paused": {
             "type": "boolean"
           },
-          "auth_aws_arn": {
-            "type": "string"
-          },
           "environment": {
             "type": "string",
             "default": "Production"
-          },
-          "auth_azure_keyvault_id": {
-            "type": "string"
-          },
-          "auth_gcp_secret_name": {
-            "type": "string"
-          },
-          "auth_hashi_vault_path": {
-            "type": "string"
           },
           "last_healthy_at": {
             "type": "string",
@@ -59021,6 +59009,12 @@
           },
           "type": {
             "$ref": "#/components/schemas/HrisTimeoffType"
+          },
+          "duration": {
+            "type": "number"
+          },
+          "duration_type": {
+            "$ref": "#/components/schemas/HrisTimeoffDurationType"
           },
           "raw": {
             "$ref": "#/components/schemas/HrisTimeoffRawProperty"
@@ -89170,6 +89164,29 @@
           ]
         }
       },
+      "HrisTimeoffDurationType": {
+        "enum": [
+          "HOUR",
+          "DAY"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "HrisTimeoffDurationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "HOUR",
+              "name": "Hour"
+            },
+            {
+              "value": "DAY",
+              "name": "Day"
+            }
+          ]
+        }
+      },
       "HrisPayslipDetailType": {
         "enum": [
           "EARNING_SALARY",
@@ -113467,6 +113484,8 @@
           "comments",
           "reason",
           "type",
+          "duration",
+          "duration_type",
           "raw"
         ],
         "type": "string",
@@ -113532,6 +113551,14 @@
               "name": "Type"
             },
             {
+              "value": "duration",
+              "name": "Duration"
+            },
+            {
+              "value": "duration_type",
+              "name": "DurationType"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -113554,6 +113581,8 @@
           "comments",
           "reason",
           "type",
+          "duration",
+          "duration_type",
           "raw"
         ],
         "type": "string",
@@ -113619,6 +113648,14 @@
               "name": "Type"
             },
             {
+              "value": "duration",
+              "name": "Duration"
+            },
+            {
+              "value": "duration_type",
+              "name": "DurationType"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -113641,6 +113678,8 @@
           "comments",
           "reason",
           "type",
+          "duration",
+          "duration_type",
           "raw"
         ],
         "type": "string",
@@ -113706,6 +113745,14 @@
               "name": "Type"
             },
             {
+              "value": "duration",
+              "name": "Duration"
+            },
+            {
+              "value": "duration_type",
+              "name": "DurationType"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -113728,6 +113775,8 @@
           "comments",
           "reason",
           "type",
+          "duration",
+          "duration_type",
           "raw"
         ],
         "type": "string",
@@ -113793,6 +113842,14 @@
               "name": "Type"
             },
             {
+              "value": "duration",
+              "name": "Duration"
+            },
+            {
+              "value": "duration_type",
+              "name": "DurationType"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -113815,6 +113872,8 @@
           "comments",
           "reason",
           "type",
+          "duration",
+          "duration_type",
           "raw"
         ],
         "type": "string",
@@ -113878,6 +113937,14 @@
             {
               "value": "type",
               "name": "Type"
+            },
+            {
+              "value": "duration",
+              "name": "Duration"
+            },
+            {
+              "value": "duration_type",
+              "name": "DurationType"
             },
             {
               "value": "raw",

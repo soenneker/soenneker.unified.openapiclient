@@ -42,6 +42,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The duration property</summary>
+        public double? Duration { get; set; }
+        /// <summary>The duration_type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffDurationType? DurationType { get; set; }
         /// <summary>The end_at property</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The id property</summary>
@@ -116,6 +120,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "duration", n => { Duration = n.GetDoubleValue(); } },
+                { "duration_type", n => { DurationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffDurationType>(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_paid", n => { IsPaid = n.GetBoolValue(); } },
@@ -140,6 +146,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("comments", Comments);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDoubleValue("duration", Duration);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffDurationType>("duration_type", DurationType);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_paid", IsPaid);

@@ -2029,21 +2029,9 @@
                "is_paused": {
                   "type": "boolean"
                },
-               "auth_aws_arn": {
-                  "type": "string"
-               },
                "environment": {
                   "type": "string",
                   "default": "Production"
-               },
-               "auth_azure_keyvault_id": {
-                  "type": "string"
-               },
-               "auth_gcp_secret_name": {
-                  "type": "string"
-               },
-               "auth_hashi_vault_path": {
-                  "type": "string"
                },
                "last_healthy_at": {
                   "type": "string",
@@ -10368,6 +10356,17 @@
                      "UNPAID",
                      "IN_LIEU",
                      "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "duration": {
+                  "type": "number"
+               },
+               "duration_type": {
+                  "type": "string",
+                  "enum": [
+                     "HOUR",
+                     "DAY"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -46216,6 +46215,8 @@
                            "comments",
                            "reason",
                            "type",
+                           "duration",
+                           "duration_type",
                            "raw"
                         ]
                      }
@@ -46387,6 +46388,8 @@
                            "comments",
                            "reason",
                            "type",
+                           "duration",
+                           "duration_type",
                            "raw"
                         ]
                      }
@@ -46463,6 +46466,8 @@
                            "comments",
                            "reason",
                            "type",
+                           "duration",
+                           "duration_type",
                            "raw"
                         ]
                      }
@@ -46547,6 +46552,8 @@
                            "comments",
                            "reason",
                            "type",
+                           "duration",
+                           "duration_type",
                            "raw"
                         ]
                      }
@@ -46641,6 +46648,8 @@
                            "comments",
                            "reason",
                            "type",
+                           "duration",
+                           "duration_type",
                            "raw"
                         ]
                      }
