@@ -104,6 +104,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Ads,
         #pragma warning restore CS1591
+        [EnumMember(Value = "analytics")]
+        #pragma warning disable CS1591
+        Analytics,
+        #pragma warning restore CS1591
         [EnumMember(Value = "forms")]
         #pragma warning disable CS1591
         Forms,

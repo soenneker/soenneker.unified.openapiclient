@@ -468,5 +468,49 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         NotViewableImpressions,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PUBLISHER_PLATFORM")]
+        #pragma warning disable CS1591
+        PublisherPlatform,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PLATFORM_POSITION")]
+        #pragma warning disable CS1591
+        PlatformPosition,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IMPRESSION_DEVICE")]
+        #pragma warning disable CS1591
+        ImpressionDevice,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1D_VIEW")]
+        #pragma warning disable CS1591
+        Value1DView,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "1D_CLICK")]
+        #pragma warning disable CS1591
+        Value1DClick,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "7D_VIEW")]
+        #pragma warning disable CS1591
+        Value7DView,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "7D_CLICK")]
+        #pragma warning disable CS1591
+        Value7DClick,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "14D_CLICK")]
+        #pragma warning disable CS1591
+        Value14DClick,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "28D_VIEW")]
+        #pragma warning disable CS1591
+        Value28DView,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "28D_CLICK")]
+        #pragma warning disable CS1591
+        Value28DClick,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "30D_CLICK")]
+        #pragma warning disable CS1591
+        Value30DClick,
+        #pragma warning restore CS1591
     }
 }

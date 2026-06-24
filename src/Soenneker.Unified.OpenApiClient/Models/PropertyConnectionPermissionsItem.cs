@@ -912,6 +912,38 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AdsPromotedRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_property_read")]
+        #pragma warning disable CS1591
+        AnalyticsPropertyRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_property_write")]
+        #pragma warning disable CS1591
+        AnalyticsPropertyWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_event_read")]
+        #pragma warning disable CS1591
+        AnalyticsEventRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_event_write")]
+        #pragma warning disable CS1591
+        AnalyticsEventWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_session_read")]
+        #pragma warning disable CS1591
+        AnalyticsSessionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_visitor_read")]
+        #pragma warning disable CS1591
+        AnalyticsVisitorRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_visitor_write")]
+        #pragma warning disable CS1591
+        AnalyticsVisitorWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics_report_read")]
+        #pragma warning disable CS1591
+        AnalyticsReportRead,
+        #pragma warning restore CS1591
         [EnumMember(Value = "forms_form_read")]
         #pragma warning disable CS1591
         FormsFormRead,

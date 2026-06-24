@@ -8,6 +8,7 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Unified.OpenApiClient.Accounting;
 using Soenneker.Unified.OpenApiClient.Ads;
+using Soenneker.Unified.OpenApiClient.Analytics;
 using Soenneker.Unified.OpenApiClient.Assessment;
 using Soenneker.Unified.OpenApiClient.Ats;
 using Soenneker.Unified.OpenApiClient.Calendar;
@@ -57,6 +58,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Ads.AdsRequestBuilder Ads
         {
             get => new global::Soenneker.Unified.OpenApiClient.Ads.AdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assessment property</summary>
         public global::Soenneker.Unified.OpenApiClient.Assessment.AssessmentRequestBuilder Assessment

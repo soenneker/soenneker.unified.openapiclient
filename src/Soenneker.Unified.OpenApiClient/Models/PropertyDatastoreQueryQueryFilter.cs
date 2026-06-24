@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The and property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? And { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>? And { get; set; }
 #nullable restore
 #else
-        public List<string> And { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter> And { get; set; }
 #endif
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The or property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Or { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>? Or { get; set; }
 #nullable restore
 #else
-        public List<string> Or { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter> Or { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilterType? Type { get; set; }
@@ -65,9 +65,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "and", n => { And = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "and", n => { And = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFilter>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreFilter.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "or", n => { Or = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "or", n => { Or = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilterType>(); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("and", And);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>("and", And);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFilter>("filters", Filters);
-            writer.WriteCollectionOfPrimitiveValues<string>("or", Or);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilter>("or", Or);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryFilterType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

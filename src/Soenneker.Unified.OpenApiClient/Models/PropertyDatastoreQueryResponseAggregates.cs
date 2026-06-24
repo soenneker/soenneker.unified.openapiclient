@@ -27,10 +27,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Query>? Groups { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2>? Groups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.Query> Groups { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2> Groups { get; set; }
 #endif
         /// <summary>The max property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "avg", n => { Avg = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesAvgProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesAvgProperty.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetDoubleValue(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Query>(global::Soenneker.Unified.OpenApiClient.Models.Query.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "max", n => { Max = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMaxProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMaxProperty.CreateFromDiscriminatorValue); } },
                 { "min", n => { Min = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMinProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMinProperty.CreateFromDiscriminatorValue); } },
                 { "sum", n => { Sum = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesSumProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesSumProperty.CreateFromDiscriminatorValue); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesAvgProperty>("avg", Avg);
             writer.WriteDoubleValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.Query>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2>("groups", Groups);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMaxProperty>("max", Max);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesMinProperty>("min", Min);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesSumProperty>("sum", Sum);
