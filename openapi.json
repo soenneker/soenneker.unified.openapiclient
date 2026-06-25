@@ -437,6 +437,9 @@
          "name": "connection"
       },
       {
+         "name": "secretsmanager"
+      },
+      {
          "name": "issue"
       },
       {
@@ -1578,6 +1581,16 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/Connection"
+                  }
+               }
+            }
+         },
+         "SecretsManager": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/SecretsManager"
                   }
                }
             }
@@ -24054,6 +24067,70 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/Connection"
+            }
+         },
+         "property_SecretsManager_auth": {
+            "type": "object",
+            "additionalProperties": {
+               "type": "string"
+            },
+            "description": "secrets-manager specific authentication values"
+         },
+         "property_SecretsManager_dcs": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "data-regions"
+         },
+         "SecretsManager": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "aws",
+                     "azure",
+                     "gcp",
+                     "hashicorp",
+                     "composio"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "workspace_id": {
+                  "type": "string"
+               },
+               "auth": {
+                  "$ref": "#/components/schemas/property_SecretsManager_auth"
+               },
+               "dcs": {
+                  "$ref": "#/components/schemas/property_SecretsManager_dcs"
+               }
+            },
+            "required": [
+               "type",
+               "name",
+               "auth"
+            ]
+         },
+         "SecretsManagers": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SecretsManager"
             }
          },
          "property_Issue_type": {
@@ -92718,6 +92795,282 @@
                }
             ],
             "operationId": "removeUnifiedConnection"
+         }
+      },
+      "/unified/workspace/secretsmanager": {
+         "post": {
+            "summary": "Create secrets manager",
+            "parameters": [],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SecretsManager"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SecretsManager"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createUnifiedWorkspaceSecretsmanager"
+         },
+         "get": {
+            "summary": "List secrets managers",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               }
+            ],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SecretsManagers"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listUnifiedWorkspaceSecretsmanagers"
+         }
+      },
+      "/unified/workspace/secretsmanager/{id}": {
+         "get": {
+            "summary": "Retrieve secrets manager",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Secretsmanager",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SecretsManager"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getUnifiedWorkspaceSecretsmanager"
+         },
+         "put": {
+            "summary": "Update secrets manager",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Secretsmanager",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SecretsManager"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SecretsManager"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateUnifiedWorkspaceSecretsmanager"
+         },
+         "patch": {
+            "summary": "Update secrets manager",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Secretsmanager",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SecretsManager"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SecretsManager"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchUnifiedWorkspaceSecretsmanager"
+         },
+         "delete": {
+            "summary": "Remove secrets manager",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Secretsmanager",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "unified",
+               "secretsmanager"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeUnifiedWorkspaceSecretsmanager"
          }
       },
       "/unified/issue/{id}": {

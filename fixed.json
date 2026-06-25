@@ -51807,6 +51807,268 @@
         ]
       }
     },
+    "/unified/workspace/secretsmanager": {
+      "post": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "Create secrets manager",
+        "operationId": "CreateUnifiedWorkspaceSecretsmanager",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretsManager"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretsManager"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "List secrets managers",
+        "operationId": "ListUnifiedWorkspaceSecretsmanagers",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUnifiedWorkspaceSecretsmanagers200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/unified/workspace/secretsmanager/{id}": {
+      "get": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "Retrieve secrets manager",
+        "operationId": "GetUnifiedWorkspaceSecretsmanager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Secretsmanager",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretsManager"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "Update secrets manager",
+        "operationId": "UpdateUnifiedWorkspaceSecretsmanager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Secretsmanager",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretsManager"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretsManager"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "Update secrets manager",
+        "operationId": "PatchUnifiedWorkspaceSecretsmanager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Secretsmanager",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretsManager"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecretsManager"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "unified",
+          "secretsmanager"
+        ],
+        "summary": "Remove secrets manager",
+        "operationId": "RemoveUnifiedWorkspaceSecretsmanager",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Secretsmanager",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/unified/issue/{id}": {
       "get": {
         "tags": [
@@ -52242,7 +52504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
                 }
               }
             }
@@ -52430,7 +52692,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
                 }
               }
             }
@@ -52466,7 +52728,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
                 }
               }
             }
@@ -53289,7 +53551,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
                 }
               }
             }
@@ -53607,7 +53869,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
                 }
               }
             }
@@ -74538,6 +74800,66 @@
           "$ref": "#/components/schemas/Connection"
         }
       },
+      "PropertySecretsManagerAuth": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "secrets-manager specific authentication values"
+      },
+      "PropertySecretsManagerDcs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "data-regions"
+      },
+      "SecretsManager": {
+        "required": [
+          "type",
+          "name",
+          "auth"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SecretsManagerType"
+          },
+          "name": {
+            "type": "string"
+          },
+          "workspace_id": {
+            "type": "string"
+          },
+          "auth": {
+            "$ref": "#/components/schemas/SecretsManagerAuth"
+          },
+          "dcs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "data-regions"
+          }
+        }
+      },
+      "SecretsManagers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SecretsManager"
+        }
+      },
       "PropertyIssueType": {
         "type": "array",
         "items": {
@@ -80654,6 +80976,17 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListUnifiedWorkspaceSecretsmanagers200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SecretsManager"
+        }
+      },
+      "DefaultResponseResponseJson102": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListUnifiedIssues200Response": {
         "type": "array",
         "items": {
@@ -80672,7 +81005,7 @@
           "$ref": "#/components/schemas/Integration"
         }
       },
-      "DefaultResponseResponseJson102": {
+      "DefaultResponseResponseJson103": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80683,12 +81016,12 @@
           "$ref": "#/components/schemas/Webhook"
         }
       },
-      "DefaultResponseResponseJson103": {
+      "DefaultResponseResponseJson104": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson104": {
+      "DefaultResponseResponseJson105": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80739,7 +81072,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson105": {
+      "DefaultResponseResponseJson106": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80750,7 +81083,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson106": {
+      "DefaultResponseResponseJson107": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81313,6 +81646,13 @@
       },
       "PropertyConnectionAuthMetaProperty": {
         "type": "object"
+      },
+      "SecretsManagerAuth": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "secrets-manager specific authentication values"
       },
       "IntegrationSupportMethods": {
         "type": "object",
@@ -94729,6 +95069,44 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            }
+          ]
+        }
+      },
+      "SecretsManagerType": {
+        "enum": [
+          "aws",
+          "azure",
+          "gcp",
+          "hashicorp",
+          "composio"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "SecretsManagerType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "aws",
+              "name": "Aws"
+            },
+            {
+              "value": "azure",
+              "name": "Azure"
+            },
+            {
+              "value": "gcp",
+              "name": "Gcp"
+            },
+            {
+              "value": "hashicorp",
+              "name": "Hashicorp"
+            },
+            {
+              "value": "composio",
+              "name": "Composio"
             }
           ]
         }
@@ -155638,6 +156016,16 @@
         },
         "required": true
       },
+      "SecretsManager": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SecretsManager"
+            }
+          }
+        },
+        "required": true
+      },
       "Webhook": {
         "content": {
           "application/json": {
@@ -156119,6 +156507,9 @@
     },
     {
       "name": "connection"
+    },
+    {
+      "name": "secretsmanager"
     },
     {
       "name": "issue"

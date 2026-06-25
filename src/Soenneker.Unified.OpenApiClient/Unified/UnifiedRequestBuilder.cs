@@ -8,6 +8,7 @@ using Soenneker.Unified.OpenApiClient.Unified.EnvironmentNamespace;
 using Soenneker.Unified.OpenApiClient.Unified.Integration;
 using Soenneker.Unified.OpenApiClient.Unified.Issue;
 using Soenneker.Unified.OpenApiClient.Unified.Webhook;
+using Soenneker.Unified.OpenApiClient.Unified.Workspace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -49,6 +50,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified
         public global::Soenneker.Unified.OpenApiClient.Unified.Webhook.WebhookRequestBuilder Webhook
         {
             get => new global::Soenneker.Unified.OpenApiClient.Unified.Webhook.WebhookRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The workspace property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Workspace.WorkspaceRequestBuilder Workspace
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Workspace.WorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.UnifiedRequestBuilder"/> and sets the default values.
