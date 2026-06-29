@@ -32,6 +32,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         LastName,
         #pragma warning restore CS1591
+        [EnumMember(Value = "company")]
+        #pragma warning disable CS1591
+        Company,
+        #pragma warning restore CS1591
         [EnumMember(Value = "emails")]
         #pragma warning disable CS1591
         Emails,

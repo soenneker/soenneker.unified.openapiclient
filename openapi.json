@@ -4089,6 +4089,9 @@
                "last_name": {
                   "type": "string"
                },
+               "company": {
+                  "type": "string"
+               },
                "emails": {
                   "$ref": "#/components/schemas/property_MarketingMember_emails"
                },
@@ -4367,9 +4370,6 @@
                "category_id": {
                   "type": "string"
                },
-               "category": {
-                  "type": "string"
-               },
                "source": {
                   "type": "string"
                },
@@ -4384,6 +4384,10 @@
                },
                "url": {
                   "type": "string"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
                },
                "raw": {
                   "type": "object",
@@ -32917,6 +32921,7 @@
                            "name",
                            "first_name",
                            "last_name",
+                           "company",
                            "emails",
                            "list_ids",
                            "tags",
@@ -33057,6 +33062,7 @@
                            "name",
                            "first_name",
                            "last_name",
+                           "company",
                            "emails",
                            "list_ids",
                            "tags",
@@ -33129,6 +33135,7 @@
                            "name",
                            "first_name",
                            "last_name",
+                           "company",
                            "emails",
                            "list_ids",
                            "tags",
@@ -33208,6 +33215,7 @@
                            "name",
                            "first_name",
                            "last_name",
+                           "company",
                            "emails",
                            "list_ids",
                            "tags",
@@ -33298,6 +33306,7 @@
                            "name",
                            "first_name",
                            "last_name",
+                           "company",
                            "emails",
                            "list_ids",
                            "tags",
@@ -34160,12 +34169,12 @@
                            "closed_at",
                            "priority",
                            "category_id",
-                           "category",
                            "source",
                            "source_ref",
                            "tags",
                            "user_id",
                            "url",
+                           "due_at",
                            "raw"
                         ]
                      }
@@ -34314,12 +34323,12 @@
                            "closed_at",
                            "priority",
                            "category_id",
-                           "category",
                            "source",
                            "source_ref",
                            "tags",
                            "user_id",
                            "url",
+                           "due_at",
                            "raw"
                         ]
                      }
@@ -34392,12 +34401,12 @@
                            "closed_at",
                            "priority",
                            "category_id",
-                           "category",
                            "source",
                            "source_ref",
                            "tags",
                            "user_id",
                            "url",
+                           "due_at",
                            "raw"
                         ]
                      }
@@ -34477,12 +34486,12 @@
                            "closed_at",
                            "priority",
                            "category_id",
-                           "category",
                            "source",
                            "source_ref",
                            "tags",
                            "user_id",
                            "url",
+                           "due_at",
                            "raw"
                         ]
                      }
@@ -34572,12 +34581,12 @@
                            "closed_at",
                            "priority",
                            "category_id",
-                           "category",
                            "source",
                            "source_ref",
                            "tags",
                            "user_id",
                            "url",
+                           "due_at",
                            "raw"
                         ]
                      }

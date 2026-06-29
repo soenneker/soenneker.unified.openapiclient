@@ -14,14 +14,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Category { get; set; }
-#nullable restore
-#else
-        public string Category { get; set; }
-#endif
         /// <summary>The category_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +42,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The due_at property</summary>
+        public DateTimeOffset? DueAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,12 +145,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetStringValue(); } },
                 { "category_id", n => { CategoryId = n.GetStringValue(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty.CreateFromDiscriminatorValue); } },
@@ -177,12 +171,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("category", Category);
             writer.WriteStringValue("category_id", CategoryId);
             writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("description", Description);
+            writer.WriteDateTimeOffsetValue("due_at", DueAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>("raw", Raw);

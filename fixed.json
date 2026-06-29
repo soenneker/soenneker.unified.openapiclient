@@ -56276,6 +56276,9 @@
           "last_name": {
             "type": "string"
           },
+          "company": {
+            "type": "string"
+          },
           "emails": {
             "type": "array",
             "items": {
@@ -56547,9 +56550,6 @@
           "category_id": {
             "type": "string"
           },
-          "category": {
-            "type": "string"
-          },
           "source": {
             "type": "string"
           },
@@ -56567,6 +56567,10 @@
           },
           "url": {
             "type": "string"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "raw": {
             "$ref": "#/components/schemas/TicketingTicketRawProperty"
@@ -106591,6 +106595,7 @@
           "name",
           "first_name",
           "last_name",
+          "company",
           "emails",
           "list_ids",
           "tags",
@@ -106628,6 +106633,10 @@
               "name": "LastName"
             },
             {
+              "value": "company",
+              "name": "Company"
+            },
+            {
               "value": "emails",
               "name": "Emails"
             },
@@ -106658,6 +106667,7 @@
           "name",
           "first_name",
           "last_name",
+          "company",
           "emails",
           "list_ids",
           "tags",
@@ -106695,6 +106705,10 @@
               "name": "LastName"
             },
             {
+              "value": "company",
+              "name": "Company"
+            },
+            {
               "value": "emails",
               "name": "Emails"
             },
@@ -106725,6 +106739,7 @@
           "name",
           "first_name",
           "last_name",
+          "company",
           "emails",
           "list_ids",
           "tags",
@@ -106762,6 +106777,10 @@
               "name": "LastName"
             },
             {
+              "value": "company",
+              "name": "Company"
+            },
+            {
               "value": "emails",
               "name": "Emails"
             },
@@ -106792,6 +106811,7 @@
           "name",
           "first_name",
           "last_name",
+          "company",
           "emails",
           "list_ids",
           "tags",
@@ -106829,6 +106849,10 @@
               "name": "LastName"
             },
             {
+              "value": "company",
+              "name": "Company"
+            },
+            {
               "value": "emails",
               "name": "Emails"
             },
@@ -106859,6 +106883,7 @@
           "name",
           "first_name",
           "last_name",
+          "company",
           "emails",
           "list_ids",
           "tags",
@@ -106894,6 +106919,10 @@
             {
               "value": "last_name",
               "name": "LastName"
+            },
+            {
+              "value": "company",
+              "name": "Company"
             },
             {
               "value": "emails",
@@ -107477,12 +107506,12 @@
           "closed_at",
           "priority",
           "category_id",
-          "category",
           "source",
           "source_ref",
           "tags",
           "user_id",
           "url",
+          "due_at",
           "raw"
         ],
         "type": "string",
@@ -107532,10 +107561,6 @@
               "name": "CategoryId"
             },
             {
-              "value": "category",
-              "name": "Category"
-            },
-            {
               "value": "source",
               "name": "Source"
             },
@@ -107556,6 +107581,10 @@
               "name": "Url"
             },
             {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -107574,12 +107603,12 @@
           "closed_at",
           "priority",
           "category_id",
-          "category",
           "source",
           "source_ref",
           "tags",
           "user_id",
           "url",
+          "due_at",
           "raw"
         ],
         "type": "string",
@@ -107629,10 +107658,6 @@
               "name": "CategoryId"
             },
             {
-              "value": "category",
-              "name": "Category"
-            },
-            {
               "value": "source",
               "name": "Source"
             },
@@ -107653,6 +107678,10 @@
               "name": "Url"
             },
             {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -107671,12 +107700,12 @@
           "closed_at",
           "priority",
           "category_id",
-          "category",
           "source",
           "source_ref",
           "tags",
           "user_id",
           "url",
+          "due_at",
           "raw"
         ],
         "type": "string",
@@ -107726,10 +107755,6 @@
               "name": "CategoryId"
             },
             {
-              "value": "category",
-              "name": "Category"
-            },
-            {
               "value": "source",
               "name": "Source"
             },
@@ -107750,6 +107775,10 @@
               "name": "Url"
             },
             {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -107768,12 +107797,12 @@
           "closed_at",
           "priority",
           "category_id",
-          "category",
           "source",
           "source_ref",
           "tags",
           "user_id",
           "url",
+          "due_at",
           "raw"
         ],
         "type": "string",
@@ -107823,10 +107852,6 @@
               "name": "CategoryId"
             },
             {
-              "value": "category",
-              "name": "Category"
-            },
-            {
               "value": "source",
               "name": "Source"
             },
@@ -107847,6 +107872,10 @@
               "name": "Url"
             },
             {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -107865,12 +107894,12 @@
           "closed_at",
           "priority",
           "category_id",
-          "category",
           "source",
           "source_ref",
           "tags",
           "user_id",
           "url",
+          "due_at",
           "raw"
         ],
         "type": "string",
@@ -107920,10 +107949,6 @@
               "name": "CategoryId"
             },
             {
-              "value": "category",
-              "name": "Category"
-            },
-            {
               "value": "source",
               "name": "Source"
             },
@@ -107942,6 +107967,10 @@
             {
               "value": "url",
               "name": "Url"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
             },
             {
               "value": "raw",

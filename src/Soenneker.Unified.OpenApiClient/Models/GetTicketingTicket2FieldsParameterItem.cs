@@ -48,10 +48,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CategoryId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "category")]
-        #pragma warning disable CS1591
-        Category,
-        #pragma warning restore CS1591
         [EnumMember(Value = "source")]
         #pragma warning disable CS1591
         Source,
@@ -71,6 +67,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "url")]
         #pragma warning disable CS1591
         Url,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "due_at")]
+        #pragma warning disable CS1591
+        DueAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
