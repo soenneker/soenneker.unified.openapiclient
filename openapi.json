@@ -56,6 +56,9 @@
          "name": "lead"
       },
       {
+         "name": "picklist"
+      },
+      {
          "name": "pipeline"
       },
       {
@@ -3848,6 +3851,40 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/CrmLead"
+            }
+         },
+         "CrmPicklist": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "label": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "INDUSTRY"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "required": [
+               "id"
+            ]
+         },
+         "CrmPicklists": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CrmPicklist"
             }
          },
          "CrmStage": {
@@ -23688,6 +23725,7 @@
                   "crm_lead_write",
                   "crm_pipeline_read",
                   "crm_pipeline_write",
+                  "crm_picklist_read",
                   "martech_list_read",
                   "martech_list_write",
                   "martech_member_read",
@@ -26286,6 +26324,7 @@
                      "crm_event",
                      "crm_lead",
                      "crm_pipeline",
+                     "crm_picklist",
                      "hris_employee",
                      "hris_group",
                      "hris_payslip",
@@ -31858,6 +31897,130 @@
                }
             ],
             "operationId": "removeCrmLead2"
+         }
+      },
+      "/crm/{connection_id}/picklist": {
+         "get": {
+            "summary": "List all picklists",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "name",
+                           "label",
+                           "type",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "crm",
+               "picklist"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/CrmPicklists"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listCrmPicklists2"
          }
       },
       "/crm/{connection_id}/pipeline": {
@@ -45334,6 +45497,14 @@
                   "in": "query",
                   "required": false,
                   "description": "The company ID to filter by (reference to HrisCompany)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
                },
                {
                   "schema": {

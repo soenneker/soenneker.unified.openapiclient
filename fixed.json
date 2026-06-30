@@ -3561,6 +3561,114 @@
         ]
       }
     },
+    "/crm/{connectionId}/picklist": {
+      "get": {
+        "tags": [
+          "crm",
+          "picklist"
+        ],
+        "summary": "List all picklists",
+        "operationId": "ListCrmPicklists2",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCrmPicklists2FieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCrmPicklists2200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/crm/{connectionId}/pipeline": {
       "post": {
         "tags": [
@@ -14337,6 +14445,13 @@
             "name": "company_id",
             "in": "query",
             "description": "The company ID to filter by (reference to HrisCompany)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -56042,6 +56157,35 @@
           "$ref": "#/components/schemas/CrmLead"
         }
       },
+      "CrmPicklist": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CrmPicklistType"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CrmPicklistRawProperty"
+          }
+        }
+      },
+      "CrmPicklists": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CrmPicklist"
+        }
+      },
       "CrmStage": {
         "type": "object",
         "properties": {
@@ -77681,6 +77825,9 @@
       "CrmLeadRaw": {
         "type": "object"
       },
+      "CrmPicklistRaw": {
+        "type": "object"
+      },
       "CrmPipelineRaw": {
         "type": "object"
       },
@@ -79569,6 +79716,12 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListCrmPicklists2200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CrmPicklist"
+        }
+      },
       "ListCrmPipelines2200Response": {
         "type": "array",
         "items": {
@@ -81045,6 +81198,9 @@
       "CrmLeadRawProperty": {
         "type": "object"
       },
+      "CrmPicklistRawProperty": {
+        "type": "object"
+      },
       "CrmPipelineRawProperty": {
         "type": "object"
       },
@@ -82285,6 +82441,24 @@
             {
               "value": "PAGE_VIEW",
               "name": "PageView"
+            }
+          ]
+        }
+      },
+      "CrmPicklistType": {
+        "enum": [
+          "INDUSTRY"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CrmPicklistType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "INDUSTRY",
+              "name": "Industry"
             }
           ]
         }
@@ -93566,6 +93740,7 @@
           "crm_lead_write",
           "crm_pipeline_read",
           "crm_pipeline_write",
+          "crm_picklist_read",
           "martech_list_read",
           "martech_list_write",
           "martech_member_read",
@@ -94135,6 +94310,10 @@
             {
               "value": "crm_pipeline_write",
               "name": "CrmPipelineWrite"
+            },
+            {
+              "value": "crm_picklist_read",
+              "name": "CrmPicklistRead"
             },
             {
               "value": "martech_list_read",
@@ -100320,6 +100499,7 @@
           "crm_event",
           "crm_lead",
           "crm_pipeline",
+          "crm_picklist",
           "hris_employee",
           "hris_group",
           "hris_payslip",
@@ -100629,6 +100809,10 @@
             {
               "value": "crm_pipeline",
               "name": "CrmPipeline"
+            },
+            {
+              "value": "crm_picklist",
+              "name": "CrmPicklist"
             },
             {
               "value": "hris_employee",
@@ -105809,6 +105993,43 @@
             {
               "value": "metadata",
               "name": "Metadata"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCrmPicklists2FieldsParameterItem": {
+        "enum": [
+          "id",
+          "name",
+          "label",
+          "type",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCrmPicklists2FieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "label",
+              "name": "Label"
+            },
+            {
+              "value": "type",
+              "name": "Type"
             },
             {
               "value": "raw",
@@ -156065,6 +156286,9 @@
     },
     {
       "name": "lead"
+    },
+    {
+      "name": "picklist"
     },
     {
       "name": "pipeline"
