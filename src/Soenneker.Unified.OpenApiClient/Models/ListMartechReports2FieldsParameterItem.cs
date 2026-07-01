@@ -104,6 +104,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Links,
         #pragma warning restore CS1591
+        [EnumMember(Value = "human_opens_total")]
+        #pragma warning disable CS1591
+        HumanOpensTotal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "human_unique_opens")]
+        #pragma warning disable CS1591
+        HumanUniqueOpens,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "human_open_rate")]
+        #pragma warning disable CS1591
+        HumanOpenRate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

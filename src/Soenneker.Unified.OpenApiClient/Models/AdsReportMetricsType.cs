@@ -336,6 +336,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         TopImpressionShare,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT")]
+        #pragma warning disable CS1591
+        AbsoluteTopImpressionRatePercent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOP_IMPRESSION_RATE_PERCENT")]
+        #pragma warning disable CS1591
+        TopImpressionRatePercent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VIDEO_FULLSCREENS")]
         #pragma warning disable CS1591
         VideoFullscreens,
@@ -467,18 +475,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "NOT_VIEWABLE_IMPRESSIONS")]
         #pragma warning disable CS1591
         NotViewableImpressions,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PUBLISHER_PLATFORM")]
-        #pragma warning disable CS1591
-        PublisherPlatform,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PLATFORM_POSITION")]
-        #pragma warning disable CS1591
-        PlatformPosition,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "IMPRESSION_DEVICE")]
-        #pragma warning disable CS1591
-        ImpressionDevice,
         #pragma warning restore CS1591
         [EnumMember(Value = "1D_VIEW")]
         #pragma warning disable CS1591

@@ -41,13 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType? Type { get; set; }
         /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsValue? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsValue Value { get; set; }
-#endif
+        public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics"/> and sets the default values.
         /// </summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "campaign", n => { Campaign = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign.CreateFromDiscriminatorValue); } },
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsValue>(global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -91,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>("campaign", Campaign);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsValue>("value", Value);
+            writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

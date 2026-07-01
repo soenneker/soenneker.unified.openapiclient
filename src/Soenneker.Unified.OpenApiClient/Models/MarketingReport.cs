@@ -38,6 +38,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? ForwardsOpens { get; set; }
         /// <summary>The hard_bounces property</summary>
         public double? HardBounces { get; set; }
+        /// <summary>The human_open_rate property</summary>
+        public double? HumanOpenRate { get; set; }
+        /// <summary>The human_opens_total property</summary>
+        public double? HumanOpensTotal { get; set; }
+        /// <summary>The human_unique_opens property</summary>
+        public double? HumanUniqueOpens { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +134,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "forwards_count", n => { ForwardsCount = n.GetDoubleValue(); } },
                 { "forwards_opens", n => { ForwardsOpens = n.GetDoubleValue(); } },
                 { "hard_bounces", n => { HardBounces = n.GetDoubleValue(); } },
+                { "human_open_rate", n => { HumanOpenRate = n.GetDoubleValue(); } },
+                { "human_opens_total", n => { HumanOpensTotal = n.GetDoubleValue(); } },
+                { "human_unique_opens", n => { HumanUniqueOpens = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_click_at", n => { LastClickAt = n.GetDateTimeOffsetValue(); } },
                 { "last_open_at", n => { LastOpenAt = n.GetDateTimeOffsetValue(); } },
@@ -162,6 +171,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("forwards_count", ForwardsCount);
             writer.WriteDoubleValue("forwards_opens", ForwardsOpens);
             writer.WriteDoubleValue("hard_bounces", HardBounces);
+            writer.WriteDoubleValue("human_open_rate", HumanOpenRate);
+            writer.WriteDoubleValue("human_opens_total", HumanOpensTotal);
+            writer.WriteDoubleValue("human_unique_opens", HumanUniqueOpens);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_click_at", LastClickAt);
             writer.WriteDateTimeOffsetValue("last_open_at", LastOpenAt);
