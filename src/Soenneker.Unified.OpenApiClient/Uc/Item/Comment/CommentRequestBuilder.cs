@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Comment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/comment{?call_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/comment{?call_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Comment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/comment{?call_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/uc/{connectionId}/comment{?call_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,6 +151,16 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Comment
             [QueryParameter("call_id")]
             public string CallId { get; set; }
 #endif
+            /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("end_lt")]
+            public string? EndLt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end_lt")]
+            public string EndLt { get; set; }
+#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,6 +212,16 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Comment
 #else
             [QueryParameter("sort")]
             public string Sort { get; set; }
+#endif
+            /// <summary>The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("start_gte")]
+            public string? StartGte { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start_gte")]
+            public string StartGte { get; set; }
 #endif
             /// <summary>Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

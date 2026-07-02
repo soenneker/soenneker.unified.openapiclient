@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.TaskNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/task{?fields*,limit*,offset*,order*,parent_id*,project_id*,query*,raw*,sort*,status*,updated_gte*,user_id*}", pathParameters)
+        public TaskRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/task{?end_lt*,fields*,limit*,offset*,order*,parent_id*,project_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.TaskNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/task{?fields*,limit*,offset*,order*,parent_id*,project_id*,query*,raw*,sort*,status*,updated_gte*,user_id*}", rawUrl)
+        public TaskRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/task{?end_lt*,fields*,limit*,offset*,order*,parent_id*,project_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,6 +141,16 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.TaskNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaskRequestBuilderGetQueryParameters 
         {
+            /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("end_lt")]
+            public string? EndLt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end_lt")]
+            public string EndLt { get; set; }
+#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,6 +222,16 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.TaskNamespace
 #else
             [QueryParameter("sort")]
             public string Sort { get; set; }
+#endif
+            /// <summary>The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("start_gte")]
+            public string? StartGte { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start_gte")]
+            public string StartGte { get; set; }
 #endif
             /// <summary>The status to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

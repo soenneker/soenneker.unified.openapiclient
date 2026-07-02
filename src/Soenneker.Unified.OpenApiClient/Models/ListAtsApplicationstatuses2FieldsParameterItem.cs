@@ -12,6 +12,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "job_id")]
+        #pragma warning disable CS1591
+        JobId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "status")]
         #pragma warning disable CS1591
         Status,

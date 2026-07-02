@@ -6436,6 +6436,9 @@
                "id": {
                   "type": "string"
                },
+               "job_id": {
+                  "type": "string"
+               },
                "status": {
                   "type": "string",
                   "enum": [
@@ -37447,6 +37450,24 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -41381,6 +41402,7 @@
                         "type": "string",
                         "enum": [
                            "id",
+                           "job_id",
                            "status",
                            "original_status",
                            "description",
@@ -69452,6 +69474,24 @@
                   "in": "query",
                   "required": false,
                   "description": "The status to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
                },
                {
                   "schema": {
