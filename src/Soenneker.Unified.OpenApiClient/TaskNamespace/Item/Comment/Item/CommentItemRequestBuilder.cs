@@ -209,11 +209,11 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.GetTaskComment2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.GetTaskCommentFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.GetTaskComment2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.GetTaskCommentFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,11 +236,11 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.PatchTaskComment2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchTaskCommentFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.PatchTaskComment2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchTaskCommentFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -263,11 +263,11 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.UpdateTaskComment2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateTaskCommentFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.UpdateTaskComment2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateTaskCommentFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

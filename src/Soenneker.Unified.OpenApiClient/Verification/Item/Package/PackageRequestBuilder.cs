@@ -103,11 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Verification.Item.Package
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackages2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackagesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackages2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListVerificationPackagesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

@@ -113,11 +113,11 @@ namespace Soenneker.Unified.OpenApiClient.Clubs.Item.Activity
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListClubsActivities2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListClubsActivitiesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListClubsActivities2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListClubsActivitiesFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>The group ID to filter by (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

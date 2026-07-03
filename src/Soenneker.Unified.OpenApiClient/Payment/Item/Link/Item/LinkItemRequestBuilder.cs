@@ -209,11 +209,11 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Link.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.GetPaymentLink2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.GetPaymentLinkFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.GetPaymentLink2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.GetPaymentLinkFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,11 +236,11 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Link.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.PatchPaymentLink2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchPaymentLinkFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.PatchPaymentLink2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchPaymentLinkFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -263,11 +263,11 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Link.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.UpdatePaymentLink2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdatePaymentLinkFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.UpdatePaymentLink2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdatePaymentLinkFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -113,11 +113,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalances2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalancesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalances2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingTrialbalancesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

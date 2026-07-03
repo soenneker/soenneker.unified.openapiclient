@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
+        /// <summary>The contact_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContactId { get; set; }
+#nullable restore
+#else
+        public string ContactId { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The discount_amount property</summary>
@@ -155,6 +163,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
                 { "fees", n => { Fees = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>(global::Soenneker.Unified.OpenApiClient.Models.AccountingFee.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -185,6 +194,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
+            writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>("fees", Fees);

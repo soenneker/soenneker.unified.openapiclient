@@ -32,6 +32,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingBill,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_vendorcredit")]
+        #pragma warning disable CS1591
+        AccountingVendorcredit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_creditmemo")]
         #pragma warning disable CS1591
         AccountingCreditmemo,

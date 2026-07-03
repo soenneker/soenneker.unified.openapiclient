@@ -21,6 +21,7 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Vendorcredit;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -127,6 +128,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance.TrialbalanceRequestBuilder Trialbalance
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance.TrialbalanceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The vendorcredit property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Vendorcredit.VendorcreditRequestBuilder Vendorcredit
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Vendorcredit.VendorcreditRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.WithConnectionItemRequestBuilder"/> and sets the default values.

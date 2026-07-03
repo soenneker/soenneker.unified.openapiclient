@@ -90,11 +90,11 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Picklist
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmPicklists2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmPicklistsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmPicklists2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListCrmPicklistsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }

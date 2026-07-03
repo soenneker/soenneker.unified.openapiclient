@@ -133,11 +133,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProfitlosses2FieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProfitlossesFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProfitlosses2FieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProfitlossesFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
