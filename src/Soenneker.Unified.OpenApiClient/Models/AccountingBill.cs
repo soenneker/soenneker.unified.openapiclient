@@ -122,6 +122,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBillStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
+        /// <summary>The term property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingBillTerm? Term { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
@@ -183,6 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "send", n => { Send = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
+                { "term", n => { Term = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillTerm>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -219,6 +222,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("send", Send);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillTerm>("term", Term);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

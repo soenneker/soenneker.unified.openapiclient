@@ -32,6 +32,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The lines_added property</summary>
+        public double? LinesAdded { get; set; }
+        /// <summary>The lines_changed property</summary>
+        public double? LinesChanged { get; set; }
+        /// <summary>The lines_deleted property</summary>
+        public double? LinesDeleted { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +100,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "lines_added", n => { LinesAdded = n.GetDoubleValue(); } },
+                { "lines_changed", n => { LinesChanged = n.GetDoubleValue(); } },
+                { "lines_deleted", n => { LinesDeleted = n.GetDoubleValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty.CreateFromDiscriminatorValue); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
@@ -111,6 +120,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("lines_added", LinesAdded);
+            writer.WriteDoubleValue("lines_changed", LinesChanged);
+            writer.WriteDoubleValue("lines_deleted", LinesDeleted);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>("raw", Raw);
             writer.WriteStringValue("repo_id", RepoId);

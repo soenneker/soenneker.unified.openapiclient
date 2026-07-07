@@ -61890,6 +61890,9 @@
           "refund_reason": {
             "type": "string"
           },
+          "term": {
+            "$ref": "#/components/schemas/AccountingInvoiceTerm"
+          },
           "lineitems": {
             "type": "array",
             "items": {
@@ -61951,6 +61954,9 @@
           },
           "bill_number": {
             "type": "string"
+          },
+          "term": {
+            "$ref": "#/components/schemas/AccountingBillTerm"
           },
           "created_at": {
             "type": "string",
@@ -71832,6 +71838,15 @@
           "branch_id": {
             "type": "string"
           },
+          "lines_added": {
+            "type": "number"
+          },
+          "lines_deleted": {
+            "type": "number"
+          },
+          "lines_changed": {
+            "type": "number"
+          },
           "raw": {
             "$ref": "#/components/schemas/RepoCommitRawProperty"
           }
@@ -71882,6 +71897,18 @@
             }
           },
           "repo_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "target_branch_id": {
+            "type": "string"
+          },
+          "source_branch_id": {
             "type": "string"
           },
           "status": {
@@ -86148,6 +86175,44 @@
           ]
         }
       },
+      "AccountingInvoiceTerm": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_10",
+          "NET_15",
+          "NET_30",
+          "NET_60"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingInvoiceTerm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
+            }
+          ]
+        }
+      },
       "AccountingInvoiceStatus": {
         "enum": [
           "DRAFT",
@@ -86258,6 +86323,44 @@
             {
               "value": "CREDITMEMO",
               "name": "Creditmemo"
+            }
+          ]
+        }
+      },
+      "AccountingBillTerm": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_10",
+          "NET_15",
+          "NET_30",
+          "NET_60"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingBillTerm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
             }
           ]
         }
@@ -123032,6 +123135,7 @@
           "currency",
           "notes",
           "refund_reason",
+          "term",
           "lineitems",
           "status",
           "url",
@@ -123129,6 +123233,10 @@
               "name": "RefundReason"
             },
             {
+              "value": "term",
+              "name": "Term"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -123189,6 +123297,7 @@
           "currency",
           "notes",
           "refund_reason",
+          "term",
           "lineitems",
           "status",
           "url",
@@ -123286,6 +123395,10 @@
               "name": "RefundReason"
             },
             {
+              "value": "term",
+              "name": "Term"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -123346,6 +123459,7 @@
           "currency",
           "notes",
           "refund_reason",
+          "term",
           "lineitems",
           "status",
           "url",
@@ -123443,6 +123557,10 @@
               "name": "RefundReason"
             },
             {
+              "value": "term",
+              "name": "Term"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -123503,6 +123621,7 @@
           "currency",
           "notes",
           "refund_reason",
+          "term",
           "lineitems",
           "status",
           "url",
@@ -123600,6 +123719,10 @@
               "name": "RefundReason"
             },
             {
+              "value": "term",
+              "name": "Term"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -123660,6 +123783,7 @@
           "currency",
           "notes",
           "refund_reason",
+          "term",
           "lineitems",
           "status",
           "url",
@@ -123757,6 +123881,10 @@
               "name": "RefundReason"
             },
             {
+              "value": "term",
+              "name": "Term"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -123799,6 +123927,7 @@
         "enum": [
           "id",
           "bill_number",
+          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -123838,6 +123967,10 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             },
             {
               "value": "created_at",
@@ -123946,6 +124079,7 @@
         "enum": [
           "id",
           "bill_number",
+          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -123985,6 +124119,10 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             },
             {
               "value": "created_at",
@@ -124093,6 +124231,7 @@
         "enum": [
           "id",
           "bill_number",
+          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124132,6 +124271,10 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             },
             {
               "value": "created_at",
@@ -124240,6 +124383,7 @@
         "enum": [
           "id",
           "bill_number",
+          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124279,6 +124423,10 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             },
             {
               "value": "created_at",
@@ -124387,6 +124535,7 @@
         "enum": [
           "id",
           "bill_number",
+          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124426,6 +124575,10 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             },
             {
               "value": "created_at",
@@ -147906,6 +148059,9 @@
           "repo_id",
           "message",
           "branch_id",
+          "lines_added",
+          "lines_deleted",
+          "lines_changed",
           "raw"
         ],
         "type": "string",
@@ -147943,6 +148099,18 @@
               "name": "BranchId"
             },
             {
+              "value": "lines_added",
+              "name": "LinesAdded"
+            },
+            {
+              "value": "lines_deleted",
+              "name": "LinesDeleted"
+            },
+            {
+              "value": "lines_changed",
+              "name": "LinesChanged"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -147958,6 +148126,9 @@
           "repo_id",
           "message",
           "branch_id",
+          "lines_added",
+          "lines_deleted",
+          "lines_changed",
           "raw"
         ],
         "type": "string",
@@ -147995,6 +148166,18 @@
               "name": "BranchId"
             },
             {
+              "value": "lines_added",
+              "name": "LinesAdded"
+            },
+            {
+              "value": "lines_deleted",
+              "name": "LinesDeleted"
+            },
+            {
+              "value": "lines_changed",
+              "name": "LinesChanged"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -148010,6 +148193,9 @@
           "repo_id",
           "message",
           "branch_id",
+          "lines_added",
+          "lines_deleted",
+          "lines_changed",
           "raw"
         ],
         "type": "string",
@@ -148047,6 +148233,18 @@
               "name": "BranchId"
             },
             {
+              "value": "lines_added",
+              "name": "LinesAdded"
+            },
+            {
+              "value": "lines_deleted",
+              "name": "LinesDeleted"
+            },
+            {
+              "value": "lines_changed",
+              "name": "LinesChanged"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -148062,6 +148260,9 @@
           "repo_id",
           "message",
           "branch_id",
+          "lines_added",
+          "lines_deleted",
+          "lines_changed",
           "raw"
         ],
         "type": "string",
@@ -148099,6 +148300,18 @@
               "name": "BranchId"
             },
             {
+              "value": "lines_added",
+              "name": "LinesAdded"
+            },
+            {
+              "value": "lines_deleted",
+              "name": "LinesDeleted"
+            },
+            {
+              "value": "lines_changed",
+              "name": "LinesChanged"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -148114,6 +148327,9 @@
           "repo_id",
           "message",
           "branch_id",
+          "lines_added",
+          "lines_deleted",
+          "lines_changed",
           "raw"
         ],
         "type": "string",
@@ -148151,6 +148367,18 @@
               "name": "BranchId"
             },
             {
+              "value": "lines_added",
+              "name": "LinesAdded"
+            },
+            {
+              "value": "lines_deleted",
+              "name": "LinesDeleted"
+            },
+            {
+              "value": "lines_changed",
+              "name": "LinesChanged"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -148164,6 +148392,10 @@
           "updated_at",
           "user_ids",
           "repo_id",
+          "title",
+          "notes",
+          "target_branch_id",
+          "source_branch_id",
           "status",
           "labels",
           "closed_at",
@@ -148197,6 +148429,22 @@
               "name": "RepoId"
             },
             {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "notes",
+              "name": "Notes"
+            },
+            {
+              "value": "target_branch_id",
+              "name": "TargetBranchId"
+            },
+            {
+              "value": "source_branch_id",
+              "name": "SourceBranchId"
+            },
+            {
               "value": "status",
               "name": "Status"
             },
@@ -148226,6 +148474,10 @@
           "updated_at",
           "user_ids",
           "repo_id",
+          "title",
+          "notes",
+          "target_branch_id",
+          "source_branch_id",
           "status",
           "labels",
           "closed_at",
@@ -148259,6 +148511,22 @@
               "name": "RepoId"
             },
             {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "notes",
+              "name": "Notes"
+            },
+            {
+              "value": "target_branch_id",
+              "name": "TargetBranchId"
+            },
+            {
+              "value": "source_branch_id",
+              "name": "SourceBranchId"
+            },
+            {
               "value": "status",
               "name": "Status"
             },
@@ -148288,6 +148556,10 @@
           "updated_at",
           "user_ids",
           "repo_id",
+          "title",
+          "notes",
+          "target_branch_id",
+          "source_branch_id",
           "status",
           "labels",
           "closed_at",
@@ -148321,6 +148593,22 @@
               "name": "RepoId"
             },
             {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "notes",
+              "name": "Notes"
+            },
+            {
+              "value": "target_branch_id",
+              "name": "TargetBranchId"
+            },
+            {
+              "value": "source_branch_id",
+              "name": "SourceBranchId"
+            },
+            {
               "value": "status",
               "name": "Status"
             },
@@ -148350,6 +148638,10 @@
           "updated_at",
           "user_ids",
           "repo_id",
+          "title",
+          "notes",
+          "target_branch_id",
+          "source_branch_id",
           "status",
           "labels",
           "closed_at",
@@ -148383,6 +148675,22 @@
               "name": "RepoId"
             },
             {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "notes",
+              "name": "Notes"
+            },
+            {
+              "value": "target_branch_id",
+              "name": "TargetBranchId"
+            },
+            {
+              "value": "source_branch_id",
+              "name": "SourceBranchId"
+            },
+            {
               "value": "status",
               "name": "Status"
             },
@@ -148412,6 +148720,10 @@
           "updated_at",
           "user_ids",
           "repo_id",
+          "title",
+          "notes",
+          "target_branch_id",
+          "source_branch_id",
           "status",
           "labels",
           "closed_at",
@@ -148443,6 +148755,22 @@
             {
               "value": "repo_id",
               "name": "RepoId"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "notes",
+              "name": "Notes"
+            },
+            {
+              "value": "target_branch_id",
+              "name": "TargetBranchId"
+            },
+            {
+              "value": "source_branch_id",
+              "name": "SourceBranchId"
             },
             {
               "value": "status",

@@ -130,6 +130,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
+        /// <summary>The term property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceTerm? Term { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
@@ -194,6 +196,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "send", n => { Send = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
+                { "term", n => { Term = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceTerm>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -232,6 +235,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("send", Send);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceTerm>("term", Term);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

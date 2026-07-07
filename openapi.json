@@ -9620,6 +9620,17 @@
                "refund_reason": {
                   "type": "string"
                },
+               "term": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_10",
+                     "NET_15",
+                     "NET_30",
+                     "NET_60"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingInvoice_lineitems"
                },
@@ -9700,6 +9711,17 @@
                },
                "bill_number": {
                   "type": "string"
+               },
+               "term": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_10",
+                     "NET_15",
+                     "NET_30",
+                     "NET_60"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                },
                "created_at": {
                   "type": "string",
@@ -20064,6 +20086,15 @@
                "branch_id": {
                   "type": "string"
                },
+               "lines_added": {
+                  "type": "number"
+               },
+               "lines_deleted": {
+                  "type": "number"
+               },
+               "lines_changed": {
+                  "type": "number"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -20115,6 +20146,18 @@
                   "$ref": "#/components/schemas/property_RepoPullrequest_user_ids"
                },
                "repo_id": {
+                  "type": "string"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "notes": {
+                  "type": "string"
+               },
+               "target_branch_id": {
+                  "type": "string"
+               },
+               "source_branch_id": {
                   "type": "string"
                },
                "status": {
@@ -52854,6 +52897,7 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "term",
                            "lineitems",
                            "status",
                            "url",
@@ -53046,6 +53090,7 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "term",
                            "lineitems",
                            "status",
                            "url",
@@ -53136,6 +53181,7 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "term",
                            "lineitems",
                            "status",
                            "url",
@@ -53233,6 +53279,7 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "term",
                            "lineitems",
                            "status",
                            "url",
@@ -53340,6 +53387,7 @@
                            "currency",
                            "notes",
                            "refund_reason",
+                           "term",
                            "lineitems",
                            "status",
                            "url",
@@ -53481,6 +53529,7 @@
                         "enum": [
                            "id",
                            "bill_number",
+                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53645,6 +53694,7 @@
                         "enum": [
                            "id",
                            "bill_number",
+                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53733,6 +53783,7 @@
                         "enum": [
                            "id",
                            "bill_number",
+                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53828,6 +53879,7 @@
                         "enum": [
                            "id",
                            "bill_number",
+                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53933,6 +53985,7 @@
                         "enum": [
                            "id",
                            "bill_number",
+                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -83411,6 +83464,9 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "lines_added",
+                           "lines_deleted",
+                           "lines_changed",
                            "raw"
                         ]
                      }
@@ -83556,6 +83612,9 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "lines_added",
+                           "lines_deleted",
+                           "lines_changed",
                            "raw"
                         ]
                      }
@@ -83625,6 +83684,9 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "lines_added",
+                           "lines_deleted",
+                           "lines_changed",
                            "raw"
                         ]
                      }
@@ -83701,6 +83763,9 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "lines_added",
+                           "lines_deleted",
+                           "lines_changed",
                            "raw"
                         ]
                      }
@@ -83787,6 +83852,9 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "lines_added",
+                           "lines_deleted",
+                           "lines_changed",
                            "raw"
                         ]
                      }
@@ -83923,6 +83991,10 @@
                            "updated_at",
                            "user_ids",
                            "repo_id",
+                           "title",
+                           "notes",
+                           "target_branch_id",
+                           "source_branch_id",
                            "status",
                            "labels",
                            "closed_at",
@@ -84061,6 +84133,10 @@
                            "updated_at",
                            "user_ids",
                            "repo_id",
+                           "title",
+                           "notes",
+                           "target_branch_id",
+                           "source_branch_id",
                            "status",
                            "labels",
                            "closed_at",
@@ -84132,6 +84208,10 @@
                            "updated_at",
                            "user_ids",
                            "repo_id",
+                           "title",
+                           "notes",
+                           "target_branch_id",
+                           "source_branch_id",
                            "status",
                            "labels",
                            "closed_at",
@@ -84210,6 +84290,10 @@
                            "updated_at",
                            "user_ids",
                            "repo_id",
+                           "title",
+                           "notes",
+                           "target_branch_id",
+                           "source_branch_id",
                            "status",
                            "labels",
                            "closed_at",
@@ -84298,6 +84382,10 @@
                            "updated_at",
                            "user_ids",
                            "repo_id",
+                           "title",
+                           "notes",
+                           "target_branch_id",
+                           "source_branch_id",
                            "status",
                            "labels",
                            "closed_at",

@@ -28,6 +28,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         RepoId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "title")]
+        #pragma warning disable CS1591
+        Title,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "notes")]
+        #pragma warning disable CS1591
+        Notes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "target_branch_id")]
+        #pragma warning disable CS1591
+        TargetBranchId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "source_branch_id")]
+        #pragma warning disable CS1591
+        SourceBranchId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "status")]
         #pragma warning disable CS1591
         Status,

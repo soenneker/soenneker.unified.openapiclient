@@ -88,6 +88,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         RefundReason,
         #pragma warning restore CS1591
+        [EnumMember(Value = "term")]
+        #pragma warning disable CS1591
+        Term,
+        #pragma warning restore CS1591
         [EnumMember(Value = "lineitems")]
         #pragma warning disable CS1591
         Lineitems,

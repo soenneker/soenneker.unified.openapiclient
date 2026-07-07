@@ -36,6 +36,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         BranchId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "lines_added")]
+        #pragma warning disable CS1591
+        LinesAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lines_deleted")]
+        #pragma warning disable CS1591
+        LinesDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lines_changed")]
+        #pragma warning disable CS1591
+        LinesChanged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
