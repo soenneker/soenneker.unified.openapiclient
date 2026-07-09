@@ -72,6 +72,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ContactId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "invoice_id")]
+        #pragma warning disable CS1591
+        InvoiceId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "currency")]
         #pragma warning disable CS1591
         Currency,

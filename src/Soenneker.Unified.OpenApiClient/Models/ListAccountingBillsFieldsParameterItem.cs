@@ -16,10 +16,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         BillNumber,
         #pragma warning restore CS1591
-        [EnumMember(Value = "term")]
-        #pragma warning disable CS1591
-        Term,
-        #pragma warning restore CS1591
         [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
         CreatedAt,
@@ -119,6 +115,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "term")]
+        #pragma warning disable CS1591
+        Term,
         #pragma warning restore CS1591
     }
 }

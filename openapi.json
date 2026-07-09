@@ -9712,17 +9712,6 @@
                "bill_number": {
                   "type": "string"
                },
-               "term": {
-                  "type": "string",
-                  "enum": [
-                     "ON_RECEIPT",
-                     "NET_10",
-                     "NET_15",
-                     "NET_30",
-                     "NET_60"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
                "created_at": {
                   "type": "string",
                   "format": "date-time"
@@ -9823,6 +9812,17 @@
                "raw": {
                   "type": "object",
                   "additionalProperties": true
+               },
+               "term": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_10",
+                     "NET_15",
+                     "NET_30",
+                     "NET_60"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -9900,6 +9900,9 @@
                   "type": "string"
                },
                "contact_id": {
+                  "type": "string"
+               },
+               "invoice_id": {
                   "type": "string"
                },
                "currency": {
@@ -53529,7 +53532,6 @@
                         "enum": [
                            "id",
                            "bill_number",
-                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53554,7 +53556,8 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw"
+                           "raw",
+                           "term"
                         ]
                      }
                   },
@@ -53694,7 +53697,6 @@
                         "enum": [
                            "id",
                            "bill_number",
-                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53719,7 +53721,8 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw"
+                           "raw",
+                           "term"
                         ]
                      }
                   },
@@ -53783,7 +53786,6 @@
                         "enum": [
                            "id",
                            "bill_number",
-                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53808,7 +53810,8 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw"
+                           "raw",
+                           "term"
                         ]
                      }
                   },
@@ -53879,7 +53882,6 @@
                         "enum": [
                            "id",
                            "bill_number",
-                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -53904,7 +53906,8 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw"
+                           "raw",
+                           "term"
                         ]
                      }
                   },
@@ -53985,7 +53988,6 @@
                         "enum": [
                            "id",
                            "bill_number",
-                           "term",
                            "created_at",
                            "updated_at",
                            "due_at",
@@ -54010,7 +54012,8 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw"
+                           "raw",
+                           "term"
                         ]
                      }
                   },
@@ -54157,6 +54160,7 @@
                            "balance_amount",
                            "creditmemo_number",
                            "contact_id",
+                           "invoice_id",
                            "currency",
                            "notes",
                            "refund_reason",
@@ -54321,6 +54325,7 @@
                            "balance_amount",
                            "creditmemo_number",
                            "contact_id",
+                           "invoice_id",
                            "currency",
                            "notes",
                            "refund_reason",
@@ -54409,6 +54414,7 @@
                            "balance_amount",
                            "creditmemo_number",
                            "contact_id",
+                           "invoice_id",
                            "currency",
                            "notes",
                            "refund_reason",
@@ -54504,6 +54510,7 @@
                            "balance_amount",
                            "creditmemo_number",
                            "contact_id",
+                           "invoice_id",
                            "currency",
                            "notes",
                            "refund_reason",
@@ -54609,6 +54616,7 @@
                            "balance_amount",
                            "creditmemo_number",
                            "contact_id",
+                           "invoice_id",
                            "currency",
                            "notes",
                            "refund_reason",

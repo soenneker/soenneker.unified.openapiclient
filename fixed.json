@@ -61955,9 +61955,6 @@
           "bill_number": {
             "type": "string"
           },
-          "term": {
-            "$ref": "#/components/schemas/AccountingBillTerm"
-          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -62045,6 +62042,9 @@
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingBillRawProperty"
+          },
+          "term": {
+            "$ref": "#/components/schemas/AccountingBillTerm"
           }
         }
       },
@@ -62122,6 +62122,9 @@
             "type": "string"
           },
           "contact_id": {
+            "type": "string"
+          },
+          "invoice_id": {
             "type": "string"
           },
           "currency": {
@@ -86327,44 +86330,6 @@
           ]
         }
       },
-      "AccountingBillTerm": {
-        "enum": [
-          "ON_RECEIPT",
-          "NET_10",
-          "NET_15",
-          "NET_30",
-          "NET_60"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "AccountingBillTerm",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ON_RECEIPT",
-              "name": "OnReceipt"
-            },
-            {
-              "value": "NET_10",
-              "name": "Net10"
-            },
-            {
-              "value": "NET_15",
-              "name": "Net15"
-            },
-            {
-              "value": "NET_30",
-              "name": "Net30"
-            },
-            {
-              "value": "NET_60",
-              "name": "Net60"
-            }
-          ]
-        }
-      },
       "AccountingBillStatus": {
         "enum": [
           "DRAFT",
@@ -86447,6 +86412,44 @@
             {
               "value": "charge_automatically",
               "name": "ChargeAutomatically"
+            }
+          ]
+        }
+      },
+      "AccountingBillTerm": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_10",
+          "NET_15",
+          "NET_30",
+          "NET_60"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingBillTerm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
             }
           ]
         }
@@ -123927,7 +123930,6 @@
         "enum": [
           "id",
           "bill_number",
-          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -123952,7 +123954,8 @@
           "attachments",
           "send",
           "organization_id",
-          "raw"
+          "raw",
+          "term"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123969,10 +123972,6 @@
               "name": "BillNumber"
             },
             {
-              "value": "term",
-              "name": "Term"
-            },
-            {
               "value": "created_at",
               "name": "CreatedAt"
             },
@@ -124071,6 +124070,10 @@
             {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             }
           ]
         }
@@ -124079,7 +124082,6 @@
         "enum": [
           "id",
           "bill_number",
-          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124104,7 +124106,8 @@
           "attachments",
           "send",
           "organization_id",
-          "raw"
+          "raw",
+          "term"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124121,10 +124124,6 @@
               "name": "BillNumber"
             },
             {
-              "value": "term",
-              "name": "Term"
-            },
-            {
               "value": "created_at",
               "name": "CreatedAt"
             },
@@ -124223,6 +124222,10 @@
             {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             }
           ]
         }
@@ -124231,7 +124234,6 @@
         "enum": [
           "id",
           "bill_number",
-          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124256,7 +124258,8 @@
           "attachments",
           "send",
           "organization_id",
-          "raw"
+          "raw",
+          "term"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124273,10 +124276,6 @@
               "name": "BillNumber"
             },
             {
-              "value": "term",
-              "name": "Term"
-            },
-            {
               "value": "created_at",
               "name": "CreatedAt"
             },
@@ -124375,6 +124374,10 @@
             {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             }
           ]
         }
@@ -124383,7 +124386,6 @@
         "enum": [
           "id",
           "bill_number",
-          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124408,7 +124410,8 @@
           "attachments",
           "send",
           "organization_id",
-          "raw"
+          "raw",
+          "term"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124425,10 +124428,6 @@
               "name": "BillNumber"
             },
             {
-              "value": "term",
-              "name": "Term"
-            },
-            {
               "value": "created_at",
               "name": "CreatedAt"
             },
@@ -124527,6 +124526,10 @@
             {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             }
           ]
         }
@@ -124535,7 +124538,6 @@
         "enum": [
           "id",
           "bill_number",
-          "term",
           "created_at",
           "updated_at",
           "due_at",
@@ -124560,7 +124562,8 @@
           "attachments",
           "send",
           "organization_id",
-          "raw"
+          "raw",
+          "term"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124575,10 +124578,6 @@
             {
               "value": "bill_number",
               "name": "BillNumber"
-            },
-            {
-              "value": "term",
-              "name": "Term"
             },
             {
               "value": "created_at",
@@ -124679,6 +124678,10 @@
             {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "term",
+              "name": "Term"
             }
           ]
         }
@@ -124701,6 +124704,7 @@
           "balance_amount",
           "creditmemo_number",
           "contact_id",
+          "invoice_id",
           "currency",
           "notes",
           "refund_reason",
@@ -124784,6 +124788,10 @@
               "name": "ContactId"
             },
             {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
               "value": "currency",
               "name": "Currency"
             },
@@ -124848,6 +124856,7 @@
           "balance_amount",
           "creditmemo_number",
           "contact_id",
+          "invoice_id",
           "currency",
           "notes",
           "refund_reason",
@@ -124931,6 +124940,10 @@
               "name": "ContactId"
             },
             {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
               "value": "currency",
               "name": "Currency"
             },
@@ -124995,6 +125008,7 @@
           "balance_amount",
           "creditmemo_number",
           "contact_id",
+          "invoice_id",
           "currency",
           "notes",
           "refund_reason",
@@ -125078,6 +125092,10 @@
               "name": "ContactId"
             },
             {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
               "value": "currency",
               "name": "Currency"
             },
@@ -125142,6 +125160,7 @@
           "balance_amount",
           "creditmemo_number",
           "contact_id",
+          "invoice_id",
           "currency",
           "notes",
           "refund_reason",
@@ -125225,6 +125244,10 @@
               "name": "ContactId"
             },
             {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
               "value": "currency",
               "name": "Currency"
             },
@@ -125289,6 +125312,7 @@
           "balance_amount",
           "creditmemo_number",
           "contact_id",
+          "invoice_id",
           "currency",
           "notes",
           "refund_reason",
@@ -125370,6 +125394,10 @@
             {
               "value": "contact_id",
               "name": "ContactId"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
             },
             {
               "value": "currency",

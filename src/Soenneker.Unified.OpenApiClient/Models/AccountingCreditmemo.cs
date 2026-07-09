@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The invoice_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceId { get; set; }
+#nullable restore
+#else
+        public string InvoiceId { get; set; }
+#endif
         /// <summary>The lineitems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -205,6 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);
