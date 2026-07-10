@@ -5430,6 +5430,117 @@
                "$ref": "#/components/schemas/AtsEmail"
             }
          },
+         "AtsMetadata": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "slug": {
+                  "type": "string"
+               },
+               "value": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               },
+               "namespace": {
+                  "type": "string"
+               },
+               "format": {
+                  "type": "string",
+                  "enum": [
+                     "TEXT",
+                     "NUMBER",
+                     "DATE",
+                     "BOOLEAN",
+                     "FILE",
+                     "TEXTAREA",
+                     "SINGLE_SELECT",
+                     "MULTIPLE_SELECT",
+                     "MEASUREMENT",
+                     "PRICE",
+                     "YES_NO",
+                     "CURRENCY",
+                     "URL"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "extra_data": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               }
+            }
+         },
+         "property_AtsActivity_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AtsMetadata"
+            }
+         },
          "AtsActivity": {
             "type": "object",
             "properties": {
@@ -5497,6 +5608,9 @@
                },
                "company_id": {
                   "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AtsActivity_metadata"
                },
                "raw": {
                   "type": "object",
@@ -5658,111 +5772,6 @@
             "type": "array",
             "items": {
                "type": "string"
-            }
-         },
-         "AtsMetadata": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "slug": {
-                  "type": "string"
-               },
-               "value": {
-                  "additionalProperties": true,
-                  "anyOf": [
-                     {
-                        "type": "object"
-                     },
-                     {
-                        "type": "string"
-                     },
-                     {
-                        "type": "number"
-                     },
-                     {
-                        "type": "boolean"
-                     },
-                     {
-                        "type": "array",
-                        "items": {
-                           "anyOf": [
-                              {
-                                 "type": "object"
-                              },
-                              {
-                                 "type": "string"
-                              },
-                              {
-                                 "type": "number"
-                              },
-                              {
-                                 "type": "boolean"
-                              }
-                           ]
-                        }
-                     }
-                  ]
-               },
-               "namespace": {
-                  "type": "string"
-               },
-               "format": {
-                  "type": "string",
-                  "enum": [
-                     "TEXT",
-                     "NUMBER",
-                     "DATE",
-                     "BOOLEAN",
-                     "FILE",
-                     "TEXTAREA",
-                     "SINGLE_SELECT",
-                     "MULTIPLE_SELECT",
-                     "MEASUREMENT",
-                     "PRICE",
-                     "YES_NO",
-                     "CURRENCY",
-                     "URL"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "extra_data": {
-                  "additionalProperties": true,
-                  "anyOf": [
-                     {
-                        "type": "object"
-                     },
-                     {
-                        "type": "string"
-                     },
-                     {
-                        "type": "number"
-                     },
-                     {
-                        "type": "boolean"
-                     },
-                     {
-                        "type": "array",
-                        "items": {
-                           "anyOf": [
-                              {
-                                 "type": "object"
-                              },
-                              {
-                                 "type": "string"
-                              },
-                              {
-                                 "type": "number"
-                              },
-                              {
-                                 "type": "boolean"
-                              }
-                           ]
-                        }
-                     }
-                  ]
-               }
             }
          },
          "property_AtsCandidate_metadata": {
@@ -38595,6 +38604,7 @@
                            "bcc",
                            "sub_type",
                            "company_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -38797,6 +38807,7 @@
                            "bcc",
                            "sub_type",
                            "company_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -38878,6 +38889,7 @@
                            "bcc",
                            "sub_type",
                            "company_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -38966,6 +38978,7 @@
                            "bcc",
                            "sub_type",
                            "company_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -39064,6 +39077,7 @@
                            "bcc",
                            "sub_type",
                            "company_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -71271,6 +71285,15 @@
                   "in": "query",
                   "required": false,
                   "description": "The task ID to filter by (reference to TaskTask)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "project_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The project ID to filter by (reference to TaskProject)"
                },
                {
                   "schema": {

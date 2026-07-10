@@ -106,6 +106,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +196,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "interview_id", n => { InterviewId = n.GetStringValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty.CreateFromDiscriminatorValue); } },
                 { "sub_type", n => { SubType = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -217,6 +226,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("interview_id", InterviewId);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("job_id", JobId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsActivityRawProperty>("raw", Raw);
             writer.WriteStringValue("sub_type", SubType);
             writer.WriteStringValue("title", Title);

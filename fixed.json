@@ -34482,6 +34482,14 @@
             }
           },
           {
+            "name": "project_id",
+            "in": "query",
+            "description": "The project ID to filter by (reference to TaskProject)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -58134,6 +58142,35 @@
           "$ref": "#/components/schemas/AtsEmail"
         }
       },
+      "AtsMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "value": {
+            "$ref": "#/components/schemas/AtsMetadataValue"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "format": {
+            "$ref": "#/components/schemas/AtsMetadataFormat"
+          },
+          "extra_data": {
+            "$ref": "#/components/schemas/AtsMetadataExtraData"
+          }
+        }
+      },
+      "PropertyAtsActivityMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AtsMetadata"
+        }
+      },
       "AtsActivity": {
         "type": "object",
         "properties": {
@@ -58212,6 +58249,12 @@
           },
           "company_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AtsMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AtsActivityRawProperty"
@@ -58364,29 +58407,6 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
-      },
-      "AtsMetadata": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          },
-          "value": {
-            "$ref": "#/components/schemas/AtsMetadataValue"
-          },
-          "namespace": {
-            "type": "string"
-          },
-          "format": {
-            "$ref": "#/components/schemas/AtsMetadataFormat"
-          },
-          "extra_data": {
-            "$ref": "#/components/schemas/AtsMetadataExtraData"
-          }
         }
       },
       "PropertyAtsCandidateMetadata": {
@@ -83559,72 +83579,6 @@
           ]
         }
       },
-      "AtsActivityType": {
-        "enum": [
-          "NOTE",
-          "TASK",
-          "EMAIL"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "AtsActivityType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "NOTE",
-              "name": "Note"
-            },
-            {
-              "value": "TASK",
-              "name": "Task"
-            },
-            {
-              "value": "EMAIL",
-              "name": "Email"
-            }
-          ]
-        }
-      },
-      "AtsTelephoneType": {
-        "enum": [
-          "WORK",
-          "HOME",
-          "OTHER",
-          "FAX",
-          "MOBILE"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "AtsTelephoneType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "WORK",
-              "name": "Work"
-            },
-            {
-              "value": "HOME",
-              "name": "Home"
-            },
-            {
-              "value": "OTHER",
-              "name": "Other"
-            },
-            {
-              "value": "FAX",
-              "name": "Fax"
-            },
-            {
-              "value": "MOBILE",
-              "name": "Mobile"
-            }
-          ]
-        }
-      },
       "AtsMetadataFormat": {
         "enum": [
           "TEXT",
@@ -83699,6 +83653,72 @@
             {
               "value": "URL",
               "name": "Url"
+            }
+          ]
+        }
+      },
+      "AtsActivityType": {
+        "enum": [
+          "NOTE",
+          "TASK",
+          "EMAIL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AtsActivityType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "NOTE",
+              "name": "Note"
+            },
+            {
+              "value": "TASK",
+              "name": "Task"
+            },
+            {
+              "value": "EMAIL",
+              "name": "Email"
+            }
+          ]
+        }
+      },
+      "AtsTelephoneType": {
+        "enum": [
+          "WORK",
+          "HOME",
+          "OTHER",
+          "FAX",
+          "MOBILE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AtsTelephoneType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "WORK",
+              "name": "Work"
+            },
+            {
+              "value": "HOME",
+              "name": "Home"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            },
+            {
+              "value": "FAX",
+              "name": "Fax"
+            },
+            {
+              "value": "MOBILE",
+              "name": "Mobile"
             }
           ]
         }
@@ -111002,6 +111022,7 @@
           "bcc",
           "sub_type",
           "company_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -111087,6 +111108,10 @@
               "name": "CompanyId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -111114,6 +111139,7 @@
           "bcc",
           "sub_type",
           "company_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -111199,6 +111225,10 @@
               "name": "CompanyId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -111226,6 +111256,7 @@
           "bcc",
           "sub_type",
           "company_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -111311,6 +111342,10 @@
               "name": "CompanyId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -111338,6 +111373,7 @@
           "bcc",
           "sub_type",
           "company_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -111423,6 +111459,10 @@
               "name": "CompanyId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -111450,6 +111490,7 @@
           "bcc",
           "sub_type",
           "company_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -111533,6 +111574,10 @@
             {
               "value": "company_id",
               "name": "CompanyId"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
             },
             {
               "value": "raw",

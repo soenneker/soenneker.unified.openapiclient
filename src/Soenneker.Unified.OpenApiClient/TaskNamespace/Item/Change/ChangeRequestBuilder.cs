@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Change
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/change{?fields*,limit*,offset*,order*,query*,raw*,sort*,task_id*,updated_gte*}", pathParameters)
+        public ChangeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/change{?fields*,limit*,offset*,order*,project_id*,query*,raw*,sort*,task_id*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Change
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/change{?fields*,limit*,offset*,order*,query*,raw*,sort*,task_id*,updated_gte*}", rawUrl)
+        public ChangeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/change{?fields*,limit*,offset*,order*,project_id*,query*,raw*,sort*,task_id*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -121,6 +121,16 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Change
 #else
             [QueryParameter("order")]
             public string Order { get; set; }
+#endif
+            /// <summary>The project ID to filter by (reference to TaskProject)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project_id")]
+            public string? ProjectId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project_id")]
+            public string ProjectId { get; set; }
 #endif
             /// <summary>Query string to search. eg. email address or name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
