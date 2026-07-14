@@ -12,6 +12,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OnReceipt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "NET_7")]
+        #pragma warning disable CS1591
+        Net7,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NET_10")]
         #pragma warning disable CS1591
         Net10,
@@ -19,6 +23,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "NET_15")]
         #pragma warning disable CS1591
         Net15,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NET_20")]
+        #pragma warning disable CS1591
+        Net20,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NET_25")]
+        #pragma warning disable CS1591
+        Net25,
         #pragma warning restore CS1591
         [EnumMember(Value = "NET_30")]
         #pragma warning disable CS1591

@@ -5,40 +5,48 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AccountingInvoiceTerm
+    public enum UpdateHrisDocumentFieldsParameterItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "ON_RECEIPT")]
+        [EnumMember(Value = "id")]
         #pragma warning disable CS1591
-        OnReceipt,
+        Id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_7")]
+        [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
-        Net7,
+        CreatedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_10")]
+        [EnumMember(Value = "updated_at")]
         #pragma warning disable CS1591
-        Net10,
+        UpdatedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_15")]
+        [EnumMember(Value = "document_url")]
         #pragma warning disable CS1591
-        Net15,
+        DocumentUrl,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_20")]
+        [EnumMember(Value = "document_data")]
         #pragma warning disable CS1591
-        Net20,
+        DocumentData,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_25")]
+        [EnumMember(Value = "filename")]
         #pragma warning disable CS1591
-        Net25,
+        Filename,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_30")]
+        [EnumMember(Value = "type")]
         #pragma warning disable CS1591
-        Net30,
+        Type,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_60")]
+        [EnumMember(Value = "user_id")]
         #pragma warning disable CS1591
-        Net60,
+        UserId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "company_id")]
+        #pragma warning disable CS1591
+        CompanyId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }

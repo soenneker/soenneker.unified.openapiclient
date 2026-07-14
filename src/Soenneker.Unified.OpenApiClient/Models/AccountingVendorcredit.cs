@@ -22,6 +22,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The apply_amount property</summary>
+        public double? ApplyAmount { get; set; }
         /// <summary>The balance_amount property</summary>
         public double? BalanceAmount { get; set; }
         /// <summary>The bill_id property</summary>
@@ -126,6 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "apply_amount", n => { ApplyAmount = n.GetDoubleValue(); } },
                 { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "bill_id", n => { BillId = n.GetStringValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
@@ -151,6 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteDoubleValue("apply_amount", ApplyAmount);
             writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteStringValue("bill_id", BillId);
             writer.WriteStringValue("contact_id", ContactId);

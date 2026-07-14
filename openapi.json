@@ -170,6 +170,9 @@
          "name": "bankaccount"
       },
       {
+         "name": "taxonomy"
+      },
+      {
          "name": "verification"
       },
       {
@@ -877,6 +880,16 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/HrisBankaccount"
+                  }
+               }
+            }
+         },
+         "HrisDocument": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/HrisDocument"
                   }
                }
             }
@@ -8340,6 +8353,149 @@
                "$ref": "#/components/schemas/HrisBankaccount"
             }
          },
+         "property_HrisTaxonomy_alternative_names": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "synonyms / alternative labels"
+         },
+         "property_HrisTaxonomy_role_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "ids of hris_taxonomy items of type ROLE that this skill relates to"
+         },
+         "HrisTaxonomy": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "SKILL",
+                     "KNOWLEDGE",
+                     "COMPETENCE",
+                     "ABILITY",
+                     "CERTIFICATION",
+                     "ROLE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "domain": {
+                  "type": "string"
+               },
+               "category": {
+                  "type": "string"
+               },
+               "subcategory": {
+                  "type": "string"
+               },
+               "parent_id": {
+                  "type": "string"
+               },
+               "alternative_names": {
+                  "$ref": "#/components/schemas/property_HrisTaxonomy_alternative_names"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "role_ids": {
+                  "$ref": "#/components/schemas/property_HrisTaxonomy_role_ids"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "HrisTaxonomies": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/HrisTaxonomy"
+            }
+         },
+         "HrisDocument": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "document_url": {
+                  "type": "string"
+               },
+               "document_data": {
+                  "type": "string"
+               },
+               "filename": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "CONTRACT",
+                     "OFFER_LETTER",
+                     "POLICY",
+                     "TAX",
+                     "ID",
+                     "VISA",
+                     "PAYSLIP",
+                     "BENEFITS",
+                     "CERTIFICATION",
+                     "PERFORMANCE_REVIEW",
+                     "ONBOARDING",
+                     "TERMINATION",
+                     "MEDICAL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "user_id": {
+                  "type": "string"
+               },
+               "company_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "HrisDocuments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/HrisDocument"
+            }
+         },
          "property_VerificationPackage_aliases": {
             "type": "array",
             "items": {
@@ -9633,8 +9789,11 @@
                   "type": "string",
                   "enum": [
                      "ON_RECEIPT",
+                     "NET_7",
                      "NET_10",
                      "NET_15",
+                     "NET_20",
+                     "NET_25",
                      "NET_30",
                      "NET_60"
                   ],
@@ -9826,8 +9985,11 @@
                   "type": "string",
                   "enum": [
                      "ON_RECEIPT",
+                     "NET_7",
                      "NET_10",
                      "NET_15",
+                     "NET_20",
+                     "NET_25",
                      "NET_30",
                      "NET_60"
                   ],
@@ -9962,6 +10124,9 @@
                "organization_id": {
                   "type": "string"
                },
+               "apply_amount": {
+                  "type": "number"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10044,6 +10209,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "apply_amount": {
+                  "type": "number"
                },
                "raw": {
                   "type": "object",
@@ -11449,6 +11617,12 @@
                "$ref": "#/components/schemas/AccountingLineitem"
             }
          },
+         "property_AccountingExpense_attachments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAttachment"
+            }
+         },
          "AccountingExpense": {
             "type": "object",
             "properties": {
@@ -11508,12 +11682,15 @@
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingExpense_lineitems"
                },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
+               "attachments": {
+                  "$ref": "#/components/schemas/property_AccountingExpense_attachments"
                },
                "organization_id": {
                   "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
                }
             }
          },
@@ -15761,6 +15938,7 @@
                   "enum": [
                      "UNSPECIFIED",
                      "BRAND_AWARENESS",
+                     "ENGAGEMENT",
                      "REACH",
                      "WEBSITE_TRAFFIC",
                      "LEADS",
@@ -17241,8 +17419,14 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "advertiser_name": {
+                  "type": "string"
+               },
                "creative_ids": {
                   "$ref": "#/components/schemas/property_AdsAd_creative_ids"
+               },
+               "logo_creative_id": {
+                  "type": "string"
                },
                "creative_asset_url": {
                   "type": "string"
@@ -17964,6 +18148,7 @@
                   "enum": [
                      "UNSPECIFIED",
                      "BRAND_AWARENESS",
+                     "ENGAGEMENT",
                      "REACH",
                      "WEBSITE_TRAFFIC",
                      "LEADS",
@@ -18977,8 +19162,14 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "advertiser_name": {
+                  "type": "string"
+               },
                "creative_ids": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_ad_creative_ids"
+               },
+               "logo_creative_id": {
+                  "type": "string"
                },
                "creative_asset_url": {
                   "type": "string"
@@ -23924,6 +24115,10 @@
                   "hris_benefit_write",
                   "hris_bankaccount_read",
                   "hris_bankaccount_write",
+                  "hris_document_read",
+                  "hris_document_write",
+                  "hris_taxonomy_read",
+                  "hris_taxonomy_write",
                   "uc_call_read",
                   "uc_contact_read",
                   "uc_contact_write",
@@ -26150,6 +26345,24 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "list_goal": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "list_role_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -26497,6 +26710,8 @@
                      "hris_deduction",
                      "hris_benefit",
                      "hris_bankaccount",
+                     "hris_document",
+                     "hris_taxonomy",
                      "martech_list",
                      "martech_member",
                      "martech_campaign",
@@ -49158,6 +49373,775 @@
             "operationId": "removeHrisBankaccount"
          }
       },
+      "/hris/{connection_id}/taxonomy/{id}": {
+         "get": {
+            "summary": "Retrieve a taxonomy",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "type",
+                           "name",
+                           "description",
+                           "domain",
+                           "category",
+                           "subcategory",
+                           "parent_id",
+                           "alternative_names",
+                           "url",
+                           "role_ids",
+                           "is_active",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Taxonomy",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "taxonomy"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisTaxonomy"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getHrisTaxonomy"
+         }
+      },
+      "/hris/{connection_id}/taxonomy": {
+         "get": {
+            "summary": "List all taxonomies",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "role_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The role ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "type",
+                           "name",
+                           "description",
+                           "domain",
+                           "category",
+                           "subcategory",
+                           "parent_id",
+                           "alternative_names",
+                           "url",
+                           "role_ids",
+                           "is_active",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "taxonomy"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisTaxonomies"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listHrisTaxonomies"
+         }
+      },
+      "/hris/{connection_id}/document": {
+         "post": {
+            "summary": "Create a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_url",
+                           "document_data",
+                           "filename",
+                           "type",
+                           "user_id",
+                           "company_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createHrisDocument"
+         },
+         "get": {
+            "summary": "List all documents",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "company_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The company ID to filter by (reference to HrisCompany)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_url",
+                           "document_data",
+                           "filename",
+                           "type",
+                           "user_id",
+                           "company_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisDocuments"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listHrisDocuments"
+         }
+      },
+      "/hris/{connection_id}/document/{id}": {
+         "get": {
+            "summary": "Retrieve a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_url",
+                           "document_data",
+                           "filename",
+                           "type",
+                           "user_id",
+                           "company_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getHrisDocument"
+         },
+         "put": {
+            "summary": "Update a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_url",
+                           "document_data",
+                           "filename",
+                           "type",
+                           "user_id",
+                           "company_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateHrisDocument"
+         },
+         "patch": {
+            "summary": "Update a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "document_url",
+                           "document_data",
+                           "filename",
+                           "type",
+                           "user_id",
+                           "company_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisDocument"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisDocument"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchHrisDocument"
+         },
+         "delete": {
+            "summary": "Remove a document",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Document",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "document"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeHrisDocument"
+         }
+      },
       "/verification/{connection_id}/package/{id}": {
          "get": {
             "summary": "Retrieve a package",
@@ -54185,6 +55169,7 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54350,6 +55335,7 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54439,6 +55425,7 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54535,6 +55522,7 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54641,6 +55629,7 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54787,6 +55776,7 @@
                            "lineitems",
                            "status",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -54940,6 +55930,7 @@
                            "lineitems",
                            "status",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -55017,6 +56008,7 @@
                            "lineitems",
                            "status",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -55101,6 +56093,7 @@
                            "lineitems",
                            "status",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -55195,6 +56188,7 @@
                            "lineitems",
                            "status",
                            "organization_id",
+                           "apply_amount",
                            "raw"
                         ]
                      }
@@ -59418,8 +60412,9 @@
                            "approved_at",
                            "approver_user_id",
                            "lineitems",
-                           "raw",
-                           "organization_id"
+                           "attachments",
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -59619,8 +60614,9 @@
                            "approved_at",
                            "approver_user_id",
                            "lineitems",
-                           "raw",
-                           "organization_id"
+                           "attachments",
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -59699,8 +60695,9 @@
                            "approved_at",
                            "approver_user_id",
                            "lineitems",
-                           "raw",
-                           "organization_id"
+                           "attachments",
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -59786,8 +60783,9 @@
                            "approved_at",
                            "approver_user_id",
                            "lineitems",
-                           "raw",
-                           "organization_id"
+                           "attachments",
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -59883,8 +60881,9 @@
                            "approved_at",
                            "approver_user_id",
                            "lineitems",
-                           "raw",
-                           "organization_id"
+                           "attachments",
+                           "organization_id",
+                           "raw"
                         ]
                      }
                   },
@@ -74699,6 +75698,14 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "goal",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -76969,7 +77976,9 @@
                            "organization_id",
                            "status",
                            "ad_type",
+                           "advertiser_name",
                            "creative_ids",
+                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -77145,7 +78154,9 @@
                            "organization_id",
                            "status",
                            "ad_type",
+                           "advertiser_name",
                            "creative_ids",
+                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -77227,7 +78238,9 @@
                            "organization_id",
                            "status",
                            "ad_type",
+                           "advertiser_name",
                            "creative_ids",
+                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -77316,7 +78329,9 @@
                            "organization_id",
                            "status",
                            "ad_type",
+                           "advertiser_name",
                            "creative_ids",
+                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -77415,7 +78430,9 @@
                            "organization_id",
                            "status",
                            "ad_type",
+                           "advertiser_name",
                            "creative_ids",
+                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",

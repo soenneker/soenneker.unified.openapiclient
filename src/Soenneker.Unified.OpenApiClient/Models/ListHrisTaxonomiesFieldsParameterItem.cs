@@ -5,7 +5,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum UpdateAccountingExpenseFieldsParameterItem
+    public enum ListHrisTaxonomiesFieldsParameterItem
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "id")]
@@ -20,69 +20,49 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UpdatedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_id")]
+        [EnumMember(Value = "type")]
         #pragma warning disable CS1591
-        UserId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "contact_id")]
-        #pragma warning disable CS1591
-        ContactId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "account_id")]
-        #pragma warning disable CS1591
-        AccountId,
+        Type,
         #pragma warning restore CS1591
         [EnumMember(Value = "name")]
         #pragma warning disable CS1591
         Name,
         #pragma warning restore CS1591
-        [EnumMember(Value = "payment_method")]
+        [EnumMember(Value = "description")]
         #pragma warning disable CS1591
-        PaymentMethod,
+        Description,
         #pragma warning restore CS1591
-        [EnumMember(Value = "posted_at")]
+        [EnumMember(Value = "domain")]
         #pragma warning disable CS1591
-        PostedAt,
+        Domain,
         #pragma warning restore CS1591
-        [EnumMember(Value = "total_amount")]
+        [EnumMember(Value = "category")]
         #pragma warning disable CS1591
-        TotalAmount,
+        Category,
         #pragma warning restore CS1591
-        [EnumMember(Value = "currency")]
+        [EnumMember(Value = "subcategory")]
         #pragma warning disable CS1591
-        Currency,
+        Subcategory,
         #pragma warning restore CS1591
-        [EnumMember(Value = "tax_amount")]
+        [EnumMember(Value = "parent_id")]
         #pragma warning disable CS1591
-        TaxAmount,
+        ParentId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "reimbursed_amount")]
+        [EnumMember(Value = "alternative_names")]
         #pragma warning disable CS1591
-        ReimbursedAmount,
+        AlternativeNames,
         #pragma warning restore CS1591
-        [EnumMember(Value = "reimbursed_at")]
+        [EnumMember(Value = "url")]
         #pragma warning disable CS1591
-        ReimbursedAt,
+        Url,
         #pragma warning restore CS1591
-        [EnumMember(Value = "approved_at")]
+        [EnumMember(Value = "role_ids")]
         #pragma warning disable CS1591
-        ApprovedAt,
+        RoleIds,
         #pragma warning restore CS1591
-        [EnumMember(Value = "approver_user_id")]
+        [EnumMember(Value = "is_active")]
         #pragma warning disable CS1591
-        ApproverUserId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "lineitems")]
-        #pragma warning disable CS1591
-        Lineitems,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "attachments")]
-        #pragma warning disable CS1591
-        Attachments,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "organization_id")]
-        #pragma warning disable CS1591
-        OrganizationId,
+        IsActive,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

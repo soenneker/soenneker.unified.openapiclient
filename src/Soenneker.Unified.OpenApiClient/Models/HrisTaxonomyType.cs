@@ -5,40 +5,32 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AccountingInvoiceTerm
+    public enum HrisTaxonomyType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "ON_RECEIPT")]
+        [EnumMember(Value = "SKILL")]
         #pragma warning disable CS1591
-        OnReceipt,
+        Skill,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_7")]
+        [EnumMember(Value = "KNOWLEDGE")]
         #pragma warning disable CS1591
-        Net7,
+        Knowledge,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_10")]
+        [EnumMember(Value = "COMPETENCE")]
         #pragma warning disable CS1591
-        Net10,
+        Competence,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_15")]
+        [EnumMember(Value = "ABILITY")]
         #pragma warning disable CS1591
-        Net15,
+        Ability,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_20")]
+        [EnumMember(Value = "CERTIFICATION")]
         #pragma warning disable CS1591
-        Net20,
+        Certification,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NET_25")]
+        [EnumMember(Value = "ROLE")]
         #pragma warning disable CS1591
-        Net25,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NET_30")]
-        #pragma warning disable CS1591
-        Net30,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NET_60")]
-        #pragma warning disable CS1591
-        Net60,
+        Role,
         #pragma warning restore CS1591
     }
 }

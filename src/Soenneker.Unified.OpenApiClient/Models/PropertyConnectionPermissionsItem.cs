@@ -564,6 +564,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisBankaccountWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_document_read")]
+        #pragma warning disable CS1591
+        HrisDocumentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_document_write")]
+        #pragma warning disable CS1591
+        HrisDocumentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_taxonomy_read")]
+        #pragma warning disable CS1591
+        HrisTaxonomyRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_taxonomy_write")]
+        #pragma warning disable CS1591
+        HrisTaxonomyWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "uc_call_read")]
         #pragma warning disable CS1591
         UcCallRead,

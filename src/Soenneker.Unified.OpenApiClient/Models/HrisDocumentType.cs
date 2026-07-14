@@ -5,76 +5,64 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CreateAccountingVendorcreditFieldsParameterItem
+    public enum HrisDocumentType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "id")]
+        [EnumMember(Value = "CONTRACT")]
+        #pragma warning disable CS1591
+        Contract,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OFFER_LETTER")]
+        #pragma warning disable CS1591
+        OfferLetter,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POLICY")]
+        #pragma warning disable CS1591
+        Policy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAX")]
+        #pragma warning disable CS1591
+        Tax,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ID")]
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "created_at")]
+        [EnumMember(Value = "VISA")]
         #pragma warning disable CS1591
-        CreatedAt,
+        Visa,
         #pragma warning restore CS1591
-        [EnumMember(Value = "updated_at")]
+        [EnumMember(Value = "PAYSLIP")]
         #pragma warning disable CS1591
-        UpdatedAt,
+        Payslip,
         #pragma warning restore CS1591
-        [EnumMember(Value = "due_at")]
+        [EnumMember(Value = "BENEFITS")]
         #pragma warning disable CS1591
-        DueAt,
+        Benefits,
         #pragma warning restore CS1591
-        [EnumMember(Value = "posted_at")]
+        [EnumMember(Value = "CERTIFICATION")]
         #pragma warning disable CS1591
-        PostedAt,
+        Certification,
         #pragma warning restore CS1591
-        [EnumMember(Value = "total_amount")]
+        [EnumMember(Value = "PERFORMANCE_REVIEW")]
         #pragma warning disable CS1591
-        TotalAmount,
+        PerformanceReview,
         #pragma warning restore CS1591
-        [EnumMember(Value = "balance_amount")]
+        [EnumMember(Value = "ONBOARDING")]
         #pragma warning disable CS1591
-        BalanceAmount,
+        Onboarding,
         #pragma warning restore CS1591
-        [EnumMember(Value = "account_id")]
+        [EnumMember(Value = "TERMINATION")]
         #pragma warning disable CS1591
-        AccountId,
+        Termination,
         #pragma warning restore CS1591
-        [EnumMember(Value = "currency")]
+        [EnumMember(Value = "MEDICAL")]
         #pragma warning disable CS1591
-        Currency,
+        Medical,
         #pragma warning restore CS1591
-        [EnumMember(Value = "contact_id")]
+        [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        ContactId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "bill_id")]
-        #pragma warning disable CS1591
-        BillId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "notes")]
-        #pragma warning disable CS1591
-        Notes,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "lineitems")]
-        #pragma warning disable CS1591
-        Lineitems,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "status")]
-        #pragma warning disable CS1591
-        Status,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "organization_id")]
-        #pragma warning disable CS1591
-        OrganizationId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "apply_amount")]
-        #pragma warning disable CS1591
-        ApplyAmount,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
+        Other,
         #pragma warning restore CS1591
     }
 }

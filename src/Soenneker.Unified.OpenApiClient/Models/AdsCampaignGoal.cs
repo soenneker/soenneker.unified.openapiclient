@@ -16,6 +16,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         BrandAwareness,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ENGAGEMENT")]
+        #pragma warning disable CS1591
+        Engagement,
+        #pragma warning restore CS1591
         [EnumMember(Value = "REACH")]
         #pragma warning disable CS1591
         Reach,

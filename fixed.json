@@ -17212,6 +17212,641 @@
         ]
       }
     },
+    "/hris/{connectionId}/taxonomy/{id}": {
+      "get": {
+        "tags": [
+          "hris",
+          "taxonomy"
+        ],
+        "summary": "Retrieve a taxonomy",
+        "operationId": "GetHrisTaxonomy",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetHrisTaxonomyFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Taxonomy",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisTaxonomy"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/hris/{connectionId}/taxonomy": {
+      "get": {
+        "tags": [
+          "hris",
+          "taxonomy"
+        ],
+        "summary": "List all taxonomies",
+        "operationId": "ListHrisTaxonomies",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role_id",
+            "in": "query",
+            "description": "The role ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListHrisTaxonomiesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListHrisTaxonomies200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/hris/{connectionId}/document": {
+      "post": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "Create a document",
+        "operationId": "CreateHrisDocument",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateHrisDocumentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisDocument"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisDocument"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "List all documents",
+        "operationId": "ListHrisDocuments",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company_id",
+            "in": "query",
+            "description": "The company ID to filter by (reference to HrisCompany)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListHrisDocumentsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListHrisDocuments200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/hris/{connectionId}/document/{id}": {
+      "get": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "Retrieve a document",
+        "operationId": "GetHrisDocument",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetHrisDocumentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisDocument"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "Update a document",
+        "operationId": "UpdateHrisDocument",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateHrisDocumentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisDocument"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisDocument"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "Update a document",
+        "operationId": "PatchHrisDocument",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchHrisDocumentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisDocument"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisDocument"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "hris",
+          "document"
+        ],
+        "summary": "Remove a document",
+        "operationId": "RemoveHrisDocument",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/verification/{connectionId}/package/{id}": {
       "get": {
         "tags": [
@@ -17804,7 +18439,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
                 }
               }
             }
@@ -18617,7 +19252,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
                 }
               }
             }
@@ -19055,7 +19690,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
                 }
               }
             }
@@ -19517,7 +20152,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
                 }
               }
             }
@@ -19954,7 +20589,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
                 }
               }
             }
@@ -20415,7 +21050,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
                 }
               }
             }
@@ -20853,7 +21488,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
                 }
               }
             }
@@ -21291,7 +21926,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
                 }
               }
             }
@@ -21729,7 +22364,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
                 }
               }
             }
@@ -22159,7 +22794,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
                 }
               }
             }
@@ -22771,7 +23406,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
                 }
               }
             }
@@ -23209,7 +23844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
                 }
               }
             }
@@ -23647,7 +24282,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
                 }
               }
             }
@@ -25047,7 +25682,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
                 }
               }
             }
@@ -25525,7 +26160,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
                 }
               }
             }
@@ -25987,7 +26622,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
                 }
               }
             }
@@ -26425,7 +27060,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
                 }
               }
             }
@@ -26881,7 +27516,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
                 }
               }
             }
@@ -27319,7 +27954,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
                 }
               }
             }
@@ -27749,7 +28384,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
                 }
               }
             }
@@ -28195,7 +28830,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
                 }
               }
             }
@@ -28657,7 +29292,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
                 }
               }
             }
@@ -29228,7 +29863,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
                 }
               }
             }
@@ -29674,7 +30309,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
                 }
               }
             }
@@ -30154,7 +30789,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson61"
                 }
               }
             }
@@ -30592,7 +31227,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson61"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson62"
                 }
               }
             }
@@ -31380,7 +32015,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson62"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson63"
                 }
               }
             }
@@ -32109,7 +32744,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson63"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson64"
                 }
               }
             }
@@ -32555,7 +33190,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson64"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson65"
                 }
               }
             }
@@ -33001,7 +33636,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson65"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson66"
                 }
               }
             }
@@ -33447,7 +34082,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson66"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson67"
                 }
               }
             }
@@ -33911,7 +34546,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson67"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson68"
                 }
               }
             }
@@ -34341,7 +34976,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson68"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson69"
                 }
               }
             }
@@ -34940,7 +35575,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson69"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson70"
                 }
               }
             }
@@ -35394,7 +36029,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson70"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson71"
                 }
               }
             }
@@ -35949,7 +36584,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson71"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson72"
                 }
               }
             }
@@ -36586,7 +37221,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson72"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson73"
                 }
               }
             }
@@ -37016,7 +37651,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson73"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson74"
                 }
               }
             }
@@ -37174,6 +37809,13 @@
             "name": "status",
             "in": "query",
             "description": "The status to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "goal",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -37470,7 +38112,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson74"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson75"
                 }
               }
             }
@@ -37916,7 +38558,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson75"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson76"
                 }
               }
             }
@@ -38354,7 +38996,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson76"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson77"
                 }
               }
             }
@@ -38832,7 +39474,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson77"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson78"
                 }
               }
             }
@@ -39286,7 +39928,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson78"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson79"
                 }
               }
             }
@@ -40245,7 +40887,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson79"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson80"
                 }
               }
             }
@@ -40675,7 +41317,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson80"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson81"
                 }
               }
             }
@@ -41113,7 +41755,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson81"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson82"
                 }
               }
             }
@@ -41559,7 +42201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson82"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson83"
                 }
               }
             }
@@ -41997,7 +42639,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson83"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson84"
                 }
               }
             }
@@ -42435,7 +43077,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson84"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson85"
                 }
               }
             }
@@ -42881,7 +43523,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson85"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson86"
                 }
               }
             }
@@ -43303,7 +43945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson86"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson87"
                 }
               }
             }
@@ -43733,7 +44375,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson87"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson88"
                 }
               }
             }
@@ -44163,7 +44805,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson88"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson89"
                 }
               }
             }
@@ -44601,7 +45243,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson89"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson90"
                 }
               }
             }
@@ -45031,7 +45673,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson90"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson91"
                 }
               }
             }
@@ -45455,7 +46097,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson91"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson92"
                 }
               }
             }
@@ -45877,7 +46519,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson92"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson93"
                 }
               }
             }
@@ -46474,7 +47116,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson93"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson94"
                 }
               }
             }
@@ -46912,7 +47554,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson94"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson95"
                 }
               }
             }
@@ -47350,7 +47992,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson95"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
                 }
               }
             }
@@ -47854,7 +48496,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
                 }
               }
             }
@@ -48284,7 +48926,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
                 }
               }
             }
@@ -49122,7 +49764,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
                 }
               }
             }
@@ -49552,7 +50194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
                 }
               }
             }
@@ -51032,7 +51674,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
                 }
               }
             }
@@ -51955,7 +52597,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
                 }
               }
             }
@@ -52387,7 +53029,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
                 }
               }
             }
@@ -52559,7 +53201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
                 }
               }
             }
@@ -53007,7 +53649,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
                 }
               }
             }
@@ -53195,7 +53837,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
                 }
               }
             }
@@ -53231,7 +53873,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
                 }
               }
             }
@@ -54054,7 +54696,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
                 }
               }
             }
@@ -54372,7 +55014,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
                 }
               }
             }
@@ -60639,6 +61281,129 @@
           "$ref": "#/components/schemas/HrisBankaccount"
         }
       },
+      "PropertyHrisTaxonomyAlternativeNames": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "synonyms / alternative labels"
+      },
+      "PropertyHrisTaxonomyRoleIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "ids of hris_taxonomy items of type ROLE that this skill relates to"
+      },
+      "HrisTaxonomy": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HrisTaxonomyType"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "subcategory": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "alternative_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "synonyms / alternative labels"
+          },
+          "url": {
+            "type": "string"
+          },
+          "role_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ids of hris_taxonomy items of type ROLE that this skill relates to"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/HrisTaxonomyRawProperty"
+          }
+        }
+      },
+      "HrisTaxonomies": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisTaxonomy"
+        }
+      },
+      "HrisDocument": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "document_url": {
+            "type": "string"
+          },
+          "document_data": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HrisDocumentType"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "company_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/HrisDocumentRawProperty"
+          }
+        }
+      },
+      "HrisDocuments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisDocument"
+        }
+      },
       "PropertyVerificationPackageAliases": {
         "type": "array",
         "items": {
@@ -62183,6 +62948,9 @@
           "organization_id": {
             "type": "string"
           },
+          "apply_amount": {
+            "type": "number"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingCreditmemoRawProperty"
           }
@@ -62254,6 +63022,9 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "apply_amount": {
+            "type": "number"
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingVendorcreditRawProperty"
@@ -63718,6 +64489,12 @@
           "$ref": "#/components/schemas/AccountingLineitem"
         }
       },
+      "PropertyAccountingExpenseAttachments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAttachment"
+        }
+      },
       "AccountingExpense": {
         "type": "object",
         "properties": {
@@ -63780,11 +64557,17 @@
               "$ref": "#/components/schemas/AccountingLineitem"
             }
           },
-          "raw": {
-            "$ref": "#/components/schemas/AccountingExpenseRawProperty"
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingAttachment"
+            }
           },
           "organization_id": {
             "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingExpenseRawProperty"
           }
         }
       },
@@ -69071,11 +69854,17 @@
           "ad_type": {
             "$ref": "#/components/schemas/AdsAdAdType"
           },
+          "advertiser_name": {
+            "type": "string"
+          },
           "creative_ids": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "logo_creative_id": {
+            "type": "string"
           },
           "creative_asset_url": {
             "type": "string"
@@ -70817,11 +71606,17 @@
           "ad_type": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsAdAdType"
           },
+          "advertiser_name": {
+            "type": "string"
+          },
           "creative_ids": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "logo_creative_id": {
+            "type": "string"
           },
           "creative_asset_url": {
             "type": "string"
@@ -76238,6 +77033,12 @@
           },
           "list_dimension": {
             "$ref": "#/components/schemas/IntegrationSupportListDimension"
+          },
+          "list_goal": {
+            "$ref": "#/components/schemas/IntegrationSupportListGoal"
+          },
+          "list_role_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListRoleId"
           }
         }
       },
@@ -78532,6 +79333,12 @@
       "HrisBankaccountRaw": {
         "type": "object"
       },
+      "HrisTaxonomyRaw": {
+        "type": "object"
+      },
+      "HrisDocumentRaw": {
+        "type": "object"
+      },
       "VerificationPackageRaw": {
         "type": "object"
       },
@@ -80664,6 +81471,23 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListHrisTaxonomies200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisTaxonomy"
+        }
+      },
+      "ListHrisDocuments200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisDocument"
+        }
+      },
+      "DefaultResponseResponseJson36": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListVerificationPackages200Response": {
         "type": "array",
         "items": {
@@ -80676,7 +81500,7 @@
           "$ref": "#/components/schemas/VerificationRequest"
         }
       },
-      "DefaultResponseResponseJson36": {
+      "DefaultResponseResponseJson37": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80765,7 +81589,7 @@
           "$ref": "#/components/schemas/AccountingAccount"
         }
       },
-      "DefaultResponseResponseJson37": {
+      "DefaultResponseResponseJson38": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80776,7 +81600,7 @@
           "$ref": "#/components/schemas/AccountingJournal"
         }
       },
-      "DefaultResponseResponseJson38": {
+      "DefaultResponseResponseJson39": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80787,7 +81611,7 @@
           "$ref": "#/components/schemas/AccountingTransaction"
         }
       },
-      "DefaultResponseResponseJson39": {
+      "DefaultResponseResponseJson40": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80798,7 +81622,7 @@
           "$ref": "#/components/schemas/AccountingContact"
         }
       },
-      "DefaultResponseResponseJson40": {
+      "DefaultResponseResponseJson41": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80809,7 +81633,7 @@
           "$ref": "#/components/schemas/AccountingInvoice"
         }
       },
-      "DefaultResponseResponseJson41": {
+      "DefaultResponseResponseJson42": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80820,7 +81644,7 @@
           "$ref": "#/components/schemas/AccountingBill"
         }
       },
-      "DefaultResponseResponseJson42": {
+      "DefaultResponseResponseJson43": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80831,7 +81655,7 @@
           "$ref": "#/components/schemas/AccountingCreditmemo"
         }
       },
-      "DefaultResponseResponseJson43": {
+      "DefaultResponseResponseJson44": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80842,7 +81666,7 @@
           "$ref": "#/components/schemas/AccountingVendorcredit"
         }
       },
-      "DefaultResponseResponseJson44": {
+      "DefaultResponseResponseJson45": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80853,7 +81677,7 @@
           "$ref": "#/components/schemas/AccountingTaxrate"
         }
       },
-      "DefaultResponseResponseJson45": {
+      "DefaultResponseResponseJson46": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80870,7 +81694,7 @@
           "$ref": "#/components/schemas/AccountingOrder"
         }
       },
-      "DefaultResponseResponseJson46": {
+      "DefaultResponseResponseJson47": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80881,7 +81705,7 @@
           "$ref": "#/components/schemas/AccountingPurchaseorder"
         }
       },
-      "DefaultResponseResponseJson47": {
+      "DefaultResponseResponseJson48": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80892,7 +81716,7 @@
           "$ref": "#/components/schemas/AccountingSalesorder"
         }
       },
-      "DefaultResponseResponseJson48": {
+      "DefaultResponseResponseJson49": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80933,7 +81757,7 @@
           "$ref": "#/components/schemas/AccountingCategory"
         }
       },
-      "DefaultResponseResponseJson49": {
+      "DefaultResponseResponseJson50": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80944,7 +81768,7 @@
           "$ref": "#/components/schemas/AccountingExpense"
         }
       },
-      "DefaultResponseResponseJson50": {
+      "DefaultResponseResponseJson51": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80955,7 +81779,7 @@
           "$ref": "#/components/schemas/StorageFile"
         }
       },
-      "DefaultResponseResponseJson51": {
+      "DefaultResponseResponseJson52": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80966,7 +81790,7 @@
           "$ref": "#/components/schemas/CommerceItem"
         }
       },
-      "DefaultResponseResponseJson52": {
+      "DefaultResponseResponseJson53": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80977,7 +81801,7 @@
           "$ref": "#/components/schemas/CommerceCollection"
         }
       },
-      "DefaultResponseResponseJson53": {
+      "DefaultResponseResponseJson54": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80988,7 +81812,7 @@
           "$ref": "#/components/schemas/CommerceInventory"
         }
       },
-      "DefaultResponseResponseJson54": {
+      "DefaultResponseResponseJson55": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -80999,7 +81823,7 @@
           "$ref": "#/components/schemas/CommerceLocation"
         }
       },
-      "DefaultResponseResponseJson55": {
+      "DefaultResponseResponseJson56": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81010,7 +81834,7 @@
           "$ref": "#/components/schemas/CommerceReview"
         }
       },
-      "DefaultResponseResponseJson56": {
+      "DefaultResponseResponseJson57": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81021,7 +81845,7 @@
           "$ref": "#/components/schemas/CommerceReservation"
         }
       },
-      "DefaultResponseResponseJson57": {
+      "DefaultResponseResponseJson58": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81038,7 +81862,7 @@
           "$ref": "#/components/schemas/CommerceSaleschannel"
         }
       },
-      "DefaultResponseResponseJson58": {
+      "DefaultResponseResponseJson59": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81049,7 +81873,7 @@
           "$ref": "#/components/schemas/CommerceItemvariant"
         }
       },
-      "DefaultResponseResponseJson59": {
+      "DefaultResponseResponseJson60": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81060,7 +81884,7 @@
           "$ref": "#/components/schemas/PaymentPayment"
         }
       },
-      "DefaultResponseResponseJson60": {
+      "DefaultResponseResponseJson61": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81071,7 +81895,7 @@
           "$ref": "#/components/schemas/PaymentLink"
         }
       },
-      "DefaultResponseResponseJson61": {
+      "DefaultResponseResponseJson62": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81094,7 +81918,7 @@
           "$ref": "#/components/schemas/PaymentSubscription"
         }
       },
-      "DefaultResponseResponseJson62": {
+      "DefaultResponseResponseJson63": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81111,7 +81935,7 @@
           "$ref": "#/components/schemas/KmsSpace"
         }
       },
-      "DefaultResponseResponseJson63": {
+      "DefaultResponseResponseJson64": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81122,7 +81946,7 @@
           "$ref": "#/components/schemas/KmsPage"
         }
       },
-      "DefaultResponseResponseJson64": {
+      "DefaultResponseResponseJson65": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81133,7 +81957,7 @@
           "$ref": "#/components/schemas/KmsComment"
         }
       },
-      "DefaultResponseResponseJson65": {
+      "DefaultResponseResponseJson66": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81144,7 +81968,7 @@
           "$ref": "#/components/schemas/TaskProject"
         }
       },
-      "DefaultResponseResponseJson66": {
+      "DefaultResponseResponseJson67": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81155,7 +81979,7 @@
           "$ref": "#/components/schemas/TaskTask"
         }
       },
-      "DefaultResponseResponseJson67": {
+      "DefaultResponseResponseJson68": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81166,7 +81990,7 @@
           "$ref": "#/components/schemas/TaskComment"
         }
       },
-      "DefaultResponseResponseJson68": {
+      "DefaultResponseResponseJson69": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81183,7 +82007,7 @@
           "$ref": "#/components/schemas/CalendarCalendar"
         }
       },
-      "DefaultResponseResponseJson69": {
+      "DefaultResponseResponseJson70": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81194,7 +82018,7 @@
           "$ref": "#/components/schemas/CalendarEvent"
         }
       },
-      "DefaultResponseResponseJson70": {
+      "DefaultResponseResponseJson71": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81211,7 +82035,7 @@
           "$ref": "#/components/schemas/CalendarLink"
         }
       },
-      "DefaultResponseResponseJson71": {
+      "DefaultResponseResponseJson72": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81228,7 +82052,7 @@
           "$ref": "#/components/schemas/CalendarWebinar"
         }
       },
-      "DefaultResponseResponseJson72": {
+      "DefaultResponseResponseJson73": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81239,7 +82063,7 @@
           "$ref": "#/components/schemas/AdsOrganization"
         }
       },
-      "DefaultResponseResponseJson73": {
+      "DefaultResponseResponseJson74": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81250,7 +82074,7 @@
           "$ref": "#/components/schemas/AdsCampaign"
         }
       },
-      "DefaultResponseResponseJson74": {
+      "DefaultResponseResponseJson75": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81261,7 +82085,7 @@
           "$ref": "#/components/schemas/AdsCreative"
         }
       },
-      "DefaultResponseResponseJson75": {
+      "DefaultResponseResponseJson76": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81272,7 +82096,7 @@
           "$ref": "#/components/schemas/AdsInsertionorder"
         }
       },
-      "DefaultResponseResponseJson76": {
+      "DefaultResponseResponseJson77": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81283,7 +82107,7 @@
           "$ref": "#/components/schemas/AdsGroup"
         }
       },
-      "DefaultResponseResponseJson77": {
+      "DefaultResponseResponseJson78": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81294,7 +82118,7 @@
           "$ref": "#/components/schemas/AdsAd"
         }
       },
-      "DefaultResponseResponseJson78": {
+      "DefaultResponseResponseJson79": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81323,7 +82147,7 @@
           "$ref": "#/components/schemas/LmsCourse"
         }
       },
-      "DefaultResponseResponseJson79": {
+      "DefaultResponseResponseJson80": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81334,7 +82158,7 @@
           "$ref": "#/components/schemas/LmsClass"
         }
       },
-      "DefaultResponseResponseJson80": {
+      "DefaultResponseResponseJson81": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81345,7 +82169,7 @@
           "$ref": "#/components/schemas/LmsStudent"
         }
       },
-      "DefaultResponseResponseJson81": {
+      "DefaultResponseResponseJson82": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81356,7 +82180,7 @@
           "$ref": "#/components/schemas/LmsInstructor"
         }
       },
-      "DefaultResponseResponseJson82": {
+      "DefaultResponseResponseJson83": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81367,7 +82191,7 @@
           "$ref": "#/components/schemas/LmsContent"
         }
       },
-      "DefaultResponseResponseJson83": {
+      "DefaultResponseResponseJson84": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81378,7 +82202,7 @@
           "$ref": "#/components/schemas/LmsCollection"
         }
       },
-      "DefaultResponseResponseJson84": {
+      "DefaultResponseResponseJson85": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81389,7 +82213,7 @@
           "$ref": "#/components/schemas/LmsActivity"
         }
       },
-      "DefaultResponseResponseJson85": {
+      "DefaultResponseResponseJson86": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81400,7 +82224,7 @@
           "$ref": "#/components/schemas/RepoOrganization"
         }
       },
-      "DefaultResponseResponseJson86": {
+      "DefaultResponseResponseJson87": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81411,7 +82235,7 @@
           "$ref": "#/components/schemas/RepoRepository"
         }
       },
-      "DefaultResponseResponseJson87": {
+      "DefaultResponseResponseJson88": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81422,7 +82246,7 @@
           "$ref": "#/components/schemas/RepoBranch"
         }
       },
-      "DefaultResponseResponseJson88": {
+      "DefaultResponseResponseJson89": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81433,7 +82257,7 @@
           "$ref": "#/components/schemas/RepoCommit"
         }
       },
-      "DefaultResponseResponseJson89": {
+      "DefaultResponseResponseJson90": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81444,7 +82268,7 @@
           "$ref": "#/components/schemas/RepoPullrequest"
         }
       },
-      "DefaultResponseResponseJson90": {
+      "DefaultResponseResponseJson91": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81455,7 +82279,7 @@
           "$ref": "#/components/schemas/MetadataMetadata"
         }
       },
-      "DefaultResponseResponseJson91": {
+      "DefaultResponseResponseJson92": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81466,7 +82290,7 @@
           "$ref": "#/components/schemas/FormsForm"
         }
       },
-      "DefaultResponseResponseJson92": {
+      "DefaultResponseResponseJson93": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81483,7 +82307,7 @@
           "$ref": "#/components/schemas/DatastoreDatabase"
         }
       },
-      "DefaultResponseResponseJson93": {
+      "DefaultResponseResponseJson94": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81494,7 +82318,7 @@
           "$ref": "#/components/schemas/DatastoreTable"
         }
       },
-      "DefaultResponseResponseJson94": {
+      "DefaultResponseResponseJson95": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81505,7 +82329,7 @@
           "$ref": "#/components/schemas/DatastoreRecord"
         }
       },
-      "DefaultResponseResponseJson95": {
+      "DefaultResponseResponseJson96": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81516,7 +82340,7 @@
           "$ref": "#/components/schemas/ShippingShipment"
         }
       },
-      "DefaultResponseResponseJson96": {
+      "DefaultResponseResponseJson97": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81527,7 +82351,7 @@
           "$ref": "#/components/schemas/ShippingLabel"
         }
       },
-      "DefaultResponseResponseJson97": {
+      "DefaultResponseResponseJson98": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81550,7 +82374,7 @@
           "$ref": "#/components/schemas/SigningDocument"
         }
       },
-      "DefaultResponseResponseJson98": {
+      "DefaultResponseResponseJson99": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81561,7 +82385,7 @@
           "$ref": "#/components/schemas/SigningSignatory"
         }
       },
-      "DefaultResponseResponseJson99": {
+      "DefaultResponseResponseJson100": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81608,7 +82432,7 @@
           "$ref": "#/components/schemas/AnalyticsProperty"
         }
       },
-      "DefaultResponseResponseJson100": {
+      "DefaultResponseResponseJson101": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81631,7 +82455,7 @@
           "$ref": "#/components/schemas/AnalyticsVisitor"
         }
       },
-      "DefaultResponseResponseJson101": {
+      "DefaultResponseResponseJson102": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81648,7 +82472,7 @@
           "$ref": "#/components/schemas/Connection"
         }
       },
-      "DefaultResponseResponseJson102": {
+      "DefaultResponseResponseJson103": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81659,7 +82483,7 @@
           "$ref": "#/components/schemas/SecretsManager"
         }
       },
-      "DefaultResponseResponseJson103": {
+      "DefaultResponseResponseJson104": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81682,7 +82506,7 @@
           "$ref": "#/components/schemas/Integration"
         }
       },
-      "DefaultResponseResponseJson104": {
+      "DefaultResponseResponseJson105": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81693,12 +82517,12 @@
           "$ref": "#/components/schemas/Webhook"
         }
       },
-      "DefaultResponseResponseJson105": {
+      "DefaultResponseResponseJson106": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson106": {
+      "DefaultResponseResponseJson107": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81749,7 +82573,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson107": {
+      "DefaultResponseResponseJson108": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81760,7 +82584,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson108": {
+      "DefaultResponseResponseJson109": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81917,6 +82741,12 @@
         "type": "object"
       },
       "HrisBankaccountRawProperty": {
+        "type": "object"
+      },
+      "HrisTaxonomyRawProperty": {
+        "type": "object"
+      },
+      "HrisDocumentRawProperty": {
         "type": "object"
       },
       "VerificationPackageRawProperty": {
@@ -85662,6 +86492,132 @@
           ]
         }
       },
+      "HrisTaxonomyType": {
+        "enum": [
+          "SKILL",
+          "KNOWLEDGE",
+          "COMPETENCE",
+          "ABILITY",
+          "CERTIFICATION",
+          "ROLE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "HrisTaxonomyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SKILL",
+              "name": "Skill"
+            },
+            {
+              "value": "KNOWLEDGE",
+              "name": "Knowledge"
+            },
+            {
+              "value": "COMPETENCE",
+              "name": "Competence"
+            },
+            {
+              "value": "ABILITY",
+              "name": "Ability"
+            },
+            {
+              "value": "CERTIFICATION",
+              "name": "Certification"
+            },
+            {
+              "value": "ROLE",
+              "name": "Role"
+            }
+          ]
+        }
+      },
+      "HrisDocumentType": {
+        "enum": [
+          "CONTRACT",
+          "OFFER_LETTER",
+          "POLICY",
+          "TAX",
+          "ID",
+          "VISA",
+          "PAYSLIP",
+          "BENEFITS",
+          "CERTIFICATION",
+          "PERFORMANCE_REVIEW",
+          "ONBOARDING",
+          "TERMINATION",
+          "MEDICAL",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "HrisDocumentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CONTRACT",
+              "name": "Contract"
+            },
+            {
+              "value": "OFFER_LETTER",
+              "name": "OfferLetter"
+            },
+            {
+              "value": "POLICY",
+              "name": "Policy"
+            },
+            {
+              "value": "TAX",
+              "name": "Tax"
+            },
+            {
+              "value": "ID",
+              "name": "Id"
+            },
+            {
+              "value": "VISA",
+              "name": "Visa"
+            },
+            {
+              "value": "PAYSLIP",
+              "name": "Payslip"
+            },
+            {
+              "value": "BENEFITS",
+              "name": "Benefits"
+            },
+            {
+              "value": "CERTIFICATION",
+              "name": "Certification"
+            },
+            {
+              "value": "PERFORMANCE_REVIEW",
+              "name": "PerformanceReview"
+            },
+            {
+              "value": "ONBOARDING",
+              "name": "Onboarding"
+            },
+            {
+              "value": "TERMINATION",
+              "name": "Termination"
+            },
+            {
+              "value": "MEDICAL",
+              "name": "Medical"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "VerificationParameterType": {
         "enum": [
           "TEXT",
@@ -86201,8 +87157,11 @@
       "AccountingInvoiceTerm": {
         "enum": [
           "ON_RECEIPT",
+          "NET_7",
           "NET_10",
           "NET_15",
+          "NET_20",
+          "NET_25",
           "NET_30",
           "NET_60"
         ],
@@ -86218,12 +87177,24 @@
               "name": "OnReceipt"
             },
             {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
               "value": "NET_10",
               "name": "Net10"
             },
             {
               "value": "NET_15",
               "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
             },
             {
               "value": "NET_30",
@@ -86439,8 +87410,11 @@
       "AccountingBillTerm": {
         "enum": [
           "ON_RECEIPT",
+          "NET_7",
           "NET_10",
           "NET_15",
+          "NET_20",
+          "NET_25",
           "NET_30",
           "NET_60"
         ],
@@ -86456,12 +87430,24 @@
               "name": "OnReceipt"
             },
             {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
               "value": "NET_10",
               "name": "Net10"
             },
             {
               "value": "NET_15",
               "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
             },
             {
               "value": "NET_30",
@@ -88612,6 +89598,7 @@
         "enum": [
           "UNSPECIFIED",
           "BRAND_AWARENESS",
+          "ENGAGEMENT",
           "REACH",
           "WEBSITE_TRAFFIC",
           "LEADS",
@@ -88632,6 +89619,10 @@
             {
               "value": "BRAND_AWARENESS",
               "name": "BrandAwareness"
+            },
+            {
+              "value": "ENGAGEMENT",
+              "name": "Engagement"
             },
             {
               "value": "REACH",
@@ -90672,6 +91663,7 @@
         "enum": [
           "UNSPECIFIED",
           "BRAND_AWARENESS",
+          "ENGAGEMENT",
           "REACH",
           "WEBSITE_TRAFFIC",
           "LEADS",
@@ -90692,6 +91684,10 @@
             {
               "value": "BRAND_AWARENESS",
               "name": "BrandAwareness"
+            },
+            {
+              "value": "ENGAGEMENT",
+              "name": "Engagement"
             },
             {
               "value": "REACH",
@@ -94528,6 +95524,10 @@
           "hris_benefit_write",
           "hris_bankaccount_read",
           "hris_bankaccount_write",
+          "hris_document_read",
+          "hris_document_write",
+          "hris_taxonomy_read",
+          "hris_taxonomy_write",
           "uc_call_read",
           "uc_contact_read",
           "uc_contact_write",
@@ -95223,6 +96223,22 @@
             {
               "value": "hris_bankaccount_write",
               "name": "HrisBankaccountWrite"
+            },
+            {
+              "value": "hris_document_read",
+              "name": "HrisDocumentRead"
+            },
+            {
+              "value": "hris_document_write",
+              "name": "HrisDocumentWrite"
+            },
+            {
+              "value": "hris_taxonomy_read",
+              "name": "HrisTaxonomyRead"
+            },
+            {
+              "value": "hris_taxonomy_write",
+              "name": "HrisTaxonomyWrite"
             },
             {
               "value": "uc_call_read",
@@ -101202,6 +102218,62 @@
           ]
         }
       },
+      "IntegrationSupportListGoal": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListGoal",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportListRoleId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListRoleId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -101269,6 +102341,8 @@
           "hris_deduction",
           "hris_benefit",
           "hris_bankaccount",
+          "hris_document",
+          "hris_taxonomy",
           "martech_list",
           "martech_member",
           "martech_campaign",
@@ -101619,6 +102693,14 @@
             {
               "value": "hris_bankaccount",
               "name": "HrisBankaccount"
+            },
+            {
+              "value": "hris_document",
+              "name": "HrisDocument"
+            },
+            {
+              "value": "hris_taxonomy",
+              "name": "HrisTaxonomy"
             },
             {
               "value": "martech_list",
@@ -120172,6 +121254,490 @@
           ]
         }
       },
+      "GetHrisTaxonomyFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "type",
+          "name",
+          "description",
+          "domain",
+          "category",
+          "subcategory",
+          "parent_id",
+          "alternative_names",
+          "url",
+          "role_ids",
+          "is_active",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetHrisTaxonomyFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
+            },
+            {
+              "value": "category",
+              "name": "Category"
+            },
+            {
+              "value": "subcategory",
+              "name": "Subcategory"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "alternative_names",
+              "name": "AlternativeNames"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "role_ids",
+              "name": "RoleIds"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListHrisTaxonomiesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "type",
+          "name",
+          "description",
+          "domain",
+          "category",
+          "subcategory",
+          "parent_id",
+          "alternative_names",
+          "url",
+          "role_ids",
+          "is_active",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListHrisTaxonomiesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
+            },
+            {
+              "value": "category",
+              "name": "Category"
+            },
+            {
+              "value": "subcategory",
+              "name": "Subcategory"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "alternative_names",
+              "name": "AlternativeNames"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "role_ids",
+              "name": "RoleIds"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateHrisDocumentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "document_url",
+          "document_data",
+          "filename",
+          "type",
+          "user_id",
+          "company_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateHrisDocumentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "document_url",
+              "name": "DocumentUrl"
+            },
+            {
+              "value": "document_data",
+              "name": "DocumentData"
+            },
+            {
+              "value": "filename",
+              "name": "Filename"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListHrisDocumentsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "document_url",
+          "document_data",
+          "filename",
+          "type",
+          "user_id",
+          "company_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListHrisDocumentsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "document_url",
+              "name": "DocumentUrl"
+            },
+            {
+              "value": "document_data",
+              "name": "DocumentData"
+            },
+            {
+              "value": "filename",
+              "name": "Filename"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetHrisDocumentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "document_url",
+          "document_data",
+          "filename",
+          "type",
+          "user_id",
+          "company_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetHrisDocumentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "document_url",
+              "name": "DocumentUrl"
+            },
+            {
+              "value": "document_data",
+              "name": "DocumentData"
+            },
+            {
+              "value": "filename",
+              "name": "Filename"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateHrisDocumentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "document_url",
+          "document_data",
+          "filename",
+          "type",
+          "user_id",
+          "company_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateHrisDocumentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "document_url",
+              "name": "DocumentUrl"
+            },
+            {
+              "value": "document_data",
+              "name": "DocumentData"
+            },
+            {
+              "value": "filename",
+              "name": "Filename"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchHrisDocumentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "document_url",
+          "document_data",
+          "filename",
+          "type",
+          "user_id",
+          "company_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchHrisDocumentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "document_url",
+              "name": "DocumentUrl"
+            },
+            {
+              "value": "document_data",
+              "name": "DocumentData"
+            },
+            {
+              "value": "filename",
+              "name": "Filename"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
       "GetVerificationPackageFieldsParameterItem": {
         "enum": [
           "id",
@@ -124760,6 +126326,7 @@
           "attachments",
           "send",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -124877,6 +126444,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -124912,6 +126483,7 @@
           "attachments",
           "send",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125029,6 +126601,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125064,6 +126640,7 @@
           "attachments",
           "send",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125181,6 +126758,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125216,6 +126797,7 @@
           "attachments",
           "send",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125333,6 +126915,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125368,6 +126954,7 @@
           "attachments",
           "send",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125485,6 +127072,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125508,6 +127099,7 @@
           "lineitems",
           "status",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125577,6 +127169,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125600,6 +127196,7 @@
           "lineitems",
           "status",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125669,6 +127266,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125692,6 +127293,7 @@
           "lineitems",
           "status",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125761,6 +127363,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125784,6 +127390,7 @@
           "lineitems",
           "status",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125853,6 +127460,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -125876,6 +127487,7 @@
           "lineitems",
           "status",
           "organization_id",
+          "apply_amount",
           "raw"
         ],
         "type": "string",
@@ -125943,6 +127555,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "apply_amount",
+              "name": "ApplyAmount"
             },
             {
               "value": "raw",
@@ -128799,8 +130415,9 @@
           "approved_at",
           "approver_user_id",
           "lineitems",
-          "raw",
-          "organization_id"
+          "attachments",
+          "organization_id",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -128877,12 +130494,16 @@
               "name": "Lineitems"
             },
             {
-              "value": "raw",
-              "name": "Raw"
+              "value": "attachments",
+              "name": "Attachments"
             },
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -128906,8 +130527,9 @@
           "approved_at",
           "approver_user_id",
           "lineitems",
-          "raw",
-          "organization_id"
+          "attachments",
+          "organization_id",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -128984,12 +130606,16 @@
               "name": "Lineitems"
             },
             {
-              "value": "raw",
-              "name": "Raw"
+              "value": "attachments",
+              "name": "Attachments"
             },
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -129013,8 +130639,9 @@
           "approved_at",
           "approver_user_id",
           "lineitems",
-          "raw",
-          "organization_id"
+          "attachments",
+          "organization_id",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -129091,12 +130718,16 @@
               "name": "Lineitems"
             },
             {
-              "value": "raw",
-              "name": "Raw"
+              "value": "attachments",
+              "name": "Attachments"
             },
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -129120,8 +130751,9 @@
           "approved_at",
           "approver_user_id",
           "lineitems",
-          "raw",
-          "organization_id"
+          "attachments",
+          "organization_id",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -129198,12 +130830,16 @@
               "name": "Lineitems"
             },
             {
-              "value": "raw",
-              "name": "Raw"
+              "value": "attachments",
+              "name": "Attachments"
             },
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -129227,8 +130863,9 @@
           "approved_at",
           "approver_user_id",
           "lineitems",
-          "raw",
-          "organization_id"
+          "attachments",
+          "organization_id",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -129305,12 +130942,16 @@
               "name": "Lineitems"
             },
             {
-              "value": "raw",
-              "name": "Raw"
+              "value": "attachments",
+              "name": "Attachments"
             },
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -143649,7 +145290,9 @@
           "organization_id",
           "status",
           "ad_type",
+          "advertiser_name",
           "creative_ids",
+          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -143705,8 +145348,16 @@
               "name": "AdType"
             },
             {
+              "value": "advertiser_name",
+              "name": "AdvertiserName"
+            },
+            {
               "value": "creative_ids",
               "name": "CreativeIds"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "creative_asset_url",
@@ -143766,7 +145417,9 @@
           "organization_id",
           "status",
           "ad_type",
+          "advertiser_name",
           "creative_ids",
+          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -143822,8 +145475,16 @@
               "name": "AdType"
             },
             {
+              "value": "advertiser_name",
+              "name": "AdvertiserName"
+            },
+            {
               "value": "creative_ids",
               "name": "CreativeIds"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "creative_asset_url",
@@ -143883,7 +145544,9 @@
           "organization_id",
           "status",
           "ad_type",
+          "advertiser_name",
           "creative_ids",
+          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -143939,8 +145602,16 @@
               "name": "AdType"
             },
             {
+              "value": "advertiser_name",
+              "name": "AdvertiserName"
+            },
+            {
               "value": "creative_ids",
               "name": "CreativeIds"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "creative_asset_url",
@@ -144000,7 +145671,9 @@
           "organization_id",
           "status",
           "ad_type",
+          "advertiser_name",
           "creative_ids",
+          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -144056,8 +145729,16 @@
               "name": "AdType"
             },
             {
+              "value": "advertiser_name",
+              "name": "AdvertiserName"
+            },
+            {
               "value": "creative_ids",
               "name": "CreativeIds"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "creative_asset_url",
@@ -144117,7 +145798,9 @@
           "organization_id",
           "status",
           "ad_type",
+          "advertiser_name",
           "creative_ids",
+          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -144173,8 +145856,16 @@
               "name": "AdType"
             },
             {
+              "value": "advertiser_name",
+              "name": "AdvertiserName"
+            },
+            {
               "value": "creative_ids",
               "name": "CreativeIds"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "creative_asset_url",
@@ -156983,6 +158674,16 @@
         },
         "required": true
       },
+      "HrisDocument": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HrisDocument"
+            }
+          }
+        },
+        "required": true
+      },
       "VerificationRequest": {
         "content": {
           "application/json": {
@@ -157927,6 +159628,9 @@
     },
     {
       "name": "bankaccount"
+    },
+    {
+      "name": "taxonomy"
     },
     {
       "name": "verification"

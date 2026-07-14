@@ -24,6 +24,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAdAdType? AdType { get; set; }
+        /// <summary>The advertiser_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AdvertiserName { get; set; }
+#nullable restore
+#else
+        public string AdvertiserName { get; set; }
+#endif
         /// <summary>The campaign_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +114,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The logo_creative_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LogoCreativeId { get; set; }
+#nullable restore
+#else
+        public string LogoCreativeId { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,6 +201,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "ad_copy", n => { AdCopy = n.GetStringValue(); } },
                 { "ad_type", n => { AdType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAdAdType>(); } },
+                { "advertiser_name", n => { AdvertiserName = n.GetStringValue(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_asset_url", n => { CreativeAssetUrl = n.GetStringValue(); } },
@@ -196,6 +213,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "headline", n => { Headline = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "logo_creative_id", n => { LogoCreativeId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "path1", n => { Path1 = n.GetStringValue(); } },
@@ -215,6 +233,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ad_copy", AdCopy);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAdAdType>("ad_type", AdType);
+            writer.WriteStringValue("advertiser_name", AdvertiserName);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("creative_asset_url", CreativeAssetUrl);
@@ -226,6 +245,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteStringValue("headline", Headline);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("logo_creative_id", LogoCreativeId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("path1", Path1);

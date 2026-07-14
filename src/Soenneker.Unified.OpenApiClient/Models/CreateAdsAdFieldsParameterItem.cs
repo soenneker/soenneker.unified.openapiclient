@@ -44,9 +44,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AdType,
         #pragma warning restore CS1591
+        [EnumMember(Value = "advertiser_name")]
+        #pragma warning disable CS1591
+        AdvertiserName,
+        #pragma warning restore CS1591
         [EnumMember(Value = "creative_ids")]
         #pragma warning disable CS1591
         CreativeIds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "logo_creative_id")]
+        #pragma warning disable CS1591
+        LogoCreativeId,
         #pragma warning restore CS1591
         [EnumMember(Value = "creative_asset_url")]
         #pragma warning disable CS1591

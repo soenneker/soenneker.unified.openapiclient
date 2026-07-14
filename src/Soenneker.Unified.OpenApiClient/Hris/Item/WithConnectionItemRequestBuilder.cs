@@ -7,10 +7,12 @@ using Soenneker.Unified.OpenApiClient.Hris.Item.Benefit;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Company;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Deduction;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Device;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Document;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Employee;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Group;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Location;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Payslip;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Timeshift;
 using System.Collections.Generic;
@@ -50,6 +52,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Device.DeviceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The document property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Document.DocumentRequestBuilder Document
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Document.DocumentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The employee property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder Employee
         {
@@ -69,6 +76,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Payslip.PayslipRequestBuilder Payslip
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Payslip.PayslipRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The taxonomy property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder Taxonomy
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeoff property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff.TimeoffRequestBuilder Timeoff
