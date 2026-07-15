@@ -28,6 +28,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CompanyId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "payment_reference")]
+        #pragma warning disable CS1591
+        PaymentReference,
+        #pragma warning restore CS1591
         [EnumMember(Value = "payment_type")]
         #pragma warning disable CS1591
         PaymentType,

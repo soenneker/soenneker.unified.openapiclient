@@ -7887,6 +7887,9 @@
                "company_id": {
                   "type": "string"
                },
+               "payment_reference": {
+                  "type": "string"
+               },
                "payment_type": {
                   "type": "string",
                   "enum": [
@@ -15906,6 +15909,23 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "effective_status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "SERVING",
+                     "LIMITED",
+                     "LEARNING",
+                     "PAUSED",
+                     "PENDING",
+                     "ENDED",
+                     "MISCONFIGURED",
+                     "NOT_ELIGIBLE",
+                     "ARCHIVED",
+                     "REMOVED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "start_at": {
                   "type": "string",
                   "format": "date-time"
@@ -18113,6 +18133,23 @@
                      "SCHEDULED_FOR_DELETION",
                      "PROCESSING",
                      "PROCESSING_FAILED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "effective_status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "SERVING",
+                     "LIMITED",
+                     "LEARNING",
+                     "PAUSED",
+                     "PENDING",
+                     "ENDED",
+                     "MISCONFIGURED",
+                     "NOT_ELIGIBLE",
+                     "ARCHIVED",
+                     "REMOVED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -46343,6 +46380,7 @@
                            "updated_at",
                            "user_id",
                            "company_id",
+                           "payment_reference",
                            "payment_type",
                            "paid_at",
                            "start_at",
@@ -46496,6 +46534,7 @@
                            "updated_at",
                            "user_id",
                            "company_id",
+                           "payment_reference",
                            "payment_type",
                            "paid_at",
                            "start_at",
@@ -75532,6 +75571,7 @@
                            "name",
                            "organization_id",
                            "status",
+                           "effective_status",
                            "start_at",
                            "end_at",
                            "budget_amount",
@@ -75706,6 +75746,14 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "effective_status",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -75716,6 +75764,7 @@
                            "name",
                            "organization_id",
                            "status",
+                           "effective_status",
                            "start_at",
                            "end_at",
                            "budget_amount",
@@ -75798,6 +75847,7 @@
                            "name",
                            "organization_id",
                            "status",
+                           "effective_status",
                            "start_at",
                            "end_at",
                            "budget_amount",
@@ -75887,6 +75937,7 @@
                            "name",
                            "organization_id",
                            "status",
+                           "effective_status",
                            "start_at",
                            "end_at",
                            "budget_amount",
@@ -75986,6 +76037,7 @@
                            "name",
                            "organization_id",
                            "status",
+                           "effective_status",
                            "start_at",
                            "end_at",
                            "budget_amount",

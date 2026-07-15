@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? NetAmount { get; set; }
         /// <summary>The paid_at property</summary>
         public DateTimeOffset? PaidAt { get; set; }
+        /// <summary>The payment_reference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentReference { get; set; }
+#nullable restore
+#else
+        public string PaymentReference { get; set; }
+#endif
         /// <summary>The payment_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType? PaymentType { get; set; }
         /// <summary>The raw property</summary>
@@ -121,6 +129,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
+                { "payment_reference", n => { PaymentReference = n.GetStringValue(); } },
                 { "payment_type", n => { PaymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -145,6 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
+            writer.WriteStringValue("payment_reference", PaymentReference);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>("payment_type", PaymentType);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

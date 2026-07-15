@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Campaign
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?end_lt*,fields*,goal*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", pathParameters)
+        public CampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?effective_status*,end_lt*,fields*,goal*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Campaign
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?end_lt*,fields*,goal*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", rawUrl)
+        public CampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/campaign{?effective_status*,end_lt*,fields*,goal*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,6 +141,15 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Campaign
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CampaignRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("effective_status")]
+            public string? EffectiveStatus { get; set; }
+#nullable restore
+#else
+            [QueryParameter("effective_status")]
+            public string EffectiveStatus { get; set; }
+#endif
             /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -46,6 +46,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The effective_status property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignEffectiveStatus? EffectiveStatus { get; set; }
         /// <summary>The end_at property</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The frequency_cap property</summary>
@@ -142,6 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "effective_status", n => { EffectiveStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignEffectiveStatus>(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap.CreateFromDiscriminatorValue); } },
                 { "goal", n => { Goal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignGoal>(); } },
@@ -172,6 +175,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("category", Category);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignEffectiveStatus>("effective_status", EffectiveStatus);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignFrequencyCap>("frequency_cap", FrequencyCap);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignGoal>("goal", Goal);

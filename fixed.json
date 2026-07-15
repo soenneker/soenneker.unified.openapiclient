@@ -37821,6 +37821,13 @@
             }
           },
           {
+            "name": "effective_status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -60896,6 +60903,9 @@
           "company_id": {
             "type": "string"
           },
+          "payment_reference": {
+            "type": "string"
+          },
           "payment_type": {
             "$ref": "#/components/schemas/HrisPayslipPaymentType"
           },
@@ -68553,6 +68563,9 @@
           "status": {
             "$ref": "#/components/schemas/AdsCampaignStatus"
           },
+          "effective_status": {
+            "$ref": "#/components/schemas/AdsCampaignEffectiveStatus"
+          },
           "start_at": {
             "type": "string",
             "format": "date-time"
@@ -70637,6 +70650,9 @@
           },
           "status": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaignStatus"
+          },
+          "effective_status": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaignEffectiveStatus"
           },
           "start_at": {
             "type": "string",
@@ -89561,6 +89577,74 @@
           ]
         }
       },
+      "AdsCampaignEffectiveStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "SERVING",
+          "LIMITED",
+          "LEARNING",
+          "PAUSED",
+          "PENDING",
+          "ENDED",
+          "MISCONFIGURED",
+          "NOT_ELIGIBLE",
+          "ARCHIVED",
+          "REMOVED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsCampaignEffectiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "SERVING",
+              "name": "Serving"
+            },
+            {
+              "value": "LIMITED",
+              "name": "Limited"
+            },
+            {
+              "value": "LEARNING",
+              "name": "Learning"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "ENDED",
+              "name": "Ended"
+            },
+            {
+              "value": "MISCONFIGURED",
+              "name": "Misconfigured"
+            },
+            {
+              "value": "NOT_ELIGIBLE",
+              "name": "NotEligible"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "REMOVED",
+              "name": "Removed"
+            }
+          ]
+        }
+      },
       "AdsCampaignBudgetPeriod": {
         "enum": [
           "DAILY",
@@ -91622,6 +91706,74 @@
             {
               "value": "PROCESSING_FAILED",
               "name": "ProcessingFailed"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsCampaignEffectiveStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "SERVING",
+          "LIMITED",
+          "LEARNING",
+          "PAUSED",
+          "PENDING",
+          "ENDED",
+          "MISCONFIGURED",
+          "NOT_ELIGIBLE",
+          "ARCHIVED",
+          "REMOVED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsCampaignEffectiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "SERVING",
+              "name": "Serving"
+            },
+            {
+              "value": "LIMITED",
+              "name": "Limited"
+            },
+            {
+              "value": "LEARNING",
+              "name": "Learning"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "ENDED",
+              "name": "Ended"
+            },
+            {
+              "value": "MISCONFIGURED",
+              "name": "Misconfigured"
+            },
+            {
+              "value": "NOT_ELIGIBLE",
+              "name": "NotEligible"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "REMOVED",
+              "name": "Removed"
             }
           ]
         }
@@ -118812,6 +118964,7 @@
           "updated_at",
           "user_id",
           "company_id",
+          "payment_reference",
           "payment_type",
           "paid_at",
           "start_at",
@@ -118848,6 +119001,10 @@
             {
               "value": "company_id",
               "name": "CompanyId"
+            },
+            {
+              "value": "payment_reference",
+              "name": "PaymentReference"
             },
             {
               "value": "payment_type",
@@ -118899,6 +119056,7 @@
           "updated_at",
           "user_id",
           "company_id",
+          "payment_reference",
           "payment_type",
           "paid_at",
           "start_at",
@@ -118935,6 +119093,10 @@
             {
               "value": "company_id",
               "name": "CompanyId"
+            },
+            {
+              "value": "payment_reference",
+              "name": "PaymentReference"
             },
             {
               "value": "payment_type",
@@ -142722,6 +142884,7 @@
           "name",
           "organization_id",
           "status",
+          "effective_status",
           "start_at",
           "end_at",
           "budget_amount",
@@ -142767,6 +142930,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "start_at",
@@ -142839,6 +143006,7 @@
           "name",
           "organization_id",
           "status",
+          "effective_status",
           "start_at",
           "end_at",
           "budget_amount",
@@ -142884,6 +143052,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "start_at",
@@ -142956,6 +143128,7 @@
           "name",
           "organization_id",
           "status",
+          "effective_status",
           "start_at",
           "end_at",
           "budget_amount",
@@ -143001,6 +143174,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "start_at",
@@ -143073,6 +143250,7 @@
           "name",
           "organization_id",
           "status",
+          "effective_status",
           "start_at",
           "end_at",
           "budget_amount",
@@ -143118,6 +143296,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "start_at",
@@ -143190,6 +143372,7 @@
           "name",
           "organization_id",
           "status",
+          "effective_status",
           "start_at",
           "end_at",
           "budget_amount",
@@ -143235,6 +143418,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "start_at",
