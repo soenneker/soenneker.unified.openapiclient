@@ -77055,6 +77055,9 @@
           },
           "list_role_id": {
             "$ref": "#/components/schemas/IntegrationSupportListRoleId"
+          },
+          "list_effective_status": {
+            "$ref": "#/components/schemas/IntegrationSupportListEffectiveStatus"
           }
         }
       },
@@ -102409,6 +102412,34 @@
         "x-speakeasy-unknown-values": "allow",
         "x-ms-enum": {
           "name": "IntegrationSupportListRoleId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportListEffectiveStatus": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListEffectiveStatus",
           "modelAsString": false,
           "values": [
             {
