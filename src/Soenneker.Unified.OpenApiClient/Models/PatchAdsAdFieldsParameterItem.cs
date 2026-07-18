@@ -52,10 +52,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CreativeIds,
         #pragma warning restore CS1591
-        [EnumMember(Value = "logo_creative_id")]
-        #pragma warning disable CS1591
-        LogoCreativeId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "creative_asset_url")]
         #pragma warning disable CS1591
         CreativeAssetUrl,
@@ -95,6 +91,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "promoted")]
         #pragma warning disable CS1591
         Promoted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "logo_creative_id")]
+        #pragma warning disable CS1591
+        LogoCreativeId,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

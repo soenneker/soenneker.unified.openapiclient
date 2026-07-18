@@ -88,6 +88,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UserId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user_ids")]
+        #pragma warning disable CS1591
+        UserIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "web_url")]
         #pragma warning disable CS1591
         WebUrl,

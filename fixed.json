@@ -39190,6 +39190,13 @@
             }
           },
           {
+            "name": "effective_status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -58990,6 +58997,13 @@
           "type": "string"
         }
       },
+      "PropertyAtsCandidateUserIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "references hris employees"
+      },
       "AtsCandidateExperience": {
         "type": "object",
         "properties": {
@@ -59145,6 +59159,13 @@
           },
           "user_id": {
             "type": "string"
+          },
+          "user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "references hris employees"
           },
           "web_url": {
             "type": "string"
@@ -69747,6 +69768,9 @@
           "status": {
             "$ref": "#/components/schemas/AdsGroupStatus"
           },
+          "effective_status": {
+            "$ref": "#/components/schemas/AdsGroupEffectiveStatus"
+          },
           "targeting": {
             "$ref": "#/components/schemas/PropertyAdsGroupTargeting"
           },
@@ -69876,9 +69900,6 @@
               "type": "string"
             }
           },
-          "logo_creative_id": {
-            "type": "string"
-          },
           "creative_asset_url": {
             "type": "string"
           },
@@ -69911,6 +69932,9 @@
             "items": {
               "$ref": "#/components/schemas/AdsPromoted"
             }
+          },
+          "logo_creative_id": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/AdsAdRawProperty"
@@ -71508,6 +71532,9 @@
           "status": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsGroupStatus"
           },
+          "effective_status": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsGroupEffectiveStatus"
+          },
           "targeting": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsGroupTargeting"
           },
@@ -71631,9 +71658,6 @@
               "type": "string"
             }
           },
-          "logo_creative_id": {
-            "type": "string"
-          },
           "creative_asset_url": {
             "type": "string"
           },
@@ -71666,6 +71690,9 @@
             "items": {
               "$ref": "#/components/schemas/AdsPromoted"
             }
+          },
+          "logo_creative_id": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsAdRawProperty"
@@ -72643,6 +72670,12 @@
           "$ref": "#/components/schemas/RepoBranch"
         }
       },
+      "PropertyRepoCommitPullrequestIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "RepoCommit": {
         "required": [
           "repo_id"
@@ -72671,6 +72704,12 @@
           },
           "branch_id": {
             "type": "string"
+          },
+          "pullrequest_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "lines_added": {
             "type": "number"
@@ -77139,6 +77178,9 @@
             "type": "string"
           },
           "beta": {
+            "type": "boolean"
+          },
+          "requires_cname": {
             "type": "boolean"
           },
           "support": {
@@ -90977,6 +91019,74 @@
           ]
         }
       },
+      "AdsGroupEffectiveStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "SERVING",
+          "LIMITED",
+          "LEARNING",
+          "PAUSED",
+          "PENDING",
+          "ENDED",
+          "MISCONFIGURED",
+          "NOT_ELIGIBLE",
+          "ARCHIVED",
+          "REMOVED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsGroupEffectiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "SERVING",
+              "name": "Serving"
+            },
+            {
+              "value": "LIMITED",
+              "name": "Limited"
+            },
+            {
+              "value": "LEARNING",
+              "name": "Learning"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "ENDED",
+              "name": "Ended"
+            },
+            {
+              "value": "MISCONFIGURED",
+              "name": "Misconfigured"
+            },
+            {
+              "value": "NOT_ELIGIBLE",
+              "name": "NotEligible"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "REMOVED",
+              "name": "Removed"
+            }
+          ]
+        }
+      },
       "AdsGroupBudgetPeriod": {
         "enum": [
           "DAILY",
@@ -92425,6 +92535,74 @@
             {
               "value": "PROCESSING_FAILED",
               "name": "ProcessingFailed"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsGroupEffectiveStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "SERVING",
+          "LIMITED",
+          "LEARNING",
+          "PAUSED",
+          "PENDING",
+          "ENDED",
+          "MISCONFIGURED",
+          "NOT_ELIGIBLE",
+          "ARCHIVED",
+          "REMOVED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsGroupEffectiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "SERVING",
+              "name": "Serving"
+            },
+            {
+              "value": "LIMITED",
+              "name": "Limited"
+            },
+            {
+              "value": "LEARNING",
+              "name": "Learning"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "ENDED",
+              "name": "Ended"
+            },
+            {
+              "value": "MISCONFIGURED",
+              "name": "Misconfigured"
+            },
+            {
+              "value": "NOT_ELIGIBLE",
+              "name": "NotEligible"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "REMOVED",
+              "name": "Removed"
             }
           ]
         }
@@ -112873,6 +113051,7 @@
           "sources",
           "date_of_birth",
           "user_id",
+          "user_ids",
           "web_url",
           "experiences",
           "education",
@@ -112968,6 +113147,10 @@
               "name": "UserId"
             },
             {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
               "value": "web_url",
               "name": "WebUrl"
             },
@@ -113020,6 +113203,7 @@
           "sources",
           "date_of_birth",
           "user_id",
+          "user_ids",
           "web_url",
           "experiences",
           "education",
@@ -113115,6 +113299,10 @@
               "name": "UserId"
             },
             {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
               "value": "web_url",
               "name": "WebUrl"
             },
@@ -113167,6 +113355,7 @@
           "sources",
           "date_of_birth",
           "user_id",
+          "user_ids",
           "web_url",
           "experiences",
           "education",
@@ -113262,6 +113451,10 @@
               "name": "UserId"
             },
             {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
               "value": "web_url",
               "name": "WebUrl"
             },
@@ -113314,6 +113507,7 @@
           "sources",
           "date_of_birth",
           "user_id",
+          "user_ids",
           "web_url",
           "experiences",
           "education",
@@ -113409,6 +113603,10 @@
               "name": "UserId"
             },
             {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
               "value": "web_url",
               "name": "WebUrl"
             },
@@ -113461,6 +113659,7 @@
           "sources",
           "date_of_birth",
           "user_id",
+          "user_ids",
           "web_url",
           "experiences",
           "education",
@@ -113554,6 +113753,10 @@
             {
               "value": "user_id",
               "name": "UserId"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
             },
             {
               "value": "web_url",
@@ -144723,6 +144926,7 @@
           "organization_id",
           "insertionorder_id",
           "status",
+          "effective_status",
           "targeting",
           "bid_amount",
           "bid_strategy",
@@ -144785,6 +144989,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "targeting",
@@ -144880,6 +145088,7 @@
           "organization_id",
           "insertionorder_id",
           "status",
+          "effective_status",
           "targeting",
           "bid_amount",
           "bid_strategy",
@@ -144942,6 +145151,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "targeting",
@@ -145037,6 +145250,7 @@
           "organization_id",
           "insertionorder_id",
           "status",
+          "effective_status",
           "targeting",
           "bid_amount",
           "bid_strategy",
@@ -145099,6 +145313,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "targeting",
@@ -145194,6 +145412,7 @@
           "organization_id",
           "insertionorder_id",
           "status",
+          "effective_status",
           "targeting",
           "bid_amount",
           "bid_strategy",
@@ -145256,6 +145475,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "targeting",
@@ -145351,6 +145574,7 @@
           "organization_id",
           "insertionorder_id",
           "status",
+          "effective_status",
           "targeting",
           "bid_amount",
           "bid_strategy",
@@ -145413,6 +145637,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "effective_status",
+              "name": "EffectiveStatus"
             },
             {
               "value": "targeting",
@@ -145510,7 +145738,6 @@
           "ad_type",
           "advertiser_name",
           "creative_ids",
-          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -145521,6 +145748,7 @@
           "path1",
           "path2",
           "promoted",
+          "logo_creative_id",
           "raw"
         ],
         "type": "string",
@@ -145574,10 +145802,6 @@
               "name": "CreativeIds"
             },
             {
-              "value": "logo_creative_id",
-              "name": "LogoCreativeId"
-            },
-            {
               "value": "creative_asset_url",
               "name": "CreativeAssetUrl"
             },
@@ -145618,6 +145842,10 @@
               "name": "Promoted"
             },
             {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145637,7 +145865,6 @@
           "ad_type",
           "advertiser_name",
           "creative_ids",
-          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -145648,6 +145875,7 @@
           "path1",
           "path2",
           "promoted",
+          "logo_creative_id",
           "raw"
         ],
         "type": "string",
@@ -145701,10 +145929,6 @@
               "name": "CreativeIds"
             },
             {
-              "value": "logo_creative_id",
-              "name": "LogoCreativeId"
-            },
-            {
               "value": "creative_asset_url",
               "name": "CreativeAssetUrl"
             },
@@ -145745,6 +145969,10 @@
               "name": "Promoted"
             },
             {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145764,7 +145992,6 @@
           "ad_type",
           "advertiser_name",
           "creative_ids",
-          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -145775,6 +146002,7 @@
           "path1",
           "path2",
           "promoted",
+          "logo_creative_id",
           "raw"
         ],
         "type": "string",
@@ -145828,10 +146056,6 @@
               "name": "CreativeIds"
             },
             {
-              "value": "logo_creative_id",
-              "name": "LogoCreativeId"
-            },
-            {
               "value": "creative_asset_url",
               "name": "CreativeAssetUrl"
             },
@@ -145872,6 +146096,10 @@
               "name": "Promoted"
             },
             {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145891,7 +146119,6 @@
           "ad_type",
           "advertiser_name",
           "creative_ids",
-          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -145902,6 +146129,7 @@
           "path1",
           "path2",
           "promoted",
+          "logo_creative_id",
           "raw"
         ],
         "type": "string",
@@ -145955,10 +146183,6 @@
               "name": "CreativeIds"
             },
             {
-              "value": "logo_creative_id",
-              "name": "LogoCreativeId"
-            },
-            {
               "value": "creative_asset_url",
               "name": "CreativeAssetUrl"
             },
@@ -145999,6 +146223,10 @@
               "name": "Promoted"
             },
             {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -146018,7 +146246,6 @@
           "ad_type",
           "advertiser_name",
           "creative_ids",
-          "logo_creative_id",
           "creative_asset_url",
           "ad_copy",
           "headline",
@@ -146029,6 +146256,7 @@
           "path1",
           "path2",
           "promoted",
+          "logo_creative_id",
           "raw"
         ],
         "type": "string",
@@ -146082,10 +146310,6 @@
               "name": "CreativeIds"
             },
             {
-              "value": "logo_creative_id",
-              "name": "LogoCreativeId"
-            },
-            {
               "value": "creative_asset_url",
               "name": "CreativeAssetUrl"
             },
@@ -146124,6 +146348,10 @@
             {
               "value": "promoted",
               "name": "Promoted"
+            },
+            {
+              "value": "logo_creative_id",
+              "name": "LogoCreativeId"
             },
             {
               "value": "raw",
@@ -150041,6 +150269,7 @@
           "repo_id",
           "message",
           "branch_id",
+          "pullrequest_ids",
           "lines_added",
           "lines_deleted",
           "lines_changed",
@@ -150081,6 +150310,10 @@
               "name": "BranchId"
             },
             {
+              "value": "pullrequest_ids",
+              "name": "PullrequestIds"
+            },
+            {
               "value": "lines_added",
               "name": "LinesAdded"
             },
@@ -150108,6 +150341,7 @@
           "repo_id",
           "message",
           "branch_id",
+          "pullrequest_ids",
           "lines_added",
           "lines_deleted",
           "lines_changed",
@@ -150148,6 +150382,10 @@
               "name": "BranchId"
             },
             {
+              "value": "pullrequest_ids",
+              "name": "PullrequestIds"
+            },
+            {
               "value": "lines_added",
               "name": "LinesAdded"
             },
@@ -150175,6 +150413,7 @@
           "repo_id",
           "message",
           "branch_id",
+          "pullrequest_ids",
           "lines_added",
           "lines_deleted",
           "lines_changed",
@@ -150215,6 +150454,10 @@
               "name": "BranchId"
             },
             {
+              "value": "pullrequest_ids",
+              "name": "PullrequestIds"
+            },
+            {
               "value": "lines_added",
               "name": "LinesAdded"
             },
@@ -150242,6 +150485,7 @@
           "repo_id",
           "message",
           "branch_id",
+          "pullrequest_ids",
           "lines_added",
           "lines_deleted",
           "lines_changed",
@@ -150282,6 +150526,10 @@
               "name": "BranchId"
             },
             {
+              "value": "pullrequest_ids",
+              "name": "PullrequestIds"
+            },
+            {
               "value": "lines_added",
               "name": "LinesAdded"
             },
@@ -150309,6 +150557,7 @@
           "repo_id",
           "message",
           "branch_id",
+          "pullrequest_ids",
           "lines_added",
           "lines_deleted",
           "lines_changed",
@@ -150347,6 +150596,10 @@
             {
               "value": "branch_id",
               "name": "BranchId"
+            },
+            {
+              "value": "pullrequest_ids",
+              "name": "PullrequestIds"
             },
             {
               "value": "lines_added",

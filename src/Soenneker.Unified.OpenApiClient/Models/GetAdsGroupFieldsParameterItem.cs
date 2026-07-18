@@ -44,6 +44,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Status,
         #pragma warning restore CS1591
+        [EnumMember(Value = "effective_status")]
+        #pragma warning disable CS1591
+        EffectiveStatus,
+        #pragma warning restore CS1591
         [EnumMember(Value = "targeting")]
         #pragma warning disable CS1591
         Targeting,

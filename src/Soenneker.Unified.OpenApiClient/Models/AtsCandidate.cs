@@ -198,6 +198,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
+        /// <summary>references hris employees</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UserIds { get; set; }
+#nullable restore
+#else
+        public List<string> UserIds { get; set; }
+#endif
         /// <summary>The web_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -257,6 +265,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "web_url", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -293,6 +302,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteStringValue("web_url", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

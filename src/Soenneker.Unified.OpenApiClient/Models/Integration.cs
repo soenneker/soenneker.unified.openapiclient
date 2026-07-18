@@ -117,6 +117,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateLimitDescription { get; set; }
 #endif
+        /// <summary>The requires_cname property</summary>
+        public bool? RequiresCname { get; set; }
         /// <summary>The saml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +236,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "partnership", n => { Partnership = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership.CreateFromDiscriminatorValue); } },
                 { "popularity", n => { Popularity = n.GetDoubleValue(); } },
                 { "rate_limit_description", n => { RateLimitDescription = n.GetStringValue(); } },
+                { "requires_cname", n => { RequiresCname = n.GetBoolValue(); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml.CreateFromDiscriminatorValue); } },
                 { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox.CreateFromDiscriminatorValue); } },
                 { "support", n => { Support = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty.CreateFromDiscriminatorValue); } },
@@ -271,6 +274,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationPartnership>("partnership", Partnership);
             writer.WriteDoubleValue("popularity", Popularity);
             writer.WriteStringValue("rate_limit_description", RateLimitDescription);
+            writer.WriteBoolValue("requires_cname", RequiresCname);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml>("saml", Saml);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty>("support", Support);

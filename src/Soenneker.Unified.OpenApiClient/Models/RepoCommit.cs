@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>The pullrequest_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PullrequestIds { get; set; }
+#nullable restore
+#else
+        public List<string> PullrequestIds { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "lines_changed", n => { LinesChanged = n.GetDoubleValue(); } },
                 { "lines_deleted", n => { LinesDeleted = n.GetDoubleValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "pullrequest_ids", n => { PullrequestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty.CreateFromDiscriminatorValue); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -124,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("lines_changed", LinesChanged);
             writer.WriteDoubleValue("lines_deleted", LinesDeleted);
             writer.WriteStringValue("message", Message);
+            writer.WriteCollectionOfPrimitiveValues<string>("pullrequest_ids", PullrequestIds);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoCommitRawProperty>("raw", Raw);
             writer.WriteStringValue("repo_id", RepoId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

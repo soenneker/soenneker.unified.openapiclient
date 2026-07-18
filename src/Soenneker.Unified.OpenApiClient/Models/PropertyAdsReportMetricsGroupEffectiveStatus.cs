@@ -5,56 +5,52 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum UpdateRepoCommitFieldsParameterItem
+    public enum PropertyAdsReportMetricsGroupEffectiveStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "id")]
+        [EnumMember(Value = "UNSPECIFIED")]
         #pragma warning disable CS1591
-        Id,
+        Unspecified,
         #pragma warning restore CS1591
-        [EnumMember(Value = "created_at")]
+        [EnumMember(Value = "SERVING")]
         #pragma warning disable CS1591
-        CreatedAt,
+        Serving,
         #pragma warning restore CS1591
-        [EnumMember(Value = "updated_at")]
+        [EnumMember(Value = "LIMITED")]
         #pragma warning disable CS1591
-        UpdatedAt,
+        Limited,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_id")]
+        [EnumMember(Value = "LEARNING")]
         #pragma warning disable CS1591
-        UserId,
+        Learning,
         #pragma warning restore CS1591
-        [EnumMember(Value = "repo_id")]
+        [EnumMember(Value = "PAUSED")]
         #pragma warning disable CS1591
-        RepoId,
+        Paused,
         #pragma warning restore CS1591
-        [EnumMember(Value = "message")]
+        [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591
-        Message,
+        Pending,
         #pragma warning restore CS1591
-        [EnumMember(Value = "branch_id")]
+        [EnumMember(Value = "ENDED")]
         #pragma warning disable CS1591
-        BranchId,
+        Ended,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pullrequest_ids")]
+        [EnumMember(Value = "MISCONFIGURED")]
         #pragma warning disable CS1591
-        PullrequestIds,
+        Misconfigured,
         #pragma warning restore CS1591
-        [EnumMember(Value = "lines_added")]
+        [EnumMember(Value = "NOT_ELIGIBLE")]
         #pragma warning disable CS1591
-        LinesAdded,
+        NotEligible,
         #pragma warning restore CS1591
-        [EnumMember(Value = "lines_deleted")]
+        [EnumMember(Value = "ARCHIVED")]
         #pragma warning disable CS1591
-        LinesDeleted,
+        Archived,
         #pragma warning restore CS1591
-        [EnumMember(Value = "lines_changed")]
+        [EnumMember(Value = "REMOVED")]
         #pragma warning disable CS1591
-        LinesChanged,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
+        Removed,
         #pragma warning restore CS1591
     }
 }

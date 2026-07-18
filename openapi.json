@@ -5719,6 +5719,13 @@
                "type": "string"
             }
          },
+         "property_AtsCandidate_user_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "references hris employees"
+         },
          "AtsCandidateExperience": {
             "type": "object",
             "properties": {
@@ -5867,6 +5874,9 @@
                },
                "user_id": {
                   "type": "string"
+               },
+               "user_ids": {
+                  "$ref": "#/components/schemas/property_AtsCandidate_user_ids"
                },
                "web_url": {
                   "type": "string"
@@ -17233,6 +17243,23 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "effective_status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "SERVING",
+                     "LIMITED",
+                     "LEARNING",
+                     "PAUSED",
+                     "PENDING",
+                     "ENDED",
+                     "MISCONFIGURED",
+                     "NOT_ELIGIBLE",
+                     "ARCHIVED",
+                     "REMOVED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "targeting": {
                   "$ref": "#/components/schemas/property_AdsGroup_targeting"
                },
@@ -17445,9 +17472,6 @@
                "creative_ids": {
                   "$ref": "#/components/schemas/property_AdsAd_creative_ids"
                },
-               "logo_creative_id": {
-                  "type": "string"
-               },
                "creative_asset_url": {
                   "type": "string"
                },
@@ -17477,6 +17501,9 @@
                },
                "promoted": {
                   "$ref": "#/components/schemas/property_AdsAd_promoted"
+               },
+               "logo_creative_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -18999,6 +19026,23 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "effective_status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "SERVING",
+                     "LIMITED",
+                     "LEARNING",
+                     "PAUSED",
+                     "PENDING",
+                     "ENDED",
+                     "MISCONFIGURED",
+                     "NOT_ELIGIBLE",
+                     "ARCHIVED",
+                     "REMOVED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "targeting": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_group_targeting"
                },
@@ -19205,9 +19249,6 @@
                "creative_ids": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_ad_creative_ids"
                },
-               "logo_creative_id": {
-                  "type": "string"
-               },
                "creative_asset_url": {
                   "type": "string"
                },
@@ -19237,6 +19278,9 @@
                },
                "promoted": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_ad_promoted"
+               },
+               "logo_creative_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -20300,6 +20344,12 @@
                "$ref": "#/components/schemas/RepoBranch"
             }
          },
+         "property_RepoCommit_pullrequest_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "RepoCommit": {
             "type": "object",
             "properties": {
@@ -20325,6 +20375,9 @@
                },
                "branch_id": {
                   "type": "string"
+               },
+               "pullrequest_ids": {
+                  "$ref": "#/components/schemas/property_RepoCommit_pullrequest_ids"
                },
                "lines_added": {
                   "type": "number"
@@ -26473,6 +26526,9 @@
                   "type": "string"
                },
                "beta": {
+                  "type": "boolean"
+               },
+               "requires_cname": {
                   "type": "boolean"
                },
                "support": {
@@ -39490,6 +39546,7 @@
                            "sources",
                            "date_of_birth",
                            "user_id",
+                           "user_ids",
                            "web_url",
                            "experiences",
                            "education",
@@ -39645,6 +39702,7 @@
                            "sources",
                            "date_of_birth",
                            "user_id",
+                           "user_ids",
                            "web_url",
                            "experiences",
                            "education",
@@ -39733,6 +39791,7 @@
                            "sources",
                            "date_of_birth",
                            "user_id",
+                           "user_ids",
                            "web_url",
                            "experiences",
                            "education",
@@ -39828,6 +39887,7 @@
                            "sources",
                            "date_of_birth",
                            "user_id",
+                           "user_ids",
                            "web_url",
                            "experiences",
                            "education",
@@ -39933,6 +39993,7 @@
                            "sources",
                            "date_of_birth",
                            "user_id",
+                           "user_ids",
                            "web_url",
                            "experiences",
                            "education",
@@ -77373,6 +77434,7 @@
                            "organization_id",
                            "insertionorder_id",
                            "status",
+                           "effective_status",
                            "targeting",
                            "bid_amount",
                            "bid_strategy",
@@ -77571,6 +77633,14 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "effective_status",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -77584,6 +77654,7 @@
                            "organization_id",
                            "insertionorder_id",
                            "status",
+                           "effective_status",
                            "targeting",
                            "bid_amount",
                            "bid_strategy",
@@ -77674,6 +77745,7 @@
                            "organization_id",
                            "insertionorder_id",
                            "status",
+                           "effective_status",
                            "targeting",
                            "bid_amount",
                            "bid_strategy",
@@ -77771,6 +77843,7 @@
                            "organization_id",
                            "insertionorder_id",
                            "status",
+                           "effective_status",
                            "targeting",
                            "bid_amount",
                            "bid_strategy",
@@ -77878,6 +77951,7 @@
                            "organization_id",
                            "insertionorder_id",
                            "status",
+                           "effective_status",
                            "targeting",
                            "bid_amount",
                            "bid_strategy",
@@ -78039,7 +78113,6 @@
                            "ad_type",
                            "advertiser_name",
                            "creative_ids",
-                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -78050,6 +78123,7 @@
                            "path1",
                            "path2",
                            "promoted",
+                           "logo_creative_id",
                            "raw"
                         ]
                      }
@@ -78217,7 +78291,6 @@
                            "ad_type",
                            "advertiser_name",
                            "creative_ids",
-                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -78228,6 +78301,7 @@
                            "path1",
                            "path2",
                            "promoted",
+                           "logo_creative_id",
                            "raw"
                         ]
                      }
@@ -78301,7 +78375,6 @@
                            "ad_type",
                            "advertiser_name",
                            "creative_ids",
-                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -78312,6 +78385,7 @@
                            "path1",
                            "path2",
                            "promoted",
+                           "logo_creative_id",
                            "raw"
                         ]
                      }
@@ -78392,7 +78466,6 @@
                            "ad_type",
                            "advertiser_name",
                            "creative_ids",
-                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -78403,6 +78476,7 @@
                            "path1",
                            "path2",
                            "promoted",
+                           "logo_creative_id",
                            "raw"
                         ]
                      }
@@ -78493,7 +78567,6 @@
                            "ad_type",
                            "advertiser_name",
                            "creative_ids",
-                           "logo_creative_id",
                            "creative_asset_url",
                            "ad_copy",
                            "headline",
@@ -78504,6 +78577,7 @@
                            "path1",
                            "path2",
                            "promoted",
+                           "logo_creative_id",
                            "raw"
                         ]
                      }
@@ -84573,6 +84647,7 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "pullrequest_ids",
                            "lines_added",
                            "lines_deleted",
                            "lines_changed",
@@ -84721,6 +84796,7 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "pullrequest_ids",
                            "lines_added",
                            "lines_deleted",
                            "lines_changed",
@@ -84793,6 +84869,7 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "pullrequest_ids",
                            "lines_added",
                            "lines_deleted",
                            "lines_changed",
@@ -84872,6 +84949,7 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "pullrequest_ids",
                            "lines_added",
                            "lines_deleted",
                            "lines_changed",
@@ -84961,6 +85039,7 @@
                            "repo_id",
                            "message",
                            "branch_id",
+                           "pullrequest_ids",
                            "lines_added",
                            "lines_deleted",
                            "lines_changed",
