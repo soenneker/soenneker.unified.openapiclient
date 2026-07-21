@@ -473,14 +473,14 @@
         ]
       }
     },
-    "/messaging/{connectionId}/channel/{id}": {
-      "get": {
+    "/messaging/{connectionId}/channel": {
+      "post": {
         "tags": [
           "messaging",
           "channel"
         ],
-        "summary": "Retrieve a channel",
-        "operationId": "GetMessagingChannel",
+        "summary": "Create a channel",
+        "operationId": "CreateMessagingChannel",
         "parameters": [
           {
             "name": "fields",
@@ -489,7 +489,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/GetMessagingChannelFieldsParameterItem"
+                "$ref": "#/components/schemas/CreateMessagingChannelFieldsParameterItem"
               }
             }
           },
@@ -509,17 +509,17 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of the Channel",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessagingChannel"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful",
@@ -537,9 +537,7 @@
             "jwt": []
           }
         ]
-      }
-    },
-    "/messaging/{connectionId}/channel": {
+      },
       "get": {
         "tags": [
           "messaging",
@@ -643,6 +641,263 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListMessagingChannels200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/messaging/{connectionId}/channel/{id}": {
+      "get": {
+        "tags": [
+          "messaging",
+          "channel"
+        ],
+        "summary": "Retrieve a channel",
+        "operationId": "GetMessagingChannel",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetMessagingChannelFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessagingChannel"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "messaging",
+          "channel"
+        ],
+        "summary": "Update a channel",
+        "operationId": "UpdateMessagingChannel",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateMessagingChannelFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessagingChannel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessagingChannel"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "messaging",
+          "channel"
+        ],
+        "summary": "Update a channel",
+        "operationId": "PatchMessagingChannel",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchMessagingChannelFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessagingChannel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessagingChannel"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "messaging",
+          "channel"
+        ],
+        "summary": "Remove a channel",
+        "operationId": "RemoveMessagingChannel",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
                 }
               }
             }
@@ -1127,7 +1382,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
                 }
               }
             }
@@ -1732,7 +1987,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
                 }
               }
             }
@@ -2181,7 +2436,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
                 }
               }
             }
@@ -2630,7 +2885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
                 }
               }
             }
@@ -3102,7 +3357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
                 }
               }
             }
@@ -3548,7 +3803,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
                 }
               }
             }
@@ -4078,7 +4333,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
                 }
               }
             }
@@ -4503,7 +4758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
                 }
               }
             }
@@ -4936,7 +5191,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
                 }
               }
             }
@@ -5374,7 +5629,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
                 }
               }
             }
@@ -5945,7 +6200,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
                 }
               }
             }
@@ -6367,7 +6622,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
                 }
               }
             }
@@ -6805,7 +7060,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
                 }
               }
             }
@@ -7235,7 +7490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
                 }
               }
             }
@@ -7999,7 +8254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
                 }
               }
             }
@@ -8453,7 +8708,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
                 }
               }
             }
@@ -8915,7 +9170,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
                 }
               }
             }
@@ -9393,7 +9648,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
                 }
               }
             }
@@ -9823,7 +10078,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
                 }
               }
             }
@@ -10269,7 +10524,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
                 }
               }
             }
@@ -10699,7 +10954,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
                 }
               }
             }
@@ -11152,7 +11407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
                 }
               }
             }
@@ -11707,7 +11962,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
                 }
               }
             }
@@ -12161,7 +12416,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
                 }
               }
             }
@@ -12583,7 +12838,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
                 }
               }
             }
@@ -13029,7 +13284,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
                 }
               }
             }
@@ -13451,7 +13706,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
                 }
               }
             }
@@ -13881,7 +14136,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
                 }
               }
             }
@@ -14319,7 +14574,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
                 }
               }
             }
@@ -14780,7 +15035,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
                 }
               }
             }
@@ -15393,7 +15648,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
                 }
               }
             }
@@ -15855,7 +16110,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
                 }
               }
             }
@@ -16288,7 +16543,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
                 }
               }
             }
@@ -16761,7 +17016,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
                 }
               }
             }
@@ -17199,7 +17454,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
                 }
               }
             }
@@ -17834,7 +18089,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
                 }
               }
             }
@@ -18439,7 +18694,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
                 }
               }
             }
@@ -19252,7 +19507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
                 }
               }
             }
@@ -19690,7 +19945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
                 }
               }
             }
@@ -20152,7 +20407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
                 }
               }
             }
@@ -20589,7 +20844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
                 }
               }
             }
@@ -21050,7 +21305,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
                 }
               }
             }
@@ -21488,7 +21743,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
                 }
               }
             }
@@ -21926,7 +22181,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
                 }
               }
             }
@@ -22364,7 +22619,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
                 }
               }
             }
@@ -22794,7 +23049,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
                 }
               }
             }
@@ -23406,7 +23661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
                 }
               }
             }
@@ -23844,7 +24099,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
                 }
               }
             }
@@ -24282,7 +24537,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
                 }
               }
             }
@@ -25682,7 +25937,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
                 }
               }
             }
@@ -26160,7 +26415,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
                 }
               }
             }
@@ -26622,7 +26877,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
                 }
               }
             }
@@ -27060,7 +27315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
                 }
               }
             }
@@ -27516,7 +27771,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
                 }
               }
             }
@@ -27954,7 +28209,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
                 }
               }
             }
@@ -28384,7 +28639,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
                 }
               }
             }
@@ -28830,7 +29085,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
                 }
               }
             }
@@ -29292,7 +29547,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
                 }
               }
             }
@@ -29863,7 +30118,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
                 }
               }
             }
@@ -30309,7 +30564,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson61"
                 }
               }
             }
@@ -30789,7 +31044,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson61"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson62"
                 }
               }
             }
@@ -31227,7 +31482,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson62"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson63"
                 }
               }
             }
@@ -32015,7 +32270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson63"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson64"
                 }
               }
             }
@@ -32744,7 +32999,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson64"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson65"
                 }
               }
             }
@@ -33190,7 +33445,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson65"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson66"
                 }
               }
             }
@@ -33636,7 +33891,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson66"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson67"
                 }
               }
             }
@@ -34082,7 +34337,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson67"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson68"
                 }
               }
             }
@@ -34546,7 +34801,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson68"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson69"
                 }
               }
             }
@@ -34976,7 +35231,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson69"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson70"
                 }
               }
             }
@@ -35575,7 +35830,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson70"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson71"
                 }
               }
             }
@@ -36029,7 +36284,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson71"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson72"
                 }
               }
             }
@@ -36584,7 +36839,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson72"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson73"
                 }
               }
             }
@@ -37221,7 +37476,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson73"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson74"
                 }
               }
             }
@@ -37651,7 +37906,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson74"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson75"
                 }
               }
             }
@@ -38119,7 +38374,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson75"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson76"
                 }
               }
             }
@@ -38565,7 +38820,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson76"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson77"
                 }
               }
             }
@@ -39003,7 +39258,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson77"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson78"
                 }
               }
             }
@@ -39488,7 +39743,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson78"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson79"
                 }
               }
             }
@@ -39942,7 +40197,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson79"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson80"
                 }
               }
             }
@@ -40901,7 +41156,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson80"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson81"
                 }
               }
             }
@@ -41331,7 +41586,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson81"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson82"
                 }
               }
             }
@@ -41769,7 +42024,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson82"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson83"
                 }
               }
             }
@@ -42215,7 +42470,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson83"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson84"
                 }
               }
             }
@@ -42653,7 +42908,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson84"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson85"
                 }
               }
             }
@@ -43091,7 +43346,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson85"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson86"
                 }
               }
             }
@@ -43537,7 +43792,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson86"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson87"
                 }
               }
             }
@@ -43959,7 +44214,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson87"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson88"
                 }
               }
             }
@@ -44389,7 +44644,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson88"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson89"
                 }
               }
             }
@@ -44819,7 +45074,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson89"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson90"
                 }
               }
             }
@@ -45257,7 +45512,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson90"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson91"
                 }
               }
             }
@@ -45687,7 +45942,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson91"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson92"
                 }
               }
             }
@@ -46111,7 +46366,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson92"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson93"
                 }
               }
             }
@@ -46533,7 +46788,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson93"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson94"
                 }
               }
             }
@@ -47130,7 +47385,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson94"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson95"
                 }
               }
             }
@@ -47568,7 +47823,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson95"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
                 }
               }
             }
@@ -48006,7 +48261,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
                 }
               }
             }
@@ -48510,7 +48765,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
                 }
               }
             }
@@ -48940,7 +49195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
                 }
               }
             }
@@ -49778,7 +50033,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
                 }
               }
             }
@@ -50208,7 +50463,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
                 }
               }
             }
@@ -51688,7 +51943,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
                 }
               }
             }
@@ -52611,7 +52866,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
                 }
               }
             }
@@ -53043,7 +53298,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
                 }
               }
             }
@@ -53215,7 +53470,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
                 }
               }
             }
@@ -53663,7 +53918,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
                 }
               }
             }
@@ -53851,7 +54106,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
                 }
               }
             }
@@ -53887,7 +54142,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
                 }
               }
             }
@@ -54710,7 +54965,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
                 }
               }
             }
@@ -55028,7 +55283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson110"
                 }
               }
             }
@@ -81117,13 +81372,18 @@
           "$ref": "#/components/schemas/MessagingChannel"
         }
       },
+      "DefaultResponseResponseJson": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListMessagingMessages200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/MessagingMessage"
         }
       },
-      "DefaultResponseResponseJson": {
+      "DefaultResponseResponseJson2": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81134,7 +81394,7 @@
           "$ref": "#/components/schemas/CrmDeal"
         }
       },
-      "DefaultResponseResponseJson2": {
+      "DefaultResponseResponseJson3": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81145,7 +81405,7 @@
           "$ref": "#/components/schemas/CrmContact"
         }
       },
-      "DefaultResponseResponseJson3": {
+      "DefaultResponseResponseJson4": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81156,7 +81416,7 @@
           "$ref": "#/components/schemas/CrmCompany"
         }
       },
-      "DefaultResponseResponseJson4": {
+      "DefaultResponseResponseJson5": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81167,7 +81427,7 @@
           "$ref": "#/components/schemas/CrmEvent"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "DefaultResponseResponseJson6": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81178,7 +81438,7 @@
           "$ref": "#/components/schemas/CrmLead"
         }
       },
-      "DefaultResponseResponseJson6": {
+      "DefaultResponseResponseJson7": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81195,7 +81455,7 @@
           "$ref": "#/components/schemas/CrmPipeline"
         }
       },
-      "DefaultResponseResponseJson7": {
+      "DefaultResponseResponseJson8": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81206,7 +81466,7 @@
           "$ref": "#/components/schemas/MarketingList"
         }
       },
-      "DefaultResponseResponseJson8": {
+      "DefaultResponseResponseJson9": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81217,7 +81477,7 @@
           "$ref": "#/components/schemas/MarketingMember"
         }
       },
-      "DefaultResponseResponseJson9": {
+      "DefaultResponseResponseJson10": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81228,7 +81488,7 @@
           "$ref": "#/components/schemas/MarketingCampaign"
         }
       },
-      "DefaultResponseResponseJson10": {
+      "DefaultResponseResponseJson11": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81245,7 +81505,7 @@
           "$ref": "#/components/schemas/TicketingTicket"
         }
       },
-      "DefaultResponseResponseJson11": {
+      "DefaultResponseResponseJson12": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81256,7 +81516,7 @@
           "$ref": "#/components/schemas/TicketingCustomer"
         }
       },
-      "DefaultResponseResponseJson12": {
+      "DefaultResponseResponseJson13": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81267,7 +81527,7 @@
           "$ref": "#/components/schemas/TicketingNote"
         }
       },
-      "DefaultResponseResponseJson13": {
+      "DefaultResponseResponseJson14": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81278,7 +81538,7 @@
           "$ref": "#/components/schemas/TicketingCategory"
         }
       },
-      "DefaultResponseResponseJson14": {
+      "DefaultResponseResponseJson15": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81295,7 +81555,7 @@
           "$ref": "#/components/schemas/UcContact"
         }
       },
-      "DefaultResponseResponseJson15": {
+      "DefaultResponseResponseJson16": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81306,7 +81566,7 @@
           "$ref": "#/components/schemas/UcComment"
         }
       },
-      "DefaultResponseResponseJson16": {
+      "DefaultResponseResponseJson17": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81317,7 +81577,7 @@
           "$ref": "#/components/schemas/UcRecording"
         }
       },
-      "DefaultResponseResponseJson17": {
+      "DefaultResponseResponseJson18": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81328,7 +81588,7 @@
           "$ref": "#/components/schemas/AtsActivity"
         }
       },
-      "DefaultResponseResponseJson18": {
+      "DefaultResponseResponseJson19": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81339,7 +81599,7 @@
           "$ref": "#/components/schemas/AtsCandidate"
         }
       },
-      "DefaultResponseResponseJson19": {
+      "DefaultResponseResponseJson20": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81350,7 +81610,7 @@
           "$ref": "#/components/schemas/AtsJob"
         }
       },
-      "DefaultResponseResponseJson20": {
+      "DefaultResponseResponseJson21": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81361,7 +81621,7 @@
           "$ref": "#/components/schemas/AtsInterview"
         }
       },
-      "DefaultResponseResponseJson21": {
+      "DefaultResponseResponseJson22": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81372,7 +81632,7 @@
           "$ref": "#/components/schemas/AtsDocument"
         }
       },
-      "DefaultResponseResponseJson22": {
+      "DefaultResponseResponseJson23": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81389,7 +81649,7 @@
           "$ref": "#/components/schemas/AtsApplication"
         }
       },
-      "DefaultResponseResponseJson23": {
+      "DefaultResponseResponseJson24": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81400,7 +81660,7 @@
           "$ref": "#/components/schemas/AtsScorecard"
         }
       },
-      "DefaultResponseResponseJson24": {
+      "DefaultResponseResponseJson25": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81411,7 +81671,7 @@
           "$ref": "#/components/schemas/AtsCompany"
         }
       },
-      "DefaultResponseResponseJson25": {
+      "DefaultResponseResponseJson26": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81422,7 +81682,7 @@
           "$ref": "#/components/schemas/HrisEmployee"
         }
       },
-      "DefaultResponseResponseJson26": {
+      "DefaultResponseResponseJson27": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81433,7 +81693,7 @@
           "$ref": "#/components/schemas/HrisCompany"
         }
       },
-      "DefaultResponseResponseJson27": {
+      "DefaultResponseResponseJson28": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81444,7 +81704,7 @@
           "$ref": "#/components/schemas/HrisLocation"
         }
       },
-      "DefaultResponseResponseJson28": {
+      "DefaultResponseResponseJson29": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81455,7 +81715,7 @@
           "$ref": "#/components/schemas/HrisGroup"
         }
       },
-      "DefaultResponseResponseJson29": {
+      "DefaultResponseResponseJson30": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81466,7 +81726,7 @@
           "$ref": "#/components/schemas/HrisTimeoff"
         }
       },
-      "DefaultResponseResponseJson30": {
+      "DefaultResponseResponseJson31": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81483,7 +81743,7 @@
           "$ref": "#/components/schemas/HrisDevice"
         }
       },
-      "DefaultResponseResponseJson31": {
+      "DefaultResponseResponseJson32": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81494,7 +81754,7 @@
           "$ref": "#/components/schemas/HrisTimeshift"
         }
       },
-      "DefaultResponseResponseJson32": {
+      "DefaultResponseResponseJson33": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81505,7 +81765,7 @@
           "$ref": "#/components/schemas/HrisBenefit"
         }
       },
-      "DefaultResponseResponseJson33": {
+      "DefaultResponseResponseJson34": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81516,7 +81776,7 @@
           "$ref": "#/components/schemas/HrisDeduction"
         }
       },
-      "DefaultResponseResponseJson34": {
+      "DefaultResponseResponseJson35": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81527,7 +81787,7 @@
           "$ref": "#/components/schemas/HrisBankaccount"
         }
       },
-      "DefaultResponseResponseJson35": {
+      "DefaultResponseResponseJson36": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81544,7 +81804,7 @@
           "$ref": "#/components/schemas/HrisDocument"
         }
       },
-      "DefaultResponseResponseJson36": {
+      "DefaultResponseResponseJson37": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81561,7 +81821,7 @@
           "$ref": "#/components/schemas/VerificationRequest"
         }
       },
-      "DefaultResponseResponseJson37": {
+      "DefaultResponseResponseJson38": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81650,7 +81910,7 @@
           "$ref": "#/components/schemas/AccountingAccount"
         }
       },
-      "DefaultResponseResponseJson38": {
+      "DefaultResponseResponseJson39": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81661,7 +81921,7 @@
           "$ref": "#/components/schemas/AccountingJournal"
         }
       },
-      "DefaultResponseResponseJson39": {
+      "DefaultResponseResponseJson40": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81672,7 +81932,7 @@
           "$ref": "#/components/schemas/AccountingTransaction"
         }
       },
-      "DefaultResponseResponseJson40": {
+      "DefaultResponseResponseJson41": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81683,7 +81943,7 @@
           "$ref": "#/components/schemas/AccountingContact"
         }
       },
-      "DefaultResponseResponseJson41": {
+      "DefaultResponseResponseJson42": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81694,7 +81954,7 @@
           "$ref": "#/components/schemas/AccountingInvoice"
         }
       },
-      "DefaultResponseResponseJson42": {
+      "DefaultResponseResponseJson43": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81705,7 +81965,7 @@
           "$ref": "#/components/schemas/AccountingBill"
         }
       },
-      "DefaultResponseResponseJson43": {
+      "DefaultResponseResponseJson44": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81716,7 +81976,7 @@
           "$ref": "#/components/schemas/AccountingCreditmemo"
         }
       },
-      "DefaultResponseResponseJson44": {
+      "DefaultResponseResponseJson45": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81727,7 +81987,7 @@
           "$ref": "#/components/schemas/AccountingVendorcredit"
         }
       },
-      "DefaultResponseResponseJson45": {
+      "DefaultResponseResponseJson46": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81738,7 +81998,7 @@
           "$ref": "#/components/schemas/AccountingTaxrate"
         }
       },
-      "DefaultResponseResponseJson46": {
+      "DefaultResponseResponseJson47": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81755,7 +82015,7 @@
           "$ref": "#/components/schemas/AccountingOrder"
         }
       },
-      "DefaultResponseResponseJson47": {
+      "DefaultResponseResponseJson48": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81766,7 +82026,7 @@
           "$ref": "#/components/schemas/AccountingPurchaseorder"
         }
       },
-      "DefaultResponseResponseJson48": {
+      "DefaultResponseResponseJson49": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81777,7 +82037,7 @@
           "$ref": "#/components/schemas/AccountingSalesorder"
         }
       },
-      "DefaultResponseResponseJson49": {
+      "DefaultResponseResponseJson50": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81818,7 +82078,7 @@
           "$ref": "#/components/schemas/AccountingCategory"
         }
       },
-      "DefaultResponseResponseJson50": {
+      "DefaultResponseResponseJson51": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81829,7 +82089,7 @@
           "$ref": "#/components/schemas/AccountingExpense"
         }
       },
-      "DefaultResponseResponseJson51": {
+      "DefaultResponseResponseJson52": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81840,7 +82100,7 @@
           "$ref": "#/components/schemas/StorageFile"
         }
       },
-      "DefaultResponseResponseJson52": {
+      "DefaultResponseResponseJson53": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81851,7 +82111,7 @@
           "$ref": "#/components/schemas/CommerceItem"
         }
       },
-      "DefaultResponseResponseJson53": {
+      "DefaultResponseResponseJson54": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81862,7 +82122,7 @@
           "$ref": "#/components/schemas/CommerceCollection"
         }
       },
-      "DefaultResponseResponseJson54": {
+      "DefaultResponseResponseJson55": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81873,7 +82133,7 @@
           "$ref": "#/components/schemas/CommerceInventory"
         }
       },
-      "DefaultResponseResponseJson55": {
+      "DefaultResponseResponseJson56": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81884,7 +82144,7 @@
           "$ref": "#/components/schemas/CommerceLocation"
         }
       },
-      "DefaultResponseResponseJson56": {
+      "DefaultResponseResponseJson57": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81895,7 +82155,7 @@
           "$ref": "#/components/schemas/CommerceReview"
         }
       },
-      "DefaultResponseResponseJson57": {
+      "DefaultResponseResponseJson58": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81906,7 +82166,7 @@
           "$ref": "#/components/schemas/CommerceReservation"
         }
       },
-      "DefaultResponseResponseJson58": {
+      "DefaultResponseResponseJson59": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81923,7 +82183,7 @@
           "$ref": "#/components/schemas/CommerceSaleschannel"
         }
       },
-      "DefaultResponseResponseJson59": {
+      "DefaultResponseResponseJson60": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81934,7 +82194,7 @@
           "$ref": "#/components/schemas/CommerceItemvariant"
         }
       },
-      "DefaultResponseResponseJson60": {
+      "DefaultResponseResponseJson61": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81945,7 +82205,7 @@
           "$ref": "#/components/schemas/PaymentPayment"
         }
       },
-      "DefaultResponseResponseJson61": {
+      "DefaultResponseResponseJson62": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81956,7 +82216,7 @@
           "$ref": "#/components/schemas/PaymentLink"
         }
       },
-      "DefaultResponseResponseJson62": {
+      "DefaultResponseResponseJson63": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81979,7 +82239,7 @@
           "$ref": "#/components/schemas/PaymentSubscription"
         }
       },
-      "DefaultResponseResponseJson63": {
+      "DefaultResponseResponseJson64": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -81996,7 +82256,7 @@
           "$ref": "#/components/schemas/KmsSpace"
         }
       },
-      "DefaultResponseResponseJson64": {
+      "DefaultResponseResponseJson65": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82007,7 +82267,7 @@
           "$ref": "#/components/schemas/KmsPage"
         }
       },
-      "DefaultResponseResponseJson65": {
+      "DefaultResponseResponseJson66": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82018,7 +82278,7 @@
           "$ref": "#/components/schemas/KmsComment"
         }
       },
-      "DefaultResponseResponseJson66": {
+      "DefaultResponseResponseJson67": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82029,7 +82289,7 @@
           "$ref": "#/components/schemas/TaskProject"
         }
       },
-      "DefaultResponseResponseJson67": {
+      "DefaultResponseResponseJson68": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82040,7 +82300,7 @@
           "$ref": "#/components/schemas/TaskTask"
         }
       },
-      "DefaultResponseResponseJson68": {
+      "DefaultResponseResponseJson69": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82051,7 +82311,7 @@
           "$ref": "#/components/schemas/TaskComment"
         }
       },
-      "DefaultResponseResponseJson69": {
+      "DefaultResponseResponseJson70": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82068,7 +82328,7 @@
           "$ref": "#/components/schemas/CalendarCalendar"
         }
       },
-      "DefaultResponseResponseJson70": {
+      "DefaultResponseResponseJson71": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82079,7 +82339,7 @@
           "$ref": "#/components/schemas/CalendarEvent"
         }
       },
-      "DefaultResponseResponseJson71": {
+      "DefaultResponseResponseJson72": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82096,7 +82356,7 @@
           "$ref": "#/components/schemas/CalendarLink"
         }
       },
-      "DefaultResponseResponseJson72": {
+      "DefaultResponseResponseJson73": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82113,7 +82373,7 @@
           "$ref": "#/components/schemas/CalendarWebinar"
         }
       },
-      "DefaultResponseResponseJson73": {
+      "DefaultResponseResponseJson74": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82124,7 +82384,7 @@
           "$ref": "#/components/schemas/AdsOrganization"
         }
       },
-      "DefaultResponseResponseJson74": {
+      "DefaultResponseResponseJson75": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82135,7 +82395,7 @@
           "$ref": "#/components/schemas/AdsCampaign"
         }
       },
-      "DefaultResponseResponseJson75": {
+      "DefaultResponseResponseJson76": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82146,7 +82406,7 @@
           "$ref": "#/components/schemas/AdsCreative"
         }
       },
-      "DefaultResponseResponseJson76": {
+      "DefaultResponseResponseJson77": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82157,7 +82417,7 @@
           "$ref": "#/components/schemas/AdsInsertionorder"
         }
       },
-      "DefaultResponseResponseJson77": {
+      "DefaultResponseResponseJson78": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82168,7 +82428,7 @@
           "$ref": "#/components/schemas/AdsGroup"
         }
       },
-      "DefaultResponseResponseJson78": {
+      "DefaultResponseResponseJson79": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82179,7 +82439,7 @@
           "$ref": "#/components/schemas/AdsAd"
         }
       },
-      "DefaultResponseResponseJson79": {
+      "DefaultResponseResponseJson80": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82208,7 +82468,7 @@
           "$ref": "#/components/schemas/LmsCourse"
         }
       },
-      "DefaultResponseResponseJson80": {
+      "DefaultResponseResponseJson81": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82219,7 +82479,7 @@
           "$ref": "#/components/schemas/LmsClass"
         }
       },
-      "DefaultResponseResponseJson81": {
+      "DefaultResponseResponseJson82": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82230,7 +82490,7 @@
           "$ref": "#/components/schemas/LmsStudent"
         }
       },
-      "DefaultResponseResponseJson82": {
+      "DefaultResponseResponseJson83": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82241,7 +82501,7 @@
           "$ref": "#/components/schemas/LmsInstructor"
         }
       },
-      "DefaultResponseResponseJson83": {
+      "DefaultResponseResponseJson84": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82252,7 +82512,7 @@
           "$ref": "#/components/schemas/LmsContent"
         }
       },
-      "DefaultResponseResponseJson84": {
+      "DefaultResponseResponseJson85": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82263,7 +82523,7 @@
           "$ref": "#/components/schemas/LmsCollection"
         }
       },
-      "DefaultResponseResponseJson85": {
+      "DefaultResponseResponseJson86": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82274,7 +82534,7 @@
           "$ref": "#/components/schemas/LmsActivity"
         }
       },
-      "DefaultResponseResponseJson86": {
+      "DefaultResponseResponseJson87": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82285,7 +82545,7 @@
           "$ref": "#/components/schemas/RepoOrganization"
         }
       },
-      "DefaultResponseResponseJson87": {
+      "DefaultResponseResponseJson88": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82296,7 +82556,7 @@
           "$ref": "#/components/schemas/RepoRepository"
         }
       },
-      "DefaultResponseResponseJson88": {
+      "DefaultResponseResponseJson89": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82307,7 +82567,7 @@
           "$ref": "#/components/schemas/RepoBranch"
         }
       },
-      "DefaultResponseResponseJson89": {
+      "DefaultResponseResponseJson90": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82318,7 +82578,7 @@
           "$ref": "#/components/schemas/RepoCommit"
         }
       },
-      "DefaultResponseResponseJson90": {
+      "DefaultResponseResponseJson91": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82329,7 +82589,7 @@
           "$ref": "#/components/schemas/RepoPullrequest"
         }
       },
-      "DefaultResponseResponseJson91": {
+      "DefaultResponseResponseJson92": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82340,7 +82600,7 @@
           "$ref": "#/components/schemas/MetadataMetadata"
         }
       },
-      "DefaultResponseResponseJson92": {
+      "DefaultResponseResponseJson93": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82351,7 +82611,7 @@
           "$ref": "#/components/schemas/FormsForm"
         }
       },
-      "DefaultResponseResponseJson93": {
+      "DefaultResponseResponseJson94": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82368,7 +82628,7 @@
           "$ref": "#/components/schemas/DatastoreDatabase"
         }
       },
-      "DefaultResponseResponseJson94": {
+      "DefaultResponseResponseJson95": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82379,7 +82639,7 @@
           "$ref": "#/components/schemas/DatastoreTable"
         }
       },
-      "DefaultResponseResponseJson95": {
+      "DefaultResponseResponseJson96": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82390,7 +82650,7 @@
           "$ref": "#/components/schemas/DatastoreRecord"
         }
       },
-      "DefaultResponseResponseJson96": {
+      "DefaultResponseResponseJson97": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82401,7 +82661,7 @@
           "$ref": "#/components/schemas/ShippingShipment"
         }
       },
-      "DefaultResponseResponseJson97": {
+      "DefaultResponseResponseJson98": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82412,7 +82672,7 @@
           "$ref": "#/components/schemas/ShippingLabel"
         }
       },
-      "DefaultResponseResponseJson98": {
+      "DefaultResponseResponseJson99": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82435,7 +82695,7 @@
           "$ref": "#/components/schemas/SigningDocument"
         }
       },
-      "DefaultResponseResponseJson99": {
+      "DefaultResponseResponseJson100": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82446,7 +82706,7 @@
           "$ref": "#/components/schemas/SigningSignatory"
         }
       },
-      "DefaultResponseResponseJson100": {
+      "DefaultResponseResponseJson101": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82493,7 +82753,7 @@
           "$ref": "#/components/schemas/AnalyticsProperty"
         }
       },
-      "DefaultResponseResponseJson101": {
+      "DefaultResponseResponseJson102": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82516,7 +82776,7 @@
           "$ref": "#/components/schemas/AnalyticsVisitor"
         }
       },
-      "DefaultResponseResponseJson102": {
+      "DefaultResponseResponseJson103": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82533,7 +82793,7 @@
           "$ref": "#/components/schemas/Connection"
         }
       },
-      "DefaultResponseResponseJson103": {
+      "DefaultResponseResponseJson104": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82544,7 +82804,7 @@
           "$ref": "#/components/schemas/SecretsManager"
         }
       },
-      "DefaultResponseResponseJson104": {
+      "DefaultResponseResponseJson105": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82567,7 +82827,7 @@
           "$ref": "#/components/schemas/Integration"
         }
       },
-      "DefaultResponseResponseJson105": {
+      "DefaultResponseResponseJson106": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82578,12 +82838,12 @@
           "$ref": "#/components/schemas/Webhook"
         }
       },
-      "DefaultResponseResponseJson106": {
+      "DefaultResponseResponseJson107": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson107": {
+      "DefaultResponseResponseJson108": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82634,7 +82894,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson108": {
+      "DefaultResponseResponseJson109": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82645,7 +82905,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson109": {
+      "DefaultResponseResponseJson110": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -95878,6 +96138,7 @@
           "messaging_message_read",
           "messaging_message_write",
           "messaging_channel_read",
+          "messaging_channel_write",
           "messaging_event_read",
           "messaging_event_write",
           "kms_space_read",
@@ -96640,6 +96901,10 @@
             {
               "value": "messaging_channel_read",
               "name": "MessagingChannelRead"
+            },
+            {
+              "value": "messaging_channel_write",
+              "name": "MessagingChannelWrite"
             },
             {
               "value": "messaging_event_read",
@@ -104413,7 +104678,7 @@
           ]
         }
       },
-      "GetMessagingChannelFieldsParameterItem": {
+      "CreateMessagingChannelFieldsParameterItem": {
         "enum": [
           "id",
           "created_at",
@@ -104431,7 +104696,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetMessagingChannelFieldsParameterItem",
+          "name": "CreateMessagingChannelFieldsParameterItem",
           "modelAsString": false,
           "values": [
             {
@@ -104504,6 +104769,222 @@
         "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListMessagingChannelsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_subchannels",
+              "name": "HasSubchannels"
+            },
+            {
+              "value": "members",
+              "name": "Members"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetMessagingChannelFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "parent_id",
+          "has_subchannels",
+          "members",
+          "is_active",
+          "is_private",
+          "web_url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetMessagingChannelFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_subchannels",
+              "name": "HasSubchannels"
+            },
+            {
+              "value": "members",
+              "name": "Members"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateMessagingChannelFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "parent_id",
+          "has_subchannels",
+          "members",
+          "is_active",
+          "is_private",
+          "web_url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateMessagingChannelFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_subchannels",
+              "name": "HasSubchannels"
+            },
+            {
+              "value": "members",
+              "name": "Members"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_private",
+              "name": "IsPrivate"
+            },
+            {
+              "value": "web_url",
+              "name": "WebUrl"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchMessagingChannelFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "parent_id",
+          "has_subchannels",
+          "members",
+          "is_active",
+          "is_private",
+          "web_url",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchMessagingChannelFieldsParameterItem",
           "modelAsString": false,
           "values": [
             {
@@ -158780,6 +159261,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/AssessmentOrder"
+            }
+          }
+        },
+        "required": true
+      },
+      "MessagingChannel": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/MessagingChannel"
             }
           }
         },

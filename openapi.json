@@ -524,6 +524,16 @@
                }
             }
          },
+         "MessagingChannel": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/MessagingChannel"
+                  }
+               }
+            }
+         },
          "MessagingMessage": {
             "required": true,
             "content": {
@@ -24226,6 +24236,7 @@
                   "messaging_message_read",
                   "messaging_message_write",
                   "messaging_channel_read",
+                  "messaging_channel_write",
                   "messaging_event_read",
                   "messaging_event_write",
                   "kms_space_read",
@@ -28355,9 +28366,9 @@
             "operationId": "patchAssessmentOrder"
          }
       },
-      "/messaging/{connection_id}/channel/{id}": {
-         "get": {
-            "summary": "Retrieve a channel",
+      "/messaging/{connection_id}/channel": {
+         "post": {
+            "summary": "Create a channel",
             "parameters": [
                {
                   "schema": {
@@ -28402,21 +28413,22 @@
                   "name": "connection_id",
                   "in": "path",
                   "required": true
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "description": "ID of the Channel",
-                  "name": "id",
-                  "in": "path",
-                  "required": true
                }
             ],
             "tags": [
                "messaging",
                "channel"
             ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/MessagingChannel"
+                     }
+                  }
+               }
+            },
             "responses": {
                "200": {
                   "content": {
@@ -28434,10 +28446,8 @@
                   "jwt": []
                }
             ],
-            "operationId": "getMessagingChannel"
-         }
-      },
-      "/messaging/{connection_id}/channel": {
+            "operationId": "createMessagingChannel"
+         },
          "get": {
             "summary": "List all channels",
             "parameters": [
@@ -28575,6 +28585,318 @@
                }
             ],
             "operationId": "listMessagingChannels"
+         }
+      },
+      "/messaging/{connection_id}/channel/{id}": {
+         "get": {
+            "summary": "Retrieve a channel",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "parent_id",
+                           "has_subchannels",
+                           "members",
+                           "is_active",
+                           "is_private",
+                           "web_url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Channel",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "messaging",
+               "channel"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/MessagingChannel"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getMessagingChannel"
+         },
+         "put": {
+            "summary": "Update a channel",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "parent_id",
+                           "has_subchannels",
+                           "members",
+                           "is_active",
+                           "is_private",
+                           "web_url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Channel",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "messaging",
+               "channel"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/MessagingChannel"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/MessagingChannel"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateMessagingChannel"
+         },
+         "patch": {
+            "summary": "Update a channel",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "parent_id",
+                           "has_subchannels",
+                           "members",
+                           "is_active",
+                           "is_private",
+                           "web_url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Channel",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "messaging",
+               "channel"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/MessagingChannel"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/MessagingChannel"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchMessagingChannel"
+         },
+         "delete": {
+            "summary": "Remove a channel",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Channel",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "messaging",
+               "channel"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeMessagingChannel"
          }
       },
       "/messaging/{connection_id}/message": {

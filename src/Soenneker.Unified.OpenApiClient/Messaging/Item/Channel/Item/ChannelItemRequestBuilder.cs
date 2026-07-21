@@ -34,6 +34,23 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item
         {
         }
         /// <summary>
+        /// Remove a channel
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Retrieve a channel
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel"/></returns>
@@ -52,6 +69,65 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update a channel
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel?> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Update a channel
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel?> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Remove a channel
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Retrieve a channel
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -68,6 +144,50 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update a channel
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update a channel
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannel body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -94,6 +214,60 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Channel.Item
 #else
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.GetMessagingChannelFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Update a channel
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChannelItemRequestBuilderPatchQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchMessagingChannelFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchMessagingChannelFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Update a channel
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChannelItemRequestBuilderPutQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateMessagingChannelFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateMessagingChannelFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

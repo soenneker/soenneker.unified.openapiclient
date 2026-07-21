@@ -648,6 +648,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         MessagingChannelRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messaging_channel_write")]
+        #pragma warning disable CS1591
+        MessagingChannelWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messaging_event_read")]
         #pragma warning disable CS1591
         MessagingEventRead,
