@@ -14100,6 +14100,14 @@
                   "type": "string",
                   "format": "date-time"
                },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
                "priority": {
                   "type": "string"
                },
@@ -14129,6 +14137,9 @@
                },
                "has_children": {
                   "type": "boolean"
+               },
+               "type": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -20009,7 +20020,31 @@
                "type": "string"
             }
          },
+         "LmsSubject": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string"
+               },
+               "rank": {
+                  "type": "number"
+               }
+            }
+         },
+         "property_LmsContent_subjects": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsSubject"
+            },
+            "description": "Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level)"
+         },
          "property_LmsContent_skills": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "property_LmsContent_tags": {
             "type": "array",
             "items": {
                "type": "string"
@@ -20088,8 +20123,17 @@
                "categories": {
                   "$ref": "#/components/schemas/property_LmsContent_categories"
                },
+               "subjects": {
+                  "$ref": "#/components/schemas/property_LmsContent_subjects"
+               },
                "skills": {
                   "$ref": "#/components/schemas/property_LmsContent_skills"
+               },
+               "tags": {
+                  "$ref": "#/components/schemas/property_LmsContent_tags"
+               },
+               "difficulty": {
+                  "type": "string"
                },
                "sort_order": {
                   "type": "number"
@@ -20099,6 +20143,10 @@
                },
                "short_description": {
                   "type": "string"
+               },
+               "published_at": {
+                  "type": "string",
+                  "format": "date-time"
                },
                "localizations": {
                   "$ref": "#/components/schemas/property_LmsContent_localizations"
@@ -24908,6 +24956,15 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "list_assigned_user_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "list_user_mentioned_id": {
                   "type": "string",
                   "enum": [
@@ -26466,6 +26523,15 @@
                   "x-speakeasy-unknown-values": "allow"
                },
                "list_effective_status": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_assigned_user_id": {
                   "type": "string",
                   "enum": [
                      "supported-required",
@@ -71476,6 +71542,8 @@
                            "status",
                            "notes",
                            "due_at",
+                           "start_at",
+                           "end_at",
                            "priority",
                            "assigned_user_ids",
                            "creator_user_id",
@@ -71486,6 +71554,7 @@
                            "attachment_ids",
                            "metadata",
                            "has_children",
+                           "type",
                            "raw"
                         ]
                      }
@@ -71656,6 +71725,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "assigned_user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The assigned user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -71670,6 +71748,8 @@
                            "status",
                            "notes",
                            "due_at",
+                           "start_at",
+                           "end_at",
                            "priority",
                            "assigned_user_ids",
                            "creator_user_id",
@@ -71680,6 +71760,7 @@
                            "attachment_ids",
                            "metadata",
                            "has_children",
+                           "type",
                            "raw"
                         ]
                      }
@@ -71752,6 +71833,8 @@
                            "status",
                            "notes",
                            "due_at",
+                           "start_at",
+                           "end_at",
                            "priority",
                            "assigned_user_ids",
                            "creator_user_id",
@@ -71762,6 +71845,7 @@
                            "attachment_ids",
                            "metadata",
                            "has_children",
+                           "type",
                            "raw"
                         ]
                      }
@@ -71841,6 +71925,8 @@
                            "status",
                            "notes",
                            "due_at",
+                           "start_at",
+                           "end_at",
                            "priority",
                            "assigned_user_ids",
                            "creator_user_id",
@@ -71851,6 +71937,7 @@
                            "attachment_ids",
                            "metadata",
                            "has_children",
+                           "type",
                            "raw"
                         ]
                      }
@@ -71940,6 +72027,8 @@
                            "status",
                            "notes",
                            "due_at",
+                           "start_at",
+                           "end_at",
                            "priority",
                            "assigned_user_ids",
                            "creator_user_id",
@@ -71950,6 +72039,7 @@
                            "attachment_ids",
                            "metadata",
                            "has_children",
+                           "type",
                            "raw"
                         ]
                      }
@@ -81822,10 +81912,14 @@
                            "is_active",
                            "duration_minutes",
                            "categories",
+                           "subjects",
                            "skills",
+                           "tags",
+                           "difficulty",
                            "sort_order",
                            "provider_name",
                            "short_description",
+                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
@@ -81979,10 +82073,14 @@
                            "is_active",
                            "duration_minutes",
                            "categories",
+                           "subjects",
                            "skills",
+                           "tags",
+                           "difficulty",
                            "sort_order",
                            "provider_name",
                            "short_description",
+                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
@@ -82060,10 +82158,14 @@
                            "is_active",
                            "duration_minutes",
                            "categories",
+                           "subjects",
                            "skills",
+                           "tags",
+                           "difficulty",
                            "sort_order",
                            "provider_name",
                            "short_description",
+                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
@@ -82148,10 +82250,14 @@
                            "is_active",
                            "duration_minutes",
                            "categories",
+                           "subjects",
                            "skills",
+                           "tags",
+                           "difficulty",
                            "sort_order",
                            "provider_name",
                            "short_description",
+                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
@@ -82246,10 +82352,14 @@
                            "is_active",
                            "duration_minutes",
                            "categories",
+                           "subjects",
                            "skills",
+                           "tags",
+                           "difficulty",
                            "sort_order",
                            "provider_name",
                            "short_description",
+                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",

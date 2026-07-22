@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The difficulty property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Difficulty { get; set; }
+#nullable restore
+#else
+        public string Difficulty { get; set; }
+#endif
         /// <summary>The duration_minutes property</summary>
         public double? DurationMinutes { get; set; }
         /// <summary>The external_reference property</summary>
@@ -116,6 +124,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProviderName { get; set; }
 #endif
+        /// <summary>The published_at property</summary>
+        public DateTimeOffset? PublishedAt { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +152,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The sort_order property</summary>
         public double? SortOrder { get; set; }
+        /// <summary>Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsSubject>? Subjects { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsSubject> Subjects { get; set; }
+#endif
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -174,6 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "course_ids", n => { CourseIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "difficulty", n => { Difficulty = n.GetStringValue(); } },
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "external_reference", n => { ExternalReference = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -184,10 +211,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>(global::Soenneker.Unified.OpenApiClient.Models.LmsMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
+                { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty.CreateFromDiscriminatorValue); } },
                 { "short_description", n => { ShortDescription = n.GetStringValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sort_order", n => { SortOrder = n.GetDoubleValue(); } },
+                { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsSubject>(global::Soenneker.Unified.OpenApiClient.Models.LmsSubject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -203,6 +233,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("course_ids", CourseIds);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("difficulty", Difficulty);
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("external_reference", ExternalReference);
             writer.WriteStringValue("id", Id);
@@ -213,10 +244,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>("media", Media);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider_name", ProviderName);
+            writer.WriteDateTimeOffsetValue("published_at", PublishedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsContentRawProperty>("raw", Raw);
             writer.WriteStringValue("short_description", ShortDescription);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteDoubleValue("sort_order", SortOrder);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsSubject>("subjects", Subjects);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

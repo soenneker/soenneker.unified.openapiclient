@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DueAt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "start_at")]
+        #pragma warning disable CS1591
+        StartAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "end_at")]
+        #pragma warning disable CS1591
+        EndAt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "priority")]
         #pragma warning disable CS1591
         Priority,
@@ -87,6 +95,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "has_children")]
         #pragma warning disable CS1591
         HasChildren,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

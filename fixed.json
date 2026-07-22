@@ -34514,6 +34514,14 @@
             }
           },
           {
+            "name": "assigned_user_id",
+            "in": "query",
+            "description": "The assigned user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -66940,6 +66948,14 @@
             "type": "string",
             "format": "date-time"
           },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
           "priority": {
             "type": "string"
           },
@@ -66988,6 +67004,9 @@
           },
           "has_children": {
             "type": "boolean"
+          },
+          "type": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/TaskTaskRawProperty"
@@ -72555,7 +72574,31 @@
           "type": "string"
         }
       },
+      "LmsSubject": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "number"
+          }
+        }
+      },
+      "PropertyLmsContentSubjects": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsSubject"
+        },
+        "description": "Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level)"
+      },
       "PropertyLmsContentSkills": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyLmsContentTags": {
         "type": "array",
         "items": {
           "type": "string"
@@ -72646,11 +72689,27 @@
               "type": "string"
             }
           },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsSubject"
+            },
+            "description": "Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level)"
+          },
           "skills": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "difficulty": {
+            "type": "string"
           },
           "sort_order": {
             "type": "number"
@@ -72660,6 +72719,10 @@
           },
           "short_description": {
             "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "localizations": {
             "type": "array",
@@ -76831,6 +76894,9 @@
           "list_user_id": {
             "$ref": "#/components/schemas/IntegrationSupportListUserId"
           },
+          "list_assigned_user_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListAssignedUserId"
+          },
           "list_user_mentioned_id": {
             "$ref": "#/components/schemas/IntegrationSupportListUserMentionedId"
           },
@@ -77352,6 +77418,9 @@
           },
           "list_effective_status": {
             "$ref": "#/components/schemas/IntegrationSupportListEffectiveStatus"
+          },
+          "virtual_webhook_assigned_user_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookAssignedUserId"
           }
         }
       },
@@ -98028,6 +98097,34 @@
           ]
         }
       },
+      "IntegrationSupportListAssignedUserId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListAssignedUserId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "IntegrationSupportListUserMentionedId": {
         "enum": [
           "supported-required",
@@ -102883,6 +102980,34 @@
         "x-speakeasy-unknown-values": "allow",
         "x-ms-enum": {
           "name": "IntegrationSupportListEffectiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookAssignedUserId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookAssignedUserId",
           "modelAsString": false,
           "values": [
             {
@@ -140073,6 +140198,8 @@
           "status",
           "notes",
           "due_at",
+          "start_at",
+          "end_at",
           "priority",
           "assigned_user_ids",
           "creator_user_id",
@@ -140083,6 +140210,7 @@
           "attachment_ids",
           "metadata",
           "has_children",
+          "type",
           "raw"
         ],
         "type": "string",
@@ -140132,6 +140260,14 @@
               "name": "DueAt"
             },
             {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
               "value": "priority",
               "name": "Priority"
             },
@@ -140172,6 +140308,10 @@
               "name": "HasChildren"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140190,6 +140330,8 @@
           "status",
           "notes",
           "due_at",
+          "start_at",
+          "end_at",
           "priority",
           "assigned_user_ids",
           "creator_user_id",
@@ -140200,6 +140342,7 @@
           "attachment_ids",
           "metadata",
           "has_children",
+          "type",
           "raw"
         ],
         "type": "string",
@@ -140249,6 +140392,14 @@
               "name": "DueAt"
             },
             {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
               "value": "priority",
               "name": "Priority"
             },
@@ -140289,6 +140440,10 @@
               "name": "HasChildren"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140307,6 +140462,8 @@
           "status",
           "notes",
           "due_at",
+          "start_at",
+          "end_at",
           "priority",
           "assigned_user_ids",
           "creator_user_id",
@@ -140317,6 +140474,7 @@
           "attachment_ids",
           "metadata",
           "has_children",
+          "type",
           "raw"
         ],
         "type": "string",
@@ -140366,6 +140524,14 @@
               "name": "DueAt"
             },
             {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
               "value": "priority",
               "name": "Priority"
             },
@@ -140406,6 +140572,10 @@
               "name": "HasChildren"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140424,6 +140594,8 @@
           "status",
           "notes",
           "due_at",
+          "start_at",
+          "end_at",
           "priority",
           "assigned_user_ids",
           "creator_user_id",
@@ -140434,6 +140606,7 @@
           "attachment_ids",
           "metadata",
           "has_children",
+          "type",
           "raw"
         ],
         "type": "string",
@@ -140483,6 +140656,14 @@
               "name": "DueAt"
             },
             {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
               "value": "priority",
               "name": "Priority"
             },
@@ -140523,6 +140704,10 @@
               "name": "HasChildren"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140541,6 +140726,8 @@
           "status",
           "notes",
           "due_at",
+          "start_at",
+          "end_at",
           "priority",
           "assigned_user_ids",
           "creator_user_id",
@@ -140551,6 +140738,7 @@
           "attachment_ids",
           "metadata",
           "has_children",
+          "type",
           "raw"
         ],
         "type": "string",
@@ -140600,6 +140788,14 @@
               "name": "DueAt"
             },
             {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
               "value": "priority",
               "name": "Priority"
             },
@@ -140638,6 +140834,10 @@
             {
               "value": "has_children",
               "name": "HasChildren"
+            },
+            {
+              "value": "type",
+              "name": "Type"
             },
             {
               "value": "raw",
@@ -148720,10 +148920,14 @@
           "is_active",
           "duration_minutes",
           "categories",
+          "subjects",
           "skills",
+          "tags",
+          "difficulty",
           "sort_order",
           "provider_name",
           "short_description",
+          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
@@ -148784,8 +148988,20 @@
               "name": "Categories"
             },
             {
+              "value": "subjects",
+              "name": "Subjects"
+            },
+            {
               "value": "skills",
               "name": "Skills"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "difficulty",
+              "name": "Difficulty"
             },
             {
               "value": "sort_order",
@@ -148798,6 +149014,10 @@
             {
               "value": "short_description",
               "name": "ShortDescription"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "localizations",
@@ -148832,10 +149052,14 @@
           "is_active",
           "duration_minutes",
           "categories",
+          "subjects",
           "skills",
+          "tags",
+          "difficulty",
           "sort_order",
           "provider_name",
           "short_description",
+          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
@@ -148896,8 +149120,20 @@
               "name": "Categories"
             },
             {
+              "value": "subjects",
+              "name": "Subjects"
+            },
+            {
               "value": "skills",
               "name": "Skills"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "difficulty",
+              "name": "Difficulty"
             },
             {
               "value": "sort_order",
@@ -148910,6 +149146,10 @@
             {
               "value": "short_description",
               "name": "ShortDescription"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "localizations",
@@ -148944,10 +149184,14 @@
           "is_active",
           "duration_minutes",
           "categories",
+          "subjects",
           "skills",
+          "tags",
+          "difficulty",
           "sort_order",
           "provider_name",
           "short_description",
+          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
@@ -149008,8 +149252,20 @@
               "name": "Categories"
             },
             {
+              "value": "subjects",
+              "name": "Subjects"
+            },
+            {
               "value": "skills",
               "name": "Skills"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "difficulty",
+              "name": "Difficulty"
             },
             {
               "value": "sort_order",
@@ -149022,6 +149278,10 @@
             {
               "value": "short_description",
               "name": "ShortDescription"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "localizations",
@@ -149056,10 +149316,14 @@
           "is_active",
           "duration_minutes",
           "categories",
+          "subjects",
           "skills",
+          "tags",
+          "difficulty",
           "sort_order",
           "provider_name",
           "short_description",
+          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
@@ -149120,8 +149384,20 @@
               "name": "Categories"
             },
             {
+              "value": "subjects",
+              "name": "Subjects"
+            },
+            {
               "value": "skills",
               "name": "Skills"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "difficulty",
+              "name": "Difficulty"
             },
             {
               "value": "sort_order",
@@ -149134,6 +149410,10 @@
             {
               "value": "short_description",
               "name": "ShortDescription"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "localizations",
@@ -149168,10 +149448,14 @@
           "is_active",
           "duration_minutes",
           "categories",
+          "subjects",
           "skills",
+          "tags",
+          "difficulty",
           "sort_order",
           "provider_name",
           "short_description",
+          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
@@ -149232,8 +149516,20 @@
               "name": "Categories"
             },
             {
+              "value": "subjects",
+              "name": "Subjects"
+            },
+            {
               "value": "skills",
               "name": "Skills"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "difficulty",
+              "name": "Difficulty"
             },
             {
               "value": "sort_order",
@@ -149246,6 +149542,10 @@
             {
               "value": "short_description",
               "name": "ShortDescription"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "localizations",

@@ -56,9 +56,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Categories,
         #pragma warning restore CS1591
+        [EnumMember(Value = "subjects")]
+        #pragma warning disable CS1591
+        Subjects,
+        #pragma warning restore CS1591
         [EnumMember(Value = "skills")]
         #pragma warning disable CS1591
         Skills,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tags")]
+        #pragma warning disable CS1591
+        Tags,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "difficulty")]
+        #pragma warning disable CS1591
+        Difficulty,
         #pragma warning restore CS1591
         [EnumMember(Value = "sort_order")]
         #pragma warning disable CS1591
@@ -71,6 +83,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "short_description")]
         #pragma warning disable CS1591
         ShortDescription,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "published_at")]
+        #pragma warning disable CS1591
+        PublishedAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "localizations")]
         #pragma warning disable CS1591

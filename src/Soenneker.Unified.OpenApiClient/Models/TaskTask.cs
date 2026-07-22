@@ -44,6 +44,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The due_at property</summary>
         public DateTimeOffset? DueAt { get; set; }
+        /// <summary>The end_at property</summary>
+        public DateTimeOffset? EndAt { get; set; }
         /// <summary>The follower_user_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +128,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty Raw { get; set; }
 #endif
+        /// <summary>The start_at property</summary>
+        public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus? Status { get; set; }
         /// <summary>The tags property</summary>
@@ -135,6 +139,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Tags { get; set; }
+#endif
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -177,6 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
+                { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "follower_user_ids", n => { FollowerUserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "group_ids", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "has_children", n => { HasChildren = n.GetBoolValue(); } },
@@ -188,8 +201,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty.CreateFromDiscriminatorValue); } },
+                { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -207,6 +222,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("creator_user_id", CreatorUserId);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
+            writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteCollectionOfPrimitiveValues<string>("follower_user_ids", FollowerUserIds);
             writer.WriteCollectionOfPrimitiveValues<string>("group_ids", GroupIds);
             writer.WriteBoolValue("has_children", HasChildren);
@@ -218,8 +234,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty>("raw", Raw);
+            writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
