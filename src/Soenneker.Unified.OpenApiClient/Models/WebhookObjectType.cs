@@ -608,5 +608,29 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DatastoreQuery,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_profile")]
+        #pragma warning disable CS1591
+        CdpProfile,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_segment")]
+        #pragma warning disable CS1591
+        CdpSegment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_event")]
+        #pragma warning disable CS1591
+        CdpEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_source")]
+        #pragma warning disable CS1591
+        CdpSource,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_destination")]
+        #pragma warning disable CS1591
+        CdpDestination,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_activation")]
+        #pragma warning disable CS1591
+        CdpActivation,
+        #pragma warning restore CS1591
     }
 }

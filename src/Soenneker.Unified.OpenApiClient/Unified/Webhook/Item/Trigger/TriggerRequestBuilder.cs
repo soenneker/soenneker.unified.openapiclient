@@ -36,38 +36,38 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Trigger
         /// <summary>
         /// Trigger webhook
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson108"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson108?> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114?> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson108> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson108>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson108.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Trigger webhook
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson107"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson113"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson107?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson113?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson107> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson113> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson107>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson107.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson113>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson113.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Trigger webhook

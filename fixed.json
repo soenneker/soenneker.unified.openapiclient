@@ -53026,6 +53026,2560 @@
         ]
       }
     },
+    "/cdp/{connectionId}/profile": {
+      "post": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "Create a profile",
+        "operationId": "CreateCdpProfile",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpProfileFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpProfile"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "List all profiles",
+        "operationId": "ListCdpProfiles",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpProfilesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpProfiles200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/profile/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "Retrieve a profile",
+        "operationId": "GetCdpProfile",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpProfileFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Profile",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpProfile"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "Update a profile",
+        "operationId": "UpdateCdpProfile",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpProfileFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Profile",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpProfile"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "Update a profile",
+        "operationId": "PatchCdpProfile",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpProfileFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Profile",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpProfile"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "profile"
+        ],
+        "summary": "Remove a profile",
+        "operationId": "RemoveCdpProfile",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Profile",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/segment": {
+      "post": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "Create a segment",
+        "operationId": "CreateCdpSegment",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpSegmentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSegment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSegment"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "List all segments",
+        "operationId": "ListCdpSegments",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpSegmentsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpSegments200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/segment/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "Retrieve a segment",
+        "operationId": "GetCdpSegment",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpSegmentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Segment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSegment"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "Update a segment",
+        "operationId": "UpdateCdpSegment",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpSegmentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Segment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSegment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSegment"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "Update a segment",
+        "operationId": "PatchCdpSegment",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpSegmentFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Segment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSegment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSegment"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "segment"
+        ],
+        "summary": "Remove a segment",
+        "operationId": "RemoveCdpSegment",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Segment",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/event": {
+      "post": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "Create an event",
+        "operationId": "CreateCdpEvent",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpEventFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "List all events",
+        "operationId": "ListCdpEvents",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "profile_id",
+            "in": "query",
+            "description": "The profile ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpEventsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpEvents200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/event/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "Retrieve an event",
+        "operationId": "GetCdpEvent",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpEventFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "Update an event",
+        "operationId": "UpdateCdpEvent",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpEventFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "Update an event",
+        "operationId": "PatchCdpEvent",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpEventFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "event"
+        ],
+        "summary": "Remove an event",
+        "operationId": "RemoveCdpEvent",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/source": {
+      "post": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "Create a source",
+        "operationId": "CreateCdpSource",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpSourceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSource"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "List all sources",
+        "operationId": "ListCdpSources",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpSourcesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpSources200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/source/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "Retrieve a source",
+        "operationId": "GetCdpSource",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpSourceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Source",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSource"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "Update a source",
+        "operationId": "UpdateCdpSource",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpSourceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Source",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSource"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "Update a source",
+        "operationId": "PatchCdpSource",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpSourceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Source",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpSource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpSource"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "source"
+        ],
+        "summary": "Remove a source",
+        "operationId": "RemoveCdpSource",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Source",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/destination": {
+      "post": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "Create a destination",
+        "operationId": "CreateCdpDestination",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpDestinationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpDestination"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpDestination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "List all destinations",
+        "operationId": "ListCdpDestinations",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpDestinationsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpDestinations200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/destination/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "Retrieve a destination",
+        "operationId": "GetCdpDestination",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpDestinationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpDestination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "Update a destination",
+        "operationId": "UpdateCdpDestination",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpDestinationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpDestination"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpDestination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "Update a destination",
+        "operationId": "PatchCdpDestination",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpDestinationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpDestination"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpDestination"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "destination"
+        ],
+        "summary": "Remove a destination",
+        "operationId": "RemoveCdpDestination",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Destination",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/activation": {
+      "post": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "Create an activation",
+        "operationId": "CreateCdpActivation",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateCdpActivationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpActivation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpActivation"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "List all activations",
+        "operationId": "ListCdpActivations",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segment_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destination_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListCdpActivationsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCdpActivations200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/cdp/{connectionId}/activation/{id}": {
+      "get": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "Retrieve an activation",
+        "operationId": "GetCdpActivation",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetCdpActivationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Activation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpActivation"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "Update an activation",
+        "operationId": "UpdateCdpActivation",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateCdpActivationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Activation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpActivation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpActivation"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "Update an activation",
+        "operationId": "PatchCdpActivation",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchCdpActivationFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Activation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdpActivation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdpActivation"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "cdp",
+          "activation"
+        ],
+        "summary": "Remove an activation",
+        "operationId": "RemoveCdpActivation",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Activation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/unified/connection": {
       "post": {
         "tags": [
@@ -53306,7 +55860,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson110"
                 }
               }
             }
@@ -53478,7 +56032,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson111"
                 }
               }
             }
@@ -53926,7 +56480,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson112"
                 }
               }
             }
@@ -54114,7 +56668,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson113"
                 }
               }
             }
@@ -54150,7 +56704,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson114"
                 }
               }
             }
@@ -54973,7 +57527,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson115"
                 }
               }
             }
@@ -55291,7 +57845,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson110"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson116"
                 }
               }
             }
@@ -76437,6 +78991,483 @@
           "$ref": "#/components/schemas/AnalyticsReport"
         }
       },
+      "PropertyCdpProfileAddress": {
+        "type": "object",
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          }
+        },
+        "description": "The address of the profile"
+      },
+      "CdpIdentifier": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CdpIdentifierType"
+          },
+          "value": {
+            "type": "string"
+          },
+          "is_primary": {
+            "type": "boolean"
+          },
+          "encoding": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyCdpProfileIdentifiers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpIdentifier"
+        },
+        "description": "The typed identifiers stitched to this profile"
+      },
+      "CdpMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "value": {
+            "$ref": "#/components/schemas/CdpMetadataValue"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "format": {
+            "$ref": "#/components/schemas/CdpMetadataFormat"
+          },
+          "extra_data": {
+            "$ref": "#/components/schemas/CdpMetadataExtraData"
+          }
+        }
+      },
+      "PropertyCdpProfileMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpMetadata"
+        },
+        "description": "The traits/attributes of the profile"
+      },
+      "CdpProfileSegment": {
+        "type": "object",
+        "properties": {
+          "segment_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "joined_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyCdpProfileSegments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpProfileSegment"
+        },
+        "description": "The segments/audiences this profile currently belongs to"
+      },
+      "CdpConsent": {
+        "type": "object",
+        "properties": {
+          "purpose": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CdpConsentStatus"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyCdpProfileConsent": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpConsent"
+        },
+        "description": "The consent/privacy preferences of the profile"
+      },
+      "CdpProfile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/CdpProfileGender"
+          },
+          "birthdate": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/PropertyCdpProfileAddress"
+          },
+          "identifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpIdentifier"
+            },
+            "description": "The typed identifiers stitched to this profile"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpMetadata"
+            },
+            "description": "The traits/attributes of the profile"
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpProfileSegment"
+            },
+            "description": "The segments/audiences this profile currently belongs to"
+          },
+          "is_anonymous": {
+            "type": "boolean"
+          },
+          "consent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpConsent"
+            },
+            "description": "The consent/privacy preferences of the profile"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpProfileRawProperty"
+          }
+        }
+      },
+      "CdpProfiles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpProfile"
+        }
+      },
+      "CdpSegment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CdpSegmentType"
+          },
+          "compute_mode": {
+            "$ref": "#/components/schemas/CdpSegmentComputeMode"
+          },
+          "size": {
+            "type": "number"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpSegmentRawProperty"
+          }
+        }
+      },
+      "CdpSegments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpSegment"
+        }
+      },
+      "PropertyCdpEventIdentifiers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpIdentifier"
+        },
+        "description": "The identifiers that link this event to a profile"
+      },
+      "PropertyCdpEventMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpMetadata"
+        },
+        "description": "The event payload/properties"
+      },
+      "CdpEvent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CdpEventType"
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "profile_id": {
+            "type": "string"
+          },
+          "identifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpIdentifier"
+            },
+            "description": "The identifiers that link this event to a profile"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpMetadata"
+            },
+            "description": "The event payload/properties"
+          },
+          "source": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpEventRawProperty"
+          }
+        }
+      },
+      "CdpEvents": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpEvent"
+        }
+      },
+      "CdpSource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/CdpSourceDirection"
+          },
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpSourceRawProperty"
+          }
+        }
+      },
+      "CdpSources": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpSource"
+        }
+      },
+      "CdpDestination": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/CdpDestinationDirection"
+          },
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpDestinationRawProperty"
+          }
+        }
+      },
+      "CdpDestinations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpDestination"
+        }
+      },
+      "CdpActivation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "segment_id": {
+            "type": "string"
+          },
+          "destination_id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CdpActivationStatus"
+          },
+          "last_run_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_enabled": {
+            "type": "boolean"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/CdpActivationRawProperty"
+          }
+        }
+      },
+      "CdpActivations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpActivation"
+        }
+      },
       "PropertyConnectionPermissions": {
         "type": "array",
         "items": {
@@ -77383,6 +80414,9 @@
           "list_session_id": {
             "$ref": "#/components/schemas/IntegrationSupportListSessionId"
           },
+          "list_profile_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListProfileId"
+          },
           "virtual_webhook_property_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookPropertyId"
           },
@@ -77421,6 +80455,9 @@
           },
           "virtual_webhook_assigned_user_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookAssignedUserId"
+          },
+          "virtual_webhook_profile_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookProfileId"
           }
         }
       },
@@ -78875,6 +81912,82 @@
           }
         }
       },
+      "CdpMetadataValue": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueBranch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CdpMetadataValue_2": "#/components/schemas/CdpMetadataValueBranch2",
+            "CdpMetadataValue_3": "#/components/schemas/CdpMetadataValueBranch3",
+            "CdpMetadataValue_4": "#/components/schemas/CdpMetadataValueBranch4",
+            "CdpMetadataValue_5": "#/components/schemas/CdpMetadataValueBranch5"
+          }
+        }
+      },
+      "CdpMetadataExtraData": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataBranch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CdpMetadataExtraData_2": "#/components/schemas/CdpMetadataExtraDataBranch2",
+            "CdpMetadataExtraData_3": "#/components/schemas/CdpMetadataExtraDataBranch3",
+            "CdpMetadataExtraData_4": "#/components/schemas/CdpMetadataExtraDataBranch4",
+            "CdpMetadataExtraData_5": "#/components/schemas/CdpMetadataExtraDataBranch5"
+          }
+        }
+      },
       "IntegrationSandbox": {
         "required": [
           "type"
@@ -79432,6 +82545,74 @@
             "TaskMetadataExtraDataAnyOf5Item_2": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch2",
             "TaskMetadataExtraDataAnyOf5Item_3": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch3",
             "TaskMetadataExtraDataAnyOf5Item_4": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch4"
+          }
+        }
+      },
+      "CdpMetadataValueAnyOf5Item": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch4"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CdpMetadataValueAnyOf5Item_2": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch2",
+            "CdpMetadataValueAnyOf5Item_3": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch3",
+            "CdpMetadataValueAnyOf5Item_4": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch4"
+          }
+        }
+      },
+      "CdpMetadataExtraDataAnyOf5Item": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch4"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CdpMetadataExtraDataAnyOf5Item_2": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch2",
+            "CdpMetadataExtraDataAnyOf5Item_3": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch3",
+            "CdpMetadataExtraDataAnyOf5Item_4": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch4"
           }
         }
       },
@@ -80049,6 +83230,24 @@
         "type": "object"
       },
       "AnalyticsReportRaw": {
+        "type": "object"
+      },
+      "CdpProfileRaw": {
+        "type": "object"
+      },
+      "CdpSegmentRaw": {
+        "type": "object"
+      },
+      "CdpEventRaw": {
+        "type": "object"
+      },
+      "CdpSourceRaw": {
+        "type": "object"
+      },
+      "CdpDestinationRaw": {
+        "type": "object"
+      },
+      "CdpActivationRaw": {
         "type": "object"
       },
       "PropertyConnectionAuthMeta": {
@@ -80704,6 +83903,100 @@
           }
         }
       },
+      "CdpMetadataValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CdpMetadataValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "CdpMetadataValueBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CdpMetadataValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpMetadataValueAnyOf5Item"
+            }
+          }
+        }
+      },
+      "CdpMetadataExtraDataBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CdpMetadataExtraDataBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "CdpMetadataExtraDataBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CdpMetadataExtraDataBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5Item"
+            }
+          }
+        }
+      },
       "IntegrationSandboxBranch2": {
         "required": [
           "value"
@@ -81278,6 +84571,72 @@
         }
       },
       "TaskMetadataExtraDataAnyOf5ItemBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CdpMetadataValueAnyOf5ItemBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CdpMetadataValueAnyOf5ItemBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "CdpMetadataValueAnyOf5ItemBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CdpMetadataExtraDataAnyOf5ItemBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CdpMetadataExtraDataAnyOf5ItemBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "CdpMetadataExtraDataAnyOf5ItemBranch4": {
         "required": [
           "value"
         ],
@@ -82856,13 +86215,79 @@
           "$ref": "#/components/schemas/AnalyticsReport"
         }
       },
+      "ListCdpProfiles200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpProfile"
+        }
+      },
+      "DefaultResponseResponseJson104": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListCdpSegments200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpSegment"
+        }
+      },
+      "DefaultResponseResponseJson105": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListCdpEvents200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpEvent"
+        }
+      },
+      "DefaultResponseResponseJson106": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListCdpSources200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpSource"
+        }
+      },
+      "DefaultResponseResponseJson107": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListCdpDestinations200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpDestination"
+        }
+      },
+      "DefaultResponseResponseJson108": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListCdpActivations200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/CdpActivation"
+        }
+      },
+      "DefaultResponseResponseJson109": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListUnifiedConnections200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Connection"
         }
       },
-      "DefaultResponseResponseJson104": {
+      "DefaultResponseResponseJson110": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82873,7 +86298,7 @@
           "$ref": "#/components/schemas/SecretsManager"
         }
       },
-      "DefaultResponseResponseJson105": {
+      "DefaultResponseResponseJson111": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82896,7 +86321,7 @@
           "$ref": "#/components/schemas/Integration"
         }
       },
-      "DefaultResponseResponseJson106": {
+      "DefaultResponseResponseJson112": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82907,12 +86332,12 @@
           "$ref": "#/components/schemas/Webhook"
         }
       },
-      "DefaultResponseResponseJson107": {
+      "DefaultResponseResponseJson113": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson108": {
+      "DefaultResponseResponseJson114": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82963,7 +86388,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson109": {
+      "DefaultResponseResponseJson115": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -82974,7 +86399,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson110": {
+      "DefaultResponseResponseJson116": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -83545,6 +86970,24 @@
         "type": "object"
       },
       "AnalyticsReportRawProperty": {
+        "type": "object"
+      },
+      "CdpProfileRawProperty": {
+        "type": "object"
+      },
+      "CdpSegmentRawProperty": {
+        "type": "object"
+      },
+      "CdpEventRawProperty": {
+        "type": "object"
+      },
+      "CdpSourceRawProperty": {
+        "type": "object"
+      },
+      "CdpDestinationRawProperty": {
+        "type": "object"
+      },
+      "CdpActivationRawProperty": {
         "type": "object"
       },
       "PropertyConnectionAuthMetaProperty": {
@@ -96045,6 +99488,351 @@
           ]
         }
       },
+      "CdpIdentifierType": {
+        "enum": [
+          "EMAIL",
+          "USER_ID",
+          "ANONYMOUS_ID",
+          "DEVICE_ID",
+          "PHONE",
+          "CRM_ID",
+          "LOYALTY_ID",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpIdentifierType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "EMAIL",
+              "name": "Email"
+            },
+            {
+              "value": "USER_ID",
+              "name": "UserId"
+            },
+            {
+              "value": "ANONYMOUS_ID",
+              "name": "AnonymousId"
+            },
+            {
+              "value": "DEVICE_ID",
+              "name": "DeviceId"
+            },
+            {
+              "value": "PHONE",
+              "name": "Phone"
+            },
+            {
+              "value": "CRM_ID",
+              "name": "CrmId"
+            },
+            {
+              "value": "LOYALTY_ID",
+              "name": "LoyaltyId"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "CdpMetadataFormat": {
+        "enum": [
+          "TEXT",
+          "NUMBER",
+          "DATE",
+          "BOOLEAN",
+          "ARRAY",
+          "OBJECT"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpMetadataFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TEXT",
+              "name": "Text"
+            },
+            {
+              "value": "NUMBER",
+              "name": "Number"
+            },
+            {
+              "value": "DATE",
+              "name": "Date"
+            },
+            {
+              "value": "BOOLEAN",
+              "name": "Boolean"
+            },
+            {
+              "value": "ARRAY",
+              "name": "Array"
+            },
+            {
+              "value": "OBJECT",
+              "name": "ObjectValue"
+            }
+          ]
+        }
+      },
+      "CdpConsentStatus": {
+        "enum": [
+          "GRANTED",
+          "DENIED",
+          "PENDING"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpConsentStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "GRANTED",
+              "name": "Granted"
+            },
+            {
+              "value": "DENIED",
+              "name": "Denied"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            }
+          ]
+        }
+      },
+      "CdpProfileGender": {
+        "enum": [
+          "MALE",
+          "FEMALE",
+          "INTERSEX",
+          "TRANS",
+          "NON_BINARY"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpProfileGender",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "MALE",
+              "name": "Male"
+            },
+            {
+              "value": "FEMALE",
+              "name": "Female"
+            },
+            {
+              "value": "INTERSEX",
+              "name": "Intersex"
+            },
+            {
+              "value": "TRANS",
+              "name": "Trans"
+            },
+            {
+              "value": "NON_BINARY",
+              "name": "NonBinary"
+            }
+          ]
+        }
+      },
+      "CdpSegmentType": {
+        "enum": [
+          "USERS",
+          "ACCOUNTS",
+          "LINKED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpSegmentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "USERS",
+              "name": "Users"
+            },
+            {
+              "value": "ACCOUNTS",
+              "name": "Accounts"
+            },
+            {
+              "value": "LINKED",
+              "name": "Linked"
+            }
+          ]
+        }
+      },
+      "CdpSegmentComputeMode": {
+        "enum": [
+          "REALTIME",
+          "BATCH"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpSegmentComputeMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "REALTIME",
+              "name": "Realtime"
+            },
+            {
+              "value": "BATCH",
+              "name": "Batch"
+            }
+          ]
+        }
+      },
+      "CdpEventType": {
+        "enum": [
+          "TRACK",
+          "PAGE",
+          "SCREEN",
+          "IDENTIFY",
+          "GROUP",
+          "ALIAS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpEventType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TRACK",
+              "name": "Track"
+            },
+            {
+              "value": "PAGE",
+              "name": "Page"
+            },
+            {
+              "value": "SCREEN",
+              "name": "Screen"
+            },
+            {
+              "value": "IDENTIFY",
+              "name": "Identify"
+            },
+            {
+              "value": "GROUP",
+              "name": "Group"
+            },
+            {
+              "value": "ALIAS",
+              "name": "Alias"
+            }
+          ]
+        }
+      },
+      "CdpSourceDirection": {
+        "enum": [
+          "SOURCE",
+          "DESTINATION",
+          "BIDIRECTIONAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpSourceDirection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SOURCE",
+              "name": "Source"
+            },
+            {
+              "value": "DESTINATION",
+              "name": "Destination"
+            },
+            {
+              "value": "BIDIRECTIONAL",
+              "name": "Bidirectional"
+            }
+          ]
+        }
+      },
+      "CdpDestinationDirection": {
+        "enum": [
+          "SOURCE",
+          "DESTINATION",
+          "BIDIRECTIONAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpDestinationDirection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SOURCE",
+              "name": "Source"
+            },
+            {
+              "value": "DESTINATION",
+              "name": "Destination"
+            },
+            {
+              "value": "BIDIRECTIONAL",
+              "name": "Bidirectional"
+            }
+          ]
+        }
+      },
+      "CdpActivationStatus": {
+        "enum": [
+          "ACTIVE",
+          "PAUSED",
+          "ERROR",
+          "PENDING"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "CdpActivationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ACTIVE",
+              "name": "Active"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "ERROR",
+              "name": "Error"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            }
+          ]
+        }
+      },
       "PropertyConnectionPermissionsItem": {
         "enum": [
           "accounting_account_read",
@@ -96322,7 +100110,19 @@
           "datastore_record_read",
           "datastore_record_write",
           "datastore_query_read",
-          "datastore_query_write"
+          "datastore_query_write",
+          "cdp_profile_read",
+          "cdp_profile_write",
+          "cdp_segment_read",
+          "cdp_segment_write",
+          "cdp_event_read",
+          "cdp_event_write",
+          "cdp_source_read",
+          "cdp_source_write",
+          "cdp_destination_read",
+          "cdp_destination_write",
+          "cdp_activation_read",
+          "cdp_activation_write"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -97434,6 +101234,54 @@
             {
               "value": "datastore_query_write",
               "name": "DatastoreQueryWrite"
+            },
+            {
+              "value": "cdp_profile_read",
+              "name": "CdpProfileRead"
+            },
+            {
+              "value": "cdp_profile_write",
+              "name": "CdpProfileWrite"
+            },
+            {
+              "value": "cdp_segment_read",
+              "name": "CdpSegmentRead"
+            },
+            {
+              "value": "cdp_segment_write",
+              "name": "CdpSegmentWrite"
+            },
+            {
+              "value": "cdp_event_read",
+              "name": "CdpEventRead"
+            },
+            {
+              "value": "cdp_event_write",
+              "name": "CdpEventWrite"
+            },
+            {
+              "value": "cdp_source_read",
+              "name": "CdpSourceRead"
+            },
+            {
+              "value": "cdp_source_write",
+              "name": "CdpSourceWrite"
+            },
+            {
+              "value": "cdp_destination_read",
+              "name": "CdpDestinationRead"
+            },
+            {
+              "value": "cdp_destination_write",
+              "name": "CdpDestinationWrite"
+            },
+            {
+              "value": "cdp_activation_read",
+              "name": "CdpActivationRead"
+            },
+            {
+              "value": "cdp_activation_write",
+              "name": "CdpActivationWrite"
             }
           ]
         }
@@ -97470,7 +101318,8 @@
           "assessment",
           "signing",
           "clubs",
-          "datastore"
+          "datastore",
+          "cdp"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -97602,6 +101451,10 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            },
+            {
+              "value": "cdp",
+              "name": "Cdp"
             }
           ]
         }
@@ -97724,7 +101577,8 @@
           "assessment",
           "signing",
           "clubs",
-          "datastore"
+          "datastore",
+          "cdp"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -97856,6 +101710,10 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            },
+            {
+              "value": "cdp",
+              "name": "Cdp"
             }
           ]
         }
@@ -102661,6 +106519,34 @@
           ]
         }
       },
+      "IntegrationSupportListProfileId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListProfileId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "IntegrationSupportVirtualWebhookPropertyId": {
         "enum": [
           "supported-required",
@@ -103025,6 +106911,34 @@
           ]
         }
       },
+      "IntegrationSupportVirtualWebhookProfileId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookProfileId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -103176,7 +107090,13 @@
           "datastore_database",
           "datastore_table",
           "datastore_record",
-          "datastore_query"
+          "datastore_query",
+          "cdp_profile",
+          "cdp_segment",
+          "cdp_event",
+          "cdp_source",
+          "cdp_destination",
+          "cdp_activation"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -103784,6 +107704,30 @@
             {
               "value": "datastore_query",
               "name": "DatastoreQuery"
+            },
+            {
+              "value": "cdp_profile",
+              "name": "CdpProfile"
+            },
+            {
+              "value": "cdp_segment",
+              "name": "CdpSegment"
+            },
+            {
+              "value": "cdp_event",
+              "name": "CdpEvent"
+            },
+            {
+              "value": "cdp_source",
+              "name": "CdpSource"
+            },
+            {
+              "value": "cdp_destination",
+              "name": "CdpDestination"
+            },
+            {
+              "value": "cdp_activation",
+              "name": "CdpActivation"
             }
           ]
         }
@@ -159043,6 +162987,2216 @@
           ]
         }
       },
+      "CreateCdpProfileFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "email",
+          "telephone",
+          "gender",
+          "birthdate",
+          "title",
+          "company",
+          "address",
+          "identifiers",
+          "metadata",
+          "segments",
+          "is_anonymous",
+          "consent",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpProfileFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "gender",
+              "name": "Gender"
+            },
+            {
+              "value": "birthdate",
+              "name": "Birthdate"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "segments",
+              "name": "Segments"
+            },
+            {
+              "value": "is_anonymous",
+              "name": "IsAnonymous"
+            },
+            {
+              "value": "consent",
+              "name": "Consent"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpProfilesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "email",
+          "telephone",
+          "gender",
+          "birthdate",
+          "title",
+          "company",
+          "address",
+          "identifiers",
+          "metadata",
+          "segments",
+          "is_anonymous",
+          "consent",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpProfilesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "gender",
+              "name": "Gender"
+            },
+            {
+              "value": "birthdate",
+              "name": "Birthdate"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "segments",
+              "name": "Segments"
+            },
+            {
+              "value": "is_anonymous",
+              "name": "IsAnonymous"
+            },
+            {
+              "value": "consent",
+              "name": "Consent"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpProfileFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "email",
+          "telephone",
+          "gender",
+          "birthdate",
+          "title",
+          "company",
+          "address",
+          "identifiers",
+          "metadata",
+          "segments",
+          "is_anonymous",
+          "consent",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpProfileFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "gender",
+              "name": "Gender"
+            },
+            {
+              "value": "birthdate",
+              "name": "Birthdate"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "segments",
+              "name": "Segments"
+            },
+            {
+              "value": "is_anonymous",
+              "name": "IsAnonymous"
+            },
+            {
+              "value": "consent",
+              "name": "Consent"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpProfileFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "email",
+          "telephone",
+          "gender",
+          "birthdate",
+          "title",
+          "company",
+          "address",
+          "identifiers",
+          "metadata",
+          "segments",
+          "is_anonymous",
+          "consent",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpProfileFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "gender",
+              "name": "Gender"
+            },
+            {
+              "value": "birthdate",
+              "name": "Birthdate"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "segments",
+              "name": "Segments"
+            },
+            {
+              "value": "is_anonymous",
+              "name": "IsAnonymous"
+            },
+            {
+              "value": "consent",
+              "name": "Consent"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpProfileFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "first_name",
+          "last_name",
+          "email",
+          "telephone",
+          "gender",
+          "birthdate",
+          "title",
+          "company",
+          "address",
+          "identifiers",
+          "metadata",
+          "segments",
+          "is_anonymous",
+          "consent",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpProfileFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "first_name",
+              "name": "FirstName"
+            },
+            {
+              "value": "last_name",
+              "name": "LastName"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "telephone",
+              "name": "Telephone"
+            },
+            {
+              "value": "gender",
+              "name": "Gender"
+            },
+            {
+              "value": "birthdate",
+              "name": "Birthdate"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "company",
+              "name": "Company"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "segments",
+              "name": "Segments"
+            },
+            {
+              "value": "is_anonymous",
+              "name": "IsAnonymous"
+            },
+            {
+              "value": "consent",
+              "name": "Consent"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateCdpSegmentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "description",
+          "definition",
+          "type",
+          "compute_mode",
+          "size",
+          "is_active",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpSegmentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "definition",
+              "name": "Definition"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "compute_mode",
+              "name": "ComputeMode"
+            },
+            {
+              "value": "size",
+              "name": "Size"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpSegmentsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "description",
+          "definition",
+          "type",
+          "compute_mode",
+          "size",
+          "is_active",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpSegmentsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "definition",
+              "name": "Definition"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "compute_mode",
+              "name": "ComputeMode"
+            },
+            {
+              "value": "size",
+              "name": "Size"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpSegmentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "description",
+          "definition",
+          "type",
+          "compute_mode",
+          "size",
+          "is_active",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpSegmentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "definition",
+              "name": "Definition"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "compute_mode",
+              "name": "ComputeMode"
+            },
+            {
+              "value": "size",
+              "name": "Size"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpSegmentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "description",
+          "definition",
+          "type",
+          "compute_mode",
+          "size",
+          "is_active",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpSegmentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "definition",
+              "name": "Definition"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "compute_mode",
+              "name": "ComputeMode"
+            },
+            {
+              "value": "size",
+              "name": "Size"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpSegmentFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "description",
+          "definition",
+          "type",
+          "compute_mode",
+          "size",
+          "is_active",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpSegmentFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "definition",
+              "name": "Definition"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "compute_mode",
+              "name": "ComputeMode"
+            },
+            {
+              "value": "size",
+              "name": "Size"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateCdpEventFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "name",
+          "type",
+          "occurred_at",
+          "profile_id",
+          "identifiers",
+          "metadata",
+          "source",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpEventFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "occurred_at",
+              "name": "OccurredAt"
+            },
+            {
+              "value": "profile_id",
+              "name": "ProfileId"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpEventsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "name",
+          "type",
+          "occurred_at",
+          "profile_id",
+          "identifiers",
+          "metadata",
+          "source",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpEventsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "occurred_at",
+              "name": "OccurredAt"
+            },
+            {
+              "value": "profile_id",
+              "name": "ProfileId"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpEventFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "name",
+          "type",
+          "occurred_at",
+          "profile_id",
+          "identifiers",
+          "metadata",
+          "source",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpEventFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "occurred_at",
+              "name": "OccurredAt"
+            },
+            {
+              "value": "profile_id",
+              "name": "ProfileId"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpEventFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "name",
+          "type",
+          "occurred_at",
+          "profile_id",
+          "identifiers",
+          "metadata",
+          "source",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpEventFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "occurred_at",
+              "name": "OccurredAt"
+            },
+            {
+              "value": "profile_id",
+              "name": "ProfileId"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpEventFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "name",
+          "type",
+          "occurred_at",
+          "profile_id",
+          "identifiers",
+          "metadata",
+          "source",
+          "source_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpEventFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "occurred_at",
+              "name": "OccurredAt"
+            },
+            {
+              "value": "profile_id",
+              "name": "ProfileId"
+            },
+            {
+              "value": "identifiers",
+              "name": "Identifiers"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateCdpSourceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpSourceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpSourcesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpSourcesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpSourceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpSourceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpSourceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpSourceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpSourceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpSourceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateCdpDestinationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpDestinationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpDestinationsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpDestinationsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpDestinationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpDestinationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpDestinationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpDestinationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpDestinationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "slug",
+          "type",
+          "direction",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpDestinationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "slug",
+              "name": "Slug"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "direction",
+              "name": "Direction"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateCdpActivationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "segment_id",
+          "destination_id",
+          "source_id",
+          "schedule",
+          "status",
+          "last_run_at",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateCdpActivationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "segment_id",
+              "name": "SegmentId"
+            },
+            {
+              "value": "destination_id",
+              "name": "DestinationId"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "schedule",
+              "name": "Schedule"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "last_run_at",
+              "name": "LastRunAt"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListCdpActivationsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "segment_id",
+          "destination_id",
+          "source_id",
+          "schedule",
+          "status",
+          "last_run_at",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListCdpActivationsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "segment_id",
+              "name": "SegmentId"
+            },
+            {
+              "value": "destination_id",
+              "name": "DestinationId"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "schedule",
+              "name": "Schedule"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "last_run_at",
+              "name": "LastRunAt"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetCdpActivationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "segment_id",
+          "destination_id",
+          "source_id",
+          "schedule",
+          "status",
+          "last_run_at",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetCdpActivationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "segment_id",
+              "name": "SegmentId"
+            },
+            {
+              "value": "destination_id",
+              "name": "DestinationId"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "schedule",
+              "name": "Schedule"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "last_run_at",
+              "name": "LastRunAt"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateCdpActivationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "segment_id",
+          "destination_id",
+          "source_id",
+          "schedule",
+          "status",
+          "last_run_at",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateCdpActivationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "segment_id",
+              "name": "SegmentId"
+            },
+            {
+              "value": "destination_id",
+              "name": "DestinationId"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "schedule",
+              "name": "Schedule"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "last_run_at",
+              "name": "LastRunAt"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchCdpActivationFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "segment_id",
+          "destination_id",
+          "source_id",
+          "schedule",
+          "status",
+          "last_run_at",
+          "is_enabled",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchCdpActivationFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "segment_id",
+              "name": "SegmentId"
+            },
+            {
+              "value": "destination_id",
+              "name": "DestinationId"
+            },
+            {
+              "value": "source_id",
+              "name": "SourceId"
+            },
+            {
+              "value": "schedule",
+              "name": "Schedule"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "last_run_at",
+              "name": "LastRunAt"
+            },
+            {
+              "value": "is_enabled",
+              "name": "IsEnabled"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
       "ListUnifiedConnectionsCategoriesParameterItem": {
         "enum": [
           "passthrough",
@@ -159075,7 +165229,8 @@
           "assessment",
           "signing",
           "clubs",
-          "datastore"
+          "datastore",
+          "cdp"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159206,6 +165361,10 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            },
+            {
+              "value": "cdp",
+              "name": "Cdp"
             }
           ]
         }
@@ -159242,7 +165401,8 @@
           "assessment",
           "signing",
           "clubs",
-          "datastore"
+          "datastore",
+          "cdp"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159373,6 +165533,10 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            },
+            {
+              "value": "cdp",
+              "name": "Cdp"
             }
           ]
         }
@@ -159409,7 +165573,8 @@
           "assessment",
           "signing",
           "clubs",
-          "datastore"
+          "datastore",
+          "cdp"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -159540,6 +165705,10 @@
             {
               "value": "datastore",
               "name": "Datastore"
+            },
+            {
+              "value": "cdp",
+              "name": "Cdp"
             }
           ]
         }
@@ -160656,6 +166825,66 @@
         },
         "required": true
       },
+      "CdpProfile": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpProfile"
+            }
+          }
+        },
+        "required": true
+      },
+      "CdpSegment": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpSegment"
+            }
+          }
+        },
+        "required": true
+      },
+      "CdpEvent": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpEvent"
+            }
+          }
+        },
+        "required": true
+      },
+      "CdpSource": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpSource"
+            }
+          }
+        },
+        "required": true
+      },
+      "CdpDestination": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpDestination"
+            }
+          }
+        },
+        "required": true
+      },
+      "CdpActivation": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CdpActivation"
+            }
+          }
+        },
+        "required": true
+      },
       "Connection": {
         "content": {
           "application/json": {
@@ -161160,6 +167389,24 @@
     },
     {
       "name": "visitor"
+    },
+    {
+      "name": "cdp"
+    },
+    {
+      "name": "profile"
+    },
+    {
+      "name": "segment"
+    },
+    {
+      "name": "source"
+    },
+    {
+      "name": "destination"
+    },
+    {
+      "name": "activation"
     },
     {
       "name": "unified"

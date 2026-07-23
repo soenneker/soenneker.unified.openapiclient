@@ -1112,5 +1112,53 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DatastoreQueryWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_profile_read")]
+        #pragma warning disable CS1591
+        CdpProfileRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_profile_write")]
+        #pragma warning disable CS1591
+        CdpProfileWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_segment_read")]
+        #pragma warning disable CS1591
+        CdpSegmentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_segment_write")]
+        #pragma warning disable CS1591
+        CdpSegmentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_event_read")]
+        #pragma warning disable CS1591
+        CdpEventRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_event_write")]
+        #pragma warning disable CS1591
+        CdpEventWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_source_read")]
+        #pragma warning disable CS1591
+        CdpSourceRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_source_write")]
+        #pragma warning disable CS1591
+        CdpSourceWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_destination_read")]
+        #pragma warning disable CS1591
+        CdpDestinationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_destination_write")]
+        #pragma warning disable CS1591
+        CdpDestinationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_activation_read")]
+        #pragma warning disable CS1591
+        CdpActivationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cdp_activation_write")]
+        #pragma warning disable CS1591
+        CdpActivationWrite,
+        #pragma warning restore CS1591
     }
 }
