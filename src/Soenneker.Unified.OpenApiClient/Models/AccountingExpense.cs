@@ -32,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApproverUserId { get; set; }
 #endif
+        /// <summary>expense approver(s); id is HR employee/user when resolved</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>? ApproverUsers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference> ApproverUsers { get; set; }
+#endif
         /// <summary>The attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? ReimbursedAmount { get; set; }
         /// <summary>The reimbursed_at property</summary>
         public DateTimeOffset? ReimbursedAt { get; set; }
+        /// <summary>The status property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
         /// <summary>The total_amount property</summary>
@@ -125,6 +135,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string UserId { get; set; }
+#endif
+        /// <summary>expense owner(s); id is HR employee/user when resolved</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>? Users { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference> Users { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense"/> and sets the default values.
@@ -154,6 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "approved_at", n => { ApprovedAt = n.GetDateTimeOffsetValue(); } },
                 { "approver_user_id", n => { ApproverUserId = n.GetStringValue(); } },
+                { "approver_users", n => { ApproverUsers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -167,10 +186,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty.CreateFromDiscriminatorValue); } },
                 { "reimbursed_amount", n => { ReimbursedAmount = n.GetDoubleValue(); } },
                 { "reimbursed_at", n => { ReimbursedAt = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReference.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -183,6 +204,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteDateTimeOffsetValue("approved_at", ApprovedAt);
             writer.WriteStringValue("approver_user_id", ApproverUserId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>("approver_users", ApproverUsers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>("attachments", Attachments);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
@@ -196,10 +218,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>("raw", Raw);
             writer.WriteDoubleValue("reimbursed_amount", ReimbursedAmount);
             writer.WriteDateTimeOffsetValue("reimbursed_at", ReimbursedAt);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

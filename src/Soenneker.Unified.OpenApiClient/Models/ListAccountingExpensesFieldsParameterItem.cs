@@ -84,6 +84,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "users")]
+        #pragma warning disable CS1591
+        Users,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "approver_users")]
+        #pragma warning disable CS1591
+        ApproverUsers,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "status")]
+        #pragma warning disable CS1591
+        Status,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

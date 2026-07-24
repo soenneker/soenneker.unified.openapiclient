@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public ExpenseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public ExpenseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -252,6 +252,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
 #else
             [QueryParameter("start_gte")]
             public string StartGte { get; set; }
+#endif
+            /// <summary>The status to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
 #endif
             /// <summary>Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

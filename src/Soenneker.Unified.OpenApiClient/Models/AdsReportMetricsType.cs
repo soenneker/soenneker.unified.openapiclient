@@ -508,5 +508,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Value30DClick,
         #pragma warning restore CS1591
+        [EnumMember(Value = "VISITS")]
+        #pragma warning disable CS1591
+        Visits,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUDIO_MUTES")]
+        #pragma warning disable CS1591
+        AudioMutes,
+        #pragma warning restore CS1591
     }
 }
