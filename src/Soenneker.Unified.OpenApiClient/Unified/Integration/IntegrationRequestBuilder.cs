@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Models;
 using Soenneker.Unified.OpenApiClient.Unified.Integration.Auth;
 using Soenneker.Unified.OpenApiClient.Unified.Integration.Login;
+using Soenneker.Unified.OpenApiClient.Unified.Integration.Saml;
 using Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace;
 using System.Collections.Generic;
 using System.IO;
@@ -29,6 +30,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
         public global::Soenneker.Unified.OpenApiClient.Unified.Integration.Login.LoginRequestBuilder Login
         {
             get => new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Login.LoginRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The saml property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Integration.Saml.SamlRequestBuilder Saml
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Saml.SamlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workspace property</summary>
         public global::Soenneker.Unified.OpenApiClient.Unified.Integration.Workspace.WorkspaceRequestBuilder Workspace

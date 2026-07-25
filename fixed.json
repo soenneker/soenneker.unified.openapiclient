@@ -57195,6 +57195,87 @@
         }
       }
     },
+    "/unified/integration/saml/{workspaceId}/{integrationType}": {
+      "get": {
+        "tags": [
+          "auth",
+          "login"
+        ],
+        "summary": "Sign in a user via SAML",
+        "description": "Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.",
+        "operationId": "GetUnifiedIntegrationSaml",
+        "parameters": [
+          {
+            "name": "success_redirect",
+            "in": "query",
+            "description": "The URL where you want the user to be redirect to after a successful authentication/sign-in.  A \u0022jwt\u0022 parameter will be appended to the URL which will contain a name and email of the user who just signed-in.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "failure_redirect",
+            "in": "query",
+            "description": "The URL where you want the user to be redirect to after an unsuccessful authentication. An \u0022error\u0022 variable will be appended.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "Extra state to send back to your success URL",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "env",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationType",
+            "in": "path",
+            "description": "Type of the supported integration",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUnifiedIntegrationSaml200ResponseResponsePlain"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/scim/{connectionId}/users": {
       "post": {
         "tags": [
@@ -60626,6 +60707,13 @@
           "type": "string"
         }
       },
+      "PropertyTicketingTicketAttachmentIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Array of attachment IDs retrieved from StorageFile.Get endpoint"
+      },
       "TicketingTicket": {
         "type": "object",
         "properties": {
@@ -60679,6 +60767,13 @@
           },
           "url": {
             "type": "string"
+          },
+          "attachment_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of attachment IDs retrieved from StorageFile.Get endpoint"
           },
           "due_at": {
             "type": "string",
@@ -67355,8 +67450,7 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingReference"
-        },
-        "description": "expense owner(s); id is HR employee/user when resolved"
+        }
       },
       "PropertyAccountingExpenseApproverUsers": {
         "type": "array",
@@ -67440,8 +67534,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AccountingReference"
-            },
-            "description": "expense owner(s); id is HR employee/user when resolved"
+            }
           },
           "approver_users": {
             "type": "array",
@@ -67452,6 +67545,9 @@
           },
           "status": {
             "$ref": "#/components/schemas/AccountingExpenseStatus"
+          },
+          "external_number": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingExpenseRawProperty"
@@ -83378,6 +83474,9 @@
       "GetUnifiedIntegrationLogin200Response": {
         "type": "string"
       },
+      "GetUnifiedIntegrationSaml200Response": {
+        "type": "string"
+      },
       "CrmMetadataValueBranch2": {
         "required": [
           "value"
@@ -86419,6 +86518,9 @@
         "type": "string"
       },
       "GetUnifiedIntegrationLogin200ResponseResponsePlain": {
+        "type": "string"
+      },
+      "GetUnifiedIntegrationSaml200ResponseResponsePlain": {
         "type": "string"
       },
       "ListScimUsers200Response": {
@@ -101384,6 +101486,7 @@
           "hris",
           "ats",
           "auth",
+          "saml",
           "crm",
           "enrich",
           "martech",
@@ -101435,6 +101538,10 @@
             {
               "value": "auth",
               "name": "Auth"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
             },
             {
               "value": "crm",
@@ -101643,6 +101750,7 @@
           "hris",
           "ats",
           "auth",
+          "saml",
           "crm",
           "enrich",
           "martech",
@@ -101694,6 +101802,10 @@
             {
               "value": "auth",
               "name": "Auth"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
             },
             {
               "value": "crm",
@@ -114594,6 +114706,7 @@
           "tags",
           "user_id",
           "url",
+          "attachment_ids",
           "due_at",
           "raw"
         ],
@@ -114664,6 +114777,10 @@
               "name": "Url"
             },
             {
+              "value": "attachment_ids",
+              "name": "AttachmentIds"
+            },
+            {
               "value": "due_at",
               "name": "DueAt"
             },
@@ -114691,6 +114808,7 @@
           "tags",
           "user_id",
           "url",
+          "attachment_ids",
           "due_at",
           "raw"
         ],
@@ -114761,6 +114879,10 @@
               "name": "Url"
             },
             {
+              "value": "attachment_ids",
+              "name": "AttachmentIds"
+            },
+            {
               "value": "due_at",
               "name": "DueAt"
             },
@@ -114788,6 +114910,7 @@
           "tags",
           "user_id",
           "url",
+          "attachment_ids",
           "due_at",
           "raw"
         ],
@@ -114858,6 +114981,10 @@
               "name": "Url"
             },
             {
+              "value": "attachment_ids",
+              "name": "AttachmentIds"
+            },
+            {
               "value": "due_at",
               "name": "DueAt"
             },
@@ -114885,6 +115012,7 @@
           "tags",
           "user_id",
           "url",
+          "attachment_ids",
           "due_at",
           "raw"
         ],
@@ -114955,6 +115083,10 @@
               "name": "Url"
             },
             {
+              "value": "attachment_ids",
+              "name": "AttachmentIds"
+            },
+            {
               "value": "due_at",
               "name": "DueAt"
             },
@@ -114982,6 +115114,7 @@
           "tags",
           "user_id",
           "url",
+          "attachment_ids",
           "due_at",
           "raw"
         ],
@@ -115050,6 +115183,10 @@
             {
               "value": "url",
               "name": "Url"
+            },
+            {
+              "value": "attachment_ids",
+              "name": "AttachmentIds"
             },
             {
               "value": "due_at",
@@ -135458,6 +135595,7 @@
           "users",
           "approver_users",
           "status",
+          "external_number",
           "raw"
         ],
         "type": "string",
@@ -135555,6 +135693,10 @@
               "name": "Status"
             },
             {
+              "value": "external_number",
+              "name": "ExternalNumber"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135585,6 +135727,7 @@
           "users",
           "approver_users",
           "status",
+          "external_number",
           "raw"
         ],
         "type": "string",
@@ -135682,6 +135825,10 @@
               "name": "Status"
             },
             {
+              "value": "external_number",
+              "name": "ExternalNumber"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135712,6 +135859,7 @@
           "users",
           "approver_users",
           "status",
+          "external_number",
           "raw"
         ],
         "type": "string",
@@ -135809,6 +135957,10 @@
               "name": "Status"
             },
             {
+              "value": "external_number",
+              "name": "ExternalNumber"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135839,6 +135991,7 @@
           "users",
           "approver_users",
           "status",
+          "external_number",
           "raw"
         ],
         "type": "string",
@@ -135936,6 +136089,10 @@
               "name": "Status"
             },
             {
+              "value": "external_number",
+              "name": "ExternalNumber"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135966,6 +136123,7 @@
           "users",
           "approver_users",
           "status",
+          "external_number",
           "raw"
         ],
         "type": "string",
@@ -136061,6 +136219,10 @@
             {
               "value": "status",
               "name": "Status"
+            },
+            {
+              "value": "external_number",
+              "name": "ExternalNumber"
             },
             {
               "value": "raw",
@@ -165370,6 +165532,7 @@
           "hris",
           "ats",
           "auth",
+          "saml",
           "crm",
           "enrich",
           "martech",
@@ -165420,6 +165583,10 @@
             {
               "value": "auth",
               "name": "Auth"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
             },
             {
               "value": "crm",
@@ -165542,6 +165709,7 @@
           "hris",
           "ats",
           "auth",
+          "saml",
           "crm",
           "enrich",
           "martech",
@@ -165592,6 +165760,10 @@
             {
               "value": "auth",
               "name": "Auth"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
             },
             {
               "value": "crm",
@@ -165714,6 +165886,7 @@
           "hris",
           "ats",
           "auth",
+          "saml",
           "crm",
           "enrich",
           "martech",
@@ -165764,6 +165937,10 @@
             {
               "value": "auth",
               "name": "Auth"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
             },
             {
               "value": "crm",

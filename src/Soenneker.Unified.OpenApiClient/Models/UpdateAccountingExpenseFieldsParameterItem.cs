@@ -96,6 +96,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Status,
         #pragma warning restore CS1591
+        [EnumMember(Value = "external_number")]
+        #pragma warning disable CS1591
+        ExternalNumber,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

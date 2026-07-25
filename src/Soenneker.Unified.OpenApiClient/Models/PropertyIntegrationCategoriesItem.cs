@@ -24,6 +24,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Auth,
         #pragma warning restore CS1591
+        [EnumMember(Value = "saml")]
+        #pragma warning disable CS1591
+        Saml,
+        #pragma warning restore CS1591
         [EnumMember(Value = "crm")]
         #pragma warning disable CS1591
         Crm,

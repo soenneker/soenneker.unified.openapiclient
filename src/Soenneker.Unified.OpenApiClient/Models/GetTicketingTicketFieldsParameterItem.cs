@@ -68,6 +68,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Url,
         #pragma warning restore CS1591
+        [EnumMember(Value = "attachment_ids")]
+        #pragma warning disable CS1591
+        AttachmentIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "due_at")]
         #pragma warning disable CS1591
         DueAt,

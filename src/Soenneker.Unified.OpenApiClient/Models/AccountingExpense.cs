@@ -66,6 +66,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The external_number property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalNumber { get; set; }
+#nullable restore
+#else
+        public string ExternalNumber { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,7 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>expense owner(s); id is HR employee/user when resolved</summary>
+        /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>? Users { get; set; }
@@ -177,6 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "external_number", n => { ExternalNumber = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -209,6 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("external_number", ExternalNumber);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("name", Name);

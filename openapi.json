@@ -4489,6 +4489,13 @@
                "type": "string"
             }
          },
+         "property_TicketingTicket_attachment_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "Array of attachment IDs retrieved from StorageFile.Get endpoint"
+         },
          "TicketingTicket": {
             "type": "object",
             "properties": {
@@ -4544,6 +4551,9 @@
                },
                "url": {
                   "type": "string"
+               },
+               "attachment_ids": {
+                  "$ref": "#/components/schemas/property_TicketingTicket_attachment_ids"
                },
                "due_at": {
                   "type": "string",
@@ -11728,8 +11738,7 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingReference"
-            },
-            "description": "expense owner(s); id is HR employee/user when resolved"
+            }
          },
          "property_AccountingExpense_approver_users": {
             "type": "array",
@@ -11820,6 +11829,9 @@
                      "PAID"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "external_number": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -25135,6 +25147,7 @@
                   "hris",
                   "ats",
                   "auth",
+                  "saml",
                   "crm",
                   "enrich",
                   "martech",
@@ -25480,6 +25493,7 @@
                   "hris",
                   "ats",
                   "auth",
+                  "saml",
                   "crm",
                   "enrich",
                   "martech",
@@ -35954,6 +35968,7 @@
                            "tags",
                            "user_id",
                            "url",
+                           "attachment_ids",
                            "due_at",
                            "raw"
                         ]
@@ -36108,6 +36123,7 @@
                            "tags",
                            "user_id",
                            "url",
+                           "attachment_ids",
                            "due_at",
                            "raw"
                         ]
@@ -36186,6 +36202,7 @@
                            "tags",
                            "user_id",
                            "url",
+                           "attachment_ids",
                            "due_at",
                            "raw"
                         ]
@@ -36271,6 +36288,7 @@
                            "tags",
                            "user_id",
                            "url",
+                           "attachment_ids",
                            "due_at",
                            "raw"
                         ]
@@ -36366,6 +36384,7 @@
                            "tags",
                            "user_id",
                            "url",
+                           "attachment_ids",
                            "due_at",
                            "raw"
                         ]
@@ -61662,6 +61681,7 @@
                            "users",
                            "approver_users",
                            "status",
+                           "external_number",
                            "raw"
                         ]
                      }
@@ -61876,6 +61896,7 @@
                            "users",
                            "approver_users",
                            "status",
+                           "external_number",
                            "raw"
                         ]
                      }
@@ -61960,6 +61981,7 @@
                            "users",
                            "approver_users",
                            "status",
+                           "external_number",
                            "raw"
                         ]
                      }
@@ -62051,6 +62073,7 @@
                            "users",
                            "approver_users",
                            "status",
+                           "external_number",
                            "raw"
                         ]
                      }
@@ -62152,6 +62175,7 @@
                            "users",
                            "approver_users",
                            "status",
+                           "external_number",
                            "raw"
                         ]
                      }
@@ -99047,6 +99071,7 @@
                            "hris",
                            "ats",
                            "auth",
+                           "saml",
                            "crm",
                            "enrich",
                            "martech",
@@ -99619,6 +99644,7 @@
                            "hris",
                            "ats",
                            "auth",
+                           "saml",
                            "crm",
                            "enrich",
                            "martech",
@@ -99752,6 +99778,7 @@
                            "hris",
                            "ats",
                            "auth",
+                           "saml",
                            "crm",
                            "enrich",
                            "martech",
@@ -100761,6 +100788,92 @@
                }
             },
             "operationId": "getUnifiedIntegrationLogin"
+         }
+      },
+      "/unified/integration/saml/{workspace_id}/{integration_type}": {
+         "get": {
+            "summary": "Sign in a user via SAML",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "success_redirect",
+                  "in": "query",
+                  "required": false,
+                  "description": "The URL where you want the user to be redirect to after a successful authentication/sign-in.  A \"jwt\" parameter will be appended to the URL which will contain a name and email of the user who just signed-in."
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "failure_redirect",
+                  "in": "query",
+                  "required": false,
+                  "description": "The URL where you want the user to be redirect to after an unsuccessful authentication. An \"error\" variable will be appended."
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "state",
+                  "in": "query",
+                  "required": false,
+                  "description": "Extra state to send back to your success URL"
+               },
+               {
+                  "schema": {
+                     "type": "boolean"
+                  },
+                  "name": "redirect",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "env",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "The ID of the workspace",
+                  "name": "workspace_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "Type of the supported integration",
+                  "name": "integration_type",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "auth",
+               "login"
+            ],
+            "description": "Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.",
+            "responses": {
+               "200": {
+                  "content": {
+                     "text/plain": {
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "operationId": "getUnifiedIntegrationSaml"
          }
       },
       "/scim/{connection_id}/users": {
