@@ -14263,6 +14263,18 @@
                "type": {
                   "type": "string"
                },
+               "time_spent": {
+                  "type": "number"
+               },
+               "time_spent_unit": {
+                  "type": "string"
+               },
+               "progress": {
+                  "type": "number"
+               },
+               "story_points": {
+                  "type": "number"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -72351,6 +72363,10 @@
                            "metadata",
                            "has_children",
                            "type",
+                           "time_spent",
+                           "time_spent_unit",
+                           "progress",
+                           "story_points",
                            "raw"
                         ]
                      }
@@ -72557,6 +72573,10 @@
                            "metadata",
                            "has_children",
                            "type",
+                           "time_spent",
+                           "time_spent_unit",
+                           "progress",
+                           "story_points",
                            "raw"
                         ]
                      }
@@ -72642,6 +72662,10 @@
                            "metadata",
                            "has_children",
                            "type",
+                           "time_spent",
+                           "time_spent_unit",
+                           "progress",
+                           "story_points",
                            "raw"
                         ]
                      }
@@ -72734,6 +72758,10 @@
                            "metadata",
                            "has_children",
                            "type",
+                           "time_spent",
+                           "time_spent_unit",
+                           "progress",
+                           "story_points",
                            "raw"
                         ]
                      }
@@ -72836,6 +72864,10 @@
                            "metadata",
                            "has_children",
                            "type",
+                           "time_spent",
+                           "time_spent_unit",
+                           "progress",
+                           "story_points",
                            "raw"
                         ]
                      }

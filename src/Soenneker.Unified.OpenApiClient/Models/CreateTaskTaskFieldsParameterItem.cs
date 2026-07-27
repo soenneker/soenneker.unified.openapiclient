@@ -100,6 +100,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Type,
         #pragma warning restore CS1591
+        [EnumMember(Value = "time_spent")]
+        #pragma warning disable CS1591
+        TimeSpent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "time_spent_unit")]
+        #pragma warning disable CS1591
+        TimeSpentUnit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "progress")]
+        #pragma warning disable CS1591
+        Progress,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "story_points")]
+        #pragma warning disable CS1591
+        StoryPoints,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

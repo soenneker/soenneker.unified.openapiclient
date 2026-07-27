@@ -112,6 +112,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Priority { get; set; }
 #endif
+        /// <summary>The progress property</summary>
+        public double? Progress { get; set; }
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +134,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus? Status { get; set; }
+        /// <summary>The story_points property</summary>
+        public double? StoryPoints { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +143,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Tags { get; set; }
+#endif
+        /// <summary>The time_spent property</summary>
+        public double? TimeSpent { get; set; }
+        /// <summary>The time_spent_unit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeSpentUnit { get; set; }
+#nullable restore
+#else
+        public string TimeSpentUnit { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,11 +213,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
+                { "progress", n => { Progress = n.GetDoubleValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus>(); } },
+                { "story_points", n => { StoryPoints = n.GetDoubleValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "time_spent", n => { TimeSpent = n.GetDoubleValue(); } },
+                { "time_spent_unit", n => { TimeSpentUnit = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -232,11 +250,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("priority", Priority);
+            writer.WriteDoubleValue("progress", Progress);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus>("status", Status);
+            writer.WriteDoubleValue("story_points", StoryPoints);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteDoubleValue("time_spent", TimeSpent);
+            writer.WriteStringValue("time_spent_unit", TimeSpentUnit);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

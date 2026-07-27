@@ -69697,6 +69697,18 @@
           "type": {
             "type": "string"
           },
+          "time_spent": {
+            "type": "number"
+          },
+          "time_spent_unit": {
+            "type": "string"
+          },
+          "progress": {
+            "type": "number"
+          },
+          "story_points": {
+            "type": "number"
+          },
           "raw": {
             "$ref": "#/components/schemas/TaskTaskRawProperty"
           }
@@ -144484,6 +144496,10 @@
           "metadata",
           "has_children",
           "type",
+          "time_spent",
+          "time_spent_unit",
+          "progress",
+          "story_points",
           "raw"
         ],
         "type": "string",
@@ -144585,6 +144601,22 @@
               "name": "Type"
             },
             {
+              "value": "time_spent",
+              "name": "TimeSpent"
+            },
+            {
+              "value": "time_spent_unit",
+              "name": "TimeSpentUnit"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "story_points",
+              "name": "StoryPoints"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144616,6 +144648,10 @@
           "metadata",
           "has_children",
           "type",
+          "time_spent",
+          "time_spent_unit",
+          "progress",
+          "story_points",
           "raw"
         ],
         "type": "string",
@@ -144717,6 +144753,22 @@
               "name": "Type"
             },
             {
+              "value": "time_spent",
+              "name": "TimeSpent"
+            },
+            {
+              "value": "time_spent_unit",
+              "name": "TimeSpentUnit"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "story_points",
+              "name": "StoryPoints"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144748,6 +144800,10 @@
           "metadata",
           "has_children",
           "type",
+          "time_spent",
+          "time_spent_unit",
+          "progress",
+          "story_points",
           "raw"
         ],
         "type": "string",
@@ -144849,6 +144905,22 @@
               "name": "Type"
             },
             {
+              "value": "time_spent",
+              "name": "TimeSpent"
+            },
+            {
+              "value": "time_spent_unit",
+              "name": "TimeSpentUnit"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "story_points",
+              "name": "StoryPoints"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144880,6 +144952,10 @@
           "metadata",
           "has_children",
           "type",
+          "time_spent",
+          "time_spent_unit",
+          "progress",
+          "story_points",
           "raw"
         ],
         "type": "string",
@@ -144981,6 +145057,22 @@
               "name": "Type"
             },
             {
+              "value": "time_spent",
+              "name": "TimeSpent"
+            },
+            {
+              "value": "time_spent_unit",
+              "name": "TimeSpentUnit"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "story_points",
+              "name": "StoryPoints"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145012,6 +145104,10 @@
           "metadata",
           "has_children",
           "type",
+          "time_spent",
+          "time_spent_unit",
+          "progress",
+          "story_points",
           "raw"
         ],
         "type": "string",
@@ -145111,6 +145207,22 @@
             {
               "value": "type",
               "name": "Type"
+            },
+            {
+              "value": "time_spent",
+              "name": "TimeSpent"
+            },
+            {
+              "value": "time_spent_unit",
+              "name": "TimeSpentUnit"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "story_points",
+              "name": "StoryPoints"
             },
             {
               "value": "raw",
