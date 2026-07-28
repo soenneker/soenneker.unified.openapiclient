@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Login.Item.Item
         {
         }
         /// <summary>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Login.Item.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Login.Item.Item
             return new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Login.Item.Item.WithIntegrationTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIntegrationTypeItemRequestBuilderGetQueryParameters 

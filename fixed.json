@@ -57121,7 +57121,7 @@
           "login"
         ],
         "summary": "Sign in a user",
-        "description": "Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.",
+        "description": "Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.",
         "operationId": "GetUnifiedIntegrationLogin",
         "parameters": [
           {
@@ -57199,7 +57199,7 @@
       "get": {
         "tags": [
           "auth",
-          "login"
+          "saml"
         ],
         "summary": "Sign in a user via SAML",
         "description": "Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.",
@@ -167893,6 +167893,9 @@
     },
     {
       "name": "login"
+    },
+    {
+      "name": "saml"
     },
     {
       "name": "scim"
