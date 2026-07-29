@@ -120,6 +120,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ApplyAmount,
         #pragma warning restore CS1591
+        [EnumMember(Value = "applications")]
+        #pragma warning disable CS1591
+        Applications,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

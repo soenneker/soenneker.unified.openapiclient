@@ -36,9 +36,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Net30,
         #pragma warning restore CS1591
+        [EnumMember(Value = "NET_45")]
+        #pragma warning disable CS1591
+        Net45,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NET_60")]
         #pragma warning disable CS1591
         Net60,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NET_90")]
+        #pragma warning disable CS1591
+        Net90,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OTHER")]
+        #pragma warning disable CS1591
+        Other,
         #pragma warning restore CS1591
     }
 }

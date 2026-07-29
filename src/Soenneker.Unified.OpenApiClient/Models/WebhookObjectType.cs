@@ -500,6 +500,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AdsCreative,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ads_asset")]
+        #pragma warning disable CS1591
+        AdsAsset,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ads_insertionorder")]
         #pragma warning disable CS1591
         AdsInsertionorder,

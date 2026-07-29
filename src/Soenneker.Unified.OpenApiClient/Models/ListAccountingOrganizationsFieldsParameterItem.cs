@@ -60,6 +60,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationCode,
         #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "is_elimination")]
+        #pragma warning disable CS1591
+        IsElimination,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

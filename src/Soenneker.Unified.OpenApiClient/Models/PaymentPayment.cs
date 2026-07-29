@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation>? Allocations { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation> Allocations { get; set; }
+#endif
         /// <summary>The bill_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "allocations", n => { Allocations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation>(global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bill_id", n => { BillId = n.GetStringValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -170,6 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation>("allocations", Allocations);
             writer.WriteStringValue("bill_id", BillId);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

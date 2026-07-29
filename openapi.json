@@ -326,6 +326,9 @@
          "name": "creative"
       },
       {
+         "name": "asset"
+      },
+      {
          "name": "insertionorder"
       },
       {
@@ -1341,6 +1344,16 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/AdsCreative"
+                  }
+               }
+            }
+         },
+         "AdsAsset": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AdsAsset"
                   }
                }
             }
@@ -9208,6 +9221,35 @@
             },
             "description": "new field name"
          },
+         "property_AccountingJournal_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "AccountingAttachment": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "download_url": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "mime_type": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_AccountingJournal_attachments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAttachment"
+            }
+         },
          "AccountingJournal": {
             "type": "object",
             "properties": {
@@ -9250,6 +9292,12 @@
                "organization_id": {
                   "type": "string"
                },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingJournal_category_ids"
+               },
+               "attachments": {
+                  "$ref": "#/components/schemas/property_AccountingJournal_attachments"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -9260,6 +9308,12 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingJournal"
+            }
+         },
+         "property_AccountingTransactionLineItem_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
             }
          },
          "AccountingTransactionLineItem": {
@@ -9288,6 +9342,9 @@
                },
                "description": {
                   "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingTransactionLineItem_category_ids"
                }
             }
          },
@@ -9318,6 +9375,12 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingTransactionContact"
+            }
+         },
+         "property_AccountingTransaction_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
             }
          },
          "AccountingTransaction": {
@@ -9378,6 +9441,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingTransaction_category_ids"
                },
                "raw": {
                   "type": "object",
@@ -9647,6 +9713,23 @@
                "organization_id": {
                   "type": "string"
                },
+               "payment_terms": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_7",
+                     "NET_10",
+                     "NET_15",
+                     "NET_20",
+                     "NET_25",
+                     "NET_30",
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -9806,27 +9889,38 @@
                "$ref": "#/components/schemas/AccountingLineitem"
             }
          },
-         "AccountingAttachment": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "download_url": {
-                  "type": "string"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "mime_type": {
-                  "type": "string"
-               }
-            }
-         },
          "property_AccountingInvoice_attachments": {
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingAttachment"
+            }
+         },
+         "AccountingPaymentReference": {
+            "type": "object",
+            "properties": {
+               "payment_id": {
+                  "type": "string"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "allocated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               }
+            }
+         },
+         "property_AccountingInvoice_payments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+         },
+         "property_AccountingInvoice_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
             }
          },
          "AccountingInvoice": {
@@ -9909,7 +10003,27 @@
                      "NET_20",
                      "NET_25",
                      "NET_30",
-                     "NET_60"
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "payment_terms": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_7",
+                     "NET_10",
+                     "NET_15",
+                     "NET_20",
+                     "NET_25",
+                     "NET_30",
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -9961,6 +10075,12 @@
                "organization_id": {
                   "type": "string"
                },
+               "payments": {
+                  "$ref": "#/components/schemas/property_AccountingInvoice_payments"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingInvoice_category_ids"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -9983,6 +10103,19 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingAttachment"
+            }
+         },
+         "property_AccountingBill_payments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+         },
+         "property_AccountingBill_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
             }
          },
          "AccountingBill": {
@@ -10091,10 +10224,6 @@
                "organization_id": {
                   "type": "string"
                },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               },
                "term": {
                   "type": "string",
                   "enum": [
@@ -10105,9 +10234,39 @@
                      "NET_20",
                      "NET_25",
                      "NET_30",
-                     "NET_60"
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "payment_terms": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_7",
+                     "NET_10",
+                     "NET_15",
+                     "NET_20",
+                     "NET_25",
+                     "NET_30",
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "payments": {
+                  "$ref": "#/components/schemas/property_AccountingBill_payments"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingBill_category_ids"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
                }
             }
          },
@@ -10128,6 +10287,36 @@
             "items": {
                "$ref": "#/components/schemas/AccountingAttachment"
             }
+         },
+         "AccountingCreditApplication": {
+            "type": "object",
+            "properties": {
+               "object_type": {
+                  "type": "string",
+                  "enum": [
+                     "INVOICE",
+                     "BILL"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "object_id": {
+                  "type": "string"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "applied_at": {
+                  "type": "string",
+                  "format": "date-time"
+               }
+            }
+         },
+         "property_AccountingCreditmemo_applications": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingCreditApplication"
+            },
+            "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
          },
          "AccountingCreditmemo": {
             "type": "object",
@@ -10241,6 +10430,9 @@
                "apply_amount": {
                   "type": "number"
                },
+               "applications": {
+                  "$ref": "#/components/schemas/property_AccountingCreditmemo_applications"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10258,6 +10450,13 @@
             "items": {
                "$ref": "#/components/schemas/AccountingLineitem"
             }
+         },
+         "property_AccountingVendorcredit_applications": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingCreditApplication"
+            },
+            "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
          },
          "AccountingVendorcredit": {
             "type": "object",
@@ -10326,6 +10525,9 @@
                },
                "apply_amount": {
                   "type": "number"
+               },
+               "applications": {
+                  "$ref": "#/components/schemas/property_AccountingVendorcredit_applications"
                },
                "raw": {
                   "type": "object",
@@ -10452,6 +10654,19 @@
                },
                "organization_code": {
                   "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "COMPANY",
+                     "SUBSIDIARY",
+                     "DIVISION",
+                     "LOCATION"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "is_elimination": {
+                  "type": "boolean"
                },
                "raw": {
                   "type": "object",
@@ -10591,6 +10806,9 @@
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingOrder_lineitems"
                },
+               "organization_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10667,6 +10885,12 @@
                "$ref": "#/components/schemas/AccountingLineitem"
             }
          },
+         "property_AccountingPurchaseorder_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "AccountingPurchaseorder": {
             "type": "object",
             "properties": {
@@ -10723,6 +10947,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingPurchaseorder_category_ids"
                },
                "raw": {
                   "type": "object",
@@ -10806,6 +11033,12 @@
                "$ref": "#/components/schemas/AccountingFee"
             }
          },
+         "property_AccountingSalesorder_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "AccountingSalesorder": {
             "type": "object",
             "properties": {
@@ -10868,6 +11101,9 @@
                },
                "fees": {
                   "$ref": "#/components/schemas/property_AccountingSalesorder_fees"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingSalesorder_category_ids"
                },
                "raw": {
                   "type": "object",
@@ -11713,6 +11949,26 @@
                "parent_id": {
                   "type": "string"
                },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "CLASS",
+                     "DEPARTMENT",
+                     "LOCATION",
+                     "PROJECT",
+                     "TASK",
+                     "CUSTOM",
+                     "EXPENSE",
+                     "INCOME"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "code": {
+                  "type": "string"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -11749,6 +12005,12 @@
                "$ref": "#/components/schemas/AccountingReference"
             },
             "description": "expense approver(s); id is HR employee/user when resolved"
+         },
+         "property_AccountingExpense_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
          },
          "AccountingExpense": {
             "type": "object",
@@ -11835,6 +12097,9 @@
                },
                "external_number": {
                   "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingExpense_category_ids"
                },
                "raw": {
                   "type": "object",
@@ -13136,6 +13401,46 @@
                "$ref": "#/components/schemas/CommerceItemvariant"
             }
          },
+         "PaymentAllocation": {
+            "type": "object",
+            "properties": {
+               "object_type": {
+                  "type": "string",
+                  "enum": [
+                     "INVOICE",
+                     "BILL",
+                     "CREDITMEMO",
+                     "VENDORCREDIT",
+                     "SALESORDER",
+                     "PURCHASEORDER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "object_id": {
+                  "type": "string"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "exchange_rate": {
+                  "type": "number"
+               },
+               "allocated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               }
+            }
+         },
+         "property_PaymentPayment_allocations": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PaymentAllocation"
+            },
+            "description": "What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints."
+         },
          "PaymentPayment": {
             "type": "object",
             "properties": {
@@ -13191,6 +13496,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "allocations": {
+                  "$ref": "#/components/schemas/property_PaymentPayment_allocations"
                },
                "raw": {
                   "type": "object",
@@ -16369,6 +16677,67 @@
                "$ref": "#/components/schemas/AdsCreative"
             }
          },
+         "AdsAsset": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "IMAGE",
+                     "VIDEO",
+                     "YOUTUBE_VIDEO",
+                     "MEDIA_BUNDLE",
+                     "TEXT"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "content": {
+                  "type": "string"
+               },
+               "mime_type": {
+                  "type": "string"
+               },
+               "width": {
+                  "type": "number"
+               },
+               "height": {
+                  "type": "number"
+               },
+               "file_size": {
+                  "type": "number"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AdsAssets": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AdsAsset"
+            }
+         },
          "property_AdsInsertionorder_pacing": {
             "type": "object",
             "properties": {
@@ -19446,6 +19815,429 @@
                }
             }
          },
+         "property_AdsReportMetrics_creative_asset_urls": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "Hosted asset mode (best-effort, provider-specific"
+         },
+         "property_AdsReportMetrics_creative_promoted": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AdsPromoted"
+            }
+         },
+         "property_AdsReportMetrics_creative": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "campaign_id": {
+                  "type": "string"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "item_id": {
+                  "type": "string"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "ACTIVE",
+                     "PAUSED",
+                     "ARCHIVED",
+                     "DRAFT",
+                     "SCHEDULED_FOR_DELETION",
+                     "PROCESSING",
+                     "PROCESSING_FAILED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "creative_type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "STANDARD",
+                     "EXPANDABLE",
+                     "VIDEO",
+                     "NATIVE",
+                     "AUDIO",
+                     "PUBLISHER_HOSTED",
+                     "ASSET_BASED",
+                     "IMAGE",
+                     "DOCUMENT"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "hosting_source": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CM",
+                     "THIRD_PARTY",
+                     "HOSTED",
+                     "RICH_MEDIA",
+                     "PUBLISHER_HOSTED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "width": {
+                  "type": "number"
+               },
+               "height": {
+                  "type": "number"
+               },
+               "asset_urls": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_creative_asset_urls"
+               },
+               "link_url": {
+                  "type": "string"
+               },
+               "body": {
+                  "type": "string"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "cta": {
+                  "type": "string"
+               },
+               "third_party_tag": {
+                  "type": "string"
+               },
+               "vast_tag_url": {
+                  "type": "string"
+               },
+               "external_creative_reference": {
+                  "type": "string"
+               },
+               "external_placement_reference": {
+                  "type": "string"
+               },
+               "external_ad_reference": {
+                  "type": "string"
+               },
+               "promoted": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_creative_promoted"
+               },
+               "path1": {
+                  "type": "string"
+               },
+               "path2": {
+                  "type": "string"
+               },
+               "data": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "property_AdsReportMetrics_insertionorder_pacing": {
+            "type": "object",
+            "properties": {
+               "period": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "DAILY",
+                     "FLIGHT"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "type": {
+                  "type": "string"
+               },
+               "daily_max_amount": {
+                  "type": "number"
+               },
+               "daily_max_impressions": {
+                  "type": "number"
+               }
+            }
+         },
+         "property_AdsReportMetrics_insertionorder_frequency_cap": {
+            "type": "object",
+            "properties": {
+               "is_unlimited": {
+                  "type": "boolean"
+               },
+               "time_unit": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "LIFETIME",
+                     "MONTHS",
+                     "WEEKS",
+                     "DAYS",
+                     "HOURS",
+                     "MINUTES"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "time_unit_count": {
+                  "type": "number"
+               },
+               "max_impressions": {
+                  "type": "number"
+               },
+               "max_views": {
+                  "type": "number"
+               }
+            }
+         },
+         "property_AdsReportMetrics_insertionorder_kpi": {
+            "type": "object",
+            "properties": {
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CPM",
+                     "CPC",
+                     "CPA",
+                     "CTR",
+                     "VIEWABILITY",
+                     "CPIAVC",
+                     "CPE",
+                     "CPV",
+                     "CLICK_CVR",
+                     "IMPRESSION_CVR",
+                     "VCPM",
+                     "VTR",
+                     "AUDIO_COMPLETION_RATE",
+                     "VIDEO_COMPLETION_RATE",
+                     "CPCL",
+                     "CPCV",
+                     "TOS10",
+                     "MAXIMIZE_PACING",
+                     "CUSTOM_IMPRESSION_VALUE_OVER_COST",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "percentage": {
+                  "type": "number"
+               },
+               "string_value": {
+                  "type": "string"
+               },
+               "algorithm_id": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_AdsReportMetrics_insertionorder_budget_segments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AdsInsertionorderBudgetSegment"
+            }
+         },
+         "property_AdsReportMetrics_insertionorder_bid_strategy": {
+            "type": "object",
+            "properties": {
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "FIXED_BID",
+                     "MAXIMIZE_SPEND",
+                     "PERFORMANCE_GOAL",
+                     "YOUTUBE_AND_PARTNERS"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "fixed_bid_amount": {
+                  "type": "number"
+               },
+               "performance_goal_type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CPA",
+                     "CPC",
+                     "VIEWABLE_CPM",
+                     "CUSTOM_ALGO",
+                     "CIVA",
+                     "IVO_TEN",
+                     "AV_VIEWED",
+                     "REACH"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "performance_goal_amount": {
+                  "type": "number"
+               },
+               "max_average_cpm_bid_amount": {
+                  "type": "number"
+               },
+               "custom_bidding_algorithm_id": {
+                  "type": "string"
+               },
+               "raise_bid_for_deals": {
+                  "type": "boolean"
+               },
+               "youtube_and_partners_type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "MANUAL_CPV",
+                     "MANUAL_CPM",
+                     "TARGET_CPA",
+                     "TARGET_CPM",
+                     "RESERVE_CPM",
+                     "MAXIMIZE_LIFT",
+                     "MAXIMIZE_CONVERSIONS",
+                     "TARGET_CPV",
+                     "TARGET_ROAS",
+                     "MAXIMIZE_CONVERSION_VALUE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "youtube_and_partners_value": {
+                  "type": "string"
+               },
+               "target_roas": {
+                  "type": "number"
+               }
+            },
+            "required": [
+               "type"
+            ],
+            "description": "YOUTUBE_AND_PARTNERS"
+         },
+         "property_AdsReportMetrics_insertionorder": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "campaign_id": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "ACTIVE",
+                     "PAUSED",
+                     "ARCHIVED",
+                     "DRAFT",
+                     "SCHEDULED_FOR_DELETION",
+                     "PROCESSING",
+                     "PROCESSING_FAILED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "pacing": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder_pacing"
+               },
+               "frequency_cap": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder_frequency_cap"
+               },
+               "kpi": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder_kpi"
+               },
+               "budget_unit": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CURRENCY",
+                     "IMPRESSIONS"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "budget_segments": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder_budget_segments"
+               },
+               "bid_strategy": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder_bid_strategy"
+               },
+               "reference": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "property_AdsReportMetrics_keyword": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "text": {
+                  "type": "string"
+               },
+               "match_type": {
+                  "type": "string"
+               },
+               "engine_id": {
+                  "type": "string"
+               },
+               "landing_page": {
+                  "type": "string"
+               }
+            },
+            "required": [
+               "id"
+            ]
+         },
+         "property_AdsReportMetrics_placement": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            },
+            "required": [
+               "id"
+            ]
+         },
          "AdsReportMetrics": {
             "type": "object",
             "properties": {
@@ -19585,6 +20377,19 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "dimension": {
+                  "type": "string",
+                  "enum": [
+                     "DATE",
+                     "PLATFORM",
+                     "PLATFORM_POSITION",
+                     "DEVICE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "dimension_value": {
+                  "type": "string"
+               },
                "campaign": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_campaign"
                },
@@ -19593,6 +20398,18 @@
                },
                "ad": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_ad"
+               },
+               "creative": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_creative"
+               },
+               "insertionorder": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_insertionorder"
+               },
+               "keyword": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_keyword"
+               },
+               "placement": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_placement"
                }
             }
          },
@@ -25091,6 +25908,8 @@
                   "ads_organization_write",
                   "ads_creative_read",
                   "ads_creative_write",
+                  "ads_asset_read",
+                  "ads_asset_write",
                   "ads_insertionorder_read",
                   "ads_insertionorder_write",
                   "ads_target_read",
@@ -27718,6 +28537,7 @@
                      "ads_report",
                      "ads_group",
                      "ads_creative",
+                     "ads_asset",
                      "ads_insertionorder",
                      "ads_target",
                      "ads_promoted",
@@ -53446,6 +54266,8 @@
                            "posted_at",
                            "source",
                            "organization_id",
+                           "category_ids",
+                           "attachments",
                            "raw"
                         ]
                      }
@@ -53596,6 +54418,8 @@
                            "posted_at",
                            "source",
                            "organization_id",
+                           "category_ids",
+                           "attachments",
                            "raw"
                         ]
                      }
@@ -53670,6 +54494,8 @@
                            "posted_at",
                            "source",
                            "organization_id",
+                           "category_ids",
+                           "attachments",
                            "raw"
                         ]
                      }
@@ -53751,6 +54577,8 @@
                            "posted_at",
                            "source",
                            "organization_id",
+                           "category_ids",
+                           "attachments",
                            "raw"
                         ]
                      }
@@ -53842,6 +54670,8 @@
                            "posted_at",
                            "source",
                            "organization_id",
+                           "category_ids",
+                           "attachments",
                            "raw"
                         ]
                      }
@@ -53991,6 +54821,7 @@
                            "currency",
                            "contacts",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -54174,6 +55005,7 @@
                            "currency",
                            "contacts",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -54254,6 +55086,7 @@
                            "currency",
                            "contacts",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -54341,6 +55174,7 @@
                            "currency",
                            "contacts",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -54438,6 +55272,7 @@
                            "currency",
                            "contacts",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -54591,6 +55426,7 @@
                            "identification",
                            "associated_contacts",
                            "organization_id",
+                           "payment_terms",
                            "raw"
                         ]
                      }
@@ -54750,6 +55586,7 @@
                            "identification",
                            "associated_contacts",
                            "organization_id",
+                           "payment_terms",
                            "raw"
                         ]
                      }
@@ -54834,6 +55671,7 @@
                            "identification",
                            "associated_contacts",
                            "organization_id",
+                           "payment_terms",
                            "raw"
                         ]
                      }
@@ -54925,6 +55763,7 @@
                            "identification",
                            "associated_contacts",
                            "organization_id",
+                           "payment_terms",
                            "raw"
                         ]
                      }
@@ -55026,6 +55865,7 @@
                            "identification",
                            "associated_contacts",
                            "organization_id",
+                           "payment_terms",
                            "raw"
                         ]
                      }
@@ -55178,6 +56018,7 @@
                            "notes",
                            "refund_reason",
                            "term",
+                           "payment_terms",
                            "lineitems",
                            "status",
                            "url",
@@ -55186,6 +56027,8 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "payments",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -55371,6 +56214,7 @@
                            "notes",
                            "refund_reason",
                            "term",
+                           "payment_terms",
                            "lineitems",
                            "status",
                            "url",
@@ -55379,6 +56223,8 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "payments",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -55462,6 +56308,7 @@
                            "notes",
                            "refund_reason",
                            "term",
+                           "payment_terms",
                            "lineitems",
                            "status",
                            "url",
@@ -55470,6 +56317,8 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "payments",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -55560,6 +56409,7 @@
                            "notes",
                            "refund_reason",
                            "term",
+                           "payment_terms",
                            "lineitems",
                            "status",
                            "url",
@@ -55568,6 +56418,8 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "payments",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -55668,6 +56520,7 @@
                            "notes",
                            "refund_reason",
                            "term",
+                           "payment_terms",
                            "lineitems",
                            "status",
                            "url",
@@ -55676,6 +56529,8 @@
                            "attachments",
                            "send",
                            "organization_id",
+                           "payments",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -55833,8 +56688,11 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw",
-                           "term"
+                           "term",
+                           "payment_terms",
+                           "payments",
+                           "category_ids",
+                           "raw"
                         ]
                      }
                   },
@@ -55998,8 +56856,11 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw",
-                           "term"
+                           "term",
+                           "payment_terms",
+                           "payments",
+                           "category_ids",
+                           "raw"
                         ]
                      }
                   },
@@ -56087,8 +56948,11 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw",
-                           "term"
+                           "term",
+                           "payment_terms",
+                           "payments",
+                           "category_ids",
+                           "raw"
                         ]
                      }
                   },
@@ -56183,8 +57047,11 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw",
-                           "term"
+                           "term",
+                           "payment_terms",
+                           "payments",
+                           "category_ids",
+                           "raw"
                         ]
                      }
                   },
@@ -56289,8 +57156,11 @@
                            "attachments",
                            "send",
                            "organization_id",
-                           "raw",
-                           "term"
+                           "term",
+                           "payment_terms",
+                           "payments",
+                           "category_ids",
+                           "raw"
                         ]
                      }
                   },
@@ -56449,6 +57319,7 @@
                            "send",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -56615,6 +57486,7 @@
                            "send",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -56705,6 +57577,7 @@
                            "send",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -56802,6 +57675,7 @@
                            "send",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -56909,6 +57783,7 @@
                            "send",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -57056,6 +57931,7 @@
                            "status",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -57210,6 +58086,7 @@
                            "status",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -57288,6 +58165,7 @@
                            "status",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -57373,6 +58251,7 @@
                            "status",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -57468,6 +58347,7 @@
                            "status",
                            "organization_id",
                            "apply_amount",
+                           "applications",
                            "raw"
                         ]
                      }
@@ -58122,6 +59002,8 @@
                            "parent_id",
                            "fiscal_year_end_month",
                            "organization_code",
+                           "type",
+                           "is_elimination",
                            "raw"
                         ]
                      }
@@ -58256,6 +59138,8 @@
                            "parent_id",
                            "fiscal_year_end_month",
                            "organization_code",
+                           "type",
+                           "is_elimination",
                            "raw"
                         ]
                      }
@@ -58331,6 +59215,7 @@
                            "billing_address",
                            "status",
                            "lineitems",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -58490,6 +59375,7 @@
                            "billing_address",
                            "status",
                            "lineitems",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -58565,6 +59451,7 @@
                            "billing_address",
                            "status",
                            "lineitems",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -58647,6 +59534,7 @@
                            "billing_address",
                            "status",
                            "lineitems",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -58739,6 +59627,7 @@
                            "billing_address",
                            "status",
                            "lineitems",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -58883,6 +59772,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59034,6 +59924,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59109,6 +60000,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59191,6 +60083,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59283,6 +60176,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59429,6 +60323,7 @@
                            "sales_channel",
                            "organization_id",
                            "fees",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59582,6 +60477,7 @@
                            "sales_channel",
                            "organization_id",
                            "fees",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59659,6 +60555,7 @@
                            "sales_channel",
                            "organization_id",
                            "fees",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59743,6 +60640,7 @@
                            "sales_channel",
                            "organization_id",
                            "fees",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -59837,6 +60735,7 @@
                            "sales_channel",
                            "organization_id",
                            "fees",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -61176,6 +62075,9 @@
                            "description",
                            "is_active",
                            "parent_id",
+                           "type",
+                           "code",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -61312,6 +62214,9 @@
                            "description",
                            "is_active",
                            "parent_id",
+                           "type",
+                           "code",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -61381,6 +62286,9 @@
                            "description",
                            "is_active",
                            "parent_id",
+                           "type",
+                           "code",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -61457,6 +62365,9 @@
                            "description",
                            "is_active",
                            "parent_id",
+                           "type",
+                           "code",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -61543,6 +62454,9 @@
                            "description",
                            "is_active",
                            "parent_id",
+                           "type",
+                           "code",
+                           "organization_id",
                            "raw"
                         ]
                      }
@@ -61697,6 +62611,7 @@
                            "approver_users",
                            "status",
                            "external_number",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -61912,6 +62827,7 @@
                            "approver_users",
                            "status",
                            "external_number",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -61997,6 +62913,7 @@
                            "approver_users",
                            "status",
                            "external_number",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -62089,6 +63006,7 @@
                            "approver_users",
                            "status",
                            "external_number",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -62191,6 +63109,7 @@
                            "approver_users",
                            "status",
                            "external_number",
+                           "category_ids",
                            "raw"
                         ]
                      }
@@ -67720,6 +68639,7 @@
                            "account_id",
                            "reference",
                            "organization_id",
+                           "allocations",
                            "raw"
                         ]
                      }
@@ -67927,6 +68847,7 @@
                            "account_id",
                            "reference",
                            "organization_id",
+                           "allocations",
                            "raw"
                         ]
                      }
@@ -68004,6 +68925,7 @@
                            "account_id",
                            "reference",
                            "organization_id",
+                           "allocations",
                            "raw"
                         ]
                      }
@@ -68088,6 +69010,7 @@
                            "account_id",
                            "reference",
                            "organization_id",
+                           "allocations",
                            "raw"
                         ]
                      }
@@ -68182,6 +69105,7 @@
                            "account_id",
                            "reference",
                            "organization_id",
+                           "allocations",
                            "raw"
                         ]
                      }
@@ -78109,6 +79033,312 @@
             "operationId": "removeAdsCreative"
          }
       },
+      "/ads/{connection_id}/asset": {
+         "post": {
+            "summary": "Create an asset",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "type",
+                           "url",
+                           "content",
+                           "mime_type",
+                           "width",
+                           "height",
+                           "file_size",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "ads",
+               "asset"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AdsAsset"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AdsAsset"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAdsAsset"
+         },
+         "get": {
+            "summary": "List all assets",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AdsOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "type",
+                           "url",
+                           "content",
+                           "mime_type",
+                           "width",
+                           "height",
+                           "file_size",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "ads",
+               "asset"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AdsAssets"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAdsAssets"
+         }
+      },
+      "/ads/{connection_id}/asset/{id}": {
+         "get": {
+            "summary": "Retrieve an asset",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "type",
+                           "url",
+                           "content",
+                           "mime_type",
+                           "width",
+                           "height",
+                           "file_size",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Asset",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "ads",
+               "asset"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AdsAsset"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAdsAsset"
+         }
+      },
       "/ads/{connection_id}/insertionorder": {
          "post": {
             "summary": "Create an insertionorder",
@@ -80040,6 +81270,15 @@
                   "in": "query",
                   "required": false,
                   "description": "One or more (comma-separated) of: CLICKS, IMPRESSIONS, CONVERSIONS, COST, CTR, CPC, CONVERSION_VALUE, CPA, ROAS, CPM, ECPM, ENGAGEMENT, VIDEO_COMPLETIONS, VIDEO_VIEWS, LEADS, ENGAGEMENTS, SAVES, LIKES, SHARES, COMMENTS, FOLLOWS, POST_CLICK_CONVERSIONS, VIEW_THROUGH_CONVERSIONS, ALL_CONVERSIONS, ALL_CONVERSION_VALUE, INTERACTIONS, REVENUE, MEDIA_COST, TOTAL_MEDIA_COST, VIDEO_PLAYS, VIDEO_QUARTILE_25, VIDEO_QUARTILE_50, VIDEO_QUARTILE_75, VIDEO_QUARTILE_100, VIDEO_AVG_TIME_WATCHED, VIDEO_THRUPLAY, VIEWABLE_IMPRESSIONS, MEASURABLE_IMPRESSIONS, VIEWABILITY_RATE, BILLABLE_IMPRESSIONS, DATA_FEES, PLATFORM_FEES, PROFIT, LANDING_PAGE_CLICKS, LEAD_FORM_OPENS, AD_UNIT_CLICKS, CARD_CLICKS, CARD_IMPRESSIONS, COMMENT_LIKES, COMPANY_PAGE_CLICKS, ACTION_CLICKS, TEXT_URL_CLICKS, OTHER_ENGAGEMENTS, OPENS, TOTAL_ENGAGEMENTS, UNIQUE_IMPRESSIONS, UNIQUE_CLICKS, VIRAL_IMPRESSIONS, VIRAL_CLICKS, VIRAL_LIKES, VIRAL_COMMENTS, VIRAL_SHARES, VIRAL_FOLLOWS, VIRAL_VIDEO_PLAYS, VIRAL_VIDEO_VIEWS, VIRAL_VIDEO_COMPLETIONS, VIRAL_VIDEO_QUARTILE_25, VIRAL_VIDEO_QUARTILE_50, VIRAL_VIDEO_QUARTILE_75, VIRAL_LEADS, VIRAL_LEAD_FORM_OPENS, VIRAL_LANDING_PAGE_CLICKS, VIRAL_CONVERSIONS, VIRAL_POST_CLICK_CONVERSIONS, VIRAL_VIEW_THROUGH_CONVERSIONS, VIRAL_ENGAGEMENTS, GMAIL_SECONDARY_CLICKS, AVERAGE_CPV, VIDEO_VIEWS_FROM_SEARCH, CROSS_DEVICE_CONVERSIONS, ABSOLUTE_TOP_IMPRESSION_SHARE, TOP_IMPRESSION_SHARE, ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT, TOP_IMPRESSION_RATE_PERCENT, VIDEO_FULLSCREENS, VIDEO_PAUSES, VIDEO_MUTES, VIDEO_SKIPS, COMPANION_CLICKS, COMPANION_VIEWS, ACTIVE_VIEW_AVG_TIME, ELIGIBLE_IMPRESSIONS, EARNED_VIEWS, UNIQUE_VIEWERS, COST_USD, VIRAL_CARD_CLICKS, VIRAL_CARD_IMPRESSIONS, VIRAL_COMPANY_PAGE_CLICKS, VIRAL_VIDEO_FULLSCREENS, VIRAL_OTHER_ENGAGEMENTS, LEAD_GEN_CONTACT_SHARES, LEAD_GEN_INTERESTED_CLICKS, CM360_POST_CLICK_REVENUE, CM360_POST_VIEW_REVENUE, SCROLLS, MEDIA_FEE_1, MEDIA_FEE_2, MEDIA_FEE_3, MEDIA_FEE_4, MEDIA_FEE_5, ACTIVE_VIEW_DIST_UNMEASURABLE, ACTIVE_VIEW_DIST_UNVIEWABLE, ACTIVE_VIEW_DIST_VIEWABLE, ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE, ACTIVE_VIEW_VISIBLE_10S, NOT_MEASURABLE_IMPRESSIONS, NOT_VIEWABLE_IMPRESSIONS, 1D_VIEW, 1D_CLICK, 7D_VIEW, 7D_CLICK, 14D_CLICK, 28D_VIEW, 28D_CLICK, 30D_CLICK, VISITS, AUDIO_MUTES"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "dimension",
+                  "in": "query",
+                  "required": false,
+                  "description": "One or more (comma-separated) of: DATE, PLATFORM, PLATFORM_POSITION, DEVICE"
                },
                {
                   "schema": {

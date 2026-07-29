@@ -38849,6 +38849,252 @@
         ]
       }
     },
+    "/ads/{connectionId}/asset": {
+      "post": {
+        "tags": [
+          "ads",
+          "asset"
+        ],
+        "summary": "Create an asset",
+        "operationId": "CreateAdsAsset",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateAdsAssetFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdsAsset"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdsAsset"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "ads",
+          "asset"
+        ],
+        "summary": "List all assets",
+        "operationId": "ListAdsAssets",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by (reference to AdsOrganization)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListAdsAssetsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAdsAssets200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/ads/{connectionId}/asset/{id}": {
+      "get": {
+        "tags": [
+          "ads",
+          "asset"
+        ],
+        "summary": "Retrieve an asset",
+        "operationId": "GetAdsAsset",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAdsAssetFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Asset",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdsAsset"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/ads/{connectionId}/insertionorder": {
       "post": {
         "tags": [
@@ -40315,6 +40561,14 @@
             "name": "type",
             "in": "query",
             "description": "\u0022One or more (comma-separated) of: CLICKS, IMPRESSIONS, CONVERSIONS, COST, CTR, CPC, CONVERSION_VALUE, CPA, ROAS, CPM, ECPM, ENGAGEMENT, VIDEO_COMPLETIONS, VIDEO_VIEWS, LEADS, ENGAGEMENTS, SAVES, LIKES, SHARES, COMMENTS, FOLLOWS, POST_CLICK_CONVERSIONS, VIEW_THROUGH_CONVERSIONS, ALL_CONVERSIONS, ALL_CONVERSION_VALUE, INTERACTIONS, REVENUE, MEDIA_COST, TOTAL_MEDIA_COST, VIDEO_PLAYS, VIDEO_QUARTILE_25, VIDEO_QUARTILE_50, VIDEO_QUARTILE_75, VIDEO_QUARTILE_100, VIDEO_AVG_TIME_WATCHED, VIDEO_THRUPLAY, VIEWABLE_IMPRESSIONS, MEASURABLE_IMPRESSIONS, VIEWABILITY_RATE, BILLABLE_IMPRESSIONS, DATA_FEES, PLATFORM_FEES, PROFIT, LANDING_PAGE_CLICKS, LEAD_FORM_OPENS, AD_UNIT_CLICKS, CARD_CLICKS, CARD_IMPRESSIONS, COMMENT_LIKES, COMPANY_PAGE_CLICKS, ACTION_CLICKS, TEXT_URL_CLICKS, OTHER_ENGAGEMENTS, OPENS, TOTAL_ENGAGEMENTS, UNIQUE_IMPRESSIONS, UNIQUE_CLICKS, VIRAL_IMPRESSIONS, VIRAL_CLICKS, VIRAL_LIKES, VIRAL_COMMENTS, VIRAL_SHARES, VIRAL_FOLLOWS, VIRAL_VIDEO_PLAYS, VIRAL_VIDEO_VIEWS, VIRAL_VIDEO_COMPLETIONS, VIRAL_VIDEO_QUARTILE_25, VIRAL_VIDEO_QUARTILE_50, VIRAL_VIDEO_QUARTILE_75, VIRAL_LEADS, VIRAL_LEAD_FORM_OPENS, VIRAL_LANDING_PAGE_CLICKS, VIRAL_CONVERSIONS, VIRAL_POST_CLICK_CONVERSIONS, VIRAL_VIEW_THROUGH_CONVERSIONS, VIRAL_ENGAGEMENTS, GMAIL_SECONDARY_CLICKS, AVERAGE_CPV, VIDEO_VIEWS_FROM_SEARCH, CROSS_DEVICE_CONVERSIONS, ABSOLUTE_TOP_IMPRESSION_SHARE, TOP_IMPRESSION_SHARE, ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT, TOP_IMPRESSION_RATE_PERCENT, VIDEO_FULLSCREENS, VIDEO_PAUSES, VIDEO_MUTES, VIDEO_SKIPS, COMPANION_CLICKS, COMPANION_VIEWS, ACTIVE_VIEW_AVG_TIME, ELIGIBLE_IMPRESSIONS, EARNED_VIEWS, UNIQUE_VIEWERS, COST_USD, VIRAL_CARD_CLICKS, VIRAL_CARD_IMPRESSIONS, VIRAL_COMPANY_PAGE_CLICKS, VIRAL_VIDEO_FULLSCREENS, VIRAL_OTHER_ENGAGEMENTS, LEAD_GEN_CONTACT_SHARES, LEAD_GEN_INTERESTED_CLICKS, CM360_POST_CLICK_REVENUE, CM360_POST_VIEW_REVENUE, SCROLLS, MEDIA_FEE_1, MEDIA_FEE_2, MEDIA_FEE_3, MEDIA_FEE_4, MEDIA_FEE_5, ACTIVE_VIEW_DIST_UNMEASURABLE, ACTIVE_VIEW_DIST_UNVIEWABLE, ACTIVE_VIEW_DIST_VIEWABLE, ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE, ACTIVE_VIEW_VISIBLE_10S, NOT_MEASURABLE_IMPRESSIONS, NOT_VIEWABLE_IMPRESSIONS, 1D_VIEW, 1D_CLICK, 7D_VIEW, 7D_CLICK, 14D_CLICK, 28D_VIEW, 28D_CLICK, 30D_CLICK, VISITS, AUDIO_MUTES\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dimension",
+            "in": "query",
+            "description": "\u0022One or more (comma-separated) of: DATE, PLATFORM, PLATFORM_POSITION, DEVICE\u0022",
             "schema": {
               "type": "string"
             }
@@ -64952,6 +65206,35 @@
         },
         "description": "new field name"
       },
+      "PropertyAccountingJournalCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "AccountingAttachment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "download_url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "mime_type": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAccountingJournalAttachments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAttachment"
+        }
+      },
       "AccountingJournal": {
         "type": "object",
         "properties": {
@@ -64998,6 +65281,18 @@
           "organization_id": {
             "type": "string"
           },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingAttachment"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingJournalRawProperty"
           }
@@ -65007,6 +65302,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingJournal"
+        }
+      },
+      "PropertyAccountingTransactionLineItemCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "AccountingTransactionLineItem": {
@@ -65035,6 +65336,12 @@
           },
           "description": {
             "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -65065,6 +65372,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingTransactionContact"
+        }
+      },
+      "PropertyAccountingTransactionCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "AccountingTransaction": {
@@ -65131,6 +65444,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingTransactionRawProperty"
@@ -65374,6 +65693,9 @@
           "organization_id": {
             "type": "string"
           },
+          "payment_terms": {
+            "$ref": "#/components/schemas/AccountingContactPaymentTerms"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingContactRawProperty"
           }
@@ -65533,27 +65855,38 @@
           "$ref": "#/components/schemas/AccountingLineitem"
         }
       },
-      "AccountingAttachment": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "download_url": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "mime_type": {
-            "type": "string"
-          }
-        }
-      },
       "PropertyAccountingInvoiceAttachments": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingAttachment"
+        }
+      },
+      "AccountingPaymentReference": {
+        "type": "object",
+        "properties": {
+          "payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "allocated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyAccountingInvoicePayments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingPaymentReference"
+        },
+        "description": "ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+      },
+      "PropertyAccountingInvoiceCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "AccountingInvoice": {
@@ -65629,6 +65962,9 @@
           "term": {
             "$ref": "#/components/schemas/AccountingInvoiceTerm"
           },
+          "payment_terms": {
+            "$ref": "#/components/schemas/AccountingInvoicePaymentTerms"
+          },
           "lineitems": {
             "type": "array",
             "items": {
@@ -65659,6 +65995,19 @@
           "organization_id": {
             "type": "string"
           },
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingInvoiceRawProperty"
           }
@@ -65680,6 +66029,19 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingAttachment"
+        }
+      },
+      "PropertyAccountingBillPayments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingPaymentReference"
+        },
+        "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+      },
+      "PropertyAccountingBillCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "AccountingBill": {
@@ -65776,11 +66138,27 @@
           "organization_id": {
             "type": "string"
           },
-          "raw": {
-            "$ref": "#/components/schemas/AccountingBillRawProperty"
-          },
           "term": {
             "$ref": "#/components/schemas/AccountingBillTerm"
+          },
+          "payment_terms": {
+            "$ref": "#/components/schemas/AccountingBillPaymentTerms"
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this invoice"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingBillRawProperty"
           }
         }
       },
@@ -65801,6 +66179,31 @@
         "items": {
           "$ref": "#/components/schemas/AccountingAttachment"
         }
+      },
+      "AccountingCreditApplication": {
+        "type": "object",
+        "properties": {
+          "object_type": {
+            "$ref": "#/components/schemas/AccountingCreditApplicationObjectType"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "applied_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyAccountingCreditmemoApplications": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingCreditApplication"
+        },
+        "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
       },
       "AccountingCreditmemo": {
         "type": "object",
@@ -65902,6 +66305,13 @@
           "apply_amount": {
             "type": "number"
           },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingCreditApplication"
+            },
+            "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingCreditmemoRawProperty"
           }
@@ -65918,6 +66328,13 @@
         "items": {
           "$ref": "#/components/schemas/AccountingLineitem"
         }
+      },
+      "PropertyAccountingVendorcreditApplications": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingCreditApplication"
+        },
+        "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
       },
       "AccountingVendorcredit": {
         "type": "object",
@@ -65976,6 +66393,13 @@
           },
           "apply_amount": {
             "type": "number"
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingCreditApplication"
+            },
+            "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingVendorcreditRawProperty"
@@ -66101,6 +66525,12 @@
           "organization_code": {
             "type": "string"
           },
+          "type": {
+            "$ref": "#/components/schemas/AccountingOrganizationType"
+          },
+          "is_elimination": {
+            "type": "boolean"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingOrganizationRawProperty"
           }
@@ -66224,6 +66654,9 @@
               "$ref": "#/components/schemas/AccountingLineitem"
             }
           },
+          "organization_id": {
+            "type": "string"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingOrderRawProperty"
           }
@@ -66299,6 +66732,12 @@
           "$ref": "#/components/schemas/AccountingLineitem"
         }
       },
+      "PropertyAccountingPurchaseorderCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "AccountingPurchaseorder": {
         "type": "object",
         "properties": {
@@ -66346,6 +66785,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingPurchaseorderRawProperty"
@@ -66428,6 +66873,12 @@
           "$ref": "#/components/schemas/AccountingFee"
         }
       },
+      "PropertyAccountingSalesorderCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "AccountingSalesorder": {
         "type": "object",
         "properties": {
@@ -66483,6 +66934,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AccountingFee"
+            }
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "raw": {
@@ -67423,6 +67880,15 @@
           "parent_id": {
             "type": "string"
           },
+          "type": {
+            "$ref": "#/components/schemas/AccountingCategoryType"
+          },
+          "code": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingCategoryRawProperty"
           }
@@ -67458,6 +67924,12 @@
           "$ref": "#/components/schemas/AccountingReference"
         },
         "description": "expense approver(s); id is HR employee/user when resolved"
+      },
+      "PropertyAccountingExpenseCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       },
       "AccountingExpense": {
         "type": "object",
@@ -67548,6 +68020,12 @@
           },
           "external_number": {
             "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingExpenseRawProperty"
@@ -68772,6 +69250,37 @@
           "$ref": "#/components/schemas/CommerceItemvariant"
         }
       },
+      "PaymentAllocation": {
+        "type": "object",
+        "properties": {
+          "object_type": {
+            "$ref": "#/components/schemas/PaymentAllocationObjectType"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "exchange_rate": {
+            "type": "number"
+          },
+          "allocated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyPaymentPaymentAllocations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PaymentAllocation"
+        },
+        "description": "What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints."
+      },
       "PaymentPayment": {
         "type": "object",
         "properties": {
@@ -68822,6 +69331,13 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "allocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentAllocation"
+            },
+            "description": "What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints."
           },
           "raw": {
             "$ref": "#/components/schemas/PaymentPaymentRawProperty"
@@ -71756,6 +72272,58 @@
           "$ref": "#/components/schemas/AdsCreative"
         }
       },
+      "AdsAsset": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AdsAssetType"
+          },
+          "url": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "mime_type": {
+            "type": "string"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "file_size": {
+            "type": "number"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AdsAssetRawProperty"
+          }
+        }
+      },
+      "AdsAssets": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AdsAsset"
+        }
+      },
       "PropertyAdsInsertionorderPacing": {
         "type": "object",
         "properties": {
@@ -74674,6 +75242,314 @@
           }
         }
       },
+      "PropertyAdsReportMetricsCreativeAssetUrls": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Hosted asset mode (best-effort, provider-specific"
+      },
+      "PropertyAdsReportMetricsCreativePromoted": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AdsPromoted"
+        }
+      },
+      "PropertyAdsReportMetricsCreative": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "campaign_id": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "item_id": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCreativeStatus"
+          },
+          "creative_type": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCreativeCreativeType"
+          },
+          "hosting_source": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCreativeHostingSource"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "asset_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Hosted asset mode (best-effort, provider-specific"
+          },
+          "link_url": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "cta": {
+            "type": "string"
+          },
+          "third_party_tag": {
+            "type": "string"
+          },
+          "vast_tag_url": {
+            "type": "string"
+          },
+          "external_creative_reference": {
+            "type": "string"
+          },
+          "external_placement_reference": {
+            "type": "string"
+          },
+          "external_ad_reference": {
+            "type": "string"
+          },
+          "promoted": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdsPromoted"
+            }
+          },
+          "path1": {
+            "type": "string"
+          },
+          "path2": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCreativeRawProperty"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderPacing": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderPacingPeriod"
+          },
+          "type": {
+            "type": "string"
+          },
+          "daily_max_amount": {
+            "type": "number"
+          },
+          "daily_max_impressions": {
+            "type": "number"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderFrequencyCap": {
+        "type": "object",
+        "properties": {
+          "is_unlimited": {
+            "type": "boolean"
+          },
+          "time_unit": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderFrequencyCapTimeUnit"
+          },
+          "time_unit_count": {
+            "type": "number"
+          },
+          "max_impressions": {
+            "type": "number"
+          },
+          "max_views": {
+            "type": "number"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderKpi": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderKpiType"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "percentage": {
+            "type": "number"
+          },
+          "string_value": {
+            "type": "string"
+          },
+          "algorithm_id": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBudgetSegments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AdsInsertionorderBudgetSegment"
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBidStrategy": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderBidStrategyType"
+          },
+          "fixed_bid_amount": {
+            "type": "number"
+          },
+          "performance_goal_type": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType"
+          },
+          "performance_goal_amount": {
+            "type": "number"
+          },
+          "max_average_cpm_bid_amount": {
+            "type": "number"
+          },
+          "custom_bidding_algorithm_id": {
+            "type": "string"
+          },
+          "raise_bid_for_deals": {
+            "type": "boolean"
+          },
+          "youtube_and_partners_type": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType"
+          },
+          "youtube_and_partners_value": {
+            "type": "string"
+          },
+          "target_roas": {
+            "type": "number"
+          }
+        },
+        "description": "YOUTUBE_AND_PARTNERS"
+      },
+      "PropertyAdsReportMetricsInsertionorder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "campaign_id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderStatus"
+          },
+          "pacing": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderPacing"
+          },
+          "frequency_cap": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderFrequencyCap"
+          },
+          "kpi": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderKpi"
+          },
+          "budget_unit": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderBudgetUnit"
+          },
+          "budget_segments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdsInsertionorderBudgetSegment"
+            }
+          },
+          "bid_strategy": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderBidStrategy"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorderRawProperty"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsKeyword": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "match_type": {
+            "type": "string"
+          },
+          "engine_id": {
+            "type": "string"
+          },
+          "landing_page": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAdsReportMetricsPlacement": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "AdsReportMetrics": {
         "type": "object",
         "properties": {
@@ -74683,6 +75559,12 @@
           "type": {
             "$ref": "#/components/schemas/AdsReportMetricsType"
           },
+          "dimension": {
+            "$ref": "#/components/schemas/AdsReportMetricsDimension"
+          },
+          "dimension_value": {
+            "type": "string"
+          },
           "campaign": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaign"
           },
@@ -74691,6 +75573,18 @@
           },
           "ad": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsAd"
+          },
+          "creative": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCreative"
+          },
+          "insertionorder": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsInsertionorder"
+          },
+          "keyword": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsKeyword"
+          },
+          "placement": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsPlacement"
           }
         }
       },
@@ -83235,6 +84129,9 @@
       "AdsCreativeRaw": {
         "type": "object"
       },
+      "AdsAssetRaw": {
+        "type": "object"
+      },
       "AdsInsertionorderRaw": {
         "type": "object"
       },
@@ -83251,6 +84148,12 @@
         "type": "object"
       },
       "PropertyAdsReportMetricsAdRaw": {
+        "type": "object"
+      },
+      "PropertyAdsReportMetricsCreativeRaw": {
+        "type": "object"
+      },
+      "PropertyAdsReportMetricsInsertionorderRaw": {
         "type": "object"
       },
       "AdsReportRaw": {
@@ -85989,6 +86892,12 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListAdsAssets200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AdsAsset"
+        }
+      },
       "ListAdsInsertionorders200Response": {
         "type": "array",
         "items": {
@@ -86900,6 +87809,9 @@
       "AdsCreativeRawProperty": {
         "type": "object"
       },
+      "AdsAssetRawProperty": {
+        "type": "object"
+      },
       "AdsInsertionorderRawProperty": {
         "type": "object"
       },
@@ -86916,6 +87828,12 @@
         "type": "object"
       },
       "PropertyAdsReportMetricsAdRawProperty": {
+        "type": "object"
+      },
+      "PropertyAdsReportMetricsCreativeRawProperty": {
+        "type": "object"
+      },
+      "PropertyAdsReportMetricsInsertionorderRawProperty": {
         "type": "object"
       },
       "AdsReportRawProperty": {
@@ -91087,6 +92005,74 @@
           ]
         }
       },
+      "AccountingContactPaymentTerms": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_7",
+          "NET_10",
+          "NET_15",
+          "NET_20",
+          "NET_25",
+          "NET_30",
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingContactPaymentTerms",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "AccountingFeeType": {
         "enum": [
           "TAX",
@@ -91149,7 +92135,10 @@
           "NET_20",
           "NET_25",
           "NET_30",
-          "NET_60"
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -91187,8 +92176,88 @@
               "name": "Net30"
             },
             {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
               "value": "NET_60",
               "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingInvoicePaymentTerms": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_7",
+          "NET_10",
+          "NET_15",
+          "NET_20",
+          "NET_25",
+          "NET_30",
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingInvoicePaymentTerms",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
             }
           ]
         }
@@ -91402,7 +92471,10 @@
           "NET_20",
           "NET_25",
           "NET_30",
-          "NET_60"
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -91440,8 +92512,111 @@
               "name": "Net30"
             },
             {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
               "value": "NET_60",
               "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingBillPaymentTerms": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_7",
+          "NET_10",
+          "NET_15",
+          "NET_20",
+          "NET_25",
+          "NET_30",
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingBillPaymentTerms",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingCreditApplicationObjectType": {
+        "enum": [
+          "INVOICE",
+          "BILL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingCreditApplicationObjectType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "INVOICE",
+              "name": "Invoice"
+            },
+            {
+              "value": "BILL",
+              "name": "Bill"
             }
           ]
         }
@@ -91591,6 +92766,39 @@
             {
               "value": "OVERDUE",
               "name": "Overdue"
+            }
+          ]
+        }
+      },
+      "AccountingOrganizationType": {
+        "enum": [
+          "COMPANY",
+          "SUBSIDIARY",
+          "DIVISION",
+          "LOCATION"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingOrganizationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "COMPANY",
+              "name": "Company"
+            },
+            {
+              "value": "SUBSIDIARY",
+              "name": "Subsidiary"
+            },
+            {
+              "value": "DIVISION",
+              "name": "Division"
+            },
+            {
+              "value": "LOCATION",
+              "name": "Location"
             }
           ]
         }
@@ -91816,6 +93024,59 @@
             {
               "value": "PROFIT_AND_LOSS",
               "name": "ProfitAndLoss"
+            }
+          ]
+        }
+      },
+      "AccountingCategoryType": {
+        "enum": [
+          "CLASS",
+          "DEPARTMENT",
+          "LOCATION",
+          "PROJECT",
+          "TASK",
+          "CUSTOM",
+          "EXPENSE",
+          "INCOME"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingCategoryType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CLASS",
+              "name": "ClassValue"
+            },
+            {
+              "value": "DEPARTMENT",
+              "name": "Department"
+            },
+            {
+              "value": "LOCATION",
+              "name": "Location"
+            },
+            {
+              "value": "PROJECT",
+              "name": "Project"
+            },
+            {
+              "value": "TASK",
+              "name": "Task"
+            },
+            {
+              "value": "CUSTOM",
+              "name": "Custom"
+            },
+            {
+              "value": "EXPENSE",
+              "name": "Expense"
+            },
+            {
+              "value": "INCOME",
+              "name": "Income"
             }
           ]
         }
@@ -92308,6 +93569,49 @@
             {
               "value": "COMPLETED",
               "name": "Completed"
+            }
+          ]
+        }
+      },
+      "PaymentAllocationObjectType": {
+        "enum": [
+          "INVOICE",
+          "BILL",
+          "CREDITMEMO",
+          "VENDORCREDIT",
+          "SALESORDER",
+          "PURCHASEORDER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PaymentAllocationObjectType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "INVOICE",
+              "name": "Invoice"
+            },
+            {
+              "value": "BILL",
+              "name": "Bill"
+            },
+            {
+              "value": "CREDITMEMO",
+              "name": "Creditmemo"
+            },
+            {
+              "value": "VENDORCREDIT",
+              "name": "Vendorcredit"
+            },
+            {
+              "value": "SALESORDER",
+              "name": "Salesorder"
+            },
+            {
+              "value": "PURCHASEORDER",
+              "name": "Purchaseorder"
             }
           ]
         }
@@ -94065,6 +95369,44 @@
             {
               "value": "PUBLISHER_HOSTED",
               "name": "PublisherHosted"
+            }
+          ]
+        }
+      },
+      "AdsAssetType": {
+        "enum": [
+          "IMAGE",
+          "VIDEO",
+          "YOUTUBE_VIDEO",
+          "MEDIA_BUNDLE",
+          "TEXT"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsAssetType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "IMAGE",
+              "name": "Image"
+            },
+            {
+              "value": "VIDEO",
+              "name": "Video"
+            },
+            {
+              "value": "YOUTUBE_VIDEO",
+              "name": "YoutubeVideo"
+            },
+            {
+              "value": "MEDIA_BUNDLE",
+              "name": "MediaBundle"
+            },
+            {
+              "value": "TEXT",
+              "name": "Text"
             }
           ]
         }
@@ -97014,6 +98356,599 @@
           ]
         }
       },
+      "PropertyAdsReportMetricsCreativeStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "ACTIVE",
+          "PAUSED",
+          "ARCHIVED",
+          "DRAFT",
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsCreativeStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "ACTIVE",
+              "name": "Active"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "SCHEDULED_FOR_DELETION",
+              "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsCreativeCreativeType": {
+        "enum": [
+          "UNSPECIFIED",
+          "STANDARD",
+          "EXPANDABLE",
+          "VIDEO",
+          "NATIVE",
+          "AUDIO",
+          "PUBLISHER_HOSTED",
+          "ASSET_BASED",
+          "IMAGE",
+          "DOCUMENT"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsCreativeCreativeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "STANDARD",
+              "name": "Standard"
+            },
+            {
+              "value": "EXPANDABLE",
+              "name": "Expandable"
+            },
+            {
+              "value": "VIDEO",
+              "name": "Video"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "AUDIO",
+              "name": "Audio"
+            },
+            {
+              "value": "PUBLISHER_HOSTED",
+              "name": "PublisherHosted"
+            },
+            {
+              "value": "ASSET_BASED",
+              "name": "AssetBased"
+            },
+            {
+              "value": "IMAGE",
+              "name": "Image"
+            },
+            {
+              "value": "DOCUMENT",
+              "name": "Document"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsCreativeHostingSource": {
+        "enum": [
+          "UNSPECIFIED",
+          "CM",
+          "THIRD_PARTY",
+          "HOSTED",
+          "RICH_MEDIA",
+          "PUBLISHER_HOSTED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsCreativeHostingSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CM",
+              "name": "Cm"
+            },
+            {
+              "value": "THIRD_PARTY",
+              "name": "ThirdParty"
+            },
+            {
+              "value": "HOSTED",
+              "name": "Hosted"
+            },
+            {
+              "value": "RICH_MEDIA",
+              "name": "RichMedia"
+            },
+            {
+              "value": "PUBLISHER_HOSTED",
+              "name": "PublisherHosted"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderPacingPeriod": {
+        "enum": [
+          "UNSPECIFIED",
+          "DAILY",
+          "FLIGHT"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderPacingPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "DAILY",
+              "name": "Daily"
+            },
+            {
+              "value": "FLIGHT",
+              "name": "Flight"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderFrequencyCapTimeUnit": {
+        "enum": [
+          "UNSPECIFIED",
+          "LIFETIME",
+          "MONTHS",
+          "WEEKS",
+          "DAYS",
+          "HOURS",
+          "MINUTES"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderFrequencyCapTimeUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "LIFETIME",
+              "name": "Lifetime"
+            },
+            {
+              "value": "MONTHS",
+              "name": "Months"
+            },
+            {
+              "value": "WEEKS",
+              "name": "Weeks"
+            },
+            {
+              "value": "DAYS",
+              "name": "Days"
+            },
+            {
+              "value": "HOURS",
+              "name": "Hours"
+            },
+            {
+              "value": "MINUTES",
+              "name": "Minutes"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderKpiType": {
+        "enum": [
+          "UNSPECIFIED",
+          "CPM",
+          "CPC",
+          "CPA",
+          "CTR",
+          "VIEWABILITY",
+          "CPIAVC",
+          "CPE",
+          "CPV",
+          "CLICK_CVR",
+          "IMPRESSION_CVR",
+          "VCPM",
+          "VTR",
+          "AUDIO_COMPLETION_RATE",
+          "VIDEO_COMPLETION_RATE",
+          "CPCL",
+          "CPCV",
+          "TOS10",
+          "MAXIMIZE_PACING",
+          "CUSTOM_IMPRESSION_VALUE_OVER_COST",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderKpiType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CPM",
+              "name": "Cpm"
+            },
+            {
+              "value": "CPC",
+              "name": "Cpc"
+            },
+            {
+              "value": "CPA",
+              "name": "Cpa"
+            },
+            {
+              "value": "CTR",
+              "name": "Ctr"
+            },
+            {
+              "value": "VIEWABILITY",
+              "name": "Viewability"
+            },
+            {
+              "value": "CPIAVC",
+              "name": "Cpiavc"
+            },
+            {
+              "value": "CPE",
+              "name": "Cpe"
+            },
+            {
+              "value": "CPV",
+              "name": "Cpv"
+            },
+            {
+              "value": "CLICK_CVR",
+              "name": "ClickCvr"
+            },
+            {
+              "value": "IMPRESSION_CVR",
+              "name": "ImpressionCvr"
+            },
+            {
+              "value": "VCPM",
+              "name": "Vcpm"
+            },
+            {
+              "value": "VTR",
+              "name": "Vtr"
+            },
+            {
+              "value": "AUDIO_COMPLETION_RATE",
+              "name": "AudioCompletionRate"
+            },
+            {
+              "value": "VIDEO_COMPLETION_RATE",
+              "name": "VideoCompletionRate"
+            },
+            {
+              "value": "CPCL",
+              "name": "Cpcl"
+            },
+            {
+              "value": "CPCV",
+              "name": "Cpcv"
+            },
+            {
+              "value": "TOS10",
+              "name": "Tos10"
+            },
+            {
+              "value": "MAXIMIZE_PACING",
+              "name": "MaximizePacing"
+            },
+            {
+              "value": "CUSTOM_IMPRESSION_VALUE_OVER_COST",
+              "name": "CustomImpressionValueOverCost"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBidStrategyType": {
+        "enum": [
+          "FIXED_BID",
+          "MAXIMIZE_SPEND",
+          "PERFORMANCE_GOAL",
+          "YOUTUBE_AND_PARTNERS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderBidStrategyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "FIXED_BID",
+              "name": "FixedBid"
+            },
+            {
+              "value": "MAXIMIZE_SPEND",
+              "name": "MaximizeSpend"
+            },
+            {
+              "value": "PERFORMANCE_GOAL",
+              "name": "PerformanceGoal"
+            },
+            {
+              "value": "YOUTUBE_AND_PARTNERS",
+              "name": "YoutubeAndPartners"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType": {
+        "enum": [
+          "UNSPECIFIED",
+          "CPA",
+          "CPC",
+          "VIEWABLE_CPM",
+          "CUSTOM_ALGO",
+          "CIVA",
+          "IVO_TEN",
+          "AV_VIEWED",
+          "REACH"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CPA",
+              "name": "Cpa"
+            },
+            {
+              "value": "CPC",
+              "name": "Cpc"
+            },
+            {
+              "value": "VIEWABLE_CPM",
+              "name": "ViewableCpm"
+            },
+            {
+              "value": "CUSTOM_ALGO",
+              "name": "CustomAlgo"
+            },
+            {
+              "value": "CIVA",
+              "name": "Civa"
+            },
+            {
+              "value": "IVO_TEN",
+              "name": "IvoTen"
+            },
+            {
+              "value": "AV_VIEWED",
+              "name": "AvViewed"
+            },
+            {
+              "value": "REACH",
+              "name": "Reach"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType": {
+        "enum": [
+          "UNSPECIFIED",
+          "MANUAL_CPV",
+          "MANUAL_CPM",
+          "TARGET_CPA",
+          "TARGET_CPM",
+          "RESERVE_CPM",
+          "MAXIMIZE_LIFT",
+          "MAXIMIZE_CONVERSIONS",
+          "TARGET_CPV",
+          "TARGET_ROAS",
+          "MAXIMIZE_CONVERSION_VALUE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "MANUAL_CPV",
+              "name": "ManualCpv"
+            },
+            {
+              "value": "MANUAL_CPM",
+              "name": "ManualCpm"
+            },
+            {
+              "value": "TARGET_CPA",
+              "name": "TargetCpa"
+            },
+            {
+              "value": "TARGET_CPM",
+              "name": "TargetCpm"
+            },
+            {
+              "value": "RESERVE_CPM",
+              "name": "ReserveCpm"
+            },
+            {
+              "value": "MAXIMIZE_LIFT",
+              "name": "MaximizeLift"
+            },
+            {
+              "value": "MAXIMIZE_CONVERSIONS",
+              "name": "MaximizeConversions"
+            },
+            {
+              "value": "TARGET_CPV",
+              "name": "TargetCpv"
+            },
+            {
+              "value": "TARGET_ROAS",
+              "name": "TargetRoas"
+            },
+            {
+              "value": "MAXIMIZE_CONVERSION_VALUE",
+              "name": "MaximizeConversionValue"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "ACTIVE",
+          "PAUSED",
+          "ARCHIVED",
+          "DRAFT",
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "ACTIVE",
+              "name": "Active"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "SCHEDULED_FOR_DELETION",
+              "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsInsertionorderBudgetUnit": {
+        "enum": [
+          "UNSPECIFIED",
+          "CURRENCY",
+          "IMPRESSIONS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsInsertionorderBudgetUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "IMPRESSIONS",
+              "name": "Impressions"
+            }
+          ]
+        }
+      },
       "AdsReportMetricsType": {
         "enum": [
           "CLICKS",
@@ -97658,6 +99593,39 @@
             {
               "value": "AUDIO_MUTES",
               "name": "AudioMutes"
+            }
+          ]
+        }
+      },
+      "AdsReportMetricsDimension": {
+        "enum": [
+          "DATE",
+          "PLATFORM",
+          "PLATFORM_POSITION",
+          "DEVICE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsReportMetricsDimension",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DATE",
+              "name": "Date"
+            },
+            {
+              "value": "PLATFORM",
+              "name": "Platform"
+            },
+            {
+              "value": "PLATFORM_POSITION",
+              "name": "PlatformPosition"
+            },
+            {
+              "value": "DEVICE",
+              "name": "Device"
             }
           ]
         }
@@ -100271,6 +102239,8 @@
           "ads_organization_write",
           "ads_creative_read",
           "ads_creative_write",
+          "ads_asset_read",
+          "ads_asset_write",
           "ads_insertionorder_read",
           "ads_insertionorder_write",
           "ads_target_read",
@@ -101256,6 +103226,14 @@
             {
               "value": "ads_creative_write",
               "name": "AdsCreativeWrite"
+            },
+            {
+              "value": "ads_asset_read",
+              "name": "AdsAssetRead"
+            },
+            {
+              "value": "ads_asset_write",
+              "name": "AdsAssetWrite"
             },
             {
               "value": "ads_insertionorder_read",
@@ -107280,6 +109258,7 @@
           "ads_report",
           "ads_group",
           "ads_creative",
+          "ads_asset",
           "ads_insertionorder",
           "ads_target",
           "ads_promoted",
@@ -107812,6 +109791,10 @@
             {
               "value": "ads_creative",
               "name": "AdsCreative"
+            },
+            {
+              "value": "ads_asset",
+              "name": "AdsAsset"
             },
             {
               "value": "ads_insertionorder",
@@ -128373,6 +130356,8 @@
           "posted_at",
           "source",
           "organization_id",
+          "category_ids",
+          "attachments",
           "raw"
         ],
         "type": "string",
@@ -128430,6 +130415,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "attachments",
+              "name": "Attachments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128450,6 +130443,8 @@
           "posted_at",
           "source",
           "organization_id",
+          "category_ids",
+          "attachments",
           "raw"
         ],
         "type": "string",
@@ -128507,6 +130502,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "attachments",
+              "name": "Attachments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128527,6 +130530,8 @@
           "posted_at",
           "source",
           "organization_id",
+          "category_ids",
+          "attachments",
           "raw"
         ],
         "type": "string",
@@ -128584,6 +130589,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "attachments",
+              "name": "Attachments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128604,6 +130617,8 @@
           "posted_at",
           "source",
           "organization_id",
+          "category_ids",
+          "attachments",
           "raw"
         ],
         "type": "string",
@@ -128661,6 +130676,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "attachments",
+              "name": "Attachments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128681,6 +130704,8 @@
           "posted_at",
           "source",
           "organization_id",
+          "category_ids",
+          "attachments",
           "raw"
         ],
         "type": "string",
@@ -128738,6 +130763,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "attachments",
+              "name": "Attachments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128764,6 +130797,7 @@
           "currency",
           "contacts",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -128845,6 +130879,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128871,6 +130909,7 @@
           "currency",
           "contacts",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -128952,6 +130991,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -128978,6 +131021,7 @@
           "currency",
           "contacts",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -129059,6 +131103,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129085,6 +131133,7 @@
           "currency",
           "contacts",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -129166,6 +131215,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129192,6 +131245,7 @@
           "currency",
           "contacts",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -129273,6 +131327,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129303,6 +131361,7 @@
           "identification",
           "associated_contacts",
           "organization_id",
+          "payment_terms",
           "raw"
         ],
         "type": "string",
@@ -129400,6 +131459,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129430,6 +131493,7 @@
           "identification",
           "associated_contacts",
           "organization_id",
+          "payment_terms",
           "raw"
         ],
         "type": "string",
@@ -129527,6 +131591,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129557,6 +131625,7 @@
           "identification",
           "associated_contacts",
           "organization_id",
+          "payment_terms",
           "raw"
         ],
         "type": "string",
@@ -129654,6 +131723,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129684,6 +131757,7 @@
           "identification",
           "associated_contacts",
           "organization_id",
+          "payment_terms",
           "raw"
         ],
         "type": "string",
@@ -129781,6 +131855,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129811,6 +131889,7 @@
           "identification",
           "associated_contacts",
           "organization_id",
+          "payment_terms",
           "raw"
         ],
         "type": "string",
@@ -129908,6 +131987,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -129937,6 +132020,7 @@
           "notes",
           "refund_reason",
           "term",
+          "payment_terms",
           "lineitems",
           "status",
           "url",
@@ -129945,6 +132029,8 @@
           "attachments",
           "send",
           "organization_id",
+          "payments",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -130038,6 +132124,10 @@
               "name": "Term"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -130070,6 +132160,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -130099,6 +132197,7 @@
           "notes",
           "refund_reason",
           "term",
+          "payment_terms",
           "lineitems",
           "status",
           "url",
@@ -130107,6 +132206,8 @@
           "attachments",
           "send",
           "organization_id",
+          "payments",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -130200,6 +132301,10 @@
               "name": "Term"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -130232,6 +132337,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -130261,6 +132374,7 @@
           "notes",
           "refund_reason",
           "term",
+          "payment_terms",
           "lineitems",
           "status",
           "url",
@@ -130269,6 +132383,8 @@
           "attachments",
           "send",
           "organization_id",
+          "payments",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -130362,6 +132478,10 @@
               "name": "Term"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -130394,6 +132514,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -130423,6 +132551,7 @@
           "notes",
           "refund_reason",
           "term",
+          "payment_terms",
           "lineitems",
           "status",
           "url",
@@ -130431,6 +132560,8 @@
           "attachments",
           "send",
           "organization_id",
+          "payments",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -130524,6 +132655,10 @@
               "name": "Term"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -130556,6 +132691,14 @@
               "name": "OrganizationId"
             },
             {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -130585,6 +132728,7 @@
           "notes",
           "refund_reason",
           "term",
+          "payment_terms",
           "lineitems",
           "status",
           "url",
@@ -130593,6 +132737,8 @@
           "attachments",
           "send",
           "organization_id",
+          "payments",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -130686,6 +132832,10 @@
               "name": "Term"
             },
             {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
               "value": "lineitems",
               "name": "Lineitems"
             },
@@ -130716,6 +132866,14 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
             },
             {
               "value": "raw",
@@ -130752,8 +132910,11 @@
           "attachments",
           "send",
           "organization_id",
-          "raw",
-          "term"
+          "term",
+          "payment_terms",
+          "payments",
+          "category_ids",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130866,12 +133027,24 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "term",
               "name": "Term"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -130904,8 +133077,11 @@
           "attachments",
           "send",
           "organization_id",
-          "raw",
-          "term"
+          "term",
+          "payment_terms",
+          "payments",
+          "category_ids",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -131018,12 +133194,24 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "term",
               "name": "Term"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -131056,8 +133244,11 @@
           "attachments",
           "send",
           "organization_id",
-          "raw",
-          "term"
+          "term",
+          "payment_terms",
+          "payments",
+          "category_ids",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -131170,12 +133361,24 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "term",
               "name": "Term"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -131208,8 +133411,11 @@
           "attachments",
           "send",
           "organization_id",
-          "raw",
-          "term"
+          "term",
+          "payment_terms",
+          "payments",
+          "category_ids",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -131322,12 +133528,24 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "term",
               "name": "Term"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -131360,8 +133578,11 @@
           "attachments",
           "send",
           "organization_id",
-          "raw",
-          "term"
+          "term",
+          "payment_terms",
+          "payments",
+          "category_ids",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -131474,12 +133695,24 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "term",
               "name": "Term"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -131514,6 +133747,7 @@
           "send",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -131635,6 +133869,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131671,6 +133909,7 @@
           "send",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -131792,6 +134031,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131828,6 +134071,7 @@
           "send",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -131949,6 +134193,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131985,6 +134233,7 @@
           "send",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132106,6 +134355,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132142,6 +134395,7 @@
           "send",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132263,6 +134517,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132287,6 +134545,7 @@
           "status",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132360,6 +134619,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132384,6 +134647,7 @@
           "status",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132457,6 +134721,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132481,6 +134749,7 @@
           "status",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132554,6 +134823,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132578,6 +134851,7 @@
           "status",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132651,6 +134925,10 @@
               "name": "ApplyAmount"
             },
             {
+              "value": "applications",
+              "name": "Applications"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132675,6 +134953,7 @@
           "status",
           "organization_id",
           "apply_amount",
+          "applications",
           "raw"
         ],
         "type": "string",
@@ -132746,6 +135025,10 @@
             {
               "value": "apply_amount",
               "name": "ApplyAmount"
+            },
+            {
+              "value": "applications",
+              "name": "Applications"
             },
             {
               "value": "raw",
@@ -133054,6 +135337,8 @@
           "parent_id",
           "fiscal_year_end_month",
           "organization_code",
+          "type",
+          "is_elimination",
           "raw"
         ],
         "type": "string",
@@ -133115,6 +135400,14 @@
               "name": "OrganizationCode"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "is_elimination",
+              "name": "IsElimination"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133136,6 +135429,8 @@
           "parent_id",
           "fiscal_year_end_month",
           "organization_code",
+          "type",
+          "is_elimination",
           "raw"
         ],
         "type": "string",
@@ -133197,6 +135492,14 @@
               "name": "OrganizationCode"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "is_elimination",
+              "name": "IsElimination"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133218,6 +135521,7 @@
           "billing_address",
           "status",
           "lineitems",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -133279,6 +135583,10 @@
               "name": "Lineitems"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133300,6 +135608,7 @@
           "billing_address",
           "status",
           "lineitems",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -133361,6 +135670,10 @@
               "name": "Lineitems"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133382,6 +135695,7 @@
           "billing_address",
           "status",
           "lineitems",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -133443,6 +135757,10 @@
               "name": "Lineitems"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133464,6 +135782,7 @@
           "billing_address",
           "status",
           "lineitems",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -133525,6 +135844,10 @@
               "name": "Lineitems"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133546,6 +135869,7 @@
           "billing_address",
           "status",
           "lineitems",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -133607,6 +135931,10 @@
               "name": "Lineitems"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133628,6 +135956,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -133689,6 +136018,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133710,6 +136043,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -133771,6 +136105,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133792,6 +136130,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -133853,6 +136192,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133874,6 +136217,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -133935,6 +136279,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133956,6 +136304,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134017,6 +136366,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134040,6 +136393,7 @@
           "sales_channel",
           "organization_id",
           "fees",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134109,6 +136463,10 @@
               "name": "Fees"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134132,6 +136490,7 @@
           "sales_channel",
           "organization_id",
           "fees",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134201,6 +136560,10 @@
               "name": "Fees"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134224,6 +136587,7 @@
           "sales_channel",
           "organization_id",
           "fees",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134293,6 +136657,10 @@
               "name": "Fees"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134316,6 +136684,7 @@
           "sales_channel",
           "organization_id",
           "fees",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134385,6 +136754,10 @@
               "name": "Fees"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -134408,6 +136781,7 @@
           "sales_channel",
           "organization_id",
           "fees",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -134475,6 +136849,10 @@
             {
               "value": "fees",
               "name": "Fees"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
             },
             {
               "value": "raw",
@@ -135332,6 +137710,9 @@
           "description",
           "is_active",
           "parent_id",
+          "type",
+          "code",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -135369,6 +137750,18 @@
               "name": "ParentId"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135384,6 +137777,9 @@
           "description",
           "is_active",
           "parent_id",
+          "type",
+          "code",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -135421,6 +137817,18 @@
               "name": "ParentId"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135436,6 +137844,9 @@
           "description",
           "is_active",
           "parent_id",
+          "type",
+          "code",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -135473,6 +137884,18 @@
               "name": "ParentId"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135488,6 +137911,9 @@
           "description",
           "is_active",
           "parent_id",
+          "type",
+          "code",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -135525,6 +137951,18 @@
               "name": "ParentId"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135540,6 +137978,9 @@
           "description",
           "is_active",
           "parent_id",
+          "type",
+          "code",
+          "organization_id",
           "raw"
         ],
         "type": "string",
@@ -135577,6 +138018,18 @@
               "name": "ParentId"
             },
             {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135608,6 +138061,7 @@
           "approver_users",
           "status",
           "external_number",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -135709,6 +138163,10 @@
               "name": "ExternalNumber"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135740,6 +138198,7 @@
           "approver_users",
           "status",
           "external_number",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -135841,6 +138300,10 @@
               "name": "ExternalNumber"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -135872,6 +138335,7 @@
           "approver_users",
           "status",
           "external_number",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -135973,6 +138437,10 @@
               "name": "ExternalNumber"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -136004,6 +138472,7 @@
           "approver_users",
           "status",
           "external_number",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -136105,6 +138574,10 @@
               "name": "ExternalNumber"
             },
             {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -136136,6 +138609,7 @@
           "approver_users",
           "status",
           "external_number",
+          "category_ids",
           "raw"
         ],
         "type": "string",
@@ -136235,6 +138709,10 @@
             {
               "value": "external_number",
               "name": "ExternalNumber"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
             },
             {
               "value": "raw",
@@ -141247,6 +143725,7 @@
           "account_id",
           "reference",
           "organization_id",
+          "allocations",
           "raw"
         ],
         "type": "string",
@@ -141316,6 +143795,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "allocations",
+              "name": "Allocations"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141339,6 +143822,7 @@
           "account_id",
           "reference",
           "organization_id",
+          "allocations",
           "raw"
         ],
         "type": "string",
@@ -141408,6 +143892,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "allocations",
+              "name": "Allocations"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141431,6 +143919,7 @@
           "account_id",
           "reference",
           "organization_id",
+          "allocations",
           "raw"
         ],
         "type": "string",
@@ -141500,6 +143989,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "allocations",
+              "name": "Allocations"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141523,6 +144016,7 @@
           "account_id",
           "reference",
           "organization_id",
+          "allocations",
           "raw"
         ],
         "type": "string",
@@ -141592,6 +144086,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "allocations",
+              "name": "Allocations"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141615,6 +144113,7 @@
           "account_id",
           "reference",
           "organization_id",
+          "allocations",
           "raw"
         ],
         "type": "string",
@@ -141682,6 +144181,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             },
             {
               "value": "raw",
@@ -149538,6 +152041,237 @@
             {
               "value": "data",
               "name": "Data"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateAdsAssetFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "organization_id",
+          "name",
+          "type",
+          "url",
+          "content",
+          "mime_type",
+          "width",
+          "height",
+          "file_size",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateAdsAssetFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "content",
+              "name": "Content"
+            },
+            {
+              "value": "mime_type",
+              "name": "MimeType"
+            },
+            {
+              "value": "width",
+              "name": "Width"
+            },
+            {
+              "value": "height",
+              "name": "Height"
+            },
+            {
+              "value": "file_size",
+              "name": "FileSize"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListAdsAssetsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "organization_id",
+          "name",
+          "type",
+          "url",
+          "content",
+          "mime_type",
+          "width",
+          "height",
+          "file_size",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListAdsAssetsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "content",
+              "name": "Content"
+            },
+            {
+              "value": "mime_type",
+              "name": "MimeType"
+            },
+            {
+              "value": "width",
+              "name": "Width"
+            },
+            {
+              "value": "height",
+              "name": "Height"
+            },
+            {
+              "value": "file_size",
+              "name": "FileSize"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetAdsAssetFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "organization_id",
+          "name",
+          "type",
+          "url",
+          "content",
+          "mime_type",
+          "width",
+          "height",
+          "file_size",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetAdsAssetFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "content",
+              "name": "Content"
+            },
+            {
+              "value": "mime_type",
+              "name": "MimeType"
+            },
+            {
+              "value": "width",
+              "name": "Width"
+            },
+            {
+              "value": "height",
+              "name": "Height"
+            },
+            {
+              "value": "file_size",
+              "name": "FileSize"
             },
             {
               "value": "raw",
@@ -166991,6 +169725,16 @@
         },
         "required": true
       },
+      "AdsAsset": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AdsAsset"
+            }
+          }
+        },
+        "required": true
+      },
       "AdsInsertionorder": {
         "content": {
           "application/json": {
@@ -167731,6 +170475,9 @@
     },
     {
       "name": "creative"
+    },
+    {
+      "name": "asset"
     },
     {
       "name": "insertionorder"

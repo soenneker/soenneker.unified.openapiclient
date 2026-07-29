@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Ad;
+using Soenneker.Unified.OpenApiClient.Ads.Item.Asset;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Campaign;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Creative;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Group;
@@ -27,6 +28,11 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item
         public global::Soenneker.Unified.OpenApiClient.Ads.Item.Ad.AdRequestBuilder Ad
         {
             get => new global::Soenneker.Unified.OpenApiClient.Ads.Item.Ad.AdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The asset property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder Asset
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The campaign property</summary>
         public global::Soenneker.Unified.OpenApiClient.Ads.Item.Campaign.CampaignRequestBuilder Campaign

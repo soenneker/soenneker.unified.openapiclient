@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment> Attachments { get; set; }
 #endif
+        /// <summary>The category_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CategoryIds { get; set; }
+#nullable restore
+#else
+        public List<string> CategoryIds { get; set; }
+#endif
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +190,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "approver_user_id", n => { ApproverUserId = n.GetStringValue(); } },
                 { "approver_users", n => { ApproverUsers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -215,6 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("approver_user_id", ApproverUserId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>("approver_users", ApproverUsers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>("attachments", Attachments);
+            writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);

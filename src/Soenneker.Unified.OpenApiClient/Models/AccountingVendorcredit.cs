@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>What this vendor credit was applied to (invoices/bills). Writable inline on create/update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication>? Applications { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication> Applications { get; set; }
+#endif
         /// <summary>The apply_amount property</summary>
         public double? ApplyAmount { get; set; }
         /// <summary>The balance_amount property</summary>
@@ -128,6 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "applications", n => { Applications = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "apply_amount", n => { ApplyAmount = n.GetDoubleValue(); } },
                 { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "bill_id", n => { BillId = n.GetStringValue(); } },
@@ -154,6 +163,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication>("applications", Applications);
             writer.WriteDoubleValue("apply_amount", ApplyAmount);
             writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteStringValue("bill_id", BillId);

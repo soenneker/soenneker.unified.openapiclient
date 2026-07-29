@@ -42,6 +42,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The is_elimination property</summary>
+        public bool? IsElimination { get; set; }
         /// <summary>The legal_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +100,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationType? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The website property</summary>
@@ -138,6 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "fiscal_year_end_month", n => { FiscalYearEndMonth = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_elimination", n => { IsElimination = n.GetBoolValue(); } },
                 { "legal_name", n => { LegalName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_code", n => { OrganizationCode = n.GetStringValue(); } },
@@ -145,6 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty.CreateFromDiscriminatorValue); } },
                 { "tax_number", n => { TaxNumber = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
@@ -161,6 +167,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("fiscal_year_end_month", FiscalYearEndMonth);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_elimination", IsElimination);
             writer.WriteStringValue("legal_name", LegalName);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_code", OrganizationCode);
@@ -168,6 +175,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty>("raw", Raw);
             writer.WriteStringValue("tax_number", TaxNumber);
             writer.WriteStringValue("timezone", Timezone);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);

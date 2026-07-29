@@ -80,6 +80,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "category_ids")]
+        #pragma warning disable CS1591
+        CategoryIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

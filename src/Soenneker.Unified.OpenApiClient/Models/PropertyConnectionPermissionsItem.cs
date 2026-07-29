@@ -928,6 +928,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AdsCreativeWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ads_asset_read")]
+        #pragma warning disable CS1591
+        AdsAssetRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ads_asset_write")]
+        #pragma warning disable CS1591
+        AdsAssetWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ads_insertionorder_read")]
         #pragma warning disable CS1591
         AdsInsertionorderRead,

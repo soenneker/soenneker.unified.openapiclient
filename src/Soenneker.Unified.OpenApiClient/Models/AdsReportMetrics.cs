@@ -30,6 +30,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign Campaign { get; set; }
 #endif
+        /// <summary>The creative property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreative? Creative { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreative Creative { get; set; }
+#endif
+        /// <summary>The dimension property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsDimension? Dimension { get; set; }
+        /// <summary>The dimension_value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DimensionValue { get; set; }
+#nullable restore
+#else
+        public string DimensionValue { get; set; }
+#endif
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +55,30 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup Group { get; set; }
+#endif
+        /// <summary>The insertionorder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorder? Insertionorder { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorder Insertionorder { get; set; }
+#endif
+        /// <summary>The keyword property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsKeyword? Keyword { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsKeyword Keyword { get; set; }
+#endif
+        /// <summary>The placement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsPlacement? Placement { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsPlacement Placement { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType? Type { get; set; }
@@ -69,7 +111,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "ad", n => { Ad = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd.CreateFromDiscriminatorValue); } },
                 { "campaign", n => { Campaign = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign.CreateFromDiscriminatorValue); } },
+                { "creative", n => { Creative = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreative>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreative.CreateFromDiscriminatorValue); } },
+                { "dimension", n => { Dimension = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsDimension>(); } },
+                { "dimension_value", n => { DimensionValue = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup.CreateFromDiscriminatorValue); } },
+                { "insertionorder", n => { Insertionorder = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorder>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorder.CreateFromDiscriminatorValue); } },
+                { "keyword", n => { Keyword = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsKeyword>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsKeyword.CreateFromDiscriminatorValue); } },
+                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsPlacement>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsPlacement.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType>(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
@@ -83,7 +131,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsAd>("ad", Ad);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaign>("campaign", Campaign);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreative>("creative", Creative);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsDimension>("dimension", Dimension);
+            writer.WriteStringValue("dimension_value", DimensionValue);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroup>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorder>("insertionorder", Insertionorder);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsKeyword>("keyword", Keyword);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsPlacement>("placement", Placement);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetricsType>("type", Type);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

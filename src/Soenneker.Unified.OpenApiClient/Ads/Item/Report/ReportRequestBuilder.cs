@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", pathParameters)
+        public ReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,dimension*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", rawUrl)
+        public ReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ads/{connectionId}/report{?ad_id*,campaign_id*,dimension*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -105,6 +105,16 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Report
 #else
             [QueryParameter("campaign_id")]
             public string CampaignId { get; set; }
+#endif
+            /// <summary>&quot;One or more (comma-separated) of: DATE, PLATFORM, PLATFORM_POSITION, DEVICE&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dimension")]
+            public string? Dimension { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dimension")]
+            public string Dimension { get; set; }
 #endif
             /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

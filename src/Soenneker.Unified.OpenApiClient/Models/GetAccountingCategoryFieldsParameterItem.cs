@@ -36,6 +36,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ParentId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "code")]
+        #pragma warning disable CS1591
+        Code,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization_id")]
+        #pragma warning disable CS1591
+        OrganizationId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

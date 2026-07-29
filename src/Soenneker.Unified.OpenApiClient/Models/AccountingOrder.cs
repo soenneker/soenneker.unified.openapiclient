@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem> Lineitems { get; set; }
 #endif
+        /// <summary>The organization_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
         /// <summary>The raw property</summary>
@@ -122,6 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress.CreateFromDiscriminatorValue); } },
@@ -145,6 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
+            writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrderRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrderShippingAddress>("shipping_address", ShippingAddress);

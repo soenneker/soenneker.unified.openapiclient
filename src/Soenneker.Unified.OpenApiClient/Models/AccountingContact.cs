@@ -118,6 +118,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod> PaymentMethods { get; set; }
 #endif
+        /// <summary>The payment_terms property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentTerms? PaymentTerms { get; set; }
         /// <summary>The portal_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,6 +206,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_methods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "payment_terms", n => { PaymentTerms = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentTerms>(); } },
                 { "portal_url", n => { PortalUrl = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress.CreateFromDiscriminatorValue); } },
@@ -236,6 +239,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>("payment_methods", PaymentMethods);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteStringValue("portal_url", PortalUrl);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactShippingAddress>("shipping_address", ShippingAddress);

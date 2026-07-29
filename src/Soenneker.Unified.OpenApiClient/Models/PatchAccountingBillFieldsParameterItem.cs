@@ -112,13 +112,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "term")]
         #pragma warning disable CS1591
         Term,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payment_terms")]
+        #pragma warning disable CS1591
+        PaymentTerms,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payments")]
+        #pragma warning disable CS1591
+        Payments,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "category_ids")]
+        #pragma warning disable CS1591
+        CategoryIds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }

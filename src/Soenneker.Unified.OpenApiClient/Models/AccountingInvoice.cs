@@ -26,6 +26,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? BalanceAmount { get; set; }
         /// <summary>The cancelled_at property</summary>
         public DateTimeOffset? CancelledAt { get; set; }
+        /// <summary>The category_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CategoryIds { get; set; }
+#nullable restore
+#else
+        public List<string> CategoryIds { get; set; }
+#endif
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +102,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_collection_method property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod? PaymentCollectionMethod { get; set; }
+        /// <summary>ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>? Payments { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference> Payments { get; set; }
+#endif
+        /// <summary>The payment_terms property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentTerms? PaymentTerms { get; set; }
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
         /// <summary>The raw property</summary>
@@ -174,6 +192,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "cancelled_at", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
+                { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -187,6 +206,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "paid_amount", n => { PaidAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
                 { "payment_collection_method", n => { PaymentCollectionMethod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod>(); } },
+                { "payment_terms", n => { PaymentTerms = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentTerms>(); } },
+                { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -213,6 +234,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>("attachments", Attachments);
             writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteDateTimeOffsetValue("cancelled_at", CancelledAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
@@ -226,6 +248,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("paid_amount", PaidAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentCollectionMethod>("payment_collection_method", PaymentCollectionMethod);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>("payments", Payments);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoicePaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
