@@ -14624,6 +14624,12 @@
                "task_id": {
                   "type": "string"
                },
+               "parent_id": {
+                  "type": "string"
+               },
+               "has_children": {
+                  "type": "boolean"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -73933,6 +73939,8 @@
                            "user_id",
                            "user_name",
                            "task_id",
+                           "parent_id",
+                           "has_children",
                            "raw"
                         ]
                      }
@@ -74058,6 +74066,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -74069,6 +74086,8 @@
                            "user_id",
                            "user_name",
                            "task_id",
+                           "parent_id",
+                           "has_children",
                            "raw"
                         ]
                      }
@@ -74138,6 +74157,8 @@
                            "user_id",
                            "user_name",
                            "task_id",
+                           "parent_id",
+                           "has_children",
                            "raw"
                         ]
                      }
@@ -74214,6 +74235,8 @@
                            "user_id",
                            "user_name",
                            "task_id",
+                           "parent_id",
+                           "has_children",
                            "raw"
                         ]
                      }
@@ -74300,6 +74323,8 @@
                            "user_id",
                            "user_name",
                            "task_id",
+                           "parent_id",
+                           "has_children",
                            "raw"
                         ]
                      }

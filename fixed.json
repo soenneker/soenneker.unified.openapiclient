@@ -34956,6 +34956,14 @@
             }
           },
           {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -70261,6 +70269,12 @@
           },
           "task_id": {
             "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "has_children": {
+            "type": "boolean"
           },
           "raw": {
             "$ref": "#/components/schemas/TaskCommentRawProperty"
@@ -147743,6 +147757,8 @@
           "user_id",
           "user_name",
           "task_id",
+          "parent_id",
+          "has_children",
           "raw"
         ],
         "type": "string",
@@ -147780,6 +147796,14 @@
               "name": "TaskId"
             },
             {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_children",
+              "name": "HasChildren"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -147795,6 +147819,8 @@
           "user_id",
           "user_name",
           "task_id",
+          "parent_id",
+          "has_children",
           "raw"
         ],
         "type": "string",
@@ -147832,6 +147858,14 @@
               "name": "TaskId"
             },
             {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_children",
+              "name": "HasChildren"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -147847,6 +147881,8 @@
           "user_id",
           "user_name",
           "task_id",
+          "parent_id",
+          "has_children",
           "raw"
         ],
         "type": "string",
@@ -147884,6 +147920,14 @@
               "name": "TaskId"
             },
             {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_children",
+              "name": "HasChildren"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -147899,6 +147943,8 @@
           "user_id",
           "user_name",
           "task_id",
+          "parent_id",
+          "has_children",
           "raw"
         ],
         "type": "string",
@@ -147936,6 +147982,14 @@
               "name": "TaskId"
             },
             {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_children",
+              "name": "HasChildren"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -147951,6 +148005,8 @@
           "user_id",
           "user_name",
           "task_id",
+          "parent_id",
+          "has_children",
           "raw"
         ],
         "type": "string",
@@ -147986,6 +148042,14 @@
             {
               "value": "task_id",
               "name": "TaskId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "has_children",
+              "name": "HasChildren"
             },
             {
               "value": "raw",

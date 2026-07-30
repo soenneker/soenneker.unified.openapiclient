@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/comment{?fields*,limit*,offset*,order*,query*,raw*,sort*,task_id*,updated_gte*}", pathParameters)
+        public CommentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/comment{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,task_id*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/comment{?fields*,limit*,offset*,order*,query*,raw*,sort*,task_id*,updated_gte*}", rawUrl)
+        public CommentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/task/{connectionId}/comment{?fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,task_id*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -163,6 +163,16 @@ namespace Soenneker.Unified.OpenApiClient.TaskNamespace.Item.Comment
 #else
             [QueryParameter("order")]
             public string Order { get; set; }
+#endif
+            /// <summary>The parent ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("parent_id")]
+            public string? ParentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("parent_id")]
+            public string ParentId { get; set; }
 #endif
             /// <summary>Query string to search. eg. email address or name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
