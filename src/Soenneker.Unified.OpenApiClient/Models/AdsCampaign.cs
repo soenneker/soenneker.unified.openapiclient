@@ -20,6 +20,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? BudgetAmount { get; set; }
         /// <summary>The budget_period property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod? BudgetPeriod { get; set; }
+        /// <summary>The budget_unit property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetUnit? BudgetUnit { get; set; }
         /// <summary>The campaign_budget_identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "advertising_channel_type", n => { AdvertisingChannelType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignAdvertisingChannelType>(); } },
                 { "budget_amount", n => { BudgetAmount = n.GetDoubleValue(); } },
                 { "budget_period", n => { BudgetPeriod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod>(); } },
+                { "budget_unit", n => { BudgetUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetUnit>(); } },
                 { "campaign_budget_identifier", n => { CampaignBudgetIdentifier = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -171,6 +174,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignAdvertisingChannelType>("advertising_channel_type", AdvertisingChannelType);
             writer.WriteDoubleValue("budget_amount", BudgetAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod>("budget_period", BudgetPeriod);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetUnit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_budget_identifier", CampaignBudgetIdentifier);
             writer.WriteStringValue("category", Category);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

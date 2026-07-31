@@ -60,5 +60,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Youtube,
         #pragma warning restore CS1591
+        [EnumMember(Value = "NATIVE")]
+        #pragma warning disable CS1591
+        Native,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CTV")]
+        #pragma warning disable CS1591
+        Ctv,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOOH")]
+        #pragma warning disable CS1591
+        Dooh,
+        #pragma warning restore CS1591
     }
 }

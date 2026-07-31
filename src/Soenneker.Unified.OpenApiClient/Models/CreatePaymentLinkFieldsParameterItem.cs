@@ -48,6 +48,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Url,
         #pragma warning restore CS1591
+        [EnumMember(Value = "description")]
+        #pragma warning disable CS1591
+        Description,
+        #pragma warning restore CS1591
         [EnumMember(Value = "is_chargeable_now")]
         #pragma warning disable CS1591
         IsChargeableNow,

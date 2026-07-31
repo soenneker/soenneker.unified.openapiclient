@@ -69340,15 +69340,15 @@
           "organization_id": {
             "type": "string"
           },
+          "raw": {
+            "$ref": "#/components/schemas/PaymentPaymentRawProperty"
+          },
           "allocations": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PaymentAllocation"
             },
             "description": "What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints."
-          },
-          "raw": {
-            "$ref": "#/components/schemas/PaymentPaymentRawProperty"
           }
         }
       },
@@ -69459,6 +69459,9 @@
             "type": "string"
           },
           "url": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "is_chargeable_now": {
@@ -69599,6 +69602,9 @@
           },
           "currency": {
             "type": "string"
+          },
+          "total_amount": {
+            "type": "number"
           },
           "start_at": {
             "type": "string",
@@ -72106,6 +72112,9 @@
           "budget_period": {
             "$ref": "#/components/schemas/AdsCampaignBudgetPeriod"
           },
+          "budget_unit": {
+            "$ref": "#/components/schemas/AdsCampaignBudgetUnit"
+          },
           "total_spend_amount": {
             "type": "number"
           },
@@ -74248,6 +74257,9 @@
           },
           "budget_period": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaignBudgetPeriod"
+          },
+          "budget_unit": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaignBudgetUnit"
           },
           "total_spend_amount": {
             "type": "number"
@@ -80832,6 +80844,9 @@
           },
           "importance": {
             "type": "number"
+          },
+          "customer_note": {
+            "type": "string"
           }
         }
       },
@@ -95009,6 +95024,34 @@
           ]
         }
       },
+      "AdsCampaignBudgetUnit": {
+        "enum": [
+          "UNSPECIFIED",
+          "CURRENCY",
+          "IMPRESSIONS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsCampaignBudgetUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "IMPRESSIONS",
+              "name": "Impressions"
+            }
+          ]
+        }
+      },
       "AdsCampaignGoal": {
         "enum": [
           "UNSPECIFIED",
@@ -95076,7 +95119,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -95136,6 +95182,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -96519,7 +96577,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96579,6 +96640,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -96786,7 +96859,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96846,6 +96922,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -97248,6 +97336,34 @@
           ]
         }
       },
+      "PropertyAdsReportMetricsCampaignBudgetUnit": {
+        "enum": [
+          "UNSPECIFIED",
+          "CURRENCY",
+          "IMPRESSIONS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsCampaignBudgetUnit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "IMPRESSIONS",
+              "name": "Impressions"
+            }
+          ]
+        }
+      },
       "PropertyAdsReportMetricsCampaignGoal": {
         "enum": [
           "UNSPECIFIED",
@@ -97315,7 +97431,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -97375,6 +97494,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -98039,7 +98170,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -98099,6 +98233,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -98306,7 +98452,10 @@
           "DISPLAY",
           "SEARCH",
           "AUDIO",
-          "YOUTUBE"
+          "YOUTUBE",
+          "NATIVE",
+          "CTV",
+          "DOOH"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -98366,6 +98515,18 @@
             {
               "value": "YOUTUBE",
               "name": "Youtube"
+            },
+            {
+              "value": "NATIVE",
+              "name": "Native"
+            },
+            {
+              "value": "CTV",
+              "name": "Ctv"
+            },
+            {
+              "value": "DOOH",
+              "name": "Dooh"
             }
           ]
         }
@@ -102277,6 +102438,7 @@
           "shipping_label_write",
           "shipping_tracking_read",
           "shipping_rate_read",
+          "shipping_rate_write",
           "shipping_carrier_read",
           "signing_document_read",
           "signing_document_write",
@@ -103336,6 +103498,10 @@
             {
               "value": "shipping_rate_read",
               "name": "ShippingRateRead"
+            },
+            {
+              "value": "shipping_rate_write",
+              "name": "ShippingRateWrite"
             },
             {
               "value": "shipping_carrier_read",
@@ -143739,8 +143905,8 @@
           "account_id",
           "reference",
           "organization_id",
-          "allocations",
-          "raw"
+          "raw",
+          "allocations"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -143809,12 +143975,12 @@
               "name": "OrganizationId"
             },
             {
-              "value": "allocations",
-              "name": "Allocations"
-            },
-            {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             }
           ]
         }
@@ -143836,8 +144002,8 @@
           "account_id",
           "reference",
           "organization_id",
-          "allocations",
-          "raw"
+          "raw",
+          "allocations"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -143906,12 +144072,12 @@
               "name": "OrganizationId"
             },
             {
-              "value": "allocations",
-              "name": "Allocations"
-            },
-            {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             }
           ]
         }
@@ -143933,8 +144099,8 @@
           "account_id",
           "reference",
           "organization_id",
-          "allocations",
-          "raw"
+          "raw",
+          "allocations"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -144003,12 +144169,12 @@
               "name": "OrganizationId"
             },
             {
-              "value": "allocations",
-              "name": "Allocations"
-            },
-            {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             }
           ]
         }
@@ -144030,8 +144196,8 @@
           "account_id",
           "reference",
           "organization_id",
-          "allocations",
-          "raw"
+          "raw",
+          "allocations"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -144100,12 +144266,12 @@
               "name": "OrganizationId"
             },
             {
-              "value": "allocations",
-              "name": "Allocations"
-            },
-            {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             }
           ]
         }
@@ -144127,8 +144293,8 @@
           "account_id",
           "reference",
           "organization_id",
-          "allocations",
-          "raw"
+          "raw",
+          "allocations"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -144197,12 +144363,12 @@
               "name": "OrganizationId"
             },
             {
-              "value": "allocations",
-              "name": "Allocations"
-            },
-            {
               "value": "raw",
               "name": "Raw"
+            },
+            {
+              "value": "allocations",
+              "name": "Allocations"
             }
           ]
         }
@@ -144219,6 +144385,7 @@
           "payment_id",
           "contact_id",
           "url",
+          "description",
           "is_chargeable_now",
           "success_url",
           "raw"
@@ -144270,6 +144437,10 @@
               "name": "Url"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "is_chargeable_now",
               "name": "IsChargeableNow"
             },
@@ -144296,6 +144467,7 @@
           "payment_id",
           "contact_id",
           "url",
+          "description",
           "is_chargeable_now",
           "success_url",
           "raw"
@@ -144347,6 +144519,10 @@
               "name": "Url"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "is_chargeable_now",
               "name": "IsChargeableNow"
             },
@@ -144373,6 +144549,7 @@
           "payment_id",
           "contact_id",
           "url",
+          "description",
           "is_chargeable_now",
           "success_url",
           "raw"
@@ -144424,6 +144601,10 @@
               "name": "Url"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "is_chargeable_now",
               "name": "IsChargeableNow"
             },
@@ -144450,6 +144631,7 @@
           "payment_id",
           "contact_id",
           "url",
+          "description",
           "is_chargeable_now",
           "success_url",
           "raw"
@@ -144501,6 +144683,10 @@
               "name": "Url"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "is_chargeable_now",
               "name": "IsChargeableNow"
             },
@@ -144527,6 +144713,7 @@
           "payment_id",
           "contact_id",
           "url",
+          "description",
           "is_chargeable_now",
           "success_url",
           "raw"
@@ -144576,6 +144763,10 @@
             {
               "value": "url",
               "name": "Url"
+            },
+            {
+              "value": "description",
+              "name": "Description"
             },
             {
               "value": "is_chargeable_now",
@@ -144832,6 +145023,7 @@
           "current_period_start_at",
           "canceled_at",
           "currency",
+          "total_amount",
           "start_at",
           "end_at",
           "status",
@@ -144890,6 +145082,10 @@
               "name": "Currency"
             },
             {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
               "value": "start_at",
               "name": "StartAt"
             },
@@ -144944,6 +145140,7 @@
           "current_period_start_at",
           "canceled_at",
           "currency",
+          "total_amount",
           "start_at",
           "end_at",
           "status",
@@ -145002,6 +145199,10 @@
               "name": "Currency"
             },
             {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
               "value": "start_at",
               "name": "StartAt"
             },
@@ -145056,6 +145257,7 @@
           "current_period_start_at",
           "canceled_at",
           "currency",
+          "total_amount",
           "start_at",
           "end_at",
           "status",
@@ -145114,6 +145316,10 @@
               "name": "Currency"
             },
             {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
               "value": "start_at",
               "name": "StartAt"
             },
@@ -145168,6 +145374,7 @@
           "current_period_start_at",
           "canceled_at",
           "currency",
+          "total_amount",
           "start_at",
           "end_at",
           "status",
@@ -145226,6 +145433,10 @@
               "name": "Currency"
             },
             {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
               "value": "start_at",
               "name": "StartAt"
             },
@@ -145280,6 +145491,7 @@
           "current_period_start_at",
           "canceled_at",
           "currency",
+          "total_amount",
           "start_at",
           "end_at",
           "status",
@@ -145336,6 +145548,10 @@
             {
               "value": "currency",
               "name": "Currency"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
             },
             {
               "value": "start_at",
@@ -150756,6 +150972,7 @@
           "end_at",
           "budget_amount",
           "budget_period",
+          "budget_unit",
           "total_spend_amount",
           "targeting",
           "goal",
@@ -150819,6 +151036,10 @@
               "name": "BudgetPeriod"
             },
             {
+              "value": "budget_unit",
+              "name": "BudgetUnit"
+            },
+            {
               "value": "total_spend_amount",
               "name": "TotalSpendAmount"
             },
@@ -150878,6 +151099,7 @@
           "end_at",
           "budget_amount",
           "budget_period",
+          "budget_unit",
           "total_spend_amount",
           "targeting",
           "goal",
@@ -150941,6 +151163,10 @@
               "name": "BudgetPeriod"
             },
             {
+              "value": "budget_unit",
+              "name": "BudgetUnit"
+            },
+            {
               "value": "total_spend_amount",
               "name": "TotalSpendAmount"
             },
@@ -151000,6 +151226,7 @@
           "end_at",
           "budget_amount",
           "budget_period",
+          "budget_unit",
           "total_spend_amount",
           "targeting",
           "goal",
@@ -151063,6 +151290,10 @@
               "name": "BudgetPeriod"
             },
             {
+              "value": "budget_unit",
+              "name": "BudgetUnit"
+            },
+            {
               "value": "total_spend_amount",
               "name": "TotalSpendAmount"
             },
@@ -151122,6 +151353,7 @@
           "end_at",
           "budget_amount",
           "budget_period",
+          "budget_unit",
           "total_spend_amount",
           "targeting",
           "goal",
@@ -151185,6 +151417,10 @@
               "name": "BudgetPeriod"
             },
             {
+              "value": "budget_unit",
+              "name": "BudgetUnit"
+            },
+            {
               "value": "total_spend_amount",
               "name": "TotalSpendAmount"
             },
@@ -151244,6 +151480,7 @@
           "end_at",
           "budget_amount",
           "budget_period",
+          "budget_unit",
           "total_spend_amount",
           "targeting",
           "goal",
@@ -151305,6 +151542,10 @@
             {
               "value": "budget_period",
               "name": "BudgetPeriod"
+            },
+            {
+              "value": "budget_unit",
+              "name": "BudgetUnit"
             },
             {
               "value": "total_spend_amount",

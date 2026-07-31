@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The customer_note property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerNote { get; set; }
+#nullable restore
+#else
+        public string CustomerNote { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "customer_note", n => { CustomerNote = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "importance", n => { Importance = n.GetDoubleValue(); } },
                 { "resolution_time", n => { ResolutionTime = n.GetDoubleValue(); } },
@@ -133,6 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteStringValue("customer_note", CustomerNote);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("importance", Importance);
             writer.WriteDoubleValue("resolution_time", ResolutionTime);

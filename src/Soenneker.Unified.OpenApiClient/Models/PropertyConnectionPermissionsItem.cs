@@ -1024,6 +1024,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ShippingRateRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "shipping_rate_write")]
+        #pragma warning disable CS1591
+        ShippingRateWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "shipping_carrier_read")]
         #pragma warning disable CS1591
         ShippingCarrierRead,

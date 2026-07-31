@@ -48,6 +48,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Currency,
         #pragma warning restore CS1591
+        [EnumMember(Value = "total_amount")]
+        #pragma warning disable CS1591
+        TotalAmount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "start_at")]
         #pragma warning disable CS1591
         StartAt,

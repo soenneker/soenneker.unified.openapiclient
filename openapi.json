@@ -13497,12 +13497,12 @@
                "organization_id": {
                   "type": "string"
                },
-               "allocations": {
-                  "$ref": "#/components/schemas/property_PaymentPayment_allocations"
-               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
+               },
+               "allocations": {
+                  "$ref": "#/components/schemas/property_PaymentPayment_allocations"
                }
             }
          },
@@ -13610,6 +13610,9 @@
                   "type": "string"
                },
                "url": {
+                  "type": "string"
+               },
+               "description": {
                   "type": "string"
                },
                "is_chargeable_now": {
@@ -13767,6 +13770,9 @@
                },
                "currency": {
                   "type": "string"
+               },
+               "total_amount": {
+                  "type": "number"
                },
                "start_at": {
                   "type": "string",
@@ -16429,6 +16435,15 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "budget_unit": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CURRENCY",
+                     "IMPRESSIONS"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "total_spend_amount": {
                   "type": "number"
                },
@@ -16470,7 +16485,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -17860,7 +17878,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -17995,7 +18016,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -18734,6 +18758,15 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "budget_unit": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CURRENCY",
+                     "IMPRESSIONS"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "total_spend_amount": {
                   "type": "number"
                },
@@ -18775,7 +18808,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -19643,7 +19679,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -19772,7 +19811,10 @@
                      "DISPLAY",
                      "SEARCH",
                      "AUDIO",
-                     "YOUTUBE"
+                     "YOUTUBE",
+                     "NATIVE",
+                     "CTV",
+                     "DOOH"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -25938,6 +25980,7 @@
                   "shipping_label_write",
                   "shipping_tracking_read",
                   "shipping_rate_read",
+                  "shipping_rate_write",
                   "shipping_carrier_read",
                   "signing_document_read",
                   "signing_document_write",
@@ -26309,6 +26352,9 @@
                },
                "importance": {
                   "type": "number"
+               },
+               "customer_note": {
+                  "type": "string"
                }
             },
             "required": [
@@ -68645,8 +68691,8 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "allocations",
-                           "raw"
+                           "raw",
+                           "allocations"
                         ]
                      }
                   },
@@ -68853,8 +68899,8 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "allocations",
-                           "raw"
+                           "raw",
+                           "allocations"
                         ]
                      }
                   },
@@ -68931,8 +68977,8 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "allocations",
-                           "raw"
+                           "raw",
+                           "allocations"
                         ]
                      }
                   },
@@ -69016,8 +69062,8 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "allocations",
-                           "raw"
+                           "raw",
+                           "allocations"
                         ]
                      }
                   },
@@ -69111,8 +69157,8 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "allocations",
-                           "raw"
+                           "raw",
+                           "allocations"
                         ]
                      }
                   },
@@ -69253,6 +69299,7 @@
                            "payment_id",
                            "contact_id",
                            "url",
+                           "description",
                            "is_chargeable_now",
                            "success_url",
                            "raw"
@@ -69403,6 +69450,7 @@
                            "payment_id",
                            "contact_id",
                            "url",
+                           "description",
                            "is_chargeable_now",
                            "success_url",
                            "raw"
@@ -69477,6 +69525,7 @@
                            "payment_id",
                            "contact_id",
                            "url",
+                           "description",
                            "is_chargeable_now",
                            "success_url",
                            "raw"
@@ -69558,6 +69607,7 @@
                            "payment_id",
                            "contact_id",
                            "url",
+                           "description",
                            "is_chargeable_now",
                            "success_url",
                            "raw"
@@ -69649,6 +69699,7 @@
                            "payment_id",
                            "contact_id",
                            "url",
+                           "description",
                            "is_chargeable_now",
                            "success_url",
                            "raw"
@@ -70199,6 +70250,7 @@
                            "current_period_start_at",
                            "canceled_at",
                            "currency",
+                           "total_amount",
                            "start_at",
                            "end_at",
                            "status",
@@ -70365,6 +70417,7 @@
                            "current_period_start_at",
                            "canceled_at",
                            "currency",
+                           "total_amount",
                            "start_at",
                            "end_at",
                            "status",
@@ -70446,6 +70499,7 @@
                            "current_period_start_at",
                            "canceled_at",
                            "currency",
+                           "total_amount",
                            "start_at",
                            "end_at",
                            "status",
@@ -70534,6 +70588,7 @@
                            "current_period_start_at",
                            "canceled_at",
                            "currency",
+                           "total_amount",
                            "start_at",
                            "end_at",
                            "status",
@@ -70632,6 +70687,7 @@
                            "current_period_start_at",
                            "canceled_at",
                            "currency",
+                           "total_amount",
                            "start_at",
                            "end_at",
                            "status",
@@ -77838,6 +77894,7 @@
                            "end_at",
                            "budget_amount",
                            "budget_period",
+                           "budget_unit",
                            "total_spend_amount",
                            "targeting",
                            "goal",
@@ -78031,6 +78088,7 @@
                            "end_at",
                            "budget_amount",
                            "budget_period",
+                           "budget_unit",
                            "total_spend_amount",
                            "targeting",
                            "goal",
@@ -78114,6 +78172,7 @@
                            "end_at",
                            "budget_amount",
                            "budget_period",
+                           "budget_unit",
                            "total_spend_amount",
                            "targeting",
                            "goal",
@@ -78204,6 +78263,7 @@
                            "end_at",
                            "budget_amount",
                            "budget_period",
+                           "budget_unit",
                            "total_spend_amount",
                            "targeting",
                            "goal",
@@ -78304,6 +78364,7 @@
                            "end_at",
                            "budget_amount",
                            "budget_period",
+                           "budget_unit",
                            "total_spend_amount",
                            "targeting",
                            "goal",

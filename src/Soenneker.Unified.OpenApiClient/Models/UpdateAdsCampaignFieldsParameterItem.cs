@@ -52,6 +52,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         BudgetPeriod,
         #pragma warning restore CS1591
+        [EnumMember(Value = "budget_unit")]
+        #pragma warning disable CS1591
+        BudgetUnit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "total_spend_amount")]
         #pragma warning disable CS1591
         TotalSpendAmount,
