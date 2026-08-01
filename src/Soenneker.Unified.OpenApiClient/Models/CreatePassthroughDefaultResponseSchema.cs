@@ -10,7 +10,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdatePassthroughDefaultResponseResponseJson : ApiException, IAdditionalDataHolder, IParsable
+    public partial class CreatePassthroughDefaultResponseSchema : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -18,21 +18,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.UpdatePassthroughDefaultResponseResponseJson"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CreatePassthroughDefaultResponseSchema"/> and sets the default values.
         /// </summary>
-        public UpdatePassthroughDefaultResponseResponseJson()
+        public CreatePassthroughDefaultResponseSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.UpdatePassthroughDefaultResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CreatePassthroughDefaultResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.UpdatePassthroughDefaultResponseResponseJson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.CreatePassthroughDefaultResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.UpdatePassthroughDefaultResponseResponseJson();
+            return new global::Soenneker.Unified.OpenApiClient.Models.CreatePassthroughDefaultResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -312,7 +312,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/RemoveAssessmentPackage204Response"
                 }
               }
             }
@@ -897,7 +897,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/RemoveMessagingChannel204Response"
                 }
               }
             }
@@ -1382,7 +1382,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/RemoveMessagingMessage204Response"
                 }
               }
             }
@@ -1987,7 +1987,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/RemoveCrmDeal204Response"
                 }
               }
             }
@@ -2436,7 +2436,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/RemoveCrmContact204Response"
                 }
               }
             }
@@ -2885,7 +2885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/RemoveCrmCompany204Response"
                 }
               }
             }
@@ -3357,7 +3357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/RemoveCrmEvent204Response"
                 }
               }
             }
@@ -3803,7 +3803,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/RemoveCrmLead204Response"
                 }
               }
             }
@@ -4333,7 +4333,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/RemoveCrmPipeline204Response"
                 }
               }
             }
@@ -4758,7 +4758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/RemoveMartechList204Response"
                 }
               }
             }
@@ -5191,7 +5191,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/RemoveMartechMember204Response"
                 }
               }
             }
@@ -5629,7 +5629,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/RemoveMartechCampaign204Response"
                 }
               }
             }
@@ -6200,7 +6200,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/RemoveTicketingTicket204Response"
                 }
               }
             }
@@ -6622,7 +6622,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/RemoveTicketingCustomer204Response"
                 }
               }
             }
@@ -7060,7 +7060,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/RemoveTicketingNote204Response"
                 }
               }
             }
@@ -7490,7 +7490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/RemoveTicketingCategory204Response"
                 }
               }
             }
@@ -8254,7 +8254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/RemoveUcContact204Response"
                 }
               }
             }
@@ -8708,7 +8708,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/RemoveUcComment204Response"
                 }
               }
             }
@@ -9170,7 +9170,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/RemoveUcRecording204Response"
                 }
               }
             }
@@ -9648,7 +9648,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/RemoveAtsActivity204Response"
                 }
               }
             }
@@ -10078,7 +10078,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/RemoveAtsCandidate204Response"
                 }
               }
             }
@@ -10524,7 +10524,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
+                  "$ref": "#/components/schemas/RemoveAtsJob204Response"
                 }
               }
             }
@@ -10954,7 +10954,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
+                  "$ref": "#/components/schemas/RemoveAtsInterview204Response"
                 }
               }
             }
@@ -11407,7 +11407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
+                  "$ref": "#/components/schemas/RemoveAtsDocument204Response"
                 }
               }
             }
@@ -11962,7 +11962,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/RemoveAtsApplication204Response"
                 }
               }
             }
@@ -12416,7 +12416,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/RemoveAtsScorecard204Response"
                 }
               }
             }
@@ -12838,7 +12838,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/RemoveAtsCompany204Response"
                 }
               }
             }
@@ -13284,7 +13284,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/RemoveHrisEmployee204Response"
                 }
               }
             }
@@ -13706,7 +13706,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/RemoveHrisCompany204Response"
                 }
               }
             }
@@ -14136,7 +14136,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/RemoveHrisLocation204Response"
                 }
               }
             }
@@ -14574,7 +14574,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/RemoveHrisGroup204Response"
                 }
               }
             }
@@ -15035,7 +15035,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/RemoveHrisTimeoff204Response"
                 }
               }
             }
@@ -15648,7 +15648,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/RemoveHrisDevice204Response"
                 }
               }
             }
@@ -16110,7 +16110,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/RemoveHrisTimeshift204Response"
                 }
               }
             }
@@ -16543,7 +16543,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/RemoveHrisBenefit204Response"
                 }
               }
             }
@@ -17016,7 +17016,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/RemoveHrisDeduction204Response"
                 }
               }
             }
@@ -17454,7 +17454,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/RemoveHrisBankaccount204Response"
                 }
               }
             }
@@ -18089,7 +18089,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/RemoveHrisDocument204Response"
                 }
               }
             }
@@ -18694,7 +18694,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/RemoveVerificationRequest204Response"
                 }
               }
             }
@@ -18761,22 +18761,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreatePassthroughDefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/CreatePassthroughDefaultResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreatePassthroughDefaultResponseResponseXml2"
+                  "$ref": "#/components/schemas/CreatePassthroughDefaultXmlResponseSchema"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreatePassthroughDefaultResponseResponseCsv2"
+                  "$ref": "#/components/schemas/CreatePassthroughDefaultCsvResponseSchema"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreatePassthroughDefaultResponseResponsePlain2"
+                  "$ref": "#/components/schemas/CreatePassthroughDefaultPlainResponseSchema"
                 }
               }
             }
@@ -18841,22 +18841,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdatePassthroughDefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdatePassthroughDefaultResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdatePassthroughDefaultResponseResponseXml2"
+                  "$ref": "#/components/schemas/UpdatePassthroughDefaultXmlResponseSchema"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdatePassthroughDefaultResponseResponseCsv2"
+                  "$ref": "#/components/schemas/UpdatePassthroughDefaultCsvResponseSchema"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdatePassthroughDefaultResponseResponsePlain2"
+                  "$ref": "#/components/schemas/UpdatePassthroughDefaultPlainResponseSchema"
                 }
               }
             }
@@ -18921,22 +18921,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchPassthroughDefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/PatchPassthroughDefaultResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchPassthroughDefaultResponseResponseXml2"
+                  "$ref": "#/components/schemas/PatchPassthroughDefaultXmlResponseSchema"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchPassthroughDefaultResponseResponseCsv2"
+                  "$ref": "#/components/schemas/PatchPassthroughDefaultCsvResponseSchema"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchPassthroughDefaultResponseResponsePlain2"
+                  "$ref": "#/components/schemas/PatchPassthroughDefaultPlainResponseSchema"
                 }
               }
             }
@@ -18986,22 +18986,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPassthroughsDefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/ListPassthroughsDefaultResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPassthroughsDefaultResponseResponseXml2"
+                  "$ref": "#/components/schemas/ListPassthroughsDefaultXmlResponseSchema"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPassthroughsDefaultResponseResponseCsv2"
+                  "$ref": "#/components/schemas/ListPassthroughsDefaultCsvResponseSchema"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListPassthroughsDefaultResponseResponsePlain2"
+                  "$ref": "#/components/schemas/ListPassthroughsDefaultPlainResponseSchema"
                 }
               }
             }
@@ -19051,22 +19051,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemovePassthroughDefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/RemovePassthroughDefaultResponseSchema"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemovePassthroughDefaultResponseResponseXml2"
+                  "$ref": "#/components/schemas/RemovePassthroughDefaultXmlResponseSchema"
                 }
               },
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemovePassthroughDefaultResponseResponseCsv2"
+                  "$ref": "#/components/schemas/RemovePassthroughDefaultCsvResponseSchema"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemovePassthroughDefaultResponseResponsePlain2"
+                  "$ref": "#/components/schemas/RemovePassthroughDefaultPlainResponseSchema"
                 }
               }
             }
@@ -19507,7 +19507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/RemoveAccountingAccount204Response"
                 }
               }
             }
@@ -19945,7 +19945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
+                  "$ref": "#/components/schemas/RemoveAccountingJournal204Response"
                 }
               }
             }
@@ -20407,7 +20407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
+                  "$ref": "#/components/schemas/RemoveAccountingTransaction204Response"
                 }
               }
             }
@@ -20844,7 +20844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
+                  "$ref": "#/components/schemas/RemoveAccountingContact204Response"
                 }
               }
             }
@@ -21305,7 +21305,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
+                  "$ref": "#/components/schemas/RemoveAccountingInvoice204Response"
                 }
               }
             }
@@ -21743,7 +21743,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
+                  "$ref": "#/components/schemas/RemoveAccountingBill204Response"
                 }
               }
             }
@@ -22181,7 +22181,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
+                  "$ref": "#/components/schemas/RemoveAccountingCreditmemo204Response"
                 }
               }
             }
@@ -22619,7 +22619,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
+                  "$ref": "#/components/schemas/RemoveAccountingVendorcredit204Response"
                 }
               }
             }
@@ -23049,7 +23049,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
+                  "$ref": "#/components/schemas/RemoveAccountingTaxrate204Response"
                 }
               }
             }
@@ -23661,7 +23661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
+                  "$ref": "#/components/schemas/RemoveAccountingOrder204Response"
                 }
               }
             }
@@ -24099,7 +24099,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
+                  "$ref": "#/components/schemas/RemoveAccountingPurchaseorder204Response"
                 }
               }
             }
@@ -24537,7 +24537,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
+                  "$ref": "#/components/schemas/RemoveAccountingSalesorder204Response"
                 }
               }
             }
@@ -25937,7 +25937,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
+                  "$ref": "#/components/schemas/RemoveAccountingCategory204Response"
                 }
               }
             }
@@ -26423,7 +26423,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
+                  "$ref": "#/components/schemas/RemoveAccountingExpense204Response"
                 }
               }
             }
@@ -26885,7 +26885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
+                  "$ref": "#/components/schemas/RemoveStorageFile204Response"
                 }
               }
             }
@@ -27323,7 +27323,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
+                  "$ref": "#/components/schemas/RemoveCommerceItem204Response"
                 }
               }
             }
@@ -27779,7 +27779,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
+                  "$ref": "#/components/schemas/RemoveCommerceCollection204Response"
                 }
               }
             }
@@ -27921,6 +27921,14 @@
             "name": "location_id",
             "in": "query",
             "description": "The location ID to filter by (reference to CommerceLocation)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "item_id",
+            "in": "query",
+            "description": "The item ID to filter by (reference to CommerceItem)",
             "schema": {
               "type": "string"
             }
@@ -28217,7 +28225,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
+                  "$ref": "#/components/schemas/RemoveCommerceInventory204Response"
                 }
               }
             }
@@ -28647,7 +28655,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
+                  "$ref": "#/components/schemas/RemoveCommerceLocation204Response"
                 }
               }
             }
@@ -29093,7 +29101,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
+                  "$ref": "#/components/schemas/RemoveCommerceReview204Response"
                 }
               }
             }
@@ -29555,7 +29563,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
+                  "$ref": "#/components/schemas/RemoveCommerceReservation204Response"
                 }
               }
             }
@@ -30126,7 +30134,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
+                  "$ref": "#/components/schemas/RemoveCommerceSaleschannel204Response"
                 }
               }
             }
@@ -30572,7 +30580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson61"
+                  "$ref": "#/components/schemas/RemoveCommerceItemvariant204Response"
                 }
               }
             }
@@ -31052,7 +31060,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson62"
+                  "$ref": "#/components/schemas/RemovePaymentPayment204Response"
                 }
               }
             }
@@ -31490,7 +31498,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson63"
+                  "$ref": "#/components/schemas/RemovePaymentLink204Response"
                 }
               }
             }
@@ -32278,7 +32286,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson64"
+                  "$ref": "#/components/schemas/RemovePaymentSubscription204Response"
                 }
               }
             }
@@ -33007,7 +33015,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson65"
+                  "$ref": "#/components/schemas/RemoveKmsSpace204Response"
                 }
               }
             }
@@ -33453,7 +33461,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson66"
+                  "$ref": "#/components/schemas/RemoveKmsPage204Response"
                 }
               }
             }
@@ -33899,7 +33907,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson67"
+                  "$ref": "#/components/schemas/RemoveKmsComment204Response"
                 }
               }
             }
@@ -34345,7 +34353,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson68"
+                  "$ref": "#/components/schemas/RemoveTaskProject204Response"
                 }
               }
             }
@@ -34817,7 +34825,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson69"
+                  "$ref": "#/components/schemas/RemoveTaskTask204Response"
                 }
               }
             }
@@ -35255,7 +35263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson70"
+                  "$ref": "#/components/schemas/RemoveTaskComment204Response"
                 }
               }
             }
@@ -35854,7 +35862,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson71"
+                  "$ref": "#/components/schemas/RemoveCalendarCalendar204Response"
                 }
               }
             }
@@ -36308,7 +36316,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson72"
+                  "$ref": "#/components/schemas/RemoveCalendarEvent204Response"
                 }
               }
             }
@@ -36863,7 +36871,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson73"
+                  "$ref": "#/components/schemas/RemoveCalendarLink204Response"
                 }
               }
             }
@@ -37500,7 +37508,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson74"
+                  "$ref": "#/components/schemas/RemoveCalendarWebinar204Response"
                 }
               }
             }
@@ -37930,7 +37938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson75"
+                  "$ref": "#/components/schemas/RemoveAdsOrganization204Response"
                 }
               }
             }
@@ -38398,7 +38406,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson76"
+                  "$ref": "#/components/schemas/RemoveAdsCampaign204Response"
                 }
               }
             }
@@ -38844,7 +38852,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson77"
+                  "$ref": "#/components/schemas/RemoveAdsCreative204Response"
                 }
               }
             }
@@ -39528,7 +39536,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson78"
+                  "$ref": "#/components/schemas/RemoveAdsInsertionorder204Response"
                 }
               }
             }
@@ -40013,7 +40021,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson79"
+                  "$ref": "#/components/schemas/RemoveAdsGroup204Response"
                 }
               }
             }
@@ -40467,7 +40475,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson80"
+                  "$ref": "#/components/schemas/RemoveAdsAd204Response"
                 }
               }
             }
@@ -41434,7 +41442,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson81"
+                  "$ref": "#/components/schemas/RemoveLmsCourse204Response"
                 }
               }
             }
@@ -41864,7 +41872,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson82"
+                  "$ref": "#/components/schemas/RemoveLmsClass204Response"
                 }
               }
             }
@@ -42302,7 +42310,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson83"
+                  "$ref": "#/components/schemas/RemoveLmsStudent204Response"
                 }
               }
             }
@@ -42748,7 +42756,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson84"
+                  "$ref": "#/components/schemas/RemoveLmsInstructor204Response"
                 }
               }
             }
@@ -43186,7 +43194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson85"
+                  "$ref": "#/components/schemas/RemoveLmsContent204Response"
                 }
               }
             }
@@ -43624,7 +43632,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson86"
+                  "$ref": "#/components/schemas/RemoveLmsCollection204Response"
                 }
               }
             }
@@ -44070,7 +44078,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson87"
+                  "$ref": "#/components/schemas/RemoveLmsActivity204Response"
                 }
               }
             }
@@ -44492,7 +44500,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson88"
+                  "$ref": "#/components/schemas/RemoveRepoOrganization204Response"
                 }
               }
             }
@@ -44922,7 +44930,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson89"
+                  "$ref": "#/components/schemas/RemoveRepoRepository204Response"
                 }
               }
             }
@@ -45352,7 +45360,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson90"
+                  "$ref": "#/components/schemas/RemoveRepoBranch204Response"
                 }
               }
             }
@@ -45790,7 +45798,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson91"
+                  "$ref": "#/components/schemas/RemoveRepoCommit204Response"
                 }
               }
             }
@@ -46220,7 +46228,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson92"
+                  "$ref": "#/components/schemas/RemoveRepoPullrequest204Response"
                 }
               }
             }
@@ -46644,7 +46652,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson93"
+                  "$ref": "#/components/schemas/RemoveMetadataMetadata204Response"
                 }
               }
             }
@@ -47066,7 +47074,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson94"
+                  "$ref": "#/components/schemas/RemoveFormsForm204Response"
                 }
               }
             }
@@ -47663,7 +47671,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson95"
+                  "$ref": "#/components/schemas/RemoveDatastoreDatabase204Response"
                 }
               }
             }
@@ -48101,7 +48109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson96"
+                  "$ref": "#/components/schemas/RemoveDatastoreTable204Response"
                 }
               }
             }
@@ -48539,7 +48547,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson97"
+                  "$ref": "#/components/schemas/RemoveDatastoreRecord204Response"
                 }
               }
             }
@@ -49043,7 +49051,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson98"
+                  "$ref": "#/components/schemas/RemoveShippingShipment204Response"
                 }
               }
             }
@@ -49473,7 +49481,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson99"
+                  "$ref": "#/components/schemas/RemoveShippingLabel204Response"
                 }
               }
             }
@@ -50311,7 +50319,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson100"
+                  "$ref": "#/components/schemas/RemoveSigningDocument204Response"
                 }
               }
             }
@@ -50741,7 +50749,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson101"
+                  "$ref": "#/components/schemas/RemoveSigningSignatory204Response"
                 }
               }
             }
@@ -52221,7 +52229,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson102"
+                  "$ref": "#/components/schemas/RemoveAnalyticsProperty204Response"
                 }
               }
             }
@@ -53144,7 +53152,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson103"
+                  "$ref": "#/components/schemas/RemoveAnalyticsVisitor204Response"
                 }
               }
             }
@@ -53705,7 +53713,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson104"
+                  "$ref": "#/components/schemas/RemoveCdpProfile204Response"
                 }
               }
             }
@@ -54127,7 +54135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson105"
+                  "$ref": "#/components/schemas/RemoveCdpSegment204Response"
                 }
               }
             }
@@ -54557,7 +54565,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson106"
+                  "$ref": "#/components/schemas/RemoveCdpEvent204Response"
                 }
               }
             }
@@ -54979,7 +54987,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson107"
+                  "$ref": "#/components/schemas/RemoveCdpSource204Response"
                 }
               }
             }
@@ -55401,7 +55409,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson108"
+                  "$ref": "#/components/schemas/RemoveCdpDestination204Response"
                 }
               }
             }
@@ -55837,7 +55845,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson109"
+                  "$ref": "#/components/schemas/RemoveCdpActivation204Response"
                 }
               }
             }
@@ -56130,7 +56138,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson110"
+                  "$ref": "#/components/schemas/RemoveUnifiedConnection204Response"
                 }
               }
             }
@@ -56302,7 +56310,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson111"
+                  "$ref": "#/components/schemas/RemoveUnifiedWorkspaceSecretsmanager204Response"
                 }
               }
             }
@@ -56750,7 +56758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson112"
+                  "$ref": "#/components/schemas/RemoveUnifiedWebhook204Response"
                 }
               }
             }
@@ -56938,7 +56946,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson113"
+                  "$ref": "#/components/schemas/UpdateUnifiedWebhookTrigger200Response"
                 }
               }
             }
@@ -56974,7 +56982,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson114"
+                  "$ref": "#/components/schemas/PatchUnifiedWebhookTrigger200Response"
                 }
               }
             }
@@ -57368,7 +57376,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetUnifiedIntegrationAuth200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/GetUnifiedIntegrationAuth200PlainResponseSchema"
                 }
               }
             }
@@ -57449,7 +57457,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetUnifiedIntegrationLogin200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/GetUnifiedIntegrationLogin200PlainResponseSchema"
                 }
               }
             }
@@ -57530,7 +57538,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetUnifiedIntegrationSaml200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/GetUnifiedIntegrationSaml200PlainResponseSchema"
                 }
               }
             }
@@ -57878,7 +57886,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson115"
+                  "$ref": "#/components/schemas/RemoveScimUsers204Response"
                 }
               }
             }
@@ -58196,7 +58204,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson116"
+                  "$ref": "#/components/schemas/RemoveScimGroups204Response"
                 }
               }
             }
@@ -84335,90 +84343,90 @@
       "CreatePassthroughDefaultResponse": {
         "type": "object"
       },
-      "CreatePassthroughDefaultResponseResponseXml": {
+      "CreatePassthroughDefaultXmlResponse": {
         "type": "string"
       },
-      "CreatePassthroughDefaultResponseResponseCsv": {
+      "CreatePassthroughDefaultCsvResponse": {
         "type": "string"
       },
-      "CreatePassthroughDefaultResponseResponsePlain": {
+      "CreatePassthroughDefaultPlainResponse": {
         "type": "string"
       },
-      "CreatePassthroughDefaultResponseResponseMedia": {
+      "CreatePassthroughDefaultMediaResponse": {
         "type": "string",
         "format": "binary"
       },
       "UpdatePassthroughDefaultResponse": {
         "type": "object"
       },
-      "UpdatePassthroughDefaultResponseResponseXml": {
+      "UpdatePassthroughDefaultXmlResponse": {
         "type": "string"
       },
-      "UpdatePassthroughDefaultResponseResponseCsv": {
+      "UpdatePassthroughDefaultCsvResponse": {
         "type": "string"
       },
-      "UpdatePassthroughDefaultResponseResponsePlain": {
+      "UpdatePassthroughDefaultPlainResponse": {
         "type": "string"
       },
-      "UpdatePassthroughDefaultResponseResponseMedia": {
+      "UpdatePassthroughDefaultMediaResponse": {
         "type": "string",
         "format": "binary"
       },
       "PatchPassthroughDefaultResponse": {
         "type": "object"
       },
-      "PatchPassthroughDefaultResponseResponseXml": {
+      "PatchPassthroughDefaultXmlResponse": {
         "type": "string"
       },
-      "PatchPassthroughDefaultResponseResponseCsv": {
+      "PatchPassthroughDefaultCsvResponse": {
         "type": "string"
       },
-      "PatchPassthroughDefaultResponseResponsePlain": {
+      "PatchPassthroughDefaultPlainResponse": {
         "type": "string"
       },
-      "PatchPassthroughDefaultResponseResponseMedia": {
+      "PatchPassthroughDefaultMediaResponse": {
         "type": "string",
         "format": "binary"
       },
       "ListPassthroughsDefaultResponse": {
         "type": "object"
       },
-      "ListPassthroughsDefaultResponseResponseXml": {
+      "ListPassthroughsDefaultXmlResponse": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponseCsv": {
+      "ListPassthroughsDefaultCsvResponse": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponsePlain": {
+      "ListPassthroughsDefaultPlainResponse": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponseMedia": {
+      "ListPassthroughsDefaultMediaResponse": {
         "type": "string",
         "format": "binary"
       },
       "RemovePassthroughDefaultResponse": {
         "type": "object"
       },
-      "RemovePassthroughDefaultResponseResponseXml": {
+      "RemovePassthroughDefaultXmlResponse": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponseCsv": {
+      "RemovePassthroughDefaultCsvResponse": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponsePlain": {
+      "RemovePassthroughDefaultPlainResponse": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponseMedia": {
+      "RemovePassthroughDefaultMediaResponse": {
         "type": "string",
         "format": "binary"
       },
-      "GetUnifiedIntegrationAuth200Response": {
+      "GetUnifiedIntegrationAuth200PlainResponse": {
         "type": "string"
       },
-      "GetUnifiedIntegrationLogin200Response": {
+      "GetUnifiedIntegrationLogin200PlainResponse": {
         "type": "string"
       },
-      "GetUnifiedIntegrationSaml200Response": {
+      "GetUnifiedIntegrationSaml200PlainResponse": {
         "type": "string"
       },
       "CrmMetadataValueBranch2": {
@@ -85871,7 +85879,7 @@
           "$ref": "#/components/schemas/AssessmentPackage"
         }
       },
-      "DefaultResponse": {
+      "RemoveAssessmentPackage204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85882,7 +85890,7 @@
           "$ref": "#/components/schemas/MessagingChannel"
         }
       },
-      "DefaultResponseResponseJson": {
+      "RemoveMessagingChannel204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85893,7 +85901,7 @@
           "$ref": "#/components/schemas/MessagingMessage"
         }
       },
-      "DefaultResponseResponseJson2": {
+      "RemoveMessagingMessage204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85904,7 +85912,7 @@
           "$ref": "#/components/schemas/CrmDeal"
         }
       },
-      "DefaultResponseResponseJson3": {
+      "RemoveCrmDeal204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85915,7 +85923,7 @@
           "$ref": "#/components/schemas/CrmContact"
         }
       },
-      "DefaultResponseResponseJson4": {
+      "RemoveCrmContact204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85926,7 +85934,7 @@
           "$ref": "#/components/schemas/CrmCompany"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "RemoveCrmCompany204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85937,7 +85945,7 @@
           "$ref": "#/components/schemas/CrmEvent"
         }
       },
-      "DefaultResponseResponseJson6": {
+      "RemoveCrmEvent204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85948,7 +85956,7 @@
           "$ref": "#/components/schemas/CrmLead"
         }
       },
-      "DefaultResponseResponseJson7": {
+      "RemoveCrmLead204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85965,7 +85973,7 @@
           "$ref": "#/components/schemas/CrmPipeline"
         }
       },
-      "DefaultResponseResponseJson8": {
+      "RemoveCrmPipeline204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85976,7 +85984,7 @@
           "$ref": "#/components/schemas/MarketingList"
         }
       },
-      "DefaultResponseResponseJson9": {
+      "RemoveMartechList204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85987,7 +85995,7 @@
           "$ref": "#/components/schemas/MarketingMember"
         }
       },
-      "DefaultResponseResponseJson10": {
+      "RemoveMartechMember204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -85998,7 +86006,7 @@
           "$ref": "#/components/schemas/MarketingCampaign"
         }
       },
-      "DefaultResponseResponseJson11": {
+      "RemoveMartechCampaign204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86015,7 +86023,7 @@
           "$ref": "#/components/schemas/TicketingTicket"
         }
       },
-      "DefaultResponseResponseJson12": {
+      "RemoveTicketingTicket204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86026,7 +86034,7 @@
           "$ref": "#/components/schemas/TicketingCustomer"
         }
       },
-      "DefaultResponseResponseJson13": {
+      "RemoveTicketingCustomer204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86037,7 +86045,7 @@
           "$ref": "#/components/schemas/TicketingNote"
         }
       },
-      "DefaultResponseResponseJson14": {
+      "RemoveTicketingNote204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86048,7 +86056,7 @@
           "$ref": "#/components/schemas/TicketingCategory"
         }
       },
-      "DefaultResponseResponseJson15": {
+      "RemoveTicketingCategory204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86065,7 +86073,7 @@
           "$ref": "#/components/schemas/UcContact"
         }
       },
-      "DefaultResponseResponseJson16": {
+      "RemoveUcContact204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86076,7 +86084,7 @@
           "$ref": "#/components/schemas/UcComment"
         }
       },
-      "DefaultResponseResponseJson17": {
+      "RemoveUcComment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86087,7 +86095,7 @@
           "$ref": "#/components/schemas/UcRecording"
         }
       },
-      "DefaultResponseResponseJson18": {
+      "RemoveUcRecording204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86098,7 +86106,7 @@
           "$ref": "#/components/schemas/AtsActivity"
         }
       },
-      "DefaultResponseResponseJson19": {
+      "RemoveAtsActivity204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86109,7 +86117,7 @@
           "$ref": "#/components/schemas/AtsCandidate"
         }
       },
-      "DefaultResponseResponseJson20": {
+      "RemoveAtsCandidate204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86120,7 +86128,7 @@
           "$ref": "#/components/schemas/AtsJob"
         }
       },
-      "DefaultResponseResponseJson21": {
+      "RemoveAtsJob204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86131,7 +86139,7 @@
           "$ref": "#/components/schemas/AtsInterview"
         }
       },
-      "DefaultResponseResponseJson22": {
+      "RemoveAtsInterview204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86142,7 +86150,7 @@
           "$ref": "#/components/schemas/AtsDocument"
         }
       },
-      "DefaultResponseResponseJson23": {
+      "RemoveAtsDocument204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86159,7 +86167,7 @@
           "$ref": "#/components/schemas/AtsApplication"
         }
       },
-      "DefaultResponseResponseJson24": {
+      "RemoveAtsApplication204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86170,7 +86178,7 @@
           "$ref": "#/components/schemas/AtsScorecard"
         }
       },
-      "DefaultResponseResponseJson25": {
+      "RemoveAtsScorecard204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86181,7 +86189,7 @@
           "$ref": "#/components/schemas/AtsCompany"
         }
       },
-      "DefaultResponseResponseJson26": {
+      "RemoveAtsCompany204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86192,7 +86200,7 @@
           "$ref": "#/components/schemas/HrisEmployee"
         }
       },
-      "DefaultResponseResponseJson27": {
+      "RemoveHrisEmployee204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86203,7 +86211,7 @@
           "$ref": "#/components/schemas/HrisCompany"
         }
       },
-      "DefaultResponseResponseJson28": {
+      "RemoveHrisCompany204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86214,7 +86222,7 @@
           "$ref": "#/components/schemas/HrisLocation"
         }
       },
-      "DefaultResponseResponseJson29": {
+      "RemoveHrisLocation204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86225,7 +86233,7 @@
           "$ref": "#/components/schemas/HrisGroup"
         }
       },
-      "DefaultResponseResponseJson30": {
+      "RemoveHrisGroup204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86236,7 +86244,7 @@
           "$ref": "#/components/schemas/HrisTimeoff"
         }
       },
-      "DefaultResponseResponseJson31": {
+      "RemoveHrisTimeoff204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86253,7 +86261,7 @@
           "$ref": "#/components/schemas/HrisDevice"
         }
       },
-      "DefaultResponseResponseJson32": {
+      "RemoveHrisDevice204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86264,7 +86272,7 @@
           "$ref": "#/components/schemas/HrisTimeshift"
         }
       },
-      "DefaultResponseResponseJson33": {
+      "RemoveHrisTimeshift204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86275,7 +86283,7 @@
           "$ref": "#/components/schemas/HrisBenefit"
         }
       },
-      "DefaultResponseResponseJson34": {
+      "RemoveHrisBenefit204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86286,7 +86294,7 @@
           "$ref": "#/components/schemas/HrisDeduction"
         }
       },
-      "DefaultResponseResponseJson35": {
+      "RemoveHrisDeduction204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86297,7 +86305,7 @@
           "$ref": "#/components/schemas/HrisBankaccount"
         }
       },
-      "DefaultResponseResponseJson36": {
+      "RemoveHrisBankaccount204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86314,7 +86322,7 @@
           "$ref": "#/components/schemas/HrisDocument"
         }
       },
-      "DefaultResponseResponseJson37": {
+      "RemoveHrisDocument204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86331,7 +86339,7 @@
           "$ref": "#/components/schemas/VerificationRequest"
         }
       },
-      "DefaultResponseResponseJson38": {
+      "RemoveVerificationRequest204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86342,16 +86350,16 @@
       "CreatePassthroughPlainRequestRequestBody": {
         "type": "object"
       },
-      "CreatePassthroughDefaultResponseResponseJson": {
+      "CreatePassthroughDefaultResponseSchema": {
         "type": "object"
       },
-      "CreatePassthroughDefaultResponseResponseXml2": {
+      "CreatePassthroughDefaultXmlResponseSchema": {
         "type": "string"
       },
-      "CreatePassthroughDefaultResponseResponseCsv2": {
+      "CreatePassthroughDefaultCsvResponseSchema": {
         "type": "string"
       },
-      "CreatePassthroughDefaultResponseResponsePlain2": {
+      "CreatePassthroughDefaultPlainResponseSchema": {
         "type": "string"
       },
       "UpdatePassthroughRequest": {
@@ -86360,16 +86368,16 @@
       "UpdatePassthroughPlainRequestRequestBody": {
         "type": "object"
       },
-      "UpdatePassthroughDefaultResponseResponseJson": {
+      "UpdatePassthroughDefaultResponseSchema": {
         "type": "object"
       },
-      "UpdatePassthroughDefaultResponseResponseXml2": {
+      "UpdatePassthroughDefaultXmlResponseSchema": {
         "type": "string"
       },
-      "UpdatePassthroughDefaultResponseResponseCsv2": {
+      "UpdatePassthroughDefaultCsvResponseSchema": {
         "type": "string"
       },
-      "UpdatePassthroughDefaultResponseResponsePlain2": {
+      "UpdatePassthroughDefaultPlainResponseSchema": {
         "type": "string"
       },
       "PatchPassthroughRequest": {
@@ -86378,40 +86386,40 @@
       "PatchPassthroughPlainRequestRequestBody": {
         "type": "object"
       },
-      "PatchPassthroughDefaultResponseResponseJson": {
+      "PatchPassthroughDefaultResponseSchema": {
         "type": "object"
       },
-      "PatchPassthroughDefaultResponseResponseXml2": {
+      "PatchPassthroughDefaultXmlResponseSchema": {
         "type": "string"
       },
-      "PatchPassthroughDefaultResponseResponseCsv2": {
+      "PatchPassthroughDefaultCsvResponseSchema": {
         "type": "string"
       },
-      "PatchPassthroughDefaultResponseResponsePlain2": {
+      "PatchPassthroughDefaultPlainResponseSchema": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponseJson": {
+      "ListPassthroughsDefaultResponseSchema": {
         "type": "object"
       },
-      "ListPassthroughsDefaultResponseResponseXml2": {
+      "ListPassthroughsDefaultXmlResponseSchema": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponseCsv2": {
+      "ListPassthroughsDefaultCsvResponseSchema": {
         "type": "string"
       },
-      "ListPassthroughsDefaultResponseResponsePlain2": {
+      "ListPassthroughsDefaultPlainResponseSchema": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponseJson": {
+      "RemovePassthroughDefaultResponseSchema": {
         "type": "object"
       },
-      "RemovePassthroughDefaultResponseResponseXml2": {
+      "RemovePassthroughDefaultXmlResponseSchema": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponseCsv2": {
+      "RemovePassthroughDefaultCsvResponseSchema": {
         "type": "string"
       },
-      "RemovePassthroughDefaultResponseResponsePlain2": {
+      "RemovePassthroughDefaultPlainResponseSchema": {
         "type": "string"
       },
       "ListAccountingAccounts200Response": {
@@ -86420,7 +86428,7 @@
           "$ref": "#/components/schemas/AccountingAccount"
         }
       },
-      "DefaultResponseResponseJson39": {
+      "RemoveAccountingAccount204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86431,7 +86439,7 @@
           "$ref": "#/components/schemas/AccountingJournal"
         }
       },
-      "DefaultResponseResponseJson40": {
+      "RemoveAccountingJournal204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86442,7 +86450,7 @@
           "$ref": "#/components/schemas/AccountingTransaction"
         }
       },
-      "DefaultResponseResponseJson41": {
+      "RemoveAccountingTransaction204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86453,7 +86461,7 @@
           "$ref": "#/components/schemas/AccountingContact"
         }
       },
-      "DefaultResponseResponseJson42": {
+      "RemoveAccountingContact204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86464,7 +86472,7 @@
           "$ref": "#/components/schemas/AccountingInvoice"
         }
       },
-      "DefaultResponseResponseJson43": {
+      "RemoveAccountingInvoice204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86475,7 +86483,7 @@
           "$ref": "#/components/schemas/AccountingBill"
         }
       },
-      "DefaultResponseResponseJson44": {
+      "RemoveAccountingBill204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86486,7 +86494,7 @@
           "$ref": "#/components/schemas/AccountingCreditmemo"
         }
       },
-      "DefaultResponseResponseJson45": {
+      "RemoveAccountingCreditmemo204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86497,7 +86505,7 @@
           "$ref": "#/components/schemas/AccountingVendorcredit"
         }
       },
-      "DefaultResponseResponseJson46": {
+      "RemoveAccountingVendorcredit204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86508,7 +86516,7 @@
           "$ref": "#/components/schemas/AccountingTaxrate"
         }
       },
-      "DefaultResponseResponseJson47": {
+      "RemoveAccountingTaxrate204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86525,7 +86533,7 @@
           "$ref": "#/components/schemas/AccountingOrder"
         }
       },
-      "DefaultResponseResponseJson48": {
+      "RemoveAccountingOrder204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86536,7 +86544,7 @@
           "$ref": "#/components/schemas/AccountingPurchaseorder"
         }
       },
-      "DefaultResponseResponseJson49": {
+      "RemoveAccountingPurchaseorder204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86547,7 +86555,7 @@
           "$ref": "#/components/schemas/AccountingSalesorder"
         }
       },
-      "DefaultResponseResponseJson50": {
+      "RemoveAccountingSalesorder204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86588,7 +86596,7 @@
           "$ref": "#/components/schemas/AccountingCategory"
         }
       },
-      "DefaultResponseResponseJson51": {
+      "RemoveAccountingCategory204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86599,7 +86607,7 @@
           "$ref": "#/components/schemas/AccountingExpense"
         }
       },
-      "DefaultResponseResponseJson52": {
+      "RemoveAccountingExpense204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86610,7 +86618,7 @@
           "$ref": "#/components/schemas/StorageFile"
         }
       },
-      "DefaultResponseResponseJson53": {
+      "RemoveStorageFile204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86621,7 +86629,7 @@
           "$ref": "#/components/schemas/CommerceItem"
         }
       },
-      "DefaultResponseResponseJson54": {
+      "RemoveCommerceItem204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86632,7 +86640,7 @@
           "$ref": "#/components/schemas/CommerceCollection"
         }
       },
-      "DefaultResponseResponseJson55": {
+      "RemoveCommerceCollection204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86643,7 +86651,7 @@
           "$ref": "#/components/schemas/CommerceInventory"
         }
       },
-      "DefaultResponseResponseJson56": {
+      "RemoveCommerceInventory204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86654,7 +86662,7 @@
           "$ref": "#/components/schemas/CommerceLocation"
         }
       },
-      "DefaultResponseResponseJson57": {
+      "RemoveCommerceLocation204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86665,7 +86673,7 @@
           "$ref": "#/components/schemas/CommerceReview"
         }
       },
-      "DefaultResponseResponseJson58": {
+      "RemoveCommerceReview204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86676,7 +86684,7 @@
           "$ref": "#/components/schemas/CommerceReservation"
         }
       },
-      "DefaultResponseResponseJson59": {
+      "RemoveCommerceReservation204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86693,7 +86701,7 @@
           "$ref": "#/components/schemas/CommerceSaleschannel"
         }
       },
-      "DefaultResponseResponseJson60": {
+      "RemoveCommerceSaleschannel204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86704,7 +86712,7 @@
           "$ref": "#/components/schemas/CommerceItemvariant"
         }
       },
-      "DefaultResponseResponseJson61": {
+      "RemoveCommerceItemvariant204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86715,7 +86723,7 @@
           "$ref": "#/components/schemas/PaymentPayment"
         }
       },
-      "DefaultResponseResponseJson62": {
+      "RemovePaymentPayment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86726,7 +86734,7 @@
           "$ref": "#/components/schemas/PaymentLink"
         }
       },
-      "DefaultResponseResponseJson63": {
+      "RemovePaymentLink204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86749,7 +86757,7 @@
           "$ref": "#/components/schemas/PaymentSubscription"
         }
       },
-      "DefaultResponseResponseJson64": {
+      "RemovePaymentSubscription204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86766,7 +86774,7 @@
           "$ref": "#/components/schemas/KmsSpace"
         }
       },
-      "DefaultResponseResponseJson65": {
+      "RemoveKmsSpace204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86777,7 +86785,7 @@
           "$ref": "#/components/schemas/KmsPage"
         }
       },
-      "DefaultResponseResponseJson66": {
+      "RemoveKmsPage204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86788,7 +86796,7 @@
           "$ref": "#/components/schemas/KmsComment"
         }
       },
-      "DefaultResponseResponseJson67": {
+      "RemoveKmsComment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86799,7 +86807,7 @@
           "$ref": "#/components/schemas/TaskProject"
         }
       },
-      "DefaultResponseResponseJson68": {
+      "RemoveTaskProject204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86810,7 +86818,7 @@
           "$ref": "#/components/schemas/TaskTask"
         }
       },
-      "DefaultResponseResponseJson69": {
+      "RemoveTaskTask204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86821,7 +86829,7 @@
           "$ref": "#/components/schemas/TaskComment"
         }
       },
-      "DefaultResponseResponseJson70": {
+      "RemoveTaskComment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86838,7 +86846,7 @@
           "$ref": "#/components/schemas/CalendarCalendar"
         }
       },
-      "DefaultResponseResponseJson71": {
+      "RemoveCalendarCalendar204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86849,7 +86857,7 @@
           "$ref": "#/components/schemas/CalendarEvent"
         }
       },
-      "DefaultResponseResponseJson72": {
+      "RemoveCalendarEvent204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86866,7 +86874,7 @@
           "$ref": "#/components/schemas/CalendarLink"
         }
       },
-      "DefaultResponseResponseJson73": {
+      "RemoveCalendarLink204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86883,7 +86891,7 @@
           "$ref": "#/components/schemas/CalendarWebinar"
         }
       },
-      "DefaultResponseResponseJson74": {
+      "RemoveCalendarWebinar204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86894,7 +86902,7 @@
           "$ref": "#/components/schemas/AdsOrganization"
         }
       },
-      "DefaultResponseResponseJson75": {
+      "RemoveAdsOrganization204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86905,7 +86913,7 @@
           "$ref": "#/components/schemas/AdsCampaign"
         }
       },
-      "DefaultResponseResponseJson76": {
+      "RemoveAdsCampaign204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86916,7 +86924,7 @@
           "$ref": "#/components/schemas/AdsCreative"
         }
       },
-      "DefaultResponseResponseJson77": {
+      "RemoveAdsCreative204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86933,7 +86941,7 @@
           "$ref": "#/components/schemas/AdsInsertionorder"
         }
       },
-      "DefaultResponseResponseJson78": {
+      "RemoveAdsInsertionorder204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86944,7 +86952,7 @@
           "$ref": "#/components/schemas/AdsGroup"
         }
       },
-      "DefaultResponseResponseJson79": {
+      "RemoveAdsGroup204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86955,7 +86963,7 @@
           "$ref": "#/components/schemas/AdsAd"
         }
       },
-      "DefaultResponseResponseJson80": {
+      "RemoveAdsAd204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86984,7 +86992,7 @@
           "$ref": "#/components/schemas/LmsCourse"
         }
       },
-      "DefaultResponseResponseJson81": {
+      "RemoveLmsCourse204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -86995,7 +87003,7 @@
           "$ref": "#/components/schemas/LmsClass"
         }
       },
-      "DefaultResponseResponseJson82": {
+      "RemoveLmsClass204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87006,7 +87014,7 @@
           "$ref": "#/components/schemas/LmsStudent"
         }
       },
-      "DefaultResponseResponseJson83": {
+      "RemoveLmsStudent204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87017,7 +87025,7 @@
           "$ref": "#/components/schemas/LmsInstructor"
         }
       },
-      "DefaultResponseResponseJson84": {
+      "RemoveLmsInstructor204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87028,7 +87036,7 @@
           "$ref": "#/components/schemas/LmsContent"
         }
       },
-      "DefaultResponseResponseJson85": {
+      "RemoveLmsContent204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87039,7 +87047,7 @@
           "$ref": "#/components/schemas/LmsCollection"
         }
       },
-      "DefaultResponseResponseJson86": {
+      "RemoveLmsCollection204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87050,7 +87058,7 @@
           "$ref": "#/components/schemas/LmsActivity"
         }
       },
-      "DefaultResponseResponseJson87": {
+      "RemoveLmsActivity204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87061,7 +87069,7 @@
           "$ref": "#/components/schemas/RepoOrganization"
         }
       },
-      "DefaultResponseResponseJson88": {
+      "RemoveRepoOrganization204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87072,7 +87080,7 @@
           "$ref": "#/components/schemas/RepoRepository"
         }
       },
-      "DefaultResponseResponseJson89": {
+      "RemoveRepoRepository204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87083,7 +87091,7 @@
           "$ref": "#/components/schemas/RepoBranch"
         }
       },
-      "DefaultResponseResponseJson90": {
+      "RemoveRepoBranch204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87094,7 +87102,7 @@
           "$ref": "#/components/schemas/RepoCommit"
         }
       },
-      "DefaultResponseResponseJson91": {
+      "RemoveRepoCommit204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87105,7 +87113,7 @@
           "$ref": "#/components/schemas/RepoPullrequest"
         }
       },
-      "DefaultResponseResponseJson92": {
+      "RemoveRepoPullrequest204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87116,7 +87124,7 @@
           "$ref": "#/components/schemas/MetadataMetadata"
         }
       },
-      "DefaultResponseResponseJson93": {
+      "RemoveMetadataMetadata204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87127,7 +87135,7 @@
           "$ref": "#/components/schemas/FormsForm"
         }
       },
-      "DefaultResponseResponseJson94": {
+      "RemoveFormsForm204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87144,7 +87152,7 @@
           "$ref": "#/components/schemas/DatastoreDatabase"
         }
       },
-      "DefaultResponseResponseJson95": {
+      "RemoveDatastoreDatabase204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87155,7 +87163,7 @@
           "$ref": "#/components/schemas/DatastoreTable"
         }
       },
-      "DefaultResponseResponseJson96": {
+      "RemoveDatastoreTable204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87166,7 +87174,7 @@
           "$ref": "#/components/schemas/DatastoreRecord"
         }
       },
-      "DefaultResponseResponseJson97": {
+      "RemoveDatastoreRecord204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87177,7 +87185,7 @@
           "$ref": "#/components/schemas/ShippingShipment"
         }
       },
-      "DefaultResponseResponseJson98": {
+      "RemoveShippingShipment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87188,7 +87196,7 @@
           "$ref": "#/components/schemas/ShippingLabel"
         }
       },
-      "DefaultResponseResponseJson99": {
+      "RemoveShippingLabel204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87211,7 +87219,7 @@
           "$ref": "#/components/schemas/SigningDocument"
         }
       },
-      "DefaultResponseResponseJson100": {
+      "RemoveSigningDocument204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87222,7 +87230,7 @@
           "$ref": "#/components/schemas/SigningSignatory"
         }
       },
-      "DefaultResponseResponseJson101": {
+      "RemoveSigningSignatory204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87269,7 +87277,7 @@
           "$ref": "#/components/schemas/AnalyticsProperty"
         }
       },
-      "DefaultResponseResponseJson102": {
+      "RemoveAnalyticsProperty204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87292,7 +87300,7 @@
           "$ref": "#/components/schemas/AnalyticsVisitor"
         }
       },
-      "DefaultResponseResponseJson103": {
+      "RemoveAnalyticsVisitor204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87309,7 +87317,7 @@
           "$ref": "#/components/schemas/CdpProfile"
         }
       },
-      "DefaultResponseResponseJson104": {
+      "RemoveCdpProfile204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87320,7 +87328,7 @@
           "$ref": "#/components/schemas/CdpSegment"
         }
       },
-      "DefaultResponseResponseJson105": {
+      "RemoveCdpSegment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87331,7 +87339,7 @@
           "$ref": "#/components/schemas/CdpEvent"
         }
       },
-      "DefaultResponseResponseJson106": {
+      "RemoveCdpEvent204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87342,7 +87350,7 @@
           "$ref": "#/components/schemas/CdpSource"
         }
       },
-      "DefaultResponseResponseJson107": {
+      "RemoveCdpSource204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87353,7 +87361,7 @@
           "$ref": "#/components/schemas/CdpDestination"
         }
       },
-      "DefaultResponseResponseJson108": {
+      "RemoveCdpDestination204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87364,7 +87372,7 @@
           "$ref": "#/components/schemas/CdpActivation"
         }
       },
-      "DefaultResponseResponseJson109": {
+      "RemoveCdpActivation204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87375,7 +87383,7 @@
           "$ref": "#/components/schemas/Connection"
         }
       },
-      "DefaultResponseResponseJson110": {
+      "RemoveUnifiedConnection204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87386,7 +87394,7 @@
           "$ref": "#/components/schemas/SecretsManager"
         }
       },
-      "DefaultResponseResponseJson111": {
+      "RemoveUnifiedWorkspaceSecretsmanager204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87409,7 +87417,7 @@
           "$ref": "#/components/schemas/Integration"
         }
       },
-      "DefaultResponseResponseJson112": {
+      "RemoveUnifiedWebhook204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87420,12 +87428,12 @@
           "$ref": "#/components/schemas/Webhook"
         }
       },
-      "DefaultResponseResponseJson113": {
+      "UpdateUnifiedWebhookTrigger200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson114": {
+      "PatchUnifiedWebhookTrigger200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87464,13 +87472,13 @@
         },
         "description": "A list of environments in the workspace."
       },
-      "GetUnifiedIntegrationAuth200ResponseResponsePlain": {
+      "GetUnifiedIntegrationAuth200PlainResponseSchema": {
         "type": "string"
       },
-      "GetUnifiedIntegrationLogin200ResponseResponsePlain": {
+      "GetUnifiedIntegrationLogin200PlainResponseSchema": {
         "type": "string"
       },
-      "GetUnifiedIntegrationSaml200ResponseResponsePlain": {
+      "GetUnifiedIntegrationSaml200PlainResponseSchema": {
         "type": "string"
       },
       "ListScimUsers200Response": {
@@ -87479,7 +87487,7 @@
           "$ref": "#/components/schemas/ScimUser"
         }
       },
-      "DefaultResponseResponseJson115": {
+      "RemoveScimUsers204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -87490,7 +87498,7 @@
           "$ref": "#/components/schemas/ScimGroup"
         }
       },
-      "DefaultResponseResponseJson116": {
+      "RemoveScimGroups204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -90688,7 +90696,8 @@
         "enum": [
           "APPROVED",
           "PENDING",
-          "DENIED"
+          "DENIED",
+          "CANCELLED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -90708,6 +90717,10 @@
             {
               "value": "DENIED",
               "name": "Denied"
+            },
+            {
+              "value": "CANCELLED",
+              "name": "Cancelled"
             }
           ]
         }

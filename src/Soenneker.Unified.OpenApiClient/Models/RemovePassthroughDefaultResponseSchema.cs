@@ -2,35 +2,37 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
-    /// <summary>
-    /// Default response schema
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DefaultResponseResponseJson114 : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class RemovePassthroughDefaultResponseSchema : ApiException, IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The primary error message.</summary>
+        public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.RemovePassthroughDefaultResponseSchema"/> and sets the default values.
         /// </summary>
-        public DefaultResponseResponseJson114()
+        public RemovePassthroughDefaultResponseSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.RemovePassthroughDefaultResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.RemovePassthroughDefaultResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.DefaultResponseResponseJson114();
+            return new global::Soenneker.Unified.OpenApiClient.Models.RemovePassthroughDefaultResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

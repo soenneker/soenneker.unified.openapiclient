@@ -7801,7 +7801,8 @@
                   "enum": [
                      "APPROVED",
                      "PENDING",
-                     "DENIED"
+                     "DENIED",
+                     "CANCELLED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -65235,6 +65236,15 @@
                   "in": "query",
                   "required": false,
                   "description": "The location ID to filter by (reference to CommerceLocation)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "item_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The item ID to filter by (reference to CommerceItem)"
                },
                {
                   "schema": {

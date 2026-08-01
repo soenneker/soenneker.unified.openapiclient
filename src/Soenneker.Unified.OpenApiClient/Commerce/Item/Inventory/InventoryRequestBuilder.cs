@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InventoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/inventory{?fields*,item_variant_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public InventoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/inventory{?fields*,item_id*,item_variant_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InventoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/inventory{?fields*,item_variant_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public InventoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/commerce/{connectionId}/inventory{?fields*,item_id*,item_variant_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,16 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory
 #else
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.ListCommerceInventoriesFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>The item ID to filter by (reference to CommerceItem)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("item_id")]
+            public string? ItemId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("item_id")]
+            public string ItemId { get; set; }
 #endif
             /// <summary>The item variant ID to filter by (reference to CommerceCommerceItemvariant)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
