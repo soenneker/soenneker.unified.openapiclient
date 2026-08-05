@@ -79,6 +79,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? LastHealthyAt { get; set; }
         /// <summary>The last_unhealthy_at property</summary>
         public DateTimeOffset? LastUnhealthyAt { get; set; }
+        /// <summary>The last_unhealthy_code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastUnhealthyCode { get; set; }
+#nullable restore
+#else
+        public string LastUnhealthyCode { get; set; }
+#endif
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +158,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "last_healthy_at", n => { LastHealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "last_unhealthy_at", n => { LastUnhealthyAt = n.GetDateTimeOffsetValue(); } },
+                { "last_unhealthy_code", n => { LastUnhealthyCode = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>()?.AsList(); } },
                 { "secretsmanager_id", n => { SecretsmanagerId = n.GetStringValue(); } },
                 { "secretsmanager_key", n => { SecretsmanagerKey = n.GetStringValue(); } },
@@ -175,6 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteDateTimeOffsetValue("last_healthy_at", LastHealthyAt);
             writer.WriteDateTimeOffsetValue("last_unhealthy_at", LastUnhealthyAt);
+            writer.WriteStringValue("last_unhealthy_code", LastUnhealthyCode);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>("permissions", Permissions);
             writer.WriteStringValue("secretsmanager_id", SecretsmanagerId);
             writer.WriteStringValue("secretsmanager_key", SecretsmanagerKey);

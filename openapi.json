@@ -26215,6 +26215,9 @@
                   "type": "string",
                   "format": "date-time"
                },
+               "last_unhealthy_code": {
+                  "type": "string"
+               },
                "secretsmanager_id": {
                   "type": "string"
                },
