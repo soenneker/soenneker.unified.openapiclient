@@ -55542,6 +55542,7 @@
           {
             "name": "segment_id",
             "in": "query",
+            "description": "The segment ID to filter by",
             "schema": {
               "type": "string"
             }
@@ -81539,6 +81540,15 @@
           },
           "virtual_webhook_profile_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookProfileId"
+          },
+          "list_segment_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListSegmentId"
+          },
+          "virtual_webhook_segment_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookSegmentId"
+          },
+          "native_webhook_segment_id": {
+            "$ref": "#/components/schemas/IntegrationSupportNativeWebhookSegmentId"
           }
         }
       },
@@ -109312,6 +109322,90 @@
         "x-speakeasy-unknown-values": "allow",
         "x-ms-enum": {
           "name": "IntegrationSupportVirtualWebhookProfileId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportListSegmentId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListSegmentId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookSegmentId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookSegmentId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportNativeWebhookSegmentId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportNativeWebhookSegmentId",
           "modelAsString": false,
           "values": [
             {

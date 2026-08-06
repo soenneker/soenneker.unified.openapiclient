@@ -193,6 +193,7 @@ namespace Soenneker.Unified.OpenApiClient.Cdp.Item.Activation
             [QueryParameter("raw")]
             public string Raw { get; set; }
 #endif
+            /// <summary>The segment ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("segment_id")]
