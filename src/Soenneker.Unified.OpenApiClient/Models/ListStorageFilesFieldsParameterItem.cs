@@ -76,6 +76,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         References,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tags")]
+        #pragma warning disable CS1591
+        Tags,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

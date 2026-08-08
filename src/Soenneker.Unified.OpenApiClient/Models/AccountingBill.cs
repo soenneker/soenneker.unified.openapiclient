@@ -114,6 +114,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms? PaymentTerms { get; set; }
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
+        /// <summary>The project_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "payment_terms", n => { PaymentTerms = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms>(); } },
                 { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBillRawProperty.CreateFromDiscriminatorValue); } },
                 { "refund_amount", n => { RefundAmount = n.GetDoubleValue(); } },
                 { "refund_reason", n => { RefundReason = n.GetStringValue(); } },
@@ -239,6 +248,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>("payments", Payments);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
+            writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillRawProperty>("raw", Raw);
             writer.WriteDoubleValue("refund_amount", RefundAmount);
             writer.WriteDateTimeOffsetValue("refunded_at", RefundedAt);

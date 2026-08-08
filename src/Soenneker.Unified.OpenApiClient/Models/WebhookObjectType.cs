@@ -88,6 +88,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingCashflow,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_quote")]
+        #pragma warning disable CS1591
+        AccountingQuote,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_agedreceivable")]
+        #pragma warning disable CS1591
+        AccountingAgedreceivable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_agedpayable")]
+        #pragma warning disable CS1591
+        AccountingAgedpayable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_project")]
+        #pragma warning disable CS1591
+        AccountingProject,
+        #pragma warning restore CS1591
         [EnumMember(Value = "payment_payment")]
         #pragma warning disable CS1591
         PaymentPayment,

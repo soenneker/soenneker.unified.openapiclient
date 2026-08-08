@@ -110,6 +110,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
+        /// <summary>The labels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Labels { get; set; }
+#nullable restore
+#else
+        public List<string> Labels { get; set; }
+#endif
         /// <summary>The link_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,6 +194,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The url_tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UrlTags { get; set; }
+#nullable restore
+#else
+        public string UrlTags { get; set; }
+#endif
         /// <summary>The vast_tag_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -236,6 +252,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "hosting_source", n => { HostingSource = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeHostingSource>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "link_url", n => { LinkUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -247,6 +264,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "third_party_tag", n => { ThirdPartyTag = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url_tags", n => { UrlTags = n.GetStringValue(); } },
                 { "vast_tag_url", n => { VastTagUrl = n.GetStringValue(); } },
                 { "width", n => { Width = n.GetDoubleValue(); } },
             };
@@ -273,6 +291,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeHostingSource>("hosting_source", HostingSource);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("item_id", ItemId);
+            writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteStringValue("link_url", LinkUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
@@ -284,6 +303,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("third_party_tag", ThirdPartyTag);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("url_tags", UrlTags);
             writer.WriteStringValue("vast_tag_url", VastTagUrl);
             writer.WriteDoubleValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);

@@ -54,6 +54,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CreativeIds { get; set; }
 #endif
+        /// <summary>The creative_selection property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection? CreativeSelection { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string InsertionorderId { get; set; }
+#endif
+        /// <summary>The language_locale property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LanguageLocale { get; set; }
+#nullable restore
+#else
+        public string LanguageLocale { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,6 +204,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_ids", n => { CreativeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "creative_selection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "effective_status", n => { EffectiveStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus>(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
@@ -201,6 +212,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "has_eu_political_ads", n => { HasEuPoliticalAds = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "insertionorder_id", n => { InsertionorderId = n.GetStringValue(); } },
+                { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupOptimizationGoal>(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -233,6 +245,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("creative_ids", CreativeIds);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection>("creative_selection", CreativeSelection);
             writer.WriteStringValue("currency", Currency);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus>("effective_status", EffectiveStatus);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
@@ -240,6 +253,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("has_eu_political_ads", HasEuPoliticalAds);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("insertionorder_id", InsertionorderId);
+            writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupOptimizationGoal>("optimization_goal", OptimizationGoal);
             writer.WriteStringValue("organization_id", OrganizationId);

@@ -106,6 +106,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The size property</summary>
         public double? Size { get; set; }
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.StorageFileType? Type { get; set; }
         /// <summary>The updated_at property</summary>
@@ -172,6 +180,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty.CreateFromDiscriminatorValue); } },
                 { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>(global::Soenneker.Unified.OpenApiClient.Models.StorageReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -199,6 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>("references", References);
             writer.WriteDoubleValue("size", Size);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.StorageFileType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

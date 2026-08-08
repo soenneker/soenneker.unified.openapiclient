@@ -124,6 +124,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
+        /// <summary>The project_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,6 +209,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty.CreateFromDiscriminatorValue); } },
                 { "reimbursed_amount", n => { ReimbursedAmount = n.GetDoubleValue(); } },
                 { "reimbursed_at", n => { ReimbursedAt = n.GetDateTimeOffsetValue(); } },
@@ -235,6 +244,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
+            writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseRawProperty>("raw", Raw);
             writer.WriteDoubleValue("reimbursed_amount", ReimbursedAmount);
             writer.WriteDateTimeOffsetValue("reimbursed_at", ReimbursedAt);

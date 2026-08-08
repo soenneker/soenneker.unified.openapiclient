@@ -68,6 +68,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         LinkUrl,
         #pragma warning restore CS1591
+        [EnumMember(Value = "url_tags")]
+        #pragma warning disable CS1591
+        UrlTags,
+        #pragma warning restore CS1591
         [EnumMember(Value = "body")]
         #pragma warning disable CS1591
         Body,
@@ -115,6 +119,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "data")]
         #pragma warning disable CS1591
         Data,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "labels")]
+        #pragma warning disable CS1591
+        Labels,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

@@ -26436,6 +26436,1333 @@
         ]
       }
     },
+    "/accounting/{connectionId}/quote": {
+      "post": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "Create a quote",
+        "operationId": "CreateAccountingQuote",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateAccountingQuoteFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingQuote"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingQuote"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "List all quotes",
+        "operationId": "ListAccountingQuotes",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "The contact ID to filter by (reference to AccountingContact)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by (reference to AccountingOrganization)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "description": "The project ID to filter by (reference to TaskProject)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListAccountingQuotesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAccountingQuotes200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/quote/{id}": {
+      "get": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "Retrieve a quote",
+        "operationId": "GetAccountingQuote",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAccountingQuoteFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Quote",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingQuote"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "Update a quote",
+        "operationId": "UpdateAccountingQuote",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateAccountingQuoteFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Quote",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingQuote"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingQuote"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "Update a quote",
+        "operationId": "PatchAccountingQuote",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchAccountingQuoteFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Quote",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingQuote"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingQuote"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "accounting",
+          "quote"
+        ],
+        "summary": "Remove a quote",
+        "operationId": "RemoveAccountingQuote",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Quote",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveAccountingQuote204Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/agedreceivable/{id}": {
+      "get": {
+        "tags": [
+          "accounting",
+          "agedreceivable"
+        ],
+        "summary": "Retrieve an agedreceivable",
+        "operationId": "GetAccountingAgedreceivable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAccountingAgedreceivableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Agedreceivable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingAgedreceivable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/agedreceivable": {
+      "get": {
+        "tags": [
+          "accounting",
+          "agedreceivable"
+        ],
+        "summary": "List all agedreceivables",
+        "operationId": "ListAccountingAgedreceivables",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "The contact ID to filter by (reference to AccountingContact)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by (reference to AccountingOrganization)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListAccountingAgedreceivablesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAccountingAgedreceivables200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/agedpayable/{id}": {
+      "get": {
+        "tags": [
+          "accounting",
+          "agedpayable"
+        ],
+        "summary": "Retrieve an agedpayable",
+        "operationId": "GetAccountingAgedpayable",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAccountingAgedpayableFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Agedpayable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingAgedpayable"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/agedpayable": {
+      "get": {
+        "tags": [
+          "accounting",
+          "agedpayable"
+        ],
+        "summary": "List all agedpayables",
+        "operationId": "ListAccountingAgedpayables",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "The contact ID to filter by (reference to AccountingContact)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by (reference to AccountingOrganization)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListAccountingAgedpayablesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAccountingAgedpayables200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/project": {
+      "post": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "Create a project",
+        "operationId": "CreateAccountingProject",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateAccountingProjectFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingProject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingProject"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "List all projects",
+        "operationId": "ListAccountingProjects",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contact_id",
+            "in": "query",
+            "description": "The contact ID to filter by (reference to AccountingContact)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "is_active",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by (reference to AccountingOrganization)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListAccountingProjectsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAccountingProjects200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/accounting/{connectionId}/project/{id}": {
+      "get": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "Retrieve a project",
+        "operationId": "GetAccountingProject",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAccountingProjectFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingProject"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "Update a project",
+        "operationId": "UpdateAccountingProject",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateAccountingProjectFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingProject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingProject"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "Update a project",
+        "operationId": "PatchAccountingProject",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchAccountingProjectFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountingProject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountingProject"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "accounting",
+          "project"
+        ],
+        "summary": "Remove a project",
+        "operationId": "RemoveAccountingProject",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Project",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveAccountingProject204Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/storage/{connectionId}/file": {
       "post": {
         "tags": [
@@ -65304,6 +66631,9 @@
               "type": "string"
             }
           },
+          "project_id": {
+            "type": "string"
+          },
           "attachments": {
             "type": "array",
             "items": {
@@ -65467,6 +66797,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "project_id": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingTransactionRawProperty"
@@ -66025,6 +67358,9 @@
               "type": "string"
             }
           },
+          "project_id": {
+            "type": "string"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingInvoiceRawProperty"
           }
@@ -66173,6 +67509,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "project_id": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingBillRawProperty"
@@ -68044,6 +69383,9 @@
               "type": "string"
             }
           },
+          "project_id": {
+            "type": "string"
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingExpenseRawProperty"
           }
@@ -68053,6 +69395,476 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingExpense"
+        }
+      },
+      "PropertyAccountingQuoteContacts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingTransactionContact"
+        },
+        "description": "denormalized parties, reusing the transaction contact shape"
+      },
+      "PropertyAccountingQuoteLineitems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingLineitem"
+        }
+      },
+      "PropertyAccountingQuoteCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "tracking categories / classes (AccountingCategory dimensions)"
+      },
+      "AccountingQuote": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quote_number": {
+            "type": "string"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "payment_terms": {
+            "$ref": "#/components/schemas/AccountingQuotePaymentTerms"
+          },
+          "customer_message": {
+            "type": "string"
+          },
+          "memo": {
+            "type": "string"
+          },
+          "contact_id": {
+            "type": "string"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingTransactionContact"
+            },
+            "description": "denormalized parties, reusing the transaction contact shape"
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sent_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "accepted_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "declined_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AccountingQuoteStatus"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "currency_rate": {
+            "type": "number"
+          },
+          "sub_total_amount": {
+            "type": "number"
+          },
+          "tax_amount": {
+            "type": "number"
+          },
+          "discount_amount": {
+            "type": "number"
+          },
+          "total_amount": {
+            "type": "number"
+          },
+          "tax_mode": {
+            "$ref": "#/components/schemas/AccountingQuoteTaxMode"
+          },
+          "lineitems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingLineitem"
+            }
+          },
+          "invoice_id": {
+            "type": "string"
+          },
+          "project_id": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "tracking categories / classes (AccountingCategory dimensions)"
+          },
+          "url": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingQuoteRawProperty"
+          }
+        }
+      },
+      "AccountingQuotes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingQuote"
+        }
+      },
+      "PropertyAccountingAgedRowContact": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAccountingAgedRowTransaction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingAgedRow": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/PropertyAccountingAgedRowContact"
+          },
+          "transaction": {
+            "$ref": "#/components/schemas/PropertyAccountingAgedRowTransaction"
+          },
+          "posted_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total_amount": {
+            "type": "number"
+          },
+          "balance_amount": {
+            "type": "number"
+          }
+        }
+      },
+      "PropertyAccountingAgedPeriodSubItems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedRow"
+        }
+      },
+      "AccountingAgedPeriod": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total_amount": {
+            "type": "number"
+          },
+          "sub_items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingAgedRow"
+            }
+          }
+        }
+      },
+      "PropertyAccountingAgedreceivablePeriods": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedPeriod"
+        }
+      },
+      "AccountingAgedreceivable": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total_current_amount": {
+            "type": "number"
+          },
+          "total_overdue_amount": {
+            "type": "number"
+          },
+          "total_amount": {
+            "type": "number"
+          },
+          "periods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingAgedPeriod"
+            }
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingAgedreceivableRawProperty"
+          }
+        }
+      },
+      "AccountingAgedreceivables": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedreceivable"
+        }
+      },
+      "PropertyAccountingAgedpayablePeriods": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedPeriod"
+        }
+      },
+      "AccountingAgedpayable": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total_current_amount": {
+            "type": "number"
+          },
+          "total_overdue_amount": {
+            "type": "number"
+          },
+          "total_amount": {
+            "type": "number"
+          },
+          "periods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingAgedPeriod"
+            }
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingAgedpayableRawProperty"
+          }
+        }
+      },
+      "AccountingAgedpayables": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedpayable"
+        }
+      },
+      "PropertyAccountingProjectCategoryIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "AccountingProject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AccountingProjectStatus"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_billable": {
+            "type": "boolean"
+          },
+          "contact_id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "manager_user_id": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "estimate_amount": {
+            "type": "number"
+          },
+          "estimated_cost_amount": {
+            "type": "number"
+          },
+          "actual_cost_amount": {
+            "type": "number"
+          },
+          "invoiced_amount": {
+            "type": "number"
+          },
+          "to_be_invoiced_amount": {
+            "type": "number"
+          },
+          "expense_amount": {
+            "type": "number"
+          },
+          "deposit_amount": {
+            "type": "number"
+          },
+          "deposit_applied_amount": {
+            "type": "number"
+          },
+          "credit_note_amount": {
+            "type": "number"
+          },
+          "minutes_logged": {
+            "type": "number"
+          },
+          "minutes_to_be_invoiced": {
+            "type": "number"
+          },
+          "percent_complete": {
+            "type": "number"
+          },
+          "billing_type": {
+            "$ref": "#/components/schemas/AccountingProjectBillingType"
+          },
+          "category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location_id": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/AccountingProjectRawProperty"
+          }
+        }
+      },
+      "AccountingProjects": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingProject"
         }
       },
       "PropertyStoragePermissionRoles": {
@@ -68111,6 +69923,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/StorageReference"
+        }
+      },
+      "PropertyStorageFileTags": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "StorageFile": {
@@ -68173,6 +69991,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/StorageReference"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "raw": {
@@ -71192,6 +73016,24 @@
           "$ref": "#/components/schemas/CalendarWebinar"
         }
       },
+      "AdsManager": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyAdsOrganizationManagers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AdsManager"
+        },
+        "description": "Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager)"
+      },
       "AdsOrganization": {
         "type": "object",
         "properties": {
@@ -71217,6 +73059,19 @@
           },
           "parent_id": {
             "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AdsOrganizationStatus"
+          },
+          "account_number": {
+            "type": "string"
+          },
+          "managers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdsManager"
+            },
+            "description": "Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager)"
           },
           "raw": {
             "$ref": "#/components/schemas/AdsOrganizationRawProperty"
@@ -72081,6 +73936,12 @@
           }
         }
       },
+      "PropertyAdsCampaignLabels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "AdsCampaign": {
         "type": "object",
         "properties": {
@@ -72154,6 +74015,12 @@
           "has_eu_political_ads": {
             "type": "boolean"
           },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AdsCampaignRawProperty"
           }
@@ -72198,6 +74065,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AdsPromoted"
+        }
+      },
+      "PropertyAdsCreativeLabels": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "AdsCreative": {
@@ -72254,6 +74127,9 @@
           "link_url": {
             "type": "string"
           },
+          "url_tags": {
+            "type": "string"
+          },
           "body": {
             "type": "string"
           },
@@ -72292,6 +74168,12 @@
           },
           "data": {
             "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AdsCreativeRawProperty"
@@ -73411,6 +75293,12 @@
               "$ref": "#/components/schemas/AdsPromoted"
             }
           },
+          "language_locale": {
+            "type": "string"
+          },
+          "creative_selection": {
+            "$ref": "#/components/schemas/AdsGroupCreativeSelection"
+          },
           "raw": {
             "$ref": "#/components/schemas/AdsGroupRawProperty"
           }
@@ -74227,6 +76115,12 @@
           }
         }
       },
+      "PropertyAdsReportMetricsCampaignLabels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "PropertyAdsReportMetricsCampaign": {
         "type": "object",
         "properties": {
@@ -74299,6 +76193,12 @@
           },
           "has_eu_political_ads": {
             "type": "boolean"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsCampaignRawProperty"
@@ -75178,6 +77078,12 @@
               "$ref": "#/components/schemas/AdsPromoted"
             }
           },
+          "language_locale": {
+            "type": "string"
+          },
+          "creative_selection": {
+            "$ref": "#/components/schemas/PropertyAdsReportMetricsGroupCreativeSelection"
+          },
           "raw": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsGroupRawProperty"
           }
@@ -75290,6 +77196,12 @@
           "$ref": "#/components/schemas/AdsPromoted"
         }
       },
+      "PropertyAdsReportMetricsCreativeLabels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
       "PropertyAdsReportMetricsCreative": {
         "type": "object",
         "properties": {
@@ -75344,6 +77256,9 @@
           "link_url": {
             "type": "string"
           },
+          "url_tags": {
+            "type": "string"
+          },
           "body": {
             "type": "string"
           },
@@ -75382,6 +77297,12 @@
           },
           "data": {
             "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/PropertyAdsReportMetricsCreativeRawProperty"
@@ -81543,12 +83464,6 @@
           },
           "list_segment_id": {
             "$ref": "#/components/schemas/IntegrationSupportListSegmentId"
-          },
-          "virtual_webhook_segment_id": {
-            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookSegmentId"
-          },
-          "native_webhook_segment_id": {
-            "$ref": "#/components/schemas/IntegrationSupportNativeWebhookSegmentId"
           }
         }
       },
@@ -84069,6 +85984,18 @@
         "type": "object"
       },
       "AccountingExpenseRaw": {
+        "type": "object"
+      },
+      "AccountingQuoteRaw": {
+        "type": "object"
+      },
+      "AccountingAgedreceivableRaw": {
+        "type": "object"
+      },
+      "AccountingAgedpayableRaw": {
+        "type": "object"
+      },
+      "AccountingProjectRaw": {
         "type": "object"
       },
       "StorageFileRaw": {
@@ -86625,6 +88552,40 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListAccountingQuotes200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingQuote"
+        }
+      },
+      "RemoveAccountingQuote204Response": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListAccountingAgedreceivables200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedreceivable"
+        }
+      },
+      "ListAccountingAgedpayables200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingAgedpayable"
+        }
+      },
+      "ListAccountingProjects200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingProject"
+        }
+      },
+      "RemoveAccountingProject204Response": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "ListStorageFiles200Response": {
         "type": "array",
         "items": {
@@ -87749,6 +89710,18 @@
         "type": "object"
       },
       "AccountingExpenseRawProperty": {
+        "type": "object"
+      },
+      "AccountingQuoteRawProperty": {
+        "type": "object"
+      },
+      "AccountingAgedreceivableRawProperty": {
+        "type": "object"
+      },
+      "AccountingAgedpayableRawProperty": {
+        "type": "object"
+      },
+      "AccountingProjectRawProperty": {
         "type": "object"
       },
       "StorageFileRawProperty": {
@@ -93179,6 +95152,231 @@
           ]
         }
       },
+      "AccountingQuotePaymentTerms": {
+        "enum": [
+          "ON_RECEIPT",
+          "NET_7",
+          "NET_10",
+          "NET_15",
+          "NET_20",
+          "NET_25",
+          "NET_30",
+          "NET_45",
+          "NET_60",
+          "NET_90",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingQuotePaymentTerms",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ON_RECEIPT",
+              "name": "OnReceipt"
+            },
+            {
+              "value": "NET_7",
+              "name": "Net7"
+            },
+            {
+              "value": "NET_10",
+              "name": "Net10"
+            },
+            {
+              "value": "NET_15",
+              "name": "Net15"
+            },
+            {
+              "value": "NET_20",
+              "name": "Net20"
+            },
+            {
+              "value": "NET_25",
+              "name": "Net25"
+            },
+            {
+              "value": "NET_30",
+              "name": "Net30"
+            },
+            {
+              "value": "NET_45",
+              "name": "Net45"
+            },
+            {
+              "value": "NET_60",
+              "name": "Net60"
+            },
+            {
+              "value": "NET_90",
+              "name": "Net90"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingQuoteStatus": {
+        "enum": [
+          "DRAFT",
+          "SENT",
+          "ACCEPTED",
+          "DECLINED",
+          "INVOICED",
+          "EXPIRED",
+          "VOIDED",
+          "DELETED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingQuoteStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "SENT",
+              "name": "Sent"
+            },
+            {
+              "value": "ACCEPTED",
+              "name": "Accepted"
+            },
+            {
+              "value": "DECLINED",
+              "name": "Declined"
+            },
+            {
+              "value": "INVOICED",
+              "name": "Invoiced"
+            },
+            {
+              "value": "EXPIRED",
+              "name": "Expired"
+            },
+            {
+              "value": "VOIDED",
+              "name": "Voided"
+            },
+            {
+              "value": "DELETED",
+              "name": "Deleted"
+            }
+          ]
+        }
+      },
+      "AccountingQuoteTaxMode": {
+        "enum": [
+          "INCLUSIVE",
+          "EXCLUSIVE",
+          "NONE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingQuoteTaxMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "INCLUSIVE",
+              "name": "Inclusive"
+            },
+            {
+              "value": "EXCLUSIVE",
+              "name": "Exclusive"
+            },
+            {
+              "value": "NONE",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "AccountingProjectStatus": {
+        "enum": [
+          "NOT_STARTED",
+          "IN_PROGRESS",
+          "ON_HOLD",
+          "COMPLETED",
+          "CANCELLED",
+          "CLOSED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingProjectStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "NOT_STARTED",
+              "name": "NotStarted"
+            },
+            {
+              "value": "IN_PROGRESS",
+              "name": "InProgress"
+            },
+            {
+              "value": "ON_HOLD",
+              "name": "OnHold"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "CANCELLED",
+              "name": "Cancelled"
+            },
+            {
+              "value": "CLOSED",
+              "name": "Closed"
+            }
+          ]
+        }
+      },
+      "AccountingProjectBillingType": {
+        "enum": [
+          "FIXED_PRICE",
+          "TIME_AND_MATERIALS",
+          "MILESTONE",
+          "NON_BILLABLE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingProjectBillingType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "FIXED_PRICE",
+              "name": "FixedPrice"
+            },
+            {
+              "value": "TIME_AND_MATERIALS",
+              "name": "TimeAndMaterials"
+            },
+            {
+              "value": "MILESTONE",
+              "name": "Milestone"
+            },
+            {
+              "value": "NON_BILLABLE",
+              "name": "NonBillable"
+            }
+          ]
+        }
+      },
       "PropertyStoragePermissionRolesItem": {
         "enum": [
           "OWNER",
@@ -94549,6 +96747,59 @@
             {
               "value": "TENTATIVE",
               "name": "Tentative"
+            }
+          ]
+        }
+      },
+      "AdsOrganizationStatus": {
+        "enum": [
+          "UNSPECIFIED",
+          "ACTIVE",
+          "PAUSED",
+          "ARCHIVED",
+          "DRAFT",
+          "SCHEDULED_FOR_DELETION",
+          "PROCESSING",
+          "PROCESSING_FAILED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsOrganizationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "UNSPECIFIED",
+              "name": "Unspecified"
+            },
+            {
+              "value": "ACTIVE",
+              "name": "Active"
+            },
+            {
+              "value": "PAUSED",
+              "name": "Paused"
+            },
+            {
+              "value": "ARCHIVED",
+              "name": "Archived"
+            },
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "SCHEDULED_FOR_DELETION",
+              "name": "ScheduledForDeletion"
+            },
+            {
+              "value": "PROCESSING",
+              "name": "Processing"
+            },
+            {
+              "value": "PROCESSING_FAILED",
+              "name": "ProcessingFailed"
             }
           ]
         }
@@ -96818,6 +99069,29 @@
           ]
         }
       },
+      "AdsGroupCreativeSelection": {
+        "enum": [
+          "OPTIMIZED",
+          "ROUND_ROBIN"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AdsGroupCreativeSelection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "OPTIMIZED",
+              "name": "Optimized"
+            },
+            {
+              "value": "ROUND_ROBIN",
+              "name": "RoundRobin"
+            }
+          ]
+        }
+      },
       "AdsAdStatus": {
         "enum": [
           "UNSPECIFIED",
@@ -98407,6 +100681,29 @@
             {
               "value": "NONE",
               "name": "None"
+            }
+          ]
+        }
+      },
+      "PropertyAdsReportMetricsGroupCreativeSelection": {
+        "enum": [
+          "OPTIMIZED",
+          "ROUND_ROBIN"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PropertyAdsReportMetricsGroupCreativeSelection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "OPTIMIZED",
+              "name": "Optimized"
+            },
+            {
+              "value": "ROUND_ROBIN",
+              "name": "RoundRobin"
             }
           ]
         }
@@ -102251,6 +104548,12 @@
           "payment_payment_write",
           "accounting_cashflow_read",
           "accounting_cashflow_write",
+          "accounting_quote_read",
+          "accounting_quote_write",
+          "accounting_agedreceivable_read",
+          "accounting_agedpayable_read",
+          "accounting_project_read",
+          "accounting_project_write",
           "payment_payout_read",
           "payment_refund_read",
           "payment_link_read",
@@ -102672,6 +104975,30 @@
             {
               "value": "accounting_cashflow_write",
               "name": "AccountingCashflowWrite"
+            },
+            {
+              "value": "accounting_quote_read",
+              "name": "AccountingQuoteRead"
+            },
+            {
+              "value": "accounting_quote_write",
+              "name": "AccountingQuoteWrite"
+            },
+            {
+              "value": "accounting_agedreceivable_read",
+              "name": "AccountingAgedreceivableRead"
+            },
+            {
+              "value": "accounting_agedpayable_read",
+              "name": "AccountingAgedpayableRead"
+            },
+            {
+              "value": "accounting_project_read",
+              "name": "AccountingProjectRead"
+            },
+            {
+              "value": "accounting_project_write",
+              "name": "AccountingProjectWrite"
             },
             {
               "value": "payment_payout_read",
@@ -109367,62 +111694,6 @@
           ]
         }
       },
-      "IntegrationSupportVirtualWebhookSegmentId": {
-        "enum": [
-          "supported-required",
-          "supported",
-          "not-supported"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "IntegrationSupportVirtualWebhookSegmentId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "supported-required",
-              "name": "SupportedRequired"
-            },
-            {
-              "value": "supported",
-              "name": "Supported"
-            },
-            {
-              "value": "not-supported",
-              "name": "NotSupported"
-            }
-          ]
-        }
-      },
-      "IntegrationSupportNativeWebhookSegmentId": {
-        "enum": [
-          "supported-required",
-          "supported",
-          "not-supported"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "IntegrationSupportNativeWebhookSegmentId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "supported-required",
-              "name": "SupportedRequired"
-            },
-            {
-              "value": "supported",
-              "name": "Supported"
-            },
-            {
-              "value": "not-supported",
-              "name": "NotSupported"
-            }
-          ]
-        }
-      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -109445,6 +111716,10 @@
           "accounting_category",
           "accounting_expense",
           "accounting_cashflow",
+          "accounting_quote",
+          "accounting_agedreceivable",
+          "accounting_agedpayable",
+          "accounting_project",
           "payment_payment",
           "payment_link",
           "payment_payout",
@@ -109669,6 +111944,22 @@
             {
               "value": "accounting_cashflow",
               "name": "AccountingCashflow"
+            },
+            {
+              "value": "accounting_quote",
+              "name": "AccountingQuote"
+            },
+            {
+              "value": "accounting_agedreceivable",
+              "name": "AccountingAgedreceivable"
+            },
+            {
+              "value": "accounting_agedpayable",
+              "name": "AccountingAgedpayable"
+            },
+            {
+              "value": "accounting_project",
+              "name": "AccountingProject"
             },
             {
               "value": "payment_payment",
@@ -130647,6 +132938,7 @@
           "source",
           "organization_id",
           "category_ids",
+          "project_id",
           "attachments",
           "raw"
         ],
@@ -130709,6 +133001,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "attachments",
               "name": "Attachments"
             },
@@ -130734,6 +133030,7 @@
           "source",
           "organization_id",
           "category_ids",
+          "project_id",
           "attachments",
           "raw"
         ],
@@ -130796,6 +133093,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "attachments",
               "name": "Attachments"
             },
@@ -130821,6 +133122,7 @@
           "source",
           "organization_id",
           "category_ids",
+          "project_id",
           "attachments",
           "raw"
         ],
@@ -130883,6 +133185,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "attachments",
               "name": "Attachments"
             },
@@ -130908,6 +133214,7 @@
           "source",
           "organization_id",
           "category_ids",
+          "project_id",
           "attachments",
           "raw"
         ],
@@ -130970,6 +133277,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "attachments",
               "name": "Attachments"
             },
@@ -130995,6 +133306,7 @@
           "source",
           "organization_id",
           "category_ids",
+          "project_id",
           "attachments",
           "raw"
         ],
@@ -131057,6 +133369,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "attachments",
               "name": "Attachments"
             },
@@ -131088,6 +133404,7 @@
           "contacts",
           "organization_id",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -131173,6 +133490,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131200,6 +133521,7 @@
           "contacts",
           "organization_id",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -131285,6 +133607,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131312,6 +133638,7 @@
           "contacts",
           "organization_id",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -131397,6 +133724,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131424,6 +133755,7 @@
           "contacts",
           "organization_id",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -131509,6 +133841,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -131536,6 +133872,7 @@
           "contacts",
           "organization_id",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -131619,6 +133956,10 @@
             {
               "value": "category_ids",
               "name": "CategoryIds"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
             },
             {
               "value": "raw",
@@ -132321,6 +134662,7 @@
           "organization_id",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -132458,6 +134800,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132498,6 +134844,7 @@
           "organization_id",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -132635,6 +134982,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132675,6 +135026,7 @@
           "organization_id",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -132812,6 +135164,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -132852,6 +135208,7 @@
           "organization_id",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -132989,6 +135346,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133029,6 +135390,7 @@
           "organization_id",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133166,6 +135528,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133204,6 +135570,7 @@
           "payment_terms",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133333,6 +135700,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133371,6 +135742,7 @@
           "payment_terms",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133500,6 +135872,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133538,6 +135914,7 @@
           "payment_terms",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133667,6 +136044,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133705,6 +136086,7 @@
           "payment_terms",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133834,6 +136216,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -133872,6 +136258,7 @@
           "payment_terms",
           "payments",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -133999,6 +136386,10 @@
             {
               "value": "category_ids",
               "name": "CategoryIds"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
             },
             {
               "value": "raw",
@@ -138352,6 +140743,7 @@
           "status",
           "external_number",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -138457,6 +140849,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138489,6 +140885,7 @@
           "status",
           "external_number",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -138594,6 +140991,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138626,6 +141027,7 @@
           "status",
           "external_number",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -138731,6 +141133,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138763,6 +141169,7 @@
           "status",
           "external_number",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -138868,6 +141275,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138900,6 +141311,7 @@
           "status",
           "external_number",
           "category_ids",
+          "project_id",
           "raw"
         ],
         "type": "string",
@@ -139005,6 +141417,2068 @@
               "name": "CategoryIds"
             },
             {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateAccountingQuoteFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "quote_number",
+          "reference",
+          "title",
+          "summary",
+          "payment_terms",
+          "customer_message",
+          "memo",
+          "contact_id",
+          "contacts",
+          "issued_at",
+          "expires_at",
+          "sent_at",
+          "accepted_at",
+          "declined_at",
+          "status",
+          "currency",
+          "currency_rate",
+          "sub_total_amount",
+          "tax_amount",
+          "discount_amount",
+          "total_amount",
+          "tax_mode",
+          "lineitems",
+          "invoice_id",
+          "project_id",
+          "group_id",
+          "category_ids",
+          "url",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateAccountingQuoteFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "quote_number",
+              "name": "QuoteNumber"
+            },
+            {
+              "value": "reference",
+              "name": "Reference"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "summary",
+              "name": "Summary"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "customer_message",
+              "name": "CustomerMessage"
+            },
+            {
+              "value": "memo",
+              "name": "Memo"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
+              "value": "issued_at",
+              "name": "IssuedAt"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "sent_at",
+              "name": "SentAt"
+            },
+            {
+              "value": "accepted_at",
+              "name": "AcceptedAt"
+            },
+            {
+              "value": "declined_at",
+              "name": "DeclinedAt"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "currency_rate",
+              "name": "CurrencyRate"
+            },
+            {
+              "value": "sub_total_amount",
+              "name": "SubTotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "tax_mode",
+              "name": "TaxMode"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListAccountingQuotesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "quote_number",
+          "reference",
+          "title",
+          "summary",
+          "payment_terms",
+          "customer_message",
+          "memo",
+          "contact_id",
+          "contacts",
+          "issued_at",
+          "expires_at",
+          "sent_at",
+          "accepted_at",
+          "declined_at",
+          "status",
+          "currency",
+          "currency_rate",
+          "sub_total_amount",
+          "tax_amount",
+          "discount_amount",
+          "total_amount",
+          "tax_mode",
+          "lineitems",
+          "invoice_id",
+          "project_id",
+          "group_id",
+          "category_ids",
+          "url",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListAccountingQuotesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "quote_number",
+              "name": "QuoteNumber"
+            },
+            {
+              "value": "reference",
+              "name": "Reference"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "summary",
+              "name": "Summary"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "customer_message",
+              "name": "CustomerMessage"
+            },
+            {
+              "value": "memo",
+              "name": "Memo"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
+              "value": "issued_at",
+              "name": "IssuedAt"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "sent_at",
+              "name": "SentAt"
+            },
+            {
+              "value": "accepted_at",
+              "name": "AcceptedAt"
+            },
+            {
+              "value": "declined_at",
+              "name": "DeclinedAt"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "currency_rate",
+              "name": "CurrencyRate"
+            },
+            {
+              "value": "sub_total_amount",
+              "name": "SubTotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "tax_mode",
+              "name": "TaxMode"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetAccountingQuoteFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "quote_number",
+          "reference",
+          "title",
+          "summary",
+          "payment_terms",
+          "customer_message",
+          "memo",
+          "contact_id",
+          "contacts",
+          "issued_at",
+          "expires_at",
+          "sent_at",
+          "accepted_at",
+          "declined_at",
+          "status",
+          "currency",
+          "currency_rate",
+          "sub_total_amount",
+          "tax_amount",
+          "discount_amount",
+          "total_amount",
+          "tax_mode",
+          "lineitems",
+          "invoice_id",
+          "project_id",
+          "group_id",
+          "category_ids",
+          "url",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetAccountingQuoteFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "quote_number",
+              "name": "QuoteNumber"
+            },
+            {
+              "value": "reference",
+              "name": "Reference"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "summary",
+              "name": "Summary"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "customer_message",
+              "name": "CustomerMessage"
+            },
+            {
+              "value": "memo",
+              "name": "Memo"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
+              "value": "issued_at",
+              "name": "IssuedAt"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "sent_at",
+              "name": "SentAt"
+            },
+            {
+              "value": "accepted_at",
+              "name": "AcceptedAt"
+            },
+            {
+              "value": "declined_at",
+              "name": "DeclinedAt"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "currency_rate",
+              "name": "CurrencyRate"
+            },
+            {
+              "value": "sub_total_amount",
+              "name": "SubTotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "tax_mode",
+              "name": "TaxMode"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateAccountingQuoteFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "quote_number",
+          "reference",
+          "title",
+          "summary",
+          "payment_terms",
+          "customer_message",
+          "memo",
+          "contact_id",
+          "contacts",
+          "issued_at",
+          "expires_at",
+          "sent_at",
+          "accepted_at",
+          "declined_at",
+          "status",
+          "currency",
+          "currency_rate",
+          "sub_total_amount",
+          "tax_amount",
+          "discount_amount",
+          "total_amount",
+          "tax_mode",
+          "lineitems",
+          "invoice_id",
+          "project_id",
+          "group_id",
+          "category_ids",
+          "url",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateAccountingQuoteFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "quote_number",
+              "name": "QuoteNumber"
+            },
+            {
+              "value": "reference",
+              "name": "Reference"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "summary",
+              "name": "Summary"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "customer_message",
+              "name": "CustomerMessage"
+            },
+            {
+              "value": "memo",
+              "name": "Memo"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
+              "value": "issued_at",
+              "name": "IssuedAt"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "sent_at",
+              "name": "SentAt"
+            },
+            {
+              "value": "accepted_at",
+              "name": "AcceptedAt"
+            },
+            {
+              "value": "declined_at",
+              "name": "DeclinedAt"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "currency_rate",
+              "name": "CurrencyRate"
+            },
+            {
+              "value": "sub_total_amount",
+              "name": "SubTotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "tax_mode",
+              "name": "TaxMode"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchAccountingQuoteFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "quote_number",
+          "reference",
+          "title",
+          "summary",
+          "payment_terms",
+          "customer_message",
+          "memo",
+          "contact_id",
+          "contacts",
+          "issued_at",
+          "expires_at",
+          "sent_at",
+          "accepted_at",
+          "declined_at",
+          "status",
+          "currency",
+          "currency_rate",
+          "sub_total_amount",
+          "tax_amount",
+          "discount_amount",
+          "total_amount",
+          "tax_mode",
+          "lineitems",
+          "invoice_id",
+          "project_id",
+          "group_id",
+          "category_ids",
+          "url",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchAccountingQuoteFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "quote_number",
+              "name": "QuoteNumber"
+            },
+            {
+              "value": "reference",
+              "name": "Reference"
+            },
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "summary",
+              "name": "Summary"
+            },
+            {
+              "value": "payment_terms",
+              "name": "PaymentTerms"
+            },
+            {
+              "value": "customer_message",
+              "name": "CustomerMessage"
+            },
+            {
+              "value": "memo",
+              "name": "Memo"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "contacts",
+              "name": "Contacts"
+            },
+            {
+              "value": "issued_at",
+              "name": "IssuedAt"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "sent_at",
+              "name": "SentAt"
+            },
+            {
+              "value": "accepted_at",
+              "name": "AcceptedAt"
+            },
+            {
+              "value": "declined_at",
+              "name": "DeclinedAt"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "currency_rate",
+              "name": "CurrencyRate"
+            },
+            {
+              "value": "sub_total_amount",
+              "name": "SubTotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "tax_mode",
+              "name": "TaxMode"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
+              "value": "invoice_id",
+              "name": "InvoiceId"
+            },
+            {
+              "value": "project_id",
+              "name": "ProjectId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetAccountingAgedreceivableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "currency",
+          "start_at",
+          "end_at",
+          "total_current_amount",
+          "total_overdue_amount",
+          "total_amount",
+          "periods",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetAccountingAgedreceivableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "total_current_amount",
+              "name": "TotalCurrentAmount"
+            },
+            {
+              "value": "total_overdue_amount",
+              "name": "TotalOverdueAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "periods",
+              "name": "Periods"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListAccountingAgedreceivablesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "currency",
+          "start_at",
+          "end_at",
+          "total_current_amount",
+          "total_overdue_amount",
+          "total_amount",
+          "periods",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListAccountingAgedreceivablesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "total_current_amount",
+              "name": "TotalCurrentAmount"
+            },
+            {
+              "value": "total_overdue_amount",
+              "name": "TotalOverdueAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "periods",
+              "name": "Periods"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetAccountingAgedpayableFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "currency",
+          "start_at",
+          "end_at",
+          "total_current_amount",
+          "total_overdue_amount",
+          "total_amount",
+          "periods",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetAccountingAgedpayableFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "total_current_amount",
+              "name": "TotalCurrentAmount"
+            },
+            {
+              "value": "total_overdue_amount",
+              "name": "TotalOverdueAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "periods",
+              "name": "Periods"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListAccountingAgedpayablesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "currency",
+          "start_at",
+          "end_at",
+          "total_current_amount",
+          "total_overdue_amount",
+          "total_amount",
+          "periods",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListAccountingAgedpayablesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "total_current_amount",
+              "name": "TotalCurrentAmount"
+            },
+            {
+              "value": "total_overdue_amount",
+              "name": "TotalOverdueAmount"
+            },
+            {
+              "value": "total_amount",
+              "name": "TotalAmount"
+            },
+            {
+              "value": "periods",
+              "name": "Periods"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreateAccountingProjectFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "code",
+          "description",
+          "status",
+          "is_active",
+          "is_billable",
+          "contact_id",
+          "parent_id",
+          "manager_user_id",
+          "started_at",
+          "due_at",
+          "ended_at",
+          "currency",
+          "estimate_amount",
+          "estimated_cost_amount",
+          "actual_cost_amount",
+          "invoiced_amount",
+          "to_be_invoiced_amount",
+          "expense_amount",
+          "deposit_amount",
+          "deposit_applied_amount",
+          "credit_note_amount",
+          "minutes_logged",
+          "minutes_to_be_invoiced",
+          "percent_complete",
+          "billing_type",
+          "category_ids",
+          "location_id",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateAccountingProjectFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_billable",
+              "name": "IsBillable"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "manager_user_id",
+              "name": "ManagerUserId"
+            },
+            {
+              "value": "started_at",
+              "name": "StartedAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "ended_at",
+              "name": "EndedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "estimate_amount",
+              "name": "EstimateAmount"
+            },
+            {
+              "value": "estimated_cost_amount",
+              "name": "EstimatedCostAmount"
+            },
+            {
+              "value": "actual_cost_amount",
+              "name": "ActualCostAmount"
+            },
+            {
+              "value": "invoiced_amount",
+              "name": "InvoicedAmount"
+            },
+            {
+              "value": "to_be_invoiced_amount",
+              "name": "ToBeInvoicedAmount"
+            },
+            {
+              "value": "expense_amount",
+              "name": "ExpenseAmount"
+            },
+            {
+              "value": "deposit_amount",
+              "name": "DepositAmount"
+            },
+            {
+              "value": "deposit_applied_amount",
+              "name": "DepositAppliedAmount"
+            },
+            {
+              "value": "credit_note_amount",
+              "name": "CreditNoteAmount"
+            },
+            {
+              "value": "minutes_logged",
+              "name": "MinutesLogged"
+            },
+            {
+              "value": "minutes_to_be_invoiced",
+              "name": "MinutesToBeInvoiced"
+            },
+            {
+              "value": "percent_complete",
+              "name": "PercentComplete"
+            },
+            {
+              "value": "billing_type",
+              "name": "BillingType"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListAccountingProjectsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "code",
+          "description",
+          "status",
+          "is_active",
+          "is_billable",
+          "contact_id",
+          "parent_id",
+          "manager_user_id",
+          "started_at",
+          "due_at",
+          "ended_at",
+          "currency",
+          "estimate_amount",
+          "estimated_cost_amount",
+          "actual_cost_amount",
+          "invoiced_amount",
+          "to_be_invoiced_amount",
+          "expense_amount",
+          "deposit_amount",
+          "deposit_applied_amount",
+          "credit_note_amount",
+          "minutes_logged",
+          "minutes_to_be_invoiced",
+          "percent_complete",
+          "billing_type",
+          "category_ids",
+          "location_id",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListAccountingProjectsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_billable",
+              "name": "IsBillable"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "manager_user_id",
+              "name": "ManagerUserId"
+            },
+            {
+              "value": "started_at",
+              "name": "StartedAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "ended_at",
+              "name": "EndedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "estimate_amount",
+              "name": "EstimateAmount"
+            },
+            {
+              "value": "estimated_cost_amount",
+              "name": "EstimatedCostAmount"
+            },
+            {
+              "value": "actual_cost_amount",
+              "name": "ActualCostAmount"
+            },
+            {
+              "value": "invoiced_amount",
+              "name": "InvoicedAmount"
+            },
+            {
+              "value": "to_be_invoiced_amount",
+              "name": "ToBeInvoicedAmount"
+            },
+            {
+              "value": "expense_amount",
+              "name": "ExpenseAmount"
+            },
+            {
+              "value": "deposit_amount",
+              "name": "DepositAmount"
+            },
+            {
+              "value": "deposit_applied_amount",
+              "name": "DepositAppliedAmount"
+            },
+            {
+              "value": "credit_note_amount",
+              "name": "CreditNoteAmount"
+            },
+            {
+              "value": "minutes_logged",
+              "name": "MinutesLogged"
+            },
+            {
+              "value": "minutes_to_be_invoiced",
+              "name": "MinutesToBeInvoiced"
+            },
+            {
+              "value": "percent_complete",
+              "name": "PercentComplete"
+            },
+            {
+              "value": "billing_type",
+              "name": "BillingType"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetAccountingProjectFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "code",
+          "description",
+          "status",
+          "is_active",
+          "is_billable",
+          "contact_id",
+          "parent_id",
+          "manager_user_id",
+          "started_at",
+          "due_at",
+          "ended_at",
+          "currency",
+          "estimate_amount",
+          "estimated_cost_amount",
+          "actual_cost_amount",
+          "invoiced_amount",
+          "to_be_invoiced_amount",
+          "expense_amount",
+          "deposit_amount",
+          "deposit_applied_amount",
+          "credit_note_amount",
+          "minutes_logged",
+          "minutes_to_be_invoiced",
+          "percent_complete",
+          "billing_type",
+          "category_ids",
+          "location_id",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetAccountingProjectFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_billable",
+              "name": "IsBillable"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "manager_user_id",
+              "name": "ManagerUserId"
+            },
+            {
+              "value": "started_at",
+              "name": "StartedAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "ended_at",
+              "name": "EndedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "estimate_amount",
+              "name": "EstimateAmount"
+            },
+            {
+              "value": "estimated_cost_amount",
+              "name": "EstimatedCostAmount"
+            },
+            {
+              "value": "actual_cost_amount",
+              "name": "ActualCostAmount"
+            },
+            {
+              "value": "invoiced_amount",
+              "name": "InvoicedAmount"
+            },
+            {
+              "value": "to_be_invoiced_amount",
+              "name": "ToBeInvoicedAmount"
+            },
+            {
+              "value": "expense_amount",
+              "name": "ExpenseAmount"
+            },
+            {
+              "value": "deposit_amount",
+              "name": "DepositAmount"
+            },
+            {
+              "value": "deposit_applied_amount",
+              "name": "DepositAppliedAmount"
+            },
+            {
+              "value": "credit_note_amount",
+              "name": "CreditNoteAmount"
+            },
+            {
+              "value": "minutes_logged",
+              "name": "MinutesLogged"
+            },
+            {
+              "value": "minutes_to_be_invoiced",
+              "name": "MinutesToBeInvoiced"
+            },
+            {
+              "value": "percent_complete",
+              "name": "PercentComplete"
+            },
+            {
+              "value": "billing_type",
+              "name": "BillingType"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateAccountingProjectFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "code",
+          "description",
+          "status",
+          "is_active",
+          "is_billable",
+          "contact_id",
+          "parent_id",
+          "manager_user_id",
+          "started_at",
+          "due_at",
+          "ended_at",
+          "currency",
+          "estimate_amount",
+          "estimated_cost_amount",
+          "actual_cost_amount",
+          "invoiced_amount",
+          "to_be_invoiced_amount",
+          "expense_amount",
+          "deposit_amount",
+          "deposit_applied_amount",
+          "credit_note_amount",
+          "minutes_logged",
+          "minutes_to_be_invoiced",
+          "percent_complete",
+          "billing_type",
+          "category_ids",
+          "location_id",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateAccountingProjectFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_billable",
+              "name": "IsBillable"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "manager_user_id",
+              "name": "ManagerUserId"
+            },
+            {
+              "value": "started_at",
+              "name": "StartedAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "ended_at",
+              "name": "EndedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "estimate_amount",
+              "name": "EstimateAmount"
+            },
+            {
+              "value": "estimated_cost_amount",
+              "name": "EstimatedCostAmount"
+            },
+            {
+              "value": "actual_cost_amount",
+              "name": "ActualCostAmount"
+            },
+            {
+              "value": "invoiced_amount",
+              "name": "InvoicedAmount"
+            },
+            {
+              "value": "to_be_invoiced_amount",
+              "name": "ToBeInvoicedAmount"
+            },
+            {
+              "value": "expense_amount",
+              "name": "ExpenseAmount"
+            },
+            {
+              "value": "deposit_amount",
+              "name": "DepositAmount"
+            },
+            {
+              "value": "deposit_applied_amount",
+              "name": "DepositAppliedAmount"
+            },
+            {
+              "value": "credit_note_amount",
+              "name": "CreditNoteAmount"
+            },
+            {
+              "value": "minutes_logged",
+              "name": "MinutesLogged"
+            },
+            {
+              "value": "minutes_to_be_invoiced",
+              "name": "MinutesToBeInvoiced"
+            },
+            {
+              "value": "percent_complete",
+              "name": "PercentComplete"
+            },
+            {
+              "value": "billing_type",
+              "name": "BillingType"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchAccountingProjectFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "code",
+          "description",
+          "status",
+          "is_active",
+          "is_billable",
+          "contact_id",
+          "parent_id",
+          "manager_user_id",
+          "started_at",
+          "due_at",
+          "ended_at",
+          "currency",
+          "estimate_amount",
+          "estimated_cost_amount",
+          "actual_cost_amount",
+          "invoiced_amount",
+          "to_be_invoiced_amount",
+          "expense_amount",
+          "deposit_amount",
+          "deposit_applied_amount",
+          "credit_note_amount",
+          "minutes_logged",
+          "minutes_to_be_invoiced",
+          "percent_complete",
+          "billing_type",
+          "category_ids",
+          "location_id",
+          "organization_id",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchAccountingProjectFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "code",
+              "name": "Code"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "is_billable",
+              "name": "IsBillable"
+            },
+            {
+              "value": "contact_id",
+              "name": "ContactId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "manager_user_id",
+              "name": "ManagerUserId"
+            },
+            {
+              "value": "started_at",
+              "name": "StartedAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "ended_at",
+              "name": "EndedAt"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "estimate_amount",
+              "name": "EstimateAmount"
+            },
+            {
+              "value": "estimated_cost_amount",
+              "name": "EstimatedCostAmount"
+            },
+            {
+              "value": "actual_cost_amount",
+              "name": "ActualCostAmount"
+            },
+            {
+              "value": "invoiced_amount",
+              "name": "InvoicedAmount"
+            },
+            {
+              "value": "to_be_invoiced_amount",
+              "name": "ToBeInvoicedAmount"
+            },
+            {
+              "value": "expense_amount",
+              "name": "ExpenseAmount"
+            },
+            {
+              "value": "deposit_amount",
+              "name": "DepositAmount"
+            },
+            {
+              "value": "deposit_applied_amount",
+              "name": "DepositAppliedAmount"
+            },
+            {
+              "value": "credit_note_amount",
+              "name": "CreditNoteAmount"
+            },
+            {
+              "value": "minutes_logged",
+              "name": "MinutesLogged"
+            },
+            {
+              "value": "minutes_to_be_invoiced",
+              "name": "MinutesToBeInvoiced"
+            },
+            {
+              "value": "percent_complete",
+              "name": "PercentComplete"
+            },
+            {
+              "value": "billing_type",
+              "name": "BillingType"
+            },
+            {
+              "value": "category_ids",
+              "name": "CategoryIds"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139030,6 +143504,7 @@
           "version",
           "web_url",
           "references",
+          "tags",
           "raw"
         ],
         "type": "string",
@@ -139107,6 +143582,10 @@
               "name": "References"
             },
             {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139132,6 +143611,7 @@
           "version",
           "web_url",
           "references",
+          "tags",
           "raw"
         ],
         "type": "string",
@@ -139209,6 +143689,10 @@
               "name": "References"
             },
             {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139234,6 +143718,7 @@
           "version",
           "web_url",
           "references",
+          "tags",
           "raw"
         ],
         "type": "string",
@@ -139311,6 +143796,10 @@
               "name": "References"
             },
             {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139336,6 +143825,7 @@
           "version",
           "web_url",
           "references",
+          "tags",
           "raw"
         ],
         "type": "string",
@@ -139413,6 +143903,10 @@
               "name": "References"
             },
             {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139438,6 +143932,7 @@
           "version",
           "web_url",
           "references",
+          "tags",
           "raw"
         ],
         "type": "string",
@@ -139513,6 +144008,10 @@
             {
               "value": "references",
               "name": "References"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
             },
             {
               "value": "raw",
@@ -150818,6 +155317,9 @@
           "currency",
           "timezone",
           "parent_id",
+          "status",
+          "account_number",
+          "managers",
           "raw"
         ],
         "type": "string",
@@ -150855,6 +155357,18 @@
               "name": "ParentId"
             },
             {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "account_number",
+              "name": "AccountNumber"
+            },
+            {
+              "value": "managers",
+              "name": "Managers"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -150870,6 +155384,9 @@
           "currency",
           "timezone",
           "parent_id",
+          "status",
+          "account_number",
+          "managers",
           "raw"
         ],
         "type": "string",
@@ -150907,6 +155424,18 @@
               "name": "ParentId"
             },
             {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "account_number",
+              "name": "AccountNumber"
+            },
+            {
+              "value": "managers",
+              "name": "Managers"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -150922,6 +155451,9 @@
           "currency",
           "timezone",
           "parent_id",
+          "status",
+          "account_number",
+          "managers",
           "raw"
         ],
         "type": "string",
@@ -150959,6 +155491,18 @@
               "name": "ParentId"
             },
             {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "account_number",
+              "name": "AccountNumber"
+            },
+            {
+              "value": "managers",
+              "name": "Managers"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -150974,6 +155518,9 @@
           "currency",
           "timezone",
           "parent_id",
+          "status",
+          "account_number",
+          "managers",
           "raw"
         ],
         "type": "string",
@@ -151011,6 +155558,18 @@
               "name": "ParentId"
             },
             {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "account_number",
+              "name": "AccountNumber"
+            },
+            {
+              "value": "managers",
+              "name": "Managers"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151026,6 +155585,9 @@
           "currency",
           "timezone",
           "parent_id",
+          "status",
+          "account_number",
+          "managers",
           "raw"
         ],
         "type": "string",
@@ -151063,6 +155625,18 @@
               "name": "ParentId"
             },
             {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "account_number",
+              "name": "AccountNumber"
+            },
+            {
+              "value": "managers",
+              "name": "Managers"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151093,6 +155667,7 @@
           "currency",
           "category",
           "has_eu_political_ads",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151190,6 +155765,10 @@
               "name": "HasEuPoliticalAds"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151220,6 +155799,7 @@
           "currency",
           "category",
           "has_eu_political_ads",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151317,6 +155897,10 @@
               "name": "HasEuPoliticalAds"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151347,6 +155931,7 @@
           "currency",
           "category",
           "has_eu_political_ads",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151444,6 +156029,10 @@
               "name": "HasEuPoliticalAds"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151474,6 +156063,7 @@
           "currency",
           "category",
           "has_eu_political_ads",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151571,6 +156161,10 @@
               "name": "HasEuPoliticalAds"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151601,6 +156195,7 @@
           "currency",
           "category",
           "has_eu_political_ads",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151698,6 +156293,10 @@
               "name": "HasEuPoliticalAds"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151721,6 +156320,7 @@
           "height",
           "asset_urls",
           "link_url",
+          "url_tags",
           "body",
           "title",
           "cta",
@@ -151733,6 +156333,7 @@
           "path1",
           "path2",
           "data",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151802,6 +156403,10 @@
               "name": "LinkUrl"
             },
             {
+              "value": "url_tags",
+              "name": "UrlTags"
+            },
+            {
               "value": "body",
               "name": "Body"
             },
@@ -151850,6 +156455,10 @@
               "name": "Data"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -151873,6 +156482,7 @@
           "height",
           "asset_urls",
           "link_url",
+          "url_tags",
           "body",
           "title",
           "cta",
@@ -151885,6 +156495,7 @@
           "path1",
           "path2",
           "data",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -151954,6 +156565,10 @@
               "name": "LinkUrl"
             },
             {
+              "value": "url_tags",
+              "name": "UrlTags"
+            },
+            {
               "value": "body",
               "name": "Body"
             },
@@ -152002,6 +156617,10 @@
               "name": "Data"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -152025,6 +156644,7 @@
           "height",
           "asset_urls",
           "link_url",
+          "url_tags",
           "body",
           "title",
           "cta",
@@ -152037,6 +156657,7 @@
           "path1",
           "path2",
           "data",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -152106,6 +156727,10 @@
               "name": "LinkUrl"
             },
             {
+              "value": "url_tags",
+              "name": "UrlTags"
+            },
+            {
               "value": "body",
               "name": "Body"
             },
@@ -152154,6 +156779,10 @@
               "name": "Data"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -152177,6 +156806,7 @@
           "height",
           "asset_urls",
           "link_url",
+          "url_tags",
           "body",
           "title",
           "cta",
@@ -152189,6 +156819,7 @@
           "path1",
           "path2",
           "data",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -152258,6 +156889,10 @@
               "name": "LinkUrl"
             },
             {
+              "value": "url_tags",
+              "name": "UrlTags"
+            },
+            {
               "value": "body",
               "name": "Body"
             },
@@ -152306,6 +156941,10 @@
               "name": "Data"
             },
             {
+              "value": "labels",
+              "name": "Labels"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -152329,6 +156968,7 @@
           "height",
           "asset_urls",
           "link_url",
+          "url_tags",
           "body",
           "title",
           "cta",
@@ -152341,6 +156981,7 @@
           "path1",
           "path2",
           "data",
+          "labels",
           "raw"
         ],
         "type": "string",
@@ -152410,6 +157051,10 @@
               "name": "LinkUrl"
             },
             {
+              "value": "url_tags",
+              "name": "UrlTags"
+            },
+            {
               "value": "body",
               "name": "Body"
             },
@@ -152456,6 +157101,10 @@
             {
               "value": "data",
               "name": "Data"
+            },
+            {
+              "value": "labels",
+              "name": "Labels"
             },
             {
               "value": "raw",
@@ -153161,6 +157810,8 @@
           "billing_event",
           "currency",
           "promoted",
+          "language_locale",
+          "creative_selection",
           "raw"
         ],
         "type": "string",
@@ -153286,6 +157937,14 @@
               "name": "Promoted"
             },
             {
+              "value": "language_locale",
+              "name": "LanguageLocale"
+            },
+            {
+              "value": "creative_selection",
+              "name": "CreativeSelection"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -153323,6 +157982,8 @@
           "billing_event",
           "currency",
           "promoted",
+          "language_locale",
+          "creative_selection",
           "raw"
         ],
         "type": "string",
@@ -153448,6 +158109,14 @@
               "name": "Promoted"
             },
             {
+              "value": "language_locale",
+              "name": "LanguageLocale"
+            },
+            {
+              "value": "creative_selection",
+              "name": "CreativeSelection"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -153485,6 +158154,8 @@
           "billing_event",
           "currency",
           "promoted",
+          "language_locale",
+          "creative_selection",
           "raw"
         ],
         "type": "string",
@@ -153610,6 +158281,14 @@
               "name": "Promoted"
             },
             {
+              "value": "language_locale",
+              "name": "LanguageLocale"
+            },
+            {
+              "value": "creative_selection",
+              "name": "CreativeSelection"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -153647,6 +158326,8 @@
           "billing_event",
           "currency",
           "promoted",
+          "language_locale",
+          "creative_selection",
           "raw"
         ],
         "type": "string",
@@ -153772,6 +158453,14 @@
               "name": "Promoted"
             },
             {
+              "value": "language_locale",
+              "name": "LanguageLocale"
+            },
+            {
+              "value": "creative_selection",
+              "name": "CreativeSelection"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -153809,6 +158498,8 @@
           "billing_event",
           "currency",
           "promoted",
+          "language_locale",
+          "creative_selection",
           "raw"
         ],
         "type": "string",
@@ -153932,6 +158623,14 @@
             {
               "value": "promoted",
               "name": "Promoted"
+            },
+            {
+              "value": "language_locale",
+              "name": "LanguageLocale"
+            },
+            {
+              "value": "creative_selection",
+              "name": "CreativeSelection"
             },
             {
               "value": "raw",
@@ -169870,6 +174569,26 @@
         },
         "required": true
       },
+      "AccountingQuote": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AccountingQuote"
+            }
+          }
+        },
+        "required": true
+      },
+      "AccountingProject": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AccountingProject"
+            }
+          }
+        },
+        "required": true
+      },
       "StorageFile": {
         "content": {
           "application/json": {
@@ -170799,6 +175518,18 @@
       "name": "expense"
     },
     {
+      "name": "quote"
+    },
+    {
+      "name": "agedreceivable"
+    },
+    {
+      "name": "agedpayable"
+    },
+    {
+      "name": "project"
+    },
+    {
       "name": "storage"
     },
     {
@@ -170869,9 +175600,6 @@
     },
     {
       "name": "task"
-    },
-    {
-      "name": "project"
     },
     {
       "name": "change"

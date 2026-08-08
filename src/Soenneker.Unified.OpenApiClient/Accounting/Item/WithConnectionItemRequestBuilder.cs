@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Account;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Agedpayable;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Bill;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Cashflow;
@@ -15,7 +17,9 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Journal;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Order;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Organization;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Project;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Quote;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Report;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate;
@@ -38,6 +42,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Account.AccountRequestBuilder Account
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The agedpayable property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Agedpayable.AgedpayableRequestBuilder Agedpayable
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Agedpayable.AgedpayableRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The agedreceivable property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.AgedreceivableRequestBuilder Agedreceivable
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.AgedreceivableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The balancesheet property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet.BalancesheetRequestBuilder Balancesheet
@@ -99,10 +113,20 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss.ProfitlossRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The project property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder Project
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The purchaseorder property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder.PurchaseorderRequestBuilder Purchaseorder
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder.PurchaseorderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The quote property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Quote.QuoteRequestBuilder Quote
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Quote.QuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The report property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Report.ReportRequestBuilder Report

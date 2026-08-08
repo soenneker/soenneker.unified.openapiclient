@@ -124,6 +124,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Promoted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "language_locale")]
+        #pragma warning disable CS1591
+        LanguageLocale,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "creative_selection")]
+        #pragma warning disable CS1591
+        CreativeSelection,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

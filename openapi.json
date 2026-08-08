@@ -233,6 +233,18 @@
          "name": "expense"
       },
       {
+         "name": "quote"
+      },
+      {
+         "name": "agedreceivable"
+      },
+      {
+         "name": "agedpayable"
+      },
+      {
+         "name": "project"
+      },
+      {
          "name": "storage"
       },
       {
@@ -303,9 +315,6 @@
       },
       {
          "name": "task"
-      },
-      {
-         "name": "project"
       },
       {
          "name": "change"
@@ -1074,6 +1083,26 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/AccountingExpense"
+                  }
+               }
+            }
+         },
+         "AccountingQuote": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AccountingQuote"
+                  }
+               }
+            }
+         },
+         "AccountingProject": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AccountingProject"
                   }
                }
             }
@@ -9296,6 +9325,9 @@
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingJournal_category_ids"
                },
+               "project_id": {
+                  "type": "string"
+               },
                "attachments": {
                   "$ref": "#/components/schemas/property_AccountingJournal_attachments"
                },
@@ -9445,6 +9477,9 @@
                },
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingTransaction_category_ids"
+               },
+               "project_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -10082,6 +10117,9 @@
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingInvoice_category_ids"
                },
+               "project_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10264,6 +10302,9 @@
                },
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingBill_category_ids"
+               },
+               "project_id": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -12102,6 +12143,9 @@
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingExpense_category_ids"
                },
+               "project_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -12112,6 +12156,504 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingExpense"
+            }
+         },
+         "property_AccountingQuote_contacts": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingTransactionContact"
+            },
+            "description": "denormalized parties, reusing the transaction contact shape"
+         },
+         "property_AccountingQuote_lineitems": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingLineitem"
+            }
+         },
+         "property_AccountingQuote_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "tracking categories / classes (AccountingCategory dimensions)"
+         },
+         "AccountingQuote": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "quote_number": {
+                  "type": "string"
+               },
+               "reference": {
+                  "type": "string"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "summary": {
+                  "type": "string"
+               },
+               "payment_terms": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_7",
+                     "NET_10",
+                     "NET_15",
+                     "NET_20",
+                     "NET_25",
+                     "NET_30",
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "customer_message": {
+                  "type": "string"
+               },
+               "memo": {
+                  "type": "string"
+               },
+               "contact_id": {
+                  "type": "string"
+               },
+               "contacts": {
+                  "$ref": "#/components/schemas/property_AccountingQuote_contacts"
+               },
+               "issued_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "expires_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "accepted_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "declined_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "DRAFT",
+                     "SENT",
+                     "ACCEPTED",
+                     "DECLINED",
+                     "INVOICED",
+                     "EXPIRED",
+                     "VOIDED",
+                     "DELETED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "currency_rate": {
+                  "type": "number"
+               },
+               "sub_total_amount": {
+                  "type": "number"
+               },
+               "tax_amount": {
+                  "type": "number"
+               },
+               "discount_amount": {
+                  "type": "number"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "tax_mode": {
+                  "type": "string",
+                  "enum": [
+                     "INCLUSIVE",
+                     "EXCLUSIVE",
+                     "NONE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "lineitems": {
+                  "$ref": "#/components/schemas/property_AccountingQuote_lineitems"
+               },
+               "invoice_id": {
+                  "type": "string"
+               },
+               "project_id": {
+                  "type": "string"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingQuote_category_ids"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingQuotes": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingQuote"
+            }
+         },
+         "property_AccountingAgedRow_contact": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_AccountingAgedRow_transaction": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "AccountingAgedRow": {
+            "type": "object",
+            "properties": {
+               "contact": {
+                  "$ref": "#/components/schemas/property_AccountingAgedRow_contact"
+               },
+               "transaction": {
+                  "$ref": "#/components/schemas/property_AccountingAgedRow_transaction"
+               },
+               "posted_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "balance_amount": {
+                  "type": "number"
+               }
+            }
+         },
+         "property_AccountingAgedPeriod_sub_items": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAgedRow"
+            }
+         },
+         "AccountingAgedPeriod": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "sub_items": {
+                  "$ref": "#/components/schemas/property_AccountingAgedPeriod_sub_items"
+               }
+            }
+         },
+         "property_AccountingAgedreceivable_periods": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAgedPeriod"
+            }
+         },
+         "AccountingAgedreceivable": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "total_current_amount": {
+                  "type": "number"
+               },
+               "total_overdue_amount": {
+                  "type": "number"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "periods": {
+                  "$ref": "#/components/schemas/property_AccountingAgedreceivable_periods"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingAgedreceivables": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAgedreceivable"
+            }
+         },
+         "property_AccountingAgedpayable_periods": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAgedPeriod"
+            }
+         },
+         "AccountingAgedpayable": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "total_current_amount": {
+                  "type": "number"
+               },
+               "total_overdue_amount": {
+                  "type": "number"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "periods": {
+                  "$ref": "#/components/schemas/property_AccountingAgedpayable_periods"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingAgedpayables": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingAgedpayable"
+            }
+         },
+         "property_AccountingProject_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "AccountingProject": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "code": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "NOT_STARTED",
+                     "IN_PROGRESS",
+                     "ON_HOLD",
+                     "COMPLETED",
+                     "CANCELLED",
+                     "CLOSED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "is_billable": {
+                  "type": "boolean"
+               },
+               "contact_id": {
+                  "type": "string"
+               },
+               "parent_id": {
+                  "type": "string"
+               },
+               "manager_user_id": {
+                  "type": "string"
+               },
+               "started_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "ended_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "estimate_amount": {
+                  "type": "number"
+               },
+               "estimated_cost_amount": {
+                  "type": "number"
+               },
+               "actual_cost_amount": {
+                  "type": "number"
+               },
+               "invoiced_amount": {
+                  "type": "number"
+               },
+               "to_be_invoiced_amount": {
+                  "type": "number"
+               },
+               "expense_amount": {
+                  "type": "number"
+               },
+               "deposit_amount": {
+                  "type": "number"
+               },
+               "deposit_applied_amount": {
+                  "type": "number"
+               },
+               "credit_note_amount": {
+                  "type": "number"
+               },
+               "minutes_logged": {
+                  "type": "number"
+               },
+               "minutes_to_be_invoiced": {
+                  "type": "number"
+               },
+               "percent_complete": {
+                  "type": "number"
+               },
+               "billing_type": {
+                  "type": "string",
+                  "enum": [
+                     "FIXED_PRICE",
+                     "TIME_AND_MATERIALS",
+                     "MILESTONE",
+                     "NON_BILLABLE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingProject_category_ids"
+               },
+               "location_id": {
+                  "type": "string"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingProjects": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingProject"
             }
          },
          "property_StoragePermission_roles": {
@@ -12175,6 +12717,12 @@
                "$ref": "#/components/schemas/StorageReference"
             }
          },
+         "property_StorageFile_tags": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "StorageFile": {
             "type": "object",
             "properties": {
@@ -12235,6 +12783,9 @@
                },
                "references": {
                   "$ref": "#/components/schemas/property_StorageFile_references"
+               },
+               "tags": {
+                  "$ref": "#/components/schemas/property_StorageFile_tags"
                },
                "raw": {
                   "type": "object",
@@ -15558,6 +16109,24 @@
                "$ref": "#/components/schemas/CalendarWebinar"
             }
          },
+         "AdsManager": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_AdsOrganization_managers": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AdsManager"
+            },
+            "description": "Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager)"
+         },
          "AdsOrganization": {
             "type": "object",
             "properties": {
@@ -15583,6 +16152,26 @@
                },
                "parent_id": {
                   "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "ACTIVE",
+                     "PAUSED",
+                     "ARCHIVED",
+                     "DRAFT",
+                     "SCHEDULED_FOR_DELETION",
+                     "PROCESSING",
+                     "PROCESSING_FAILED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "account_number": {
+                  "type": "string"
+               },
+               "managers": {
+                  "$ref": "#/components/schemas/property_AdsOrganization_managers"
                },
                "raw": {
                   "type": "object",
@@ -16364,6 +16953,12 @@
                }
             }
          },
+         "property_AdsCampaign_labels": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "AdsCampaign": {
             "type": "object",
             "properties": {
@@ -16505,6 +17100,9 @@
                "has_eu_political_ads": {
                   "type": "boolean"
                },
+               "labels": {
+                  "$ref": "#/components/schemas/property_AdsCampaign_labels"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -16569,6 +17167,12 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AdsPromoted"
+            }
+         },
+         "property_AdsCreative_labels": {
+            "type": "array",
+            "items": {
+               "type": "string"
             }
          },
          "AdsCreative": {
@@ -16654,6 +17258,9 @@
                "link_url": {
                   "type": "string"
                },
+               "url_tags": {
+                  "type": "string"
+               },
                "body": {
                   "type": "string"
                },
@@ -16689,6 +17296,9 @@
                },
                "data": {
                   "type": "string"
+               },
+               "labels": {
+                  "$ref": "#/components/schemas/property_AdsCreative_labels"
                },
                "raw": {
                   "type": "object",
@@ -17938,6 +18548,17 @@
                "promoted": {
                   "$ref": "#/components/schemas/property_AdsGroup_promoted"
                },
+               "language_locale": {
+                  "type": "string"
+               },
+               "creative_selection": {
+                  "type": "string",
+                  "enum": [
+                     "OPTIMIZED",
+                     "ROUND_ROBIN"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -18687,6 +19308,12 @@
                }
             }
          },
+         "property_AdsReportMetrics_campaign_labels": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "property_AdsReportMetrics_campaign": {
             "type": "object",
             "properties": {
@@ -18827,6 +19454,9 @@
                },
                "has_eu_political_ads": {
                   "type": "boolean"
+               },
+               "labels": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_campaign_labels"
                },
                "raw": {
                   "type": "object",
@@ -19739,6 +20369,17 @@
                "promoted": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_group_promoted"
                },
+               "language_locale": {
+                  "type": "string"
+               },
+               "creative_selection": {
+                  "type": "string",
+                  "enum": [
+                     "OPTIMIZED",
+                     "ROUND_ROBIN"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -19877,6 +20518,12 @@
                "$ref": "#/components/schemas/AdsPromoted"
             }
          },
+         "property_AdsReportMetrics_creative_labels": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "property_AdsReportMetrics_creative": {
             "type": "object",
             "properties": {
@@ -19960,6 +20607,9 @@
                "link_url": {
                   "type": "string"
                },
+               "url_tags": {
+                  "type": "string"
+               },
                "body": {
                   "type": "string"
                },
@@ -19995,6 +20645,9 @@
                },
                "data": {
                   "type": "string"
+               },
+               "labels": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_creative_labels"
                },
                "raw": {
                   "type": "object",
@@ -25768,6 +26421,12 @@
                   "payment_payment_write",
                   "accounting_cashflow_read",
                   "accounting_cashflow_write",
+                  "accounting_quote_read",
+                  "accounting_quote_write",
+                  "accounting_agedreceivable_read",
+                  "accounting_agedpayable_read",
+                  "accounting_project_read",
+                  "accounting_project_write",
                   "payment_payout_read",
                   "payment_refund_read",
                   "payment_link_read",
@@ -28194,24 +28853,6 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
-               },
-               "virtual_webhook_segment_id": {
-                  "type": "string",
-                  "enum": [
-                     "supported-required",
-                     "supported",
-                     "not-supported"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "native_webhook_segment_id": {
-                  "type": "string",
-                  "enum": [
-                     "supported-required",
-                     "supported",
-                     "not-supported"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -28517,6 +29158,10 @@
                      "accounting_category",
                      "accounting_expense",
                      "accounting_cashflow",
+                     "accounting_quote",
+                     "accounting_agedreceivable",
+                     "accounting_agedpayable",
+                     "accounting_project",
                      "payment_payment",
                      "payment_link",
                      "payment_payout",
@@ -54350,6 +54995,7 @@
                            "source",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "attachments",
                            "raw"
                         ]
@@ -54502,6 +55148,7 @@
                            "source",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "attachments",
                            "raw"
                         ]
@@ -54578,6 +55225,7 @@
                            "source",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "attachments",
                            "raw"
                         ]
@@ -54661,6 +55309,7 @@
                            "source",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "attachments",
                            "raw"
                         ]
@@ -54754,6 +55403,7 @@
                            "source",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "attachments",
                            "raw"
                         ]
@@ -54905,6 +55555,7 @@
                            "contacts",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -55089,6 +55740,7 @@
                            "contacts",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -55170,6 +55822,7 @@
                            "contacts",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -55258,6 +55911,7 @@
                            "contacts",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -55356,6 +56010,7 @@
                            "contacts",
                            "organization_id",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56112,6 +56767,7 @@
                            "organization_id",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56308,6 +56964,7 @@
                            "organization_id",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56402,6 +57059,7 @@
                            "organization_id",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56503,6 +57161,7 @@
                            "organization_id",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56614,6 +57273,7 @@
                            "organization_id",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56775,6 +57435,7 @@
                            "payment_terms",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -56943,6 +57604,7 @@
                            "payment_terms",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -57035,6 +57697,7 @@
                            "payment_terms",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -57134,6 +57797,7 @@
                            "payment_terms",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -57243,6 +57907,7 @@
                            "payment_terms",
                            "payments",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -62695,6 +63360,7 @@
                            "status",
                            "external_number",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -62911,6 +63577,7 @@
                            "status",
                            "external_number",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -62997,6 +63664,7 @@
                            "status",
                            "external_number",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -63090,6 +63758,7 @@
                            "status",
                            "external_number",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -63193,6 +63862,7 @@
                            "status",
                            "external_number",
                            "category_ids",
+                           "project_id",
                            "raw"
                         ]
                      }
@@ -63314,6 +63984,1826 @@
             "operationId": "removeAccountingExpense"
          }
       },
+      "/accounting/{connection_id}/quote": {
+         "post": {
+            "summary": "Create a quote",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "quote_number",
+                           "reference",
+                           "title",
+                           "summary",
+                           "payment_terms",
+                           "customer_message",
+                           "memo",
+                           "contact_id",
+                           "contacts",
+                           "issued_at",
+                           "expires_at",
+                           "sent_at",
+                           "accepted_at",
+                           "declined_at",
+                           "status",
+                           "currency",
+                           "currency_rate",
+                           "sub_total_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "total_amount",
+                           "tax_mode",
+                           "lineitems",
+                           "invoice_id",
+                           "project_id",
+                           "group_id",
+                           "category_ids",
+                           "url",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingQuote"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingQuote"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAccountingQuote"
+         },
+         "get": {
+            "summary": "List all quotes",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "contact_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The contact ID to filter by (reference to AccountingContact)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "project_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The project ID to filter by (reference to TaskProject)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "quote_number",
+                           "reference",
+                           "title",
+                           "summary",
+                           "payment_terms",
+                           "customer_message",
+                           "memo",
+                           "contact_id",
+                           "contacts",
+                           "issued_at",
+                           "expires_at",
+                           "sent_at",
+                           "accepted_at",
+                           "declined_at",
+                           "status",
+                           "currency",
+                           "currency_rate",
+                           "sub_total_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "total_amount",
+                           "tax_mode",
+                           "lineitems",
+                           "invoice_id",
+                           "project_id",
+                           "group_id",
+                           "category_ids",
+                           "url",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingQuotes"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingQuotes"
+         }
+      },
+      "/accounting/{connection_id}/quote/{id}": {
+         "get": {
+            "summary": "Retrieve a quote",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "quote_number",
+                           "reference",
+                           "title",
+                           "summary",
+                           "payment_terms",
+                           "customer_message",
+                           "memo",
+                           "contact_id",
+                           "contacts",
+                           "issued_at",
+                           "expires_at",
+                           "sent_at",
+                           "accepted_at",
+                           "declined_at",
+                           "status",
+                           "currency",
+                           "currency_rate",
+                           "sub_total_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "total_amount",
+                           "tax_mode",
+                           "lineitems",
+                           "invoice_id",
+                           "project_id",
+                           "group_id",
+                           "category_ids",
+                           "url",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Quote",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingQuote"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingQuote"
+         },
+         "put": {
+            "summary": "Update a quote",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "quote_number",
+                           "reference",
+                           "title",
+                           "summary",
+                           "payment_terms",
+                           "customer_message",
+                           "memo",
+                           "contact_id",
+                           "contacts",
+                           "issued_at",
+                           "expires_at",
+                           "sent_at",
+                           "accepted_at",
+                           "declined_at",
+                           "status",
+                           "currency",
+                           "currency_rate",
+                           "sub_total_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "total_amount",
+                           "tax_mode",
+                           "lineitems",
+                           "invoice_id",
+                           "project_id",
+                           "group_id",
+                           "category_ids",
+                           "url",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Quote",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingQuote"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingQuote"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateAccountingQuote"
+         },
+         "patch": {
+            "summary": "Update a quote",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "quote_number",
+                           "reference",
+                           "title",
+                           "summary",
+                           "payment_terms",
+                           "customer_message",
+                           "memo",
+                           "contact_id",
+                           "contacts",
+                           "issued_at",
+                           "expires_at",
+                           "sent_at",
+                           "accepted_at",
+                           "declined_at",
+                           "status",
+                           "currency",
+                           "currency_rate",
+                           "sub_total_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "total_amount",
+                           "tax_mode",
+                           "lineitems",
+                           "invoice_id",
+                           "project_id",
+                           "group_id",
+                           "category_ids",
+                           "url",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Quote",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingQuote"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingQuote"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchAccountingQuote"
+         },
+         "delete": {
+            "summary": "Remove a quote",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Quote",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "quote"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeAccountingQuote"
+         }
+      },
+      "/accounting/{connection_id}/agedreceivable/{id}": {
+         "get": {
+            "summary": "Retrieve an agedreceivable",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "currency",
+                           "start_at",
+                           "end_at",
+                           "total_current_amount",
+                           "total_overdue_amount",
+                           "total_amount",
+                           "periods",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Agedreceivable",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "agedreceivable"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingAgedreceivable"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingAgedreceivable"
+         }
+      },
+      "/accounting/{connection_id}/agedreceivable": {
+         "get": {
+            "summary": "List all agedreceivables",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "contact_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The contact ID to filter by (reference to AccountingContact)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "currency",
+                           "start_at",
+                           "end_at",
+                           "total_current_amount",
+                           "total_overdue_amount",
+                           "total_amount",
+                           "periods",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "agedreceivable"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingAgedreceivables"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingAgedreceivables"
+         }
+      },
+      "/accounting/{connection_id}/agedpayable/{id}": {
+         "get": {
+            "summary": "Retrieve an agedpayable",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "currency",
+                           "start_at",
+                           "end_at",
+                           "total_current_amount",
+                           "total_overdue_amount",
+                           "total_amount",
+                           "periods",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Agedpayable",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "agedpayable"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingAgedpayable"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingAgedpayable"
+         }
+      },
+      "/accounting/{connection_id}/agedpayable": {
+         "get": {
+            "summary": "List all agedpayables",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "contact_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The contact ID to filter by (reference to AccountingContact)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "currency",
+                           "start_at",
+                           "end_at",
+                           "total_current_amount",
+                           "total_overdue_amount",
+                           "total_amount",
+                           "periods",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "agedpayable"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingAgedpayables"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingAgedpayables"
+         }
+      },
+      "/accounting/{connection_id}/project": {
+         "post": {
+            "summary": "Create a project",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "code",
+                           "description",
+                           "status",
+                           "is_active",
+                           "is_billable",
+                           "contact_id",
+                           "parent_id",
+                           "manager_user_id",
+                           "started_at",
+                           "due_at",
+                           "ended_at",
+                           "currency",
+                           "estimate_amount",
+                           "estimated_cost_amount",
+                           "actual_cost_amount",
+                           "invoiced_amount",
+                           "to_be_invoiced_amount",
+                           "expense_amount",
+                           "deposit_amount",
+                           "deposit_applied_amount",
+                           "credit_note_amount",
+                           "minutes_logged",
+                           "minutes_to_be_invoiced",
+                           "percent_complete",
+                           "billing_type",
+                           "category_ids",
+                           "location_id",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingProject"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingProject"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAccountingProject"
+         },
+         "get": {
+            "summary": "List all projects",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "contact_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The contact ID to filter by (reference to AccountingContact)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "is_active",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "code",
+                           "description",
+                           "status",
+                           "is_active",
+                           "is_billable",
+                           "contact_id",
+                           "parent_id",
+                           "manager_user_id",
+                           "started_at",
+                           "due_at",
+                           "ended_at",
+                           "currency",
+                           "estimate_amount",
+                           "estimated_cost_amount",
+                           "actual_cost_amount",
+                           "invoiced_amount",
+                           "to_be_invoiced_amount",
+                           "expense_amount",
+                           "deposit_amount",
+                           "deposit_applied_amount",
+                           "credit_note_amount",
+                           "minutes_logged",
+                           "minutes_to_be_invoiced",
+                           "percent_complete",
+                           "billing_type",
+                           "category_ids",
+                           "location_id",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingProjects"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingProjects"
+         }
+      },
+      "/accounting/{connection_id}/project/{id}": {
+         "get": {
+            "summary": "Retrieve a project",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "code",
+                           "description",
+                           "status",
+                           "is_active",
+                           "is_billable",
+                           "contact_id",
+                           "parent_id",
+                           "manager_user_id",
+                           "started_at",
+                           "due_at",
+                           "ended_at",
+                           "currency",
+                           "estimate_amount",
+                           "estimated_cost_amount",
+                           "actual_cost_amount",
+                           "invoiced_amount",
+                           "to_be_invoiced_amount",
+                           "expense_amount",
+                           "deposit_amount",
+                           "deposit_applied_amount",
+                           "credit_note_amount",
+                           "minutes_logged",
+                           "minutes_to_be_invoiced",
+                           "percent_complete",
+                           "billing_type",
+                           "category_ids",
+                           "location_id",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Project",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingProject"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingProject"
+         },
+         "put": {
+            "summary": "Update a project",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "code",
+                           "description",
+                           "status",
+                           "is_active",
+                           "is_billable",
+                           "contact_id",
+                           "parent_id",
+                           "manager_user_id",
+                           "started_at",
+                           "due_at",
+                           "ended_at",
+                           "currency",
+                           "estimate_amount",
+                           "estimated_cost_amount",
+                           "actual_cost_amount",
+                           "invoiced_amount",
+                           "to_be_invoiced_amount",
+                           "expense_amount",
+                           "deposit_amount",
+                           "deposit_applied_amount",
+                           "credit_note_amount",
+                           "minutes_logged",
+                           "minutes_to_be_invoiced",
+                           "percent_complete",
+                           "billing_type",
+                           "category_ids",
+                           "location_id",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Project",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingProject"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingProject"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateAccountingProject"
+         },
+         "patch": {
+            "summary": "Update a project",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "code",
+                           "description",
+                           "status",
+                           "is_active",
+                           "is_billable",
+                           "contact_id",
+                           "parent_id",
+                           "manager_user_id",
+                           "started_at",
+                           "due_at",
+                           "ended_at",
+                           "currency",
+                           "estimate_amount",
+                           "estimated_cost_amount",
+                           "actual_cost_amount",
+                           "invoiced_amount",
+                           "to_be_invoiced_amount",
+                           "expense_amount",
+                           "deposit_amount",
+                           "deposit_applied_amount",
+                           "credit_note_amount",
+                           "minutes_logged",
+                           "minutes_to_be_invoiced",
+                           "percent_complete",
+                           "billing_type",
+                           "category_ids",
+                           "location_id",
+                           "organization_id",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Project",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingProject"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingProject"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchAccountingProject"
+         },
+         "delete": {
+            "summary": "Remove a project",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Project",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "project"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeAccountingProject"
+         }
+      },
       "/storage/{connection_id}/file": {
          "post": {
             "summary": "Create a file",
@@ -63341,6 +65831,7 @@
                            "version",
                            "web_url",
                            "references",
+                           "tags",
                            "raw"
                         ]
                      }
@@ -63523,6 +66014,7 @@
                            "version",
                            "web_url",
                            "references",
+                           "tags",
                            "raw"
                         ]
                      }
@@ -63602,6 +66094,7 @@
                            "version",
                            "web_url",
                            "references",
+                           "tags",
                            "raw"
                         ]
                      }
@@ -63688,6 +66181,7 @@
                            "version",
                            "web_url",
                            "references",
+                           "tags",
                            "raw"
                         ]
                      }
@@ -63784,6 +66278,7 @@
                            "version",
                            "web_url",
                            "references",
+                           "tags",
                            "raw"
                         ]
                      }
@@ -77425,6 +79920,9 @@
                            "currency",
                            "timezone",
                            "parent_id",
+                           "status",
+                           "account_number",
+                           "managers",
                            "raw"
                         ]
                      }
@@ -77561,6 +80059,9 @@
                            "currency",
                            "timezone",
                            "parent_id",
+                           "status",
+                           "account_number",
+                           "managers",
                            "raw"
                         ]
                      }
@@ -77630,6 +80131,9 @@
                            "currency",
                            "timezone",
                            "parent_id",
+                           "status",
+                           "account_number",
+                           "managers",
                            "raw"
                         ]
                      }
@@ -77706,6 +80210,9 @@
                            "currency",
                            "timezone",
                            "parent_id",
+                           "status",
+                           "account_number",
+                           "managers",
                            "raw"
                         ]
                      }
@@ -77792,6 +80299,9 @@
                            "currency",
                            "timezone",
                            "parent_id",
+                           "status",
+                           "account_number",
+                           "managers",
                            "raw"
                         ]
                      }
@@ -77945,6 +80455,7 @@
                            "currency",
                            "category",
                            "has_eu_political_ads",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78139,6 +80650,7 @@
                            "currency",
                            "category",
                            "has_eu_political_ads",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78223,6 +80735,7 @@
                            "currency",
                            "category",
                            "has_eu_political_ads",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78314,6 +80827,7 @@
                            "currency",
                            "category",
                            "has_eu_political_ads",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78415,6 +80929,7 @@
                            "currency",
                            "category",
                            "has_eu_political_ads",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78561,6 +81076,7 @@
                            "height",
                            "asset_urls",
                            "link_url",
+                           "url_tags",
                            "body",
                            "title",
                            "cta",
@@ -78573,6 +81089,7 @@
                            "path1",
                            "path2",
                            "data",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78735,6 +81252,7 @@
                            "height",
                            "asset_urls",
                            "link_url",
+                           "url_tags",
                            "body",
                            "title",
                            "cta",
@@ -78747,6 +81265,7 @@
                            "path1",
                            "path2",
                            "data",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78824,6 +81343,7 @@
                            "height",
                            "asset_urls",
                            "link_url",
+                           "url_tags",
                            "body",
                            "title",
                            "cta",
@@ -78836,6 +81356,7 @@
                            "path1",
                            "path2",
                            "data",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -78920,6 +81441,7 @@
                            "height",
                            "asset_urls",
                            "link_url",
+                           "url_tags",
                            "body",
                            "title",
                            "cta",
@@ -78932,6 +81454,7 @@
                            "path1",
                            "path2",
                            "data",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -79026,6 +81549,7 @@
                            "height",
                            "asset_urls",
                            "link_url",
+                           "url_tags",
                            "body",
                            "title",
                            "cta",
@@ -79038,6 +81562,7 @@
                            "path1",
                            "path2",
                            "data",
+                           "labels",
                            "raw"
                         ]
                      }
@@ -80053,6 +82578,8 @@
                            "billing_event",
                            "currency",
                            "promoted",
+                           "language_locale",
+                           "creative_selection",
                            "raw"
                         ]
                      }
@@ -80273,6 +82800,8 @@
                            "billing_event",
                            "currency",
                            "promoted",
+                           "language_locale",
+                           "creative_selection",
                            "raw"
                         ]
                      }
@@ -80364,6 +82893,8 @@
                            "billing_event",
                            "currency",
                            "promoted",
+                           "language_locale",
+                           "creative_selection",
                            "raw"
                         ]
                      }
@@ -80462,6 +82993,8 @@
                            "billing_event",
                            "currency",
                            "promoted",
+                           "language_locale",
+                           "creative_selection",
                            "raw"
                         ]
                      }
@@ -80570,6 +83103,8 @@
                            "billing_event",
                            "currency",
                            "promoted",
+                           "language_locale",
+                           "creative_selection",
                            "raw"
                         ]
                      }

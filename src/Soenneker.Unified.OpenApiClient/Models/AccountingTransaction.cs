@@ -104,6 +104,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PaymentTerms { get; set; }
 #endif
+        /// <summary>The project_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,6 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetStringValue(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "split_account_id", n => { SplitAccountId = n.GetStringValue(); } },
@@ -210,6 +219,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteStringValue("payment_terms", PaymentTerms);
+            writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("split_account_id", SplitAccountId);
