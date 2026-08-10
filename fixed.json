@@ -92239,7 +92239,9 @@
           "MANAGER",
           "RECRUITER",
           "SALESREP",
-          "INTERVIEWER"
+          "INTERVIEWER",
+          "USER",
+          "EMPLOYEE"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -92267,6 +92269,14 @@
             {
               "value": "INTERVIEWER",
               "name": "Interviewer"
+            },
+            {
+              "value": "USER",
+              "name": "User"
+            },
+            {
+              "value": "EMPLOYEE",
+              "name": "Employee"
             }
           ]
         }

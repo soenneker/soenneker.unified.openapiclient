@@ -7113,7 +7113,9 @@
                   "MANAGER",
                   "RECRUITER",
                   "SALESREP",
-                  "INTERVIEWER"
+                  "INTERVIEWER",
+                  "USER",
+                  "EMPLOYEE"
                ],
                "x-speakeasy-unknown-values": "allow"
             }

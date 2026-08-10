@@ -28,5 +28,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Interviewer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "USER")]
+        #pragma warning disable CS1591
+        User,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMPLOYEE")]
+        #pragma warning disable CS1591
+        Employee,
+        #pragma warning restore CS1591
     }
 }
