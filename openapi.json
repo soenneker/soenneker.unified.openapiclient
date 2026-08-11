@@ -470,6 +470,18 @@
          "name": "activation"
       },
       {
+         "name": "performance"
+      },
+      {
+         "name": "cycle"
+      },
+      {
+         "name": "goal"
+      },
+      {
+         "name": "feedback"
+      },
+      {
          "name": "unified"
       },
       {
@@ -1733,6 +1745,26 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/CdpActivation"
+                  }
+               }
+            }
+         },
+         "PerformanceGoal": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/PerformanceGoal"
+                  }
+               }
+            }
+         },
+         "PerformanceFeedback": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/PerformanceFeedback"
                   }
                }
             }
@@ -10857,7 +10889,8 @@
                   "type": "object",
                   "additionalProperties": true
                }
-            }
+            },
+            "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder"
          },
          "AccountingOrders": {
             "type": "array",
@@ -26377,6 +26410,400 @@
                "$ref": "#/components/schemas/CdpActivation"
             }
          },
+         "PerformanceCycle": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "REVIEW",
+                     "GOAL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "DRAFT",
+                     "SCHEDULED",
+                     "ACTIVE",
+                     "CLOSED",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "PerformanceCycles": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceCycle"
+            }
+         },
+         "property_PerformanceReviewQuestion_answers": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "all answer values; single-answer questions have one element"
+         },
+         "PerformanceReviewQuestion": {
+            "type": "object",
+            "properties": {
+               "question": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "TEXT",
+                     "SINGLE_SELECT",
+                     "MULTI_SELECT",
+                     "RATING",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "answers": {
+                  "$ref": "#/components/schemas/property_PerformanceReviewQuestion_answers"
+               }
+            },
+            "required": [
+               "question"
+            ]
+         },
+         "property_PerformanceReview_questions": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceReviewQuestion"
+            }
+         },
+         "PerformanceReview": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "user_id": {
+                  "type": "string"
+               },
+               "reviewer_user_id": {
+                  "type": "string"
+               },
+               "cycle_id": {
+                  "type": "string"
+               },
+               "template_identifier": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "SELF",
+                     "MANAGER",
+                     "PEER",
+                     "UPWARD",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "DRAFT",
+                     "IN_PROGRESS",
+                     "SUBMITTED",
+                     "COMPLETED",
+                     "SHARED",
+                     "ACKNOWLEDGED",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "rating": {
+                  "type": "number"
+               },
+               "rating_maximum": {
+                  "type": "number"
+               },
+               "rating_description": {
+                  "type": "string"
+               },
+               "comment": {
+                  "type": "string"
+               },
+               "questions": {
+                  "$ref": "#/components/schemas/property_PerformanceReview_questions"
+               },
+               "is_acknowledged": {
+                  "type": "boolean"
+               },
+               "submitted_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "completed_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "required": [
+               "user_id"
+            ]
+         },
+         "PerformanceReviews": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceReview"
+            }
+         },
+         "property_PerformanceGoal_user_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "HR Employees that own or share this goal; the first element is the primary owner"
+         },
+         "PerformanceGoalMilestone": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "target_value": {
+                  "type": "number"
+               },
+               "current_value": {
+                  "type": "number"
+               },
+               "unit": {
+                  "type": "string"
+               },
+               "weight": {
+                  "type": "number"
+               },
+               "is_completed": {
+                  "type": "boolean"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
+               }
+            },
+            "required": [
+               "name"
+            ]
+         },
+         "property_PerformanceGoal_milestones": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceGoalMilestone"
+            },
+            "description": "milestones or key results for this goal"
+         },
+         "PerformanceGoal": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "user_ids": {
+                  "$ref": "#/components/schemas/property_PerformanceGoal_user_ids"
+               },
+               "company_id": {
+                  "type": "string"
+               },
+               "parent_id": {
+                  "type": "string"
+               },
+               "cycle_id": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "INDIVIDUAL",
+                     "TEAM",
+                     "DEPARTMENT",
+                     "COMPANY",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "NOT_STARTED",
+                     "IN_PROGRESS",
+                     "COMPLETED",
+                     "CLOSED",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "progress": {
+                  "type": "number"
+               },
+               "weight": {
+                  "type": "number"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "due_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "completed_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "milestones": {
+                  "$ref": "#/components/schemas/property_PerformanceGoal_milestones"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "PerformanceGoals": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceGoal"
+            }
+         },
+         "property_PerformanceFeedback_tags": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "badges or company values attached to this feedback"
+         },
+         "PerformanceFeedback": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "user_id": {
+                  "type": "string"
+               },
+               "author_user_id": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "PRAISE",
+                     "FEEDBACK",
+                     "REQUESTED",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "message": {
+                  "type": "string"
+               },
+               "tags": {
+                  "$ref": "#/components/schemas/property_PerformanceFeedback_tags"
+               },
+               "is_visible": {
+                  "type": "boolean"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "required": [
+               "user_id"
+            ]
+         },
+         "PerformanceFeedbacks": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/PerformanceFeedback"
+            }
+         },
          "property_Connection_permissions": {
             "type": "array",
             "items": {
@@ -26678,7 +27105,14 @@
                   "cdp_destination_read",
                   "cdp_destination_write",
                   "cdp_activation_read",
-                  "cdp_activation_write"
+                  "cdp_activation_write",
+                  "performance_cycle_read",
+                  "performance_review_read",
+                  "performance_review_write",
+                  "performance_goal_read",
+                  "performance_goal_write",
+                  "performance_feedback_read",
+                  "performance_feedback_write"
                ],
                "x-speakeasy-unknown-values": "allow"
             }
@@ -26720,7 +27154,8 @@
                   "signing",
                   "clubs",
                   "datastore",
-                  "cdp"
+                  "cdp",
+                  "performance"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -27072,7 +27507,8 @@
                   "signing",
                   "clubs",
                   "datastore",
-                  "cdp"
+                  "cdp",
+                  "performance"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -28855,6 +29291,24 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "list_cycle_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_cycle_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -29300,7 +29754,11 @@
                      "cdp_event",
                      "cdp_source",
                      "cdp_destination",
-                     "cdp_activation"
+                     "cdp_activation",
+                     "performance_cycle",
+                     "performance_review",
+                     "performance_goal",
+                     "performance_feedback"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -59999,6 +60457,7 @@
                "order"
             ],
             "requestBody": {
+               "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
                "required": true,
                "content": {
                   "application/json": {
@@ -60327,6 +60786,7 @@
                "order"
             ],
             "requestBody": {
+               "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
                "required": true,
                "content": {
                   "application/json": {
@@ -60420,6 +60880,7 @@
                "order"
             ],
             "requestBody": {
+               "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
                "required": true,
                "content": {
                   "application/json": {
@@ -65321,14 +65782,6 @@
                      "type": "string"
                   },
                   "name": "status",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "is_active",
                   "in": "query",
                   "required": false
                },
@@ -102907,6 +103360,1338 @@
             "operationId": "removeCdpActivation"
          }
       },
+      "/performance/{connection_id}/cycle/{id}": {
+         "get": {
+            "summary": "Retrieve a cycle",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "status",
+                           "start_at",
+                           "end_at",
+                           "due_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Cycle",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "cycle"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceCycle"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getPerformanceCycle"
+         }
+      },
+      "/performance/{connection_id}/cycle": {
+         "get": {
+            "summary": "List all cycles",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "status",
+                           "start_at",
+                           "end_at",
+                           "due_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "cycle"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceCycles"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listPerformanceCycles"
+         }
+      },
+      "/performance/{connection_id}/review/{id}": {
+         "get": {
+            "summary": "Retrieve a review",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "user_id",
+                           "reviewer_user_id",
+                           "cycle_id",
+                           "template_identifier",
+                           "type",
+                           "status",
+                           "rating",
+                           "rating_maximum",
+                           "rating_description",
+                           "comment",
+                           "questions",
+                           "is_acknowledged",
+                           "submitted_at",
+                           "completed_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Review",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "review"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceReview"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getPerformanceReview"
+         }
+      },
+      "/performance/{connection_id}/review": {
+         "get": {
+            "summary": "List all reviews",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "cycle_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The performance cycle ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "user_id",
+                           "reviewer_user_id",
+                           "cycle_id",
+                           "template_identifier",
+                           "type",
+                           "status",
+                           "rating",
+                           "rating_maximum",
+                           "rating_description",
+                           "comment",
+                           "questions",
+                           "is_acknowledged",
+                           "submitted_at",
+                           "completed_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "review"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceReviews"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listPerformanceReviews"
+         }
+      },
+      "/performance/{connection_id}/goal": {
+         "post": {
+            "summary": "Create a goal",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "user_ids",
+                           "company_id",
+                           "parent_id",
+                           "cycle_id",
+                           "type",
+                           "status",
+                           "progress",
+                           "weight",
+                           "start_at",
+                           "due_at",
+                           "completed_at",
+                           "milestones",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/PerformanceGoal"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceGoal"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createPerformanceGoal"
+         },
+         "get": {
+            "summary": "List all goals",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "cycle_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The performance cycle ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "user_ids",
+                           "company_id",
+                           "parent_id",
+                           "cycle_id",
+                           "type",
+                           "status",
+                           "progress",
+                           "weight",
+                           "start_at",
+                           "due_at",
+                           "completed_at",
+                           "milestones",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceGoals"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listPerformanceGoals"
+         }
+      },
+      "/performance/{connection_id}/goal/{id}": {
+         "get": {
+            "summary": "Retrieve a goal",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "user_ids",
+                           "company_id",
+                           "parent_id",
+                           "cycle_id",
+                           "type",
+                           "status",
+                           "progress",
+                           "weight",
+                           "start_at",
+                           "due_at",
+                           "completed_at",
+                           "milestones",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Goal",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceGoal"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getPerformanceGoal"
+         },
+         "put": {
+            "summary": "Update a goal",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "user_ids",
+                           "company_id",
+                           "parent_id",
+                           "cycle_id",
+                           "type",
+                           "status",
+                           "progress",
+                           "weight",
+                           "start_at",
+                           "due_at",
+                           "completed_at",
+                           "milestones",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Goal",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/PerformanceGoal"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceGoal"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updatePerformanceGoal"
+         },
+         "patch": {
+            "summary": "Update a goal",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "user_ids",
+                           "company_id",
+                           "parent_id",
+                           "cycle_id",
+                           "type",
+                           "status",
+                           "progress",
+                           "weight",
+                           "start_at",
+                           "due_at",
+                           "completed_at",
+                           "milestones",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Goal",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/PerformanceGoal"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceGoal"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchPerformanceGoal"
+         },
+         "delete": {
+            "summary": "Remove a goal",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Goal",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "goal"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removePerformanceGoal"
+         }
+      },
+      "/performance/{connection_id}/feedback": {
+         "post": {
+            "summary": "Create a feedback",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "user_id",
+                           "author_user_id",
+                           "type",
+                           "message",
+                           "tags",
+                           "is_visible",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "feedback"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/PerformanceFeedback"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceFeedback"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createPerformanceFeedback"
+         },
+         "get": {
+            "summary": "List all feedbacks",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "user_id",
+                           "author_user_id",
+                           "type",
+                           "message",
+                           "tags",
+                           "is_visible",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "feedback"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceFeedbacks"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listPerformanceFeedbacks"
+         }
+      },
+      "/performance/{connection_id}/feedback/{id}": {
+         "get": {
+            "summary": "Retrieve a feedback",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "user_id",
+                           "author_user_id",
+                           "type",
+                           "message",
+                           "tags",
+                           "is_visible",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Feedback",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "performance",
+               "feedback"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/PerformanceFeedback"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getPerformanceFeedback"
+         }
+      },
       "/unified/connection": {
          "post": {
             "summary": "Create connection",
@@ -103037,7 +104822,8 @@
                            "signing",
                            "clubs",
                            "datastore",
-                           "cdp"
+                           "cdp",
+                           "performance"
                         ]
                      }
                   },
@@ -103610,7 +105396,8 @@
                            "signing",
                            "clubs",
                            "datastore",
-                           "cdp"
+                           "cdp",
+                           "performance"
                         ]
                      }
                   },
@@ -103744,7 +105531,8 @@
                            "signing",
                            "clubs",
                            "datastore",
-                           "cdp"
+                           "cdp",
+                           "performance"
                         ]
                      }
                   },

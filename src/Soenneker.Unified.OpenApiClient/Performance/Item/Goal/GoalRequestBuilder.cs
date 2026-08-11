@@ -3,100 +3,100 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Unified.OpenApiClient.Accounting.Item.Project.Item;
 using Soenneker.Unified.OpenApiClient.Models;
+using Soenneker.Unified.OpenApiClient.Performance.Item.Goal.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
+namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connectionId}\project
+    /// Builds and executes requests for operations under \performance\{connectionId}\goal
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProjectRequestBuilder : BaseRequestBuilder
+    public partial class GoalRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item.project.item collection</summary>
-        /// <param name="position">ID of the Project</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.Item.ProjectItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.Item.ProjectItemRequestBuilder this[string position]
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.performance.item.goal.item collection</summary>
+        /// <param name="position">ID of the Goal</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.Item.GoalItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.Item.GoalItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.Item.ProjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.Item.GoalItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/project{?contact_id*,fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,sort*,status*,updated_gte*}", pathParameters)
+        public GoalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/performance/{connectionId}/goal{?cycle_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,type*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/project{?contact_id*,fields*,limit*,offset*,order*,org_id*,parent_id*,query*,raw*,sort*,status*,updated_gte*}", rawUrl)
+        public GoalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/performance/{connectionId}/goal{?cycle_id*,fields*,limit*,offset*,order*,parent_id*,query*,raw*,sort*,type*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all projects
+        /// List all goals
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingProject&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a project
+        /// Create a goal
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingProject"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingProject body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingProject body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingProject>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all projects
+        /// List all goals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -105,18 +105,18 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
             return requestInfo;
         }
         /// <summary>
-        /// Create a project
+        /// Create a goal
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingProject body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingProject body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder.ProjectRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder.GoalRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -129,37 +129,37 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Project.ProjectRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all projects
+        /// List all goals
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectRequestBuilderGetQueryParameters 
+        public partial class GoalRequestBuilderGetQueryParameters 
         {
-            /// <summary>The contact ID to filter by (reference to AccountingContact)</summary>
+            /// <summary>The performance cycle ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("contact_id")]
-            public string? ContactId { get; set; }
+            [QueryParameter("cycle_id")]
+            public string? CycleId { get; set; }
 #nullable restore
 #else
-            [QueryParameter("contact_id")]
-            public string ContactId { get; set; }
+            [QueryParameter("cycle_id")]
+            public string CycleId { get; set; }
 #endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProjectsFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPerformanceGoalsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingProjectsFieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPerformanceGoalsFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -173,16 +173,6 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
 #else
             [QueryParameter("order")]
             public string Order { get; set; }
-#endif
-            /// <summary>The org ID to filter by (reference to AccountingOrganization)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("org_id")]
-            public string? OrgId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("org_id")]
-            public string OrgId { get; set; }
 #endif
             /// <summary>The parent ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -225,12 +215,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("status")]
-            public string? Status { get; set; }
+            [QueryParameter("type")]
+            public string? Type { get; set; }
 #nullable restore
 #else
-            [QueryParameter("status")]
-            public string Status { get; set; }
+            [QueryParameter("type")]
+            public string Type { get; set; }
 #endif
             /// <summary>Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,22 +232,32 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Project
             [QueryParameter("updated_gte")]
             public string UpdatedGte { get; set; }
 #endif
+            /// <summary>The user/employee ID to filter by (reference to HrisEmployee)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
         }
         /// <summary>
-        /// Create a project
+        /// Create a goal
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectRequestBuilderPostQueryParameters 
+        public partial class GoalRequestBuilderPostQueryParameters 
         {
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingProjectFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreatePerformanceGoalFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingProjectFieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreatePerformanceGoalFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

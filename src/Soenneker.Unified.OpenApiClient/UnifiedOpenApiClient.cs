@@ -28,6 +28,7 @@ using Soenneker.Unified.OpenApiClient.Messaging;
 using Soenneker.Unified.OpenApiClient.Metadata;
 using Soenneker.Unified.OpenApiClient.Passthrough;
 using Soenneker.Unified.OpenApiClient.Payment;
+using Soenneker.Unified.OpenApiClient.Performance;
 using Soenneker.Unified.OpenApiClient.Repo;
 using Soenneker.Unified.OpenApiClient.Scim;
 using Soenneker.Unified.OpenApiClient.Shipping;
@@ -159,6 +160,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Payment.PaymentRequestBuilder Payment
         {
             get => new global::Soenneker.Unified.OpenApiClient.Payment.PaymentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The performance property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Performance.PerformanceRequestBuilder Performance
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Performance.PerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repo property</summary>
         public global::Soenneker.Unified.OpenApiClient.Repo.RepoRequestBuilder Repo

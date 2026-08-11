@@ -3,100 +3,100 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item;
 using Soenneker.Unified.OpenApiClient.Models;
+using Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
+namespace Soenneker.Unified.OpenApiClient.Performance.Item.Feedback
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connectionId}\order
+    /// Builds and executes requests for operations under \performance\{connectionId}\feedback
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OrderRequestBuilder : BaseRequestBuilder
+    public partial class FeedbackRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item.order.item collection</summary>
-        /// <param name="position">ID of the Order</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder this[string position]
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.performance.item.feedback.item collection</summary>
+        /// <param name="position">ID of the Feedback</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item.FeedbackItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item.FeedbackItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item.FeedbackItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
+        public FeedbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/performance/{connectionId}/feedback{?fields*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
+        public FeedbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/performance/{connectionId}/feedback{?fields*,limit*,offset*,order*,query*,raw*,sort*,type*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all orders
+        /// List all feedbacks
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create an order
+        /// Create a feedback
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder"/></returns>
-        /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all orders
+        /// List all feedbacks
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -105,18 +105,18 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             return requestInfo;
         }
         /// <summary>
-        /// Create an order
+        /// Create a feedback
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -129,37 +129,27 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all orders
+        /// List all feedbacks
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OrderRequestBuilderGetQueryParameters 
+        public partial class FeedbackRequestBuilderGetQueryParameters 
         {
-            /// <summary>The contact ID to filter by (reference to AccountingContact)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("contact_id")]
-            public string? ContactId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contact_id")]
-            public string ContactId { get; set; }
-#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingOrdersFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPerformanceFeedbacksFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingOrdersFieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListPerformanceFeedbacksFieldsParameterItem[] Fields { get; set; }
 #endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
@@ -173,16 +163,6 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
 #else
             [QueryParameter("order")]
             public string Order { get; set; }
-#endif
-            /// <summary>The org ID to filter by (reference to AccountingOrganization)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("org_id")]
-            public string? OrgId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("org_id")]
-            public string OrgId { get; set; }
 #endif
             /// <summary>Query string to search. eg. email address or name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,22 +212,32 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             [QueryParameter("updated_gte")]
             public string UpdatedGte { get; set; }
 #endif
+            /// <summary>The user/employee ID to filter by (reference to HrisEmployee)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
         }
         /// <summary>
-        /// Create an order
+        /// Create a feedback
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OrderRequestBuilderPostQueryParameters 
+        public partial class FeedbackRequestBuilderPostQueryParameters 
         {
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingOrderFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreatePerformanceFeedbackFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingOrderFieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreatePerformanceFeedbackFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>
+    /// @deprecated; use AccountingSalesorder or AccountingPurchaseorder
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AccountingOrder : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

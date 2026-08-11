@@ -23268,6 +23268,7 @@
           }
         ],
         "requestBody": {
+          "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
           "content": {
             "application/json": {
               "schema": {
@@ -23529,6 +23530,7 @@
           }
         ],
         "requestBody": {
+          "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
           "content": {
             "application/json": {
               "schema": {
@@ -23602,6 +23604,7 @@
           }
         ],
         "requestBody": {
+          "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder",
           "content": {
             "application/json": {
               "schema": {
@@ -27438,13 +27441,6 @@
           },
           {
             "name": "status",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "is_active",
             "in": "query",
             "schema": {
               "type": "string"
@@ -57186,6 +57182,1069 @@
         ]
       }
     },
+    "/performance/{connectionId}/cycle/{id}": {
+      "get": {
+        "tags": [
+          "performance",
+          "cycle"
+        ],
+        "summary": "Retrieve a cycle",
+        "operationId": "GetPerformanceCycle",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetPerformanceCycleFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Cycle",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceCycle"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/cycle": {
+      "get": {
+        "tags": [
+          "performance",
+          "cycle"
+        ],
+        "summary": "List all cycles",
+        "operationId": "ListPerformanceCycles",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListPerformanceCyclesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPerformanceCycles200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/review/{id}": {
+      "get": {
+        "tags": [
+          "performance",
+          "review"
+        ],
+        "summary": "Retrieve a review",
+        "operationId": "GetPerformanceReview",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetPerformanceReviewFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Review",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceReview"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/review": {
+      "get": {
+        "tags": [
+          "performance",
+          "review"
+        ],
+        "summary": "List all reviews",
+        "operationId": "ListPerformanceReviews",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cycle_id",
+            "in": "query",
+            "description": "The performance cycle ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListPerformanceReviewsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPerformanceReviews200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/goal": {
+      "post": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "Create a goal",
+        "operationId": "CreatePerformanceGoal",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreatePerformanceGoalFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceGoal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceGoal"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "List all goals",
+        "operationId": "ListPerformanceGoals",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cycle_id",
+            "in": "query",
+            "description": "The performance cycle ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListPerformanceGoalsFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPerformanceGoals200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/goal/{id}": {
+      "get": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "Retrieve a goal",
+        "operationId": "GetPerformanceGoal",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetPerformanceGoalFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Goal",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceGoal"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "Update a goal",
+        "operationId": "UpdatePerformanceGoal",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdatePerformanceGoalFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Goal",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceGoal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceGoal"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "Update a goal",
+        "operationId": "PatchPerformanceGoal",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchPerformanceGoalFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Goal",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceGoal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceGoal"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "performance",
+          "goal"
+        ],
+        "summary": "Remove a goal",
+        "operationId": "RemovePerformanceGoal",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Goal",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemovePerformanceGoal204Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/feedback": {
+      "post": {
+        "tags": [
+          "performance",
+          "feedback"
+        ],
+        "summary": "Create a feedback",
+        "operationId": "CreatePerformanceFeedback",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreatePerformanceFeedbackFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceFeedback"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceFeedback"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "performance",
+          "feedback"
+        ],
+        "summary": "List all feedbacks",
+        "operationId": "ListPerformanceFeedbacks",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListPerformanceFeedbacksFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPerformanceFeedbacks200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/performance/{connectionId}/feedback/{id}": {
+      "get": {
+        "tags": [
+          "performance",
+          "feedback"
+        ],
+        "summary": "Retrieve a feedback",
+        "operationId": "GetPerformanceFeedback",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetPerformanceFeedbackFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Feedback",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PerformanceFeedback"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/unified/connection": {
       "post": {
         "tags": [
@@ -68016,7 +69075,8 @@
           "raw": {
             "$ref": "#/components/schemas/AccountingOrderRawProperty"
           }
-        }
+        },
+        "description": "@deprecated; use AccountingSalesorder or AccountingPurchaseorder"
       },
       "AccountingOrders": {
         "type": "array",
@@ -82465,6 +83525,352 @@
           "$ref": "#/components/schemas/CdpActivation"
         }
       },
+      "PerformanceCycle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PerformanceCycleType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PerformanceCycleStatus"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PerformanceCycleRawProperty"
+          }
+        }
+      },
+      "PerformanceCycles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceCycle"
+        }
+      },
+      "PropertyPerformanceReviewQuestionAnswers": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "all answer values; single-answer questions have one element"
+      },
+      "PerformanceReviewQuestion": {
+        "required": [
+          "question"
+        ],
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PerformanceReviewQuestionType"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "all answer values; single-answer questions have one element"
+          }
+        }
+      },
+      "PropertyPerformanceReviewQuestions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceReviewQuestion"
+        }
+      },
+      "PerformanceReview": {
+        "required": [
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "reviewer_user_id": {
+            "type": "string"
+          },
+          "cycle_id": {
+            "type": "string"
+          },
+          "template_identifier": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PerformanceReviewType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PerformanceReviewStatus"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "rating_maximum": {
+            "type": "number"
+          },
+          "rating_description": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerformanceReviewQuestion"
+            }
+          },
+          "is_acknowledged": {
+            "type": "boolean"
+          },
+          "submitted_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PerformanceReviewRawProperty"
+          }
+        }
+      },
+      "PerformanceReviews": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceReview"
+        }
+      },
+      "PropertyPerformanceGoalUserIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "HR Employees that own or share this goal; the first element is the primary owner"
+      },
+      "PerformanceGoalMilestone": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "target_value": {
+            "type": "number"
+          },
+          "current_value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "is_completed": {
+            "type": "boolean"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PropertyPerformanceGoalMilestones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceGoalMilestone"
+        },
+        "description": "milestones or key results for this goal"
+      },
+      "PerformanceGoal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "HR Employees that own or share this goal; the first element is the primary owner"
+          },
+          "company_id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "cycle_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PerformanceGoalType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PerformanceGoalStatus"
+          },
+          "progress": {
+            "type": "number"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "milestones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerformanceGoalMilestone"
+            },
+            "description": "milestones or key results for this goal"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PerformanceGoalRawProperty"
+          }
+        }
+      },
+      "PerformanceGoals": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceGoal"
+        }
+      },
+      "PropertyPerformanceFeedbackTags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "badges or company values attached to this feedback"
+      },
+      "PerformanceFeedback": {
+        "required": [
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "author_user_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PerformanceFeedbackType"
+          },
+          "message": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "badges or company values attached to this feedback"
+          },
+          "is_visible": {
+            "type": "boolean"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PerformanceFeedbackRawProperty"
+          }
+        }
+      },
+      "PerformanceFeedbacks": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceFeedback"
+        }
+      },
       "PropertyConnectionPermissions": {
         "type": "array",
         "items": {
@@ -83464,6 +84870,12 @@
           },
           "list_segment_id": {
             "$ref": "#/components/schemas/IntegrationSupportListSegmentId"
+          },
+          "list_cycle_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListCycleId"
+          },
+          "virtual_webhook_cycle_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookCycleId"
           }
         }
       },
@@ -86275,6 +87687,18 @@
         "type": "object"
       },
       "CdpActivationRaw": {
+        "type": "object"
+      },
+      "PerformanceCycleRaw": {
+        "type": "object"
+      },
+      "PerformanceReviewRaw": {
+        "type": "object"
+      },
+      "PerformanceGoalRaw": {
+        "type": "object"
+      },
+      "PerformanceFeedbackRaw": {
         "type": "object"
       },
       "PropertyConnectionAuthMeta": {
@@ -89351,6 +90775,35 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "ListPerformanceCycles200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceCycle"
+        }
+      },
+      "ListPerformanceReviews200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceReview"
+        }
+      },
+      "ListPerformanceGoals200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceGoal"
+        }
+      },
+      "RemovePerformanceGoal204Response": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListPerformanceFeedbacks200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PerformanceFeedback"
+        }
+      },
       "ListUnifiedConnections200Response": {
         "type": "array",
         "items": {
@@ -90082,6 +91535,18 @@
         "type": "object"
       },
       "CdpActivationRawProperty": {
+        "type": "object"
+      },
+      "PerformanceCycleRawProperty": {
+        "type": "object"
+      },
+      "PerformanceReviewRawProperty": {
+        "type": "object"
+      },
+      "PerformanceGoalRawProperty": {
+        "type": "object"
+      },
+      "PerformanceFeedbackRawProperty": {
         "type": "object"
       },
       "PropertyConnectionAuthMetaProperty": {
@@ -104515,6 +105980,305 @@
           ]
         }
       },
+      "PerformanceCycleType": {
+        "enum": [
+          "REVIEW",
+          "GOAL",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceCycleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "REVIEW",
+              "name": "Review"
+            },
+            {
+              "value": "GOAL",
+              "name": "Goal"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceCycleStatus": {
+        "enum": [
+          "DRAFT",
+          "SCHEDULED",
+          "ACTIVE",
+          "CLOSED",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceCycleStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "SCHEDULED",
+              "name": "Scheduled"
+            },
+            {
+              "value": "ACTIVE",
+              "name": "Active"
+            },
+            {
+              "value": "CLOSED",
+              "name": "Closed"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceReviewQuestionType": {
+        "enum": [
+          "TEXT",
+          "SINGLE_SELECT",
+          "MULTI_SELECT",
+          "RATING",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceReviewQuestionType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TEXT",
+              "name": "Text"
+            },
+            {
+              "value": "SINGLE_SELECT",
+              "name": "SingleSelect"
+            },
+            {
+              "value": "MULTI_SELECT",
+              "name": "MultiSelect"
+            },
+            {
+              "value": "RATING",
+              "name": "Rating"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceReviewType": {
+        "enum": [
+          "SELF",
+          "MANAGER",
+          "PEER",
+          "UPWARD",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceReviewType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SELF",
+              "name": "Self"
+            },
+            {
+              "value": "MANAGER",
+              "name": "Manager"
+            },
+            {
+              "value": "PEER",
+              "name": "Peer"
+            },
+            {
+              "value": "UPWARD",
+              "name": "Upward"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceReviewStatus": {
+        "enum": [
+          "DRAFT",
+          "IN_PROGRESS",
+          "SUBMITTED",
+          "COMPLETED",
+          "SHARED",
+          "ACKNOWLEDGED",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceReviewStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DRAFT",
+              "name": "Draft"
+            },
+            {
+              "value": "IN_PROGRESS",
+              "name": "InProgress"
+            },
+            {
+              "value": "SUBMITTED",
+              "name": "Submitted"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "SHARED",
+              "name": "Shared"
+            },
+            {
+              "value": "ACKNOWLEDGED",
+              "name": "Acknowledged"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceGoalType": {
+        "enum": [
+          "INDIVIDUAL",
+          "TEAM",
+          "DEPARTMENT",
+          "COMPANY",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceGoalType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "INDIVIDUAL",
+              "name": "Individual"
+            },
+            {
+              "value": "TEAM",
+              "name": "Team"
+            },
+            {
+              "value": "DEPARTMENT",
+              "name": "Department"
+            },
+            {
+              "value": "COMPANY",
+              "name": "Company"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceGoalStatus": {
+        "enum": [
+          "NOT_STARTED",
+          "IN_PROGRESS",
+          "COMPLETED",
+          "CLOSED",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceGoalStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "NOT_STARTED",
+              "name": "NotStarted"
+            },
+            {
+              "value": "IN_PROGRESS",
+              "name": "InProgress"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "CLOSED",
+              "name": "Closed"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
+      "PerformanceFeedbackType": {
+        "enum": [
+          "PRAISE",
+          "FEEDBACK",
+          "REQUESTED",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PerformanceFeedbackType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PRAISE",
+              "name": "Praise"
+            },
+            {
+              "value": "FEEDBACK",
+              "name": "Feedback"
+            },
+            {
+              "value": "REQUESTED",
+              "name": "Requested"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
+            }
+          ]
+        }
+      },
       "PropertyConnectionPermissionsItem": {
         "enum": [
           "accounting_account_read",
@@ -104813,7 +106577,14 @@
           "cdp_destination_read",
           "cdp_destination_write",
           "cdp_activation_read",
-          "cdp_activation_write"
+          "cdp_activation_write",
+          "performance_cycle_read",
+          "performance_review_read",
+          "performance_review_write",
+          "performance_goal_read",
+          "performance_goal_write",
+          "performance_feedback_read",
+          "performance_feedback_write"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -106009,6 +107780,34 @@
             {
               "value": "cdp_activation_write",
               "name": "CdpActivationWrite"
+            },
+            {
+              "value": "performance_cycle_read",
+              "name": "PerformanceCycleRead"
+            },
+            {
+              "value": "performance_review_read",
+              "name": "PerformanceReviewRead"
+            },
+            {
+              "value": "performance_review_write",
+              "name": "PerformanceReviewWrite"
+            },
+            {
+              "value": "performance_goal_read",
+              "name": "PerformanceGoalRead"
+            },
+            {
+              "value": "performance_goal_write",
+              "name": "PerformanceGoalWrite"
+            },
+            {
+              "value": "performance_feedback_read",
+              "name": "PerformanceFeedbackRead"
+            },
+            {
+              "value": "performance_feedback_write",
+              "name": "PerformanceFeedbackWrite"
             }
           ]
         }
@@ -106047,7 +107846,8 @@
           "signing",
           "clubs",
           "datastore",
-          "cdp"
+          "cdp",
+          "performance"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -106187,6 +107987,10 @@
             {
               "value": "cdp",
               "name": "Cdp"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
             }
           ]
         }
@@ -106311,7 +108115,8 @@
           "signing",
           "clubs",
           "datastore",
-          "cdp"
+          "cdp",
+          "performance"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -106451,6 +108256,10 @@
             {
               "value": "cdp",
               "name": "Cdp"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
             }
           ]
         }
@@ -111704,6 +113513,62 @@
           ]
         }
       },
+      "IntegrationSupportListCycleId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListCycleId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookCycleId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookCycleId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -111866,7 +113731,11 @@
           "cdp_event",
           "cdp_source",
           "cdp_destination",
-          "cdp_activation"
+          "cdp_activation",
+          "performance_cycle",
+          "performance_review",
+          "performance_goal",
+          "performance_feedback"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -112518,6 +114387,22 @@
             {
               "value": "cdp_activation",
               "name": "CdpActivation"
+            },
+            {
+              "value": "performance_cycle",
+              "name": "PerformanceCycle"
+            },
+            {
+              "value": "performance_review",
+              "name": "PerformanceReview"
+            },
+            {
+              "value": "performance_goal",
+              "name": "PerformanceGoal"
+            },
+            {
+              "value": "performance_feedback",
+              "name": "PerformanceFeedback"
             }
           ]
         }
@@ -173496,6 +175381,1040 @@
           ]
         }
       },
+      "GetPerformanceCycleFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "type",
+          "status",
+          "start_at",
+          "end_at",
+          "due_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetPerformanceCycleFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListPerformanceCyclesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "type",
+          "status",
+          "start_at",
+          "end_at",
+          "due_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListPerformanceCyclesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetPerformanceReviewFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "user_id",
+          "reviewer_user_id",
+          "cycle_id",
+          "template_identifier",
+          "type",
+          "status",
+          "rating",
+          "rating_maximum",
+          "rating_description",
+          "comment",
+          "questions",
+          "is_acknowledged",
+          "submitted_at",
+          "completed_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetPerformanceReviewFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "reviewer_user_id",
+              "name": "ReviewerUserId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "template_identifier",
+              "name": "TemplateIdentifier"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "rating",
+              "name": "Rating"
+            },
+            {
+              "value": "rating_maximum",
+              "name": "RatingMaximum"
+            },
+            {
+              "value": "rating_description",
+              "name": "RatingDescription"
+            },
+            {
+              "value": "comment",
+              "name": "Comment"
+            },
+            {
+              "value": "questions",
+              "name": "Questions"
+            },
+            {
+              "value": "is_acknowledged",
+              "name": "IsAcknowledged"
+            },
+            {
+              "value": "submitted_at",
+              "name": "SubmittedAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListPerformanceReviewsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "user_id",
+          "reviewer_user_id",
+          "cycle_id",
+          "template_identifier",
+          "type",
+          "status",
+          "rating",
+          "rating_maximum",
+          "rating_description",
+          "comment",
+          "questions",
+          "is_acknowledged",
+          "submitted_at",
+          "completed_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListPerformanceReviewsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "reviewer_user_id",
+              "name": "ReviewerUserId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "template_identifier",
+              "name": "TemplateIdentifier"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "rating",
+              "name": "Rating"
+            },
+            {
+              "value": "rating_maximum",
+              "name": "RatingMaximum"
+            },
+            {
+              "value": "rating_description",
+              "name": "RatingDescription"
+            },
+            {
+              "value": "comment",
+              "name": "Comment"
+            },
+            {
+              "value": "questions",
+              "name": "Questions"
+            },
+            {
+              "value": "is_acknowledged",
+              "name": "IsAcknowledged"
+            },
+            {
+              "value": "submitted_at",
+              "name": "SubmittedAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreatePerformanceGoalFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "user_ids",
+          "company_id",
+          "parent_id",
+          "cycle_id",
+          "type",
+          "status",
+          "progress",
+          "weight",
+          "start_at",
+          "due_at",
+          "completed_at",
+          "milestones",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreatePerformanceGoalFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "weight",
+              "name": "Weight"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "milestones",
+              "name": "Milestones"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListPerformanceGoalsFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "user_ids",
+          "company_id",
+          "parent_id",
+          "cycle_id",
+          "type",
+          "status",
+          "progress",
+          "weight",
+          "start_at",
+          "due_at",
+          "completed_at",
+          "milestones",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListPerformanceGoalsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "weight",
+              "name": "Weight"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "milestones",
+              "name": "Milestones"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetPerformanceGoalFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "user_ids",
+          "company_id",
+          "parent_id",
+          "cycle_id",
+          "type",
+          "status",
+          "progress",
+          "weight",
+          "start_at",
+          "due_at",
+          "completed_at",
+          "milestones",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetPerformanceGoalFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "weight",
+              "name": "Weight"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "milestones",
+              "name": "Milestones"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdatePerformanceGoalFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "user_ids",
+          "company_id",
+          "parent_id",
+          "cycle_id",
+          "type",
+          "status",
+          "progress",
+          "weight",
+          "start_at",
+          "due_at",
+          "completed_at",
+          "milestones",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdatePerformanceGoalFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "weight",
+              "name": "Weight"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "milestones",
+              "name": "Milestones"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchPerformanceGoalFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "name",
+          "description",
+          "user_ids",
+          "company_id",
+          "parent_id",
+          "cycle_id",
+          "type",
+          "status",
+          "progress",
+          "weight",
+          "start_at",
+          "due_at",
+          "completed_at",
+          "milestones",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchPerformanceGoalFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "user_ids",
+              "name": "UserIds"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "cycle_id",
+              "name": "CycleId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "progress",
+              "name": "Progress"
+            },
+            {
+              "value": "weight",
+              "name": "Weight"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "due_at",
+              "name": "DueAt"
+            },
+            {
+              "value": "completed_at",
+              "name": "CompletedAt"
+            },
+            {
+              "value": "milestones",
+              "name": "Milestones"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "CreatePerformanceFeedbackFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "user_id",
+          "author_user_id",
+          "type",
+          "message",
+          "tags",
+          "is_visible",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreatePerformanceFeedbackFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "author_user_id",
+              "name": "AuthorUserId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "message",
+              "name": "Message"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "is_visible",
+              "name": "IsVisible"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListPerformanceFeedbacksFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "user_id",
+          "author_user_id",
+          "type",
+          "message",
+          "tags",
+          "is_visible",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListPerformanceFeedbacksFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "author_user_id",
+              "name": "AuthorUserId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "message",
+              "name": "Message"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "is_visible",
+              "name": "IsVisible"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetPerformanceFeedbackFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "user_id",
+          "author_user_id",
+          "type",
+          "message",
+          "tags",
+          "is_visible",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetPerformanceFeedbackFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "user_id",
+              "name": "UserId"
+            },
+            {
+              "value": "author_user_id",
+              "name": "AuthorUserId"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "message",
+              "name": "Message"
+            },
+            {
+              "value": "tags",
+              "name": "Tags"
+            },
+            {
+              "value": "is_visible",
+              "name": "IsVisible"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
       "ListUnifiedConnectionsCategoriesParameterItem": {
         "enum": [
           "passthrough",
@@ -173530,7 +176449,8 @@
           "signing",
           "clubs",
           "datastore",
-          "cdp"
+          "cdp",
+          "performance"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -173669,6 +176589,10 @@
             {
               "value": "cdp",
               "name": "Cdp"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
             }
           ]
         }
@@ -173707,7 +176631,8 @@
           "signing",
           "clubs",
           "datastore",
-          "cdp"
+          "cdp",
+          "performance"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -173846,6 +176771,10 @@
             {
               "value": "cdp",
               "name": "Cdp"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
             }
           ]
         }
@@ -173884,7 +176813,8 @@
           "signing",
           "clubs",
           "datastore",
-          "cdp"
+          "cdp",
+          "performance"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -174023,6 +176953,10 @@
             {
               "value": "cdp",
               "name": "Cdp"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
             }
           ]
         }
@@ -175229,6 +178163,26 @@
         },
         "required": true
       },
+      "PerformanceGoal": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PerformanceGoal"
+            }
+          }
+        },
+        "required": true
+      },
+      "PerformanceFeedback": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PerformanceFeedback"
+            }
+          }
+        },
+        "required": true
+      },
       "Connection": {
         "content": {
           "application/json": {
@@ -175763,6 +178717,18 @@
     },
     {
       "name": "activation"
+    },
+    {
+      "name": "performance"
+    },
+    {
+      "name": "cycle"
+    },
+    {
+      "name": "goal"
+    },
+    {
+      "name": "feedback"
     },
     {
       "name": "unified"

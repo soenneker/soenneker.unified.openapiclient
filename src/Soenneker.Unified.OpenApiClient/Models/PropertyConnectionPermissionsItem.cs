@@ -1196,5 +1196,33 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CdpActivationWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "performance_cycle_read")]
+        #pragma warning disable CS1591
+        PerformanceCycleRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_review_read")]
+        #pragma warning disable CS1591
+        PerformanceReviewRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_review_write")]
+        #pragma warning disable CS1591
+        PerformanceReviewWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_goal_read")]
+        #pragma warning disable CS1591
+        PerformanceGoalRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_goal_write")]
+        #pragma warning disable CS1591
+        PerformanceGoalWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_feedback_read")]
+        #pragma warning disable CS1591
+        PerformanceFeedbackRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performance_feedback_write")]
+        #pragma warning disable CS1591
+        PerformanceFeedbackWrite,
+        #pragma warning restore CS1591
     }
 }
