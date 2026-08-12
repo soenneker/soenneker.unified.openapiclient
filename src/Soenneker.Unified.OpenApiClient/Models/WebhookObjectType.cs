@@ -272,6 +272,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTimeshift,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_attendance")]
+        #pragma warning disable CS1591
+        HrisAttendance,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hris_deduction")]
         #pragma warning disable CS1591
         HrisDeduction,

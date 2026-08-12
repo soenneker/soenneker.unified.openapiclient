@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Attendance;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Bankaccount;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Benefit;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Company;
@@ -27,6 +28,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConnectionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The attendance property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Attendance.AttendanceRequestBuilder Attendance
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Attendance.AttendanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The bankaccount property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Bankaccount.BankaccountRequestBuilder Bankaccount
         {

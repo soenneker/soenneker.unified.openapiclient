@@ -38,6 +38,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string BillId { get; set; }
 #endif
+        /// <summary>The card_brand property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CardBrand { get; set; }
+#nullable restore
+#else
+        public string CardBrand { get; set; }
+#endif
+        /// <summary>The card_last4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CardLast4 { get; set; }
+#nullable restore
+#else
+        public string CardLast4 { get; set; }
+#endif
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +72,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The device_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceId { get; set; }
+#nullable restore
+#else
+        public string DeviceId { get; set; }
+#endif
+        /// <summary>The fee_amount property</summary>
+        public double? FeeAmount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +105,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string LinkId { get; set; }
+#endif
+        /// <summary>The location_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocationId { get; set; }
+#nullable restore
+#else
+        public string LocationId { get; set; }
 #endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,6 +154,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
+        /// <summary>The salesorder_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SalesorderId { get; set; }
+#nullable restore
+#else
+        public string SalesorderId { get; set; }
+#endif
+        /// <summary>The status property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentStatus? Status { get; set; }
+        /// <summary>The tender_type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentTenderType? TenderType { get; set; }
+        /// <summary>The tip_amount property</summary>
+        public double? TipAmount { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
@@ -155,17 +203,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "allocations", n => { Allocations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation>(global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bill_id", n => { BillId = n.GetStringValue(); } },
+                { "card_brand", n => { CardBrand = n.GetStringValue(); } },
+                { "card_last4", n => { CardLast4 = n.GetStringValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "device_id", n => { DeviceId = n.GetStringValue(); } },
+                { "fee_amount", n => { FeeAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "link_id", n => { LinkId = n.GetStringValue(); } },
+                { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
+                { "salesorder_id", n => { SalesorderId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentStatus>(); } },
+                { "tender_type", n => { TenderType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentTenderType>(); } },
+                { "tip_amount", n => { TipAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -181,17 +238,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation>("allocations", Allocations);
             writer.WriteStringValue("bill_id", BillId);
+            writer.WriteStringValue("card_brand", CardBrand);
+            writer.WriteStringValue("card_last4", CardLast4);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("device_id", DeviceId);
+            writer.WriteDoubleValue("fee_amount", FeeAmount);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteStringValue("link_id", LinkId);
+            writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
+            writer.WriteStringValue("salesorder_id", SalesorderId);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentTenderType>("tender_type", TenderType);
+            writer.WriteDoubleValue("tip_amount", TipAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

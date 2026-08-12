@@ -38,6 +38,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
+        /// <summary>The closed_at property</summary>
+        public DateTimeOffset? ClosedAt { get; set; }
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The device_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceId { get; set; }
+#nullable restore
+#else
+        public string DeviceId { get; set; }
+#endif
+        /// <summary>The discount_amount property</summary>
+        public double? DiscountAmount { get; set; }
+        /// <summary>The employee_user_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmployeeUserId { get; set; }
+#nullable restore
+#else
+        public string EmployeeUserId { get; set; }
+#endif
         /// <summary>The fees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +84,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee> Fees { get; set; }
 #endif
+        /// <summary>The fulfillment_type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderFulfillmentType? FulfillmentType { get; set; }
+        /// <summary>The guest_count property</summary>
+        public double? GuestCount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +104,30 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem> Lineitems { get; set; }
 #endif
+        /// <summary>The location_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocationId { get; set; }
+#nullable restore
+#else
+        public string LocationId { get; set; }
+#endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
+        /// <summary>The order_number property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderNumber { get; set; }
+#nullable restore
+#else
+        public string OrderNumber { get; set; }
+#endif
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +135,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>? Payments { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference> Payments { get; set; }
 #endif
         /// <summary>The posted_at property</summary>
         public DateTimeOffset? PostedAt { get; set; }
@@ -98,6 +154,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty Raw { get; set; }
 #endif
+        /// <summary>The refunded_amount property</summary>
+        public double? RefundedAmount { get; set; }
         /// <summary>The sales_channel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +164,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SalesChannel { get; set; }
 #endif
+        /// <summary>The service_charge_amount property</summary>
+        public double? ServiceChargeAmount { get; set; }
         /// <summary>The shipping_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +176,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderStatus? Status { get; set; }
+        /// <summary>The subscription_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionId { get; set; }
+#nullable restore
+#else
+        public string SubscriptionId { get; set; }
+#endif
+        /// <summary>The subtotal_amount property</summary>
+        public double? SubtotalAmount { get; set; }
+        /// <summary>The tax_amount property</summary>
+        public double? TaxAmount { get; set; }
+        /// <summary>The tip_amount property</summary>
+        public double? TipAmount { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
@@ -148,18 +222,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress.CreateFromDiscriminatorValue); } },
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "device_id", n => { DeviceId = n.GetStringValue(); } },
+                { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
+                { "employee_user_id", n => { EmployeeUserId = n.GetStringValue(); } },
                 { "fees", n => { Fees = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>(global::Soenneker.Unified.OpenApiClient.Models.AccountingFee.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fulfillment_type", n => { FulfillmentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderFulfillmentType>(); } },
+                { "guest_count", n => { GuestCount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "order_number", n => { OrderNumber = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
+                { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty.CreateFromDiscriminatorValue); } },
+                { "refunded_amount", n => { RefundedAmount = n.GetDoubleValue(); } },
                 { "sales_channel", n => { SalesChannel = n.GetStringValue(); } },
+                { "service_charge_amount", n => { ServiceChargeAmount = n.GetDoubleValue(); } },
                 { "shipping_address", n => { ShippingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderStatus>(); } },
+                { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
+                { "subtotal_amount", n => { SubtotalAmount = n.GetDoubleValue(); } },
+                { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
+                { "tip_amount", n => { TipAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -174,18 +264,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>("billing_address", BillingAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
+            writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("device_id", DeviceId);
+            writer.WriteDoubleValue("discount_amount", DiscountAmount);
+            writer.WriteStringValue("employee_user_id", EmployeeUserId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>("fees", Fees);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderFulfillmentType>("fulfillment_type", FulfillmentType);
+            writer.WriteDoubleValue("guest_count", GuestCount);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
+            writer.WriteStringValue("location_id", LocationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
+            writer.WriteStringValue("order_number", OrderNumber);
             writer.WriteStringValue("organization_id", OrganizationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>("payments", Payments);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty>("raw", Raw);
+            writer.WriteDoubleValue("refunded_amount", RefundedAmount);
             writer.WriteStringValue("sales_channel", SalesChannel);
+            writer.WriteDoubleValue("service_charge_amount", ServiceChargeAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderShippingAddress>("shipping_address", ShippingAddress);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderStatus>("status", Status);
+            writer.WriteStringValue("subscription_id", SubscriptionId);
+            writer.WriteDoubleValue("subtotal_amount", SubtotalAmount);
+            writer.WriteDoubleValue("tax_amount", TaxAmount);
+            writer.WriteDoubleValue("tip_amount", TipAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

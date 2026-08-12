@@ -16123,6 +16123,468 @@
         ]
       }
     },
+    "/hris/{connectionId}/attendance": {
+      "post": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "Create an attendance",
+        "operationId": "CreateHrisAttendance",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CreateHrisAttendanceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisAttendance"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisAttendance"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "List all attendances",
+        "operationId": "ListHrisAttendances",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "The user/employee ID to filter by (reference to HrisEmployee)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company_id",
+            "in": "query",
+            "description": "The company ID to filter by (reference to HrisCompany)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "The location ID to filter by (reference to HrisLocation)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListHrisAttendancesFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListHrisAttendances200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/hris/{connectionId}/attendance/{id}": {
+      "get": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "Retrieve an attendance",
+        "operationId": "GetHrisAttendance",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetHrisAttendanceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Attendance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisAttendance"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "Update an attendance",
+        "operationId": "UpdateHrisAttendance",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UpdateHrisAttendanceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Attendance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisAttendance"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisAttendance"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "Update an attendance",
+        "operationId": "PatchHrisAttendance",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchHrisAttendanceFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "\u0022Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar\u0022",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Attendance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisAttendance"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisAttendance"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "hris",
+          "attendance"
+        ],
+        "summary": "Remove an attendance",
+        "operationId": "RemoveHrisAttendance",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Attendance",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveHrisAttendance204Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/hris/{connectionId}/benefit": {
       "post": {
         "tags": [
@@ -66714,6 +67176,159 @@
           "$ref": "#/components/schemas/HrisTimeshift"
         }
       },
+      "PropertyHrisAttendanceAddress": {
+        "type": "object",
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          }
+        }
+      },
+      "HrisAttendanceBreak": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_paid": {
+            "type": "boolean"
+          },
+          "duration_minutes": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyHrisAttendanceBreaks": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisAttendanceBreak"
+        }
+      },
+      "HrisAttendance": {
+        "required": [
+          "employee_user_id",
+          "start_at",
+          "end_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "employee_user_id": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeshift_id": {
+            "type": "string"
+          },
+          "location_id": {
+            "type": "string"
+          },
+          "company_id": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/PropertyHrisAttendanceAddress"
+          },
+          "hours": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/HrisAttendanceStatus"
+          },
+          "breaks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HrisAttendanceBreak"
+            }
+          },
+          "declared_tips_amount": {
+            "type": "number"
+          },
+          "non_cash_tips_amount": {
+            "type": "number"
+          },
+          "job_name": {
+            "type": "string"
+          },
+          "hourly_rate": {
+            "type": "number"
+          },
+          "approver_user_id": {
+            "type": "string"
+          },
+          "approved_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/HrisAttendanceRawProperty"
+          }
+        }
+      },
+      "HrisAttendances": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisAttendance"
+        }
+      },
       "HrisBenefit": {
         "type": "object",
         "properties": {
@@ -68298,6 +68913,35 @@
           "type": "string"
         }
       },
+      "AccountingMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "value": {
+            "$ref": "#/components/schemas/AccountingMetadataValue"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "format": {
+            "$ref": "#/components/schemas/AccountingMetadataFormat"
+          },
+          "extra_data": {
+            "$ref": "#/components/schemas/AccountingMetadataExtraData"
+          }
+        }
+      },
+      "PropertyAccountingInvoiceMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
       "AccountingInvoice": {
         "type": "object",
         "properties": {
@@ -68420,6 +69064,12 @@
           "project_id": {
             "type": "string"
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingInvoiceRawProperty"
           }
@@ -68454,6 +69104,12 @@
         "type": "array",
         "items": {
           "type": "string"
+        }
+      },
+      "PropertyAccountingBillMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
         }
       },
       "AccountingBill": {
@@ -68572,6 +69228,12 @@
           "project_id": {
             "type": "string"
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingBillRawProperty"
           }
@@ -68619,6 +69281,12 @@
           "$ref": "#/components/schemas/AccountingCreditApplication"
         },
         "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
+      },
+      "PropertyAccountingCreditmemoMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
       },
       "AccountingCreditmemo": {
         "type": "object",
@@ -68727,6 +69395,12 @@
             },
             "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingCreditmemoRawProperty"
           }
@@ -68750,6 +69424,12 @@
           "$ref": "#/components/schemas/AccountingCreditApplication"
         },
         "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
+      },
+      "PropertyAccountingVendorcreditMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
       },
       "AccountingVendorcredit": {
         "type": "object",
@@ -68816,6 +69496,12 @@
             },
             "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingVendorcreditRawProperty"
           }
@@ -68825,6 +69511,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingVendorcredit"
+        }
+      },
+      "PropertyAccountingTaxrateMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
         }
       },
       "AccountingTaxrate": {
@@ -68855,6 +69547,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingTaxrateRawProperty"
@@ -69021,6 +69719,12 @@
           "$ref": "#/components/schemas/AccountingLineitem"
         }
       },
+      "PropertyAccountingOrderMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
       "AccountingOrder": {
         "type": "object",
         "properties": {
@@ -69071,6 +69775,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingOrderRawProperty"
@@ -69154,6 +69864,12 @@
           "type": "string"
         }
       },
+      "PropertyAccountingPurchaseorderMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
       "AccountingPurchaseorder": {
         "type": "object",
         "properties": {
@@ -69206,6 +69922,12 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
             }
           },
           "raw": {
@@ -69295,6 +70017,19 @@
           "type": "string"
         }
       },
+      "PropertyAccountingSalesorderMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
+      "PropertyAccountingSalesorderPayments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingPaymentReference"
+        },
+        "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order"
+      },
       "AccountingSalesorder": {
         "type": "object",
         "properties": {
@@ -69357,6 +70092,62 @@
             "items": {
               "type": "string"
             }
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
+          "order_number": {
+            "type": "string"
+          },
+          "location_id": {
+            "type": "string"
+          },
+          "employee_user_id": {
+            "type": "string"
+          },
+          "device_id": {
+            "type": "string"
+          },
+          "fulfillment_type": {
+            "$ref": "#/components/schemas/AccountingSalesorderFulfillmentType"
+          },
+          "guest_count": {
+            "type": "number"
+          },
+          "subtotal_amount": {
+            "type": "number"
+          },
+          "tax_amount": {
+            "type": "number"
+          },
+          "discount_amount": {
+            "type": "number"
+          },
+          "tip_amount": {
+            "type": "number"
+          },
+          "service_charge_amount": {
+            "type": "number"
+          },
+          "refunded_amount": {
+            "type": "number"
+          },
+          "closed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "subscription_id": {
+            "type": "string"
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order"
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingSalesorderRawProperty"
@@ -70270,6 +71061,12 @@
           "$ref": "#/components/schemas/AccountingCashflow"
         }
       },
+      "PropertyAccountingCategoryMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
       "AccountingCategory": {
         "type": "object",
         "properties": {
@@ -70304,6 +71101,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingCategoryRawProperty"
@@ -70345,6 +71148,12 @@
         "type": "array",
         "items": {
           "type": "string"
+        }
+      },
+      "PropertyAccountingExpenseMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
         }
       },
       "AccountingExpense": {
@@ -70446,6 +71255,12 @@
           "project_id": {
             "type": "string"
           },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
+          },
           "raw": {
             "$ref": "#/components/schemas/AccountingExpenseRawProperty"
           }
@@ -70476,6 +71291,12 @@
           "type": "string"
         },
         "description": "tracking categories / classes (AccountingCategory dimensions)"
+      },
+      "PropertyAccountingQuoteMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
       },
       "AccountingQuote": {
         "type": "object",
@@ -70593,6 +71414,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingQuoteRawProperty"
@@ -70809,6 +71636,12 @@
           "type": "string"
         }
       },
+      "PropertyAccountingProjectMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingMetadata"
+        }
+      },
       "AccountingProject": {
         "type": "object",
         "properties": {
@@ -70915,6 +71748,12 @@
           },
           "organization_id": {
             "type": "string"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/AccountingProjectRawProperty"
@@ -72233,15 +73072,42 @@
           "organization_id": {
             "type": "string"
           },
-          "raw": {
-            "$ref": "#/components/schemas/PaymentPaymentRawProperty"
-          },
           "allocations": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PaymentAllocation"
             },
             "description": "What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints."
+          },
+          "status": {
+            "$ref": "#/components/schemas/PaymentPaymentStatus"
+          },
+          "salesorder_id": {
+            "type": "string"
+          },
+          "tender_type": {
+            "$ref": "#/components/schemas/PaymentPaymentTenderType"
+          },
+          "tip_amount": {
+            "type": "number"
+          },
+          "fee_amount": {
+            "type": "number"
+          },
+          "location_id": {
+            "type": "string"
+          },
+          "device_id": {
+            "type": "string"
+          },
+          "card_brand": {
+            "type": "string"
+          },
+          "card_last4": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/PaymentPaymentRawProperty"
           }
         }
       },
@@ -86102,6 +86968,82 @@
           }
         }
       },
+      "AccountingMetadataValue": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueBranch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AccountingMetadataValue_2": "#/components/schemas/AccountingMetadataValueBranch2",
+            "AccountingMetadataValue_3": "#/components/schemas/AccountingMetadataValueBranch3",
+            "AccountingMetadataValue_4": "#/components/schemas/AccountingMetadataValueBranch4",
+            "AccountingMetadataValue_5": "#/components/schemas/AccountingMetadataValueBranch5"
+          }
+        }
+      },
+      "AccountingMetadataExtraData": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataBranch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AccountingMetadataExtraData_2": "#/components/schemas/AccountingMetadataExtraDataBranch2",
+            "AccountingMetadataExtraData_3": "#/components/schemas/AccountingMetadataExtraDataBranch3",
+            "AccountingMetadataExtraData_4": "#/components/schemas/AccountingMetadataExtraDataBranch4",
+            "AccountingMetadataExtraData_5": "#/components/schemas/AccountingMetadataExtraDataBranch5"
+          }
+        }
+      },
       "CommerceMetadataValue": {
         "required": [
           "type"
@@ -86762,6 +87704,74 @@
           }
         }
       },
+      "AccountingMetadataValueAnyOf5Item": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch4"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AccountingMetadataValueAnyOf5Item_2": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch2",
+            "AccountingMetadataValueAnyOf5Item_3": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch3",
+            "AccountingMetadataValueAnyOf5Item_4": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch4"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataAnyOf5Item": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch4"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AccountingMetadataExtraDataAnyOf5Item_2": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch2",
+            "AccountingMetadataExtraDataAnyOf5Item_3": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch3",
+            "AccountingMetadataExtraDataAnyOf5Item_4": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch4"
+          }
+        }
+      },
       "CommerceMetadataValueAnyOf5Item": {
         "required": [
           "type"
@@ -87306,6 +88316,9 @@
         "type": "object"
       },
       "HrisTimeshiftRaw": {
+        "type": "object"
+      },
+      "HrisAttendanceRaw": {
         "type": "object"
       },
       "HrisBenefitRaw": {
@@ -88075,6 +89088,100 @@
           }
         }
       },
+      "AccountingMetadataValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingMetadataValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "AccountingMetadataValueBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AccountingMetadataValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5Item"
+            }
+          }
+        }
+      },
+      "AccountingMetadataExtraDataBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5Item"
+            }
+          }
+        }
+      },
       "CommerceMetadataValueBranch2": {
         "required": [
           "value"
@@ -88827,6 +89934,72 @@
         }
       },
       "HrisMetadataExtraDataAnyOf5ItemBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AccountingMetadataValueAnyOf5ItemBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingMetadataValueAnyOf5ItemBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "AccountingMetadataValueAnyOf5ItemBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataAnyOf5ItemBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataAnyOf5ItemBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "AccountingMetadataExtraDataAnyOf5ItemBranch4": {
         "required": [
           "value"
         ],
@@ -89637,6 +90810,17 @@
         }
       },
       "RemoveHrisTimeshift204Response": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "ListHrisAttendances200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HrisAttendance"
+        }
+      },
+      "RemoveHrisAttendance204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -91073,6 +92257,9 @@
         "type": "object"
       },
       "HrisTimeshiftRawProperty": {
+        "type": "object"
+      },
+      "HrisAttendanceRawProperty": {
         "type": "object"
       },
       "HrisBenefitRawProperty": {
@@ -94507,6 +95694,34 @@
           ]
         }
       },
+      "HrisAttendanceStatus": {
+        "enum": [
+          "OPEN",
+          "CLOSED",
+          "APPROVED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "HrisAttendanceStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "OPEN",
+              "name": "Open"
+            },
+            {
+              "value": "CLOSED",
+              "name": "Closed"
+            },
+            {
+              "value": "APPROVED",
+              "name": "Approved"
+            }
+          ]
+        }
+      },
       "HrisBenefitType": {
         "enum": [
           "RETIREMENT",
@@ -95585,6 +96800,8 @@
           "GIFT_WRAP",
           "COD",
           "SURCHARGE",
+          "TIP",
+          "SERVICE_CHARGE",
           "OTHER"
         ],
         "type": "string",
@@ -95623,8 +96840,94 @@
               "name": "Surcharge"
             },
             {
+              "value": "TIP",
+              "name": "Tip"
+            },
+            {
+              "value": "SERVICE_CHARGE",
+              "name": "ServiceCharge"
+            },
+            {
               "value": "OTHER",
               "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingMetadataFormat": {
+        "enum": [
+          "TEXT",
+          "NUMBER",
+          "DATE",
+          "BOOLEAN",
+          "FILE",
+          "TEXTAREA",
+          "SINGLE_SELECT",
+          "MULTIPLE_SELECT",
+          "MEASUREMENT",
+          "PRICE",
+          "YES_NO",
+          "CURRENCY",
+          "URL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingMetadataFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TEXT",
+              "name": "Text"
+            },
+            {
+              "value": "NUMBER",
+              "name": "Number"
+            },
+            {
+              "value": "DATE",
+              "name": "Date"
+            },
+            {
+              "value": "BOOLEAN",
+              "name": "Boolean"
+            },
+            {
+              "value": "FILE",
+              "name": "File"
+            },
+            {
+              "value": "TEXTAREA",
+              "name": "Textarea"
+            },
+            {
+              "value": "SINGLE_SELECT",
+              "name": "SingleSelect"
+            },
+            {
+              "value": "MULTIPLE_SELECT",
+              "name": "MultipleSelect"
+            },
+            {
+              "value": "MEASUREMENT",
+              "name": "Measurement"
+            },
+            {
+              "value": "PRICE",
+              "name": "Price"
+            },
+            {
+              "value": "YES_NO",
+              "name": "YesNo"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "URL",
+              "name": "Url"
             }
           ]
         }
@@ -96339,7 +97642,10 @@
           "PARTIALLY_REFUNDED",
           "REFUNDED",
           "SUBMITTED",
-          "DELETED"
+          "DELETED",
+          "OPEN",
+          "COMPLETED",
+          "CANCELED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96383,6 +97689,18 @@
             {
               "value": "DELETED",
               "name": "Deleted"
+            },
+            {
+              "value": "OPEN",
+              "name": "Open"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
             }
           ]
         }
@@ -96397,7 +97715,10 @@
           "PARTIALLY_REFUNDED",
           "REFUNDED",
           "SUBMITTED",
-          "DELETED"
+          "DELETED",
+          "OPEN",
+          "COMPLETED",
+          "CANCELED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96441,6 +97762,18 @@
             {
               "value": "DELETED",
               "name": "Deleted"
+            },
+            {
+              "value": "OPEN",
+              "name": "Open"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
             }
           ]
         }
@@ -96455,7 +97788,10 @@
           "PARTIALLY_REFUNDED",
           "REFUNDED",
           "SUBMITTED",
-          "DELETED"
+          "DELETED",
+          "OPEN",
+          "COMPLETED",
+          "CANCELED"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96499,6 +97835,71 @@
             {
               "value": "DELETED",
               "name": "Deleted"
+            },
+            {
+              "value": "OPEN",
+              "name": "Open"
+            },
+            {
+              "value": "COMPLETED",
+              "name": "Completed"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "AccountingSalesorderFulfillmentType": {
+        "enum": [
+          "DINE_IN",
+          "TAKEOUT",
+          "DELIVERY",
+          "PICKUP",
+          "CURBSIDE",
+          "SHIPPING",
+          "DIGITAL",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingSalesorderFulfillmentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "DINE_IN",
+              "name": "DineIn"
+            },
+            {
+              "value": "TAKEOUT",
+              "name": "Takeout"
+            },
+            {
+              "value": "DELIVERY",
+              "name": "Delivery"
+            },
+            {
+              "value": "PICKUP",
+              "name": "Pickup"
+            },
+            {
+              "value": "CURBSIDE",
+              "name": "Curbside"
+            },
+            {
+              "value": "SHIPPING",
+              "name": "Shipping"
+            },
+            {
+              "value": "DIGITAL",
+              "name": "Digital"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
             }
           ]
         }
@@ -97363,6 +98764,107 @@
             {
               "value": "BILL",
               "name": "Bill"
+            }
+          ]
+        }
+      },
+      "PaymentPaymentStatus": {
+        "enum": [
+          "SUCCEEDED",
+          "PENDING",
+          "AUTHORIZED",
+          "FAILED",
+          "CANCELED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PaymentPaymentStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SUCCEEDED",
+              "name": "Succeeded"
+            },
+            {
+              "value": "PENDING",
+              "name": "Pending"
+            },
+            {
+              "value": "AUTHORIZED",
+              "name": "Authorized"
+            },
+            {
+              "value": "FAILED",
+              "name": "Failed"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
+            }
+          ]
+        }
+      },
+      "PaymentPaymentTenderType": {
+        "enum": [
+          "CARD",
+          "CASH",
+          "GIFT_CARD",
+          "BANK_TRANSFER",
+          "WALLET",
+          "CHECK",
+          "STORE_CREDIT",
+          "BUY_NOW_PAY_LATER",
+          "EXTERNAL",
+          "OTHER"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "PaymentPaymentTenderType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "CARD",
+              "name": "Card"
+            },
+            {
+              "value": "CASH",
+              "name": "Cash"
+            },
+            {
+              "value": "GIFT_CARD",
+              "name": "GiftCard"
+            },
+            {
+              "value": "BANK_TRANSFER",
+              "name": "BankTransfer"
+            },
+            {
+              "value": "WALLET",
+              "name": "Wallet"
+            },
+            {
+              "value": "CHECK",
+              "name": "Check"
+            },
+            {
+              "value": "STORE_CREDIT",
+              "name": "StoreCredit"
+            },
+            {
+              "value": "BUY_NOW_PAY_LATER",
+              "name": "BuyNowPayLater"
+            },
+            {
+              "value": "EXTERNAL",
+              "name": "External"
+            },
+            {
+              "value": "OTHER",
+              "name": "Other"
             }
           ]
         }
@@ -106414,6 +107916,8 @@
           "hris_timeoff_write",
           "hris_timeshift_read",
           "hris_timeshift_write",
+          "hris_attendance_read",
+          "hris_attendance_write",
           "hris_company_read",
           "hris_company_write",
           "hris_location_read",
@@ -107124,6 +108628,14 @@
             {
               "value": "hris_timeshift_write",
               "name": "HrisTimeshiftWrite"
+            },
+            {
+              "value": "hris_attendance_read",
+              "name": "HrisAttendanceRead"
+            },
+            {
+              "value": "hris_attendance_write",
+              "name": "HrisAttendanceWrite"
             },
             {
               "value": "hris_company_read",
@@ -113637,6 +115149,7 @@
           "hris_location",
           "hris_device",
           "hris_timeshift",
+          "hris_attendance",
           "hris_deduction",
           "hris_benefit",
           "hris_bankaccount",
@@ -114007,6 +115520,10 @@
             {
               "value": "hris_timeshift",
               "name": "HrisTimeshift"
+            },
+            {
+              "value": "hris_attendance",
+              "name": "HrisAttendance"
             },
             {
               "value": "hris_deduction",
@@ -131620,6 +133137,641 @@
           ]
         }
       },
+      "CreateHrisAttendanceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "employee_user_id",
+          "start_at",
+          "end_at",
+          "timeshift_id",
+          "location_id",
+          "company_id",
+          "group_id",
+          "timezone",
+          "address",
+          "hours",
+          "currency",
+          "status",
+          "breaks",
+          "declared_tips_amount",
+          "non_cash_tips_amount",
+          "job_name",
+          "hourly_rate",
+          "approver_user_id",
+          "approved_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateHrisAttendanceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timeshift_id",
+              "name": "TimeshiftId"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "hours",
+              "name": "Hours"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "breaks",
+              "name": "Breaks"
+            },
+            {
+              "value": "declared_tips_amount",
+              "name": "DeclaredTipsAmount"
+            },
+            {
+              "value": "non_cash_tips_amount",
+              "name": "NonCashTipsAmount"
+            },
+            {
+              "value": "job_name",
+              "name": "JobName"
+            },
+            {
+              "value": "hourly_rate",
+              "name": "HourlyRate"
+            },
+            {
+              "value": "approver_user_id",
+              "name": "ApproverUserId"
+            },
+            {
+              "value": "approved_at",
+              "name": "ApprovedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "ListHrisAttendancesFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "employee_user_id",
+          "start_at",
+          "end_at",
+          "timeshift_id",
+          "location_id",
+          "company_id",
+          "group_id",
+          "timezone",
+          "address",
+          "hours",
+          "currency",
+          "status",
+          "breaks",
+          "declared_tips_amount",
+          "non_cash_tips_amount",
+          "job_name",
+          "hourly_rate",
+          "approver_user_id",
+          "approved_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListHrisAttendancesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timeshift_id",
+              "name": "TimeshiftId"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "hours",
+              "name": "Hours"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "breaks",
+              "name": "Breaks"
+            },
+            {
+              "value": "declared_tips_amount",
+              "name": "DeclaredTipsAmount"
+            },
+            {
+              "value": "non_cash_tips_amount",
+              "name": "NonCashTipsAmount"
+            },
+            {
+              "value": "job_name",
+              "name": "JobName"
+            },
+            {
+              "value": "hourly_rate",
+              "name": "HourlyRate"
+            },
+            {
+              "value": "approver_user_id",
+              "name": "ApproverUserId"
+            },
+            {
+              "value": "approved_at",
+              "name": "ApprovedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetHrisAttendanceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "employee_user_id",
+          "start_at",
+          "end_at",
+          "timeshift_id",
+          "location_id",
+          "company_id",
+          "group_id",
+          "timezone",
+          "address",
+          "hours",
+          "currency",
+          "status",
+          "breaks",
+          "declared_tips_amount",
+          "non_cash_tips_amount",
+          "job_name",
+          "hourly_rate",
+          "approver_user_id",
+          "approved_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetHrisAttendanceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timeshift_id",
+              "name": "TimeshiftId"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "hours",
+              "name": "Hours"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "breaks",
+              "name": "Breaks"
+            },
+            {
+              "value": "declared_tips_amount",
+              "name": "DeclaredTipsAmount"
+            },
+            {
+              "value": "non_cash_tips_amount",
+              "name": "NonCashTipsAmount"
+            },
+            {
+              "value": "job_name",
+              "name": "JobName"
+            },
+            {
+              "value": "hourly_rate",
+              "name": "HourlyRate"
+            },
+            {
+              "value": "approver_user_id",
+              "name": "ApproverUserId"
+            },
+            {
+              "value": "approved_at",
+              "name": "ApprovedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "UpdateHrisAttendanceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "employee_user_id",
+          "start_at",
+          "end_at",
+          "timeshift_id",
+          "location_id",
+          "company_id",
+          "group_id",
+          "timezone",
+          "address",
+          "hours",
+          "currency",
+          "status",
+          "breaks",
+          "declared_tips_amount",
+          "non_cash_tips_amount",
+          "job_name",
+          "hourly_rate",
+          "approver_user_id",
+          "approved_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateHrisAttendanceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timeshift_id",
+              "name": "TimeshiftId"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "hours",
+              "name": "Hours"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "breaks",
+              "name": "Breaks"
+            },
+            {
+              "value": "declared_tips_amount",
+              "name": "DeclaredTipsAmount"
+            },
+            {
+              "value": "non_cash_tips_amount",
+              "name": "NonCashTipsAmount"
+            },
+            {
+              "value": "job_name",
+              "name": "JobName"
+            },
+            {
+              "value": "hourly_rate",
+              "name": "HourlyRate"
+            },
+            {
+              "value": "approver_user_id",
+              "name": "ApproverUserId"
+            },
+            {
+              "value": "approved_at",
+              "name": "ApprovedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "PatchHrisAttendanceFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "employee_user_id",
+          "start_at",
+          "end_at",
+          "timeshift_id",
+          "location_id",
+          "company_id",
+          "group_id",
+          "timezone",
+          "address",
+          "hours",
+          "currency",
+          "status",
+          "breaks",
+          "declared_tips_amount",
+          "non_cash_tips_amount",
+          "job_name",
+          "hourly_rate",
+          "approver_user_id",
+          "approved_at",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "PatchHrisAttendanceFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "start_at",
+              "name": "StartAt"
+            },
+            {
+              "value": "end_at",
+              "name": "EndAt"
+            },
+            {
+              "value": "timeshift_id",
+              "name": "TimeshiftId"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "company_id",
+              "name": "CompanyId"
+            },
+            {
+              "value": "group_id",
+              "name": "GroupId"
+            },
+            {
+              "value": "timezone",
+              "name": "Timezone"
+            },
+            {
+              "value": "address",
+              "name": "Address"
+            },
+            {
+              "value": "hours",
+              "name": "Hours"
+            },
+            {
+              "value": "currency",
+              "name": "Currency"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "breaks",
+              "name": "Breaks"
+            },
+            {
+              "value": "declared_tips_amount",
+              "name": "DeclaredTipsAmount"
+            },
+            {
+              "value": "non_cash_tips_amount",
+              "name": "NonCashTipsAmount"
+            },
+            {
+              "value": "job_name",
+              "name": "JobName"
+            },
+            {
+              "value": "hourly_rate",
+              "name": "HourlyRate"
+            },
+            {
+              "value": "approver_user_id",
+              "name": "ApproverUserId"
+            },
+            {
+              "value": "approved_at",
+              "name": "ApprovedAt"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
       "CreateHrisBenefitFieldsParameterItem": {
         "enum": [
           "id",
@@ -136558,6 +138710,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -136699,6 +138852,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -136740,6 +138897,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -136881,6 +139039,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -136922,6 +139084,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137063,6 +139226,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137104,6 +139271,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137245,6 +139413,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137286,6 +139458,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137427,6 +139600,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137466,6 +139643,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137599,6 +139777,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137638,6 +139820,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137771,6 +139954,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137810,6 +139997,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -137943,6 +140131,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -137982,6 +140174,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138115,6 +140308,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138154,6 +140351,7 @@
           "payments",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138287,6 +140485,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138324,6 +140526,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138449,6 +140652,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138486,6 +140693,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138611,6 +140819,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138648,6 +140860,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138773,6 +140986,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138810,6 +141027,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -138935,6 +141153,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -138972,6 +141194,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139097,6 +141320,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139122,6 +141349,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139199,6 +141427,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139224,6 +141456,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139301,6 +141534,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139326,6 +141563,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139403,6 +141641,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139428,6 +141670,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139505,6 +141748,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139530,6 +141777,7 @@
           "organization_id",
           "apply_amount",
           "applications",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139607,6 +141855,10 @@
               "name": "Applications"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139623,6 +141875,7 @@
           "rate",
           "is_active",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139664,6 +141917,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139680,6 +141937,7 @@
           "rate",
           "is_active",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139721,6 +141979,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139737,6 +141999,7 @@
           "rate",
           "is_active",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139778,6 +142041,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139794,6 +142061,7 @@
           "rate",
           "is_active",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139835,6 +142103,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -139851,6 +142123,7 @@
           "rate",
           "is_active",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -139890,6 +142163,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
             },
             {
               "value": "raw",
@@ -140098,6 +142375,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140163,6 +142441,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140185,6 +142467,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140250,6 +142533,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140272,6 +142559,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140337,6 +142625,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140359,6 +142651,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140424,6 +142717,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140446,6 +142743,7 @@
           "status",
           "lineitems",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140511,6 +142809,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140533,6 +142835,7 @@
           "lineitems",
           "organization_id",
           "category_ids",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140598,6 +142901,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140620,6 +142927,7 @@
           "lineitems",
           "organization_id",
           "category_ids",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140685,6 +142993,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140707,6 +143019,7 @@
           "lineitems",
           "organization_id",
           "category_ids",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140772,6 +143085,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140794,6 +143111,7 @@
           "lineitems",
           "organization_id",
           "category_ids",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140859,6 +143177,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140881,6 +143203,7 @@
           "lineitems",
           "organization_id",
           "category_ids",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -140946,6 +143269,10 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -140970,6 +143297,22 @@
           "organization_id",
           "fees",
           "category_ids",
+          "metadata",
+          "order_number",
+          "location_id",
+          "employee_user_id",
+          "device_id",
+          "fulfillment_type",
+          "guest_count",
+          "subtotal_amount",
+          "tax_amount",
+          "discount_amount",
+          "tip_amount",
+          "service_charge_amount",
+          "refunded_amount",
+          "closed_at",
+          "subscription_id",
+          "payments",
           "raw"
         ],
         "type": "string",
@@ -141043,6 +143386,70 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "order_number",
+              "name": "OrderNumber"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "fulfillment_type",
+              "name": "FulfillmentType"
+            },
+            {
+              "value": "guest_count",
+              "name": "GuestCount"
+            },
+            {
+              "value": "subtotal_amount",
+              "name": "SubtotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "service_charge_amount",
+              "name": "ServiceChargeAmount"
+            },
+            {
+              "value": "refunded_amount",
+              "name": "RefundedAmount"
+            },
+            {
+              "value": "closed_at",
+              "name": "ClosedAt"
+            },
+            {
+              "value": "subscription_id",
+              "name": "SubscriptionId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141067,6 +143474,22 @@
           "organization_id",
           "fees",
           "category_ids",
+          "metadata",
+          "order_number",
+          "location_id",
+          "employee_user_id",
+          "device_id",
+          "fulfillment_type",
+          "guest_count",
+          "subtotal_amount",
+          "tax_amount",
+          "discount_amount",
+          "tip_amount",
+          "service_charge_amount",
+          "refunded_amount",
+          "closed_at",
+          "subscription_id",
+          "payments",
           "raw"
         ],
         "type": "string",
@@ -141140,6 +143563,70 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "order_number",
+              "name": "OrderNumber"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "fulfillment_type",
+              "name": "FulfillmentType"
+            },
+            {
+              "value": "guest_count",
+              "name": "GuestCount"
+            },
+            {
+              "value": "subtotal_amount",
+              "name": "SubtotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "service_charge_amount",
+              "name": "ServiceChargeAmount"
+            },
+            {
+              "value": "refunded_amount",
+              "name": "RefundedAmount"
+            },
+            {
+              "value": "closed_at",
+              "name": "ClosedAt"
+            },
+            {
+              "value": "subscription_id",
+              "name": "SubscriptionId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141164,6 +143651,22 @@
           "organization_id",
           "fees",
           "category_ids",
+          "metadata",
+          "order_number",
+          "location_id",
+          "employee_user_id",
+          "device_id",
+          "fulfillment_type",
+          "guest_count",
+          "subtotal_amount",
+          "tax_amount",
+          "discount_amount",
+          "tip_amount",
+          "service_charge_amount",
+          "refunded_amount",
+          "closed_at",
+          "subscription_id",
+          "payments",
           "raw"
         ],
         "type": "string",
@@ -141237,6 +143740,70 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "order_number",
+              "name": "OrderNumber"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "fulfillment_type",
+              "name": "FulfillmentType"
+            },
+            {
+              "value": "guest_count",
+              "name": "GuestCount"
+            },
+            {
+              "value": "subtotal_amount",
+              "name": "SubtotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "service_charge_amount",
+              "name": "ServiceChargeAmount"
+            },
+            {
+              "value": "refunded_amount",
+              "name": "RefundedAmount"
+            },
+            {
+              "value": "closed_at",
+              "name": "ClosedAt"
+            },
+            {
+              "value": "subscription_id",
+              "name": "SubscriptionId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141261,6 +143828,22 @@
           "organization_id",
           "fees",
           "category_ids",
+          "metadata",
+          "order_number",
+          "location_id",
+          "employee_user_id",
+          "device_id",
+          "fulfillment_type",
+          "guest_count",
+          "subtotal_amount",
+          "tax_amount",
+          "discount_amount",
+          "tip_amount",
+          "service_charge_amount",
+          "refunded_amount",
+          "closed_at",
+          "subscription_id",
+          "payments",
           "raw"
         ],
         "type": "string",
@@ -141334,6 +143917,70 @@
               "name": "CategoryIds"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "order_number",
+              "name": "OrderNumber"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "fulfillment_type",
+              "name": "FulfillmentType"
+            },
+            {
+              "value": "guest_count",
+              "name": "GuestCount"
+            },
+            {
+              "value": "subtotal_amount",
+              "name": "SubtotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "service_charge_amount",
+              "name": "ServiceChargeAmount"
+            },
+            {
+              "value": "refunded_amount",
+              "name": "RefundedAmount"
+            },
+            {
+              "value": "closed_at",
+              "name": "ClosedAt"
+            },
+            {
+              "value": "subscription_id",
+              "name": "SubscriptionId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -141358,6 +144005,22 @@
           "organization_id",
           "fees",
           "category_ids",
+          "metadata",
+          "order_number",
+          "location_id",
+          "employee_user_id",
+          "device_id",
+          "fulfillment_type",
+          "guest_count",
+          "subtotal_amount",
+          "tax_amount",
+          "discount_amount",
+          "tip_amount",
+          "service_charge_amount",
+          "refunded_amount",
+          "closed_at",
+          "subscription_id",
+          "payments",
           "raw"
         ],
         "type": "string",
@@ -141429,6 +144092,70 @@
             {
               "value": "category_ids",
               "name": "CategoryIds"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
+              "value": "order_number",
+              "name": "OrderNumber"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "employee_user_id",
+              "name": "EmployeeUserId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "fulfillment_type",
+              "name": "FulfillmentType"
+            },
+            {
+              "value": "guest_count",
+              "name": "GuestCount"
+            },
+            {
+              "value": "subtotal_amount",
+              "name": "SubtotalAmount"
+            },
+            {
+              "value": "tax_amount",
+              "name": "TaxAmount"
+            },
+            {
+              "value": "discount_amount",
+              "name": "DiscountAmount"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "service_charge_amount",
+              "name": "ServiceChargeAmount"
+            },
+            {
+              "value": "refunded_amount",
+              "name": "RefundedAmount"
+            },
+            {
+              "value": "closed_at",
+              "name": "ClosedAt"
+            },
+            {
+              "value": "subscription_id",
+              "name": "SubscriptionId"
+            },
+            {
+              "value": "payments",
+              "name": "Payments"
             },
             {
               "value": "raw",
@@ -142289,6 +145016,7 @@
           "type",
           "code",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142338,6 +145066,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142356,6 +145088,7 @@
           "type",
           "code",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142405,6 +145138,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142423,6 +145160,7 @@
           "type",
           "code",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142472,6 +145210,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142490,6 +145232,7 @@
           "type",
           "code",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142539,6 +145282,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142557,6 +145304,7 @@
           "type",
           "code",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142606,6 +145354,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142639,6 +145391,7 @@
           "external_number",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142748,6 +145501,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142781,6 +145538,7 @@
           "external_number",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -142890,6 +145648,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -142923,6 +145685,7 @@
           "external_number",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143032,6 +145795,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143065,6 +145832,7 @@
           "external_number",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143174,6 +145942,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143207,6 +145979,7 @@
           "external_number",
           "category_ids",
           "project_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143316,6 +146089,10 @@
               "name": "ProjectId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143356,6 +146133,7 @@
           "category_ids",
           "url",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143493,6 +146271,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143533,6 +146315,7 @@
           "category_ids",
           "url",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143670,6 +146453,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143710,6 +146497,7 @@
           "category_ids",
           "url",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -143847,6 +146635,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -143887,6 +146679,7 @@
           "category_ids",
           "url",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -144024,6 +146817,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144064,6 +146861,7 @@
           "category_ids",
           "url",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -144199,6 +146997,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
             },
             {
               "value": "raw",
@@ -144529,6 +147331,7 @@
           "category_ids",
           "location_id",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -144666,6 +147469,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144706,6 +147513,7 @@
           "category_ids",
           "location_id",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -144843,6 +147651,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -144883,6 +147695,7 @@
           "category_ids",
           "location_id",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -145020,6 +147833,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145060,6 +147877,7 @@
           "category_ids",
           "location_id",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -145197,6 +148015,10 @@
               "name": "OrganizationId"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -145237,6 +148059,7 @@
           "category_ids",
           "location_id",
           "organization_id",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -145372,6 +148195,10 @@
             {
               "value": "organization_id",
               "name": "OrganizationId"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
             },
             {
               "value": "raw",
@@ -150409,8 +153236,17 @@
           "account_id",
           "reference",
           "organization_id",
-          "raw",
-          "allocations"
+          "allocations",
+          "status",
+          "salesorder_id",
+          "tender_type",
+          "tip_amount",
+          "fee_amount",
+          "location_id",
+          "device_id",
+          "card_brand",
+          "card_last4",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -150479,12 +153315,48 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "allocations",
               "name": "Allocations"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "salesorder_id",
+              "name": "SalesorderId"
+            },
+            {
+              "value": "tender_type",
+              "name": "TenderType"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "fee_amount",
+              "name": "FeeAmount"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "card_brand",
+              "name": "CardBrand"
+            },
+            {
+              "value": "card_last4",
+              "name": "CardLast4"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -150506,8 +153378,17 @@
           "account_id",
           "reference",
           "organization_id",
-          "raw",
-          "allocations"
+          "allocations",
+          "status",
+          "salesorder_id",
+          "tender_type",
+          "tip_amount",
+          "fee_amount",
+          "location_id",
+          "device_id",
+          "card_brand",
+          "card_last4",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -150576,12 +153457,48 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "allocations",
               "name": "Allocations"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "salesorder_id",
+              "name": "SalesorderId"
+            },
+            {
+              "value": "tender_type",
+              "name": "TenderType"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "fee_amount",
+              "name": "FeeAmount"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "card_brand",
+              "name": "CardBrand"
+            },
+            {
+              "value": "card_last4",
+              "name": "CardLast4"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -150603,8 +153520,17 @@
           "account_id",
           "reference",
           "organization_id",
-          "raw",
-          "allocations"
+          "allocations",
+          "status",
+          "salesorder_id",
+          "tender_type",
+          "tip_amount",
+          "fee_amount",
+          "location_id",
+          "device_id",
+          "card_brand",
+          "card_last4",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -150673,12 +153599,48 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "allocations",
               "name": "Allocations"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "salesorder_id",
+              "name": "SalesorderId"
+            },
+            {
+              "value": "tender_type",
+              "name": "TenderType"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "fee_amount",
+              "name": "FeeAmount"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "card_brand",
+              "name": "CardBrand"
+            },
+            {
+              "value": "card_last4",
+              "name": "CardLast4"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -150700,8 +153662,17 @@
           "account_id",
           "reference",
           "organization_id",
-          "raw",
-          "allocations"
+          "allocations",
+          "status",
+          "salesorder_id",
+          "tender_type",
+          "tip_amount",
+          "fee_amount",
+          "location_id",
+          "device_id",
+          "card_brand",
+          "card_last4",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -150770,12 +153741,48 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "allocations",
               "name": "Allocations"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "salesorder_id",
+              "name": "SalesorderId"
+            },
+            {
+              "value": "tender_type",
+              "name": "TenderType"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "fee_amount",
+              "name": "FeeAmount"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "card_brand",
+              "name": "CardBrand"
+            },
+            {
+              "value": "card_last4",
+              "name": "CardLast4"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -150797,8 +153804,17 @@
           "account_id",
           "reference",
           "organization_id",
-          "raw",
-          "allocations"
+          "allocations",
+          "status",
+          "salesorder_id",
+          "tender_type",
+          "tip_amount",
+          "fee_amount",
+          "location_id",
+          "device_id",
+          "card_brand",
+          "card_last4",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -150867,12 +153883,48 @@
               "name": "OrganizationId"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "allocations",
               "name": "Allocations"
+            },
+            {
+              "value": "status",
+              "name": "Status"
+            },
+            {
+              "value": "salesorder_id",
+              "name": "SalesorderId"
+            },
+            {
+              "value": "tender_type",
+              "name": "TenderType"
+            },
+            {
+              "value": "tip_amount",
+              "name": "TipAmount"
+            },
+            {
+              "value": "fee_amount",
+              "name": "FeeAmount"
+            },
+            {
+              "value": "location_id",
+              "name": "LocationId"
+            },
+            {
+              "value": "device_id",
+              "name": "DeviceId"
+            },
+            {
+              "value": "card_brand",
+              "name": "CardBrand"
+            },
+            {
+              "value": "card_last4",
+              "name": "CardLast4"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -177323,6 +180375,16 @@
         },
         "required": true
       },
+      "HrisAttendance": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HrisAttendance"
+            }
+          }
+        },
+        "required": true
+      },
       "HrisBenefit": {
         "content": {
           "application/json": {
@@ -178408,6 +181470,9 @@
     },
     {
       "name": "timeshift"
+    },
+    {
+      "name": "attendance"
     },
     {
       "name": "benefit"

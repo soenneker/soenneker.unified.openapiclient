@@ -540,6 +540,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTimeshiftWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_attendance_read")]
+        #pragma warning disable CS1591
+        HrisAttendanceRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_attendance_write")]
+        #pragma warning disable CS1591
+        HrisAttendanceWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hris_company_read")]
         #pragma warning disable CS1591
         HrisCompanyRead,

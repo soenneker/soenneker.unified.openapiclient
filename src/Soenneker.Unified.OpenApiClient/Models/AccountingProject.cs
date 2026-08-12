@@ -106,6 +106,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ManagerUserId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The minutes_logged property</summary>
         public double? MinutesLogged { get; set; }
         /// <summary>The minutes_to_be_invoiced property</summary>
@@ -199,6 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_billable", n => { IsBillable = n.GetBoolValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "manager_user_id", n => { ManagerUserId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "minutes_logged", n => { MinutesLogged = n.GetDoubleValue(); } },
                 { "minutes_to_be_invoiced", n => { MinutesToBeInvoiced = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -241,6 +250,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_billable", IsBillable);
             writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("manager_user_id", ManagerUserId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("minutes_logged", MinutesLogged);
             writer.WriteDoubleValue("minutes_to_be_invoiced", MinutesToBeInvoiced);
             writer.WriteStringValue("name", Name);

@@ -36,6 +36,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Surcharge,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TIP")]
+        #pragma warning disable CS1591
+        Tip,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE_CHARGE")]
+        #pragma warning disable CS1591
+        ServiceCharge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
         Other,

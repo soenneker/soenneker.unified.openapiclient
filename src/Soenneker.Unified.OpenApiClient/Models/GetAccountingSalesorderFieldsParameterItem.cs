@@ -72,6 +72,70 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CategoryIds,
         #pragma warning restore CS1591
+        [EnumMember(Value = "metadata")]
+        #pragma warning disable CS1591
+        Metadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "order_number")]
+        #pragma warning disable CS1591
+        OrderNumber,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "location_id")]
+        #pragma warning disable CS1591
+        LocationId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employee_user_id")]
+        #pragma warning disable CS1591
+        EmployeeUserId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "device_id")]
+        #pragma warning disable CS1591
+        DeviceId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fulfillment_type")]
+        #pragma warning disable CS1591
+        FulfillmentType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "guest_count")]
+        #pragma warning disable CS1591
+        GuestCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subtotal_amount")]
+        #pragma warning disable CS1591
+        SubtotalAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tax_amount")]
+        #pragma warning disable CS1591
+        TaxAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "discount_amount")]
+        #pragma warning disable CS1591
+        DiscountAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tip_amount")]
+        #pragma warning disable CS1591
+        TipAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "service_charge_amount")]
+        #pragma warning disable CS1591
+        ServiceChargeAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "refunded_amount")]
+        #pragma warning disable CS1591
+        RefundedAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "closed_at")]
+        #pragma warning disable CS1591
+        ClosedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subscription_id")]
+        #pragma warning disable CS1591
+        SubscriptionId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payments")]
+        #pragma warning disable CS1591
+        Payments,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

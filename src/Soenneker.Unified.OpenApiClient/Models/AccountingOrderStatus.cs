@@ -44,5 +44,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Deleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "OPEN")]
+        #pragma warning disable CS1591
+        Open,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMPLETED")]
+        #pragma warning disable CS1591
+        Completed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CANCELED")]
+        #pragma warning disable CS1591
+        Canceled,
+        #pragma warning restore CS1591
     }
 }

@@ -161,6 +161,9 @@
          "name": "timeshift"
       },
       {
+         "name": "attendance"
+      },
+      {
          "name": "benefit"
       },
       {
@@ -905,6 +908,16 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/HrisTimeshift"
+                  }
+               }
+            }
+         },
+         "HrisAttendance": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/HrisAttendance"
                   }
                }
             }
@@ -8284,6 +8297,163 @@
                "$ref": "#/components/schemas/HrisTimeshift"
             }
          },
+         "property_HrisAttendance_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "region_code": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               },
+               "country_code": {
+                  "type": "string"
+               }
+            }
+         },
+         "HrisAttendanceBreak": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "is_paid": {
+                  "type": "boolean"
+               },
+               "duration_minutes": {
+                  "type": "number"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_HrisAttendance_breaks": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/HrisAttendanceBreak"
+            }
+         },
+         "HrisAttendance": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "employee_user_id": {
+                  "type": "string"
+               },
+               "start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "end_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "timeshift_id": {
+                  "type": "string"
+               },
+               "location_id": {
+                  "type": "string"
+               },
+               "company_id": {
+                  "type": "string"
+               },
+               "group_id": {
+                  "type": "string"
+               },
+               "timezone": {
+                  "type": "string"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_HrisAttendance_address"
+               },
+               "hours": {
+                  "type": "number"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "OPEN",
+                     "CLOSED",
+                     "APPROVED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "breaks": {
+                  "$ref": "#/components/schemas/property_HrisAttendance_breaks"
+               },
+               "declared_tips_amount": {
+                  "type": "number"
+               },
+               "non_cash_tips_amount": {
+                  "type": "number"
+               },
+               "job_name": {
+                  "type": "string"
+               },
+               "hourly_rate": {
+                  "type": "number"
+               },
+               "approver_user_id": {
+                  "type": "string"
+               },
+               "approved_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            },
+            "required": [
+               "employee_user_id",
+               "start_at",
+               "end_at"
+            ]
+         },
+         "HrisAttendances": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/HrisAttendance"
+            }
+         },
          "HrisBenefit": {
             "type": "object",
             "properties": {
@@ -9854,6 +10024,8 @@
                      "GIFT_WRAP",
                      "COD",
                      "SURCHARGE",
+                     "TIP",
+                     "SERVICE_CHARGE",
                      "OTHER"
                   ],
                   "x-speakeasy-unknown-values": "allow"
@@ -9991,6 +10163,117 @@
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "AccountingMetadata": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "slug": {
+                  "type": "string"
+               },
+               "value": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               },
+               "namespace": {
+                  "type": "string"
+               },
+               "format": {
+                  "type": "string",
+                  "enum": [
+                     "TEXT",
+                     "NUMBER",
+                     "DATE",
+                     "BOOLEAN",
+                     "FILE",
+                     "TEXTAREA",
+                     "SINGLE_SELECT",
+                     "MULTIPLE_SELECT",
+                     "MEASUREMENT",
+                     "PRICE",
+                     "YES_NO",
+                     "CURRENCY",
+                     "URL"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "extra_data": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               }
+            }
+         },
+         "property_AccountingInvoice_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
             }
          },
          "AccountingInvoice": {
@@ -10154,6 +10437,9 @@
                "project_id": {
                   "type": "string"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingInvoice_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10189,6 +10475,12 @@
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "property_AccountingBill_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
             }
          },
          "AccountingBill": {
@@ -10340,6 +10632,9 @@
                "project_id": {
                   "type": "string"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingBill_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10393,6 +10688,12 @@
                "$ref": "#/components/schemas/AccountingCreditApplication"
             },
             "description": "What this credit memo was applied to (invoices/bills). Writable inline on create/update."
+         },
+         "property_AccountingCreditmemo_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
          },
          "AccountingCreditmemo": {
             "type": "object",
@@ -10509,6 +10810,9 @@
                "applications": {
                   "$ref": "#/components/schemas/property_AccountingCreditmemo_applications"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingCreditmemo_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10533,6 +10837,12 @@
                "$ref": "#/components/schemas/AccountingCreditApplication"
             },
             "description": "What this vendor credit was applied to (invoices/bills). Writable inline on create/update."
+         },
+         "property_AccountingVendorcredit_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
          },
          "AccountingVendorcredit": {
             "type": "object",
@@ -10605,6 +10915,9 @@
                "applications": {
                   "$ref": "#/components/schemas/property_AccountingVendorcredit_applications"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingVendorcredit_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10615,6 +10928,12 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingVendorcredit"
+            }
+         },
+         "property_AccountingTaxrate_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
             }
          },
          "AccountingTaxrate": {
@@ -10645,6 +10964,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingTaxrate_metadata"
                },
                "raw": {
                   "type": "object",
@@ -10820,6 +11142,12 @@
                "$ref": "#/components/schemas/AccountingLineitem"
             }
          },
+         "property_AccountingOrder_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
          "AccountingOrder": {
             "type": "object",
             "properties": {
@@ -10875,7 +11203,10 @@
                      "PARTIALLY_REFUNDED",
                      "REFUNDED",
                      "SUBMITTED",
-                     "DELETED"
+                     "DELETED",
+                     "OPEN",
+                     "COMPLETED",
+                     "CANCELED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -10884,6 +11215,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingOrder_metadata"
                },
                "raw": {
                   "type": "object",
@@ -10968,6 +11302,12 @@
                "type": "string"
             }
          },
+         "property_AccountingPurchaseorder_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
          "AccountingPurchaseorder": {
             "type": "object",
             "properties": {
@@ -11015,7 +11355,10 @@
                      "PARTIALLY_REFUNDED",
                      "REFUNDED",
                      "SUBMITTED",
-                     "DELETED"
+                     "DELETED",
+                     "OPEN",
+                     "COMPLETED",
+                     "CANCELED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -11027,6 +11370,9 @@
                },
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingPurchaseorder_category_ids"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingPurchaseorder_metadata"
                },
                "raw": {
                   "type": "object",
@@ -11116,6 +11462,19 @@
                "type": "string"
             }
          },
+         "property_AccountingSalesorder_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
+         "property_AccountingSalesorder_payments": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingPaymentReference"
+            },
+            "description": "read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order"
+         },
          "AccountingSalesorder": {
             "type": "object",
             "properties": {
@@ -11163,7 +11522,10 @@
                      "PARTIALLY_REFUNDED",
                      "REFUNDED",
                      "SUBMITTED",
-                     "DELETED"
+                     "DELETED",
+                     "OPEN",
+                     "COMPLETED",
+                     "CANCELED"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -11181,6 +11543,66 @@
                },
                "category_ids": {
                   "$ref": "#/components/schemas/property_AccountingSalesorder_category_ids"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingSalesorder_metadata"
+               },
+               "order_number": {
+                  "type": "string"
+               },
+               "location_id": {
+                  "type": "string"
+               },
+               "employee_user_id": {
+                  "type": "string"
+               },
+               "device_id": {
+                  "type": "string"
+               },
+               "fulfillment_type": {
+                  "type": "string",
+                  "enum": [
+                     "DINE_IN",
+                     "TAKEOUT",
+                     "DELIVERY",
+                     "PICKUP",
+                     "CURBSIDE",
+                     "SHIPPING",
+                     "DIGITAL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "guest_count": {
+                  "type": "number"
+               },
+               "subtotal_amount": {
+                  "type": "number"
+               },
+               "tax_amount": {
+                  "type": "number"
+               },
+               "discount_amount": {
+                  "type": "number"
+               },
+               "tip_amount": {
+                  "type": "number"
+               },
+               "service_charge_amount": {
+                  "type": "number"
+               },
+               "refunded_amount": {
+                  "type": "number"
+               },
+               "closed_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "subscription_id": {
+                  "type": "string"
+               },
+               "payments": {
+                  "$ref": "#/components/schemas/property_AccountingSalesorder_payments"
                },
                "raw": {
                   "type": "object",
@@ -12000,6 +12422,12 @@
                "$ref": "#/components/schemas/AccountingCashflow"
             }
          },
+         "property_AccountingCategory_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
          "AccountingCategory": {
             "type": "object",
             "properties": {
@@ -12046,6 +12474,9 @@
                "organization_id": {
                   "type": "string"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingCategory_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -12087,6 +12518,12 @@
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "property_AccountingExpense_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
             }
          },
          "AccountingExpense": {
@@ -12181,6 +12618,9 @@
                "project_id": {
                   "type": "string"
                },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingExpense_metadata"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -12212,6 +12652,12 @@
                "type": "string"
             },
             "description": "tracking categories / classes (AccountingCategory dimensions)"
+         },
+         "property_AccountingQuote_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
          },
          "AccountingQuote": {
             "type": "object",
@@ -12349,6 +12795,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingQuote_metadata"
                },
                "raw": {
                   "type": "object",
@@ -12559,6 +13008,12 @@
                "type": "string"
             }
          },
+         "property_AccountingProject_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
          "AccountingProject": {
             "type": "object",
             "properties": {
@@ -12678,6 +13133,9 @@
                },
                "organization_id": {
                   "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingProject_metadata"
                },
                "raw": {
                   "type": "object",
@@ -14084,12 +14542,60 @@
                "organization_id": {
                   "type": "string"
                },
+               "allocations": {
+                  "$ref": "#/components/schemas/property_PaymentPayment_allocations"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "SUCCEEDED",
+                     "PENDING",
+                     "AUTHORIZED",
+                     "FAILED",
+                     "CANCELED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "salesorder_id": {
+                  "type": "string"
+               },
+               "tender_type": {
+                  "type": "string",
+                  "enum": [
+                     "CARD",
+                     "CASH",
+                     "GIFT_CARD",
+                     "BANK_TRANSFER",
+                     "WALLET",
+                     "CHECK",
+                     "STORE_CREDIT",
+                     "BUY_NOW_PAY_LATER",
+                     "EXTERNAL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "tip_amount": {
+                  "type": "number"
+               },
+               "fee_amount": {
+                  "type": "number"
+               },
+               "location_id": {
+                  "type": "string"
+               },
+               "device_id": {
+                  "type": "string"
+               },
+               "card_brand": {
+                  "type": "string"
+               },
+               "card_last4": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
-               },
-               "allocations": {
-                  "$ref": "#/components/schemas/property_PaymentPayment_allocations"
                }
             }
          },
@@ -26942,6 +27448,8 @@
                   "hris_timeoff_write",
                   "hris_timeshift_read",
                   "hris_timeshift_write",
+                  "hris_attendance_read",
+                  "hris_attendance_write",
                   "hris_company_read",
                   "hris_company_write",
                   "hris_location_read",
@@ -29660,6 +30168,7 @@
                      "hris_location",
                      "hris_device",
                      "hris_timeshift",
+                     "hris_attendance",
                      "hris_deduction",
                      "hris_benefit",
                      "hris_bankaccount",
@@ -50985,6 +51494,622 @@
             "operationId": "removeHrisTimeshift"
          }
       },
+      "/hris/{connection_id}/attendance": {
+         "post": {
+            "summary": "Create an attendance",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "employee_user_id",
+                           "start_at",
+                           "end_at",
+                           "timeshift_id",
+                           "location_id",
+                           "company_id",
+                           "group_id",
+                           "timezone",
+                           "address",
+                           "hours",
+                           "currency",
+                           "status",
+                           "breaks",
+                           "declared_tips_amount",
+                           "non_cash_tips_amount",
+                           "job_name",
+                           "hourly_rate",
+                           "approver_user_id",
+                           "approved_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisAttendance"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisAttendance"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createHrisAttendance"
+         },
+         "get": {
+            "summary": "List all attendances",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "company_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The company ID to filter by (reference to HrisCompany)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "location_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The location ID to filter by (reference to HrisLocation)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "employee_user_id",
+                           "start_at",
+                           "end_at",
+                           "timeshift_id",
+                           "location_id",
+                           "company_id",
+                           "group_id",
+                           "timezone",
+                           "address",
+                           "hours",
+                           "currency",
+                           "status",
+                           "breaks",
+                           "declared_tips_amount",
+                           "non_cash_tips_amount",
+                           "job_name",
+                           "hourly_rate",
+                           "approver_user_id",
+                           "approved_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisAttendances"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listHrisAttendances"
+         }
+      },
+      "/hris/{connection_id}/attendance/{id}": {
+         "get": {
+            "summary": "Retrieve an attendance",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "employee_user_id",
+                           "start_at",
+                           "end_at",
+                           "timeshift_id",
+                           "location_id",
+                           "company_id",
+                           "group_id",
+                           "timezone",
+                           "address",
+                           "hours",
+                           "currency",
+                           "status",
+                           "breaks",
+                           "declared_tips_amount",
+                           "non_cash_tips_amount",
+                           "job_name",
+                           "hourly_rate",
+                           "approver_user_id",
+                           "approved_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Attendance",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisAttendance"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getHrisAttendance"
+         },
+         "put": {
+            "summary": "Update an attendance",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "employee_user_id",
+                           "start_at",
+                           "end_at",
+                           "timeshift_id",
+                           "location_id",
+                           "company_id",
+                           "group_id",
+                           "timezone",
+                           "address",
+                           "hours",
+                           "currency",
+                           "status",
+                           "breaks",
+                           "declared_tips_amount",
+                           "non_cash_tips_amount",
+                           "job_name",
+                           "hourly_rate",
+                           "approver_user_id",
+                           "approved_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Attendance",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisAttendance"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisAttendance"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateHrisAttendance"
+         },
+         "patch": {
+            "summary": "Update an attendance",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "employee_user_id",
+                           "start_at",
+                           "end_at",
+                           "timeshift_id",
+                           "location_id",
+                           "company_id",
+                           "group_id",
+                           "timezone",
+                           "address",
+                           "hours",
+                           "currency",
+                           "status",
+                           "breaks",
+                           "declared_tips_amount",
+                           "non_cash_tips_amount",
+                           "job_name",
+                           "hourly_rate",
+                           "approver_user_id",
+                           "approved_at",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Attendance",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisAttendance"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisAttendance"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchHrisAttendance"
+         },
+         "delete": {
+            "summary": "Remove an attendance",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Attendance",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "attendance"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeHrisAttendance"
+         }
+      },
       "/hris/{connection_id}/benefit": {
          "post": {
             "summary": "Create a benefit",
@@ -57228,6 +58353,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -57425,6 +58551,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -57520,6 +58647,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -57622,6 +58750,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -57734,6 +58863,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -57896,6 +59026,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58065,6 +59196,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58158,6 +59290,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58258,6 +59391,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58368,6 +59502,7 @@
                            "payments",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58528,6 +59663,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58695,6 +59831,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58786,6 +59923,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58884,6 +60022,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -58992,6 +60131,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59140,6 +60280,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59295,6 +60436,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59374,6 +60516,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59460,6 +60603,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59556,6 +60700,7 @@
                            "organization_id",
                            "apply_amount",
                            "applications",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59695,6 +60840,7 @@
                            "rate",
                            "is_active",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59832,6 +60978,7 @@
                            "rate",
                            "is_active",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59902,6 +61049,7 @@
                            "rate",
                            "is_active",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -59979,6 +61127,7 @@
                            "rate",
                            "is_active",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60066,6 +61215,7 @@
                            "rate",
                            "is_active",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60424,6 +61574,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60585,6 +61736,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60661,6 +61813,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60744,6 +61897,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60838,6 +61992,7 @@
                            "status",
                            "lineitems",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -60984,6 +62139,7 @@
                            "lineitems",
                            "organization_id",
                            "category_ids",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -61136,6 +62292,7 @@
                            "lineitems",
                            "organization_id",
                            "category_ids",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -61212,6 +62369,7 @@
                            "lineitems",
                            "organization_id",
                            "category_ids",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -61295,6 +62453,7 @@
                            "lineitems",
                            "organization_id",
                            "category_ids",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -61388,6 +62547,7 @@
                            "lineitems",
                            "organization_id",
                            "category_ids",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -61535,6 +62695,22 @@
                            "organization_id",
                            "fees",
                            "category_ids",
+                           "metadata",
+                           "order_number",
+                           "location_id",
+                           "employee_user_id",
+                           "device_id",
+                           "fulfillment_type",
+                           "guest_count",
+                           "subtotal_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "tip_amount",
+                           "service_charge_amount",
+                           "refunded_amount",
+                           "closed_at",
+                           "subscription_id",
+                           "payments",
                            "raw"
                         ]
                      }
@@ -61689,6 +62865,22 @@
                            "organization_id",
                            "fees",
                            "category_ids",
+                           "metadata",
+                           "order_number",
+                           "location_id",
+                           "employee_user_id",
+                           "device_id",
+                           "fulfillment_type",
+                           "guest_count",
+                           "subtotal_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "tip_amount",
+                           "service_charge_amount",
+                           "refunded_amount",
+                           "closed_at",
+                           "subscription_id",
+                           "payments",
                            "raw"
                         ]
                      }
@@ -61767,6 +62959,22 @@
                            "organization_id",
                            "fees",
                            "category_ids",
+                           "metadata",
+                           "order_number",
+                           "location_id",
+                           "employee_user_id",
+                           "device_id",
+                           "fulfillment_type",
+                           "guest_count",
+                           "subtotal_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "tip_amount",
+                           "service_charge_amount",
+                           "refunded_amount",
+                           "closed_at",
+                           "subscription_id",
+                           "payments",
                            "raw"
                         ]
                      }
@@ -61852,6 +63060,22 @@
                            "organization_id",
                            "fees",
                            "category_ids",
+                           "metadata",
+                           "order_number",
+                           "location_id",
+                           "employee_user_id",
+                           "device_id",
+                           "fulfillment_type",
+                           "guest_count",
+                           "subtotal_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "tip_amount",
+                           "service_charge_amount",
+                           "refunded_amount",
+                           "closed_at",
+                           "subscription_id",
+                           "payments",
                            "raw"
                         ]
                      }
@@ -61947,6 +63171,22 @@
                            "organization_id",
                            "fees",
                            "category_ids",
+                           "metadata",
+                           "order_number",
+                           "location_id",
+                           "employee_user_id",
+                           "device_id",
+                           "fulfillment_type",
+                           "guest_count",
+                           "subtotal_amount",
+                           "tax_amount",
+                           "discount_amount",
+                           "tip_amount",
+                           "service_charge_amount",
+                           "refunded_amount",
+                           "closed_at",
+                           "subscription_id",
+                           "payments",
                            "raw"
                         ]
                      }
@@ -63289,6 +64529,7 @@
                            "type",
                            "code",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -63428,6 +64669,7 @@
                            "type",
                            "code",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -63500,6 +64742,7 @@
                            "type",
                            "code",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -63579,6 +64822,7 @@
                            "type",
                            "code",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -63668,6 +64912,7 @@
                            "type",
                            "code",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -63824,6 +65069,7 @@
                            "external_number",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64041,6 +65287,7 @@
                            "external_number",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64128,6 +65375,7 @@
                            "external_number",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64222,6 +65470,7 @@
                            "external_number",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64326,6 +65575,7 @@
                            "external_number",
                            "category_ids",
                            "project_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64489,6 +65739,7 @@
                            "category_ids",
                            "url",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64694,6 +65945,7 @@
                            "category_ids",
                            "url",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64788,6 +66040,7 @@
                            "category_ids",
                            "url",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -64889,6 +66142,7 @@
                            "category_ids",
                            "url",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -65000,6 +66254,7 @@
                            "category_ids",
                            "url",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -65645,6 +66900,7 @@
                            "category_ids",
                            "location_id",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -65832,6 +67088,7 @@
                            "category_ids",
                            "location_id",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -65926,6 +67183,7 @@
                            "category_ids",
                            "location_id",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -66027,6 +67285,7 @@
                            "category_ids",
                            "location_id",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -66138,6 +67397,7 @@
                            "category_ids",
                            "location_id",
                            "organization_id",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -71681,8 +72941,17 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "raw",
-                           "allocations"
+                           "allocations",
+                           "status",
+                           "salesorder_id",
+                           "tender_type",
+                           "tip_amount",
+                           "fee_amount",
+                           "location_id",
+                           "device_id",
+                           "card_brand",
+                           "card_last4",
+                           "raw"
                         ]
                      }
                   },
@@ -71889,8 +73158,17 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "raw",
-                           "allocations"
+                           "allocations",
+                           "status",
+                           "salesorder_id",
+                           "tender_type",
+                           "tip_amount",
+                           "fee_amount",
+                           "location_id",
+                           "device_id",
+                           "card_brand",
+                           "card_last4",
+                           "raw"
                         ]
                      }
                   },
@@ -71967,8 +73245,17 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "raw",
-                           "allocations"
+                           "allocations",
+                           "status",
+                           "salesorder_id",
+                           "tender_type",
+                           "tip_amount",
+                           "fee_amount",
+                           "location_id",
+                           "device_id",
+                           "card_brand",
+                           "card_last4",
+                           "raw"
                         ]
                      }
                   },
@@ -72052,8 +73339,17 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "raw",
-                           "allocations"
+                           "allocations",
+                           "status",
+                           "salesorder_id",
+                           "tender_type",
+                           "tip_amount",
+                           "fee_amount",
+                           "location_id",
+                           "device_id",
+                           "card_brand",
+                           "card_last4",
+                           "raw"
                         ]
                      }
                   },
@@ -72147,8 +73443,17 @@
                            "account_id",
                            "reference",
                            "organization_id",
-                           "raw",
-                           "allocations"
+                           "allocations",
+                           "status",
+                           "salesorder_id",
+                           "tender_type",
+                           "tip_amount",
+                           "fee_amount",
+                           "location_id",
+                           "device_id",
+                           "card_brand",
+                           "card_last4",
+                           "raw"
                         ]
                      }
                   },

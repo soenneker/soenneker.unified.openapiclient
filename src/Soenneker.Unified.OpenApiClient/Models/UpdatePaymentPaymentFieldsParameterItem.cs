@@ -68,13 +68,49 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "allocations")]
         #pragma warning disable CS1591
         Allocations,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "status")]
+        #pragma warning disable CS1591
+        Status,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "salesorder_id")]
+        #pragma warning disable CS1591
+        SalesorderId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tender_type")]
+        #pragma warning disable CS1591
+        TenderType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tip_amount")]
+        #pragma warning disable CS1591
+        TipAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fee_amount")]
+        #pragma warning disable CS1591
+        FeeAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "location_id")]
+        #pragma warning disable CS1591
+        LocationId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "device_id")]
+        #pragma warning disable CS1591
+        DeviceId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "card_brand")]
+        #pragma warning disable CS1591
+        CardBrand,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "card_last4")]
+        #pragma warning disable CS1591
+        CardLast4,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }
