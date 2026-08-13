@@ -88,10 +88,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ProviderName,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "published_at")]
         #pragma warning disable CS1591
         PublishedAt,
@@ -99,6 +95,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "time_estimate_minutes")]
         #pragma warning disable CS1591
         TimeEstimateMinutes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }

@@ -21914,6 +21914,22 @@
             }
           },
           {
+            "name": "start_gte",
+            "in": "query",
+            "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end_lt",
+            "in": "query",
+            "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -79628,36 +79644,49 @@
         },
         "description": "@deprecated; use instructors"
       },
-      "LmsEmail": {
-        "type": "object"
-      },
-      "PropertyLmsInstructorEmails": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PropertyLmsInstructorEmailsItem"
-        }
-      },
-      "LmsTelephone": {
-        "required": [
-          "telephone"
-        ],
+      "LmsReference": {
         "type": "object",
         "properties": {
-          "telephone": {
+          "id": {
             "type": "string"
           },
-          "type": {
-            "$ref": "#/components/schemas/LmsTelephoneType"
+          "name": {
+            "type": "string"
           }
         }
       },
-      "PropertyLmsInstructorTelephones": {
+      "PropertyLmsCourseInstructors": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/LmsTelephone"
+          "$ref": "#/components/schemas/LmsReference"
         }
       },
-      "LmsInstructor": {
+      "PropertyLmsCourseStudentIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "@deprecated; use students"
+      },
+      "PropertyLmsCourseStudents": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsReference"
+        }
+      },
+      "PropertyLmsCourseContentIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyLmsCourseSkills": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "LmsCourse": {
         "type": "object",
         "properties": {
           "id": {
@@ -79674,52 +79703,232 @@
           "name": {
             "type": "string"
           },
-          "first_name": {
+          "description": {
             "type": "string"
           },
-          "last_name": {
-            "type": "string"
+          "is_private": {
+            "type": "boolean"
           },
-          "emails": {
+          "is_active": {
+            "type": "boolean"
+          },
+          "price_amount": {
+            "type": "number"
+          },
+          "languages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/LmsInstructorEmailsItem"
+              "type": "string"
             }
           },
-          "title": {
-            "type": "string"
-          },
-          "telephones": {
+          "categories": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/LmsTelephone"
+              "type": "string"
             }
           },
-          "image_url": {
+          "currency": {
             "type": "string"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsMedia"
+            }
+          },
+          "instructor_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "@deprecated; use instructors"
+          },
+          "instructors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsReference"
+            }
+          },
+          "student_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "@deprecated; use students"
+          },
+          "students": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsReference"
+            }
+          },
+          "content_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "duration_minutes": {
+            "type": "number"
+          },
+          "provider_name": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "time_estimate_minutes": {
+            "type": "number"
           },
           "raw": {
-            "$ref": "#/components/schemas/LmsInstructorRawProperty"
+            "$ref": "#/components/schemas/LmsCourseRawProperty"
           }
         }
       },
-      "PropertyLmsCourseInstructors": {
+      "LmsCourses": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/LmsInstructor"
+          "$ref": "#/components/schemas/LmsCourse"
         }
       },
-      "PropertyLmsCourseStudentIds": {
+      "PropertyLmsClassMedia": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsMedia"
+        }
+      },
+      "PropertyLmsClassInstructorIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "@deprecated; use instructors"
+      },
+      "PropertyLmsClassStudentIds": {
         "type": "array",
         "items": {
           "type": "string"
         },
         "description": "@deprecated; use students"
       },
+      "PropertyLmsClassLanguages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "PropertyLmsClassInstructors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsReference"
+        }
+      },
+      "PropertyLmsClassStudents": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsReference"
+        }
+      },
+      "LmsClass": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsMedia"
+            }
+          },
+          "course_id": {
+            "type": "string"
+          },
+          "instructor_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "@deprecated; use instructors"
+          },
+          "student_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "@deprecated; use students"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instructors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsReference"
+            }
+          },
+          "students": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsReference"
+            }
+          },
+          "raw": {
+            "$ref": "#/components/schemas/LmsClassRawProperty"
+          }
+        }
+      },
+      "LmsClasses": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsClass"
+        }
+      },
+      "LmsEmail": {
+        "type": "object"
+      },
       "PropertyLmsStudentEmails": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PropertyLmsStudentEmailsItem"
+        }
+      },
+      "LmsTelephone": {
+        "required": [
+          "telephone"
+        ],
+        "type": "object",
+        "properties": {
+          "telephone": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LmsTelephoneType"
+          }
         }
       },
       "PropertyLmsStudentTelephones": {
@@ -79803,222 +80012,68 @@
           }
         }
       },
-      "PropertyLmsCourseStudents": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/LmsStudent"
-        }
-      },
-      "PropertyLmsCourseContentIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "PropertyLmsCourseSkills": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "LmsCourse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "is_private": {
-            "type": "boolean"
-          },
-          "is_active": {
-            "type": "boolean"
-          },
-          "price_amount": {
-            "type": "number"
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "currency": {
-            "type": "string"
-          },
-          "media": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LmsMedia"
-            }
-          },
-          "instructor_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-          },
-          "instructors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LmsInstructor"
-            }
-          },
-          "student_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use students"
-          },
-          "students": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LmsStudent"
-            }
-          },
-          "content_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "skills": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "duration_minutes": {
-            "type": "number"
-          },
-          "provider_name": {
-            "type": "string"
-          },
-          "raw": {
-            "$ref": "#/components/schemas/LmsCourseRawProperty"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "time_estimate_minutes": {
-            "type": "number"
-          }
-        }
-      },
-      "LmsCourses": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/LmsCourse"
-        }
-      },
-      "PropertyLmsClassMedia": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/LmsMedia"
-        }
-      },
-      "PropertyLmsClassInstructorIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "PropertyLmsClassStudentIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "PropertyLmsClassLanguages": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "LmsClass": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "media": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LmsMedia"
-            }
-          },
-          "course_id": {
-            "type": "string"
-          },
-          "instructor_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "student_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "raw": {
-            "$ref": "#/components/schemas/LmsClassRawProperty"
-          }
-        }
-      },
-      "LmsClasses": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/LmsClass"
-        }
-      },
       "LmsStudents": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/LmsStudent"
+        }
+      },
+      "PropertyLmsInstructorEmails": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PropertyLmsInstructorEmailsItem"
+        }
+      },
+      "PropertyLmsInstructorTelephones": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsTelephone"
+        }
+      },
+      "LmsInstructor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsInstructorEmailsItem"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "telephones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsTelephone"
+            }
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "raw": {
+            "$ref": "#/components/schemas/LmsInstructorRawProperty"
+          }
         }
       },
       "LmsInstructors": {
@@ -80105,12 +80160,19 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "description": "@deprecated; use instructors"
       },
       "PropertyLmsContentCollectionIds": {
         "type": "array",
         "items": {
           "type": "string"
+        }
+      },
+      "PropertyLmsContentInstructors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LmsReference"
         }
       },
       "LmsContent": {
@@ -80197,10 +80259,6 @@
           "short_description": {
             "type": "string"
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
           "localizations": {
             "type": "array",
             "items": {
@@ -80211,13 +80269,24 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "@deprecated; use instructors"
           },
           "collection_ids": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "instructors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LmsReference"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "raw": {
             "$ref": "#/components/schemas/LmsContentRawProperty"
@@ -87500,686 +87569,6 @@
           }
         }
       },
-      "CrmMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CrmMetadataValueAnyOf5Item_2": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch2",
-            "CrmMetadataValueAnyOf5Item_3": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch3",
-            "CrmMetadataValueAnyOf5Item_4": "#/components/schemas/CrmMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "CrmMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CrmMetadataExtraDataAnyOf5Item_2": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch2",
-            "CrmMetadataExtraDataAnyOf5Item_3": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch3",
-            "CrmMetadataExtraDataAnyOf5Item_4": "#/components/schemas/CrmMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "AtsMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AtsMetadataValueAnyOf5Item_2": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch2",
-            "AtsMetadataValueAnyOf5Item_3": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch3",
-            "AtsMetadataValueAnyOf5Item_4": "#/components/schemas/AtsMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "AtsMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AtsMetadataExtraDataAnyOf5Item_2": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch2",
-            "AtsMetadataExtraDataAnyOf5Item_3": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch3",
-            "AtsMetadataExtraDataAnyOf5Item_4": "#/components/schemas/AtsMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "HrisMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "HrisMetadataValueAnyOf5Item_2": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch2",
-            "HrisMetadataValueAnyOf5Item_3": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch3",
-            "HrisMetadataValueAnyOf5Item_4": "#/components/schemas/HrisMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "HrisMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "HrisMetadataExtraDataAnyOf5Item_2": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch2",
-            "HrisMetadataExtraDataAnyOf5Item_3": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch3",
-            "HrisMetadataExtraDataAnyOf5Item_4": "#/components/schemas/HrisMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "AccountingMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AccountingMetadataValueAnyOf5Item_2": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch2",
-            "AccountingMetadataValueAnyOf5Item_3": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch3",
-            "AccountingMetadataValueAnyOf5Item_4": "#/components/schemas/AccountingMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "AccountingMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AccountingMetadataExtraDataAnyOf5Item_2": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch2",
-            "AccountingMetadataExtraDataAnyOf5Item_3": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch3",
-            "AccountingMetadataExtraDataAnyOf5Item_4": "#/components/schemas/AccountingMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "CommerceMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CommerceMetadataValueAnyOf5Item_2": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch2",
-            "CommerceMetadataValueAnyOf5Item_3": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch3",
-            "CommerceMetadataValueAnyOf5Item_4": "#/components/schemas/CommerceMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "CommerceMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CommerceMetadataExtraDataAnyOf5Item_2": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch2",
-            "CommerceMetadataExtraDataAnyOf5Item_3": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch3",
-            "CommerceMetadataExtraDataAnyOf5Item_4": "#/components/schemas/CommerceMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "KmsPageMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "KmsPageMetadataValueAnyOf5Item_2": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch2",
-            "KmsPageMetadataValueAnyOf5Item_3": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch3",
-            "KmsPageMetadataValueAnyOf5Item_4": "#/components/schemas/KmsPageMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "KmsPageMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "KmsPageMetadataExtraDataAnyOf5Item_2": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch2",
-            "KmsPageMetadataExtraDataAnyOf5Item_3": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch3",
-            "KmsPageMetadataExtraDataAnyOf5Item_4": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "TaskMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "TaskMetadataValueAnyOf5Item_2": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch2",
-            "TaskMetadataValueAnyOf5Item_3": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch3",
-            "TaskMetadataValueAnyOf5Item_4": "#/components/schemas/TaskMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "TaskMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "TaskMetadataExtraDataAnyOf5Item_2": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch2",
-            "TaskMetadataExtraDataAnyOf5Item_3": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch3",
-            "TaskMetadataExtraDataAnyOf5Item_4": "#/components/schemas/TaskMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "CdpMetadataValueAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CdpMetadataValueAnyOf5Item_2": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch2",
-            "CdpMetadataValueAnyOf5Item_3": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch3",
-            "CdpMetadataValueAnyOf5Item_4": "#/components/schemas/CdpMetadataValueAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "CdpMetadataExtraDataAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CdpMetadataExtraDataAnyOf5Item_2": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch2",
-            "CdpMetadataExtraDataAnyOf5Item_3": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch3",
-            "CdpMetadataExtraDataAnyOf5Item_4": "#/components/schemas/CdpMetadataExtraDataAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "IntegrationSandboxAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "IntegrationSandboxAnyOf5Item_2": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch2",
-            "IntegrationSandboxAnyOf5Item_3": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch3",
-            "IntegrationSandboxAnyOf5Item_4": "#/components/schemas/IntegrationSandboxAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "IntegrationPartnershipAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "IntegrationPartnershipAnyOf5Item_2": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch2",
-            "IntegrationPartnershipAnyOf5Item_3": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch3",
-            "IntegrationPartnershipAnyOf5Item_4": "#/components/schemas/IntegrationPartnershipAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "IntegrationSamlAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "IntegrationSamlAnyOf5Item_2": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch2",
-            "IntegrationSamlAnyOf5Item_3": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch3",
-            "IntegrationSamlAnyOf5Item_4": "#/components/schemas/IntegrationSamlAnyOf5ItemBranch4"
-          }
-        }
-      },
-      "IntegrationApiAnyOf5Item": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationApiAnyOf5ItemBranch2"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationApiAnyOf5ItemBranch3"
-          },
-          {
-            "$ref": "#/components/schemas/IntegrationApiAnyOf5ItemBranch4"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "IntegrationApiAnyOf5Item_2": "#/components/schemas/IntegrationApiAnyOf5ItemBranch2",
-            "IntegrationApiAnyOf5Item_3": "#/components/schemas/IntegrationApiAnyOf5ItemBranch3",
-            "IntegrationApiAnyOf5Item_4": "#/components/schemas/IntegrationApiAnyOf5ItemBranch4"
-          }
-        }
-      },
       "AssessmentPackageRaw": {
         "type": "object"
       },
@@ -88564,16 +87953,16 @@
       "AdsTargetRaw": {
         "type": "object"
       },
-      "LmsInstructorRaw": {
+      "LmsCourseRaw": {
+        "type": "object"
+      },
+      "LmsClassRaw": {
         "type": "object"
       },
       "LmsStudentRaw": {
         "type": "object"
       },
-      "LmsCourseRaw": {
-        "type": "object"
-      },
-      "LmsClassRaw": {
+      "LmsInstructorRaw": {
         "type": "object"
       },
       "LmsContentRaw": {
@@ -88848,7 +88237,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CrmMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/CrmMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -88895,7 +88284,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CrmMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/CrmMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -88942,7 +88331,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AtsMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/AtsMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -88989,7 +88378,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AtsMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/AtsMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89036,7 +88425,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HrisMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/HrisMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89083,7 +88472,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HrisMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/HrisMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89130,7 +88519,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AccountingMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/AccountingMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89177,7 +88566,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AccountingMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/AccountingMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89224,7 +88613,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CommerceMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/CommerceMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89271,7 +88660,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CommerceMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/CommerceMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89318,7 +88707,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/KmsPageMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/KmsPageMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89365,7 +88754,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/KmsPageMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/KmsPageMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89412,7 +88801,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TaskMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/TaskMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89459,7 +88848,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TaskMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/TaskMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89506,7 +88895,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CdpMetadataValueAnyOf5Item"
+              "$ref": "#/components/schemas/CdpMetadataValueBranch5ValueItem"
             }
           }
         }
@@ -89553,7 +88942,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CdpMetadataExtraDataAnyOf5Item"
+              "$ref": "#/components/schemas/CdpMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -89600,7 +88989,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IntegrationSandboxAnyOf5Item"
+              "$ref": "#/components/schemas/IntegrationSandboxBranch5ValueItem"
             }
           }
         }
@@ -89647,7 +89036,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IntegrationPartnershipAnyOf5Item"
+              "$ref": "#/components/schemas/IntegrationPartnershipBranch5ValueItem"
             }
           }
         }
@@ -89694,7 +89083,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IntegrationSamlAnyOf5Item"
+              "$ref": "#/components/schemas/IntegrationSamlBranch5ValueItem"
             }
           }
         }
@@ -89741,668 +89130,8 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IntegrationApiAnyOf5Item"
+              "$ref": "#/components/schemas/IntegrationApiBranch5ValueItem"
             }
-          }
-        }
-      },
-      "CrmMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CrmMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CrmMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CrmMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CrmMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CrmMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "AtsMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "AtsMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "AtsMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "AtsMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "AtsMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "AtsMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "HrisMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "HrisMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "HrisMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "HrisMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "HrisMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "HrisMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "AccountingMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "AccountingMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "AccountingMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "AccountingMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "AccountingMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "AccountingMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CommerceMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CommerceMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CommerceMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CommerceMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CommerceMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CommerceMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "KmsPageMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "KmsPageMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "KmsPageMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "KmsPageMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "KmsPageMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "KmsPageMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "TaskMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "TaskMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "TaskMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "TaskMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "TaskMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "TaskMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CdpMetadataValueAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CdpMetadataValueAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CdpMetadataValueAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CdpMetadataExtraDataAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CdpMetadataExtraDataAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "CdpMetadataExtraDataAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "IntegrationSandboxAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "IntegrationSandboxAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "IntegrationSandboxAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "IntegrationPartnershipAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "IntegrationPartnershipAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "IntegrationPartnershipAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "IntegrationSamlAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "IntegrationSamlAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "IntegrationSamlAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "IntegrationApiAnyOf5ItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "IntegrationApiAnyOf5ItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "IntegrationApiAnyOf5ItemBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
           }
         }
       },
@@ -92505,13 +91234,10 @@
       "AdsTargetRawProperty": {
         "type": "object"
       },
-      "PropertyLmsInstructorEmailsItem": {
+      "LmsCourseRawProperty": {
         "type": "object"
       },
-      "LmsInstructorEmailsItem": {
-        "type": "object"
-      },
-      "LmsInstructorRawProperty": {
+      "LmsClassRawProperty": {
         "type": "object"
       },
       "PropertyLmsStudentEmailsItem": {
@@ -92523,10 +91249,13 @@
       "LmsStudentRawProperty": {
         "type": "object"
       },
-      "LmsCourseRawProperty": {
+      "PropertyLmsInstructorEmailsItem": {
         "type": "object"
       },
-      "LmsClassRawProperty": {
+      "LmsInstructorEmailsItem": {
+        "type": "object"
+      },
+      "LmsInstructorRawProperty": {
         "type": "object"
       },
       "LmsContentRawProperty": {
@@ -92775,6 +91504,326 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "CrmMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "CrmMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "AtsMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "AtsMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "HrisMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "HrisMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "AccountingMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "AccountingMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "CommerceMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "CommerceMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "KmsPageMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "KmsPageMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "TaskMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "TaskMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "CdpMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "CdpMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "IntegrationSandboxBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "IntegrationPartnershipBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "IntegrationSamlBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "IntegrationApiBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
       },
       "AnalyticsEventMetadataAdditionalProperties": {
         "type": "object"
@@ -164468,9 +163517,9 @@
           "skills",
           "duration_minutes",
           "provider_name",
-          "raw",
           "published_at",
-          "time_estimate_minutes"
+          "time_estimate_minutes",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164559,16 +163608,16 @@
               "name": "ProviderName"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "published_at",
               "name": "PublishedAt"
             },
             {
               "value": "time_estimate_minutes",
               "name": "TimeEstimateMinutes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -164595,9 +163644,9 @@
           "skills",
           "duration_minutes",
           "provider_name",
-          "raw",
           "published_at",
-          "time_estimate_minutes"
+          "time_estimate_minutes",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164686,16 +163735,16 @@
               "name": "ProviderName"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "published_at",
               "name": "PublishedAt"
             },
             {
               "value": "time_estimate_minutes",
               "name": "TimeEstimateMinutes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -164722,9 +163771,9 @@
           "skills",
           "duration_minutes",
           "provider_name",
-          "raw",
           "published_at",
-          "time_estimate_minutes"
+          "time_estimate_minutes",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164813,16 +163862,16 @@
               "name": "ProviderName"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "published_at",
               "name": "PublishedAt"
             },
             {
               "value": "time_estimate_minutes",
               "name": "TimeEstimateMinutes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -164849,9 +163898,9 @@
           "skills",
           "duration_minutes",
           "provider_name",
-          "raw",
           "published_at",
-          "time_estimate_minutes"
+          "time_estimate_minutes",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -164940,16 +163989,16 @@
               "name": "ProviderName"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "published_at",
               "name": "PublishedAt"
             },
             {
               "value": "time_estimate_minutes",
               "name": "TimeEstimateMinutes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -164976,9 +164025,9 @@
           "skills",
           "duration_minutes",
           "provider_name",
-          "raw",
           "published_at",
-          "time_estimate_minutes"
+          "time_estimate_minutes",
+          "raw"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -165067,16 +164116,16 @@
               "name": "ProviderName"
             },
             {
-              "value": "raw",
-              "name": "Raw"
-            },
-            {
               "value": "published_at",
               "name": "PublishedAt"
             },
             {
               "value": "time_estimate_minutes",
               "name": "TimeEstimateMinutes"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
             }
           ]
         }
@@ -165093,6 +164142,8 @@
           "instructor_ids",
           "student_ids",
           "languages",
+          "instructors",
+          "students",
           "raw"
         ],
         "type": "string",
@@ -165142,6 +164193,14 @@
               "name": "Languages"
             },
             {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "students",
+              "name": "Students"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -165160,6 +164219,8 @@
           "instructor_ids",
           "student_ids",
           "languages",
+          "instructors",
+          "students",
           "raw"
         ],
         "type": "string",
@@ -165209,6 +164270,14 @@
               "name": "Languages"
             },
             {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "students",
+              "name": "Students"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -165227,6 +164296,8 @@
           "instructor_ids",
           "student_ids",
           "languages",
+          "instructors",
+          "students",
           "raw"
         ],
         "type": "string",
@@ -165276,6 +164347,14 @@
               "name": "Languages"
             },
             {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "students",
+              "name": "Students"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -165294,6 +164373,8 @@
           "instructor_ids",
           "student_ids",
           "languages",
+          "instructors",
+          "students",
           "raw"
         ],
         "type": "string",
@@ -165343,6 +164424,14 @@
               "name": "Languages"
             },
             {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "students",
+              "name": "Students"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -165361,6 +164450,8 @@
           "instructor_ids",
           "student_ids",
           "languages",
+          "instructors",
+          "students",
           "raw"
         ],
         "type": "string",
@@ -165408,6 +164499,14 @@
             {
               "value": "languages",
               "name": "Languages"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "students",
+              "name": "Students"
             },
             {
               "value": "raw",
@@ -166107,10 +165206,11 @@
           "sort_order",
           "provider_name",
           "short_description",
-          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
+          "instructors",
+          "published_at",
           "raw"
         ],
         "type": "string",
@@ -166196,10 +165296,6 @@
               "name": "ShortDescription"
             },
             {
-              "value": "published_at",
-              "name": "PublishedAt"
-            },
-            {
               "value": "localizations",
               "name": "Localizations"
             },
@@ -166210,6 +165306,14 @@
             {
               "value": "collection_ids",
               "name": "CollectionIds"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "raw",
@@ -166239,10 +165343,11 @@
           "sort_order",
           "provider_name",
           "short_description",
-          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
+          "instructors",
+          "published_at",
           "raw"
         ],
         "type": "string",
@@ -166328,10 +165433,6 @@
               "name": "ShortDescription"
             },
             {
-              "value": "published_at",
-              "name": "PublishedAt"
-            },
-            {
               "value": "localizations",
               "name": "Localizations"
             },
@@ -166342,6 +165443,14 @@
             {
               "value": "collection_ids",
               "name": "CollectionIds"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "raw",
@@ -166371,10 +165480,11 @@
           "sort_order",
           "provider_name",
           "short_description",
-          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
+          "instructors",
+          "published_at",
           "raw"
         ],
         "type": "string",
@@ -166460,10 +165570,6 @@
               "name": "ShortDescription"
             },
             {
-              "value": "published_at",
-              "name": "PublishedAt"
-            },
-            {
               "value": "localizations",
               "name": "Localizations"
             },
@@ -166474,6 +165580,14 @@
             {
               "value": "collection_ids",
               "name": "CollectionIds"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "raw",
@@ -166503,10 +165617,11 @@
           "sort_order",
           "provider_name",
           "short_description",
-          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
+          "instructors",
+          "published_at",
           "raw"
         ],
         "type": "string",
@@ -166592,10 +165707,6 @@
               "name": "ShortDescription"
             },
             {
-              "value": "published_at",
-              "name": "PublishedAt"
-            },
-            {
               "value": "localizations",
               "name": "Localizations"
             },
@@ -166606,6 +165717,14 @@
             {
               "value": "collection_ids",
               "name": "CollectionIds"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "raw",
@@ -166635,10 +165754,11 @@
           "sort_order",
           "provider_name",
           "short_description",
-          "published_at",
           "localizations",
           "instructor_ids",
           "collection_ids",
+          "instructors",
+          "published_at",
           "raw"
         ],
         "type": "string",
@@ -166724,10 +165844,6 @@
               "name": "ShortDescription"
             },
             {
-              "value": "published_at",
-              "name": "PublishedAt"
-            },
-            {
               "value": "localizations",
               "name": "Localizations"
             },
@@ -166738,6 +165854,14 @@
             {
               "value": "collection_ids",
               "name": "CollectionIds"
+            },
+            {
+              "value": "instructors",
+              "name": "Instructors"
+            },
+            {
+              "value": "published_at",
+              "name": "PublishedAt"
             },
             {
               "value": "raw",

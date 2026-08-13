@@ -21836,89 +21836,21 @@
             },
             "description": "@deprecated; use instructors"
          },
-         "LmsEmail": {
-            "type": "object",
-            "properties": {}
-         },
-         "property_LmsInstructor_emails": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsEmail"
-            }
-         },
-         "LmsTelephone": {
-            "type": "object",
-            "properties": {
-               "telephone": {
-                  "type": "string"
-               },
-               "type": {
-                  "type": "string",
-                  "enum": [
-                     "WORK",
-                     "HOME",
-                     "OTHER",
-                     "FAX",
-                     "MOBILE"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               }
-            },
-            "required": [
-               "telephone"
-            ]
-         },
-         "property_LmsInstructor_telephones": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsTelephone"
-            }
-         },
-         "LmsInstructor": {
+         "LmsReference": {
             "type": "object",
             "properties": {
                "id": {
                   "type": "string"
                },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
                "name": {
                   "type": "string"
-               },
-               "first_name": {
-                  "type": "string"
-               },
-               "last_name": {
-                  "type": "string"
-               },
-               "emails": {
-                  "$ref": "#/components/schemas/property_LmsInstructor_emails"
-               },
-               "title": {
-                  "type": "string"
-               },
-               "telephones": {
-                  "$ref": "#/components/schemas/property_LmsInstructor_telephones"
-               },
-               "image_url": {
-                  "type": "string"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
                }
             }
          },
          "property_LmsCourse_instructors": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/LmsInstructor"
+               "$ref": "#/components/schemas/LmsReference"
             }
          },
          "property_LmsCourse_student_ids": {
@@ -21928,92 +21860,10 @@
             },
             "description": "@deprecated; use students"
          },
-         "property_LmsStudent_emails": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsEmail"
-            }
-         },
-         "property_LmsStudent_telephones": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/LmsTelephone"
-            }
-         },
-         "property_LmsStudent_address": {
-            "type": "object",
-            "properties": {
-               "address1": {
-                  "type": "string"
-               },
-               "address2": {
-                  "type": "string"
-               },
-               "city": {
-                  "type": "string"
-               },
-               "region": {
-                  "type": "string"
-               },
-               "region_code": {
-                  "type": "string"
-               },
-               "postal_code": {
-                  "type": "string"
-               },
-               "country": {
-                  "type": "string"
-               },
-               "country_code": {
-                  "type": "string"
-               }
-            }
-         },
-         "LmsStudent": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "first_name": {
-                  "type": "string"
-               },
-               "last_name": {
-                  "type": "string"
-               },
-               "emails": {
-                  "$ref": "#/components/schemas/property_LmsStudent_emails"
-               },
-               "telephones": {
-                  "$ref": "#/components/schemas/property_LmsStudent_telephones"
-               },
-               "address": {
-                  "$ref": "#/components/schemas/property_LmsStudent_address"
-               },
-               "image_url": {
-                  "type": "string"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
          "property_LmsCourse_students": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/LmsStudent"
+               "$ref": "#/components/schemas/LmsReference"
             }
          },
          "property_LmsCourse_content_ids": {
@@ -22093,16 +21943,16 @@
                "provider_name": {
                   "type": "string"
                },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               },
                "published_at": {
                   "type": "string",
                   "format": "date-time"
                },
                "time_estimate_minutes": {
                   "type": "number"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
                }
             }
          },
@@ -22122,18 +21972,32 @@
             "type": "array",
             "items": {
                "type": "string"
-            }
+            },
+            "description": "@deprecated; use instructors"
          },
          "property_LmsClass_student_ids": {
             "type": "array",
             "items": {
                "type": "string"
-            }
+            },
+            "description": "@deprecated; use students"
          },
          "property_LmsClass_languages": {
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "property_LmsClass_instructors": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsReference"
+            }
+         },
+         "property_LmsClass_students": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsReference"
             }
          },
          "LmsClass": {
@@ -22171,6 +22035,12 @@
                "languages": {
                   "$ref": "#/components/schemas/property_LmsClass_languages"
                },
+               "instructors": {
+                  "$ref": "#/components/schemas/property_LmsClass_instructors"
+               },
+               "students": {
+                  "$ref": "#/components/schemas/property_LmsClass_students"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -22183,10 +22053,171 @@
                "$ref": "#/components/schemas/LmsClass"
             }
          },
+         "LmsEmail": {
+            "type": "object",
+            "properties": {}
+         },
+         "property_LmsStudent_emails": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsEmail"
+            }
+         },
+         "LmsTelephone": {
+            "type": "object",
+            "properties": {
+               "telephone": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "WORK",
+                     "HOME",
+                     "OTHER",
+                     "FAX",
+                     "MOBILE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               }
+            },
+            "required": [
+               "telephone"
+            ]
+         },
+         "property_LmsStudent_telephones": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsTelephone"
+            }
+         },
+         "property_LmsStudent_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "region_code": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               },
+               "country_code": {
+                  "type": "string"
+               }
+            }
+         },
+         "LmsStudent": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "first_name": {
+                  "type": "string"
+               },
+               "last_name": {
+                  "type": "string"
+               },
+               "emails": {
+                  "$ref": "#/components/schemas/property_LmsStudent_emails"
+               },
+               "telephones": {
+                  "$ref": "#/components/schemas/property_LmsStudent_telephones"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_LmsStudent_address"
+               },
+               "image_url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
          "LmsStudents": {
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/LmsStudent"
+            }
+         },
+         "property_LmsInstructor_emails": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsEmail"
+            }
+         },
+         "property_LmsInstructor_telephones": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsTelephone"
+            }
+         },
+         "LmsInstructor": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "first_name": {
+                  "type": "string"
+               },
+               "last_name": {
+                  "type": "string"
+               },
+               "emails": {
+                  "$ref": "#/components/schemas/property_LmsInstructor_emails"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "telephones": {
+                  "$ref": "#/components/schemas/property_LmsInstructor_telephones"
+               },
+               "image_url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
             }
          },
          "LmsInstructors": {
@@ -22273,12 +22304,19 @@
             "type": "array",
             "items": {
                "type": "string"
-            }
+            },
+            "description": "@deprecated; use instructors"
          },
          "property_LmsContent_collection_ids": {
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "property_LmsContent_instructors": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/LmsReference"
             }
          },
          "LmsContent": {
@@ -22343,10 +22381,6 @@
                "short_description": {
                   "type": "string"
                },
-               "published_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
                "localizations": {
                   "$ref": "#/components/schemas/property_LmsContent_localizations"
                },
@@ -22355,6 +22389,13 @@
                },
                "collection_ids": {
                   "$ref": "#/components/schemas/property_LmsContent_collection_ids"
+               },
+               "instructors": {
+                  "$ref": "#/components/schemas/property_LmsContent_instructors"
+               },
+               "published_at": {
+                  "type": "string",
+                  "format": "date-time"
                },
                "raw": {
                   "type": "object",
@@ -59161,6 +59202,24 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -86235,9 +86294,9 @@
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw",
                            "published_at",
-                           "time_estimate_minutes"
+                           "time_estimate_minutes",
+                           "raw"
                         ]
                      }
                   },
@@ -86395,9 +86454,9 @@
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw",
                            "published_at",
-                           "time_estimate_minutes"
+                           "time_estimate_minutes",
+                           "raw"
                         ]
                      }
                   },
@@ -86479,9 +86538,9 @@
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw",
                            "published_at",
-                           "time_estimate_minutes"
+                           "time_estimate_minutes",
+                           "raw"
                         ]
                      }
                   },
@@ -86570,9 +86629,9 @@
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw",
                            "published_at",
-                           "time_estimate_minutes"
+                           "time_estimate_minutes",
+                           "raw"
                         ]
                      }
                   },
@@ -86671,9 +86730,9 @@
                            "skills",
                            "duration_minutes",
                            "provider_name",
-                           "raw",
                            "published_at",
-                           "time_estimate_minutes"
+                           "time_estimate_minutes",
+                           "raw"
                         ]
                      }
                   },
@@ -86814,6 +86873,8 @@
                            "instructor_ids",
                            "student_ids",
                            "languages",
+                           "instructors",
+                           "students",
                            "raw"
                         ]
                      }
@@ -86953,6 +87014,8 @@
                            "instructor_ids",
                            "student_ids",
                            "languages",
+                           "instructors",
+                           "students",
                            "raw"
                         ]
                      }
@@ -87025,6 +87088,8 @@
                            "instructor_ids",
                            "student_ids",
                            "languages",
+                           "instructors",
+                           "students",
                            "raw"
                         ]
                      }
@@ -87104,6 +87169,8 @@
                            "instructor_ids",
                            "student_ids",
                            "languages",
+                           "instructors",
+                           "students",
                            "raw"
                         ]
                      }
@@ -87193,6 +87260,8 @@
                            "instructor_ids",
                            "student_ids",
                            "languages",
+                           "instructors",
+                           "students",
                            "raw"
                         ]
                      }
@@ -88410,10 +88479,11 @@
                            "sort_order",
                            "provider_name",
                            "short_description",
-                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
+                           "instructors",
+                           "published_at",
                            "raw"
                         ]
                      }
@@ -88571,10 +88641,11 @@
                            "sort_order",
                            "provider_name",
                            "short_description",
-                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
+                           "instructors",
+                           "published_at",
                            "raw"
                         ]
                      }
@@ -88656,10 +88727,11 @@
                            "sort_order",
                            "provider_name",
                            "short_description",
-                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
+                           "instructors",
+                           "published_at",
                            "raw"
                         ]
                      }
@@ -88748,10 +88820,11 @@
                            "sort_order",
                            "provider_name",
                            "short_description",
-                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
+                           "instructors",
+                           "published_at",
                            "raw"
                         ]
                      }
@@ -88850,10 +88923,11 @@
                            "sort_order",
                            "provider_name",
                            "short_description",
-                           "published_at",
                            "localizations",
                            "instructor_ids",
                            "collection_ids",
+                           "instructors",
+                           "published_at",
                            "raw"
                         ]
                      }

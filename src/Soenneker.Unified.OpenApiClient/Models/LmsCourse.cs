@@ -69,10 +69,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The instructors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>? Instructors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>? Instructors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor> Instructors { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference> Instructors { get; set; }
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
@@ -141,10 +141,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The students property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>? Students { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>? Students { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent> Students { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference> Students { get; set; }
 #endif
         /// <summary>The time_estimate_minutes property</summary>
         public double? TimeEstimateMinutes { get; set; }
@@ -183,7 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instructor_ids", n => { InstructorIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -195,7 +195,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "student_ids", n => { StudentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>(global::Soenneker.Unified.OpenApiClient.Models.LmsStudent.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "time_estimate_minutes", n => { TimeEstimateMinutes = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -215,7 +215,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("instructor_ids", InstructorIds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructor>("instructors", Instructors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("instructors", Instructors);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteCollectionOfPrimitiveValues<string>("student_ids", StudentIds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsStudent>("students", Students);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("students", Students);
             writer.WriteDoubleValue("time_estimate_minutes", TimeEstimateMinutes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

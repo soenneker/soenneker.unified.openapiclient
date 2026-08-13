@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueAnyOf5Item>? Value { get; set; }
+        public List<bool?>? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueAnyOf5Item> Value { get; set; }
+        public List<bool?> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueBranch5"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueAnyOf5Item>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueAnyOf5Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<bool?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValueAnyOf5Item>("value", Value);
+            writer.WriteCollectionOfPrimitiveValues<bool?>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

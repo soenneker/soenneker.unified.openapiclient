@@ -40,13 +40,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The instructor_ids property</summary>
+        /// <summary>@deprecated; use instructors</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InstructorIds { get; set; }
 #nullable restore
 #else
         public List<string> InstructorIds { get; set; }
+#endif
+        /// <summary>The instructors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>? Instructors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference> Instructors { get; set; }
 #endif
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,13 +88,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty Raw { get; set; }
 #endif
-        /// <summary>The student_ids property</summary>
+        /// <summary>@deprecated; use students</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? StudentIds { get; set; }
 #nullable restore
 #else
         public List<string> StudentIds { get; set; }
+#endif
+        /// <summary>The students property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>? Students { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsReference> Students { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -120,11 +136,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instructor_ids", n => { InstructorIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>(global::Soenneker.Unified.OpenApiClient.Models.LmsMedia.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty.CreateFromDiscriminatorValue); } },
                 { "student_ids", n => { StudentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -140,11 +158,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("instructor_ids", InstructorIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("instructors", Instructors);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>("media", Media);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("student_ids", StudentIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("students", Students);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -84,10 +84,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ShortDescription,
         #pragma warning restore CS1591
-        [EnumMember(Value = "published_at")]
-        #pragma warning disable CS1591
-        PublishedAt,
-        #pragma warning restore CS1591
         [EnumMember(Value = "localizations")]
         #pragma warning disable CS1591
         Localizations,
@@ -99,6 +95,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "collection_ids")]
         #pragma warning disable CS1591
         CollectionIds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "instructors")]
+        #pragma warning disable CS1591
+        Instructors,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "published_at")]
+        #pragma warning disable CS1591
+        PublishedAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

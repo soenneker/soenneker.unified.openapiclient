@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Languages,
         #pragma warning restore CS1591
+        [EnumMember(Value = "instructors")]
+        #pragma warning disable CS1591
+        Instructors,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "students")]
+        #pragma warning disable CS1591
+        Students,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
