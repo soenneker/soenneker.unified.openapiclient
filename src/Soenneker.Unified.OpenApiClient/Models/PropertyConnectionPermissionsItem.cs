@@ -196,6 +196,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingProjectWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_bankfeedaccount_read")]
+        #pragma warning disable CS1591
+        AccountingBankfeedaccountRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_bankfeedaccount_write")]
+        #pragma warning disable CS1591
+        AccountingBankfeedaccountWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_bankfeedtransaction_read")]
+        #pragma warning disable CS1591
+        AccountingBankfeedtransactionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_bankfeedtransaction_write")]
+        #pragma warning disable CS1591
+        AccountingBankfeedtransactionWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "payment_payout_read")]
         #pragma warning disable CS1591
         PaymentPayoutRead,

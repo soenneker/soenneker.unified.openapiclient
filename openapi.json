@@ -248,6 +248,12 @@
          "name": "project"
       },
       {
+         "name": "bankfeedaccount"
+      },
+      {
+         "name": "bankfeedtransaction"
+      },
+      {
          "name": "storage"
       },
       {
@@ -1128,6 +1134,26 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/AccountingProject"
+                  }
+               }
+            }
+         },
+         "AccountingBankfeedaccount": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                  }
+               }
+            }
+         },
+         "AccountingBankfeedtransaction": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AccountingBankfeedtransaction"
                   }
                }
             }
@@ -13147,6 +13173,167 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingProject"
+            }
+         },
+         "AccountingBankfeedaccount": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "bank_name": {
+                  "type": "string"
+               },
+               "account_number": {
+                  "type": "string"
+               },
+               "account_number_last4": {
+                  "type": "string"
+               },
+               "routing_number": {
+                  "type": "string"
+               },
+               "account_type": {
+                  "type": "string",
+                  "enum": [
+                     "CHECKING",
+                     "SAVINGS",
+                     "CREDIT_CARD",
+                     "LOAN",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "account_id": {
+                  "type": "string"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "balance": {
+                  "type": "number"
+               },
+               "feed_start_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "ACTIVE",
+                     "INACTIVE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingBankfeedaccounts": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingBankfeedaccount"
+            }
+         },
+         "property_AccountingBankfeedtransaction_category_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            },
+            "description": "dimension refs -> AccountingCategory (class/department/location)"
+         },
+         "AccountingBankfeedtransaction": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "bankfeedaccount_id": {
+                  "type": "string"
+               },
+               "transaction_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "posted_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "DEBIT",
+                     "CREDIT"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "bank_category": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "merchant_name": {
+                  "type": "string"
+               },
+               "is_pending": {
+                  "type": "boolean"
+               },
+               "reference": {
+                  "type": "string"
+               },
+               "currency": {
+                  "type": "string"
+               },
+               "contact_id": {
+                  "type": "string"
+               },
+               "account_id": {
+                  "type": "string"
+               },
+               "category_ids": {
+                  "$ref": "#/components/schemas/property_AccountingBankfeedtransaction_category_ids"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingBankfeedtransactions": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingBankfeedtransaction"
             }
          },
          "property_StoragePermission_roles": {
@@ -27403,6 +27590,10 @@
                   "accounting_agedpayable_read",
                   "accounting_project_read",
                   "accounting_project_write",
+                  "accounting_bankfeedaccount_read",
+                  "accounting_bankfeedaccount_write",
+                  "accounting_bankfeedtransaction_read",
+                  "accounting_bankfeedtransaction_write",
                   "payment_payout_read",
                   "payment_refund_read",
                   "payment_link_read",
@@ -29858,6 +30049,24 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "list_bankfeedaccount_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_bankfeedaccount_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -30167,6 +30376,8 @@
                      "accounting_agedreceivable",
                      "accounting_agedpayable",
                      "accounting_project",
+                     "accounting_bankfeedaccount",
+                     "accounting_bankfeedtransaction",
                      "payment_payment",
                      "payment_link",
                      "payment_payout",
@@ -67576,6 +67787,1164 @@
                }
             ],
             "operationId": "removeAccountingProject"
+         }
+      },
+      "/accounting/{connection_id}/bankfeedaccount": {
+         "post": {
+            "summary": "Create a bankfeedaccount",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "bank_name",
+                           "account_number",
+                           "account_number_last4",
+                           "routing_number",
+                           "account_type",
+                           "account_id",
+                           "currency",
+                           "balance",
+                           "feed_start_at",
+                           "status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAccountingBankfeedaccount"
+         },
+         "get": {
+            "summary": "List all bankfeedaccounts",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "bank_name",
+                           "account_number",
+                           "account_number_last4",
+                           "routing_number",
+                           "account_type",
+                           "account_id",
+                           "currency",
+                           "balance",
+                           "feed_start_at",
+                           "status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedaccounts"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingBankfeedaccounts"
+         }
+      },
+      "/accounting/{connection_id}/bankfeedaccount/{id}": {
+         "get": {
+            "summary": "Retrieve a bankfeedaccount",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "bank_name",
+                           "account_number",
+                           "account_number_last4",
+                           "routing_number",
+                           "account_type",
+                           "account_id",
+                           "currency",
+                           "balance",
+                           "feed_start_at",
+                           "status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedaccount",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingBankfeedaccount"
+         },
+         "put": {
+            "summary": "Update a bankfeedaccount",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "bank_name",
+                           "account_number",
+                           "account_number_last4",
+                           "routing_number",
+                           "account_type",
+                           "account_id",
+                           "currency",
+                           "balance",
+                           "feed_start_at",
+                           "status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedaccount",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateAccountingBankfeedaccount"
+         },
+         "patch": {
+            "summary": "Update a bankfeedaccount",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "name",
+                           "bank_name",
+                           "account_number",
+                           "account_number_last4",
+                           "routing_number",
+                           "account_type",
+                           "account_id",
+                           "currency",
+                           "balance",
+                           "feed_start_at",
+                           "status",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedaccount",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedaccount"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchAccountingBankfeedaccount"
+         },
+         "delete": {
+            "summary": "Remove a bankfeedaccount",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedaccount",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedaccount"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeAccountingBankfeedaccount"
+         }
+      },
+      "/accounting/{connection_id}/bankfeedtransaction": {
+         "post": {
+            "summary": "Create a bankfeedtransaction",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "bankfeedaccount_id",
+                           "transaction_at",
+                           "posted_at",
+                           "amount",
+                           "type",
+                           "bank_category",
+                           "description",
+                           "merchant_name",
+                           "is_pending",
+                           "reference",
+                           "currency",
+                           "contact_id",
+                           "account_id",
+                           "category_ids",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAccountingBankfeedtransaction"
+         },
+         "get": {
+            "summary": "List all bankfeedtransactions",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "bankfeedaccount_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The BankfeedAccount ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "contact_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The contact ID to filter by (reference to AccountingContact)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "account_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The account ID to filter by (reference to AccountingAccount)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "bankfeedaccount_id",
+                           "transaction_at",
+                           "posted_at",
+                           "amount",
+                           "type",
+                           "bank_category",
+                           "description",
+                           "merchant_name",
+                           "is_pending",
+                           "reference",
+                           "currency",
+                           "contact_id",
+                           "account_id",
+                           "category_ids",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedtransactions"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingBankfeedtransactions"
+         }
+      },
+      "/accounting/{connection_id}/bankfeedtransaction/{id}": {
+         "get": {
+            "summary": "Retrieve a bankfeedtransaction",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "bankfeedaccount_id",
+                           "transaction_at",
+                           "posted_at",
+                           "amount",
+                           "type",
+                           "bank_category",
+                           "description",
+                           "merchant_name",
+                           "is_pending",
+                           "reference",
+                           "currency",
+                           "contact_id",
+                           "account_id",
+                           "category_ids",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedtransaction",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingBankfeedtransaction"
+         },
+         "put": {
+            "summary": "Update a bankfeedtransaction",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "bankfeedaccount_id",
+                           "transaction_at",
+                           "posted_at",
+                           "amount",
+                           "type",
+                           "bank_category",
+                           "description",
+                           "merchant_name",
+                           "is_pending",
+                           "reference",
+                           "currency",
+                           "contact_id",
+                           "account_id",
+                           "category_ids",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedtransaction",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateAccountingBankfeedtransaction"
+         },
+         "patch": {
+            "summary": "Update a bankfeedtransaction",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "organization_id",
+                           "bankfeedaccount_id",
+                           "transaction_at",
+                           "posted_at",
+                           "amount",
+                           "type",
+                           "bank_category",
+                           "description",
+                           "merchant_name",
+                           "is_pending",
+                           "reference",
+                           "currency",
+                           "contact_id",
+                           "account_id",
+                           "category_ids",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedtransaction",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingBankfeedtransaction"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchAccountingBankfeedtransaction"
+         },
+         "delete": {
+            "summary": "Remove a bankfeedtransaction",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Bankfeedtransaction",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "bankfeedtransaction"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeAccountingBankfeedtransaction"
          }
       },
       "/storage/{connection_id}/file": {

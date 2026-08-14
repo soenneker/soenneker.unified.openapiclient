@@ -6,6 +6,8 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Account;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Agedpayable;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Bill;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Cashflow;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Category;
@@ -57,6 +59,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet.BalancesheetRequestBuilder Balancesheet
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Balancesheet.BalancesheetRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The bankfeedaccount property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount.BankfeedaccountRequestBuilder Bankfeedaccount
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount.BankfeedaccountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The bankfeedtransaction property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.BankfeedtransactionRequestBuilder Bankfeedtransaction
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.BankfeedtransactionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bill property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.BillRequestBuilder Bill
