@@ -100829,6 +100829,7 @@
           "PUBLISHER_HOSTED",
           "ASSET_BASED",
           "IMAGE",
+          "SHARE",
           "DOCUMENT"
         ],
         "type": "string",
@@ -100873,6 +100874,10 @@
             {
               "value": "IMAGE",
               "name": "Image"
+            },
+            {
+              "value": "SHARE",
+              "name": "Share"
             },
             {
               "value": "DOCUMENT",
@@ -104120,6 +104125,7 @@
           "PUBLISHER_HOSTED",
           "ASSET_BASED",
           "IMAGE",
+          "SHARE",
           "DOCUMENT"
         ],
         "type": "string",
@@ -104164,6 +104170,10 @@
             {
               "value": "IMAGE",
               "name": "Image"
+            },
+            {
+              "value": "SHARE",
+              "name": "Share"
             },
             {
               "value": "DOCUMENT",

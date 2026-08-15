@@ -17958,6 +17958,7 @@
                      "PUBLISHER_HOSTED",
                      "ASSET_BASED",
                      "IMAGE",
+                     "SHARE",
                      "DOCUMENT"
                   ],
                   "x-speakeasy-unknown-values": "allow"
@@ -21307,6 +21308,7 @@
                      "PUBLISHER_HOSTED",
                      "ASSET_BASED",
                      "IMAGE",
+                     "SHARE",
                      "DOCUMENT"
                   ],
                   "x-speakeasy-unknown-values": "allow"

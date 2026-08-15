@@ -44,6 +44,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Image,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SHARE")]
+        #pragma warning disable CS1591
+        Share,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DOCUMENT")]
         #pragma warning disable CS1591
         Document,
