@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.PatchAssessmentOrderFieldsParameterItem[] Fields { get; set; }
 #endif
-            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw")]
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.UpdateAssessmentOrderFieldsParameterItem[] Fields { get; set; }
 #endif
-            /// <summary>&quot;Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar&quot;</summary>
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw")]

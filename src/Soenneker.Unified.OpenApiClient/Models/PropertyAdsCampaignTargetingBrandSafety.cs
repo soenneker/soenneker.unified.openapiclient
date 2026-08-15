@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Brand safety (Meta: excluded_publisher_categories, etc.; Google&quot;
+    /// Brand safety (Meta: excluded_publisher_categories, etc.; Google
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyAdsCampaignTargetingBrandSafety : IAdditionalDataHolder, IParsable

@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingAudience Audience { get; set; }
 #endif
-        /// <summary>&quot;Brand safety (Meta: excluded_publisher_categories, etc.; Google&quot;</summary>
+        /// <summary>Brand safety (Meta: excluded_publisher_categories, etc.; Google</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingBrandSafety? BrandSafety { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContent Content { get; set; }
 #endif
-        /// <summary>&quot;Demographic targeting (Meta: age_min, age_max, genders)&quot;</summary>
+        /// <summary>Demographic targeting (Meta: age_min, age_max, genders)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingDemographic? Demographic { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Language { get; set; }
 #endif
-        /// <summary>&quot;Optimization (Meta: targeting_automation; Google: observation vs targeting mode)&quot;</summary>
+        /// <summary>Optimization (Meta: targeting_automation; Google: observation vs targeting mode)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingOptimization? Optimization { get; set; }

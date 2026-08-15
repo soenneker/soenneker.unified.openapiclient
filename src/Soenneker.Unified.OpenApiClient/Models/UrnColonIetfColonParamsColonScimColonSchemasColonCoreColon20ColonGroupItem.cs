@@ -5,12 +5,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CrmPicklistType
+    public enum UrnColonIetfColonParamsColonScimColonSchemasColonCoreColon20ColonGroupItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "INDUSTRY")]
+        [EnumMember(Value = "urn:ietf:params:scim:schemas:core:2.0:Group")]
         #pragma warning disable CS1591
-        Industry,
+        UrnColonIetfColonParamsColonScimColonSchemasColonCoreColon20ColonGroup,
         #pragma warning restore CS1591
     }
 }

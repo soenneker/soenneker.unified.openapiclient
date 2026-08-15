@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Demographic targeting (Meta: age_min, age_max, genders)&quot;
+    /// Demographic targeting (Meta: age_min, age_max, genders)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyAdsReportMetricsCampaignTargetingDemographic : IAdditionalDataHolder, IParsable

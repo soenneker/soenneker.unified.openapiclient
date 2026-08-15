@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistRawProperty Raw { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistType? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.IndustryType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmPicklist"/> and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistRawProperty.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IndustryType>(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistRawProperty>("raw", Raw);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPicklistType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IndustryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -113,7 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             [QueryParameter("failure_redirect")]
             public string FailureRedirect { get; set; }
 #endif
-            /// <summary>&quot;Language: en, fr, es, it, pt, zh, hi&quot;</summary>
+            /// <summary>Language: en, fr, es, it, pt, zh, hi</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("lang")]

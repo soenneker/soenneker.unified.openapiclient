@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Optimization (Meta: targeting_automation; Google: observation vs targeting mode)&quot;
+    /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyAdsReportMetricsCampaignTargetingOptimization : IAdditionalDataHolder, IParsable
