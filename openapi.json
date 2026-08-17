@@ -24679,6 +24679,39 @@
             },
             "description": "Array of special instructions"
          },
+         "ShippingShipmentLineitem": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "item_id": {
+                  "type": "string"
+               },
+               "item_variant_id": {
+                  "type": "string"
+               },
+               "order_lineitem_id": {
+                  "type": "string"
+               },
+               "quantity": {
+                  "type": "number"
+               },
+               "item_name": {
+                  "type": "string"
+               },
+               "sku": {
+                  "type": "string"
+               }
+            }
+         },
+         "property_ShippingShipment_lineitems": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/ShippingShipmentLineitem"
+            },
+            "description": "Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments"
+         },
          "ShippingShipment": {
             "type": "object",
             "properties": {
@@ -24694,6 +24727,9 @@
                   "format": "date-time"
                },
                "order_id": {
+                  "type": "string"
+               },
+               "organization_id": {
                   "type": "string"
                },
                "from_address": {
@@ -24815,6 +24851,15 @@
                      "OTHER"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "carrier_name": {
+                  "type": "string"
+               },
+               "tracking_url": {
+                  "type": "string"
+               },
+               "lineitems": {
+                  "$ref": "#/components/schemas/property_ShippingShipment_lineitems"
                },
                "raw": {
                   "type": "object",
@@ -96968,6 +97013,7 @@
                            "created_at",
                            "updated_at",
                            "order_id",
+                           "organization_id",
                            "from_address",
                            "to_address",
                            "packages",
@@ -96999,6 +97045,9 @@
                            "original_shipment_id",
                            "return_reason",
                            "return_type",
+                           "carrier_name",
+                           "tracking_url",
+                           "lineitems",
                            "raw"
                         ]
                      }
@@ -97133,6 +97182,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -97141,6 +97199,7 @@
                            "created_at",
                            "updated_at",
                            "order_id",
+                           "organization_id",
                            "from_address",
                            "to_address",
                            "packages",
@@ -97172,6 +97231,9 @@
                            "original_shipment_id",
                            "return_reason",
                            "return_type",
+                           "carrier_name",
+                           "tracking_url",
+                           "lineitems",
                            "raw"
                         ]
                      }
@@ -97238,6 +97300,7 @@
                            "created_at",
                            "updated_at",
                            "order_id",
+                           "organization_id",
                            "from_address",
                            "to_address",
                            "packages",
@@ -97269,6 +97332,9 @@
                            "original_shipment_id",
                            "return_reason",
                            "return_type",
+                           "carrier_name",
+                           "tracking_url",
+                           "lineitems",
                            "raw"
                         ]
                      }
@@ -97342,6 +97408,7 @@
                            "created_at",
                            "updated_at",
                            "order_id",
+                           "organization_id",
                            "from_address",
                            "to_address",
                            "packages",
@@ -97373,6 +97440,9 @@
                            "original_shipment_id",
                            "return_reason",
                            "return_type",
+                           "carrier_name",
+                           "tracking_url",
+                           "lineitems",
                            "raw"
                         ]
                      }
@@ -97456,6 +97526,7 @@
                            "created_at",
                            "updated_at",
                            "order_id",
+                           "organization_id",
                            "from_address",
                            "to_address",
                            "packages",
@@ -97487,6 +97558,9 @@
                            "original_shipment_id",
                            "return_reason",
                            "return_type",
+                           "carrier_name",
+                           "tracking_url",
+                           "lineitems",
                            "raw"
                         ]
                      }
@@ -98280,6 +98354,15 @@
                   "in": "query",
                   "required": false,
                   "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The AccountingOrder ID to filter by"
                },
                {
                   "schema": {

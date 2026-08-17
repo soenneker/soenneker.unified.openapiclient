@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Tracking
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrackingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/tracking{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public TrackingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/tracking{?fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Tracking
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrackingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/tracking{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public TrackingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/tracking{?fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -121,6 +121,16 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Tracking
 #else
             [QueryParameter("order")]
             public string Order { get; set; }
+#endif
+            /// <summary>The AccountingOrder ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order_id")]
+            public string? OrderId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order_id")]
+            public string OrderId { get; set; }
 #endif
             /// <summary>Query string to search. eg. email address or name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

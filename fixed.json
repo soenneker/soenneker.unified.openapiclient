@@ -52280,6 +52280,14 @@
             }
           },
           {
+            "name": "org_id",
+            "in": "query",
+            "description": "The org ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -53140,6 +53148,14 @@
             "name": "query",
             "in": "query",
             "description": "Query string to search. eg. email address or name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order_id",
+            "in": "query",
+            "description": "The AccountingOrder ID to filter by",
             "schema": {
               "type": "string"
             }
@@ -84335,6 +84351,39 @@
         },
         "description": "Array of special instructions"
       },
+      "ShippingShipmentLineitem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "item_id": {
+            "type": "string"
+          },
+          "item_variant_id": {
+            "type": "string"
+          },
+          "order_lineitem_id": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "item_name": {
+            "type": "string"
+          },
+          "sku": {
+            "type": "string"
+          }
+        }
+      },
+      "PropertyShippingShipmentLineitems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ShippingShipmentLineitem"
+        },
+        "description": "Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments"
+      },
       "ShippingShipment": {
         "type": "object",
         "properties": {
@@ -84350,6 +84399,9 @@
             "format": "date-time"
           },
           "order_id": {
+            "type": "string"
+          },
+          "organization_id": {
             "type": "string"
           },
           "from_address": {
@@ -84454,6 +84506,19 @@
           },
           "return_type": {
             "$ref": "#/components/schemas/ShippingShipmentReturnType"
+          },
+          "carrier_name": {
+            "type": "string"
+          },
+          "tracking_url": {
+            "type": "string"
+          },
+          "lineitems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShippingShipmentLineitem"
+            },
+            "description": "Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments"
           },
           "raw": {
             "$ref": "#/components/schemas/ShippingShipmentRawProperty"
@@ -172181,6 +172246,7 @@
           "created_at",
           "updated_at",
           "order_id",
+          "organization_id",
           "from_address",
           "to_address",
           "packages",
@@ -172212,6 +172278,9 @@
           "original_shipment_id",
           "return_reason",
           "return_type",
+          "carrier_name",
+          "tracking_url",
+          "lineitems",
           "raw"
         ],
         "type": "string",
@@ -172237,6 +172306,10 @@
               "name": "OrderId"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "from_address",
               "name": "FromAddress"
             },
@@ -172361,6 +172434,18 @@
               "name": "ReturnType"
             },
             {
+              "value": "carrier_name",
+              "name": "CarrierName"
+            },
+            {
+              "value": "tracking_url",
+              "name": "TrackingUrl"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -172373,6 +172458,7 @@
           "created_at",
           "updated_at",
           "order_id",
+          "organization_id",
           "from_address",
           "to_address",
           "packages",
@@ -172404,6 +172490,9 @@
           "original_shipment_id",
           "return_reason",
           "return_type",
+          "carrier_name",
+          "tracking_url",
+          "lineitems",
           "raw"
         ],
         "type": "string",
@@ -172429,6 +172518,10 @@
               "name": "OrderId"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "from_address",
               "name": "FromAddress"
             },
@@ -172553,6 +172646,18 @@
               "name": "ReturnType"
             },
             {
+              "value": "carrier_name",
+              "name": "CarrierName"
+            },
+            {
+              "value": "tracking_url",
+              "name": "TrackingUrl"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -172565,6 +172670,7 @@
           "created_at",
           "updated_at",
           "order_id",
+          "organization_id",
           "from_address",
           "to_address",
           "packages",
@@ -172596,6 +172702,9 @@
           "original_shipment_id",
           "return_reason",
           "return_type",
+          "carrier_name",
+          "tracking_url",
+          "lineitems",
           "raw"
         ],
         "type": "string",
@@ -172621,6 +172730,10 @@
               "name": "OrderId"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "from_address",
               "name": "FromAddress"
             },
@@ -172745,6 +172858,18 @@
               "name": "ReturnType"
             },
             {
+              "value": "carrier_name",
+              "name": "CarrierName"
+            },
+            {
+              "value": "tracking_url",
+              "name": "TrackingUrl"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -172757,6 +172882,7 @@
           "created_at",
           "updated_at",
           "order_id",
+          "organization_id",
           "from_address",
           "to_address",
           "packages",
@@ -172788,6 +172914,9 @@
           "original_shipment_id",
           "return_reason",
           "return_type",
+          "carrier_name",
+          "tracking_url",
+          "lineitems",
           "raw"
         ],
         "type": "string",
@@ -172813,6 +172942,10 @@
               "name": "OrderId"
             },
             {
+              "value": "organization_id",
+              "name": "OrganizationId"
+            },
+            {
               "value": "from_address",
               "name": "FromAddress"
             },
@@ -172937,6 +173070,18 @@
               "name": "ReturnType"
             },
             {
+              "value": "carrier_name",
+              "name": "CarrierName"
+            },
+            {
+              "value": "tracking_url",
+              "name": "TrackingUrl"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -172949,6 +173094,7 @@
           "created_at",
           "updated_at",
           "order_id",
+          "organization_id",
           "from_address",
           "to_address",
           "packages",
@@ -172980,6 +173126,9 @@
           "original_shipment_id",
           "return_reason",
           "return_type",
+          "carrier_name",
+          "tracking_url",
+          "lineitems",
           "raw"
         ],
         "type": "string",
@@ -173003,6 +173152,10 @@
             {
               "value": "order_id",
               "name": "OrderId"
+            },
+            {
+              "value": "organization_id",
+              "name": "OrganizationId"
             },
             {
               "value": "from_address",
@@ -173127,6 +173280,18 @@
             {
               "value": "return_type",
               "name": "ReturnType"
+            },
+            {
+              "value": "carrier_name",
+              "name": "CarrierName"
+            },
+            {
+              "value": "tracking_url",
+              "name": "TrackingUrl"
+            },
+            {
+              "value": "lineitems",
+              "name": "Lineitems"
             },
             {
               "value": "raw",

@@ -24,6 +24,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OrderId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization_id")]
+        #pragma warning disable CS1591
+        OrganizationId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "from_address")]
         #pragma warning disable CS1591
         FromAddress,
@@ -147,6 +151,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "return_type")]
         #pragma warning disable CS1591
         ReturnType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "carrier_name")]
+        #pragma warning disable CS1591
+        CarrierName,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tracking_url")]
+        #pragma warning disable CS1591
+        TrackingUrl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lineitems")]
+        #pragma warning disable CS1591
+        Lineitems,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShipmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public ShipmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,org_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShipmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public ShipmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shipping/{connectionId}/shipment{?carrier_id*,fields*,limit*,offset*,order*,order_id*,org_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -183,6 +183,16 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Shipment
 #else
             [QueryParameter("order_id")]
             public string OrderId { get; set; }
+#endif
+            /// <summary>The org ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("org_id")]
+            public string? OrgId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("org_id")]
+            public string OrgId { get; set; }
 #endif
             /// <summary>Query string to search. eg. email address or name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
