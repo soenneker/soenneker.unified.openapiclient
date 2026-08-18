@@ -5,68 +5,60 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GetUcCallFieldsParameterItem
+    public enum UcMetadataFormat
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "id")]
+        [EnumMember(Value = "TEXT")]
         #pragma warning disable CS1591
-        Id,
+        Text,
         #pragma warning restore CS1591
-        [EnumMember(Value = "created_at")]
+        [EnumMember(Value = "NUMBER")]
         #pragma warning disable CS1591
-        CreatedAt,
+        Number,
         #pragma warning restore CS1591
-        [EnumMember(Value = "updated_at")]
+        [EnumMember(Value = "DATE")]
         #pragma warning disable CS1591
-        UpdatedAt,
+        Date,
         #pragma warning restore CS1591
-        [EnumMember(Value = "contact_id")]
+        [EnumMember(Value = "BOOLEAN")]
         #pragma warning disable CS1591
-        ContactId,
+        Boolean,
         #pragma warning restore CS1591
-        [EnumMember(Value = "telephone")]
+        [EnumMember(Value = "FILE")]
         #pragma warning disable CS1591
-        Telephone,
+        File,
         #pragma warning restore CS1591
-        [EnumMember(Value = "start_at")]
+        [EnumMember(Value = "TEXTAREA")]
         #pragma warning disable CS1591
-        StartAt,
+        Textarea,
         #pragma warning restore CS1591
-        [EnumMember(Value = "end_at")]
+        [EnumMember(Value = "SINGLE_SELECT")]
         #pragma warning disable CS1591
-        EndAt,
+        SingleSelect,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_id")]
+        [EnumMember(Value = "MULTIPLE_SELECT")]
         #pragma warning disable CS1591
-        UserId,
+        MultipleSelect,
         #pragma warning restore CS1591
-        [EnumMember(Value = "contacts")]
+        [EnumMember(Value = "MEASUREMENT")]
         #pragma warning disable CS1591
-        Contacts,
+        Measurement,
         #pragma warning restore CS1591
-        [EnumMember(Value = "is_private")]
+        [EnumMember(Value = "PRICE")]
         #pragma warning disable CS1591
-        IsPrivate,
+        Price,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_name")]
+        [EnumMember(Value = "YES_NO")]
         #pragma warning disable CS1591
-        UserName,
+        YesNo,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_phone")]
+        [EnumMember(Value = "CURRENCY")]
         #pragma warning disable CS1591
-        UserPhone,
+        Currency,
         #pragma warning restore CS1591
-        [EnumMember(Value = "type")]
+        [EnumMember(Value = "URL")]
         #pragma warning disable CS1591
-        Type,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "metadata")]
-        #pragma warning disable CS1591
-        Metadata,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
+        Url,
         #pragma warning restore CS1591
     }
 }

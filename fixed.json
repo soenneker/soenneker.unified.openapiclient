@@ -11622,6 +11622,14 @@
             }
           },
           {
+            "name": "job_id",
+            "in": "query",
+            "description": "The job ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -66392,6 +66400,35 @@
           "$ref": "#/components/schemas/UcContact"
         }
       },
+      "UcMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "value": {
+            "$ref": "#/components/schemas/UcMetadataValue"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "format": {
+            "$ref": "#/components/schemas/UcMetadataFormat"
+          },
+          "extra_data": {
+            "$ref": "#/components/schemas/UcMetadataExtraData"
+          }
+        }
+      },
+      "PropertyUcCallMetadata": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UcMetadata"
+        }
+      },
       "UcCall": {
         "type": "object",
         "properties": {
@@ -66440,6 +66477,12 @@
           },
           "type": {
             "$ref": "#/components/schemas/UcCallType"
+          },
+          "metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UcMetadata"
+            }
           },
           "raw": {
             "$ref": "#/components/schemas/UcCallRawProperty"
@@ -88899,6 +88942,46 @@
           }
         ]
       },
+      "UcMetadataValue": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataValueBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataValueBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataValueBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataValueBranch5"
+          }
+        ]
+      },
+      "UcMetadataExtraData": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataExtraDataBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataExtraDataBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataExtraDataBranch4"
+          },
+          {
+            "$ref": "#/components/schemas/UcMetadataExtraDataBranch5"
+          }
+        ]
+      },
       "AtsMetadataValue": {
         "type": "object",
         "anyOf": [
@@ -89985,6 +90068,100 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CrmMetadataExtraDataBranch5ValueItem"
+            }
+          }
+        }
+      },
+      "UcMetadataValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UcMetadataValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "UcMetadataValueBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UcMetadataValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UcMetadataValueBranch5ValueItem"
+            }
+          }
+        }
+      },
+      "UcMetadataExtraDataBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UcMetadataExtraDataBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "UcMetadataExtraDataBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UcMetadataExtraDataBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UcMetadataExtraDataBranch5ValueItem"
             }
           }
         }
@@ -92646,6 +92823,38 @@
           }
         ]
       },
+      "UcMetadataValueBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "UcMetadataExtraDataBranch5ValueItem": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
       "AtsMetadataValueBranch5ValueItem": {
         "anyOf": [
           {
@@ -94040,6 +94249,84 @@
             {
               "value": "MOBILE",
               "name": "Mobile"
+            }
+          ]
+        }
+      },
+      "UcMetadataFormat": {
+        "enum": [
+          "TEXT",
+          "NUMBER",
+          "DATE",
+          "BOOLEAN",
+          "FILE",
+          "TEXTAREA",
+          "SINGLE_SELECT",
+          "MULTIPLE_SELECT",
+          "MEASUREMENT",
+          "PRICE",
+          "YES_NO",
+          "CURRENCY",
+          "URL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "UcMetadataFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TEXT",
+              "name": "Text"
+            },
+            {
+              "value": "NUMBER",
+              "name": "Number"
+            },
+            {
+              "value": "DATE",
+              "name": "Date"
+            },
+            {
+              "value": "BOOLEAN",
+              "name": "Boolean"
+            },
+            {
+              "value": "FILE",
+              "name": "File"
+            },
+            {
+              "value": "TEXTAREA",
+              "name": "Textarea"
+            },
+            {
+              "value": "SINGLE_SELECT",
+              "name": "SingleSelect"
+            },
+            {
+              "value": "MULTIPLE_SELECT",
+              "name": "MultipleSelect"
+            },
+            {
+              "value": "MEASUREMENT",
+              "name": "Measurement"
+            },
+            {
+              "value": "PRICE",
+              "name": "Price"
+            },
+            {
+              "value": "YES_NO",
+              "name": "YesNo"
+            },
+            {
+              "value": "CURRENCY",
+              "name": "Currency"
+            },
+            {
+              "value": "URL",
+              "name": "Url"
             }
           ]
         }
@@ -124320,6 +124607,7 @@
           "user_name",
           "user_phone",
           "type",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -124381,6 +124669,10 @@
               "name": "Type"
             },
             {
+              "value": "metadata",
+              "name": "Metadata"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -124402,6 +124694,7 @@
           "user_name",
           "user_phone",
           "type",
+          "metadata",
           "raw"
         ],
         "type": "string",
@@ -124461,6 +124754,10 @@
             {
               "value": "type",
               "name": "Type"
+            },
+            {
+              "value": "metadata",
+              "name": "Metadata"
             },
             {
               "value": "raw",

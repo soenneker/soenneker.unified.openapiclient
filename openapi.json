@@ -5333,6 +5333,117 @@
                "$ref": "#/components/schemas/UcContact"
             }
          },
+         "UcMetadata": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "slug": {
+                  "type": "string"
+               },
+               "value": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               },
+               "namespace": {
+                  "type": "string"
+               },
+               "format": {
+                  "type": "string",
+                  "enum": [
+                     "TEXT",
+                     "NUMBER",
+                     "DATE",
+                     "BOOLEAN",
+                     "FILE",
+                     "TEXTAREA",
+                     "SINGLE_SELECT",
+                     "MULTIPLE_SELECT",
+                     "MEASUREMENT",
+                     "PRICE",
+                     "YES_NO",
+                     "CURRENCY",
+                     "URL"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "extra_data": {
+                  "additionalProperties": true,
+                  "anyOf": [
+                     {
+                        "type": "object"
+                     },
+                     {
+                        "type": "string"
+                     },
+                     {
+                        "type": "number"
+                     },
+                     {
+                        "type": "boolean"
+                     },
+                     {
+                        "type": "array",
+                        "items": {
+                           "anyOf": [
+                              {
+                                 "type": "object"
+                              },
+                              {
+                                 "type": "string"
+                              },
+                              {
+                                 "type": "number"
+                              },
+                              {
+                                 "type": "boolean"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               }
+            }
+         },
+         "property_UcCall_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/UcMetadata"
+            }
+         },
          "UcCall": {
             "type": "object",
             "properties": {
@@ -5383,6 +5494,9 @@
                      "OUTBOUND"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_UcCall_metadata"
                },
                "raw": {
                   "type": "object",
@@ -41015,6 +41129,7 @@
                            "user_name",
                            "user_phone",
                            "type",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -41185,6 +41300,7 @@
                            "user_name",
                            "user_phone",
                            "type",
+                           "metadata",
                            "raw"
                         ]
                      }
@@ -45864,6 +45980,15 @@
                   "in": "query",
                   "required": false,
                   "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "job_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The job ID to filter by"
                },
                {
                   "schema": {
