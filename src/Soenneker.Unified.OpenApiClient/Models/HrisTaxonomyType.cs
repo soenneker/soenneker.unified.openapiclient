@@ -32,5 +32,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Role,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HOLIDAY")]
+        #pragma warning disable CS1591
+        Holiday,
+        #pragma warning restore CS1591
     }
 }

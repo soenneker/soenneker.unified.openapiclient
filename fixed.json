@@ -14032,6 +14032,14 @@
             }
           },
           {
+            "name": "parent_id",
+            "in": "query",
+            "description": "The parent ID to filter by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "Fields to return",
@@ -14938,6 +14946,13 @@
             "name": "end_lt",
             "in": "query",
             "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -96566,7 +96581,8 @@
           "COMPETENCE",
           "ABILITY",
           "CERTIFICATION",
-          "ROLE"
+          "ROLE",
+          "HOLIDAY"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -96598,6 +96614,10 @@
             {
               "value": "ROLE",
               "name": "Role"
+            },
+            {
+              "value": "HOLIDAY",
+              "name": "Holiday"
             }
           ]
         }

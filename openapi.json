@@ -8890,7 +8890,8 @@
                      "COMPETENCE",
                      "ABILITY",
                      "CERTIFICATION",
-                     "ROLE"
+                     "ROLE",
+                     "HOLIDAY"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -49032,6 +49033,15 @@
                },
                {
                   "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
                      "type": "array",
                      "items": {
                         "type": "string",
@@ -50144,6 +50154,14 @@
                   "in": "query",
                   "required": false,
                   "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "status",
+                  "in": "query",
+                  "required": false
                },
                {
                   "schema": {

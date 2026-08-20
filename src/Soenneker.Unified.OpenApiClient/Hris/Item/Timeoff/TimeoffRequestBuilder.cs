@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeoffRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/timeoff{?company_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,type*,updated_gte*,user_id*}", pathParameters)
+        public TimeoffRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/timeoff{?company_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeoffRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/timeoff{?company_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,type*,updated_gte*,user_id*}", rawUrl)
+        public TimeoffRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/timeoff{?company_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -222,6 +222,15 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff
 #else
             [QueryParameter("start_gte")]
             public string StartGte { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
