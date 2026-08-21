@@ -106,7 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The size property</summary>
         public double? Size { get; set; }
-        /// <summary>The tags property</summary>
+        /// <summary>labels</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

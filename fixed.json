@@ -60561,6 +60561,71 @@
         ]
       }
     },
+    "/unified/notification": {
+      "get": {
+        "tags": [
+          "unified",
+          "notification"
+        ],
+        "summary": "List event notifications",
+        "operationId": "ListUnifiedNotifications",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "updated_gte",
+            "in": "query",
+            "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUnifiedNotifications200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
     "/unified/connection": {
       "post": {
         "tags": [
@@ -73897,7 +73962,8 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "description": "labels"
       },
       "StorageFile": {
         "type": "object",
@@ -73965,7 +74031,8 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "labels"
           },
           "raw": {
             "$ref": "#/components/schemas/StorageFileRawProperty"
@@ -86908,6 +86975,63 @@
           "$ref": "#/components/schemas/PerformanceFeedback"
         }
       },
+      "Notification": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "workspace_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "user_name": {
+            "type": "string"
+          },
+          "workspace_name": {
+            "type": "string"
+          },
+          "webhook_id": {
+            "type": "string"
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "integration_type": {
+            "type": "string"
+          },
+          "integration_name": {
+            "type": "string"
+          },
+          "sent_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "event": {
+            "$ref": "#/components/schemas/NotificationEvent"
+          }
+        },
+        "description": "A notification of an event that occurred in you account."
+      },
+      "Notifications": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Notification"
+        }
+      },
       "PropertyConnectionPermissions": {
         "type": "array",
         "items": {
@@ -92045,6 +92169,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PerformanceFeedback"
+        }
+      },
+      "ListUnifiedNotifications200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Notification"
         }
       },
       "ListUnifiedConnections200Response": {
@@ -108340,6 +108470,119 @@
           ]
         }
       },
+      "NotificationEvent": {
+        "enum": [
+          "USER_CREATED",
+          "USER_DELETED",
+          "CONNECTION_HEALTHY",
+          "CONNECTION_UNHEALTHY",
+          "CONNECTION_CREATED",
+          "CONNECTION_UPDATED",
+          "CONNECTION_DELETED",
+          "CONNECTION_PAUSED",
+          "CONNECTION_UNPAUSED",
+          "INTEGRATION_ACTIVATED",
+          "INTEGRATION_DEACTIVATED",
+          "INTEGRATION_UPDATED",
+          "WORKSPACE_UPDATED",
+          "WORKSPACE_OVER_LIMIT",
+          "WORKSPACE_80PERCENT_LIMIT",
+          "WEBHOOK_CREATED",
+          "WEBHOOK_DELETED",
+          "WEBHOOK_UNHEALTHY",
+          "WEBHOOK_PAUSED",
+          "WEBHOOK_UNPAUSED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "NotificationEvent",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "USER_CREATED",
+              "name": "UserCreated"
+            },
+            {
+              "value": "USER_DELETED",
+              "name": "UserDeleted"
+            },
+            {
+              "value": "CONNECTION_HEALTHY",
+              "name": "ConnectionHealthy"
+            },
+            {
+              "value": "CONNECTION_UNHEALTHY",
+              "name": "ConnectionUnhealthy"
+            },
+            {
+              "value": "CONNECTION_CREATED",
+              "name": "ConnectionCreated"
+            },
+            {
+              "value": "CONNECTION_UPDATED",
+              "name": "ConnectionUpdated"
+            },
+            {
+              "value": "CONNECTION_DELETED",
+              "name": "ConnectionDeleted"
+            },
+            {
+              "value": "CONNECTION_PAUSED",
+              "name": "ConnectionPaused"
+            },
+            {
+              "value": "CONNECTION_UNPAUSED",
+              "name": "ConnectionUnpaused"
+            },
+            {
+              "value": "INTEGRATION_ACTIVATED",
+              "name": "IntegrationActivated"
+            },
+            {
+              "value": "INTEGRATION_DEACTIVATED",
+              "name": "IntegrationDeactivated"
+            },
+            {
+              "value": "INTEGRATION_UPDATED",
+              "name": "IntegrationUpdated"
+            },
+            {
+              "value": "WORKSPACE_UPDATED",
+              "name": "WorkspaceUpdated"
+            },
+            {
+              "value": "WORKSPACE_OVER_LIMIT",
+              "name": "WorkspaceOverLimit"
+            },
+            {
+              "value": "WORKSPACE_80PERCENT_LIMIT",
+              "name": "Workspace80PercentLimit"
+            },
+            {
+              "value": "WEBHOOK_CREATED",
+              "name": "WebhookCreated"
+            },
+            {
+              "value": "WEBHOOK_DELETED",
+              "name": "WebhookDeleted"
+            },
+            {
+              "value": "WEBHOOK_UNHEALTHY",
+              "name": "WebhookUnhealthy"
+            },
+            {
+              "value": "WEBHOOK_PAUSED",
+              "name": "WebhookPaused"
+            },
+            {
+              "value": "WEBHOOK_UNPAUSED",
+              "name": "WebhookUnpaused"
+            }
+          ]
+        }
+      },
       "PropertyConnectionPermissionsItem": {
         "enum": [
           "accounting_account_read",
@@ -110092,7 +110335,13 @@
           "azure",
           "gcp",
           "hashicorp",
-          "composio"
+          "composio",
+          "1password",
+          "bitwarden",
+          "doppler",
+          "akeyless",
+          "pipedream",
+          "alibabacloud"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -110120,6 +110369,30 @@
             {
               "value": "composio",
               "name": "Composio"
+            },
+            {
+              "value": "1password",
+              "name": "Value1Password"
+            },
+            {
+              "value": "bitwarden",
+              "name": "Bitwarden"
+            },
+            {
+              "value": "doppler",
+              "name": "Doppler"
+            },
+            {
+              "value": "akeyless",
+              "name": "Akeyless"
+            },
+            {
+              "value": "pipedream",
+              "name": "Pipedream"
+            },
+            {
+              "value": "alibabacloud",
+              "name": "Alibabacloud"
             }
           ]
         }
@@ -183642,6 +183915,9 @@
     },
     {
       "name": "unified"
+    },
+    {
+      "name": "notification"
     },
     {
       "name": "connection"

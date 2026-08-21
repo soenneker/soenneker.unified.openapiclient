@@ -494,6 +494,9 @@
          "name": "unified"
       },
       {
+         "name": "notification"
+      },
+      {
          "name": "connection"
       },
       {
@@ -13516,7 +13519,8 @@
             "type": "array",
             "items": {
                "type": "string"
-            }
+            },
+            "description": "labels"
          },
          "StorageFile": {
             "type": "object",
@@ -27700,6 +27704,86 @@
                "$ref": "#/components/schemas/PerformanceFeedback"
             }
          },
+         "Notification": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "workspace_id": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "user_id": {
+                  "type": "string"
+               },
+               "user_name": {
+                  "type": "string"
+               },
+               "workspace_name": {
+                  "type": "string"
+               },
+               "webhook_id": {
+                  "type": "string"
+               },
+               "connection_id": {
+                  "type": "string"
+               },
+               "integration_type": {
+                  "type": "string"
+               },
+               "integration_name": {
+                  "type": "string"
+               },
+               "sent_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "event": {
+                  "type": "string",
+                  "enum": [
+                     "USER_CREATED",
+                     "USER_DELETED",
+                     "CONNECTION_HEALTHY",
+                     "CONNECTION_UNHEALTHY",
+                     "CONNECTION_CREATED",
+                     "CONNECTION_UPDATED",
+                     "CONNECTION_DELETED",
+                     "CONNECTION_PAUSED",
+                     "CONNECTION_UNPAUSED",
+                     "INTEGRATION_ACTIVATED",
+                     "INTEGRATION_DEACTIVATED",
+                     "INTEGRATION_UPDATED",
+                     "WORKSPACE_UPDATED",
+                     "WORKSPACE_OVER_LIMIT",
+                     "WORKSPACE_80PERCENT_LIMIT",
+                     "WEBHOOK_CREATED",
+                     "WEBHOOK_DELETED",
+                     "WEBHOOK_UNHEALTHY",
+                     "WEBHOOK_PAUSED",
+                     "WEBHOOK_UNPAUSED"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               }
+            },
+            "description": "A notification of an event that occurred in you account."
+         },
+         "Notifications": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/Notification"
+            }
+         },
          "property_Connection_permissions": {
             "type": "array",
             "items": {
@@ -28271,7 +28355,13 @@
                      "azure",
                      "gcp",
                      "hashicorp",
-                     "composio"
+                     "composio",
+                     "1password",
+                     "bitwarden",
+                     "doppler",
+                     "akeyless",
+                     "pipedream",
+                     "alibabacloud"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -107666,6 +107756,76 @@
                }
             ],
             "operationId": "getPerformanceFeedback"
+         }
+      },
+      "/unified/notification": {
+         "get": {
+            "summary": "List event notifications",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               }
+            ],
+            "tags": [
+               "unified",
+               "notification"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/Notifications"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listUnifiedNotifications"
          }
       },
       "/unified/connection": {

@@ -28,5 +28,29 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Composio,
         #pragma warning restore CS1591
+        [EnumMember(Value = "1password")]
+        #pragma warning disable CS1591
+        Value1Password,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bitwarden")]
+        #pragma warning disable CS1591
+        Bitwarden,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "doppler")]
+        #pragma warning disable CS1591
+        Doppler,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "akeyless")]
+        #pragma warning disable CS1591
+        Akeyless,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pipedream")]
+        #pragma warning disable CS1591
+        Pipedream,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alibabacloud")]
+        #pragma warning disable CS1591
+        Alibabacloud,
+        #pragma warning restore CS1591
     }
 }

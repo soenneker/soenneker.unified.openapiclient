@@ -7,6 +7,7 @@ using Soenneker.Unified.OpenApiClient.Unified.Connection;
 using Soenneker.Unified.OpenApiClient.Unified.EnvironmentNamespace;
 using Soenneker.Unified.OpenApiClient.Unified.Integration;
 using Soenneker.Unified.OpenApiClient.Unified.Issue;
+using Soenneker.Unified.OpenApiClient.Unified.Notification;
 using Soenneker.Unified.OpenApiClient.Unified.Webhook;
 using Soenneker.Unified.OpenApiClient.Unified.Workspace;
 using System.Collections.Generic;
@@ -45,6 +46,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified
         public global::Soenneker.Unified.OpenApiClient.Unified.Issue.IssueRequestBuilder Issue
         {
             get => new global::Soenneker.Unified.OpenApiClient.Unified.Issue.IssueRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The notification property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Notification.NotificationRequestBuilder Notification
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Notification.NotificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhook property</summary>
         public global::Soenneker.Unified.OpenApiClient.Unified.Webhook.WebhookRequestBuilder Webhook
