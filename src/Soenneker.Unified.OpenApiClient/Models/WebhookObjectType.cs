@@ -44,6 +44,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingTaxrate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_paymentterm")]
+        #pragma warning disable CS1591
+        AccountingPaymentterm,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_organization")]
         #pragma warning disable CS1591
         AccountingOrganization,
@@ -679,6 +683,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "performance_feedback")]
         #pragma warning disable CS1591
         PerformanceFeedback,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_post")]
+        #pragma warning disable CS1591
+        SocialPost,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_profile")]
+        #pragma warning disable CS1591
+        SocialProfile,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_review")]
+        #pragma warning disable CS1591
+        SocialReview,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_insight")]
+        #pragma warning disable CS1591
+        SocialInsight,
         #pragma warning restore CS1591
     }
 }

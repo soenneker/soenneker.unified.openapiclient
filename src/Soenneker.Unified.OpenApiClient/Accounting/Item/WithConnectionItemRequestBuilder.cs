@@ -18,6 +18,7 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Invoice;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Journal;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Order;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Organization;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Paymentterm;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Project;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder;
@@ -119,6 +120,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Organization.OrganizationRequestBuilder Organization
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Organization.OrganizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The paymentterm property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Paymentterm.PaymenttermRequestBuilder Paymentterm
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Paymentterm.PaymenttermRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The profitloss property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss.ProfitlossRequestBuilder Profitloss

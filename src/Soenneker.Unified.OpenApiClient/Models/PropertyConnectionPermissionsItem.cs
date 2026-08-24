@@ -88,6 +88,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingTaxrateWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_paymentterm_read")]
+        #pragma warning disable CS1591
+        AccountingPaymenttermRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_paymentterm_write")]
+        #pragma warning disable CS1591
+        AccountingPaymenttermWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_organization_read")]
         #pragma warning disable CS1591
         AccountingOrganizationRead,
@@ -1247,6 +1255,38 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "performance_feedback_write")]
         #pragma warning disable CS1591
         PerformanceFeedbackWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_post_read")]
+        #pragma warning disable CS1591
+        SocialPostRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_post_write")]
+        #pragma warning disable CS1591
+        SocialPostWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_profile_read")]
+        #pragma warning disable CS1591
+        SocialProfileRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_profile_write")]
+        #pragma warning disable CS1591
+        SocialProfileWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_review_read")]
+        #pragma warning disable CS1591
+        SocialReviewRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_review_write")]
+        #pragma warning disable CS1591
+        SocialReviewWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_insight_read")]
+        #pragma warning disable CS1591
+        SocialInsightRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_insight_write")]
+        #pragma warning disable CS1591
+        SocialInsightWrite,
         #pragma warning restore CS1591
     }
 }

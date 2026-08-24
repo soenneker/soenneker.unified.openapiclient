@@ -118,6 +118,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference> Payments { get; set; }
 #endif
+        /// <summary>The paymentterm_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymenttermId { get; set; }
+#nullable restore
+#else
+        public string PaymenttermId { get; set; }
+#endif
         /// <summary>The payment_terms property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms? PaymentTerms { get; set; }
         /// <summary>The posted_at property</summary>
@@ -215,6 +223,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "payment_collection_method", n => { PaymentCollectionMethod = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentCollectionMethod>(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms>(); } },
                 { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "paymentterm_id", n => { PaymenttermId = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBillRawProperty.CreateFromDiscriminatorValue); } },
@@ -256,6 +265,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentCollectionMethod>("payment_collection_method", PaymentCollectionMethod);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>("payments", Payments);
+            writer.WriteStringValue("paymentterm_id", PaymenttermId);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBillPaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteStringValue("project_id", ProjectId);

@@ -212,6 +212,9 @@
          "name": "taxrate"
       },
       {
+         "name": "paymentterm"
+      },
+      {
          "name": "organization"
       },
       {
@@ -489,6 +492,15 @@
       },
       {
          "name": "feedback"
+      },
+      {
+         "name": "social"
+      },
+      {
+         "name": "post"
+      },
+      {
+         "name": "insight"
       },
       {
          "name": "unified"
@@ -1067,6 +1079,16 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/AccountingTaxrate"
+                  }
+               }
+            }
+         },
+         "AccountingPaymentterm": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/AccountingPaymentterm"
                   }
                }
             }
@@ -1807,6 +1829,26 @@
                "application/json": {
                   "schema": {
                      "$ref": "#/components/schemas/PerformanceFeedback"
+                  }
+               }
+            }
+         },
+         "SocialPost": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/SocialPost"
+                  }
+               }
+            }
+         },
+         "SocialReview": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/SocialReview"
                   }
                }
             }
@@ -10114,6 +10156,9 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "paymentterm_id": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -10524,6 +10569,9 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "paymentterm_id": {
+                  "type": "string"
+               },
                "lineitems": {
                   "$ref": "#/components/schemas/property_AccountingInvoice_lineitems"
                },
@@ -10766,6 +10814,9 @@
                      "OTHER"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "paymentterm_id": {
+                  "type": "string"
                },
                "payments": {
                   "$ref": "#/components/schemas/property_AccountingBill_payments"
@@ -11122,6 +11173,97 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/AccountingTaxrate"
+            }
+         },
+         "property_AccountingPaymentterm_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingMetadata"
+            }
+         },
+         "AccountingPaymentterm": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "ON_RECEIPT",
+                     "NET_7",
+                     "NET_10",
+                     "NET_15",
+                     "NET_20",
+                     "NET_25",
+                     "NET_30",
+                     "NET_45",
+                     "NET_60",
+                     "NET_90",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "category": {
+                  "type": "string",
+                  "enum": [
+                     "STANDARD",
+                     "DATE_DRIVEN",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "due_days": {
+                  "type": "number"
+               },
+               "discount_days": {
+                  "type": "number"
+               },
+               "discount_percent": {
+                  "type": "number"
+               },
+               "day_of_month_due": {
+                  "type": "number"
+               },
+               "discount_day_of_month": {
+                  "type": "number"
+               },
+               "due_next_month_days": {
+                  "type": "number"
+               },
+               "organization_id": {
+                  "type": "string"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_AccountingPaymentterm_metadata"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "AccountingPaymentterms": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingPaymentterm"
             }
          },
          "property_AccountingOrganization_address": {
@@ -27704,6 +27846,424 @@
                "$ref": "#/components/schemas/PerformanceFeedback"
             }
          },
+         "SocialMedia": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "alt": {
+                  "type": "string"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "PHOTO",
+                     "VIDEO",
+                     "GIF",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "height": {
+                  "type": "number"
+               },
+               "width": {
+                  "type": "number"
+               },
+               "position": {
+                  "type": "number"
+               }
+            },
+            "required": [
+               "url"
+            ]
+         },
+         "property_SocialPost_media": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SocialMedia"
+            },
+            "description": "Media assets attached to the post"
+         },
+         "property_SocialPost_call_to_action": {
+            "type": "object",
+            "properties": {
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "BOOK",
+                     "ORDER",
+                     "SHOP",
+                     "LEARN_MORE",
+                     "SIGN_UP",
+                     "CALL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "url": {
+                  "type": "string"
+               }
+            },
+            "description": "Call-to-action button on the post"
+         },
+         "property_SocialPost_metrics": {
+            "type": "object",
+            "properties": {
+               "like_count": {
+                  "type": "number"
+               },
+               "comment_count": {
+                  "type": "number"
+               },
+               "share_count": {
+                  "type": "number"
+               },
+               "quote_count": {
+                  "type": "number"
+               },
+               "view_count": {
+                  "type": "number"
+               },
+               "bookmark_count": {
+                  "type": "number"
+               }
+            },
+            "description": "Engagement metrics for the post"
+         },
+         "SocialPost": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "profile_id": {
+                  "type": "string"
+               },
+               "parent_post_id": {
+                  "type": "string"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "body": {
+                  "type": "string"
+               },
+               "status": {
+                  "type": "string",
+                  "enum": [
+                     "DRAFT",
+                     "SCHEDULED",
+                     "PUBLISHED",
+                     "REJECTED",
+                     "PROCESSING",
+                     "DELETED",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "POST",
+                     "REPLY",
+                     "REPOST",
+                     "QUOTE",
+                     "EVENT",
+                     "OFFER",
+                     "ALERT",
+                     "STORY",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "media": {
+                  "$ref": "#/components/schemas/property_SocialPost_media"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "language": {
+                  "type": "string"
+               },
+               "scheduled_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "call_to_action": {
+                  "$ref": "#/components/schemas/property_SocialPost_call_to_action"
+               },
+               "metrics": {
+                  "$ref": "#/components/schemas/property_SocialPost_metrics"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SocialPosts": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SocialPost"
+            }
+         },
+         "property_SocialProfile_address": {
+            "type": "object",
+            "properties": {
+               "address1": {
+                  "type": "string"
+               },
+               "address2": {
+                  "type": "string"
+               },
+               "city": {
+                  "type": "string"
+               },
+               "region": {
+                  "type": "string"
+               },
+               "postal_code": {
+                  "type": "string"
+               },
+               "country": {
+                  "type": "string"
+               }
+            },
+            "description": "Structured postal address"
+         },
+         "property_SocialProfile_metrics": {
+            "type": "object",
+            "properties": {
+               "follower_count": {
+                  "type": "number"
+               },
+               "following_count": {
+                  "type": "number"
+               },
+               "post_count": {
+                  "type": "number"
+               }
+            },
+            "description": "Audience metrics for the profile"
+         },
+         "SocialProfile": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "username": {
+                  "type": "string"
+               },
+               "parent_id": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "website_url": {
+                  "type": "string"
+               },
+               "avatar_url": {
+                  "type": "string"
+               },
+               "phone": {
+                  "type": "string"
+               },
+               "location": {
+                  "type": "string"
+               },
+               "address": {
+                  "$ref": "#/components/schemas/property_SocialProfile_address"
+               },
+               "category": {
+                  "type": "string"
+               },
+               "is_verified": {
+                  "type": "boolean"
+               },
+               "is_private": {
+                  "type": "boolean"
+               },
+               "metrics": {
+                  "$ref": "#/components/schemas/property_SocialProfile_metrics"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SocialProfiles": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SocialProfile"
+            }
+         },
+         "property_SocialReview_reply": {
+            "type": "object",
+            "properties": {
+               "content": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               }
+            },
+            "description": "The business's reply to the review"
+         },
+         "SocialReview": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "profile_id": {
+                  "type": "string"
+               },
+               "rating": {
+                  "type": "number"
+               },
+               "title": {
+                  "type": "string"
+               },
+               "content": {
+                  "type": "string"
+               },
+               "author_name": {
+                  "type": "string"
+               },
+               "author_avatar_url": {
+                  "type": "string"
+               },
+               "author_location": {
+                  "type": "string"
+               },
+               "reply": {
+                  "$ref": "#/components/schemas/property_SocialReview_reply"
+               },
+               "url": {
+                  "type": "string"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SocialReviews": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SocialReview"
+            }
+         },
+         "SocialInsight": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "profile_id": {
+                  "type": "string"
+               },
+               "post_id": {
+                  "type": "string"
+               },
+               "date": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "period": {
+                  "type": "string",
+                  "enum": [
+                     "DAY",
+                     "WEEK",
+                     "MONTH",
+                     "LIFETIME",
+                     "TOTAL",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "metric": {
+                  "type": "string",
+                  "enum": [
+                     "FOLLOWERS",
+                     "FOLLOWING",
+                     "POSTS",
+                     "IMPRESSIONS",
+                     "REACH",
+                     "ENGAGEMENT",
+                     "PROFILE_VIEWS",
+                     "CLICKS",
+                     "VIDEO_VIEWS",
+                     "LIKES",
+                     "COMMENTS",
+                     "SHARES",
+                     "SAVES",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "value": {
+                  "type": "number"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
+            }
+         },
+         "SocialInsights": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/SocialInsight"
+            }
+         },
          "Notification": {
             "type": "object",
             "properties": {
@@ -27809,6 +28369,8 @@
                   "accounting_expense_write",
                   "accounting_taxrate_read",
                   "accounting_taxrate_write",
+                  "accounting_paymentterm_read",
+                  "accounting_paymentterm_write",
                   "accounting_organization_read",
                   "accounting_order_read",
                   "accounting_order_write",
@@ -28098,7 +28660,15 @@
                   "performance_goal_read",
                   "performance_goal_write",
                   "performance_feedback_read",
-                  "performance_feedback_write"
+                  "performance_feedback_write",
+                  "social_post_read",
+                  "social_post_write",
+                  "social_profile_read",
+                  "social_profile_write",
+                  "social_review_read",
+                  "social_review_write",
+                  "social_insight_read",
+                  "social_insight_write"
                ],
                "x-speakeasy-unknown-values": "allow"
             }
@@ -28141,7 +28711,8 @@
                   "clubs",
                   "datastore",
                   "cdp",
-                  "performance"
+                  "performance",
+                  "social"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -28500,7 +29071,8 @@
                   "clubs",
                   "datastore",
                   "cdp",
-                  "performance"
+                  "performance",
+                  "social"
                ],
                "x-speakeasy-unknown-values": "allow"
             },
@@ -30319,6 +30891,24 @@
                      "not-supported"
                   ],
                   "x-speakeasy-unknown-values": "allow"
+               },
+               "list_post_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_post_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
                }
             }
          },
@@ -30613,6 +31203,7 @@
                      "accounting_vendorcredit",
                      "accounting_creditmemo",
                      "accounting_taxrate",
+                     "accounting_paymentterm",
                      "accounting_organization",
                      "accounting_order",
                      "accounting_salesorder",
@@ -30771,7 +31362,11 @@
                      "performance_cycle",
                      "performance_review",
                      "performance_goal",
-                     "performance_feedback"
+                     "performance_feedback",
+                     "social_post",
+                     "social_profile",
+                     "social_review",
+                     "social_insight"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -58282,6 +58877,7 @@
                            "associated_contacts",
                            "organization_id",
                            "payment_terms",
+                           "paymentterm_id",
                            "raw"
                         ]
                      }
@@ -58442,6 +59038,7 @@
                            "associated_contacts",
                            "organization_id",
                            "payment_terms",
+                           "paymentterm_id",
                            "raw"
                         ]
                      }
@@ -58527,6 +59124,7 @@
                            "associated_contacts",
                            "organization_id",
                            "payment_terms",
+                           "paymentterm_id",
                            "raw"
                         ]
                      }
@@ -58619,6 +59217,7 @@
                            "associated_contacts",
                            "organization_id",
                            "payment_terms",
+                           "paymentterm_id",
                            "raw"
                         ]
                      }
@@ -58721,6 +59320,7 @@
                            "associated_contacts",
                            "organization_id",
                            "payment_terms",
+                           "paymentterm_id",
                            "raw"
                         ]
                      }
@@ -58874,6 +59474,7 @@
                            "refund_reason",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "lineitems",
                            "status",
                            "url",
@@ -59072,6 +59673,7 @@
                            "refund_reason",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "lineitems",
                            "status",
                            "url",
@@ -59168,6 +59770,7 @@
                            "refund_reason",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "lineitems",
                            "status",
                            "url",
@@ -59271,6 +59874,7 @@
                            "refund_reason",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "lineitems",
                            "status",
                            "url",
@@ -59384,6 +59988,7 @@
                            "refund_reason",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "lineitems",
                            "status",
                            "url",
@@ -59555,6 +60160,7 @@
                            "organization_id",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "payments",
                            "category_ids",
                            "project_id",
@@ -59743,6 +60349,7 @@
                            "organization_id",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "payments",
                            "category_ids",
                            "project_id",
@@ -59837,6 +60444,7 @@
                            "organization_id",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "payments",
                            "category_ids",
                            "project_id",
@@ -59938,6 +60546,7 @@
                            "organization_id",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "payments",
                            "category_ids",
                            "project_id",
@@ -60049,6 +60658,7 @@
                            "organization_id",
                            "term",
                            "payment_terms",
+                           "paymentterm_id",
                            "payments",
                            "category_ids",
                            "project_id",
@@ -61885,6 +62495,564 @@
                }
             ],
             "operationId": "removeAccountingTaxrate"
+         }
+      },
+      "/accounting/{connection_id}/paymentterm": {
+         "post": {
+            "summary": "Create a paymentterm",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "category",
+                           "is_active",
+                           "due_days",
+                           "discount_days",
+                           "discount_percent",
+                           "day_of_month_due",
+                           "discount_day_of_month",
+                           "due_next_month_days",
+                           "organization_id",
+                           "metadata",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingPaymentterm"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingPaymentterm"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createAccountingPaymentterm"
+         },
+         "get": {
+            "summary": "List all paymentterms",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "org_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The org ID to filter by (reference to AccountingOrganization)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "type",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "category",
+                           "is_active",
+                           "due_days",
+                           "discount_days",
+                           "discount_percent",
+                           "day_of_month_due",
+                           "discount_day_of_month",
+                           "due_next_month_days",
+                           "organization_id",
+                           "metadata",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingPaymentterms"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listAccountingPaymentterms"
+         }
+      },
+      "/accounting/{connection_id}/paymentterm/{id}": {
+         "get": {
+            "summary": "Retrieve a paymentterm",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "category",
+                           "is_active",
+                           "due_days",
+                           "discount_days",
+                           "discount_percent",
+                           "day_of_month_due",
+                           "discount_day_of_month",
+                           "due_next_month_days",
+                           "organization_id",
+                           "metadata",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Paymentterm",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingPaymentterm"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getAccountingPaymentterm"
+         },
+         "put": {
+            "summary": "Update a paymentterm",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "category",
+                           "is_active",
+                           "due_days",
+                           "discount_days",
+                           "discount_percent",
+                           "day_of_month_due",
+                           "discount_day_of_month",
+                           "due_next_month_days",
+                           "organization_id",
+                           "metadata",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Paymentterm",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingPaymentterm"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingPaymentterm"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateAccountingPaymentterm"
+         },
+         "patch": {
+            "summary": "Update a paymentterm",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "description",
+                           "type",
+                           "category",
+                           "is_active",
+                           "due_days",
+                           "discount_days",
+                           "discount_percent",
+                           "day_of_month_due",
+                           "discount_day_of_month",
+                           "due_next_month_days",
+                           "organization_id",
+                           "metadata",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Paymentterm",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountingPaymentterm"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountingPaymentterm"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchAccountingPaymentterm"
+         },
+         "delete": {
+            "summary": "Remove a paymentterm",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Paymentterm",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "accounting",
+               "paymentterm"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeAccountingPaymentterm"
          }
       },
       "/accounting/{connection_id}/organization/{id}": {
@@ -107758,6 +108926,1410 @@
             "operationId": "getPerformanceFeedback"
          }
       },
+      "/social/{connection_id}/post": {
+         "post": {
+            "summary": "Create a post",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "parent_post_id",
+                           "title",
+                           "body",
+                           "status",
+                           "type",
+                           "media",
+                           "url",
+                           "language",
+                           "scheduled_at",
+                           "call_to_action",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SocialPost"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialPost"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "createSocialPost"
+         },
+         "get": {
+            "summary": "List all posts",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "profile_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The profile ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "parent_post_id",
+                           "title",
+                           "body",
+                           "status",
+                           "type",
+                           "media",
+                           "url",
+                           "language",
+                           "scheduled_at",
+                           "call_to_action",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialPosts"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSocialPosts"
+         }
+      },
+      "/social/{connection_id}/post/{id}": {
+         "get": {
+            "summary": "Retrieve a post",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "parent_post_id",
+                           "title",
+                           "body",
+                           "status",
+                           "type",
+                           "media",
+                           "url",
+                           "language",
+                           "scheduled_at",
+                           "call_to_action",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Post",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialPost"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSocialPost"
+         },
+         "put": {
+            "summary": "Update a post",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "parent_post_id",
+                           "title",
+                           "body",
+                           "status",
+                           "type",
+                           "media",
+                           "url",
+                           "language",
+                           "scheduled_at",
+                           "call_to_action",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Post",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SocialPost"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialPost"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateSocialPost"
+         },
+         "patch": {
+            "summary": "Update a post",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "parent_post_id",
+                           "title",
+                           "body",
+                           "status",
+                           "type",
+                           "media",
+                           "url",
+                           "language",
+                           "scheduled_at",
+                           "call_to_action",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Post",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SocialPost"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialPost"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchSocialPost"
+         },
+         "delete": {
+            "summary": "Remove a post",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Post",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "post"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful"
+               },
+               "default": {
+                  "headers": {
+                     "Content-Type": {
+                        "required": false,
+                        "schema": {
+                           "type": "string"
+                        }
+                     }
+                  },
+                  "content": {},
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "removeSocialPost"
+         }
+      },
+      "/social/{connection_id}/profile/{id}": {
+         "get": {
+            "summary": "Retrieve a profile",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "username",
+                           "parent_id",
+                           "description",
+                           "url",
+                           "website_url",
+                           "avatar_url",
+                           "phone",
+                           "location",
+                           "address",
+                           "category",
+                           "is_verified",
+                           "is_private",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Profile",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "profile"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialProfile"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSocialProfile"
+         }
+      },
+      "/social/{connection_id}/profile": {
+         "get": {
+            "summary": "List all profiles",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "parent_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The parent ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "name",
+                           "username",
+                           "parent_id",
+                           "description",
+                           "url",
+                           "website_url",
+                           "avatar_url",
+                           "phone",
+                           "location",
+                           "address",
+                           "category",
+                           "is_verified",
+                           "is_private",
+                           "metrics",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "profile"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialProfiles"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSocialProfiles"
+         }
+      },
+      "/social/{connection_id}/review/{id}": {
+         "get": {
+            "summary": "Retrieve a review",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "rating",
+                           "title",
+                           "content",
+                           "author_name",
+                           "author_avatar_url",
+                           "author_location",
+                           "reply",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Review",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "review"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialReview"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSocialReview"
+         },
+         "put": {
+            "summary": "Update a review",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "rating",
+                           "title",
+                           "content",
+                           "author_name",
+                           "author_avatar_url",
+                           "author_location",
+                           "reply",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Review",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "review"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SocialReview"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialReview"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "updateSocialReview"
+         },
+         "patch": {
+            "summary": "Update a review",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "rating",
+                           "title",
+                           "content",
+                           "author_name",
+                           "author_avatar_url",
+                           "author_location",
+                           "reply",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Review",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "review"
+            ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/SocialReview"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialReview"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "patchSocialReview"
+         }
+      },
+      "/social/{connection_id}/review": {
+         "get": {
+            "summary": "List all reviews",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "profile_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The profile ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "profile_id",
+                           "rating",
+                           "title",
+                           "content",
+                           "author_name",
+                           "author_avatar_url",
+                           "author_location",
+                           "reply",
+                           "url",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "review"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialReviews"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSocialReviews"
+         }
+      },
+      "/social/{connection_id}/insight/{id}": {
+         "get": {
+            "summary": "Retrieve an insight",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "profile_id",
+                           "post_id",
+                           "date",
+                           "period",
+                           "metric",
+                           "value",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Insight",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "insight"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialInsight"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getSocialInsight"
+         }
+      },
+      "/social/{connection_id}/insight": {
+         "get": {
+            "summary": "List all insights",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "limit",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "number"
+                  },
+                  "name": "offset",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "updated_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "sort",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "order",
+                  "in": "query",
+                  "required": false
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "query",
+                  "in": "query",
+                  "required": false,
+                  "description": "Query string to search. eg. email address or name"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "profile_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The profile ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "post_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The post ID to filter by"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "start_gte",
+                  "in": "query",
+                  "required": false,
+                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "end_lt",
+                  "in": "query",
+                  "required": false,
+                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
+               },
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "profile_id",
+                           "post_id",
+                           "date",
+                           "period",
+                           "metric",
+                           "value",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "social",
+               "insight"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/SocialInsights"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "listSocialInsights"
+         }
+      },
       "/unified/notification": {
          "get": {
             "summary": "List event notifications",
@@ -107959,7 +110531,8 @@
                            "clubs",
                            "datastore",
                            "cdp",
-                           "performance"
+                           "performance",
+                           "social"
                         ]
                      }
                   },
@@ -108533,7 +111106,8 @@
                            "clubs",
                            "datastore",
                            "cdp",
-                           "performance"
+                           "performance",
+                           "social"
                         ]
                      }
                   },
@@ -108668,7 +111242,8 @@
                            "clubs",
                            "datastore",
                            "cdp",
-                           "performance"
+                           "performance",
+                           "social"
                         ]
                      }
                   },

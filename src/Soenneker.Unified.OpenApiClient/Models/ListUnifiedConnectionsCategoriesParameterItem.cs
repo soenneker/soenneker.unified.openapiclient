@@ -144,5 +144,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Performance,
         #pragma warning restore CS1591
+        [EnumMember(Value = "social")]
+        #pragma warning disable CS1591
+        Social,
+        #pragma warning restore CS1591
     }
 }

@@ -33,6 +33,7 @@ using Soenneker.Unified.OpenApiClient.Repo;
 using Soenneker.Unified.OpenApiClient.Scim;
 using Soenneker.Unified.OpenApiClient.Shipping;
 using Soenneker.Unified.OpenApiClient.Signing;
+using Soenneker.Unified.OpenApiClient.Social;
 using Soenneker.Unified.OpenApiClient.Storage;
 using Soenneker.Unified.OpenApiClient.TaskNamespace;
 using Soenneker.Unified.OpenApiClient.Ticketing;
@@ -185,6 +186,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Signing.SigningRequestBuilder Signing
         {
             get => new global::Soenneker.Unified.OpenApiClient.Signing.SigningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The social property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Social.SocialRequestBuilder Social
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Social.SocialRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The storage property</summary>
         public global::Soenneker.Unified.OpenApiClient.Storage.StorageRequestBuilder Storage
