@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The kpi property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi? Kpi { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi Kpi { get; set; }
+#endif
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "goal", n => { Goal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignGoal>(); } },
                 { "has_eu_political_ads", n => { HasEuPoliticalAds = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "kpi", n => { Kpi = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -194,6 +203,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignGoal>("goal", Goal);
             writer.WriteBoolValue("has_eu_political_ads", HasEuPoliticalAds);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi>("kpi", Kpi);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);

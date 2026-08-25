@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhookRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/webhook{?connection_id*,created_lte*,env*,include_all*,integration_type*,limit*,object*,offset*,order*,sort*,updated_gte*}", pathParameters)
+        public WebhookRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/webhook{?connection_id*,created_lte*,env*,include_all*,integration_type*,is_healthy*,limit*,object*,offset*,order*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/webhook{?connection_id*,created_lte*,env*,include_all*,integration_type*,limit*,object*,offset*,order*,sort*,updated_gte*}", rawUrl)
+        public WebhookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/webhook{?connection_id*,created_lte*,env*,include_all*,integration_type*,is_healthy*,limit*,object*,offset*,order*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -180,6 +180,9 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
             [QueryParameter("integration_type")]
             public string IntegrationType { get; set; }
 #endif
+            /// <summary>Filter by health. Omit to return all.</summary>
+            [QueryParameter("is_healthy")]
+            public bool? IsHealthy { get; set; }
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             /// <summary>Filter the results for webhooks for only this object</summary>

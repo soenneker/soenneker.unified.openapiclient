@@ -84,6 +84,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The industry property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Industry { get; set; }
+#nullable restore
+#else
+        public string Industry { get; set; }
+#endif
         /// <summary>The language_locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -226,6 +234,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "hiring_manager_ids", n => { HiringManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hiring_managers", n => { HiringManagers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>(global::Soenneker.Unified.OpenApiClient.Models.AtsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "industry", n => { Industry = n.GetStringValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "minimum_degree", n => { MinimumDegree = n.GetStringValue(); } },
@@ -263,6 +272,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("hiring_manager_ids", HiringManagerIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>("hiring_managers", HiringManagers);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("industry", Industry);
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteStringValue("minimum_degree", MinimumDegree);

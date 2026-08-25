@@ -6708,6 +6708,9 @@
                "user_id": {
                   "type": "string"
                },
+               "industry": {
+                  "type": "string"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -17948,6 +17951,50 @@
                "type": "string"
             }
          },
+         "property_AdsCampaign_kpi": {
+            "type": "object",
+            "properties": {
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CPM",
+                     "CPC",
+                     "CPA",
+                     "CTR",
+                     "VIEWABILITY",
+                     "CPIAVC",
+                     "CPE",
+                     "CPV",
+                     "CLICK_CVR",
+                     "IMPRESSION_CVR",
+                     "VCPM",
+                     "VTR",
+                     "AUDIO_COMPLETION_RATE",
+                     "VIDEO_COMPLETION_RATE",
+                     "CPCL",
+                     "CPCV",
+                     "TOS10",
+                     "MAXIMIZE_PACING",
+                     "CUSTOM_IMPRESSION_VALUE_OVER_COST",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "percentage": {
+                  "type": "number"
+               },
+               "string_value": {
+                  "type": "string"
+               },
+               "algorithm_id": {
+                  "type": "string"
+               }
+            }
+         },
          "AdsCampaign": {
             "type": "object",
             "properties": {
@@ -18092,6 +18139,9 @@
                "labels": {
                   "$ref": "#/components/schemas/property_AdsCampaign_labels"
                },
+               "kpi": {
+                  "$ref": "#/components/schemas/property_AdsCampaign_kpi"
+               },
                "raw": {
                   "type": "object",
                   "additionalProperties": true
@@ -18219,8 +18269,8 @@
                      "PUBLISHER_HOSTED",
                      "ASSET_BASED",
                      "IMAGE",
-                     "SHARE",
-                     "DOCUMENT"
+                     "DOCUMENT",
+                     "SHARE"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -20304,6 +20354,50 @@
                "type": "string"
             }
          },
+         "property_AdsReportMetrics_campaign_kpi": {
+            "type": "object",
+            "properties": {
+               "type": {
+                  "type": "string",
+                  "enum": [
+                     "UNSPECIFIED",
+                     "CPM",
+                     "CPC",
+                     "CPA",
+                     "CTR",
+                     "VIEWABILITY",
+                     "CPIAVC",
+                     "CPE",
+                     "CPV",
+                     "CLICK_CVR",
+                     "IMPRESSION_CVR",
+                     "VCPM",
+                     "VTR",
+                     "AUDIO_COMPLETION_RATE",
+                     "VIDEO_COMPLETION_RATE",
+                     "CPCL",
+                     "CPCV",
+                     "TOS10",
+                     "MAXIMIZE_PACING",
+                     "CUSTOM_IMPRESSION_VALUE_OVER_COST",
+                     "OTHER"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "amount": {
+                  "type": "number"
+               },
+               "percentage": {
+                  "type": "number"
+               },
+               "string_value": {
+                  "type": "string"
+               },
+               "algorithm_id": {
+                  "type": "string"
+               }
+            }
+         },
          "property_AdsReportMetrics_campaign": {
             "type": "object",
             "properties": {
@@ -20447,6 +20541,9 @@
                },
                "labels": {
                   "$ref": "#/components/schemas/property_AdsReportMetrics_campaign_labels"
+               },
+               "kpi": {
+                  "$ref": "#/components/schemas/property_AdsReportMetrics_campaign_kpi"
                },
                "raw": {
                   "type": "object",
@@ -21569,8 +21666,8 @@
                      "PUBLISHER_HOSTED",
                      "ASSET_BASED",
                      "IMAGE",
-                     "SHARE",
-                     "DOCUMENT"
+                     "DOCUMENT",
+                     "SHARE"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -44946,6 +45043,7 @@
                            "skills",
                            "metadata",
                            "user_id",
+                           "industry",
                            "raw"
                         ]
                      }
@@ -45120,6 +45218,7 @@
                            "skills",
                            "metadata",
                            "user_id",
+                           "industry",
                            "raw"
                         ]
                      }
@@ -45209,6 +45308,7 @@
                            "skills",
                            "metadata",
                            "user_id",
+                           "industry",
                            "raw"
                         ]
                      }
@@ -45305,6 +45405,7 @@
                            "skills",
                            "metadata",
                            "user_id",
+                           "industry",
                            "raw"
                         ]
                      }
@@ -45411,6 +45512,7 @@
                            "skills",
                            "metadata",
                            "user_id",
+                           "industry",
                            "raw"
                         ]
                      }
@@ -85092,6 +85194,7 @@
                            "category",
                            "has_eu_political_ads",
                            "labels",
+                           "kpi",
                            "raw"
                         ]
                      }
@@ -85287,6 +85390,7 @@
                            "category",
                            "has_eu_political_ads",
                            "labels",
+                           "kpi",
                            "raw"
                         ]
                      }
@@ -85372,6 +85476,7 @@
                            "category",
                            "has_eu_political_ads",
                            "labels",
+                           "kpi",
                            "raw"
                         ]
                      }
@@ -85464,6 +85569,7 @@
                            "category",
                            "has_eu_political_ads",
                            "labels",
+                           "kpi",
                            "raw"
                         ]
                      }
@@ -85566,6 +85672,7 @@
                            "category",
                            "has_eu_political_ads",
                            "labels",
+                           "kpi",
                            "raw"
                         ]
                      }
@@ -111568,6 +111675,15 @@
                   "name": "env",
                   "in": "query",
                   "required": false
+               },
+               {
+                  "schema": {
+                     "type": "boolean"
+                  },
+                  "name": "is_healthy",
+                  "in": "query",
+                  "required": false,
+                  "description": "Filter by health. Omit to return all."
                }
             ],
             "tags": [

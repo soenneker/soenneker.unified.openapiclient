@@ -116,6 +116,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UserId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "industry")]
+        #pragma warning disable CS1591
+        Industry,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
