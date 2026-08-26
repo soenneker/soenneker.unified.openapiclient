@@ -56,7 +56,7 @@
          "name": "lead"
       },
       {
-         "name": "picklist"
+         "name": "taxonomy"
       },
       {
          "name": "pipeline"
@@ -171,9 +171,6 @@
       },
       {
          "name": "bankaccount"
-      },
-      {
-         "name": "taxonomy"
       },
       {
          "name": "verification"
@@ -4128,7 +4125,7 @@
                "$ref": "#/components/schemas/CrmLead"
             }
          },
-         "CrmPicklist": {
+         "CrmTaxonomy": {
             "type": "object",
             "properties": {
                "id": {
@@ -4156,10 +4153,10 @@
                "id"
             ]
          },
-         "CrmPicklists": {
+         "CrmTaxonomies": {
             "type": "array",
             "items": {
-               "$ref": "#/components/schemas/CrmPicklist"
+               "$ref": "#/components/schemas/CrmTaxonomy"
             }
          },
          "CrmStage": {
@@ -8083,6 +8080,9 @@
                "reason": {
                   "type": "string"
                },
+               "original_type": {
+                  "type": "string"
+               },
                "type": {
                   "type": "string",
                   "enum": [
@@ -8939,7 +8939,8 @@
                      "ABILITY",
                      "CERTIFICATION",
                      "ROLE",
-                     "HOLIDAY"
+                     "HOLIDAY",
+                     "LEAVE"
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
@@ -10174,6 +10175,46 @@
                "$ref": "#/components/schemas/AccountingContact"
             }
          },
+         "property_AccountingExtendedNote_user": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               }
+            }
+         },
+         "AccountingExtendedNote": {
+            "type": "object",
+            "properties": {
+               "note": {
+                  "type": "string"
+               },
+               "user": {
+                  "$ref": "#/components/schemas/property_AccountingExtendedNote_user"
+               },
+               "date": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "visibility": {
+                  "type": "string",
+                  "enum": [
+                     "PUBLIC",
+                     "PRIVATE"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               }
+            }
+         },
+         "property_AccountingInvoice_extended_notes": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingExtendedNote"
+            }
+         },
          "property_AccountingLineitem_category_ids": {
             "type": "array",
             "items": {
@@ -10535,6 +10576,9 @@
                "notes": {
                   "type": "string"
                },
+               "extended_notes": {
+                  "$ref": "#/components/schemas/property_AccountingInvoice_extended_notes"
+               },
                "refund_reason": {
                   "type": "string"
                },
@@ -10647,6 +10691,12 @@
                "$ref": "#/components/schemas/AccountingInvoice"
             }
          },
+         "property_AccountingBill_extended_notes": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingExtendedNote"
+            }
+         },
          "property_AccountingBill_lineitems": {
             "type": "array",
             "items": {
@@ -10741,6 +10791,9 @@
                },
                "notes": {
                   "type": "string"
+               },
+               "extended_notes": {
+                  "$ref": "#/components/schemas/property_AccountingBill_extended_notes"
                },
                "refund_reason": {
                   "type": "string"
@@ -28558,7 +28611,7 @@
                   "crm_lead_write",
                   "crm_pipeline_read",
                   "crm_pipeline_write",
-                  "crm_picklist_read",
+                  "crm_taxonomy_read",
                   "martech_list_read",
                   "martech_list_write",
                   "martech_member_read",
@@ -31351,7 +31404,7 @@
                      "crm_event",
                      "crm_lead",
                      "crm_pipeline",
-                     "crm_picklist",
+                     "crm_taxonomy",
                      "hris_employee",
                      "hris_group",
                      "hris_payslip",
@@ -37255,9 +37308,9 @@
             "operationId": "removeCrmLead"
          }
       },
-      "/crm/{connection_id}/picklist": {
+      "/crm/{connection_id}/taxonomy": {
          "get": {
-            "summary": "List all picklists",
+            "summary": "List all taxonomies",
             "parameters": [
                {
                   "schema": {
@@ -37357,14 +37410,14 @@
             ],
             "tags": [
                "crm",
-               "picklist"
+               "taxonomy"
             ],
             "responses": {
                "200": {
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$ref": "#/components/schemas/CrmPicklists"
+                           "$ref": "#/components/schemas/CrmTaxonomies"
                         }
                      }
                   },
@@ -37376,7 +37429,7 @@
                   "jwt": []
                }
             ],
-            "operationId": "listCrmPicklists"
+            "operationId": "listCrmTaxonomies"
          }
       },
       "/crm/{connection_id}/pipeline": {
@@ -50781,6 +50834,7 @@
                            "approved_at",
                            "comments",
                            "reason",
+                           "original_type",
                            "type",
                            "duration",
                            "duration_type",
@@ -50969,6 +51023,7 @@
                            "approved_at",
                            "comments",
                            "reason",
+                           "original_type",
                            "type",
                            "duration",
                            "duration_type",
@@ -51047,6 +51102,7 @@
                            "approved_at",
                            "comments",
                            "reason",
+                           "original_type",
                            "type",
                            "duration",
                            "duration_type",
@@ -51132,6 +51188,7 @@
                            "approved_at",
                            "comments",
                            "reason",
+                           "original_type",
                            "type",
                            "duration",
                            "duration_type",
@@ -51227,6 +51284,7 @@
                            "approved_at",
                            "comments",
                            "reason",
+                           "original_type",
                            "type",
                            "duration",
                            "duration_type",
@@ -59573,6 +59631,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "term",
                            "payment_terms",
@@ -59772,6 +59831,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "term",
                            "payment_terms",
@@ -59869,6 +59929,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "term",
                            "payment_terms",
@@ -59973,6 +60034,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "term",
                            "payment_terms",
@@ -60087,6 +60149,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "term",
                            "payment_terms",
@@ -60252,6 +60315,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "lineitems",
                            "status",
@@ -60441,6 +60505,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "lineitems",
                            "status",
@@ -60536,6 +60601,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "lineitems",
                            "status",
@@ -60638,6 +60704,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "lineitems",
                            "status",
@@ -60750,6 +60817,7 @@
                            "contact_id",
                            "currency",
                            "notes",
+                           "extended_notes",
                            "refund_reason",
                            "lineitems",
                            "status",

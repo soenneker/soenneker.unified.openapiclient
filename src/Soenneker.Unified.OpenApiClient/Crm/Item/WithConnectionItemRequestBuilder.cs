@@ -7,8 +7,8 @@ using Soenneker.Unified.OpenApiClient.Crm.Item.Contact;
 using Soenneker.Unified.OpenApiClient.Crm.Item.Deal;
 using Soenneker.Unified.OpenApiClient.Crm.Item.Event;
 using Soenneker.Unified.OpenApiClient.Crm.Item.Lead;
-using Soenneker.Unified.OpenApiClient.Crm.Item.Picklist;
 using Soenneker.Unified.OpenApiClient.Crm.Item.Pipeline;
+using Soenneker.Unified.OpenApiClient.Crm.Item.Taxonomy;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -46,15 +46,15 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Crm.Item.Lead.LeadRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The picklist property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Crm.Item.Picklist.PicklistRequestBuilder Picklist
-        {
-            get => new global::Soenneker.Unified.OpenApiClient.Crm.Item.Picklist.PicklistRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The pipeline property</summary>
         public global::Soenneker.Unified.OpenApiClient.Crm.Item.Pipeline.PipelineRequestBuilder Pipeline
         {
             get => new global::Soenneker.Unified.OpenApiClient.Crm.Item.Pipeline.PipelineRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The taxonomy property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Crm.Item.Taxonomy.TaxonomyRequestBuilder Taxonomy
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Crm.Item.Taxonomy.TaxonomyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Crm.Item.WithConnectionItemRequestBuilder"/> and sets the default values.

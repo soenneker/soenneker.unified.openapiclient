@@ -58,6 +58,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_paid property</summary>
         public bool? IsPaid { get; set; }
+        /// <summary>The original_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalType { get; set; }
+#nullable restore
+#else
+        public string OriginalType { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_paid", n => { IsPaid = n.GetBoolValue(); } },
+                { "original_type", n => { OriginalType = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -151,6 +160,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_paid", IsPaid);
+            writer.WriteStringValue("original_type", OriginalType);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty>("raw", Raw);
             writer.WriteStringValue("reason", Reason);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

@@ -36,5 +36,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Holiday,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LEAVE")]
+        #pragma warning disable CS1591
+        Leave,
+        #pragma warning restore CS1591
     }
 }

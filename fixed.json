@@ -3868,14 +3868,14 @@
         ]
       }
     },
-    "/crm/{connectionId}/picklist": {
+    "/crm/{connectionId}/taxonomy": {
       "get": {
         "tags": [
           "crm",
-          "picklist"
+          "taxonomy"
         ],
-        "summary": "List all picklists",
-        "operationId": "ListCrmPicklists",
+        "summary": "List all taxonomies",
+        "operationId": "ListCrmTaxonomies",
         "parameters": [
           {
             "name": "limit",
@@ -3935,7 +3935,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/ListCrmPicklistsFieldsParameterItem"
+                "$ref": "#/components/schemas/ListCrmTaxonomiesFieldsParameterItem"
               }
             }
           },
@@ -3963,7 +3963,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListCrmPicklists200Response"
+                  "$ref": "#/components/schemas/ListCrmTaxonomies200Response"
                 }
               }
             }
@@ -66854,7 +66854,7 @@
           "$ref": "#/components/schemas/CrmLead"
         }
       },
-      "CrmPicklist": {
+      "CrmTaxonomy": {
         "required": [
           "id"
         ],
@@ -66873,14 +66873,14 @@
             "$ref": "#/components/schemas/IndustryType"
           },
           "raw": {
-            "$ref": "#/components/schemas/CrmPicklistRawProperty"
+            "$ref": "#/components/schemas/CrmTaxonomyRawProperty"
           }
         }
       },
-      "CrmPicklists": {
+      "CrmTaxonomies": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CrmPicklist"
+          "$ref": "#/components/schemas/CrmTaxonomy"
         }
       },
       "CrmStage": {
@@ -70412,6 +70412,9 @@
           "reason": {
             "type": "string"
           },
+          "original_type": {
+            "type": "string"
+          },
           "type": {
             "$ref": "#/components/schemas/HrisTimeoffType"
           },
@@ -72310,6 +72313,41 @@
           "$ref": "#/components/schemas/AccountingContact"
         }
       },
+      "PropertyAccountingExtendedNoteUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "AccountingExtendedNote": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/PropertyAccountingExtendedNoteUser"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/AccountingExtendedNoteVisibility"
+          }
+        }
+      },
+      "PropertyAccountingInvoiceExtendedNotes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingExtendedNote"
+        }
+      },
       "PropertyAccountingLineitemCategoryIds": {
         "type": "array",
         "items": {
@@ -72588,6 +72626,12 @@
           "notes": {
             "type": "string"
           },
+          "extended_notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingExtendedNote"
+            }
+          },
           "refund_reason": {
             "type": "string"
           },
@@ -72661,6 +72705,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AccountingInvoice"
+        }
+      },
+      "PropertyAccountingBillExtendedNotes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AccountingExtendedNote"
         }
       },
       "PropertyAccountingBillLineitems": {
@@ -72757,6 +72807,12 @@
           },
           "notes": {
             "type": "string"
+          },
+          "extended_notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountingExtendedNote"
+            }
           },
           "refund_reason": {
             "type": "string"
@@ -91591,7 +91647,7 @@
       "CrmLeadRaw": {
         "type": "object"
       },
-      "CrmPicklistRaw": {
+      "CrmTaxonomyRaw": {
         "type": "object"
       },
       "CrmPipelineRaw": {
@@ -93288,10 +93344,10 @@
           "$ref": "#/components/schemas/CrmLead"
         }
       },
-      "ListCrmPicklists200Response": {
+      "ListCrmTaxonomies200Response": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CrmPicklist"
+          "$ref": "#/components/schemas/CrmTaxonomy"
         }
       },
       "ListCrmPipelines200Response": {
@@ -94430,7 +94486,7 @@
       "CrmLeadRawProperty": {
         "type": "object"
       },
-      "CrmPicklistRawProperty": {
+      "CrmTaxonomyRawProperty": {
         "type": "object"
       },
       "CrmPipelineRawProperty": {
@@ -98846,7 +98902,8 @@
           "ABILITY",
           "CERTIFICATION",
           "ROLE",
-          "HOLIDAY"
+          "HOLIDAY",
+          "LEAVE"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -98882,6 +98939,10 @@
             {
               "value": "HOLIDAY",
               "name": "Holiday"
+            },
+            {
+              "value": "LEAVE",
+              "name": "Leave"
             }
           ]
         }
@@ -99516,6 +99577,29 @@
             {
               "value": "OTHER",
               "name": "Other"
+            }
+          ]
+        }
+      },
+      "AccountingExtendedNoteVisibility": {
+        "enum": [
+          "PUBLIC",
+          "PRIVATE"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "AccountingExtendedNoteVisibility",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PUBLIC",
+              "name": "PublicValue"
+            },
+            {
+              "value": "PRIVATE",
+              "name": "PrivateValue"
             }
           ]
         }
@@ -111476,7 +111560,7 @@
           "crm_lead_write",
           "crm_pipeline_read",
           "crm_pipeline_write",
-          "crm_picklist_read",
+          "crm_taxonomy_read",
           "martech_list_read",
           "martech_list_write",
           "martech_member_read",
@@ -112141,8 +112225,8 @@
               "name": "CrmPipelineWrite"
             },
             {
-              "value": "crm_picklist_read",
-              "name": "CrmPicklistRead"
+              "value": "crm_taxonomy_read",
+              "name": "CrmTaxonomyRead"
             },
             {
               "value": "martech_list_read",
@@ -118946,7 +119030,7 @@
           "crm_event",
           "crm_lead",
           "crm_pipeline",
-          "crm_picklist",
+          "crm_taxonomy",
           "hris_employee",
           "hris_group",
           "hris_payslip",
@@ -119308,8 +119392,8 @@
               "name": "CrmPipeline"
             },
             {
-              "value": "crm_picklist",
-              "name": "CrmPicklist"
+              "value": "crm_taxonomy",
+              "name": "CrmTaxonomy"
             },
             {
               "value": "hris_employee",
@@ -124786,7 +124870,7 @@
           ]
         }
       },
-      "ListCrmPicklistsFieldsParameterItem": {
+      "ListCrmTaxonomiesFieldsParameterItem": {
         "enum": [
           "id",
           "name",
@@ -124797,7 +124881,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ListCrmPicklistsFieldsParameterItem",
+          "name": "ListCrmTaxonomiesFieldsParameterItem",
           "modelAsString": false,
           "values": [
             {
@@ -135361,6 +135445,7 @@
           "approved_at",
           "comments",
           "reason",
+          "original_type",
           "type",
           "duration",
           "duration_type",
@@ -135425,6 +135510,10 @@
               "name": "Reason"
             },
             {
+              "value": "original_type",
+              "name": "OriginalType"
+            },
+            {
               "value": "type",
               "name": "Type"
             },
@@ -135458,6 +135547,7 @@
           "approved_at",
           "comments",
           "reason",
+          "original_type",
           "type",
           "duration",
           "duration_type",
@@ -135522,6 +135612,10 @@
               "name": "Reason"
             },
             {
+              "value": "original_type",
+              "name": "OriginalType"
+            },
+            {
               "value": "type",
               "name": "Type"
             },
@@ -135555,6 +135649,7 @@
           "approved_at",
           "comments",
           "reason",
+          "original_type",
           "type",
           "duration",
           "duration_type",
@@ -135619,6 +135714,10 @@
               "name": "Reason"
             },
             {
+              "value": "original_type",
+              "name": "OriginalType"
+            },
+            {
               "value": "type",
               "name": "Type"
             },
@@ -135652,6 +135751,7 @@
           "approved_at",
           "comments",
           "reason",
+          "original_type",
           "type",
           "duration",
           "duration_type",
@@ -135716,6 +135816,10 @@
               "name": "Reason"
             },
             {
+              "value": "original_type",
+              "name": "OriginalType"
+            },
+            {
               "value": "type",
               "name": "Type"
             },
@@ -135749,6 +135853,7 @@
           "approved_at",
           "comments",
           "reason",
+          "original_type",
           "type",
           "duration",
           "duration_type",
@@ -135811,6 +135916,10 @@
             {
               "value": "reason",
               "name": "Reason"
+            },
+            {
+              "value": "original_type",
+              "name": "OriginalType"
             },
             {
               "value": "type",
@@ -142594,6 +142703,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "term",
           "payment_terms",
@@ -142695,6 +142805,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -142786,6 +142900,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "term",
           "payment_terms",
@@ -142887,6 +143002,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -142978,6 +143097,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "term",
           "payment_terms",
@@ -143079,6 +143199,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -143170,6 +143294,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "term",
           "payment_terms",
@@ -143271,6 +143396,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -143362,6 +143491,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "term",
           "payment_terms",
@@ -143463,6 +143593,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -143553,6 +143687,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "lineitems",
           "status",
@@ -143649,6 +143784,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -143735,6 +143874,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "lineitems",
           "status",
@@ -143831,6 +143971,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -143917,6 +144061,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "lineitems",
           "status",
@@ -144013,6 +144158,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -144099,6 +144248,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "lineitems",
           "status",
@@ -144195,6 +144345,10 @@
               "name": "Notes"
             },
             {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
+            },
+            {
               "value": "refund_reason",
               "name": "RefundReason"
             },
@@ -144281,6 +144435,7 @@
           "contact_id",
           "currency",
           "notes",
+          "extended_notes",
           "refund_reason",
           "lineitems",
           "status",
@@ -144375,6 +144530,10 @@
             {
               "value": "notes",
               "name": "Notes"
+            },
+            {
+              "value": "extended_notes",
+              "name": "ExtendedNotes"
             },
             {
               "value": "refund_reason",
@@ -188140,7 +188299,7 @@
       "name": "lead"
     },
     {
-      "name": "picklist"
+      "name": "taxonomy"
     },
     {
       "name": "pipeline"
@@ -188255,9 +188414,6 @@
     },
     {
       "name": "bankaccount"
-    },
-    {
-      "name": "taxonomy"
     },
     {
       "name": "verification"

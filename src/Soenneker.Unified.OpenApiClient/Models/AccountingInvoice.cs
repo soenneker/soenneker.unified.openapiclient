@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? DiscountAmount { get; set; }
         /// <summary>The due_at property</summary>
         public DateTimeOffset? DueAt { get; set; }
+        /// <summary>The extended_notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote>? ExtendedNotes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote> ExtendedNotes { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,6 +230,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
+                { "extended_notes", n => { ExtendedNotes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_number", n => { InvoiceNumber = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -267,6 +276,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote>("extended_notes", ExtendedNotes);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("invoice_number", InvoiceNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);

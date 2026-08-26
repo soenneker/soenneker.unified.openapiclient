@@ -84,6 +84,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Notes,
         #pragma warning restore CS1591
+        [EnumMember(Value = "extended_notes")]
+        #pragma warning disable CS1591
+        ExtendedNotes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "refund_reason")]
         #pragma warning disable CS1591
         RefundReason,

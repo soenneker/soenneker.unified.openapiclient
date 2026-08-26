@@ -60,6 +60,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Reason,
         #pragma warning restore CS1591
+        [EnumMember(Value = "original_type")]
+        #pragma warning disable CS1591
+        OriginalType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "type")]
         #pragma warning disable CS1591
         Type,

@@ -456,9 +456,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CrmPipelineWrite,
         #pragma warning restore CS1591
-        [EnumMember(Value = "crm_picklist_read")]
+        [EnumMember(Value = "crm_taxonomy_read")]
         #pragma warning disable CS1591
-        CrmPicklistRead,
+        CrmTaxonomyRead,
         #pragma warning restore CS1591
         [EnumMember(Value = "martech_list_read")]
         #pragma warning disable CS1591
