@@ -34,6 +34,24 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
         {
         }
         /// <summary>
+        /// Retrieve an order
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Update an order
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
@@ -72,6 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Retrieve an order
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Update an order
@@ -125,6 +162,33 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
         public global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieve an order
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class OrderItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.GetAssessmentOrderFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.GetAssessmentOrderFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
         }
         /// <summary>
         /// Update an order
