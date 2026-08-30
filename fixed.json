@@ -19578,9 +19578,7 @@
           {
             "name": "query",
             "in": "query",
-            "schema": {
-              "type": "object"
-            }
+            "schema": {}
           },
           {
             "name": "connectionId",
@@ -19695,9 +19693,7 @@
           {
             "name": "query",
             "in": "query",
-            "schema": {
-              "type": "object"
-            }
+            "schema": {}
           },
           {
             "name": "connectionId",
@@ -19812,9 +19808,7 @@
           {
             "name": "query",
             "in": "query",
-            "schema": {
-              "type": "object"
-            }
+            "schema": {}
           },
           {
             "name": "connectionId",
@@ -19929,9 +19923,7 @@
           {
             "name": "query",
             "in": "query",
-            "schema": {
-              "type": "object"
-            }
+            "schema": {}
           },
           {
             "name": "connectionId",
@@ -20031,9 +20023,7 @@
           {
             "name": "query",
             "in": "query",
-            "schema": {
-              "type": "object"
-            }
+            "schema": {}
           },
           {
             "name": "connectionId",
