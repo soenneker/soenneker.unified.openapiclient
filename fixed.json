@@ -18315,14 +18315,14 @@
         ]
       }
     },
-    "/hris/{connectionId}/taxonomy/{id}": {
-      "get": {
+    "/hris/{connectionId}/taxonomy": {
+      "post": {
         "tags": [
           "hris",
           "taxonomy"
         ],
-        "summary": "Retrieve a taxonomy",
-        "operationId": "GetHrisTaxonomy",
+        "summary": "Create a taxonomy",
+        "operationId": "CreateHrisTaxonomy",
         "parameters": [
           {
             "name": "fields",
@@ -18331,7 +18331,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/GetHrisTaxonomyFieldsParameterItem"
+                "$ref": "#/components/schemas/CreateHrisTaxonomyFieldsParameterItem"
               }
             }
           },
@@ -18351,17 +18351,18 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of the Taxonomy",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HrisTaxonomy"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful",
@@ -18379,9 +18380,7 @@
             "jwt": []
           }
         ]
-      }
-    },
-    "/hris/{connectionId}/taxonomy": {
+      },
       "get": {
         "tags": [
           "hris",
@@ -18493,6 +18492,72 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListHrisTaxonomies200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ]
+      }
+    },
+    "/hris/{connectionId}/taxonomy/{id}": {
+      "get": {
+        "tags": [
+          "hris",
+          "taxonomy"
+        ],
+        "summary": "Retrieve a taxonomy",
+        "operationId": "GetHrisTaxonomy",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetHrisTaxonomyFieldsParameterItem"
+              }
+            }
+          },
+          {
+            "name": "raw",
+            "in": "query",
+            "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar\u0026zoo=bar -\u003E raw=foo%3Dbar%26zoo%3Dbar",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "ID of the connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the Taxonomy",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HrisTaxonomy"
                 }
               }
             }
@@ -139589,7 +139654,7 @@
           ]
         }
       },
-      "GetHrisTaxonomyFieldsParameterItem": {
+      "CreateHrisTaxonomyFieldsParameterItem": {
         "enum": [
           "id",
           "created_at",
@@ -139610,7 +139675,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetHrisTaxonomyFieldsParameterItem",
+          "name": "CreateHrisTaxonomyFieldsParameterItem",
           "modelAsString": false,
           "values": [
             {
@@ -139698,6 +139763,93 @@
         "additionalProperties": false,
         "x-ms-enum": {
           "name": "ListHrisTaxonomiesFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
+            },
+            {
+              "value": "type",
+              "name": "Type"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "description",
+              "name": "Description"
+            },
+            {
+              "value": "domain",
+              "name": "Domain"
+            },
+            {
+              "value": "category",
+              "name": "Category"
+            },
+            {
+              "value": "subcategory",
+              "name": "Subcategory"
+            },
+            {
+              "value": "parent_id",
+              "name": "ParentId"
+            },
+            {
+              "value": "alternative_names",
+              "name": "AlternativeNames"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            },
+            {
+              "value": "role_ids",
+              "name": "RoleIds"
+            },
+            {
+              "value": "is_active",
+              "name": "IsActive"
+            },
+            {
+              "value": "raw",
+              "name": "Raw"
+            }
+          ]
+        }
+      },
+      "GetHrisTaxonomyFieldsParameterItem": {
+        "enum": [
+          "id",
+          "created_at",
+          "updated_at",
+          "type",
+          "name",
+          "description",
+          "domain",
+          "category",
+          "subcategory",
+          "parent_id",
+          "alternative_names",
+          "url",
+          "role_ids",
+          "is_active",
+          "raw"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetHrisTaxonomyFieldsParameterItem",
           "modelAsString": false,
           "values": [
             {
@@ -187853,6 +188005,16 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/HrisBankaccount"
+            }
+          }
+        },
+        "required": true
+      },
+      "HrisTaxonomy": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HrisTaxonomy"
             }
           }
         },

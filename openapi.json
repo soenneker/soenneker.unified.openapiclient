@@ -970,6 +970,16 @@
                }
             }
          },
+         "HrisTaxonomy": {
+            "required": true,
+            "content": {
+               "application/json": {
+                  "schema": {
+                     "$ref": "#/components/schemas/HrisTaxonomy"
+                  }
+               }
+            }
+         },
          "HrisDocument": {
             "required": true,
             "content": {
@@ -55293,9 +55303,9 @@
             "operationId": "removeHrisBankaccount"
          }
       },
-      "/hris/{connection_id}/taxonomy/{id}": {
-         "get": {
-            "summary": "Retrieve a taxonomy",
+      "/hris/{connection_id}/taxonomy": {
+         "post": {
+            "summary": "Create a taxonomy",
             "parameters": [
                {
                   "schema": {
@@ -55343,21 +55353,22 @@
                   "name": "connection_id",
                   "in": "path",
                   "required": true
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "description": "ID of the Taxonomy",
-                  "name": "id",
-                  "in": "path",
-                  "required": true
                }
             ],
             "tags": [
                "hris",
                "taxonomy"
             ],
+            "requestBody": {
+               "required": true,
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/HrisTaxonomy"
+                     }
+                  }
+               }
+            },
             "responses": {
                "200": {
                   "content": {
@@ -55375,10 +55386,8 @@
                   "jwt": []
                }
             ],
-            "operationId": "getHrisTaxonomy"
-         }
-      },
-      "/hris/{connection_id}/taxonomy": {
+            "operationId": "createHrisTaxonomy"
+         },
          "get": {
             "summary": "List all taxonomies",
             "parameters": [
@@ -55528,6 +55537,91 @@
                }
             ],
             "operationId": "listHrisTaxonomies"
+         }
+      },
+      "/hris/{connection_id}/taxonomy/{id}": {
+         "get": {
+            "summary": "Retrieve a taxonomy",
+            "parameters": [
+               {
+                  "schema": {
+                     "type": "array",
+                     "items": {
+                        "type": "string",
+                        "enum": [
+                           "id",
+                           "created_at",
+                           "updated_at",
+                           "type",
+                           "name",
+                           "description",
+                           "domain",
+                           "category",
+                           "subcategory",
+                           "parent_id",
+                           "alternative_names",
+                           "url",
+                           "role_ids",
+                           "is_active",
+                           "raw"
+                        ]
+                     }
+                  },
+                  "name": "fields",
+                  "in": "query",
+                  "required": false,
+                  "description": "Fields to return"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "raw",
+                  "in": "query",
+                  "required": false,
+                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the connection",
+                  "name": "connection_id",
+                  "in": "path",
+                  "required": true
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "description": "ID of the Taxonomy",
+                  "name": "id",
+                  "in": "path",
+                  "required": true
+               }
+            ],
+            "tags": [
+               "hris",
+               "taxonomy"
+            ],
+            "responses": {
+               "200": {
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/HrisTaxonomy"
+                        }
+                     }
+                  },
+                  "description": "Successful"
+               }
+            },
+            "security": [
+               {
+                  "jwt": []
+               }
+            ],
+            "operationId": "getHrisTaxonomy"
          }
       },
       "/hris/{connection_id}/document": {

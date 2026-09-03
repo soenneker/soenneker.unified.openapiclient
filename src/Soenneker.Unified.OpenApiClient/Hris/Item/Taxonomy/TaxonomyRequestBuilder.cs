@@ -66,6 +66,26 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy
             return collectionResult?.AsList();
         }
         /// <summary>
+        /// Create a taxonomy
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder.TaxonomyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder.TaxonomyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// List all taxonomies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -82,6 +102,28 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Create a taxonomy
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder.TaxonomyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.HrisTaxonomy body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder.TaxonomyRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -189,6 +231,33 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy
 #else
             [QueryParameter("updated_gte")]
             public string UpdatedGte { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Create a taxonomy
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TaxonomyRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateHrisTaxonomyFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateHrisTaxonomyFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
 #endif
         }
     }
