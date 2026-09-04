@@ -191,8 +191,10 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
             [QueryParameter("invoice_id")]
             public string InvoiceId { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The link ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,16 +205,22 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
             [QueryParameter("link_id")]
             public string LinkId { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("order")]
             public string? Order { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("order")]
             public string Order { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The org ID to filter by (reference to AccountingOrganization)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -246,12 +254,16 @@ namespace Soenneker.Unified.OpenApiClient.Payment.Item.Payment
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

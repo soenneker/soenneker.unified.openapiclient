@@ -86,12 +86,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Saml.Item.Item
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string? Env { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string Env { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The URL where you want the user to be redirect to after an unsuccessful authentication. An &quot;error&quot; variable will be appended.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,8 +107,10 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Saml.Item.Item
             [QueryParameter("failure_redirect")]
             public string FailureRedirect { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("redirect")]
             public bool? Redirect { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Extra state to send back to your success URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

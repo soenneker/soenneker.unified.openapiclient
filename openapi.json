@@ -29405,6 +29405,15 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
+               "list_approver_user_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
                "list_assigned_user_id": {
                   "type": "string",
                   "enum": [
@@ -30054,6 +30063,15 @@
                   "x-speakeasy-unknown-values": "allow"
                },
                "virtual_webhook_user_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_approver_user_id": {
                   "type": "string",
                   "enum": [
                      "supported-required",
@@ -67395,6 +67413,15 @@
                   "in": "query",
                   "required": false,
                   "description": "The user/employee ID to filter by (reference to HrisEmployee)"
+               },
+               {
+                  "schema": {
+                     "type": "string"
+                  },
+                  "name": "approver_user_id",
+                  "in": "query",
+                  "required": false,
+                  "description": "The expense approver user/employee ID to filter by (reference to HrisEmployee)"
                },
                {
                   "schema": {

@@ -125,19 +125,29 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string? Env { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string Env { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("summary")]
             public bool? Summary { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter the results for only this integration type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,12 +160,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("updated_gte")]
             public string? UpdatedGte { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("updated_gte")]
             public string UpdatedGte { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

@@ -86,12 +86,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string? Env { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("env")]
             public string Env { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Your user identifier to associate with the new Integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,8 +127,10 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             [QueryParameter("lang")]
             public string Lang { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("redirect")]
             public bool? Redirect { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,12 +143,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("scopes")]
             public string[]? Scopes { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("scopes")]
             public string[] Scopes { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Extra state to send back to your success URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", pathParameters)
+        public ExpenseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?approver_user_id*,category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", rawUrl)
+        public ExpenseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?approver_user_id*,category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,6 +141,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpenseRequestBuilderGetQueryParameters 
         {
+            /// <summary>The expense approver user/employee ID to filter by (reference to HrisEmployee)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("approver_user_id")]
+            public string? ApproverUserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("approver_user_id")]
+            public string ApproverUserId { get; set; }
+#endif
             /// <summary>The category ID to filter by (reference to AccountingCategory)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,18 +201,26 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
             [QueryParameter("group_id")]
             public string GroupId { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("order")]
             public string? Order { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("order")]
             public string Order { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The org ID to filter by (reference to AccountingOrganization)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,12 +254,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
