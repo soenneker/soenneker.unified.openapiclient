@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BusyRequestBuilderGetQueryParameters 
         {
-            /// <summary>The calendar ID to filter by (reference to CalendarCalendar)</summary>
+            /// <summary>The calendar ID to get availability for. Typically user&apos;s email or user ID. (reference to CalendarCalendar)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("calendar_id")]

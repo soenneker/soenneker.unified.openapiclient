@@ -52,22 +52,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         IsPayable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "section")]
-        #pragma warning disable CS1591
-        Section,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "subsection")]
-        #pragma warning disable CS1591
-        Subsection,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "group")]
-        #pragma warning disable CS1591
-        Group,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "subgroup")]
-        #pragma warning disable CS1591
-        Subgroup,
-        #pragma warning restore CS1591
         [EnumMember(Value = "parent_id")]
         #pragma warning disable CS1591
         ParentId,

@@ -22,14 +22,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary> @deprecated; use collections instead</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? CollectionIds { get; set; }
-#nullable restore
-#else
-        public List<string> CollectionIds { get; set; }
-#endif
         /// <summary>points to Collection with id, name, and type fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -230,7 +222,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "collection_ids", n => { CollectionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "collections", n => { Collections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceReference>(global::Soenneker.Unified.OpenApiClient.Models.CommerceReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -271,7 +262,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteCollectionOfPrimitiveValues<string>("collection_ids", CollectionIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceReference>("collections", Collections);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);

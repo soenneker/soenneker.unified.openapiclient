@@ -43,14 +43,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The group property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Group { get; set; }
-#nullable restore
-#else
-        public string Group { get; set; }
-#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,32 +85,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty Raw { get; set; }
 #endif
-        /// <summary>The section property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Section { get; set; }
-#nullable restore
-#else
-        public string Section { get; set; }
-#endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus? Status { get; set; }
-        /// <summary>The subgroup property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Subgroup { get; set; }
-#nullable restore
-#else
-        public string Subgroup { get; set; }
-#endif
-        /// <summary>The subsection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Subsection { get; set; }
-#nullable restore
-#else
-        public string Subsection { get; set; }
-#endif
         /// <summary>The taxonomy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,17 +129,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "customer_defined_code", n => { CustomerDefinedCode = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "group", n => { Group = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_payable", n => { IsPayable = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty.CreateFromDiscriminatorValue); } },
-                { "section", n => { Section = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus>(); } },
-                { "subgroup", n => { Subgroup = n.GetStringValue(); } },
-                { "subsection", n => { Subsection = n.GetStringValue(); } },
                 { "taxonomy", n => { Taxonomy = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -189,17 +153,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("customer_defined_code", CustomerDefinedCode);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("group", Group);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_payable", IsPayable);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty>("raw", Raw);
-            writer.WriteStringValue("section", Section);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus>("status", Status);
-            writer.WriteStringValue("subgroup", Subgroup);
-            writer.WriteStringValue("subsection", Subsection);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy>("taxonomy", Taxonomy);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

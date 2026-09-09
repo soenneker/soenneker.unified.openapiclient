@@ -40,22 +40,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ClosingAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "stage")]
-        #pragma warning disable CS1591
-        Stage,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "stage_id")]
-        #pragma warning disable CS1591
-        StageId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "pipeline")]
-        #pragma warning disable CS1591
-        Pipeline,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "pipeline_id")]
-        #pragma warning disable CS1591
-        PipelineId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "stages")]
         #pragma warning disable CS1591
         Stages,
@@ -99,6 +83,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "description")]
+        #pragma warning disable CS1591
+        Description,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

@@ -2525,13 +2525,6 @@
                "$ref": "#/components/schemas/MessagingChannel"
             }
          },
-         "property_MessagingMessage_channel_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use channels instead"
-         },
          "MessagingReference": {
             "type": "object",
             "properties": {
@@ -2693,19 +2686,10 @@
                   "type": "string",
                   "format": "date-time"
                },
-               "channel_id": {
-                  "type": "string"
-               },
-               "channel_ids": {
-                  "$ref": "#/components/schemas/property_MessagingMessage_channel_ids"
-               },
                "channels": {
                   "$ref": "#/components/schemas/property_MessagingMessage_channels"
                },
                "parent_id": {
-                  "type": "string"
-               },
-               "root_message_id": {
                   "type": "string"
                },
                "message_thread_identifier": {
@@ -2818,13 +2802,6 @@
                }
             }
          },
-         "property_MessagingEvent_message_channel_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use channels instead"
-         },
          "property_MessagingEvent_message_channels": {
             "type": "array",
             "items": {
@@ -2903,19 +2880,10 @@
                   "type": "string",
                   "format": "date-time"
                },
-               "channel_id": {
-                  "type": "string"
-               },
-               "channel_ids": {
-                  "$ref": "#/components/schemas/property_MessagingEvent_message_channel_ids"
-               },
                "channels": {
                   "$ref": "#/components/schemas/property_MessagingEvent_message_channels"
                },
                "parent_id": {
-                  "type": "string"
-               },
-               "root_message_id": {
                   "type": "string"
                },
                "message_thread_identifier": {
@@ -3236,18 +3204,6 @@
                   "type": "string",
                   "format": "date-time"
                },
-               "stage": {
-                  "type": "string"
-               },
-               "stage_id": {
-                  "type": "string"
-               },
-               "pipeline": {
-                  "type": "string"
-               },
-               "pipeline_id": {
-                  "type": "string"
-               },
                "stages": {
                   "$ref": "#/components/schemas/property_CrmDeal_stages"
                },
@@ -3280,6 +3236,9 @@
                },
                "metadata": {
                   "$ref": "#/components/schemas/property_CrmDeal_metadata"
+               },
+               "description": {
+                  "type": "string"
                },
                "raw": {
                   "type": "object",
@@ -5699,15 +5658,6 @@
                   "type": "string"
                },
                "web_url": {
-                  "type": "string"
-               },
-               "contact_id": {
-                  "type": "string"
-               },
-               "contact_name": {
-                  "type": "string"
-               },
-               "contact_phone": {
                   "type": "string"
                },
                "contacts": {
@@ -9561,18 +9511,6 @@
                "is_payable": {
                   "type": "boolean"
                },
-               "section": {
-                  "type": "string"
-               },
-               "subsection": {
-                  "type": "string"
-               },
-               "group": {
-                  "type": "string"
-               },
-               "subgroup": {
-                  "type": "string"
-               },
                "parent_id": {
                   "type": "string"
                },
@@ -12061,69 +11999,6 @@
                "type": "string"
             }
          },
-         "property_AccountingProfitlossSubcategory_transaction_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "AccountingProfitlossSubcategory": {
-            "type": "object",
-            "properties": {
-               "name": {
-                  "type": "string"
-               },
-               "amount": {
-                  "type": "number"
-               },
-               "transaction_ids": {
-                  "$ref": "#/components/schemas/property_AccountingProfitlossSubcategory_transaction_ids"
-               }
-            },
-            "description": "@deprecated"
-         },
-         "property_AccountingProfitlossCategory_sub_items": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossSubcategory"
-            }
-         },
-         "AccountingProfitlossCategory": {
-            "type": "object",
-            "properties": {
-               "name": {
-                  "type": "string"
-               },
-               "amount": {
-                  "type": "number"
-               },
-               "sub_items": {
-                  "$ref": "#/components/schemas/property_AccountingProfitlossCategory_sub_items"
-               }
-            },
-            "description": "@deprecated"
-         },
-         "property_AccountingReport_profit_and_loss_income": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use income_sections instead"
-         },
-         "property_AccountingReport_profit_and_loss_expenses": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use expenses_sections instead"
-         },
-         "property_AccountingReport_profit_and_loss_cost_of_goods_sold": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use cost_of_goods_sold_sections instead"
-         },
          "property_AccountingProfitlossAccount_transaction_ids": {
             "type": "array",
             "items": {
@@ -12218,21 +12093,6 @@
                },
                "currency": {
                   "type": "string"
-               },
-               "income": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_income"
-               },
-               "expenses": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_expenses"
-               },
-               "cost_of_goods_sold": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_cost_of_goods_sold"
-               },
-               "gross_profit_amount": {
-                  "type": "number"
-               },
-               "net_profit_amount": {
-                  "type": "number"
                },
                "income_total_amount": {
                   "type": "number"
@@ -12514,27 +12374,6 @@
                "type": "string"
             }
          },
-         "property_AccountingProfitloss_income": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use income_sections instead"
-         },
-         "property_AccountingProfitloss_expenses": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use expenses_sections instead"
-         },
-         "property_AccountingProfitloss_cost_of_goods_sold": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated – use cost_of_goods_sold_sections instead"
-         },
          "property_AccountingProfitloss_income_sections": {
             "type": "array",
             "items": {
@@ -12583,21 +12422,6 @@
                },
                "currency": {
                   "type": "string"
-               },
-               "income": {
-                  "$ref": "#/components/schemas/property_AccountingProfitloss_income"
-               },
-               "expenses": {
-                  "$ref": "#/components/schemas/property_AccountingProfitloss_expenses"
-               },
-               "cost_of_goods_sold": {
-                  "$ref": "#/components/schemas/property_AccountingProfitloss_cost_of_goods_sold"
-               },
-               "gross_profit_amount": {
-                  "type": "number"
-               },
-               "net_profit_amount": {
-                  "type": "number"
                },
                "income_total_amount": {
                   "type": "number"
@@ -14185,13 +14009,6 @@
                "$ref": "#/components/schemas/CommerceItemMedia"
             }
          },
-         "property_CommerceItem_collection_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": " @deprecated; use collections instead"
-         },
          "property_CommerceItem_metadata": {
             "type": "array",
             "items": {
@@ -14288,9 +14105,6 @@
                },
                "media": {
                   "$ref": "#/components/schemas/property_CommerceItem_media"
-               },
-               "collection_ids": {
-                  "$ref": "#/components/schemas/property_CommerceItem_collection_ids"
                },
                "account_id": {
                   "type": "string"
@@ -15905,9 +15719,6 @@
                "id": {
                   "type": "string"
                },
-               "key": {
-                  "type": "string"
-               },
                "value": {
                   "additionalProperties": true,
                   "anyOf": [
@@ -15945,9 +15756,6 @@
                   ]
                },
                "namespace": {
-                  "type": "string"
-               },
-               "type": {
                   "type": "string"
                },
                "format": {
@@ -22439,13 +22247,6 @@
                "$ref": "#/components/schemas/LmsMedia"
             }
          },
-         "property_LmsCourse_instructor_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-         },
          "LmsReference": {
             "type": "object",
             "properties": {
@@ -22462,13 +22263,6 @@
             "items": {
                "$ref": "#/components/schemas/LmsReference"
             }
-         },
-         "property_LmsCourse_student_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use students"
          },
          "property_LmsCourse_students": {
             "type": "array",
@@ -22529,14 +22323,8 @@
                "media": {
                   "$ref": "#/components/schemas/property_LmsCourse_media"
                },
-               "instructor_ids": {
-                  "$ref": "#/components/schemas/property_LmsCourse_instructor_ids"
-               },
                "instructors": {
                   "$ref": "#/components/schemas/property_LmsCourse_instructors"
-               },
-               "student_ids": {
-                  "$ref": "#/components/schemas/property_LmsCourse_student_ids"
                },
                "students": {
                   "$ref": "#/components/schemas/property_LmsCourse_students"
@@ -22577,20 +22365,6 @@
             "items": {
                "$ref": "#/components/schemas/LmsMedia"
             }
-         },
-         "property_LmsClass_instructor_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-         },
-         "property_LmsClass_student_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use students"
          },
          "property_LmsClass_languages": {
             "type": "array",
@@ -22635,12 +22409,6 @@
                },
                "course_id": {
                   "type": "string"
-               },
-               "instructor_ids": {
-                  "$ref": "#/components/schemas/property_LmsClass_instructor_ids"
-               },
-               "student_ids": {
-                  "$ref": "#/components/schemas/property_LmsClass_student_ids"
                },
                "languages": {
                   "$ref": "#/components/schemas/property_LmsClass_languages"
@@ -22910,13 +22678,6 @@
                "$ref": "#/components/schemas/LmsContentLocalization"
             }
          },
-         "property_LmsContent_instructor_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-         },
          "property_LmsContent_collection_ids": {
             "type": "array",
             "items": {
@@ -22993,9 +22754,6 @@
                },
                "localizations": {
                   "$ref": "#/components/schemas/property_LmsContent_localizations"
-               },
-               "instructor_ids": {
-                  "$ref": "#/components/schemas/property_LmsContent_instructor_ids"
                },
                "collection_ids": {
                   "$ref": "#/components/schemas/property_LmsContent_collection_ids"
@@ -29405,15 +29163,6 @@
                   ],
                   "x-speakeasy-unknown-values": "allow"
                },
-               "list_approver_user_id": {
-                  "type": "string",
-                  "enum": [
-                     "supported-required",
-                     "supported",
-                     "not-supported"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
                "list_assigned_user_id": {
                   "type": "string",
                   "enum": [
@@ -30063,15 +29812,6 @@
                   "x-speakeasy-unknown-values": "allow"
                },
                "virtual_webhook_user_id": {
-                  "type": "string",
-                  "enum": [
-                     "supported-required",
-                     "supported",
-                     "not-supported"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "virtual_webhook_approver_user_id": {
                   "type": "string",
                   "enum": [
                      "supported-required",
@@ -31080,6 +30820,24 @@
                   "x-speakeasy-unknown-values": "allow"
                },
                "virtual_webhook_post_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "list_approver_user_id": {
+                  "type": "string",
+                  "enum": [
+                     "supported-required",
+                     "supported",
+                     "not-supported"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "virtual_webhook_approver_user_id": {
                   "type": "string",
                   "enum": [
                      "supported-required",
@@ -33770,11 +33528,8 @@
                            "id",
                            "created_at",
                            "updated_at",
-                           "channel_id",
-                           "channel_ids",
                            "channels",
                            "parent_id",
-                           "root_message_id",
                            "message_thread_identifier",
                            "author_member",
                            "destination_members",
@@ -33985,11 +33740,8 @@
                            "id",
                            "created_at",
                            "updated_at",
-                           "channel_id",
-                           "channel_ids",
                            "channels",
                            "parent_id",
-                           "root_message_id",
                            "message_thread_identifier",
                            "author_member",
                            "destination_members",
@@ -34071,11 +33823,8 @@
                            "id",
                            "created_at",
                            "updated_at",
-                           "channel_id",
-                           "channel_ids",
                            "channels",
                            "parent_id",
-                           "root_message_id",
                            "message_thread_identifier",
                            "author_member",
                            "destination_members",
@@ -34164,11 +33913,8 @@
                            "id",
                            "created_at",
                            "updated_at",
-                           "channel_id",
-                           "channel_ids",
                            "channels",
                            "parent_id",
-                           "root_message_id",
                            "message_thread_identifier",
                            "author_member",
                            "destination_members",
@@ -34267,11 +34013,8 @@
                            "id",
                            "created_at",
                            "updated_at",
-                           "channel_id",
-                           "channel_ids",
                            "channels",
                            "parent_id",
-                           "root_message_id",
                            "message_thread_identifier",
                            "author_member",
                            "destination_members",
@@ -34603,10 +34346,6 @@
                            "currency",
                            "closed_at",
                            "closing_at",
-                           "stage",
-                           "stage_id",
-                           "pipeline",
-                           "pipeline_id",
                            "stages",
                            "pipelines",
                            "source",
@@ -34618,6 +34357,7 @@
                            "contact_ids",
                            "company_ids",
                            "metadata",
+                           "description",
                            "raw"
                         ]
                      }
@@ -34783,10 +34523,6 @@
                            "currency",
                            "closed_at",
                            "closing_at",
-                           "stage",
-                           "stage_id",
-                           "pipeline",
-                           "pipeline_id",
                            "stages",
                            "pipelines",
                            "source",
@@ -34798,6 +34534,7 @@
                            "contact_ids",
                            "company_ids",
                            "metadata",
+                           "description",
                            "raw"
                         ]
                      }
@@ -34868,10 +34605,6 @@
                            "currency",
                            "closed_at",
                            "closing_at",
-                           "stage",
-                           "stage_id",
-                           "pipeline",
-                           "pipeline_id",
                            "stages",
                            "pipelines",
                            "source",
@@ -34883,6 +34616,7 @@
                            "contact_ids",
                            "company_ids",
                            "metadata",
+                           "description",
                            "raw"
                         ]
                      }
@@ -34960,10 +34694,6 @@
                            "currency",
                            "closed_at",
                            "closing_at",
-                           "stage",
-                           "stage_id",
-                           "pipeline",
-                           "pipeline_id",
                            "stages",
                            "pipelines",
                            "source",
@@ -34975,6 +34705,7 @@
                            "contact_ids",
                            "company_ids",
                            "metadata",
+                           "description",
                            "raw"
                         ]
                      }
@@ -35063,10 +34794,6 @@
                            "currency",
                            "closed_at",
                            "closing_at",
-                           "stage",
-                           "stage_id",
-                           "pipeline",
-                           "pipeline_id",
                            "stages",
                            "pipelines",
                            "source",
@@ -35078,6 +34805,7 @@
                            "contact_ids",
                            "company_ids",
                            "metadata",
+                           "description",
                            "raw"
                         ]
                      }
@@ -43506,9 +43234,6 @@
                            "expires_at",
                            "call_id",
                            "web_url",
-                           "contact_id",
-                           "contact_name",
-                           "contact_phone",
                            "contacts",
                            "user_id",
                            "media",
@@ -43688,9 +43413,6 @@
                            "expires_at",
                            "call_id",
                            "web_url",
-                           "contact_id",
-                           "contact_name",
-                           "contact_phone",
                            "contacts",
                            "user_id",
                            "media",
@@ -43767,9 +43489,6 @@
                            "expires_at",
                            "call_id",
                            "web_url",
-                           "contact_id",
-                           "contact_name",
-                           "contact_phone",
                            "contacts",
                            "user_id",
                            "media",
@@ -43853,9 +43572,6 @@
                            "expires_at",
                            "call_id",
                            "web_url",
-                           "contact_id",
-                           "contact_name",
-                           "contact_phone",
                            "contacts",
                            "user_id",
                            "media",
@@ -43949,9 +43665,6 @@
                            "expires_at",
                            "call_id",
                            "web_url",
-                           "contact_id",
-                           "contact_name",
-                           "contact_phone",
                            "contacts",
                            "user_id",
                            "media",
@@ -57626,10 +57339,6 @@
                            "currency",
                            "customer_defined_code",
                            "is_payable",
-                           "section",
-                           "subsection",
-                           "group",
-                           "subgroup",
                            "parent_id",
                            "taxonomy",
                            "organization_id",
@@ -57783,10 +57492,6 @@
                            "currency",
                            "customer_defined_code",
                            "is_payable",
-                           "section",
-                           "subsection",
-                           "group",
-                           "subgroup",
                            "parent_id",
                            "taxonomy",
                            "organization_id",
@@ -57863,10 +57568,6 @@
                            "currency",
                            "customer_defined_code",
                            "is_payable",
-                           "section",
-                           "subsection",
-                           "group",
-                           "subgroup",
                            "parent_id",
                            "taxonomy",
                            "organization_id",
@@ -57950,10 +57651,6 @@
                            "currency",
                            "customer_defined_code",
                            "is_payable",
-                           "section",
-                           "subsection",
-                           "group",
-                           "subgroup",
                            "parent_id",
                            "taxonomy",
                            "organization_id",
@@ -58048,10 +57745,6 @@
                            "currency",
                            "customer_defined_code",
                            "is_payable",
-                           "section",
-                           "subsection",
-                           "group",
-                           "subgroup",
                            "parent_id",
                            "taxonomy",
                            "organization_id",
@@ -66240,11 +65933,6 @@
                            "end_at",
                            "name",
                            "currency",
-                           "income",
-                           "expenses",
-                           "cost_of_goods_sold",
-                           "gross_profit_amount",
-                           "net_profit_amount",
                            "income_total_amount",
                            "net_income_amount",
                            "expenses_total_amount",
@@ -66417,11 +66105,6 @@
                            "end_at",
                            "name",
                            "currency",
-                           "income",
-                           "expenses",
-                           "cost_of_goods_sold",
-                           "gross_profit_amount",
-                           "net_profit_amount",
                            "income_total_amount",
                            "net_income_amount",
                            "expenses_total_amount",
@@ -71537,7 +71220,6 @@
                            "variants",
                            "tags",
                            "media",
-                           "collection_ids",
                            "account_id",
                            "metadata",
                            "collections",
@@ -71706,7 +71388,6 @@
                            "variants",
                            "tags",
                            "media",
-                           "collection_ids",
                            "account_id",
                            "metadata",
                            "collections",
@@ -71799,7 +71480,6 @@
                            "variants",
                            "tags",
                            "media",
-                           "collection_ids",
                            "account_id",
                            "metadata",
                            "collections",
@@ -71899,7 +71579,6 @@
                            "variants",
                            "tags",
                            "media",
-                           "collection_ids",
                            "account_id",
                            "metadata",
                            "collections",
@@ -72009,7 +71688,6 @@
                            "variants",
                            "tags",
                            "media",
-                           "collection_ids",
                            "account_id",
                            "metadata",
                            "collections",
@@ -83567,7 +83245,7 @@
                   "name": "calendar_id",
                   "in": "query",
                   "required": false,
-                  "description": "The calendar ID to filter by (reference to CalendarCalendar)"
+                  "description": "The calendar ID to get availability for. Typically user's email or user ID. (reference to CalendarCalendar)"
                },
                {
                   "schema": {
@@ -89620,9 +89298,7 @@
                            "categories",
                            "currency",
                            "media",
-                           "instructor_ids",
                            "instructors",
-                           "student_ids",
                            "students",
                            "content_ids",
                            "skills",
@@ -89780,9 +89456,7 @@
                            "categories",
                            "currency",
                            "media",
-                           "instructor_ids",
                            "instructors",
-                           "student_ids",
                            "students",
                            "content_ids",
                            "skills",
@@ -89864,9 +89538,7 @@
                            "categories",
                            "currency",
                            "media",
-                           "instructor_ids",
                            "instructors",
-                           "student_ids",
                            "students",
                            "content_ids",
                            "skills",
@@ -89955,9 +89627,7 @@
                            "categories",
                            "currency",
                            "media",
-                           "instructor_ids",
                            "instructors",
-                           "student_ids",
                            "students",
                            "content_ids",
                            "skills",
@@ -90056,9 +89726,7 @@
                            "categories",
                            "currency",
                            "media",
-                           "instructor_ids",
                            "instructors",
-                           "student_ids",
                            "students",
                            "content_ids",
                            "skills",
@@ -90204,8 +89872,6 @@
                            "description",
                            "media",
                            "course_id",
-                           "instructor_ids",
-                           "student_ids",
                            "languages",
                            "instructors",
                            "students",
@@ -90345,8 +90011,6 @@
                            "description",
                            "media",
                            "course_id",
-                           "instructor_ids",
-                           "student_ids",
                            "languages",
                            "instructors",
                            "students",
@@ -90419,8 +90083,6 @@
                            "description",
                            "media",
                            "course_id",
-                           "instructor_ids",
-                           "student_ids",
                            "languages",
                            "instructors",
                            "students",
@@ -90500,8 +90162,6 @@
                            "description",
                            "media",
                            "course_id",
-                           "instructor_ids",
-                           "student_ids",
                            "languages",
                            "instructors",
                            "students",
@@ -90591,8 +90251,6 @@
                            "description",
                            "media",
                            "course_id",
-                           "instructor_ids",
-                           "student_ids",
                            "languages",
                            "instructors",
                            "students",
@@ -91814,7 +91472,6 @@
                            "provider_name",
                            "short_description",
                            "localizations",
-                           "instructor_ids",
                            "collection_ids",
                            "instructors",
                            "published_at",
@@ -91976,7 +91633,6 @@
                            "provider_name",
                            "short_description",
                            "localizations",
-                           "instructor_ids",
                            "collection_ids",
                            "instructors",
                            "published_at",
@@ -92062,7 +91718,6 @@
                            "provider_name",
                            "short_description",
                            "localizations",
-                           "instructor_ids",
                            "collection_ids",
                            "instructors",
                            "published_at",
@@ -92155,7 +91810,6 @@
                            "provider_name",
                            "short_description",
                            "localizations",
-                           "instructor_ids",
                            "collection_ids",
                            "instructors",
                            "published_at",
@@ -92258,7 +91912,6 @@
                            "provider_name",
                            "short_description",
                            "localizations",
-                           "instructor_ids",
                            "collection_ids",
                            "instructors",
                            "published_at",

@@ -47,6 +47,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,22 +87,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The pipeline property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Pipeline { get; set; }
-#nullable restore
-#else
-        public string Pipeline { get; set; }
-#endif
-        /// <summary>The pipeline_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PipelineId { get; set; }
-#nullable restore
-#else
-        public string PipelineId { get; set; }
-#endif
         /// <summary>The pipelines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,22 +112,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Source { get; set; }
-#endif
-        /// <summary>The stage property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Stage { get; set; }
-#nullable restore
-#else
-        public string Stage { get; set; }
-#endif
-        /// <summary>The stage_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StageId { get; set; }
-#nullable restore
-#else
-        public string StageId { get; set; }
 #endif
         /// <summary>The stages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,18 +179,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "contact_ids", n => { ContactIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lost_reason", n => { LostReason = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "pipeline", n => { Pipeline = n.GetStringValue(); } },
-                { "pipeline_id", n => { PipelineId = n.GetStringValue(); } },
                 { "pipelines", n => { Pipelines = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>(global::Soenneker.Unified.OpenApiClient.Models.CrmReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "probability", n => { Probability = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "stage", n => { Stage = n.GetStringValue(); } },
-                { "stage_id", n => { StageId = n.GetStringValue(); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>(global::Soenneker.Unified.OpenApiClient.Models.CrmReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -236,18 +209,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("contact_ids", ContactIds);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("lost_reason", LostReason);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("pipeline", Pipeline);
-            writer.WriteStringValue("pipeline_id", PipelineId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>("pipelines", Pipelines);
             writer.WriteDoubleValue("probability", Probability);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmDealRawProperty>("raw", Raw);
             writer.WriteStringValue("source", Source);
-            writer.WriteStringValue("stage", Stage);
-            writer.WriteStringValue("stage_id", StageId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmReference>("stages", Stages);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

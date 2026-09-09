@@ -36,14 +36,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CourseId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "instructor_ids")]
-        #pragma warning disable CS1591
-        InstructorIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "student_ids")]
-        #pragma warning disable CS1591
-        StudentIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "languages")]
         #pragma warning disable CS1591
         Languages,

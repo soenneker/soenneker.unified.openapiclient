@@ -38,22 +38,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton> Buttons { get; set; }
 #endif
-        /// <summary>The channel_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChannelId { get; set; }
-#nullable restore
-#else
-        public string ChannelId { get; set; }
-#endif
-        /// <summary>@deprecated; use channels instead</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ChannelIds { get; set; }
-#nullable restore
-#else
-        public List<string> ChannelIds { get; set; }
-#endif
         /// <summary>Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,14 +148,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The root_message_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RootMessageId { get; set; }
-#nullable restore
-#else
-        public string RootMessageId { get; set; }
-#endif
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -218,8 +194,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "author_member", n => { AuthorMember = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageAuthorMember>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageAuthorMember.CreateFromDiscriminatorValue); } },
                 { "buttons", n => { Buttons = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton>(global::Soenneker.Unified.OpenApiClient.Models.MessagingButton.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "channel_id", n => { ChannelId = n.GetStringValue(); } },
-                { "channel_ids", n => { ChannelIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "channels", n => { Channels = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReference>(global::Soenneker.Unified.OpenApiClient.Models.MessagingReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "destination_members", n => { DestinationMembers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMember.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -236,7 +210,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageRawProperty.CreateFromDiscriminatorValue); } },
                 { "reactions", n => { Reactions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>(global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "root_message_id", n => { RootMessageId = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "web_url", n => { WebUrl = n.GetStringValue(); } },
@@ -252,8 +225,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingAttachment>("attachments", Attachments);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageAuthorMember>("author_member", AuthorMember);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton>("buttons", Buttons);
-            writer.WriteStringValue("channel_id", ChannelId);
-            writer.WriteCollectionOfPrimitiveValues<string>("channel_ids", ChannelIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReference>("channels", Channels);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember>("destination_members", DestinationMembers);
@@ -270,7 +241,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyMessagingEventMessageRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>("reactions", Reactions);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteStringValue("root_message_id", RootMessageId);
             writer.WriteStringValue("subject", Subject);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("web_url", WebUrl);

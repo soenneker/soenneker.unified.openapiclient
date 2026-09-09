@@ -32,14 +32,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Key { get; set; }
-#nullable restore
-#else
-        public string Key { get; set; }
-#endif
         /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,14 +47,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Slug { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,10 +84,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "extra_data", n => { ExtraData = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue>(global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -117,10 +99,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataExtraData>("extra_data", ExtraData);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataFormat>("format", Format);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("key", Key);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TaskMetadataValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

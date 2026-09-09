@@ -58,14 +58,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>@deprecated; use instructors</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? InstructorIds { get; set; }
-#nullable restore
-#else
-        public List<string> InstructorIds { get; set; }
-#endif
         /// <summary>The instructors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,14 +122,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Skills { get; set; }
 #endif
-        /// <summary>@deprecated; use students</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? StudentIds { get; set; }
-#nullable restore
-#else
-        public List<string> StudentIds { get; set; }
-#endif
         /// <summary>The students property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,7 +166,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instructor_ids", n => { InstructorIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
@@ -194,7 +177,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "student_ids", n => { StudentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "time_estimate_minutes", n => { TimeEstimateMinutes = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -214,7 +196,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfPrimitiveValues<string>("instructor_ids", InstructorIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("instructors", Instructors);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_private", IsPrivate);
@@ -226,7 +207,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("published_at", PublishedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsCourseRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
-            writer.WriteCollectionOfPrimitiveValues<string>("student_ids", StudentIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("students", Students);
             writer.WriteDoubleValue("time_estimate_minutes", TimeEstimateMinutes);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

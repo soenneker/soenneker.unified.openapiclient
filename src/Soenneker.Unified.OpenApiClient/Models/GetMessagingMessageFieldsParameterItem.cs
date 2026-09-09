@@ -20,14 +20,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UpdatedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "channel_id")]
-        #pragma warning disable CS1591
-        ChannelId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "channel_ids")]
-        #pragma warning disable CS1591
-        ChannelIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "channels")]
         #pragma warning disable CS1591
         Channels,
@@ -35,10 +27,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "parent_id")]
         #pragma warning disable CS1591
         ParentId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "root_message_id")]
-        #pragma warning disable CS1591
-        RootMessageId,
         #pragma warning restore CS1591
         [EnumMember(Value = "message_thread_identifier")]
         #pragma warning disable CS1591

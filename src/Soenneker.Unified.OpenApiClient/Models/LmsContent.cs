@@ -74,14 +74,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>@deprecated; use instructors</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? InstructorIds { get; set; }
-#nullable restore
-#else
-        public List<string> InstructorIds { get; set; }
-#endif
         /// <summary>The instructors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,7 +204,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "external_reference", n => { ExternalReference = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instructor_ids", n => { InstructorIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -246,7 +237,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("external_reference", ExternalReference);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfPrimitiveValues<string>("instructor_ids", InstructorIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("instructors", Instructors);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);

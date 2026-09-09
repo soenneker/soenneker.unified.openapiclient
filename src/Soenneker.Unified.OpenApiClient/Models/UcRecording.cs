@@ -22,30 +22,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CallId { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContactId { get; set; }
-#nullable restore
-#else
-        public string ContactId { get; set; }
-#endif
-        /// <summary>The contact_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContactName { get; set; }
-#nullable restore
-#else
-        public string ContactName { get; set; }
-#endif
-        /// <summary>The contact_phone property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContactPhone { get; set; }
-#nullable restore
-#else
-        public string ContactPhone { get; set; }
-#endif
         /// <summary>The contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,9 +124,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "call_id", n => { CallId = n.GetStringValue(); } },
-                { "contact_id", n => { ContactId = n.GetStringValue(); } },
-                { "contact_name", n => { ContactName = n.GetStringValue(); } },
-                { "contact_phone", n => { ContactPhone = n.GetStringValue(); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
@@ -175,9 +148,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("call_id", CallId);
-            writer.WriteStringValue("contact_id", ContactId);
-            writer.WriteStringValue("contact_name", ContactName);
-            writer.WriteStringValue("contact_phone", ContactPhone);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>("contacts", Contacts);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);

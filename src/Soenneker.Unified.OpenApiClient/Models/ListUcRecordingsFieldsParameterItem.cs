@@ -40,18 +40,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         WebUrl,
         #pragma warning restore CS1591
-        [EnumMember(Value = "contact_id")]
-        #pragma warning disable CS1591
-        ContactId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "contact_name")]
-        #pragma warning disable CS1591
-        ContactName,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "contact_phone")]
-        #pragma warning disable CS1591
-        ContactPhone,
-        #pragma warning restore CS1591
         [EnumMember(Value = "contacts")]
         #pragma warning disable CS1591
         Contacts,

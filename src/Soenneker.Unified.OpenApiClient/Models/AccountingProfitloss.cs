@@ -22,14 +22,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>@deprecated – use cost_of_goods_sold_sections instead</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>? CostOfGoodsSold { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory> CostOfGoodsSold { get; set; }
-#endif
         /// <summary>The cost_of_goods_sold_sections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,14 +44,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The end_at property</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>@deprecated – use expenses_sections instead</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>? Expenses { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory> Expenses { get; set; }
-#endif
         /// <summary>The expenses_sections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,8 +54,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The expenses_total_amount property</summary>
         public double? ExpensesTotalAmount { get; set; }
-        /// <summary>The gross_profit_amount property</summary>
-        public double? GrossProfitAmount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,14 +61,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
-#endif
-        /// <summary>@deprecated – use income_sections instead</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>? Income { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory> Income { get; set; }
 #endif
         /// <summary>The income_sections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,8 +82,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The net_income_amount property</summary>
         public double? NetIncomeAmount { get; set; }
-        /// <summary>The net_profit_amount property</summary>
-        public double? NetProfitAmount { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,23 +120,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cost_of_goods_sold", n => { CostOfGoodsSold = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cost_of_goods_sold_sections", n => { CostOfGoodsSoldSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cost_of_goods_sold_total_amount", n => { CostOfGoodsSoldTotalAmount = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
-                { "expenses", n => { Expenses = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expenses_sections", n => { ExpensesSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expenses_total_amount", n => { ExpensesTotalAmount = n.GetDoubleValue(); } },
-                { "gross_profit_amount", n => { GrossProfitAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "income", n => { Income = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "income_sections", n => { IncomeSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "income_total_amount", n => { IncomeTotalAmount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_income_amount", n => { NetIncomeAmount = n.GetDoubleValue(); } },
-                { "net_profit_amount", n => { NetProfitAmount = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -178,23 +145,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>("cost_of_goods_sold", CostOfGoodsSold);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>("cost_of_goods_sold_sections", CostOfGoodsSoldSections);
             writer.WriteDoubleValue("cost_of_goods_sold_total_amount", CostOfGoodsSoldTotalAmount);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>("expenses", Expenses);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>("expenses_sections", ExpensesSections);
             writer.WriteDoubleValue("expenses_total_amount", ExpensesTotalAmount);
-            writer.WriteDoubleValue("gross_profit_amount", GrossProfitAmount);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossCategory>("income", Income);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>("income_sections", IncomeSections);
             writer.WriteDoubleValue("income_total_amount", IncomeTotalAmount);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_income_amount", NetIncomeAmount);
-            writer.WriteDoubleValue("net_profit_amount", NetProfitAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

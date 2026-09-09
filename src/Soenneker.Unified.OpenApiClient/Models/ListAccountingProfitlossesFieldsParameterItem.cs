@@ -40,26 +40,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Currency,
         #pragma warning restore CS1591
-        [EnumMember(Value = "income")]
-        #pragma warning disable CS1591
-        Income,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "expenses")]
-        #pragma warning disable CS1591
-        Expenses,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "cost_of_goods_sold")]
-        #pragma warning disable CS1591
-        CostOfGoodsSold,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "gross_profit_amount")]
-        #pragma warning disable CS1591
-        GrossProfitAmount,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "net_profit_amount")]
-        #pragma warning disable CS1591
-        NetProfitAmount,
-        #pragma warning restore CS1591
         [EnumMember(Value = "income_total_amount")]
         #pragma warning disable CS1591
         IncomeTotalAmount,

@@ -88,10 +88,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Localizations,
         #pragma warning restore CS1591
-        [EnumMember(Value = "instructor_ids")]
-        #pragma warning disable CS1591
-        InstructorIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "collection_ids")]
         #pragma warning disable CS1591
         CollectionIds,

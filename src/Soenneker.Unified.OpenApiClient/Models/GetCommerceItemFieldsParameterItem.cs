@@ -104,10 +104,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Media,
         #pragma warning restore CS1591
-        [EnumMember(Value = "collection_ids")]
-        #pragma warning disable CS1591
-        CollectionIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "account_id")]
         #pragma warning disable CS1591
         AccountId,

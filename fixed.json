@@ -40412,7 +40412,7 @@
           {
             "name": "calendar_id",
             "in": "query",
-            "description": "The calendar ID to filter by (reference to CalendarCalendar)",
+            "description": "The calendar ID to get availability for. Typically user\u0027s email or user ID. (reference to CalendarCalendar)",
             "schema": {
               "type": "string"
             }
@@ -65413,13 +65413,6 @@
           "$ref": "#/components/schemas/MessagingChannel"
         }
       },
-      "PropertyMessagingMessageChannelIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use channels instead"
-      },
       "MessagingReference": {
         "type": "object",
         "properties": {
@@ -65581,16 +65574,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "channel_id": {
-            "type": "string"
-          },
-          "channel_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use channels instead"
-          },
           "channels": {
             "type": "array",
             "items": {
@@ -65599,9 +65582,6 @@
             "description": "Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted."
           },
           "parent_id": {
-            "type": "string"
-          },
-          "root_message_id": {
             "type": "string"
           },
           "message_thread_identifier": {
@@ -65736,13 +65716,6 @@
           }
         }
       },
-      "PropertyMessagingEventMessageChannelIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use channels instead"
-      },
       "PropertyMessagingEventMessageChannels": {
         "type": "array",
         "items": {
@@ -65821,16 +65794,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "channel_id": {
-            "type": "string"
-          },
-          "channel_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use channels instead"
-          },
           "channels": {
             "type": "array",
             "items": {
@@ -65839,9 +65802,6 @@
             "description": "Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted."
           },
           "parent_id": {
-            "type": "string"
-          },
-          "root_message_id": {
             "type": "string"
           },
           "message_thread_identifier": {
@@ -66083,18 +66043,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "stage": {
-            "type": "string"
-          },
-          "stage_id": {
-            "type": "string"
-          },
-          "pipeline": {
-            "type": "string"
-          },
-          "pipeline_id": {
-            "type": "string"
-          },
           "stages": {
             "type": "array",
             "items": {
@@ -66145,6 +66093,9 @@
             "items": {
               "$ref": "#/components/schemas/CrmMetadata"
             }
+          },
+          "description": {
+            "type": "string"
           },
           "raw": {
             "$ref": "#/components/schemas/CrmDealRawProperty"
@@ -68492,15 +68443,6 @@
             "type": "string"
           },
           "web_url": {
-            "type": "string"
-          },
-          "contact_id": {
-            "type": "string"
-          },
-          "contact_name": {
-            "type": "string"
-          },
-          "contact_phone": {
             "type": "string"
           },
           "contacts": {
@@ -71898,18 +71840,6 @@
           "is_payable": {
             "type": "boolean"
           },
-          "section": {
-            "type": "string"
-          },
-          "subsection": {
-            "type": "string"
-          },
-          "group": {
-            "type": "string"
-          },
-          "subgroup": {
-            "type": "string"
-          },
           "parent_id": {
             "type": "string"
           },
@@ -74172,75 +74102,6 @@
           "type": "string"
         }
       },
-      "PropertyAccountingProfitlossSubcategoryTransactionIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "AccountingProfitlossSubcategory": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number"
-          },
-          "transaction_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "description": "@deprecated"
-      },
-      "PropertyAccountingProfitlossCategorySubItems": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossSubcategory"
-        }
-      },
-      "AccountingProfitlossCategory": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number"
-          },
-          "sub_items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossSubcategory"
-            }
-          }
-        },
-        "description": "@deprecated"
-      },
-      "PropertyAccountingReportProfitAndLossIncome": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use income_sections instead"
-      },
-      "PropertyAccountingReportProfitAndLossExpenses": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use expenses_sections instead"
-      },
-      "PropertyAccountingReportProfitAndLossCostOfGoodsSold": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use cost_of_goods_sold_sections instead"
-      },
       "PropertyAccountingProfitlossAccountTransactionIds": {
         "type": "array",
         "items": {
@@ -74344,33 +74205,6 @@
           },
           "currency": {
             "type": "string"
-          },
-          "income": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use income_sections instead"
-          },
-          "expenses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use expenses_sections instead"
-          },
-          "cost_of_goods_sold": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use cost_of_goods_sold_sections instead"
-          },
-          "gross_profit_amount": {
-            "type": "number"
-          },
-          "net_profit_amount": {
-            "type": "number"
           },
           "income_total_amount": {
             "type": "number"
@@ -74665,27 +74499,6 @@
           "type": "string"
         }
       },
-      "PropertyAccountingProfitlossIncome": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use income_sections instead"
-      },
-      "PropertyAccountingProfitlossExpenses": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use expenses_sections instead"
-      },
-      "PropertyAccountingProfitlossCostOfGoodsSold": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AccountingProfitlossCategory"
-        },
-        "description": "@deprecated \u2013 use cost_of_goods_sold_sections instead"
-      },
       "PropertyAccountingProfitlossIncomeSections": {
         "type": "array",
         "items": {
@@ -74737,33 +74550,6 @@
           },
           "currency": {
             "type": "string"
-          },
-          "income": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use income_sections instead"
-          },
-          "expenses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use expenses_sections instead"
-          },
-          "cost_of_goods_sold": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AccountingProfitlossCategory"
-            },
-            "description": "@deprecated \u2013 use cost_of_goods_sold_sections instead"
-          },
-          "gross_profit_amount": {
-            "type": "number"
-          },
-          "net_profit_amount": {
-            "type": "number"
           },
           "income_total_amount": {
             "type": "number"
@@ -76268,13 +76054,6 @@
           "$ref": "#/components/schemas/CommerceItemMedia"
         }
       },
-      "PropertyCommerceItemCollectionIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": " @deprecated; use collections instead"
-      },
       "PropertyCommerceItemMetadata": {
         "type": "array",
         "items": {
@@ -76377,13 +76156,6 @@
             "items": {
               "$ref": "#/components/schemas/CommerceItemMedia"
             }
-          },
-          "collection_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": " @deprecated; use collections instead"
           },
           "account_id": {
             "type": "string"
@@ -77820,16 +77592,10 @@
           "id": {
             "type": "string"
           },
-          "key": {
-            "type": "string"
-          },
           "value": {
             "$ref": "#/components/schemas/TaskMetadataValue"
           },
           "namespace": {
-            "type": "string"
-          },
-          "type": {
             "type": "string"
           },
           "format": {
@@ -83722,13 +83488,6 @@
           "$ref": "#/components/schemas/LmsMedia"
         }
       },
-      "PropertyLmsCourseInstructorIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use instructors"
-      },
       "LmsReference": {
         "type": "object",
         "properties": {
@@ -83745,13 +83504,6 @@
         "items": {
           "$ref": "#/components/schemas/LmsReference"
         }
-      },
-      "PropertyLmsCourseStudentIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use students"
       },
       "PropertyLmsCourseStudents": {
         "type": "array",
@@ -83821,25 +83573,11 @@
               "$ref": "#/components/schemas/LmsMedia"
             }
           },
-          "instructor_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-          },
           "instructors": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/LmsReference"
             }
-          },
-          "student_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use students"
           },
           "students": {
             "type": "array",
@@ -83889,20 +83627,6 @@
           "$ref": "#/components/schemas/LmsMedia"
         }
       },
-      "PropertyLmsClassInstructorIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use instructors"
-      },
-      "PropertyLmsClassStudentIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use students"
-      },
       "PropertyLmsClassLanguages": {
         "type": "array",
         "items": {
@@ -83949,20 +83673,6 @@
           },
           "course_id": {
             "type": "string"
-          },
-          "instructor_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use instructors"
-          },
-          "student_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use students"
           },
           "languages": {
             "type": "array",
@@ -84241,13 +83951,6 @@
           "$ref": "#/components/schemas/LmsContentLocalization"
         }
       },
-      "PropertyLmsContentInstructorIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "@deprecated; use instructors"
-      },
       "PropertyLmsContentCollectionIds": {
         "type": "array",
         "items": {
@@ -84349,13 +84052,6 @@
             "items": {
               "$ref": "#/components/schemas/LmsContentLocalization"
             }
-          },
-          "instructor_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "@deprecated; use instructors"
           },
           "collection_ids": {
             "type": "array",
@@ -89813,9 +89509,6 @@
           "list_user_id": {
             "$ref": "#/components/schemas/IntegrationSupportListUserId"
           },
-          "list_approver_user_id": {
-            "$ref": "#/components/schemas/IntegrationSupportListApproverUserId"
-          },
           "list_assigned_user_id": {
             "$ref": "#/components/schemas/IntegrationSupportListAssignedUserId"
           },
@@ -90034,9 +89727,6 @@
           },
           "virtual_webhook_user_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookUserId"
-          },
-          "virtual_webhook_approver_user_id": {
-            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookApproverUserId"
           },
           "virtual_webhook_user_mentioned_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookUserMentionedId"
@@ -90373,6 +90063,12 @@
           },
           "virtual_webhook_post_id": {
             "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookPostId"
+          },
+          "list_approver_user_id": {
+            "$ref": "#/components/schemas/IntegrationSupportListApproverUserId"
+          },
+          "virtual_webhook_approver_user_id": {
+            "$ref": "#/components/schemas/IntegrationSupportVirtualWebhookApproverUserId"
           }
         }
       },
@@ -113988,34 +113684,6 @@
           ]
         }
       },
-      "IntegrationSupportListApproverUserId": {
-        "enum": [
-          "supported-required",
-          "supported",
-          "not-supported"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "IntegrationSupportListApproverUserId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "supported-required",
-              "name": "SupportedRequired"
-            },
-            {
-              "value": "supported",
-              "name": "Supported"
-            },
-            {
-              "value": "not-supported",
-              "name": "NotSupported"
-            }
-          ]
-        }
-      },
       "IntegrationSupportListAssignedUserId": {
         "enum": [
           "supported-required",
@@ -116043,34 +115711,6 @@
         "x-speakeasy-unknown-values": "allow",
         "x-ms-enum": {
           "name": "IntegrationSupportVirtualWebhookUserId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "supported-required",
-              "name": "SupportedRequired"
-            },
-            {
-              "value": "supported",
-              "name": "Supported"
-            },
-            {
-              "value": "not-supported",
-              "name": "NotSupported"
-            }
-          ]
-        }
-      },
-      "IntegrationSupportVirtualWebhookApproverUserId": {
-        "enum": [
-          "supported-required",
-          "supported",
-          "not-supported"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-speakeasy-unknown-values": "allow",
-        "x-ms-enum": {
-          "name": "IntegrationSupportVirtualWebhookApproverUserId",
           "modelAsString": false,
           "values": [
             {
@@ -119224,6 +118864,62 @@
           ]
         }
       },
+      "IntegrationSupportListApproverUserId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportListApproverUserId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
+      "IntegrationSupportVirtualWebhookApproverUserId": {
+        "enum": [
+          "supported-required",
+          "supported",
+          "not-supported"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-unknown-values": "allow",
+        "x-ms-enum": {
+          "name": "IntegrationSupportVirtualWebhookApproverUserId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "supported-required",
+              "name": "SupportedRequired"
+            },
+            {
+              "value": "supported",
+              "name": "Supported"
+            },
+            {
+              "value": "not-supported",
+              "name": "NotSupported"
+            }
+          ]
+        }
+      },
       "WebhookObjectType": {
         "enum": [
           "accounting_account",
@@ -121916,11 +121612,8 @@
           "id",
           "created_at",
           "updated_at",
-          "channel_id",
-          "channel_ids",
           "channels",
           "parent_id",
-          "root_message_id",
           "message_thread_identifier",
           "author_member",
           "destination_members",
@@ -121958,24 +121651,12 @@
               "name": "UpdatedAt"
             },
             {
-              "value": "channel_id",
-              "name": "ChannelId"
-            },
-            {
-              "value": "channel_ids",
-              "name": "ChannelIds"
-            },
-            {
               "value": "channels",
               "name": "Channels"
             },
             {
               "value": "parent_id",
               "name": "ParentId"
-            },
-            {
-              "value": "root_message_id",
-              "name": "RootMessageId"
             },
             {
               "value": "message_thread_identifier",
@@ -122053,11 +121734,8 @@
           "id",
           "created_at",
           "updated_at",
-          "channel_id",
-          "channel_ids",
           "channels",
           "parent_id",
-          "root_message_id",
           "message_thread_identifier",
           "author_member",
           "destination_members",
@@ -122095,24 +121773,12 @@
               "name": "UpdatedAt"
             },
             {
-              "value": "channel_id",
-              "name": "ChannelId"
-            },
-            {
-              "value": "channel_ids",
-              "name": "ChannelIds"
-            },
-            {
               "value": "channels",
               "name": "Channels"
             },
             {
               "value": "parent_id",
               "name": "ParentId"
-            },
-            {
-              "value": "root_message_id",
-              "name": "RootMessageId"
             },
             {
               "value": "message_thread_identifier",
@@ -122190,11 +121856,8 @@
           "id",
           "created_at",
           "updated_at",
-          "channel_id",
-          "channel_ids",
           "channels",
           "parent_id",
-          "root_message_id",
           "message_thread_identifier",
           "author_member",
           "destination_members",
@@ -122232,24 +121895,12 @@
               "name": "UpdatedAt"
             },
             {
-              "value": "channel_id",
-              "name": "ChannelId"
-            },
-            {
-              "value": "channel_ids",
-              "name": "ChannelIds"
-            },
-            {
               "value": "channels",
               "name": "Channels"
             },
             {
               "value": "parent_id",
               "name": "ParentId"
-            },
-            {
-              "value": "root_message_id",
-              "name": "RootMessageId"
             },
             {
               "value": "message_thread_identifier",
@@ -122327,11 +121978,8 @@
           "id",
           "created_at",
           "updated_at",
-          "channel_id",
-          "channel_ids",
           "channels",
           "parent_id",
-          "root_message_id",
           "message_thread_identifier",
           "author_member",
           "destination_members",
@@ -122369,24 +122017,12 @@
               "name": "UpdatedAt"
             },
             {
-              "value": "channel_id",
-              "name": "ChannelId"
-            },
-            {
-              "value": "channel_ids",
-              "name": "ChannelIds"
-            },
-            {
               "value": "channels",
               "name": "Channels"
             },
             {
               "value": "parent_id",
               "name": "ParentId"
-            },
-            {
-              "value": "root_message_id",
-              "name": "RootMessageId"
             },
             {
               "value": "message_thread_identifier",
@@ -122464,11 +122100,8 @@
           "id",
           "created_at",
           "updated_at",
-          "channel_id",
-          "channel_ids",
           "channels",
           "parent_id",
-          "root_message_id",
           "message_thread_identifier",
           "author_member",
           "destination_members",
@@ -122506,24 +122139,12 @@
               "name": "UpdatedAt"
             },
             {
-              "value": "channel_id",
-              "name": "ChannelId"
-            },
-            {
-              "value": "channel_ids",
-              "name": "ChannelIds"
-            },
-            {
               "value": "channels",
               "name": "Channels"
             },
             {
               "value": "parent_id",
               "name": "ParentId"
-            },
-            {
-              "value": "root_message_id",
-              "name": "RootMessageId"
             },
             {
               "value": "message_thread_identifier",
@@ -122720,10 +122341,6 @@
           "currency",
           "closed_at",
           "closing_at",
-          "stage",
-          "stage_id",
-          "pipeline",
-          "pipeline_id",
           "stages",
           "pipelines",
           "source",
@@ -122735,6 +122352,7 @@
           "contact_ids",
           "company_ids",
           "metadata",
+          "description",
           "raw"
         ],
         "type": "string",
@@ -122776,22 +122394,6 @@
               "name": "ClosingAt"
             },
             {
-              "value": "stage",
-              "name": "Stage"
-            },
-            {
-              "value": "stage_id",
-              "name": "StageId"
-            },
-            {
-              "value": "pipeline",
-              "name": "Pipeline"
-            },
-            {
-              "value": "pipeline_id",
-              "name": "PipelineId"
-            },
-            {
               "value": "stages",
               "name": "Stages"
             },
@@ -122836,6 +122438,10 @@
               "name": "Metadata"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -122852,10 +122458,6 @@
           "currency",
           "closed_at",
           "closing_at",
-          "stage",
-          "stage_id",
-          "pipeline",
-          "pipeline_id",
           "stages",
           "pipelines",
           "source",
@@ -122867,6 +122469,7 @@
           "contact_ids",
           "company_ids",
           "metadata",
+          "description",
           "raw"
         ],
         "type": "string",
@@ -122908,22 +122511,6 @@
               "name": "ClosingAt"
             },
             {
-              "value": "stage",
-              "name": "Stage"
-            },
-            {
-              "value": "stage_id",
-              "name": "StageId"
-            },
-            {
-              "value": "pipeline",
-              "name": "Pipeline"
-            },
-            {
-              "value": "pipeline_id",
-              "name": "PipelineId"
-            },
-            {
               "value": "stages",
               "name": "Stages"
             },
@@ -122968,6 +122555,10 @@
               "name": "Metadata"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -122984,10 +122575,6 @@
           "currency",
           "closed_at",
           "closing_at",
-          "stage",
-          "stage_id",
-          "pipeline",
-          "pipeline_id",
           "stages",
           "pipelines",
           "source",
@@ -122999,6 +122586,7 @@
           "contact_ids",
           "company_ids",
           "metadata",
+          "description",
           "raw"
         ],
         "type": "string",
@@ -123040,22 +122628,6 @@
               "name": "ClosingAt"
             },
             {
-              "value": "stage",
-              "name": "Stage"
-            },
-            {
-              "value": "stage_id",
-              "name": "StageId"
-            },
-            {
-              "value": "pipeline",
-              "name": "Pipeline"
-            },
-            {
-              "value": "pipeline_id",
-              "name": "PipelineId"
-            },
-            {
               "value": "stages",
               "name": "Stages"
             },
@@ -123100,6 +122672,10 @@
               "name": "Metadata"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -123116,10 +122692,6 @@
           "currency",
           "closed_at",
           "closing_at",
-          "stage",
-          "stage_id",
-          "pipeline",
-          "pipeline_id",
           "stages",
           "pipelines",
           "source",
@@ -123131,6 +122703,7 @@
           "contact_ids",
           "company_ids",
           "metadata",
+          "description",
           "raw"
         ],
         "type": "string",
@@ -123172,22 +122745,6 @@
               "name": "ClosingAt"
             },
             {
-              "value": "stage",
-              "name": "Stage"
-            },
-            {
-              "value": "stage_id",
-              "name": "StageId"
-            },
-            {
-              "value": "pipeline",
-              "name": "Pipeline"
-            },
-            {
-              "value": "pipeline_id",
-              "name": "PipelineId"
-            },
-            {
               "value": "stages",
               "name": "Stages"
             },
@@ -123232,6 +122789,10 @@
               "name": "Metadata"
             },
             {
+              "value": "description",
+              "name": "Description"
+            },
+            {
               "value": "raw",
               "name": "Raw"
             }
@@ -123248,10 +122809,6 @@
           "currency",
           "closed_at",
           "closing_at",
-          "stage",
-          "stage_id",
-          "pipeline",
-          "pipeline_id",
           "stages",
           "pipelines",
           "source",
@@ -123263,6 +122820,7 @@
           "contact_ids",
           "company_ids",
           "metadata",
+          "description",
           "raw"
         ],
         "type": "string",
@@ -123304,22 +122862,6 @@
               "name": "ClosingAt"
             },
             {
-              "value": "stage",
-              "name": "Stage"
-            },
-            {
-              "value": "stage_id",
-              "name": "StageId"
-            },
-            {
-              "value": "pipeline",
-              "name": "Pipeline"
-            },
-            {
-              "value": "pipeline_id",
-              "name": "PipelineId"
-            },
-            {
               "value": "stages",
               "name": "Stages"
             },
@@ -123362,6 +122904,10 @@
             {
               "value": "metadata",
               "name": "Metadata"
+            },
+            {
+              "value": "description",
+              "name": "Description"
             },
             {
               "value": "raw",
@@ -129333,9 +128879,6 @@
           "expires_at",
           "call_id",
           "web_url",
-          "contact_id",
-          "contact_name",
-          "contact_phone",
           "contacts",
           "user_id",
           "media",
@@ -129383,18 +128926,6 @@
               "name": "WebUrl"
             },
             {
-              "value": "contact_id",
-              "name": "ContactId"
-            },
-            {
-              "value": "contact_name",
-              "name": "ContactName"
-            },
-            {
-              "value": "contact_phone",
-              "name": "ContactPhone"
-            },
-            {
               "value": "contacts",
               "name": "Contacts"
             },
@@ -129435,9 +128966,6 @@
           "expires_at",
           "call_id",
           "web_url",
-          "contact_id",
-          "contact_name",
-          "contact_phone",
           "contacts",
           "user_id",
           "media",
@@ -129485,18 +129013,6 @@
               "name": "WebUrl"
             },
             {
-              "value": "contact_id",
-              "name": "ContactId"
-            },
-            {
-              "value": "contact_name",
-              "name": "ContactName"
-            },
-            {
-              "value": "contact_phone",
-              "name": "ContactPhone"
-            },
-            {
               "value": "contacts",
               "name": "Contacts"
             },
@@ -129537,9 +129053,6 @@
           "expires_at",
           "call_id",
           "web_url",
-          "contact_id",
-          "contact_name",
-          "contact_phone",
           "contacts",
           "user_id",
           "media",
@@ -129587,18 +129100,6 @@
               "name": "WebUrl"
             },
             {
-              "value": "contact_id",
-              "name": "ContactId"
-            },
-            {
-              "value": "contact_name",
-              "name": "ContactName"
-            },
-            {
-              "value": "contact_phone",
-              "name": "ContactPhone"
-            },
-            {
               "value": "contacts",
               "name": "Contacts"
             },
@@ -129639,9 +129140,6 @@
           "expires_at",
           "call_id",
           "web_url",
-          "contact_id",
-          "contact_name",
-          "contact_phone",
           "contacts",
           "user_id",
           "media",
@@ -129689,18 +129187,6 @@
               "name": "WebUrl"
             },
             {
-              "value": "contact_id",
-              "name": "ContactId"
-            },
-            {
-              "value": "contact_name",
-              "name": "ContactName"
-            },
-            {
-              "value": "contact_phone",
-              "name": "ContactPhone"
-            },
-            {
               "value": "contacts",
               "name": "Contacts"
             },
@@ -129741,9 +129227,6 @@
           "expires_at",
           "call_id",
           "web_url",
-          "contact_id",
-          "contact_name",
-          "contact_phone",
           "contacts",
           "user_id",
           "media",
@@ -129789,18 +129272,6 @@
             {
               "value": "web_url",
               "name": "WebUrl"
-            },
-            {
-              "value": "contact_id",
-              "name": "ContactId"
-            },
-            {
-              "value": "contact_name",
-              "name": "ContactName"
-            },
-            {
-              "value": "contact_phone",
-              "name": "ContactPhone"
             },
             {
               "value": "contacts",
@@ -141207,10 +140678,6 @@
           "currency",
           "customer_defined_code",
           "is_payable",
-          "section",
-          "subsection",
-          "group",
-          "subgroup",
           "parent_id",
           "taxonomy",
           "organization_id",
@@ -141267,22 +140734,6 @@
               "name": "IsPayable"
             },
             {
-              "value": "section",
-              "name": "Section"
-            },
-            {
-              "value": "subsection",
-              "name": "Subsection"
-            },
-            {
-              "value": "group",
-              "name": "Group"
-            },
-            {
-              "value": "subgroup",
-              "name": "Subgroup"
-            },
-            {
               "value": "parent_id",
               "name": "ParentId"
             },
@@ -141314,10 +140765,6 @@
           "currency",
           "customer_defined_code",
           "is_payable",
-          "section",
-          "subsection",
-          "group",
-          "subgroup",
           "parent_id",
           "taxonomy",
           "organization_id",
@@ -141374,22 +140821,6 @@
               "name": "IsPayable"
             },
             {
-              "value": "section",
-              "name": "Section"
-            },
-            {
-              "value": "subsection",
-              "name": "Subsection"
-            },
-            {
-              "value": "group",
-              "name": "Group"
-            },
-            {
-              "value": "subgroup",
-              "name": "Subgroup"
-            },
-            {
               "value": "parent_id",
               "name": "ParentId"
             },
@@ -141421,10 +140852,6 @@
           "currency",
           "customer_defined_code",
           "is_payable",
-          "section",
-          "subsection",
-          "group",
-          "subgroup",
           "parent_id",
           "taxonomy",
           "organization_id",
@@ -141481,22 +140908,6 @@
               "name": "IsPayable"
             },
             {
-              "value": "section",
-              "name": "Section"
-            },
-            {
-              "value": "subsection",
-              "name": "Subsection"
-            },
-            {
-              "value": "group",
-              "name": "Group"
-            },
-            {
-              "value": "subgroup",
-              "name": "Subgroup"
-            },
-            {
               "value": "parent_id",
               "name": "ParentId"
             },
@@ -141528,10 +140939,6 @@
           "currency",
           "customer_defined_code",
           "is_payable",
-          "section",
-          "subsection",
-          "group",
-          "subgroup",
           "parent_id",
           "taxonomy",
           "organization_id",
@@ -141588,22 +140995,6 @@
               "name": "IsPayable"
             },
             {
-              "value": "section",
-              "name": "Section"
-            },
-            {
-              "value": "subsection",
-              "name": "Subsection"
-            },
-            {
-              "value": "group",
-              "name": "Group"
-            },
-            {
-              "value": "subgroup",
-              "name": "Subgroup"
-            },
-            {
               "value": "parent_id",
               "name": "ParentId"
             },
@@ -141635,10 +141026,6 @@
           "currency",
           "customer_defined_code",
           "is_payable",
-          "section",
-          "subsection",
-          "group",
-          "subgroup",
           "parent_id",
           "taxonomy",
           "organization_id",
@@ -141693,22 +141080,6 @@
             {
               "value": "is_payable",
               "name": "IsPayable"
-            },
-            {
-              "value": "section",
-              "name": "Section"
-            },
-            {
-              "value": "subsection",
-              "name": "Subsection"
-            },
-            {
-              "value": "group",
-              "name": "Group"
-            },
-            {
-              "value": "subgroup",
-              "name": "Subgroup"
             },
             {
               "value": "parent_id",
@@ -149965,11 +149336,6 @@
           "end_at",
           "name",
           "currency",
-          "income",
-          "expenses",
-          "cost_of_goods_sold",
-          "gross_profit_amount",
-          "net_profit_amount",
           "income_total_amount",
           "net_income_amount",
           "expenses_total_amount",
@@ -150018,26 +149384,6 @@
               "name": "Currency"
             },
             {
-              "value": "income",
-              "name": "Income"
-            },
-            {
-              "value": "expenses",
-              "name": "Expenses"
-            },
-            {
-              "value": "cost_of_goods_sold",
-              "name": "CostOfGoodsSold"
-            },
-            {
-              "value": "gross_profit_amount",
-              "name": "GrossProfitAmount"
-            },
-            {
-              "value": "net_profit_amount",
-              "name": "NetProfitAmount"
-            },
-            {
               "value": "income_total_amount",
               "name": "IncomeTotalAmount"
             },
@@ -150082,11 +149428,6 @@
           "end_at",
           "name",
           "currency",
-          "income",
-          "expenses",
-          "cost_of_goods_sold",
-          "gross_profit_amount",
-          "net_profit_amount",
           "income_total_amount",
           "net_income_amount",
           "expenses_total_amount",
@@ -150133,26 +149474,6 @@
             {
               "value": "currency",
               "name": "Currency"
-            },
-            {
-              "value": "income",
-              "name": "Income"
-            },
-            {
-              "value": "expenses",
-              "name": "Expenses"
-            },
-            {
-              "value": "cost_of_goods_sold",
-              "name": "CostOfGoodsSold"
-            },
-            {
-              "value": "gross_profit_amount",
-              "name": "GrossProfitAmount"
-            },
-            {
-              "value": "net_profit_amount",
-              "name": "NetProfitAmount"
             },
             {
               "value": "income_total_amount",
@@ -155132,7 +154453,6 @@
           "variants",
           "tags",
           "media",
-          "collection_ids",
           "account_id",
           "metadata",
           "collections",
@@ -155244,10 +154564,6 @@
               "name": "Media"
             },
             {
-              "value": "collection_ids",
-              "name": "CollectionIds"
-            },
-            {
               "value": "account_id",
               "name": "AccountId"
             },
@@ -155304,7 +154620,6 @@
           "variants",
           "tags",
           "media",
-          "collection_ids",
           "account_id",
           "metadata",
           "collections",
@@ -155416,10 +154731,6 @@
               "name": "Media"
             },
             {
-              "value": "collection_ids",
-              "name": "CollectionIds"
-            },
-            {
               "value": "account_id",
               "name": "AccountId"
             },
@@ -155476,7 +154787,6 @@
           "variants",
           "tags",
           "media",
-          "collection_ids",
           "account_id",
           "metadata",
           "collections",
@@ -155588,10 +154898,6 @@
               "name": "Media"
             },
             {
-              "value": "collection_ids",
-              "name": "CollectionIds"
-            },
-            {
               "value": "account_id",
               "name": "AccountId"
             },
@@ -155648,7 +154954,6 @@
           "variants",
           "tags",
           "media",
-          "collection_ids",
           "account_id",
           "metadata",
           "collections",
@@ -155760,10 +155065,6 @@
               "name": "Media"
             },
             {
-              "value": "collection_ids",
-              "name": "CollectionIds"
-            },
-            {
               "value": "account_id",
               "name": "AccountId"
             },
@@ -155820,7 +155121,6 @@
           "variants",
           "tags",
           "media",
-          "collection_ids",
           "account_id",
           "metadata",
           "collections",
@@ -155930,10 +155230,6 @@
             {
               "value": "media",
               "name": "Media"
-            },
-            {
-              "value": "collection_ids",
-              "name": "CollectionIds"
             },
             {
               "value": "account_id",
@@ -170849,9 +170145,7 @@
           "categories",
           "currency",
           "media",
-          "instructor_ids",
           "instructors",
-          "student_ids",
           "students",
           "content_ids",
           "skills",
@@ -170916,16 +170210,8 @@
               "name": "Media"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "instructors",
               "name": "Instructors"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "students",
@@ -170976,9 +170262,7 @@
           "categories",
           "currency",
           "media",
-          "instructor_ids",
           "instructors",
-          "student_ids",
           "students",
           "content_ids",
           "skills",
@@ -171043,16 +170327,8 @@
               "name": "Media"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "instructors",
               "name": "Instructors"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "students",
@@ -171103,9 +170379,7 @@
           "categories",
           "currency",
           "media",
-          "instructor_ids",
           "instructors",
-          "student_ids",
           "students",
           "content_ids",
           "skills",
@@ -171170,16 +170444,8 @@
               "name": "Media"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "instructors",
               "name": "Instructors"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "students",
@@ -171230,9 +170496,7 @@
           "categories",
           "currency",
           "media",
-          "instructor_ids",
           "instructors",
-          "student_ids",
           "students",
           "content_ids",
           "skills",
@@ -171297,16 +170561,8 @@
               "name": "Media"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "instructors",
               "name": "Instructors"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "students",
@@ -171357,9 +170613,7 @@
           "categories",
           "currency",
           "media",
-          "instructor_ids",
           "instructors",
-          "student_ids",
           "students",
           "content_ids",
           "skills",
@@ -171424,16 +170678,8 @@
               "name": "Media"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "instructors",
               "name": "Instructors"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "students",
@@ -171479,8 +170725,6 @@
           "description",
           "media",
           "course_id",
-          "instructor_ids",
-          "student_ids",
           "languages",
           "instructors",
           "students",
@@ -171521,14 +170765,6 @@
               "name": "CourseId"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
-            },
-            {
               "value": "languages",
               "name": "Languages"
             },
@@ -171556,8 +170792,6 @@
           "description",
           "media",
           "course_id",
-          "instructor_ids",
-          "student_ids",
           "languages",
           "instructors",
           "students",
@@ -171598,14 +170832,6 @@
               "name": "CourseId"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
-            },
-            {
               "value": "languages",
               "name": "Languages"
             },
@@ -171633,8 +170859,6 @@
           "description",
           "media",
           "course_id",
-          "instructor_ids",
-          "student_ids",
           "languages",
           "instructors",
           "students",
@@ -171675,14 +170899,6 @@
               "name": "CourseId"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
-            },
-            {
               "value": "languages",
               "name": "Languages"
             },
@@ -171710,8 +170926,6 @@
           "description",
           "media",
           "course_id",
-          "instructor_ids",
-          "student_ids",
           "languages",
           "instructors",
           "students",
@@ -171752,14 +170966,6 @@
               "name": "CourseId"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
-            },
-            {
               "value": "languages",
               "name": "Languages"
             },
@@ -171787,8 +170993,6 @@
           "description",
           "media",
           "course_id",
-          "instructor_ids",
-          "student_ids",
           "languages",
           "instructors",
           "students",
@@ -171827,14 +171031,6 @@
             {
               "value": "course_id",
               "name": "CourseId"
-            },
-            {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
-              "value": "student_ids",
-              "name": "StudentIds"
             },
             {
               "value": "languages",
@@ -172547,7 +171743,6 @@
           "provider_name",
           "short_description",
           "localizations",
-          "instructor_ids",
           "collection_ids",
           "instructors",
           "published_at",
@@ -172640,10 +171835,6 @@
               "name": "Localizations"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "collection_ids",
               "name": "CollectionIds"
             },
@@ -172684,7 +171875,6 @@
           "provider_name",
           "short_description",
           "localizations",
-          "instructor_ids",
           "collection_ids",
           "instructors",
           "published_at",
@@ -172777,10 +171967,6 @@
               "name": "Localizations"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "collection_ids",
               "name": "CollectionIds"
             },
@@ -172821,7 +172007,6 @@
           "provider_name",
           "short_description",
           "localizations",
-          "instructor_ids",
           "collection_ids",
           "instructors",
           "published_at",
@@ -172914,10 +172099,6 @@
               "name": "Localizations"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "collection_ids",
               "name": "CollectionIds"
             },
@@ -172958,7 +172139,6 @@
           "provider_name",
           "short_description",
           "localizations",
-          "instructor_ids",
           "collection_ids",
           "instructors",
           "published_at",
@@ -173051,10 +172231,6 @@
               "name": "Localizations"
             },
             {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
-            },
-            {
               "value": "collection_ids",
               "name": "CollectionIds"
             },
@@ -173095,7 +172271,6 @@
           "provider_name",
           "short_description",
           "localizations",
-          "instructor_ids",
           "collection_ids",
           "instructors",
           "published_at",
@@ -173186,10 +172361,6 @@
             {
               "value": "localizations",
               "name": "Localizations"
-            },
-            {
-              "value": "instructor_ids",
-              "name": "InstructorIds"
             },
             {
               "value": "collection_ids",
