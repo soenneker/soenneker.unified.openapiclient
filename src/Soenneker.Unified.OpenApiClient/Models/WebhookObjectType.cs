@@ -64,10 +64,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingPurchaseorder,
         #pragma warning restore CS1591
-        [EnumMember(Value = "accounting_report")]
-        #pragma warning disable CS1591
-        AccountingReport,
-        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_balancesheet")]
         #pragma warning disable CS1591
         AccountingBalancesheet,

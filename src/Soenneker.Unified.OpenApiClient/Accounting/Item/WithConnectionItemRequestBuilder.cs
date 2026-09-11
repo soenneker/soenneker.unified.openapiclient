@@ -23,7 +23,6 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Project;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Quote;
-using Soenneker.Unified.OpenApiClient.Accounting.Item.Report;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction;
@@ -145,11 +144,6 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Quote.QuoteRequestBuilder Quote
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Quote.QuoteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The report property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Report.ReportRequestBuilder Report
-        {
-            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The salesorder property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder.SalesorderRequestBuilder Salesorder

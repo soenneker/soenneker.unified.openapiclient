@@ -8,10 +8,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public enum AccountingInvoiceType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "BILL")]
-        #pragma warning disable CS1591
-        Bill,
-        #pragma warning restore CS1591
         [EnumMember(Value = "INVOICE")]
         #pragma warning disable CS1591
         Invoice,

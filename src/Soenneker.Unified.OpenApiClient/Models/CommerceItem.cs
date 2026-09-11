@@ -176,14 +176,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>first variant is the default variant</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant>? Variants { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant> Variants { get; set; }
-#endif
         /// <summary>The vendor_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -248,7 +240,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "total_stock", n => { TotalStock = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vendor_name", n => { VendorName = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
                 { "weight_unit", n => { WeightUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemWeightUnit>(); } },
@@ -288,7 +279,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("total_stock", TotalStock);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariant>("variants", Variants);
             writer.WriteStringValue("vendor_name", VendorName);
             writer.WriteDoubleValue("weight", Weight);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemWeightUnit>("weight_unit", WeightUnit);

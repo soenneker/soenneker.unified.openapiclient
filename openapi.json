@@ -10600,7 +10600,6 @@
                "type": {
                   "type": "string",
                   "enum": [
-                     "BILL",
                      "INVOICE",
                      "CREDITMEMO"
                   ],
@@ -11929,320 +11928,6 @@
                }
             }
          },
-         "property_AccountingReport_balance_sheet_assets": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingBalancesheetItem"
-            }
-         },
-         "property_AccountingReport_balance_sheet_liabilities": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingBalancesheetItem"
-            }
-         },
-         "property_AccountingReport_balance_sheet_equity": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingBalancesheetItem"
-            }
-         },
-         "property_AccountingReport_balance_sheet": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "start_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "end_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "currency": {
-                  "type": "string"
-               },
-               "net_assets_amount": {
-                  "type": "number"
-               },
-               "assets": {
-                  "$ref": "#/components/schemas/property_AccountingReport_balance_sheet_assets"
-               },
-               "liabilities": {
-                  "$ref": "#/components/schemas/property_AccountingReport_balance_sheet_liabilities"
-               },
-               "equity": {
-                  "$ref": "#/components/schemas/property_AccountingReport_balance_sheet_equity"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
-         "property_AccountingReport_profit_and_loss_category_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_AccountingProfitlossAccount_transaction_ids": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "AccountingProfitlossAccount": {
-            "type": "object",
-            "properties": {
-               "account_id": {
-                  "type": "string"
-               },
-               "account_name": {
-                  "type": "string"
-               },
-               "total_amount": {
-                  "type": "number"
-               },
-               "transaction_ids": {
-                  "$ref": "#/components/schemas/property_AccountingProfitlossAccount_transaction_ids"
-               }
-            }
-         },
-         "property_AccountingProfitlossSection_accounts": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossAccount"
-            }
-         },
-         "AccountingProfitlossSection": {
-            "type": "object",
-            "properties": {
-               "section_type": {
-                  "type": "string"
-               },
-               "section_name": {
-                  "type": "string"
-               },
-               "total_amount": {
-                  "type": "number"
-               },
-               "accounts": {
-                  "$ref": "#/components/schemas/property_AccountingProfitlossSection_accounts"
-               }
-            }
-         },
-         "property_AccountingReport_profit_and_loss_income_sections": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossSection"
-            }
-         },
-         "property_AccountingReport_profit_and_loss_expenses_sections": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossSection"
-            }
-         },
-         "property_AccountingReport_profit_and_loss_cost_of_goods_sold_sections": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingProfitlossSection"
-            }
-         },
-         "property_AccountingReport_profit_and_loss": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "category_ids": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_category_ids"
-               },
-               "start_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "end_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "currency": {
-                  "type": "string"
-               },
-               "income_total_amount": {
-                  "type": "number"
-               },
-               "net_income_amount": {
-                  "type": "number"
-               },
-               "expenses_total_amount": {
-                  "type": "number"
-               },
-               "cost_of_goods_sold_total_amount": {
-                  "type": "number"
-               },
-               "income_sections": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_income_sections"
-               },
-               "expenses_sections": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_expenses_sections"
-               },
-               "cost_of_goods_sold_sections": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss_cost_of_goods_sold_sections"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
-         "AccountingTrialbalanceSubItem": {
-            "type": "object",
-            "properties": {
-               "amount": {
-                  "type": "number"
-               },
-               "account_id": {
-                  "type": "string"
-               },
-               "account_name": {
-                  "type": "string"
-               }
-            }
-         },
-         "property_AccountingReport_trial_balance_sub_items": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingTrialbalanceSubItem"
-            }
-         },
-         "property_AccountingReport_trial_balance": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "start_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "currency": {
-                  "type": "string"
-               },
-               "end_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "total_debit_amount": {
-                  "type": "number"
-               },
-               "total_credit_amount": {
-                  "type": "number"
-               },
-               "sub_items": {
-                  "$ref": "#/components/schemas/property_AccountingReport_trial_balance_sub_items"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
-         "AccountingReport": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "type": {
-                  "type": "string",
-                  "enum": [
-                     "TRIAL_BALANCE",
-                     "BALANCE_SHEET",
-                     "PROFIT_AND_LOSS"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "currency": {
-                  "type": "string"
-               },
-               "start_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "end_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "balance_sheet": {
-                  "$ref": "#/components/schemas/property_AccountingReport_balance_sheet"
-               },
-               "profit_and_loss": {
-                  "$ref": "#/components/schemas/property_AccountingReport_profit_and_loss"
-               },
-               "trial_balance": {
-                  "$ref": "#/components/schemas/property_AccountingReport_trial_balance"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            },
-            "description": "@deprecated; use either AccountingProfitandloss, AccountingTrialbalance, AccountingBalancesheet, or AccountingCashflow instead"
-         },
-         "AccountingReports": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/AccountingReport"
-            }
-         },
          "property_AccountingBalancesheet_assets": {
             "type": "array",
             "items": {
@@ -12313,6 +11998,20 @@
                "$ref": "#/components/schemas/AccountingBalancesheet"
             }
          },
+         "AccountingTrialbalanceSubItem": {
+            "type": "object",
+            "properties": {
+               "amount": {
+                  "type": "number"
+               },
+               "account_id": {
+                  "type": "string"
+               },
+               "account_name": {
+                  "type": "string"
+               }
+            }
+         },
          "property_AccountingTrialbalance_sub_items": {
             "type": "array",
             "items": {
@@ -12372,6 +12071,52 @@
             "type": "array",
             "items": {
                "type": "string"
+            }
+         },
+         "property_AccountingProfitlossAccount_transaction_ids": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "AccountingProfitlossAccount": {
+            "type": "object",
+            "properties": {
+               "account_id": {
+                  "type": "string"
+               },
+               "account_name": {
+                  "type": "string"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "transaction_ids": {
+                  "$ref": "#/components/schemas/property_AccountingProfitlossAccount_transaction_ids"
+               }
+            }
+         },
+         "property_AccountingProfitlossSection_accounts": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/AccountingProfitlossAccount"
+            }
+         },
+         "AccountingProfitlossSection": {
+            "type": "object",
+            "properties": {
+               "section_type": {
+                  "type": "string"
+               },
+               "section_name": {
+                  "type": "string"
+               },
+               "total_amount": {
+                  "type": "number"
+               },
+               "accounts": {
+                  "$ref": "#/components/schemas/property_AccountingProfitlossSection_accounts"
+               }
             }
          },
          "property_AccountingProfitloss_income_sections": {
@@ -13653,6 +13398,12 @@
                "$ref": "#/components/schemas/CommerceItemPrice"
             }
          },
+         "property_CommerceItem_tags": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
          "CommerceMetadata": {
             "type": "object",
             "properties": {
@@ -13807,58 +13558,13 @@
                "url"
             ]
          },
-         "property_CommerceItemvariant_media": {
+         "property_CommerceItem_media": {
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/CommerceItemMedia"
             }
          },
-         "property_CommerceItemvariant_tags": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_CommerceItemvariant_prices": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceItemPrice"
-            }
-         },
-         "property_CommerceItemOption_values": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "CommerceItemOption": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "position": {
-                  "type": "number"
-               },
-               "values": {
-                  "$ref": "#/components/schemas/property_CommerceItemOption_values"
-               }
-            },
-            "required": [
-               "name",
-               "values"
-            ]
-         },
-         "property_CommerceItemvariant_options": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceItemOption"
-            }
-         },
-         "property_CommerceItemvariant_metadata": {
+         "property_CommerceItem_metadata": {
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/CommerceMetadata"
@@ -13876,143 +13582,6 @@
                "type": {
                   "type": "string"
                }
-            }
-         },
-         "property_CommerceItemvariant_items": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceReference"
-            },
-            "description": "references CommerceItem"
-         },
-         "CommerceItemvariant": {
-            "type": "object",
-            "properties": {
-               "id": {
-                  "type": "string"
-               },
-               "created_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "updated_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "public_name": {
-                  "type": "string"
-               },
-               "description": {
-                  "type": "string"
-               },
-               "public_description": {
-                  "type": "string"
-               },
-               "sku": {
-                  "type": "string"
-               },
-               "is_active": {
-                  "type": "boolean"
-               },
-               "is_visible": {
-                  "type": "boolean"
-               },
-               "is_featured": {
-                  "type": "boolean"
-               },
-               "media": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_media"
-               },
-               "available_at": {
-                  "type": "string",
-                  "format": "date-time"
-               },
-               "tags": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_tags"
-               },
-               "width": {
-                  "type": "number"
-               },
-               "height": {
-                  "type": "number"
-               },
-               "length": {
-                  "type": "number"
-               },
-               "weight": {
-                  "type": "number"
-               },
-               "size_unit": {
-                  "type": "string",
-                  "enum": [
-                     "cm",
-                     "inch"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "weight_unit": {
-                  "type": "string",
-                  "enum": [
-                     "g",
-                     "kg",
-                     "oz",
-                     "lb"
-                  ],
-                  "x-speakeasy-unknown-values": "allow"
-               },
-               "total_stock": {
-                  "type": "number"
-               },
-               "prices": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_prices"
-               },
-               "options": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_options"
-               },
-               "inventory_id": {
-                  "type": "string"
-               },
-               "requires_shipping": {
-                  "type": "boolean"
-               },
-               "metadata": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_metadata"
-               },
-               "items": {
-                  "$ref": "#/components/schemas/property_CommerceItemvariant_items"
-               },
-               "raw": {
-                  "type": "object",
-                  "additionalProperties": true
-               }
-            }
-         },
-         "property_CommerceItem_variants": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceItemvariant"
-            },
-            "description": "first variant is the default variant"
-         },
-         "property_CommerceItem_tags": {
-            "type": "array",
-            "items": {
-               "type": "string"
-            }
-         },
-         "property_CommerceItem_media": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceItemMedia"
-            }
-         },
-         "property_CommerceItem_metadata": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/CommerceMetadata"
             }
          },
          "property_CommerceItem_collections": {
@@ -14096,9 +13665,6 @@
                },
                "total_stock": {
                   "type": "number"
-               },
-               "variants": {
-                  "$ref": "#/components/schemas/property_CommerceItem_variants"
                },
                "tags": {
                   "$ref": "#/components/schemas/property_CommerceItem_tags"
@@ -14766,6 +14332,175 @@
             "type": "array",
             "items": {
                "$ref": "#/components/schemas/CommerceSaleschannel"
+            }
+         },
+         "property_CommerceItemvariant_media": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CommerceItemMedia"
+            }
+         },
+         "property_CommerceItemvariant_tags": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "property_CommerceItemvariant_prices": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CommerceItemPrice"
+            }
+         },
+         "property_CommerceItemOption_values": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "CommerceItemOption": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "position": {
+                  "type": "number"
+               },
+               "values": {
+                  "$ref": "#/components/schemas/property_CommerceItemOption_values"
+               }
+            },
+            "required": [
+               "name",
+               "values"
+            ]
+         },
+         "property_CommerceItemvariant_options": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CommerceItemOption"
+            }
+         },
+         "property_CommerceItemvariant_metadata": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CommerceMetadata"
+            }
+         },
+         "property_CommerceItemvariant_items": {
+            "type": "array",
+            "items": {
+               "$ref": "#/components/schemas/CommerceReference"
+            },
+            "description": "references CommerceItem"
+         },
+         "CommerceItemvariant": {
+            "type": "object",
+            "properties": {
+               "id": {
+                  "type": "string"
+               },
+               "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "name": {
+                  "type": "string"
+               },
+               "public_name": {
+                  "type": "string"
+               },
+               "description": {
+                  "type": "string"
+               },
+               "public_description": {
+                  "type": "string"
+               },
+               "sku": {
+                  "type": "string"
+               },
+               "is_active": {
+                  "type": "boolean"
+               },
+               "is_visible": {
+                  "type": "boolean"
+               },
+               "is_featured": {
+                  "type": "boolean"
+               },
+               "media": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_media"
+               },
+               "available_at": {
+                  "type": "string",
+                  "format": "date-time"
+               },
+               "tags": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_tags"
+               },
+               "width": {
+                  "type": "number"
+               },
+               "height": {
+                  "type": "number"
+               },
+               "length": {
+                  "type": "number"
+               },
+               "weight": {
+                  "type": "number"
+               },
+               "size_unit": {
+                  "type": "string",
+                  "enum": [
+                     "cm",
+                     "inch"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "weight_unit": {
+                  "type": "string",
+                  "enum": [
+                     "g",
+                     "kg",
+                     "oz",
+                     "lb"
+                  ],
+                  "x-speakeasy-unknown-values": "allow"
+               },
+               "total_stock": {
+                  "type": "number"
+               },
+               "prices": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_prices"
+               },
+               "options": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_options"
+               },
+               "inventory_id": {
+                  "type": "string"
+               },
+               "requires_shipping": {
+                  "type": "boolean"
+               },
+               "metadata": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_metadata"
+               },
+               "items": {
+                  "$ref": "#/components/schemas/property_CommerceItemvariant_items"
+               },
+               "raw": {
+                  "type": "object",
+                  "additionalProperties": true
+               }
             }
          },
          "CommerceItemvariants": {
@@ -28296,8 +28031,6 @@
                   "accounting_purchaseorder_write",
                   "accounting_salesorder_read",
                   "accounting_salesorder_write",
-                  "accounting_report_read",
-                  "accounting_report_write",
                   "accounting_trialbalance_read",
                   "accounting_trialbalance_write",
                   "accounting_profitloss_read",
@@ -31144,7 +30877,6 @@
                      "accounting_order",
                      "accounting_salesorder",
                      "accounting_purchaseorder",
-                     "accounting_report",
                      "accounting_balancesheet",
                      "accounting_profitloss",
                      "accounting_trialbalance",
@@ -65222,237 +64954,6 @@
             "operationId": "removeAccountingSalesorder"
          }
       },
-      "/accounting/{connection_id}/report/{id}": {
-         "get": {
-            "summary": "Retrieve a report",
-            "parameters": [
-               {
-                  "schema": {
-                     "type": "array",
-                     "items": {
-                        "type": "string",
-                        "enum": [
-                           "id",
-                           "created_at",
-                           "updated_at",
-                           "type",
-                           "name",
-                           "currency",
-                           "start_at",
-                           "end_at",
-                           "balance_sheet",
-                           "profit_and_loss",
-                           "trial_balance",
-                           "raw"
-                        ]
-                     }
-                  },
-                  "name": "fields",
-                  "in": "query",
-                  "required": false,
-                  "description": "Fields to return"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "raw",
-                  "in": "query",
-                  "required": false,
-                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "description": "ID of the connection",
-                  "name": "connection_id",
-                  "in": "path",
-                  "required": true
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "description": "ID of the Report",
-                  "name": "id",
-                  "in": "path",
-                  "required": true
-               }
-            ],
-            "tags": [
-               "accounting",
-               "report"
-            ],
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "$ref": "#/components/schemas/AccountingReport"
-                        }
-                     }
-                  },
-                  "description": "Successful"
-               }
-            },
-            "security": [
-               {
-                  "jwt": []
-               }
-            ],
-            "operationId": "getAccountingReport"
-         }
-      },
-      "/accounting/{connection_id}/report": {
-         "get": {
-            "summary": "List all reports",
-            "parameters": [
-               {
-                  "schema": {
-                     "type": "number"
-                  },
-                  "name": "limit",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "number"
-                  },
-                  "name": "offset",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "updated_gte",
-                  "in": "query",
-                  "required": false,
-                  "description": "Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "sort",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "order",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "query",
-                  "in": "query",
-                  "required": false,
-                  "description": "Query string to search. eg. email address or name"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "type",
-                  "in": "query",
-                  "required": false
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "start_gte",
-                  "in": "query",
-                  "required": false,
-                  "description": "The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "end_lt",
-                  "in": "query",
-                  "required": false,
-                  "description": "The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"
-               },
-               {
-                  "schema": {
-                     "type": "array",
-                     "items": {
-                        "type": "string",
-                        "enum": [
-                           "id",
-                           "created_at",
-                           "updated_at",
-                           "type",
-                           "name",
-                           "currency",
-                           "start_at",
-                           "end_at",
-                           "balance_sheet",
-                           "profit_and_loss",
-                           "trial_balance",
-                           "raw"
-                        ]
-                     }
-                  },
-                  "name": "fields",
-                  "in": "query",
-                  "required": false,
-                  "description": "Fields to return"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "name": "raw",
-                  "in": "query",
-                  "required": false,
-                  "description": "Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar"
-               },
-               {
-                  "schema": {
-                     "type": "string"
-                  },
-                  "description": "ID of the connection",
-                  "name": "connection_id",
-                  "in": "path",
-                  "required": true
-               }
-            ],
-            "tags": [
-               "accounting",
-               "report"
-            ],
-            "responses": {
-               "200": {
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "$ref": "#/components/schemas/AccountingReports"
-                        }
-                     }
-                  },
-                  "description": "Successful"
-               }
-            },
-            "security": [
-               {
-                  "jwt": []
-               }
-            ],
-            "operationId": "listAccountingReports"
-         }
-      },
       "/accounting/{connection_id}/balancesheet/{id}": {
          "get": {
             "summary": "Retrieve a balancesheet",
@@ -71217,7 +70718,6 @@
                            "prices",
                            "inventory_id",
                            "total_stock",
-                           "variants",
                            "tags",
                            "media",
                            "account_id",
@@ -71385,7 +70885,6 @@
                            "prices",
                            "inventory_id",
                            "total_stock",
-                           "variants",
                            "tags",
                            "media",
                            "account_id",
@@ -71477,7 +70976,6 @@
                            "prices",
                            "inventory_id",
                            "total_stock",
-                           "variants",
                            "tags",
                            "media",
                            "account_id",
@@ -71576,7 +71074,6 @@
                            "prices",
                            "inventory_id",
                            "total_stock",
-                           "variants",
                            "tags",
                            "media",
                            "account_id",
@@ -71685,7 +71182,6 @@
                            "prices",
                            "inventory_id",
                            "total_stock",
-                           "variants",
                            "tags",
                            "media",
                            "account_id",
