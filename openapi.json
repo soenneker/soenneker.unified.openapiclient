@@ -111278,7 +111278,7 @@
                   "name": "include_all",
                   "in": "query",
                   "required": false,
-                  "description": "When set, all of the existing data will sent back to your server."
+                  "description": "When true, send existing/historic data. When false, no historic data is sent."
                }
             ],
             "tags": [

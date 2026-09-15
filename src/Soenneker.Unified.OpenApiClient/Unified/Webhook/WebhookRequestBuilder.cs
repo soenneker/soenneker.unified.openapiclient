@@ -248,7 +248,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebhookRequestBuilderPostQueryParameters 
         {
-            /// <summary>When set, all of the existing data will sent back to your server.</summary>
+            /// <summary>When true, send existing/historic data. When false, no historic data is sent.</summary>
             [QueryParameter("include_all")]
             public bool? IncludeAll { get; set; }
         }
