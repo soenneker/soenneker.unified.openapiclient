@@ -76,6 +76,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OriginalSubstatus,
         #pragma warning restore CS1591
+        [EnumMember(Value = "summary")]
+        #pragma warning disable CS1591
+        Summary,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

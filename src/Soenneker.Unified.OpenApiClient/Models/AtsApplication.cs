@@ -112,6 +112,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus? Status { get; set; }
+        /// <summary>The summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -163,6 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "rejected_reason", n => { RejectedReason = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus>(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -190,6 +199,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("rejected_reason", RejectedReason);
             writer.WriteStringValue("source", Source);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus>("status", Status);
+            writer.WriteStringValue("summary", Summary);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

@@ -188,6 +188,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus? Status { get; set; }
+        /// <summary>The summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The user_id property</summary>
@@ -250,6 +258,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "remote", n => { Remote = n.GetBoolValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus>(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -288,6 +297,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("remote", Remote);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobStatus>("status", Status);
+            writer.WriteStringValue("summary", Summary);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

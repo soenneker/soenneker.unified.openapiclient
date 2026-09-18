@@ -164,6 +164,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Sources { get; set; }
 #endif
+        /// <summary>The summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
+#endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,6 +268,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty.CreateFromDiscriminatorValue); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsTelephone>(global::Soenneker.Unified.OpenApiClient.Models.AtsTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -297,6 +306,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
+            writer.WriteStringValue("summary", Summary);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsTelephone>("telephones", Telephones);
             writer.WriteStringValue("title", Title);
