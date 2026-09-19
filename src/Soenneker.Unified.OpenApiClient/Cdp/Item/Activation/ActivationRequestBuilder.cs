@@ -141,18 +141,15 @@ namespace Soenneker.Unified.OpenApiClient.Cdp.Item.Activation
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivationRequestBuilderGetQueryParameters 
         {
+            /// <summary>The destination ID to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("destination_id")]
             public string? DestinationId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("destination_id")]
             public string DestinationId { get; set; }
-            #pragma warning restore CS1591
 #endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

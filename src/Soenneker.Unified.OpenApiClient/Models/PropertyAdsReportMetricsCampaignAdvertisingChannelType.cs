@@ -72,5 +72,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Dooh,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PERFORMANCE_MAX")]
+        #pragma warning disable CS1591
+        PerformanceMax,
+        #pragma warning restore CS1591
     }
 }

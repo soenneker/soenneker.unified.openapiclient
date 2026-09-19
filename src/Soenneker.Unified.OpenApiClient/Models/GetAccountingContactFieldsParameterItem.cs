@@ -104,6 +104,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PaymenttermId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "balance_amount")]
+        #pragma warning disable CS1591
+        BalanceAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "website")]
+        #pragma warning disable CS1591
+        Website,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "notes")]
+        #pragma warning disable CS1591
+        Notes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

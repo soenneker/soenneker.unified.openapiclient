@@ -22,6 +22,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAssociatedContact> AssociatedContacts { get; set; }
 #endif
+        /// <summary>The balance_amount property</summary>
+        public double? BalanceAmount { get; set; }
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,6 +182,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The website property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Website { get; set; }
+#nullable restore
+#else
+        public string Website { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingContact"/> and sets the default values.
         /// </summary>
@@ -199,6 +217,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "associated_contacts", n => { AssociatedContacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAssociatedContact>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAssociatedContact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactBillingAddress.CreateFromDiscriminatorValue); } },
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -212,6 +231,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_supplier", n => { IsSupplier = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_methods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>(global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentTerms>(); } },
@@ -223,6 +243,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "tax_number", n => { TaxNumber = n.GetStringValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -233,6 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAssociatedContact>("associated_contacts", AssociatedContacts);
+            writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingContactBillingAddress>("billing_address", BillingAddress);
             writer.WriteStringValue("company_name", CompanyName);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
@@ -246,6 +268,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_supplier", IsSupplier);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentMethod>("payment_methods", PaymentMethods);
             writer.WriteStringValue("paymentterm_id", PaymenttermId);
@@ -257,6 +280,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("tax_number", TaxNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
