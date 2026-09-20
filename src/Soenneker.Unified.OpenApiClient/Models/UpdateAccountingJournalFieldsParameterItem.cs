@@ -68,6 +68,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Attachments,
         #pragma warning restore CS1591
+        [EnumMember(Value = "total_amount")]
+        #pragma warning disable CS1591
+        TotalAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "exchange_rate")]
+        #pragma warning disable CS1591
+        ExchangeRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "status")]
+        #pragma warning disable CS1591
+        Status,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "is_inclusive_of_tax")]
+        #pragma warning disable CS1591
+        IsInclusiveOfTax,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

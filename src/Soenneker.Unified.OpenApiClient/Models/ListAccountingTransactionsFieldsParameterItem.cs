@@ -88,6 +88,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "transaction_at")]
+        #pragma warning disable CS1591
+        TransactionAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "exchange_rate")]
+        #pragma warning disable CS1591
+        ExchangeRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "status")]
+        #pragma warning disable CS1591
+        Status,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

@@ -380,6 +380,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         GenaiEmbedding,
         #pragma warning restore CS1591
+        [EnumMember(Value = "genai_task")]
+        #pragma warning disable CS1591
+        GenaiTask,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "genai_agent")]
+        #pragma warning disable CS1591
+        GenaiAgent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "genai_organization")]
+        #pragma warning disable CS1591
+        GenaiOrganization,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messaging_message")]
         #pragma warning disable CS1591
         MessagingMessage,

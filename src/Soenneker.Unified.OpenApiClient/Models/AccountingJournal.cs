@@ -48,6 +48,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The is_inclusive_of_tax property</summary>
+        public bool? IsInclusiveOfTax { get; set; }
         /// <summary>new field name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +110,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
+        /// <summary>The status property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
         /// <summary>The taxrate_id property</summary>
@@ -116,6 +122,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaxrateId { get; set; }
 #endif
+        /// <summary>The total_amount property</summary>
+        public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -148,7 +156,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_inclusive_of_tax", n => { IsInclusiveOfTax = n.GetBoolValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
@@ -156,8 +166,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "taxrate_id", n => { TaxrateId = n.GetStringValue(); } },
+                { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -173,7 +185,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_inclusive_of_tax", IsInclusiveOfTax);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem>("lineitems", Lineitems);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
@@ -181,8 +195,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteStringValue("taxrate_id", TaxrateId);
+            writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

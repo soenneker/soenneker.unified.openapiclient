@@ -42,6 +42,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The fees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The is_billable property</summary>
+        public bool? IsBillable { get; set; }
         /// <summary>The item_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +118,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
+        /// <summary>The project_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
         /// <summary>The refund_amount property</summary>
         public double? RefundAmount { get; set; }
         /// <summary>The refunded_at property</summary>
@@ -166,8 +178,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "fees", n => { Fees = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>(global::Soenneker.Unified.OpenApiClient.Models.AccountingFee.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_billable", n => { IsBillable = n.GetBoolValue(); } },
                 { "item_description", n => { ItemDescription = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "item_name", n => { ItemName = n.GetStringValue(); } },
@@ -175,6 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "item_variants", n => { ItemVariants = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "refund_amount", n => { RefundAmount = n.GetDoubleValue(); } },
                 { "refunded_at", n => { RefundedAt = n.GetDateTimeOffsetValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
@@ -197,8 +212,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingFee>("fees", Fees);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_billable", IsBillable);
             writer.WriteStringValue("item_description", ItemDescription);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("item_name", ItemName);
@@ -206,6 +223,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>("item_variants", ItemVariants);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingReference>("locations", Locations);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("project_id", ProjectId);
             writer.WriteDoubleValue("refund_amount", RefundAmount);
             writer.WriteDateTimeOffsetValue("refunded_at", RefundedAt);
             writer.WriteDoubleValue("tax_amount", TaxAmount);

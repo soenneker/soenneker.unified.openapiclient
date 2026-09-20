@@ -62,6 +62,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ObjectType { get; set; }
 #endif
+        /// <summary>The taxrate_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaxrateId { get; set; }
+#nullable restore
+#else
+        public string TaxrateId { get; set; }
+#endif
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The unit_amount property</summary>
@@ -99,6 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object_type", n => { ObjectType = n.GetStringValue(); } },
+                { "taxrate_id", n => { TaxrateId = n.GetStringValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "unit_amount", n => { UnitAmount = n.GetDoubleValue(); } },
                 { "unit_quantity", n => { UnitQuantity = n.GetDoubleValue(); } },
@@ -117,6 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("object_type", ObjectType);
+            writer.WriteStringValue("taxrate_id", TaxrateId);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDoubleValue("unit_amount", UnitAmount);
             writer.WriteDoubleValue("unit_quantity", UnitQuantity);

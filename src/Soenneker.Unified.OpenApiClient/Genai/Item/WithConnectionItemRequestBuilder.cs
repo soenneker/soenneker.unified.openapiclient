@@ -2,9 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Genai.Item.Agent;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Embedding;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Model;
+using Soenneker.Unified.OpenApiClient.Genai.Item.Organization;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Prompt;
+using Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +20,11 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConnectionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agent property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Genai.Item.Agent.AgentRequestBuilder Agent
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Agent.AgentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The embedding property</summary>
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.Embedding.EmbeddingRequestBuilder Embedding
         {
@@ -27,10 +35,20 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The organization property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Genai.Item.Organization.OrganizationRequestBuilder Organization
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Organization.OrganizationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The prompt property</summary>
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.Prompt.PromptRequestBuilder Prompt
         {
             get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Prompt.PromptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The task property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.TaskRequestBuilder Task
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Genai.Item.WithConnectionItemRequestBuilder"/> and sets the default values.

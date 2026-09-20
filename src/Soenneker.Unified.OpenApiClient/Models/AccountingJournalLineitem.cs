@@ -100,6 +100,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
+        /// <summary>The taxrate_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaxrateId { get; set; }
+#nullable restore
+#else
+        public string TaxrateId { get; set; }
+#endif
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>
@@ -140,6 +148,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "payment_id", n => { PaymentId = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
+                { "taxrate_id", n => { TaxrateId = n.GetStringValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
             };
         }
@@ -163,6 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("payment_id", PaymentId);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
+            writer.WriteStringValue("taxrate_id", TaxrateId);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteAdditionalData(AdditionalData);
         }

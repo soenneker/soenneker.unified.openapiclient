@@ -56,6 +56,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CustomerMessage { get; set; }
 #endif
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,12 +138,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SplitAccountId { get; set; }
 #endif
+        /// <summary>The status property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionStatus? Status { get; set; }
         /// <summary>The sub_total_amount property</summary>
         public double? SubTotalAmount { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
+        /// <summary>The transaction_at property</summary>
+        public DateTimeOffset? TransactionAt { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "customer_message", n => { CustomerMessage = n.GetStringValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "memo", n => { Memo = n.GetStringValue(); } },
@@ -193,9 +200,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "split_account_id", n => { SplitAccountId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionStatus>(); } },
                 { "sub_total_amount", n => { SubTotalAmount = n.GetDoubleValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
+                { "transaction_at", n => { TransactionAt = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -213,6 +222,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("customer_message", CustomerMessage);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem>("lineitems", Lineitems);
             writer.WriteStringValue("memo", Memo);
@@ -223,9 +233,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("split_account_id", SplitAccountId);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionStatus>("status", Status);
             writer.WriteDoubleValue("sub_total_amount", SubTotalAmount);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
+            writer.WriteDateTimeOffsetValue("transaction_at", TransactionAt);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

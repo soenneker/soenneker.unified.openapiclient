@@ -44,6 +44,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Reference,
         #pragma warning restore CS1591
+        [EnumMember(Value = "refunded_at")]
+        #pragma warning disable CS1591
+        RefundedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reason")]
+        #pragma warning disable CS1591
+        Reason,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tender_type")]
+        #pragma warning disable CS1591
+        TenderType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

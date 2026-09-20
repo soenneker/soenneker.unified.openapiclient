@@ -144,6 +144,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Metadata,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sub_total_amount")]
+        #pragma warning disable CS1591
+        SubTotalAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "exchange_rate")]
+        #pragma warning disable CS1591
+        ExchangeRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "purchaseorder_ids")]
+        #pragma warning disable CS1591
+        PurchaseorderIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

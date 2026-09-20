@@ -108,6 +108,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CardLast4,
         #pragma warning restore CS1591
+        [EnumMember(Value = "paid_at")]
+        #pragma warning disable CS1591
+        PaidAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "exchange_rate")]
+        #pragma warning disable CS1591
+        ExchangeRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "category_ids")]
+        #pragma warning disable CS1591
+        CategoryIds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "net_amount")]
+        #pragma warning disable CS1591
+        NetAmount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

@@ -74,6 +74,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The external_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +158,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
+        /// <summary>The taxrate_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TaxrateId { get; set; }
+#nullable restore
+#else
+        public string TaxrateId { get; set; }
+#endif
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
@@ -210,6 +220,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "external_number", n => { ExternalNumber = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -224,6 +235,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "reimbursed_at", n => { ReimbursedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus>(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
+                { "taxrate_id", n => { TaxrateId = n.GetStringValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -246,6 +258,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteStringValue("external_number", ExternalNumber);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
@@ -260,6 +273,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("reimbursed_at", ReimbursedAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus>("status", Status);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
+            writer.WriteStringValue("taxrate_id", TaxrateId);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

@@ -54,6 +54,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CardLast4 { get; set; }
 #endif
+        /// <summary>dimension refs -&gt; AccountingCategory</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CategoryIds { get; set; }
+#nullable restore
+#else
+        public List<string> CategoryIds { get; set; }
+#endif
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DeviceId { get; set; }
 #endif
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The fee_amount property</summary>
         public double? FeeAmount { get; set; }
         /// <summary>The id property</summary>
@@ -114,6 +124,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
+        /// <summary>The net_amount property</summary>
+        public double? NetAmount { get; set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +142,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
+        /// <summary>The paid_at property</summary>
+        public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,17 +219,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "bill_id", n => { BillId = n.GetStringValue(); } },
                 { "card_brand", n => { CardBrand = n.GetStringValue(); } },
                 { "card_last4", n => { CardLast4 = n.GetStringValue(); } },
+                { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "device_id", n => { DeviceId = n.GetStringValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "fee_amount", n => { FeeAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "link_id", n => { LinkId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
+                { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -240,17 +258,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("bill_id", BillId);
             writer.WriteStringValue("card_brand", CardBrand);
             writer.WriteStringValue("card_last4", CardLast4);
+            writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("device_id", DeviceId);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteDoubleValue("fee_amount", FeeAmount);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteStringValue("link_id", LinkId);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);
+            writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentRawProperty>("raw", Raw);
             writer.WriteStringValue("reference", Reference);

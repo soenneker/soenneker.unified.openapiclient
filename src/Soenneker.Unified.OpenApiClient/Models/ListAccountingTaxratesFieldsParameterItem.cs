@@ -44,6 +44,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Metadata,
         #pragma warning restore CS1591
+        [EnumMember(Value = "effective_rate")]
+        #pragma warning disable CS1591
+        EffectiveRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "total_rate")]
+        #pragma warning disable CS1591
+        TotalRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "components")]
+        #pragma warning disable CS1591
+        Components,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "is_compound")]
+        #pragma warning disable CS1591
+        IsCompound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "country")]
+        #pragma warning disable CS1591
+        Country,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "region")]
+        #pragma warning disable CS1591
+        Region,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

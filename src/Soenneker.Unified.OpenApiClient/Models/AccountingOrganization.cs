@@ -22,6 +22,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress Address { get; set; }
 #endif
+        /// <summary>The books_close_at property</summary>
+        public DateTimeOffset? BooksCloseAt { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
@@ -138,6 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress.CreateFromDiscriminatorValue); } },
+                { "books_close_at", n => { BooksCloseAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "fiscal_year_end_month", n => { FiscalYearEndMonth = n.GetDoubleValue(); } },
@@ -163,6 +166,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress>("address", Address);
+            writer.WriteDateTimeOffsetValue("books_close_at", BooksCloseAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("fiscal_year_end_month", FiscalYearEndMonth);

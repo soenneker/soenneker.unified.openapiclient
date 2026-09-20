@@ -56,6 +56,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? DiscountAmount { get; set; }
         /// <summary>The due_at property</summary>
         public DateTimeOffset? DueAt { get; set; }
+        /// <summary>The exchange_rate property</summary>
+        public double? ExchangeRate { get; set; }
         /// <summary>The extended_notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InvoiceNumber { get; set; }
 #endif
+        /// <summary>The is_inclusive_of_tax property</summary>
+        public bool? IsInclusiveOfTax { get; set; }
         /// <summary>The lineitems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,10 +178,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RefundReason { get; set; }
 #endif
+        /// <summary>refs -&gt; AccountingSalesorder; the sales orders this invoice was raised from</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SalesorderIds { get; set; }
+#nullable restore
+#else
+        public List<string> SalesorderIds { get; set; }
+#endif
         /// <summary>The send property</summary>
         public bool? Send { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus? Status { get; set; }
+        /// <summary>The sub_total_amount property</summary>
+        public double? SubTotalAmount { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
         /// <summary>The term property</summary>
@@ -230,9 +244,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "discount_amount", n => { DiscountAmount = n.GetDoubleValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
+                { "exchange_rate", n => { ExchangeRate = n.GetDoubleValue(); } },
                 { "extended_notes", n => { ExtendedNotes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote>(global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_number", n => { InvoiceNumber = n.GetStringValue(); } },
+                { "is_inclusive_of_tax", n => { IsInclusiveOfTax = n.GetBoolValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
@@ -250,8 +266,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "refund_amount", n => { RefundAmount = n.GetDoubleValue(); } },
                 { "refund_reason", n => { RefundReason = n.GetStringValue(); } },
                 { "refunded_at", n => { RefundedAt = n.GetDateTimeOffsetValue(); } },
+                { "salesorder_ids", n => { SalesorderIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "send", n => { Send = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>(); } },
+                { "sub_total_amount", n => { SubTotalAmount = n.GetDoubleValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "term", n => { Term = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceTerm>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
@@ -276,9 +294,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("discount_amount", DiscountAmount);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
+            writer.WriteDoubleValue("exchange_rate", ExchangeRate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingExtendedNote>("extended_notes", ExtendedNotes);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("invoice_number", InvoiceNumber);
+            writer.WriteBoolValue("is_inclusive_of_tax", IsInclusiveOfTax);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>("lineitems", Lineitems);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
@@ -296,8 +316,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("refund_amount", RefundAmount);
             writer.WriteDateTimeOffsetValue("refunded_at", RefundedAt);
             writer.WriteStringValue("refund_reason", RefundReason);
+            writer.WriteCollectionOfPrimitiveValues<string>("salesorder_ids", SalesorderIds);
             writer.WriteBoolValue("send", Send);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceStatus>("status", Status);
+            writer.WriteDoubleValue("sub_total_amount", SubTotalAmount);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingInvoiceTerm>("term", Term);
             writer.WriteDoubleValue("total_amount", TotalAmount);

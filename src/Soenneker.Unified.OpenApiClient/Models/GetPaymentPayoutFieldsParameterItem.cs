@@ -36,6 +36,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Status,
         #pragma warning restore CS1591
+        [EnumMember(Value = "arrival_at")]
+        #pragma warning disable CS1591
+        ArrivalAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fee_amount")]
+        #pragma warning disable CS1591
+        FeeAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "net_amount")]
+        #pragma warning disable CS1591
+        NetAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "account_id")]
+        #pragma warning disable CS1591
+        AccountId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lineitems")]
+        #pragma warning disable CS1591
+        Lineitems,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

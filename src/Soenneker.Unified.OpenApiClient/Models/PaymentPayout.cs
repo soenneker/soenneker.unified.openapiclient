@@ -12,8 +12,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class PaymentPayout : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The account_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The arrival_at property</summary>
+        public DateTimeOffset? ArrivalAt { get; set; }
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +40,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>The fee_amount property</summary>
+        public double? FeeAmount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +50,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The transactions included in this payout</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem>? Lineitems { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem> Lineitems { get; set; }
+#endif
+        /// <summary>The net_amount property</summary>
+        public double? NetAmount { get; set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,9 +113,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "arrival_at", n => { ArrivalAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "fee_amount", n => { FeeAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutStatus>(); } },
@@ -108,9 +135,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_id", AccountId);
+            writer.WriteDateTimeOffsetValue("arrival_at", ArrivalAt);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteDoubleValue("fee_amount", FeeAmount);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem>("lineitems", Lineitems);
+            writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutStatus>("status", Status);

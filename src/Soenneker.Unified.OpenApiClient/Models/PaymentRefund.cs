@@ -56,6 +56,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty Raw { get; set; }
 #endif
+        /// <summary>The reason property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundReason? Reason { get; set; }
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,8 +66,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
+        /// <summary>The refunded_at property</summary>
+        public DateTimeOffset? RefundedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundStatus? Status { get; set; }
+        /// <summary>The tender_type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundTenderType? TenderType { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The updated_at property</summary>
@@ -101,8 +107,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "payment_id", n => { PaymentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundReason>(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
+                { "refunded_at", n => { RefundedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundStatus>(); } },
+                { "tender_type", n => { TenderType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundTenderType>(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -120,8 +129,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("payment_id", PaymentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundReason>("reason", Reason);
             writer.WriteStringValue("reference", Reference);
+            writer.WriteDateTimeOffsetValue("refunded_at", RefundedAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundTenderType>("tender_type", TenderType);
             writer.WriteDoubleValue("total_amount", TotalAmount);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
