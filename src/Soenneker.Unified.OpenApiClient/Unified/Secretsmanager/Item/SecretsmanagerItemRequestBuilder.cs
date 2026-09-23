@@ -9,28 +9,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item
+namespace Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \unified\workspace\secretsmanager\{id}
+    /// Builds and executes requests for operations under \unified\secretsmanager\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsmanagerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsmanagerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/workspace/secretsmanager/{id}", pathParameters)
+        public SecretsmanagerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/secretsmanager/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsmanagerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/workspace/secretsmanager/{id}", rawUrl)
+        public SecretsmanagerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/secretsmanager/{id}", rawUrl)
         {
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

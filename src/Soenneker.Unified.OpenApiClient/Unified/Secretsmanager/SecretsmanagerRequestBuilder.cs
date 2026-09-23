@@ -4,46 +4,58 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Models;
-using Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item;
+using Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Instructions;
+using Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item;
+using Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Secrets;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager
+namespace Soenneker.Unified.OpenApiClient.Unified.Secretsmanager
 {
     /// <summary>
-    /// Builds and executes requests for operations under \unified\workspace\secretsmanager
+    /// Builds and executes requests for operations under \unified\secretsmanager
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsmanagerRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.unified.workspace.secretsmanager.item collection</summary>
+        /// <summary>The instructions property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Instructions.InstructionsRequestBuilder Instructions
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Instructions.InstructionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The secrets property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Secrets.SecretsRequestBuilder Secrets
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Secrets.SecretsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.unified.secretsmanager.item collection</summary>
         /// <param name="position">ID of the Secretsmanager</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.Item.SecretsmanagerItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.Item.SecretsmanagerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsmanagerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/workspace/secretsmanager{?limit*,offset*,order*,sort*,updated_gte*}", pathParameters)
+        public SecretsmanagerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/secretsmanager{?limit*,offset*,order*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsmanagerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/workspace/secretsmanager{?limit*,offset*,order*,sort*,updated_gte*}", rawUrl)
+        public SecretsmanagerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/secretsmanager{?limit*,offset*,order*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -54,11 +66,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.SecretsManager>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.SecretsManager>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.SecretsManager>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.SecretsManager>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -92,11 +104,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder.SecretsmanagerRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -129,11 +141,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Unified.OpenApiClient.Unified.Workspace.Secretsmanager.SecretsmanagerRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List secrets managers
