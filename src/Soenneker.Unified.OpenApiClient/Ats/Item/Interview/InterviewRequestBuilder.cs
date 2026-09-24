@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Interview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InterviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/interview{?application_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public InterviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/interview{?application_id*,candidate_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Interview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InterviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/interview{?application_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public InterviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ats/{connectionId}/interview{?application_id*,candidate_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,16 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Interview
 #else
             [QueryParameter("application_id")]
             public string ApplicationId { get; set; }
+#endif
+            /// <summary>The candidate ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("candidate_id")]
+            public string? CandidateId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("candidate_id")]
+            public string CandidateId { get; set; }
 #endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

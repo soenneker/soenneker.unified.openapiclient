@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.Item;
 using Soenneker.Unified.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationstatusRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.ats.item.applicationstatus.item collection</summary>
+        /// <param name="position">ID of the Applicationstatus</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.Item.ApplicationstatusItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.Item.ApplicationstatusItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.Item.ApplicationstatusItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Ats.Item.Applicationstatus.ApplicationstatusRequestBuilder"/> and sets the default values.
         /// </summary>
