@@ -44,6 +44,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         McpAuthorizationToken,
         #pragma warning restore CS1591
+        [EnumMember(Value = "questions")]
+        #pragma warning disable CS1591
+        Questions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "answers")]
+        #pragma warning disable CS1591
+        Answers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

@@ -70,6 +70,46 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.GenaiTask.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update a task
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiTask"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask?> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.GenaiTask.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Update a task
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiTask"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask?> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.GenaiTask>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.GenaiTask.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Remove a task
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -107,6 +147,50 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item
             return requestInfo;
         }
         /// <summary>
+        /// Update a task
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update a task
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.GenaiTask body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder.TaskItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item.TaskItemRequestBuilder"/></returns>
@@ -130,6 +214,60 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.Item
 #else
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.GetGenaiTaskFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Update a task
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TaskItemRequestBuilderPatchQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchGenaiTaskFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchGenaiTaskFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Update a task
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TaskItemRequestBuilderPutQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateGenaiTaskFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateGenaiTaskFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

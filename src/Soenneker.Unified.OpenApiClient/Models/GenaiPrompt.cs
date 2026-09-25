@@ -14,6 +14,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>One answer per question, matched by id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer>? Answers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer> Answers { get; set; }
+#endif
         /// <summary>The max_tokens property</summary>
         public double? MaxTokens { get; set; }
         /// <summary>The mcp_authorization_token property</summary>
@@ -55,6 +63,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string ModelId { get; set; }
+#endif
+        /// <summary>Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>? Questions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion> Questions { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,12 +117,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "answers", n => { Answers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer>(global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "mcp_authorization_token", n => { McpAuthorizationToken = n.GetStringValue(); } },
                 { "mcp_deferred_tools", n => { McpDeferredTools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mcp_url", n => { McpUrl = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>(global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty.CreateFromDiscriminatorValue); } },
                 { "responses", n => { Responses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
@@ -120,12 +138,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer>("answers", Answers);
             writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("mcp_authorization_token", McpAuthorizationToken);
             writer.WriteCollectionOfPrimitiveValues<string>("mcp_deferred_tools", McpDeferredTools);
             writer.WriteStringValue("mcp_url", McpUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>("messages", Messages);
             writer.WriteStringValue("model_id", ModelId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>("questions", Questions);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("responses", Responses);
             writer.WriteDoubleValue("temperature", Temperature);
