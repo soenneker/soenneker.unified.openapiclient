@@ -69,7 +69,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Webhook"/></returns>
-        /// <param name="body">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="body">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="body">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

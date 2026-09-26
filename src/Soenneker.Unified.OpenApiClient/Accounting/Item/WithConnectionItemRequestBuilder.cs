@@ -14,6 +14,7 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Category;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Contact;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Creditmemo;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Expense;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Invoice;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Journal;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Order;
@@ -22,8 +23,10 @@ using Soenneker.Unified.OpenApiClient.Accounting.Item.Paymentterm;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Profitloss;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Project;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Purchasereceipt;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Quote;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Salesreceipt;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Transaction;
 using Soenneker.Unified.OpenApiClient.Accounting.Item.Trialbalance;
@@ -100,6 +103,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The expensereport property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder Expensereport
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The invoice property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Invoice.InvoiceRequestBuilder Invoice
         {
@@ -140,6 +148,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Purchaseorder.PurchaseorderRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The purchasereceipt property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Purchasereceipt.PurchasereceiptRequestBuilder Purchasereceipt
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Purchasereceipt.PurchasereceiptRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The quote property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Quote.QuoteRequestBuilder Quote
         {
@@ -149,6 +162,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder.SalesorderRequestBuilder Salesorder
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder.SalesorderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The salesreceipt property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Salesreceipt.SalesreceiptRequestBuilder Salesreceipt
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Salesreceipt.SalesreceiptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The taxrate property</summary>
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate.TaxrateRequestBuilder Taxrate

@@ -3,100 +3,100 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.Item;
+using Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item;
 using Soenneker.Unified.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
+namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounting\{connectionId}\expense
+    /// Builds and executes requests for operations under \accounting\{connectionId}\expensereport
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExpenseRequestBuilder : BaseRequestBuilder
+    public partial class ExpensereportRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item.expense.item collection</summary>
-        /// <param name="position">ID of the Expense</param>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.Item.ExpenseItemRequestBuilder"/></returns>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.Item.ExpenseItemRequestBuilder this[string position]
+        /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item.expensereport.item collection</summary>
+        /// <param name="position">ID of the Expensereport</param>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item.ExpensereportItemRequestBuilder"/></returns>
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item.ExpensereportItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("id", position);
-                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.Item.ExpenseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item.ExpensereportItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?approver_user_id*,category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*,user_id*}", pathParameters)
+        public ExpensereportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expensereport{?approver_user_id*,category_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpenseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expense{?approver_user_id*,category_id*,contact_id*,end_lt*,fields*,group_id*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*,user_id*}", rawUrl)
+        public ExpensereportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/expensereport{?approver_user_id*,category_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all expenses
+        /// List all expensereports
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create an expense
+        /// Create an expensereport
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all expenses
+        /// List all expensereports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -105,18 +105,18 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
             return requestInfo;
         }
         /// <summary>
-        /// Create an expense
+        /// Create an expensereport
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpense body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder.ExpenseRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder.ExpensereportRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -129,17 +129,17 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expense.ExpenseRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.ExpensereportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all expenses
+        /// List all expensereports
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ExpenseRequestBuilderGetQueryParameters 
+        public partial class ExpensereportRequestBuilderGetQueryParameters 
         {
             /// <summary>The expense approver user/employee ID to filter by (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,16 +161,6 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
             [QueryParameter("category_id")]
             public string CategoryId { get; set; }
 #endif
-            /// <summary>The contact ID to filter by (reference to AccountingContact)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("contact_id")]
-            public string? ContactId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("contact_id")]
-            public string ContactId { get; set; }
-#endif
             /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,21 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingExpensesFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingExpensereportsFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingExpensesFieldsParameterItem[] Fields { get; set; }
-#endif
-            /// <summary>The group ID to filter by (reference to HrisGroup)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("group_id")]
-            public string? GroupId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("group_id")]
-            public string GroupId { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.ListAccountingExpensereportsFieldsParameterItem[] Fields { get; set; }
 #endif
             #pragma warning disable CS1591
             [QueryParameter("limit")]
@@ -288,19 +268,6 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
             public string Status { get; set; }
             #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("type")]
-            public string? Type { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("type")]
-            public string Type { get; set; }
-            #pragma warning restore CS1591
-#endif
             /// <summary>Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -323,20 +290,20 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expense
 #endif
         }
         /// <summary>
-        /// Create an expense
+        /// Create an expensereport
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ExpenseRequestBuilderPostQueryParameters 
+        public partial class ExpensereportRequestBuilderPostQueryParameters 
         {
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingExpenseFieldsParameterItem[]? Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingExpensereportFieldsParameterItem[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingExpenseFieldsParameterItem[] Fields { get; set; }
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateAccountingExpensereportFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

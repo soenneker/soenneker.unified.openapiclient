@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// A webhook is used to POST new/updated information to your server.
+    /// A webhook is used to POST new, updated, or deleted records to your server.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Webhook : IAdditionalDataHolder, IParsable
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Fields { get; set; }
 #endif
-        /// <summary>The filters property</summary>
+        /// <summary>Supported on virtual webhooks, and on native webhooks for many integrations. Check the integration&apos;s Feature Support tab for which filters apply. Filters the integration doesn&apos;t support are accepted but have no effect. Some integrations require a filter; if it&apos;s missing, create returns an error naming the integration and the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters? Filters { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookObjectType? ObjectType { get; set; }
         /// <summary>The page_max_limit property</summary>
         public double? PageMaxLimit { get; set; }
-        /// <summary>An array of the most revent virtual webhook runs</summary>
+        /// <summary>An array of the most recent virtual webhook runs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Runs { get; set; }

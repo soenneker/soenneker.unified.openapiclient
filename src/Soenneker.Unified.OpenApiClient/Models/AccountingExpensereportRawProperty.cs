@@ -7,30 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
-    /// <summary>
-    /// Supported on virtual webhooks, and on native webhooks for many integrations. Check the integration&apos;s Feature Support tab for which filters apply. Filters the integration doesn&apos;t support are accepted but have no effect. Some integrations require a filter; if it&apos;s missing, create returns an error naming the integration and the filter.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WebhookFilters : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class AccountingExpensereportRawProperty : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereportRawProperty"/> and sets the default values.
         /// </summary>
-        public WebhookFilters()
+        public AccountingExpensereportRawProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereportRawProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereportRawProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters();
+            return new global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereportRawProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

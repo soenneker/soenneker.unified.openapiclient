@@ -80,6 +80,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingExpenseWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_expensereport_read")]
+        #pragma warning disable CS1591
+        AccountingExpensereportRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_expensereport_write")]
+        #pragma warning disable CS1591
+        AccountingExpensereportWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_purchasereceipt_read")]
+        #pragma warning disable CS1591
+        AccountingPurchasereceiptRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_purchasereceipt_write")]
+        #pragma warning disable CS1591
+        AccountingPurchasereceiptWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_taxrate_read")]
         #pragma warning disable CS1591
         AccountingTaxrateRead,
@@ -123,6 +139,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "accounting_salesorder_write")]
         #pragma warning disable CS1591
         AccountingSalesorderWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_salesreceipt_read")]
+        #pragma warning disable CS1591
+        AccountingSalesreceiptRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_salesreceipt_write")]
+        #pragma warning disable CS1591
+        AccountingSalesreceiptWrite,
         #pragma warning restore CS1591
         [EnumMember(Value = "accounting_trialbalance_read")]
         #pragma warning disable CS1591

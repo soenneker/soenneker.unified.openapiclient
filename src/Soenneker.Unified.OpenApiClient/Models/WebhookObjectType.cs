@@ -60,6 +60,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountingSalesorder,
         #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_salesreceipt")]
+        #pragma warning disable CS1591
+        AccountingSalesreceipt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accounting_purchaseorder")]
         #pragma warning disable CS1591
         AccountingPurchaseorder,
@@ -83,6 +87,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "accounting_expense")]
         #pragma warning disable CS1591
         AccountingExpense,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_expensereport")]
+        #pragma warning disable CS1591
+        AccountingExpensereport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accounting_purchasereceipt")]
+        #pragma warning disable CS1591
+        AccountingPurchasereceipt,
         #pragma warning restore CS1591
         [EnumMember(Value = "accounting_cashflow")]
         #pragma warning disable CS1591
