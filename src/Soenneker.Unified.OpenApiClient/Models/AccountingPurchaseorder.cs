@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The attachments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>? Attachments { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment> Attachments { get; set; }
+#endif
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingPurchaseorderBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingPurchaseorderBillingAddress.CreateFromDiscriminatorValue); } },
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
@@ -163,6 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAttachment>("attachments", Attachments);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingPurchaseorderBillingAddress>("billing_address", BillingAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteStringValue("contact_id", ContactId);
