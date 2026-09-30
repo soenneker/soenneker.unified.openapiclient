@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/device{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
+        public DeviceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/device{?email*,fields*,group_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/device{?fields*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
+        public DeviceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/device{?email*,fields*,group_id*,limit*,offset*,order*,query*,raw*,sort*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,6 +141,19 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("email")]
+            public string? Email { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("email")]
+            public string Email { get; set; }
+            #pragma warning restore CS1591
+#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +163,16 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
 #else
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.ListHrisDevicesFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>The group ID to filter by (reference to HrisGroup)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("group_id")]
+            public string? GroupId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("group_id")]
+            public string GroupId { get; set; }
 #endif
             #pragma warning disable CS1591
             [QueryParameter("limit")]
