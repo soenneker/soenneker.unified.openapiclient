@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.UcContact> Contacts { get; set; }
 #endif
+        /// <summary>The conversation_identifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConversationIdentifier { get; set; }
+#nullable restore
+#else
+        public string ConversationIdentifier { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The end_at property</summary>
@@ -125,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "call_id", n => { CallId = n.GetStringValue(); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conversation_identifier", n => { ConversationIdentifier = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
@@ -149,6 +158,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("call_id", CallId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>("contacts", Contacts);
+            writer.WriteStringValue("conversation_identifier", ConversationIdentifier);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
