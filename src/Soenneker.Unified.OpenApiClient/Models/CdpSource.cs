@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this source object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The direction property</summary>
+        /// <summary>SOURCE, or BIDIRECTIONAL for import+export connectors</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSourceDirection? Direction { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this source object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -26,9 +26,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_enabled property</summary>
+        /// <summary>Whether the source is active/enabled</summary>
         public bool? IsEnabled { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the inbound data source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSourceRawProperty? Raw { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSourceRawProperty Raw { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>A stable handle/key for the source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The connector/source type (eg. the provider&apos;s connector slug or plugin id)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this source object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpSource"/> and sets the default values.

@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The exchange_rate property</summary>
+        /// <summary>Exchange rate to the base/home currency at the posting date</summary>
         public double? ExchangeRate { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_inclusive_of_tax property</summary>
+        /// <summary>True when the line amounts already include tax</summary>
         public bool? IsInclusiveOfTax { get; set; }
         /// <summary>new field name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,9 +76,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The posted_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PostedAt { get; set; }
-        /// <summary>The project_id property</summary>
+        /// <summary>(reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Posting state of the journal entry</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
@@ -122,9 +122,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaxrateId { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>Total of the debit lines; equals the total of the credit lines</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingJournal"/> and sets the default values.

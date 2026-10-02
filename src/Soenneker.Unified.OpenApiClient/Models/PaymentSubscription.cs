@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The canceled_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CanceledAt { get; set; }
-        /// <summary>The contact_id property</summary>
+        /// <summary>a reference to an Accounting Contact (reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,13 +34,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The current_period_end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CurrentPeriodEndAt { get; set; }
-        /// <summary>The current_period_start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CurrentPeriodStartAt { get; set; }
-        /// <summary>The day_of_month property</summary>
+        /// <summary>The day of the month to charge customers on. 1-28 or -1 to indicate the last day of the month. Only applies when the interval_unit is MONTH.</summary>
         public double? DayOfMonth { get; set; }
-        /// <summary>The day_of_week property</summary>
+        /// <summary>The day of the week to charge customers on. 1-7 or -1 to indicate the last day of the week. Only applies when the interval_unit is WEEK.</summary>
         public double? DayOfWeek { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,11 +60,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The interval property</summary>
+        /// <summary>The number of intervals between charges within the interval_unit. Defaults to 1.</summary>
         public double? Interval { get; set; }
         /// <summary>The interval_unit property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionIntervalUnit? IntervalUnit { get; set; }
-        /// <summary>The invoice_id property</summary>
+        /// <summary>a reference to an Accounting Invoice (reference to AccountingInvoice)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceId { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem> Lineitems { get; set; }
 #endif
-        /// <summary>The month property</summary>
+        /// <summary>the month on which to charge a customer (1-12). Only applies when the interval_unit is YEAR.</summary>
         public double? Month { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,13 +90,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscriptionStatus? Status { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PaymentSubscription"/> and sets the default values.

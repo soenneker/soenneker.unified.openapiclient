@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The helpful_votes property</summary>
         public double? HelpfulVotes { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? IsPublic { get; set; }
         /// <summary>The is_verified property</summary>
         public bool? IsVerified { get; set; }
-        /// <summary>The item_id property</summary>
+        /// <summary>Reference to the product being reviewed (reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
-        /// <summary>The item_variant_id property</summary>
+        /// <summary>Optional reference to specific variant if applicable (reference to CommerceCommerceItemvariant)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemVariantId { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemVariantId { get; set; }
 #endif
-        /// <summary>The location_id property</summary>
+        /// <summary>(reference to CommerceLocation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -120,9 +120,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The rating property</summary>
+        /// <summary>1-5 rating</summary>
         public double? Rating { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>Original review data from source platform</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CommerceReviewRawProperty? Raw { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The unhelpful_votes property</summary>
         public double? UnhelpfulVotes { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

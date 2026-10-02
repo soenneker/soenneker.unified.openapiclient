@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> AttachmentFileIds { get; set; }
 #endif
-        /// <summary>The body property</summary>
+        /// <summary>The event email&apos;s body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Body { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Cc { get; set; }
 #endif
-        /// <summary>The from property</summary>
+        /// <summary>The event email&apos;s from name &amp; email address (name &lt;test@test.com&gt;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? From { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string From { get; set; }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The event email&apos;s subject</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }

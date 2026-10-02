@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The creative_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCreativeType? CreativeType { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ExternalPlacementReference { get; set; }
 #endif
-        /// <summary>The group_id property</summary>
+        /// <summary>(reference to AdsGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -102,7 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The item_id property</summary>
+        /// <summary>references Commerce Item ID (reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Labels { get; set; }
 #endif
-        /// <summary>The link_url property</summary>
+        /// <summary>Destination URL for creatives with links</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkUrl { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The path1 property</summary>
+        /// <summary>Display URL path 1 (Microsoft RSA Path1)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path1 { get; set; }
@@ -150,7 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Path1 { get; set; }
 #endif
-        /// <summary>The path2 property</summary>
+        /// <summary>Display URL path 2 (Microsoft RSA Path2)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path2 { get; set; }
@@ -192,9 +192,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url_tags property</summary>
+        /// <summary>Appended URL tracking params (e.g. utm_source=..&amp;utm_medium=..); Meta url_tags, Google tracking template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UrlTags { get; set; }

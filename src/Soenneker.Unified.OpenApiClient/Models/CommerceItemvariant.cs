@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The available_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AvailableAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? RequiresShipping { get; set; }
         /// <summary>The size_unit property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemvariantSizeUnit? SizeUnit { get; set; }
-        /// <summary>The sku property</summary>
+        /// <summary>barcode, UPC, isbn, etc</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku { get; set; }
@@ -146,7 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The total_stock property</summary>
         public double? TotalStock { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The weight property</summary>
         public double? Weight { get; set; }

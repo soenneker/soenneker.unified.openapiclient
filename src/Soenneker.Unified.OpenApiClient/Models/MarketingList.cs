@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyMarketingListAddress Address { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>Date that this list was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,9 +33,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Identifier for this list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Language { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The list&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty? Raw { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SenderPhone { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,9 +111,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>The user who created this list (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

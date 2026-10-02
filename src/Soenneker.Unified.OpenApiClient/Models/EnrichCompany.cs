@@ -23,11 +23,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichCompanyAddress Address { get; set; }
 #endif
-        /// <summary>The alexa_rank property</summary>
+        /// <summary>The Alexa rank of the company</summary>
         public double? AlexaRank { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The crunchbase_url property</summary>
+        /// <summary>The Crunchbase URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CrunchbaseUrl { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CrunchbaseUrl { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The domain property</summary>
+        /// <summary>The webmail domain of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The employees property</summary>
+        /// <summary>The number of employees at the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Employees { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Employees { get; set; }
 #endif
-        /// <summary>The exchange property</summary>
+        /// <summary>The public exchange of the company (eg. NASDAQ)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Exchange { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Exchange { get; set; }
 #endif
-        /// <summary>The facebook_url property</summary>
+        /// <summary>The Facebook URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FacebookUrl { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FacebookUrl { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this company object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The industry property</summary>
+        /// <summary>The industry of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Industry { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
-        /// <summary>The instagram_url property</summary>
+        /// <summary>The Crunchbase URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstagramUrl { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InstagramUrl { get; set; }
 #endif
-        /// <summary>The linkedin_url property</summary>
+        /// <summary>The LinkedIn URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkedinUrl { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LinkedinUrl { get; set; }
 #endif
-        /// <summary>The logo_url property</summary>
+        /// <summary>The URL of the logo of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -115,9 +115,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LogoUrl { get; set; }
 #endif
-        /// <summary>The naics_code property</summary>
+        /// <summary>The NAICS code of the company</summary>
         public double? NaicsCode { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -125,7 +125,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty? Raw { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.EnrichCompanyRawProperty Raw { get; set; }
 #endif
-        /// <summary>The revenue property</summary>
+        /// <summary>The approximate revenue of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Revenue { get; set; }
@@ -141,9 +141,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Revenue { get; set; }
 #endif
-        /// <summary>The sic_code property</summary>
+        /// <summary>The SIC code of the company</summary>
         public double? SicCode { get; set; }
-        /// <summary>The stock property</summary>
+        /// <summary>The stock ticker of the company (eg. AMZN)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Stock { get; set; }
@@ -159,7 +159,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.EnrichTelephone> Telephones { get; set; }
 #endif
-        /// <summary>The twitter_handle property</summary>
+        /// <summary>The twitter handle of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TwitterHandle { get; set; }
@@ -167,7 +167,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TwitterHandle { get; set; }
 #endif
-        /// <summary>The twitter_url property</summary>
+        /// <summary>The twitter URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TwitterUrl { get; set; }
@@ -175,11 +175,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TwitterUrl { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The year_founded property</summary>
+        /// <summary>The year that the company was founded</summary>
         public double? YearFounded { get; set; }
-        /// <summary>The yelp_url property</summary>
+        /// <summary>The Yelp URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YelpUrl { get; set; }
@@ -187,7 +187,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string YelpUrl { get; set; }
 #endif
-        /// <summary>The youtube_url property</summary>
+        /// <summary>The Youtube URL of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YoutubeUrl { get; set; }

@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetPeriod? BudgetPeriod { get; set; }
         /// <summary>The budget_unit property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignBudgetUnit? BudgetUnit { get; set; }
-        /// <summary>The campaign_budget_identifier property</summary>
+        /// <summary>Resource name for existing/shared budget (Google)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignBudgetIdentifier { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignBudgetIdentifier { get; set; }
 #endif
-        /// <summary>The category property</summary>
+        /// <summary>Housing, employment, credit, NONE (Meta)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,9 +48,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The effective_status property</summary>
+        /// <summary>read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignEffectiveStatus? EffectiveStatus { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The frequency_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsCampaignStatus? Status { get; set; }
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The total_spend_amount property</summary>
         public double? TotalSpendAmount { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsCampaign"/> and sets the default values.

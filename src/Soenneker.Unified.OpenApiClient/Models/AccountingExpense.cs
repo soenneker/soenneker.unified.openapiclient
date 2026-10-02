@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingExpense : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The approved_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ApprovedAt { get; set; }
-        /// <summary>The approver_user_id property</summary>
+        /// <summary>references HR employee/user (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApproverUserId { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The exchange_rate property</summary>
+        /// <summary>Exchange rate to the base/home currency at the expense date</summary>
         public double? ExchangeRate { get; set; }
         /// <summary>The external_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,9 +132,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PaymentMethod { get; set; }
 #endif
-        /// <summary>The posted_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PostedAt { get; set; }
-        /// <summary>The project_id property</summary>
+        /// <summary>(reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -152,13 +152,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The reimbursed_amount property</summary>
         public double? ReimbursedAmount { get; set; }
-        /// <summary>The reimbursed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ReimbursedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseStatus? Status { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
-        /// <summary>The taxrate_id property</summary>
+        /// <summary>ref -&gt; AccountingTaxrate applied to the expense</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxrateId { get; set; }
@@ -168,11 +168,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>USER = employee spend; COMPANY = books/purchase expense</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingExpenseType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>references a HR employee/user (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

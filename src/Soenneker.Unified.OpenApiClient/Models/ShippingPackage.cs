@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the package contents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,15 +30,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The height property</summary>
+        /// <summary>Height of the package</summary>
         public double? Height { get; set; }
-        /// <summary>The insured_amount property</summary>
+        /// <summary>Insured value for this package</summary>
         public double? InsuredAmount { get; set; }
-        /// <summary>The length property</summary>
+        /// <summary>Length of the package</summary>
         public double? Length { get; set; }
-        /// <summary>The size_unit property</summary>
+        /// <summary>Unit for dimensions (cm, inch)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageSizeUnit? SizeUnit { get; set; }
-        /// <summary>The tracking_number property</summary>
+        /// <summary>Package-level tracking (for multi-package shipments)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }
@@ -46,13 +46,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TrackingNumber { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Declared value of the package</summary>
         public double? Value { get; set; }
-        /// <summary>The weight property</summary>
+        /// <summary>Weight of the package</summary>
         public double? Weight { get; set; }
-        /// <summary>The weight_unit property</summary>
+        /// <summary>Unit for weight (g, kg, oz, lb)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingPackageWeightUnit? WeightUnit { get; set; }
-        /// <summary>The width property</summary>
+        /// <summary>Width of the package</summary>
         public double? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage"/> and sets the default values.

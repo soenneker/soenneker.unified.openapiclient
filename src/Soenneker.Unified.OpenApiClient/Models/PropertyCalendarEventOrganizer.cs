@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? Required { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizerStatus? Status { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

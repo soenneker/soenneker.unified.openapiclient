@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allocated_at property</summary>
+        /// <summary>Date and time when the payment was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AllocatedAt { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>amount of the payment applied to this object</summary>
         public double? Amount { get; set; }
-        /// <summary>The payment_id property</summary>
+        /// <summary>references a PaymentPayment that was applied to this object (reference to PaymentPayment)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentId { get; set; }

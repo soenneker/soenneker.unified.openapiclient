@@ -14,17 +14,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The click_percentage property</summary>
+        /// <summary>Percentage of total clicks</summary>
         public double? ClickPercentage { get; set; }
-        /// <summary>The last_click_at property</summary>
+        /// <summary>Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastClickAt { get; set; }
-        /// <summary>The total_clicks property</summary>
+        /// <summary>Total clicks on this link</summary>
         public double? TotalClicks { get; set; }
-        /// <summary>The unique_click_percentage property</summary>
+        /// <summary>Percentage of unique clicks</summary>
         public double? UniqueClickPercentage { get; set; }
-        /// <summary>The unique_clicks property</summary>
+        /// <summary>Unique clicks on this link</summary>
         public double? UniqueClicks { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

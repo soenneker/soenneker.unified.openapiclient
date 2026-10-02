@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyHrisPayslipDeductionFrequency
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ONE_TIME")]
         #pragma warning disable CS1591

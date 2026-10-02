@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The application_id property</summary>
+        /// <summary>points to an application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApplicationId { get; set; }
 #endif
-        /// <summary>The closed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ClosedAt { get; set; }
         /// <summary>The close_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CloseReason { get; set; }
 #endif
-        /// <summary>The opened_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? OpenedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsJobOpeningStatus? Status { get; set; }

@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The display property</summary>
+        /// <summary>user name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Display { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Display { get; set; }
 #endif
-        /// <summary>The operation property</summary>
+        /// <summary>ONLY USED ON UPDATES</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberOperation? Operation { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>url to user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ref { get; set; }
@@ -32,9 +32,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Ref { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>NOT STANDARD</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ScimGroupMemberType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>ID of user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

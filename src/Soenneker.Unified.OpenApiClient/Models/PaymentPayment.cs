@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class PaymentPayment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentAllocation> Allocations { get; set; }
 #endif
-        /// <summary>The bill_id property</summary>
+        /// <summary>references AccountingBill</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillId { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The device_id property</summary>
+        /// <summary>POS terminal/register/device (hr device)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId { get; set; }
@@ -88,9 +88,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DeviceId { get; set; }
 #endif
-        /// <summary>The exchange_rate property</summary>
+        /// <summary>Exchange rate to the base/home currency at the payment date</summary>
         public double? ExchangeRate { get; set; }
-        /// <summary>The fee_amount property</summary>
+        /// <summary>processing/processor fee</summary>
         public double? FeeAmount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The invoice_id property</summary>
+        /// <summary>(reference to AccountingInvoice)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceId { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LinkId { get; set; }
 #endif
-        /// <summary>The location_id property</summary>
+        /// <summary>store/site where the payment was taken (commerce_location)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
-        /// <summary>The net_amount property</summary>
+        /// <summary>total_amount minus fee_amount</summary>
         public double? NetAmount { get; set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>reference to an AccountingOrganization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The paid_at property</summary>
+        /// <summary>Date and time the payment was made (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The salesorder_id property</summary>
+        /// <summary>reference to an AccountingSalesorder, e.g. the POS order this payment settled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SalesorderId { get; set; }
@@ -178,7 +178,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentStatus? Status { get; set; }
-        /// <summary>The tender_type property</summary>
+        /// <summary>normalized tender category; the provider&apos;s original label stays in payment_method</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentTenderType? TenderType { get; set; }
         /// <summary>The tip_amount property</summary>
         public double? TipAmount { get; set; }
@@ -186,7 +186,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PaymentPayment"/> and sets the default values.

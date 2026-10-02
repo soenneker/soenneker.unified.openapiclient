@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>
+    /// The original data from the integration&apos;s API
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AccountingBankfeedaccountRawProperty : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

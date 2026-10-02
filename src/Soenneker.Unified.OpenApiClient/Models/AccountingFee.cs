@@ -16,7 +16,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
         public double? Amount { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code, e.g. USD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The original_type property</summary>
+        /// <summary>The provider&apos;s original fee label, e.g. &quot;VAT&quot; or a shipping carrier name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalType { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OriginalType { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Unified fee category</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingFeeType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingFee"/> and sets the default values.

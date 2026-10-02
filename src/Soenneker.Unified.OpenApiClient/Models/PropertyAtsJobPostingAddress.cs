@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The country_code property</summary>
+        /// <summary>Country code for the country, in ISO 3166 A-2 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Regional area of the employee&apos;s address.  For example, in the U.S., the region is the employee&apos;s state; in Canada, the region is the employee’s province.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The region_code property</summary>
+        /// <summary>Short form for the regional area of the employee&apos;s address.   For example, in the U.S., the region code is the two-letter abbreviation for the employee’s state; in Canada, the region is the two-letter abbreviation for the employee&apos;s province.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionCode { get; set; }

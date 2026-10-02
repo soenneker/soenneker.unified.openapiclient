@@ -23,9 +23,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyClubsLocationAddress Address { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this location was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>The group this location is associated with (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GroupId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -41,11 +41,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The latitude property</summary>
+        /// <summary>The latitude</summary>
         public double? Latitude { get; set; }
-        /// <summary>The longitude property</summary>
+        /// <summary>The longitude</summary>
         public double? Longitude { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The location name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsLocationRawProperty? Raw { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsLocationRawProperty Raw { get; set; }
 #endif
-        /// <summary>The telephone property</summary>
+        /// <summary>A contact phone number for the location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Telephone { get; set; }
@@ -69,9 +69,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Telephone { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this location was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>A URL for the location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>&quot;native&quot; registers with the integration, which sends events as they happen. &quot;virtual&quot; checks for changes on &quot;interval&quot;. Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn&apos;t support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum WebhookWebhookType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "virtual")]
         #pragma warning disable CS1591

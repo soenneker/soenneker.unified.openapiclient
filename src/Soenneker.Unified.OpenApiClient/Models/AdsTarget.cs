@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AdsTargetRawProperty Raw { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsTargetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsTarget"/> and sets the default values.

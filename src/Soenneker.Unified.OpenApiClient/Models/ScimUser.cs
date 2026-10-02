@@ -216,7 +216,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string UserName { get; set; }
 #endif
-        /// <summary>The userType property</summary>
+        /// <summary>&apos;Employee&apos;,&apos;Super Admin&apos;, &apos;General Admin&apos;, &apos;Account Manager&apos;, &apos;User Manager&apos;, &apos;Workflow Manager&apos;, &apos;Experience Manager&apos;, &apos;Author&apos;,&apos;Reporter&apos;,&apos;Contractor,&apos;Intern&apos;,&apos;Temp&apos;,&apos;External&apos;,&apos;Unknown&apos;]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserType { get; set; }

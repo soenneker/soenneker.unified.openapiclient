@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent> Content { get; set; }
 #endif
-        /// <summary>The dimension property</summary>
+        /// <summary>256, 512, 1024, and 1536</summary>
         public double? Dimension { get; set; }
-        /// <summary>The embeddings property</summary>
+        /// <summary>JSON string based off of the format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Embeddings { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tokens_used property</summary>
         public double? TokensUsed { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>&apos;SEARCH_DOC&apos; | &apos;SEARCH_QUERY&apos; | &apos;CLUSTERING&apos; | &apos;CLASSIFICATION&apos;;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

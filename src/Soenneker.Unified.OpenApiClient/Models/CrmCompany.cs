@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> ContactIds { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>An array of deal IDs associated with this contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The employees property</summary>
         public double? Employees { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this company object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -109,7 +109,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CrmCompanyRawProperty? Raw { get; set; }
@@ -141,9 +141,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

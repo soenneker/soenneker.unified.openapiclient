@@ -15,17 +15,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bookmark_count property</summary>
+        /// <summary>Number of bookmarks/saves</summary>
         public double? BookmarkCount { get; set; }
-        /// <summary>The comment_count property</summary>
+        /// <summary>Number of comments/replies</summary>
         public double? CommentCount { get; set; }
-        /// <summary>The like_count property</summary>
+        /// <summary>Number of likes/reactions</summary>
         public double? LikeCount { get; set; }
-        /// <summary>The quote_count property</summary>
+        /// <summary>Number of quotes</summary>
         public double? QuoteCount { get; set; }
-        /// <summary>The share_count property</summary>
+        /// <summary>Number of shares/reposts</summary>
         public double? ShareCount { get; set; }
-        /// <summary>The view_count property</summary>
+        /// <summary>Number of views/impressions</summary>
         public double? ViewCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics"/> and sets the default values.

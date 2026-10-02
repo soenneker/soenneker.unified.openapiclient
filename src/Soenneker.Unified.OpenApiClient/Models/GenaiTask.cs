@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agent_id property</summary>
+        /// <summary>id of the genai_agent (the reusable agent/preset configuration) that runs this task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentId { get; set; }
@@ -22,11 +22,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
-        /// <summary>The completed_at property</summary>
+        /// <summary>When the coding agent stopped working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>The failure description (when the status is FAILED).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The instructions property</summary>
+        /// <summary>The natural-language instructions given to the coding agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Instructions { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ModelId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>A short human-readable title for the coding agent task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>id of the genai_organization (the organization or execution environment) that this task runs under.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The pullrequest_url property</summary>
+        /// <summary>The pull/merge request that the coding agent opened for its work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PullrequestUrl { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.GenaiTaskRawProperty Raw { get; set; }
 #endif
-        /// <summary>The repo_url property</summary>
+        /// <summary>The git repository that the coding agent works in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoUrl { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RepoUrl { get; set; }
 #endif
-        /// <summary>The source_branch_identifier property</summary>
+        /// <summary>The name of the branch that the coding agent starts its work from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceBranchIdentifier { get; set; }
@@ -120,11 +120,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SourceBranchIdentifier { get; set; }
 #endif
-        /// <summary>The started_at property</summary>
+        /// <summary>When the coding agent started working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.GenaiTaskStatus? Status { get; set; }
-        /// <summary>The summary property</summary>
+        /// <summary>The coding agent&apos;s summary of the work that it performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -132,7 +132,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
-        /// <summary>The target_branch_identifier property</summary>
+        /// <summary>The name of the branch that the coding agent pushed its work to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetBranchIdentifier { get; set; }
@@ -142,9 +142,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tokens_used property</summary>
         public double? TokensUsed { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -152,7 +152,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The web_url property</summary>
+        /// <summary>The provider&apos;s own web page for this task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl { get; set; }

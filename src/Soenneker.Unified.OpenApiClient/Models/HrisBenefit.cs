@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The company_id property</summary>
+        /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The coverage_level property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel? CoverageLevel { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>e.g. &quot;Company 401(k) retirement plan&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -43,13 +43,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The employer_contribution_amount property</summary>
+        /// <summary>percentage or money</summary>
         public double? EmployerContributionAmount { get; set; }
-        /// <summary>The employer_contribution_max_amount property</summary>
+        /// <summary>always money</summary>
         public double? EmployerContributionMaxAmount { get; set; }
         /// <summary>The employer_contribution_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType? EmployerContributionType { get; set; }
-        /// <summary>The frequency property</summary>
+        /// <summary>Frequency that costs accrue for this benefit. For insurance/benefits, usually &quot;MONTHLY&quot;. For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency? Frequency { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>e.g. &quot;401(k) Plan&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -77,11 +77,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty Raw { get; set; }
 #endif
-        /// <summary>The tax property</summary>
+        /// <summary>Tax describes the tax treatment of the benefit</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax? Tax { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit"/> and sets the default values.

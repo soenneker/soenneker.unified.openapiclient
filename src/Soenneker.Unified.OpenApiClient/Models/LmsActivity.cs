@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AssignedGrade { get; set; }
 #endif
-        /// <summary>The completed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The content_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContentId { get; set; }
 #endif
-        /// <summary>The course_id property</summary>
+        /// <summary>For providers that track at course level (e.g., Learnupon enrollments) (reference to Course)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CourseId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CourseId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The duration_minutes property</summary>
         public double? DurationMinutes { get; set; }
@@ -64,9 +64,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty Raw { get; set; }
 #endif
-        /// <summary>The started_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The student_id property</summary>
+        /// <summary>(reference to LmsStudent)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StudentId { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string StudentId { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsActivity"/> and sets the default values.

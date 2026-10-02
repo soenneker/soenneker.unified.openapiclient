@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The consent status for this purpose</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CdpConsentStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "GRANTED")]
         #pragma warning disable CS1591

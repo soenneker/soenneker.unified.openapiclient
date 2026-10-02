@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.CdpMetadataExtraData ExtraData { get; set; }
 #endif
-        /// <summary>The format property</summary>
+        /// <summary>The data type of the attribute value</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpMetadataFormat? Format { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The namespace property</summary>
+        /// <summary>The scope or origin of the attribute (eg. computed, event, visitor)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Namespace { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Namespace { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The attribute/trait key (eg. lifetime_value)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The attribute/trait value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpMetadataValue? Value { get; set; }

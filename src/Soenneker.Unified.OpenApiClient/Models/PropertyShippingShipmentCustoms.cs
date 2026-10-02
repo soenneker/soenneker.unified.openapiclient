@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Customs declared value</summary>
         public double? Amount { get; set; }
         /// <summary>The contents_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType? ContentsType { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Explanation of contents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The non_delivery_option property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption? NonDeliveryOption { get; set; }
-        /// <summary>The recipient_eori property</summary>
+        /// <summary>Importer EORI number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientEori { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RecipientEori { get; set; }
 #endif
-        /// <summary>The recipient_tax_number property</summary>
+        /// <summary>Importer tax ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientTaxNumber { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Restrictions { get; set; }
 #endif
-        /// <summary>The shipper_eori property</summary>
+        /// <summary>Exporter EORI number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipperEori { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ShipperEori { get; set; }
 #endif
-        /// <summary>The shipper_tax_number property</summary>
+        /// <summary>Exporter tax ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipperTaxNumber { get; set; }

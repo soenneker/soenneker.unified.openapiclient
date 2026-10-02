@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi Api { get; set; }
 #endif
-        /// <summary>The api_docs_url property</summary>
+        /// <summary>The URL of the integration&apos;s API documentation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiDocsUrl { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApiDocsUrl { get; set; }
 #endif
-        /// <summary>The beta property</summary>
+        /// <summary>This integration is new and is still considered &quot;beta&quot;</summary>
         public bool? Beta { get; set; }
         /// <summary>The categories of support solutions that this integration has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem?> Categories { get; set; }
 #endif
-        /// <summary>The color property</summary>
+        /// <summary>button background color for AUTH</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>Date that this integration was supported (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The fa_icon property</summary>
+        /// <summary>font-awesome icon</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FaIcon { get; set; }
@@ -77,13 +77,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The featured property</summary>
         public bool? Featured { get; set; }
-        /// <summary>The in_progress property</summary>
+        /// <summary>If this integration is not yet available as it is currently being built by unified.to</summary>
         public bool? InProgress { get; set; }
-        /// <summary>The is_active property</summary>
+        /// <summary>Is this integration active in this workspace</summary>
         public bool? IsActive { get; set; }
         /// <summary>The is_hidden property</summary>
         public bool? IsHidden { get; set; }
-        /// <summary>The logo_url property</summary>
+        /// <summary>The URL of the integration&apos;s logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LogoUrl { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The integration&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateLimitDescription { get; set; }
 #endif
-        /// <summary>The requires_cname property</summary>
+        /// <summary>OAuth requires a custom API domain (CNAME) for provider verification</summary>
         public bool? RequiresCname { get; set; }
         /// <summary>The saml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,9 +143,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSupportProperty Support { get; set; }
 #endif
-        /// <summary>The tested_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? TestedAt { get; set; }
-        /// <summary>The text_color property</summary>
+        /// <summary>text color for AUTH</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TextColor { get; set; }
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> TokenNames { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Identifier for this integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -177,7 +177,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>YYYY-MM-DD (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get; set; }
@@ -185,7 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string UpdatedAt { get; set; }
 #endif
-        /// <summary>The web_url property</summary>
+        /// <summary>URL for the software vendor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl { get; set; }

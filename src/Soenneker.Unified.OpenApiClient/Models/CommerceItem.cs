@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class CommerceItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>Reference to Accounting Account (reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceReference> Collections { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The duration property</summary>
+        /// <summary>minutes</summary>
         public double? Duration { get; set; }
         /// <summary>The global_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? IsTaxable { get; set; }
         /// <summary>The is_visible property</summary>
         public bool? IsVisible { get; set; }
-        /// <summary>The location_id property</summary>
+        /// <summary>(reference to CommerceLocation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -156,7 +156,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>The taxrate_id property</summary>
+        /// <summary>references AccountingTaxrate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxrateId { get; set; }
@@ -166,7 +166,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The total_stock property</summary>
         public double? TotalStock { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>product, service, digital-download, ...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -174,7 +174,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The vendor_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

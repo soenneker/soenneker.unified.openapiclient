@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingLineitem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -38,11 +38,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
-        /// <summary>The exchange_rate property</summary>
+        /// <summary>The exchange rate applied to this line, for multi-currency documents</summary>
         public double? ExchangeRate { get; set; }
         /// <summary>The fees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_billable property</summary>
+        /// <summary>True when the line is rebillable to a customer</summary>
         public bool? IsBillable { get; set; }
         /// <summary>The item_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemDescription { get; set; }
 #endif
-        /// <summary>The item_id property</summary>
+        /// <summary>(reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>ref -&gt; AccountingProject; the project this line is coded to (reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The refund_amount property</summary>
         public double? RefundAmount { get; set; }
-        /// <summary>The refunded_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? RefundedAt { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
@@ -140,13 +140,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaxrateId { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>unit_quantity * unit_amount + tax_amount</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The unit_amount property</summary>
         public double? UnitAmount { get; set; }
         /// <summary>The unit_quantity property</summary>
         public double? UnitQuantity { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem"/> and sets the default values.

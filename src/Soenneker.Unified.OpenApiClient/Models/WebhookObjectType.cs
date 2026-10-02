@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The object to return (eg. CRM &quot;contact&quot;)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum WebhookObjectType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "accounting_account")]
         #pragma warning disable CS1591

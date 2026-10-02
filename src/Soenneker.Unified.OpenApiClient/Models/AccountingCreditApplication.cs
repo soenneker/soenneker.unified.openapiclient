@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The amount of credit applied to this object</summary>
         public double? Amount { get; set; }
-        /// <summary>The applied_at property</summary>
+        /// <summary>Date and time when the credit was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AppliedAt { get; set; }
-        /// <summary>The object_id property</summary>
+        /// <summary>The id of the object this credit was applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The object_type property</summary>
+        /// <summary>The type of object this credit was applied to</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplicationObjectType? ObjectType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditApplication"/> and sets the default values.

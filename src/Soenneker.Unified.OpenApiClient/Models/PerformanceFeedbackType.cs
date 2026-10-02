@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>praise/recognition, constructive feedback, or a response to a feedback request</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PerformanceFeedbackType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PRAISE")]
         #pragma warning disable CS1591

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>normalized tender category; the provider&apos;s original label stays in payment_method</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PaymentPaymentTenderType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CARD")]
         #pragma warning disable CS1591

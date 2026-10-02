@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this event object was ingested (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this event object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The specific event name (eg. &quot;Product Purchased&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -48,9 +48,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The occurred_at property</summary>
+        /// <summary>When the event actually happened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>The profile_id property</summary>
+        /// <summary>The profile this event is associated with; points to CdpProfile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileId { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpEventRawProperty? Raw { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.CdpEventRawProperty Raw { get; set; }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The source that produced this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The source_id property</summary>
+        /// <summary>The cdp_source this event originated from; points to CdpSource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The unified structural category of the event</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpEventType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpEvent"/> and sets the default values.

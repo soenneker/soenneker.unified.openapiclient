@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The author_avatar_url property</summary>
+        /// <summary>Profile image URL of the reviewer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorAvatarUrl { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AuthorAvatarUrl { get; set; }
 #endif
-        /// <summary>The author_location property</summary>
+        /// <summary>Free-text location of the reviewer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorLocation { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AuthorLocation { get; set; }
 #endif
-        /// <summary>The author_name property</summary>
+        /// <summary>Display name of the reviewer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorName { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AuthorName { get; set; }
 #endif
-        /// <summary>The content property</summary>
+        /// <summary>The review text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -46,9 +46,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>When the review was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the review</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The profile_id property</summary>
+        /// <summary>The social profile (page/handle/listing) being reviewed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileId { get; set; }
@@ -64,9 +64,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileId { get; set; }
 #endif
-        /// <summary>The rating property</summary>
+        /// <summary>Star rating, typically 1-5</summary>
         public double? Rating { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.SocialReviewRawProperty? Raw { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertySocialReviewReply Reply { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Optional review title/headline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -90,9 +90,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>When the review was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>Public permalink to the review</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

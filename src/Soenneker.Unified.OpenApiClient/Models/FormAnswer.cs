@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> FileIds { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Can be string, number, boolean, array, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

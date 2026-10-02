@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this fulfillment line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The item_id property</summary>
+        /// <summary>Reference to the CommerceItem being fulfilled (reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
-        /// <summary>The item_name property</summary>
+        /// <summary>Item name (for display)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemName { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemName { get; set; }
 #endif
-        /// <summary>The item_variant_id property</summary>
+        /// <summary>Reference to the CommerceItemvariant being fulfilled (reference to CommerceCommerceItemvariant)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemVariantId { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemVariantId { get; set; }
 #endif
-        /// <summary>The order_lineitem_id property</summary>
+        /// <summary>The order line being fulfilled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderLineitemId { get; set; }
@@ -54,9 +54,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrderLineitemId { get; set; }
 #endif
-        /// <summary>The quantity property</summary>
+        /// <summary>Units fulfilled on this line</summary>
         public double? Quantity { get; set; }
-        /// <summary>The sku property</summary>
+        /// <summary>Item SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku { get; set; }

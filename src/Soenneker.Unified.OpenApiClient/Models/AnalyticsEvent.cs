@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The property_id property</summary>
+        /// <summary>points to AnalyticsProperty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyId { get; set; }
@@ -146,7 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The session_id property</summary>
+        /// <summary>points to AnalyticsSession</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SessionId { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The utm_campaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,7 +198,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The value property</summary>
         public double? Value { get; set; }
-        /// <summary>The visitor_id property</summary>
+        /// <summary>points to AnalyticsVisitor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VisitorId { get; set; }

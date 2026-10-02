@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrateComponent> Components { get; set; }
 #endif
-        /// <summary>The country property</summary>
+        /// <summary>Jurisdiction country</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The effective_rate property</summary>
+        /// <summary>Net effective rate in %, where it differs from the nominal rate</summary>
         public double? EffectiveRate { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The is_compound property</summary>
+        /// <summary>True when the rate stacks on top of other taxes</summary>
         public bool? IsCompound { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The rate property</summary>
+        /// <summary>%</summary>
         public double? Rate { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrateRawProperty Raw { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Jurisdiction state / province</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -96,11 +96,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The total_rate property</summary>
+        /// <summary>Sum of all components, in %</summary>
         public double? TotalRate { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Whether the rate applies to sales, purchases, or both</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrateType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate"/> and sets the default values.

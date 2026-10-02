@@ -34,9 +34,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The balance_amount property</summary>
         public double? BalanceAmount { get; set; }
-        /// <summary>The cancelled_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CancelledAt { get; set; }
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -44,9 +44,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The creditmemo_number property</summary>
+        /// <summary>External identifier for this invoice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreditmemoNumber { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
-        /// <summary>The due_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? DueAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The invoice_id property</summary>
+        /// <summary>(reference to AccountingInvoice)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceId { get; set; }
@@ -116,11 +116,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The paid_amount property</summary>
         public double? PaidAmount { get; set; }
-        /// <summary>The paid_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PaidAt { get; set; }
-        /// <summary>The payment_collection_method property</summary>
+        /// <summary>When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingCreditmemoPaymentCollectionMethod? PaymentCollectionMethod { get; set; }
-        /// <summary>The posted_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PostedAt { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The refund_amount property</summary>
         public double? RefundAmount { get; set; }
-        /// <summary>The refunded_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? RefundedAt { get; set; }
         /// <summary>The refund_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -150,9 +150,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? TaxAmount { get; set; }
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The public URL for the invoice to send to a customer to view or pay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

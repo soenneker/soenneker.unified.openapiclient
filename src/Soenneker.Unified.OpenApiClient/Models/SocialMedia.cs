@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alt property</summary>
+        /// <summary>Accessibility caption / alt text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Alt { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Alt { get; set; }
 #endif
-        /// <summary>The height property</summary>
+        /// <summary>Media height in pixels</summary>
         public double? Height { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Provider media id, when the media is individually addressable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,11 +32,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The position property</summary>
+        /// <summary>Ordering of the media within the post; 1 is the first</summary>
         public double? Position { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Type of media</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SocialMediaType? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>URL of the media asset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The width property</summary>
+        /// <summary>Media width in pixels</summary>
         public double? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMedia"/> and sets the default values.

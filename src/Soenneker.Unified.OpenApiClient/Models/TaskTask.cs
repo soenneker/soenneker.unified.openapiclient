@@ -30,11 +30,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> AttachmentIds { get; set; }
 #endif
-        /// <summary>The completed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The creator_user_id property</summary>
+        /// <summary>The user who created this task (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorUserId { get; set; }
@@ -42,9 +42,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CreatorUserId { get; set; }
 #endif
-        /// <summary>The due_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? DueAt { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>Scheduled/planned end of the task (distinct from due_at and completed_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The follower_user_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,9 +112,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Priority { get; set; }
 #endif
-        /// <summary>The progress property</summary>
+        /// <summary>0-100</summary>
         public double? Progress { get; set; }
-        /// <summary>The project_id property</summary>
+        /// <summary>(reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.TaskTaskRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>Scheduled/planned start of the task (distinct from created_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.TaskTaskStatus? Status { get; set; }
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TimeSpentUnit { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The task/issue type name (e.g. Jira issue type).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -162,7 +162,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

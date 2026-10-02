@@ -15,11 +15,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The balance property</summary>
+        /// <summary>Balance of the account.</summary>
         public double? Balance { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>Date and time when the Account was created, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>Account’s currency, in ISO 4217 format (e.g. U.S. dollars is USD)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The customer_defined_code property</summary>
+        /// <summary>Identifier for tracking and categorizing accounts for reporting or analysis purposes that is defined by the end-customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerDefinedCode { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CustomerDefinedCode { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Account description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Identifier used by the SaaS application to uniquely identify the Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -51,9 +51,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_payable property</summary>
+        /// <summary>True if the account is an “accounts payable” account</summary>
         public bool? IsPayable { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Account name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The parent_id property</summary>
+        /// <summary>The parent account ID for this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ParentId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The original data from the integration&apos;s API</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty? Raw { get; set; }
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountRawProperty Raw { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Account status, such as ACTIVE or ARCHIVED</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountStatus? Status { get; set; }
         /// <summary>The taxonomy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,9 +95,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountTaxonomy> Taxonomy { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Account type, such as BANK. EQUITY, ASSET, ...</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingAccountType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>Date and time when the Account was last updated, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingAccount"/> and sets the default values.

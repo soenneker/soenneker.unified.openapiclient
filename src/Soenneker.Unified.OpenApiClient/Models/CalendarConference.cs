@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConferenceIdentifier { get; set; }
 #endif
-        /// <summary>The country_code property</summary>
+        /// <summary>ISO 2-digit country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ParticipantAccessCode { get; set; }
 #endif
-        /// <summary>The region_code property</summary>
+        /// <summary>ISO 2-digit region code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionCode { get; set; }

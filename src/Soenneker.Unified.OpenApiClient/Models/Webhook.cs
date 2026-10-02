@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The checked_at property</summary>
+        /// <summary>Read-only. The time Unified.to last recorded a check on this webhook. Behaviour varies by webhook implementation, so don&apos;t use this field to tell whether a webhook is still running. Use is_healthy, and subscribe to WEBHOOK_UNHEALTHY on the notifications webhook, to monitor health. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CheckedAt { get; set; }
         /// <summary>The connection_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The db_name_prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Environment { get; set; }
 #endif
-        /// <summary>The event property</summary>
+        /// <summary>The event to subscribe to. &quot;deleted&quot; is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration&apos;s Feature Support tab.</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookEvent? Event { get; set; }
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookFilters Filters { get; set; }
 #endif
-        /// <summary>The hook_url property</summary>
+        /// <summary>The URL of the webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HookUrl { get; set; }
@@ -103,15 +103,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string IntegrationType { get; set; }
 #endif
-        /// <summary>The interval property</summary>
+        /// <summary>Virtual webhooks only. How often (in minutes) Unified.to checks for new or updated records. Minimum 1 on paid plans, 60 on free. Ignored for native webhooks.</summary>
         public double? Interval { get; set; }
         /// <summary>The is_beta property</summary>
         public bool? IsBeta { get; set; }
-        /// <summary>The is_healthy property</summary>
+        /// <summary>Read-only. True while the webhook can operate or recover; a transient failure may still be retrying. False after retries are exhausted or a non-retryable failure such as broken connection auth. Cannot be reset; recreate the webhook.</summary>
         public bool? IsHealthy { get; set; }
         /// <summary>The is_paused property</summary>
         public bool? IsPaused { get; set; }
-        /// <summary>The object_type property</summary>
+        /// <summary>The object to return (eg. CRM &quot;contact&quot;)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookObjectType? ObjectType { get; set; }
         /// <summary>The page_max_limit property</summary>
         public double? PageMaxLimit { get; set; }
@@ -123,11 +123,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Runs { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The webhook_type property</summary>
+        /// <summary>&quot;native&quot; registers with the integration, which sends events as they happen. &quot;virtual&quot; checks for changes on &quot;interval&quot;. Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn&apos;t support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.WebhookWebhookType? WebhookType { get; set; }
-        /// <summary>The workspace_id property</summary>
+        /// <summary>(reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

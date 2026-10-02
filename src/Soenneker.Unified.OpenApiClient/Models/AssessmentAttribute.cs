@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The reference property</summary>
+        /// <summary>For SUB_RESULT type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -34,11 +34,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? ScoreMax { get; set; }
         /// <summary>The score_value property</summary>
         public double? ScoreValue { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>For SUB_RESULT type</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeStatus? Status { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttributeType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>For TEXT and NUMBER types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

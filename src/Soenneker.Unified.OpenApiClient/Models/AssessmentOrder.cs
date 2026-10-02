@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The application_id property</summary>
+        /// <summary>ATS application ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApplicationId { get; set; }
 #endif
-        /// <summary>The candidate_id property</summary>
+        /// <summary>ATS candidate ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CandidateId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CandidateId { get; set; }
 #endif
-        /// <summary>The company_id property</summary>
+        /// <summary>ATS company ID (reference to AtsCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyId { get; set; }
 #endif
-        /// <summary>The connection_id property</summary>
+        /// <summary>Connection ID that this order belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionId { get; set; }
@@ -46,9 +46,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The employee_id property</summary>
+        /// <summary>ATS employee ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeId { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The job_id property</summary>
+        /// <summary>ATS job ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobId { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
-        /// <summary>The package_id property</summary>
+        /// <summary>Assessment package ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PackageId { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAddress> ProfileAddresses { get; set; }
 #endif
-        /// <summary>The profile_date_of_birth property</summary>
+        /// <summary>YYYY-MM-DD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileDateOfBirth { get; set; }
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The profile_gender property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderProfileGender? ProfileGender { get; set; }
-        /// <summary>The profile_ip_address property</summary>
+        /// <summary>XXX.XXX.XXX.XXX</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileIpAddress { get; set; }
@@ -186,7 +186,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderRawProperty Raw { get; set; }
 #endif
-        /// <summary>The reference property</summary>
+        /// <summary>ATS-specific reference ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -202,7 +202,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAttribute> ResponseAttributes { get; set; }
 #endif
-        /// <summary>The response_completed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseCompletedAt { get; set; }
         /// <summary>The response_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,13 +220,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> ResponseDownloadUrls { get; set; }
 #endif
-        /// <summary>The response_expires_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseExpiresAt { get; set; }
-        /// <summary>The response_issued_at property</summary>
+        /// <summary>Datetime that assessment was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseIssuedAt { get; set; }
-        /// <summary>The response_max_score property</summary>
+        /// <summary>Maximum possible score</summary>
         public double? ResponseMaxScore { get; set; }
-        /// <summary>The response_redirect_url property</summary>
+        /// <summary>URL to redirect the user to complete assessment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResponseRedirectUrl { get; set; }
@@ -234,7 +234,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ResponseRedirectUrl { get; set; }
 #endif
-        /// <summary>The response_score property</summary>
+        /// <summary>Assessment score (e.g., 0-100)</summary>
         public double? ResponseScore { get; set; }
         /// <summary>The response_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -246,7 +246,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The response_status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderResponseStatus? ResponseStatus { get; set; }
-        /// <summary>The response_url property</summary>
+        /// <summary>URL to view detailed results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResponseUrl { get; set; }
@@ -256,7 +256,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderStatus? Status { get; set; }
-        /// <summary>The target_url property</summary>
+        /// <summary>URL to redirect user to after assessment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl { get; set; }
@@ -264,9 +264,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TargetUrl { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The webhook_id property</summary>
+        /// <summary>Webhook ID that this order belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookId { get; set; }
@@ -274,7 +274,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string WebhookId { get; set; }
 #endif
-        /// <summary>The workspace_id property</summary>
+        /// <summary>Workspace ID that this order belongs to (reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

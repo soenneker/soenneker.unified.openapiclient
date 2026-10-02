@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum VerificationRequestResponseStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "COMPLETED")]
         #pragma warning disable CS1591

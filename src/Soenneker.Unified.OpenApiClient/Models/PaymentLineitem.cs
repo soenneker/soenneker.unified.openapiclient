@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class PaymentLineitem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ItemDescription { get; set; }
 #endif
-        /// <summary>The item_id property</summary>
+        /// <summary>(reference to CommerceItem)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }
@@ -74,9 +74,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The refund_amount property</summary>
+        /// <summary>new field</summary>
         public double? RefundAmount { get; set; }
-        /// <summary>The refunded_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? RefundedAt { get; set; }
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? UnitAmount { get; set; }
         /// <summary>The unit_quantity property</summary>
         public double? UnitQuantity { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PaymentLineitem"/> and sets the default values.

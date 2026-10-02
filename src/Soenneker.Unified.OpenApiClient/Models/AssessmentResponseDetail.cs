@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? IsFailedReason { get; set; }
         /// <summary>The is_private property</summary>
         public bool? IsPrivate { get; set; }
-        /// <summary>The parameter_id property</summary>
+        /// <summary>In reference to the parameter input</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParameterId { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingTransaction : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionContact> Contacts { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CustomerMessage { get; set; }
 #endif
-        /// <summary>The exchange_rate property</summary>
+        /// <summary>Exchange rate to the base/home currency at the transaction date</summary>
         public double? ExchangeRate { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PaymentTerms { get; set; }
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>(reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -138,17 +138,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SplitAccountId { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Posting state of the transaction</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionStatus? Status { get; set; }
         /// <summary>The sub_total_amount property</summary>
         public double? SubTotalAmount { get; set; }
-        /// <summary>The tax_amount property</summary>
+        /// <summary>negative for CREDIT, positive for DEBIT</summary>
         public double? TaxAmount { get; set; }
-        /// <summary>The total_amount property</summary>
+        /// <summary>negative for CREDIT, positive for DEBIT</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The transaction_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? TransactionAt { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>eg. CreditCardCharge, Check, Invoice, ReceivePayment, JournalEntry, Bill, CreditCardCredit, VendorCredit, Credit, BillPaymentCheck, BillPaymentCreditCard, Charge, Transfer, Deposit, BANK_DEPOSIT, BANK_TRANSFER, Statement, BillableCharge, TimeActivity, CashPurchase, SalesReceipt, CreditMemo, CreditRefund, Estimate, InventoryQuantityAdjustment, PurchaseOrder, GlobalTaxPayment, GlobalTaxAdjustment, Service Tax Refund, Service Tax Gross Adjustment, Service Tax Reversal, Service Tax Defer, Service Tax Partial Utilisation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -156,7 +156,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingTransaction"/> and sets the default values.

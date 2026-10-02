@@ -16,7 +16,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost_amount property</summary>
         public double? CostAmount { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The processing_time property</summary>
+        /// <summary>Processing time in milliseconds</summary>
         public double? ProcessingTime { get; set; }
         /// <summary>Countryregion codes where this package is available ({country}-{state} or {country})</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

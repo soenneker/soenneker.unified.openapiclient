@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingQuote : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accepted_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AcceptedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionContact> Contacts { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,9 +50,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The currency_rate property</summary>
+        /// <summary>exchange rate to the organization&apos;s base currency</summary>
         public double? CurrencyRate { get; set; }
-        /// <summary>The customer_message property</summary>
+        /// <summary>customer-visible message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerMessage { get; set; }
@@ -60,13 +60,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CustomerMessage { get; set; }
 #endif
-        /// <summary>The declined_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? DeclinedAt { get; set; }
         /// <summary>The discount_amount property</summary>
         public double? DiscountAmount { get; set; }
-        /// <summary>The expires_at property</summary>
+        /// <summary>Xero ExpiryDate, QBO ExpirationDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>points to a HRIS Group (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The invoice_id property</summary>
+        /// <summary>populated once the quote is converted to an invoice; left null when the source cannot supply it (reference to AccountingInvoice)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceId { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InvoiceId { get; set; }
 #endif
-        /// <summary>The issued_at property</summary>
+        /// <summary>Xero Date, QBO TxnDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? IssuedAt { get; set; }
         /// <summary>The lineitems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem> Lineitems { get; set; }
 #endif
-        /// <summary>The memo property</summary>
+        /// <summary>internal note, not customer-visible</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Memo { get; set; }
@@ -124,9 +124,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The payment_terms property</summary>
+        /// <summary>unified payment terms enum, as on accounting_invoice / accounting_bill</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingQuotePaymentTerms? PaymentTerms { get; set; }
-        /// <summary>The project_id property</summary>
+        /// <summary>points to an AccountingProject (accounting costing project) (reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -134,7 +134,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The quote_number property</summary>
+        /// <summary>External identifier for this quote (Xero QuoteNumber, QBO DocNumber, NetSuite tranId)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QuoteNumber { get; set; }
@@ -150,7 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingQuoteRawProperty Raw { get; set; }
 #endif
-        /// <summary>The reference property</summary>
+        /// <summary>customer-side reference / PO number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -158,13 +158,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The sent_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>where EXPIRED is derived (expires_at &lt; now), the source status is preserved in raw</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingQuoteStatus? Status { get; set; }
         /// <summary>The sub_total_amount property</summary>
         public double? SubTotalAmount { get; set; }
-        /// <summary>The summary property</summary>
+        /// <summary>longer summary (Xero Summary, max 3000)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -174,9 +174,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
-        /// <summary>The tax_mode property</summary>
+        /// <summary>INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingQuoteTaxMode? TaxMode { get; set; }
-        /// <summary>The title property</summary>
+        /// <summary>short title (Xero Title, max 100)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -186,9 +186,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The total_amount property</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>public online-quote link where exposed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

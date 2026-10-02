@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this signatory was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The decline_reason property</summary>
+        /// <summary>Reason for declining (if status is DECLINED)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeclineReason { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DeclineReason { get; set; }
 #endif
-        /// <summary>The document_id property</summary>
+        /// <summary>Parent signing document; points to SigningDocument</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DocumentId { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DocumentId { get; set; }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>Email address of the signatory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this signatory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Full name of the signatory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -56,9 +56,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>Signing order (1, 2, 3...)</summary>
         public double? Order { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty? Raw { get; set; }
@@ -66,13 +66,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty Raw { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>Role of the signatory</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRole? Role { get; set; }
-        /// <summary>The signed_at property</summary>
+        /// <summary>When this signatory signed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SignedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>Current status of this signatory</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryStatus? Status { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this signatory was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.SigningSignatory"/> and sets the default values.

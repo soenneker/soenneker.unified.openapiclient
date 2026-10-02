@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Account type, such as BANK. EQUITY, ASSET, ...</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AccountingAccountType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ACCOUNTS_PAYABLE")]
         #pragma warning disable CS1591

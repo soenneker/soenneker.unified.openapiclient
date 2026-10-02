@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The primary sport of the group</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ClubsGroupSportType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "RUNNING")]
         #pragma warning disable CS1591

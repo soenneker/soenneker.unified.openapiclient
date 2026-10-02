@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisAttendanceAddress Address { get; set; }
 #endif
-        /// <summary>The approved_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ApprovedAt { get; set; }
-        /// <summary>The approver_user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApproverUserId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceBreak> Breaks { get; set; }
 #endif
-        /// <summary>The company_id property</summary>
+        /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -48,9 +48,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>pairs with hourly_rate and tip amounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -58,9 +58,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The declared_tips_amount property</summary>
+        /// <summary>cash tips declared by the employee for this attendance record</summary>
         public double? DeclaredTipsAmount { get; set; }
-        /// <summary>The employee_user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeUserId { get; set; }
@@ -68,9 +68,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string EmployeeUserId { get; set; }
 #endif
-        /// <summary>The end_at property</summary>
+        /// <summary>clock-out (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>department, team, etc. (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The hourly_rate property</summary>
         public double? HourlyRate { get; set; }
-        /// <summary>The hours property</summary>
+        /// <summary>worked hours</summary>
         public double? Hours { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobName { get; set; }
 #endif
-        /// <summary>The location_id property</summary>
+        /// <summary>(reference to HrisLocation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
-        /// <summary>The non_cash_tips_amount property</summary>
+        /// <summary>card/non-cash tips attributed to this attendance record</summary>
         public double? NonCashTipsAmount { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,11 +116,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>clock-in (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceStatus? Status { get; set; }
-        /// <summary>The timeshift_id property</summary>
+        /// <summary>the scheduled hris_timeshift this attendance record fulfils</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeshiftId { get; set; }
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisAttendance"/> and sets the default values.

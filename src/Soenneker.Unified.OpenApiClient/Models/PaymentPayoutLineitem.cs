@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Gross amount of this line</summary>
         public double? Amount { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code of the line amount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -24,11 +24,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The fee_amount property</summary>
+        /// <summary>Processor fee attributed to this line</summary>
         public double? FeeAmount { get; set; }
-        /// <summary>The net_amount property</summary>
+        /// <summary>amount minus fee_amount</summary>
         public double? NetAmount { get; set; }
-        /// <summary>The object_id property</summary>
+        /// <summary>id of the settled object -- a PaymentPayment or PaymentRefund for PAYMENT / REFUND lines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The object_type property</summary>
+        /// <summary>What this payout line settles</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitemObjectType? ObjectType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem"/> and sets the default values.

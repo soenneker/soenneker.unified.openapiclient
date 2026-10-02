@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The carrier_id property</summary>
+        /// <summary>Reference to the carrier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress FromAddress { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this rate object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -70,9 +70,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRawProperty Raw { get; set; }
 #endif
-        /// <summary>The ship_by_at property</summary>
+        /// <summary>Latest date to ship (from order) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ShipByAt { get; set; }
-        /// <summary>The shipment_id property</summary>
+        /// <summary>Reference to the shipping object (if rate is for existing shipment)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipmentId { get; set; }

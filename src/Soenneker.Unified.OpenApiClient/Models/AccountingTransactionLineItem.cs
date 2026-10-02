@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingTransactionLineItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ObjectType { get; set; }
 #endif
-        /// <summary>The taxrate_id property</summary>
+        /// <summary>ref -&gt; AccountingTaxrate applied to the line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxrateId { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaxrateId { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>will be a positive value for a debit and negative for a credit</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The unit_amount property</summary>
         public double? UnitAmount { get; set; }

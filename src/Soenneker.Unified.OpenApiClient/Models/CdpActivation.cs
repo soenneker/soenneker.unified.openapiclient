@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this activation object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The destination_id property</summary>
+        /// <summary>The cdp_destination the data is sent to; points to CdpDestination</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationId { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DestinationId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this activation object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,11 +32,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_enabled property</summary>
+        /// <summary>Whether the activation is active/enabled</summary>
         public bool? IsEnabled { get; set; }
-        /// <summary>The last_run_at property</summary>
+        /// <summary>When the activation last ran (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastRunAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the activation/sync job</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this activation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpActivationRawProperty? Raw { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.CdpActivationRawProperty Raw { get; set; }
 #endif
-        /// <summary>The schedule property</summary>
+        /// <summary>The activation schedule or mode (eg. cron, interval, realtime, batch)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Schedule { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Schedule { get; set; }
 #endif
-        /// <summary>The segment_id property</summary>
+        /// <summary>The cdp_segment being activated; points to CdpSegment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SegmentId { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SegmentId { get; set; }
 #endif
-        /// <summary>The source_id property</summary>
+        /// <summary>The cdp_source the data originates from; points to CdpSource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -76,9 +76,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the activation</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpActivationStatus? Status { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this activation object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpActivation"/> and sets the default values.

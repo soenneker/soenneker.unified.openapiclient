@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comment property</summary>
+        /// <summary>the overall/summary comment of this review</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -22,11 +22,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The completed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The cycle_id property</summary>
+        /// <summary>pointer to the Performance Cycle object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CycleId { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_acknowledged property</summary>
+        /// <summary>whether the reviewee acknowledged this review</summary>
         public bool? IsAcknowledged { get; set; }
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,9 +52,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewQuestion> Questions { get; set; }
 #endif
-        /// <summary>The rating property</summary>
+        /// <summary>the overall rating/score of this review</summary>
         public double? Rating { get; set; }
-        /// <summary>The rating_description property</summary>
+        /// <summary>label of the rating on the provider&apos;s scale (e.g. &quot;Exceeds expectations&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RatingDescription { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RatingDescription { get; set; }
 #endif
-        /// <summary>The rating_maximum property</summary>
+        /// <summary>the maximum possible rating/score on the provider&apos;s scale</summary>
         public double? RatingMaximum { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewRawProperty Raw { get; set; }
 #endif
-        /// <summary>The reviewer_user_id property</summary>
+        /// <summary>the HR Employee that wrote this review (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReviewerUserId { get; set; }
@@ -82,9 +82,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewStatus? Status { get; set; }
-        /// <summary>The submitted_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SubmittedAt { get; set; }
-        /// <summary>The template_identifier property</summary>
+        /// <summary>id of the review template/form this review is based on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TemplateIdentifier { get; set; }
@@ -94,9 +94,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>the HR Employee being reviewed (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Type of return</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ShippingShipmentReturnType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CUSTOMER")]
         #pragma warning disable CS1591

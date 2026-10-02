@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingAssociatedContact> AssociatedContacts { get; set; }
 #endif
-        /// <summary>The balance_amount property</summary>
+        /// <summary>Outstanding AR/AP balance for this contact</summary>
         public double? BalanceAmount { get; set; }
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyName { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The identification property</summary>
+        /// <summary>contact account numbers such as registration, A membership or identification reference to help to identify and search customers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identification { get; set; }
@@ -138,7 +138,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The payment_terms property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactPaymentTerms? PaymentTerms { get; set; }
-        /// <summary>The portal_url property</summary>
+        /// <summary>URL for the contact’s portal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PortalUrl { get; set; }
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tax_exemption property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingContactTaxExemption? TaxExemption { get; set; }
-        /// <summary>The tax_number property</summary>
+        /// <summary>The ID/number of the customer&apos;s tax number.  This is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxNumber { get; set; }
@@ -180,7 +180,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTelephone> Telephones { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The website property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

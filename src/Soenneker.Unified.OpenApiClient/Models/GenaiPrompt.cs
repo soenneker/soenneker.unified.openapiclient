@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer> Answers { get; set; }
 #endif
-        /// <summary>The max_tokens property</summary>
+        /// <summary>a float between 0-1</summary>
         public double? MaxTokens { get; set; }
-        /// <summary>The mcp_authorization_token property</summary>
+        /// <summary>OAuth Bearer token for MCP servers that require authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? McpAuthorizationToken { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> McpDeferredTools { get; set; }
 #endif
-        /// <summary>The mcp_url property</summary>
+        /// <summary>Supply a remote MCP URL to send to the LLM API for it to call its tools.  Note: Some LLM APIs do not yet support remote MCP URLs. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? McpUrl { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Responses { get; set; }
 #endif
-        /// <summary>The temperature property</summary>
+        /// <summary>0-1</summary>
         public double? Temperature { get; set; }
         /// <summary>The tokens_used property</summary>
         public double? TokensUsed { get; set; }

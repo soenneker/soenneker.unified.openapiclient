@@ -12,11 +12,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class MarketingReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The abuse_reports property</summary>
+        /// <summary>Number of abuse reports</summary>
         public double? AbuseReports { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign_id property</summary>
+        /// <summary>Associated campaign ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -24,27 +24,27 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The click_rate property</summary>
+        /// <summary>Click rate (decimal)</summary>
         public double? ClickRate { get; set; }
-        /// <summary>The clicks_total property</summary>
+        /// <summary>Total clicks</summary>
         public double? ClicksTotal { get; set; }
-        /// <summary>The emails_sent property</summary>
+        /// <summary>Total emails sent</summary>
         public double? EmailsSent { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>End time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The forwards_count property</summary>
+        /// <summary>Forward count</summary>
         public double? ForwardsCount { get; set; }
-        /// <summary>The forwards_opens property</summary>
+        /// <summary>Forwards opened</summary>
         public double? ForwardsOpens { get; set; }
-        /// <summary>The hard_bounces property</summary>
+        /// <summary>Hard bounce count</summary>
         public double? HardBounces { get; set; }
-        /// <summary>The human_open_rate property</summary>
+        /// <summary>Open rate (decimal) excluding automated/bot/proxy opens</summary>
         public double? HumanOpenRate { get; set; }
-        /// <summary>The human_opens_total property</summary>
+        /// <summary>Total opens excluding automated/bot/proxy (e.g. Apple Mail Privacy Protection) opens</summary>
         public double? HumanOpensTotal { get; set; }
-        /// <summary>The human_unique_opens property</summary>
+        /// <summary>Unique opens excluding automated/bot/proxy opens</summary>
         public double? HumanUniqueOpens { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the campaign report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -52,9 +52,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The last_click_at property</summary>
+        /// <summary>Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastClickAt { get; set; }
-        /// <summary>The last_open_at property</summary>
+        /// <summary>Last open timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastOpenAt { get; set; }
         /// <summary>URL-specific click data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink> Links { get; set; }
 #endif
-        /// <summary>The list_id property</summary>
+        /// <summary>Associated list ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListId { get; set; }
@@ -72,11 +72,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ListId { get; set; }
 #endif
-        /// <summary>The open_rate property</summary>
+        /// <summary>Open rate (decimal)</summary>
         public double? OpenRate { get; set; }
-        /// <summary>The opens_total property</summary>
+        /// <summary>Total opens</summary>
         public double? OpensTotal { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty? Raw { get; set; }
@@ -84,21 +84,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty Raw { get; set; }
 #endif
-        /// <summary>The sent_at property</summary>
+        /// <summary>Send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The soft_bounces property</summary>
+        /// <summary>Soft bounce count</summary>
         public double? SoftBounces { get; set; }
-        /// <summary>The start_at property</summary>
+        /// <summary>Start time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>The syntax_errors property</summary>
+        /// <summary>Syntax error count</summary>
         public double? SyntaxErrors { get; set; }
-        /// <summary>The unique_clicks property</summary>
+        /// <summary>Unique clicks</summary>
         public double? UniqueClicks { get; set; }
-        /// <summary>The unique_opens property</summary>
+        /// <summary>Unique opens</summary>
         public double? UniqueOpens { get; set; }
-        /// <summary>The unique_subscriber_clicks property</summary>
+        /// <summary>Unique subscriber clicks</summary>
         public double? UniqueSubscriberClicks { get; set; }
-        /// <summary>The unsubscribed property</summary>
+        /// <summary>Number of unsubscribes</summary>
         public double? Unsubscribed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.MarketingReport"/> and sets the default values.

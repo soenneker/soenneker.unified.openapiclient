@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The frequency property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisCompensationFrequency? Frequency { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>(reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }

@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Aliases { get; set; }
 #endif
-        /// <summary>The connection_id property</summary>
+        /// <summary>Connection ID that this package belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionId { get; set; }
@@ -31,9 +31,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Detailed description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -41,11 +41,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The has_redirect_url property</summary>
+        /// <summary>Whether provider redirects user to complete assessment</summary>
         public bool? HasRedirectUrl { get; set; }
-        /// <summary>The has_target_url property</summary>
+        /// <summary>Where provider redirects user after completion</summary>
         public bool? HasTargetUrl { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the assessment package</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The info_url property</summary>
+        /// <summary>URL to find additional information about this package</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InfoUrl { get; set; }
@@ -69,9 +69,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> IntegrationTypes { get; set; }
 #endif
-        /// <summary>The max_score property</summary>
+        /// <summary>Maximum possible score if this assessment returns a score</summary>
         public double? MaxScore { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the assessment package</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The needs_ip_address property</summary>
+        /// <summary>Whether IP address is required</summary>
         public bool? NeedsIpAddress { get; set; }
         /// <summary>Questionsinputs needed for this assessment (aligned with verification)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,9 +115,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentPackageType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The workspace_id property</summary>
+        /// <summary>Workspace ID that this package belongs to (reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

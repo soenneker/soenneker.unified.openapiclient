@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,11 +58,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The duration_seconds property</summary>
         public double? DurationSeconds { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The events_count property</summary>
+        /// <summary>Session attributes</summary>
         public double? EventsCount { get; set; }
-        /// <summary>The exit_page property</summary>
+        /// <summary>Session attributes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExitPage { get; set; }
@@ -78,11 +78,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_bounce property</summary>
+        /// <summary>Engagement</summary>
         public bool? IsBounce { get; set; }
-        /// <summary>The is_conversion property</summary>
+        /// <summary>Engagement</summary>
         public bool? IsConversion { get; set; }
-        /// <summary>The landing_page property</summary>
+        /// <summary>Session attributes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LandingPage { get; set; }
@@ -106,9 +106,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Os { get; set; }
 #endif
-        /// <summary>The page_views property</summary>
+        /// <summary>Session attributes</summary>
         public double? PageViews { get; set; }
-        /// <summary>The property_id property</summary>
+        /// <summary>points to AnalyticsProperty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyId { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsSessionRawProperty Raw { get; set; }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>Acquisition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -132,9 +132,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The visitor_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

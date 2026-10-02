@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The displayName of the user&apos;s manager.  This attribute is OPTIONAL, and mutability is &quot;readOnly&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The managerId property</summary>
+        /// <summary>alias for value?</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerId { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ManagerId { get; set; }
 #endif
-        /// <summary>The Ref property</summary>
+        /// <summary>The URI of the SCIM resource representing the User&apos;s manager.  RECOMMENDED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ref { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ScimManagerType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The &quot;id&quot; of the SCIM resource representing the user&apos;s manager.  RECOMMENDED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

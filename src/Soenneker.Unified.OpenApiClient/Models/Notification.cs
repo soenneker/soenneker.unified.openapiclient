@@ -23,9 +23,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Longer description of this notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The event property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.NotificationEvent? Event { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this notification object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -59,11 +59,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string IntegrationType { get; set; }
 #endif
-        /// <summary>The sent_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string WebhookId { get; set; }
 #endif
-        /// <summary>The workspace_id property</summary>
+        /// <summary>(reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

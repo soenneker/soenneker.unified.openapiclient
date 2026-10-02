@@ -16,7 +16,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
         public double? Amount { get; set; }
-        /// <summary>The base_amount property</summary>
+        /// <summary>Base shipping rate</summary>
         public double? BaseAmount { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,9 +26,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The delivery_days property</summary>
+        /// <summary>Delivery days (integer)</summary>
         public double? DeliveryDays { get; set; }
-        /// <summary>The delivery_terms property</summary>
+        /// <summary>Delivery duration terms (e.g., &quot;3-5 business days&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeliveryTerms { get; set; }
@@ -44,23 +44,23 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The discount_amount property</summary>
+        /// <summary>Applied discount</summary>
         public double? DiscountAmount { get; set; }
-        /// <summary>The estimated_days property</summary>
+        /// <summary>Estimated delivery time in days</summary>
         public double? EstimatedDays { get; set; }
-        /// <summary>The estimated_delivery_end_at property</summary>
+        /// <summary>Specific delivery date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EstimatedDeliveryEndAt { get; set; }
-        /// <summary>The estimated_delivery_start_at property</summary>
+        /// <summary>Time window (e.g., &quot;10:00 AM - 2:00 PM&quot;) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EstimatedDeliveryStartAt { get; set; }
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether rate is currently available</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The is_guaranteed property</summary>
+        /// <summary>Whether delivery is guaranteed</summary>
         public bool? IsGuaranteed { get; set; }
-        /// <summary>The is_negotiated_rate property</summary>
+        /// <summary>Whether this is a negotiated rate</summary>
         public bool? IsNegotiatedRate { get; set; }
-        /// <summary>The is_trackable property</summary>
+        /// <summary>Whether shipment is trackable</summary>
         public bool? IsTrackable { get; set; }
-        /// <summary>The package_type property</summary>
+        /// <summary>Package type (e.g., &quot;package&quot;, &quot;envelope&quot;, &quot;flat&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PackageType { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PackageType { get; set; }
 #endif
-        /// <summary>The rate_source property</summary>
+        /// <summary>Source of rate (e.g., &quot;carrier&quot;, &quot;negotiated&quot;, &quot;account&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RateSource { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The transit_hours property</summary>
+        /// <summary>Transit time in hours</summary>
         public double? TransitHours { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate"/> and sets the default values.

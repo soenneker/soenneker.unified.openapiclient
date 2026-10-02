@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The candidate_id property</summary>
+        /// <summary>points to ATS Candidate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CandidateId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CandidateId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress> ProfileAddresses { get; set; }
 #endif
-        /// <summary>The profile_date_of_birth property</summary>
+        /// <summary>YYYY-MM-DD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileDateOfBirth { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The profile_gender property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender? ProfileGender { get; set; }
-        /// <summary>The profile_ip_address property</summary>
+        /// <summary>XXX.XXX.XXX.XXX</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileIpAddress { get; set; }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty Raw { get; set; }
 #endif
-        /// <summary>The response_completed_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseCompletedAt { get; set; }
         /// <summary>The response_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,11 +132,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> ResponseDownloadUrls { get; set; }
 #endif
-        /// <summary>The response_expires_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseExpiresAt { get; set; }
-        /// <summary>The response_issued_at property</summary>
+        /// <summary>datetime that identify was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ResponseIssuedAt { get; set; }
-        /// <summary>The response_redirect_url property</summary>
+        /// <summary>Most modern IDV providers (like Onfido, Veriff, Jumio, ID.me). Background Check Providers, such as Checkr, GoodHire, Sterling, and HireRight. Credit bureaus and services often require direct user consent and information. This allows them to properly handle disclosures required by regulations like FCRA. Employment and Education Verification need users to confirm previous employers and schools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResponseRedirectUrl { get; set; }
@@ -144,7 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ResponseRedirectUrl { get; set; }
 #endif
-        /// <summary>The response_score property</summary>
+        /// <summary>Identity verification services provide confidence scores (e.g., 0-100), Credit checks return specific numeric scores (e.g., FICO score 300-850), Fraud prevention tools use risk scores (e.g., 1-999)</summary>
         public double? ResponseScore { get; set; }
         /// <summary>The response_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ResponseSource { get; set; }
 #endif
-        /// <summary>The response_status property</summary>
+        /// <summary>Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus? ResponseStatus { get; set; }
         /// <summary>The target_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TargetUrl { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest"/> and sets the default values.

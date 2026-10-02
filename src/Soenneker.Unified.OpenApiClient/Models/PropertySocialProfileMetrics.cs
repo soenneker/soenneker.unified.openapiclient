@@ -15,11 +15,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The follower_count property</summary>
+        /// <summary>Number of followers</summary>
         public double? FollowerCount { get; set; }
-        /// <summary>The following_count property</summary>
+        /// <summary>Number of accounts this profile follows</summary>
         public double? FollowingCount { get; set; }
-        /// <summary>The post_count property</summary>
+        /// <summary>Total number of posts published by this profile</summary>
         public double? PostCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics"/> and sets the default values.

@@ -22,11 +22,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingOrganizationAddress Address { get; set; }
 #endif
-        /// <summary>The books_close_at property</summary>
+        /// <summary>Company-wide books close / lock date; transactions on or before this date fall in a closed accounting period (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? BooksCloseAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>Currency primarily used by the organization, in ISO 4217 format (e.g. U.S. dollars is USD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The fiscal_year_end_month property</summary>
+        /// <summary>Month of the year when the organization’s fiscal year ends (1 - 12, where January is 1)</summary>
         public double? FiscalYearEndMonth { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_elimination property</summary>
+        /// <summary>True for consolidation/elimination entities</summary>
         public bool? IsElimination { get; set; }
         /// <summary>The legal_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organization_code property</summary>
+        /// <summary>Identifier for tracking and categorizing organizations for reporting or analysis purposes that is defined by the end-customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationCode { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationRawProperty Raw { get; set; }
 #endif
-        /// <summary>The tax_number property</summary>
+        /// <summary>Organization&apos;s tax number.  For example, in the U.S., this is an Employer Identification Number (EIN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxNumber { get; set; }
@@ -102,9 +102,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Entity type within a consolidation hierarchy</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingOrganizationType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The website property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

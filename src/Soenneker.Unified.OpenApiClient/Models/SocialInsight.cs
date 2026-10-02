@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>When the insight was recorded (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The date property</summary>
+        /// <summary>The day/timestamp of the data point</summary>
         public DateTimeOffset? Date { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the insight data point</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -26,11 +26,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The metric property</summary>
+        /// <summary>The metric being reported</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SocialInsightMetric? Metric { get; set; }
-        /// <summary>The period property</summary>
+        /// <summary>The aggregation period of the value</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SocialInsightPeriod? Period { get; set; }
-        /// <summary>The post_id property</summary>
+        /// <summary>Optional: the post these stats belong to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PostId { get; set; }
 #endif
-        /// <summary>The profile_id property</summary>
+        /// <summary>The social profile these stats belong to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileId { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.SocialInsightRawProperty? Raw { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.SocialInsightRawProperty Raw { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The metric value</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialInsight"/> and sets the default values.

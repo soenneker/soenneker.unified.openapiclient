@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The carrier_id property</summary>
+        /// <summary>Reference to the carrier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CarrierId { get; set; }
 #endif
-        /// <summary>The carrier_name property</summary>
+        /// <summary>Human-readable carrier/provider name when there is no carrier record to reference (e.g. commerce-platform fulfillments)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierName { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CarrierName { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this shipment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Customs information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentFromAddress FromAddress { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this shipment object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -64,17 +64,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance Insurance { get; set; }
 #endif
-        /// <summary>The is_adult_signature_required property</summary>
+        /// <summary>Adult signature required</summary>
         public bool? IsAdultSignatureRequired { get; set; }
-        /// <summary>The is_international property</summary>
+        /// <summary>Whether shipment is international</summary>
         public bool? IsInternational { get; set; }
-        /// <summary>The is_rate_guaranteed property</summary>
+        /// <summary>Whether delivery is guaranteed (from rate)</summary>
         public bool? IsRateGuaranteed { get; set; }
-        /// <summary>The is_return property</summary>
+        /// <summary>Whether this is a return shipment</summary>
         public bool? IsReturn { get; set; }
-        /// <summary>The is_signature_required property</summary>
+        /// <summary>Signature required on delivery</summary>
         public bool? IsSignatureRequired { get; set; }
-        /// <summary>The label_id property</summary>
+        /// <summary>Optional reference to the shipping label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LabelId { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentLineitem> Lineitems { get; set; }
 #endif
-        /// <summary>The order_id property</summary>
+        /// <summary>Reference to commerce_order or accounting_order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderId { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrderId { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>ref -&gt; accounting Organization this shipment belongs to (multi-company ERPs)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The original_shipment_id property</summary>
+        /// <summary>Reference to original shipment if return; points to ShippingShipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalShipmentId { get; set; }
@@ -122,9 +122,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage> Packages { get; set; }
 #endif
-        /// <summary>The rate_amount property</summary>
+        /// <summary>The rate amount used (may differ from shipping_cost due to adjustments)</summary>
         public double? RateAmount { get; set; }
-        /// <summary>The rate_currency property</summary>
+        /// <summary>Currency for rate_amount</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RateCurrency { get; set; }
@@ -132,11 +132,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateCurrency { get; set; }
 #endif
-        /// <summary>The rate_estimated_days property</summary>
+        /// <summary>Estimated delivery days from the rate</summary>
         public double? RateEstimatedDays { get; set; }
-        /// <summary>The rate_estimated_delivery_at property</summary>
+        /// <summary>Estimated delivery date from the rate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? RateEstimatedDeliveryAt { get; set; }
-        /// <summary>The rate_id property</summary>
+        /// <summary>Optional reference to the selected rate (for traceability)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RateId { get; set; }
@@ -144,7 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateId { get; set; }
 #endif
-        /// <summary>The rate_service_name property</summary>
+        /// <summary>Service name from the rate (e.g., &quot;Priority Mail&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RateServiceName { get; set; }
@@ -152,7 +152,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateServiceName { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty? Raw { get; set; }
@@ -160,7 +160,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentRawProperty Raw { get; set; }
 #endif
-        /// <summary>The reference_number property</summary>
+        /// <summary>Customer reference number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceNumber { get; set; }
@@ -176,7 +176,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentReturnAddress ReturnAddress { get; set; }
 #endif
-        /// <summary>The return_authorization_number property</summary>
+        /// <summary>RMA number if return shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnAuthorizationNumber { get; set; }
@@ -184,7 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ReturnAuthorizationNumber { get; set; }
 #endif
-        /// <summary>The return_reason property</summary>
+        /// <summary>Reason for return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnReason { get; set; }
@@ -192,9 +192,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ReturnReason { get; set; }
 #endif
-        /// <summary>The return_type property</summary>
+        /// <summary>Type of return</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentReturnType? ReturnType { get; set; }
-        /// <summary>The service_code property</summary>
+        /// <summary>Code for the shipping service used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceCode { get; set; }
@@ -202,7 +202,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ServiceCode { get; set; }
 #endif
-        /// <summary>The shipped_at property</summary>
+        /// <summary>When shipment was createddispatched (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ShippedAt { get; set; }
         /// <summary>Array of special instructions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -212,7 +212,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> SpecialInstructions { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Current status of the shipment</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentStatus? Status { get; set; }
         /// <summary>Destination address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -222,7 +222,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentToAddress ToAddress { get; set; }
 #endif
-        /// <summary>The tracking_id property</summary>
+        /// <summary>Optional reference to the tracking information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingId { get; set; }
@@ -230,7 +230,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TrackingId { get; set; }
 #endif
-        /// <summary>The tracking_url property</summary>
+        /// <summary>Carrier tracking URL for this shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingUrl { get; set; }
@@ -238,9 +238,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TrackingUrl { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this shipment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The warehouse_location_id property</summary>
+        /// <summary>Origin warehouselocation ID; points to CommerceLocation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WarehouseLocationId { get; set; }
@@ -248,7 +248,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string WarehouseLocationId { get; set; }
 #endif
-        /// <summary>The warehouse_location_name property</summary>
+        /// <summary>Origin warehouse location name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WarehouseLocationName { get; set; }

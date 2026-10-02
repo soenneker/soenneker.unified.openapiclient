@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The company_name property</summary>
+        /// <summary>Company name (for commercial addresses)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyName { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The country_code property</summary>
+        /// <summary>ISO 2-digit country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>The delivery_instructions property</summary>
+        /// <summary>Special delivery notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeliveryInstructions { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DeliveryInstructions { get; set; }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>Email address (for delivery notifications)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -79,11 +79,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The is_residential property</summary>
+        /// <summary>Alias for address_type === &apos;RESIDENTIAL&apos;</summary>
         public bool? IsResidential { get; set; }
-        /// <summary>The is_validated property</summary>
+        /// <summary>Whether address has been validated</summary>
         public bool? IsValidated { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Recipientsender name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RegionCode { get; set; }
 #endif
-        /// <summary>The telephone property</summary>
+        /// <summary>Phone number (required by FedEx, UPS, DHL)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Telephone { get; set; }

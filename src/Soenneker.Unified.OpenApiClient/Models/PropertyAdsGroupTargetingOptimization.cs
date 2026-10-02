@@ -19,7 +19,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? AdvantageAudience { get; set; }
         /// <summary>The advantage_placements property</summary>
         public bool? AdvantagePlacements { get; set; }
-        /// <summary>The mode property</summary>
+        /// <summary>Google: bid_only falsetrue</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimizationMode? Mode { get; set; }
         /// <summary>The targeting_optimization_expansion_all property</summary>
         public bool? TargetingOptimizationExpansionAll { get; set; }

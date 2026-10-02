@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingReference> Channels { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>for email systems, this field represents the To value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MessageMarkdown { get; set; }
 #endif
-        /// <summary>The message_thread_identifier property</summary>
+        /// <summary>the opaque identifier for the first message in a thread  </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageThreadIdentifier { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MessageThreadIdentifier { get; set; }
 #endif
-        /// <summary>The parent_id property</summary>
+        /// <summary>Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -140,7 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction> Reactions { get; set; }
 #endif
-        /// <summary>The reference property</summary>
+        /// <summary>eg. RFC822 MessageID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -156,7 +156,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The web_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

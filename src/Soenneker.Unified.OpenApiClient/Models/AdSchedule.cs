@@ -14,17 +14,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bid_modifier property</summary>
+        /// <summary>0.1-10.0</summary>
         public double? BidModifier { get; set; }
         /// <summary>The day_of_week property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdScheduleDayOfWeek? DayOfWeek { get; set; }
-        /// <summary>The end_hour property</summary>
+        /// <summary>0-24 (24 = end of day)</summary>
         public double? EndHour { get; set; }
-        /// <summary>The end_minute property</summary>
+        /// <summary>0, 15, 30, 45</summary>
         public double? EndMinute { get; set; }
-        /// <summary>The start_hour property</summary>
+        /// <summary>0-23</summary>
         public double? StartHour { get; set; }
-        /// <summary>The start_minute property</summary>
+        /// <summary>0, 15, 30, 45</summary>
         public double? StartMinute { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdSchedule"/> and sets the default values.

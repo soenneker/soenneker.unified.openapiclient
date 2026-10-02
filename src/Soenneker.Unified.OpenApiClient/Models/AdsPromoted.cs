@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedRawProperty Raw { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Promoted entity types for ads_promoted list endpoint</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsPromotedType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted"/> and sets the default values.

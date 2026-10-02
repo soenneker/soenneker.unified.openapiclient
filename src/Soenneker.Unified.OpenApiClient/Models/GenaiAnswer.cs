@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The confidence property</summary>
+        /// <summary>0-1: how certain the model is of the answer.</summary>
         public double? Confidence { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The id of the genai_prompt question that this answers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,11 +32,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswerProbability> Probabilities { get; set; }
 #endif
-        /// <summary>The score property</summary>
+        /// <summary>SCORE: the probability-weighted level index; BOOLEAN: the probability (0-1) that the answer is yes.</summary>
         public double? Score { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswerType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>CHOICE: the selected option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

@@ -14,13 +14,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The birthDate property</summary>
+        /// <summary>&quot;1987-10-06&quot;,</summary>
         public DateTimeOffset? BirthDate { get; set; }
         /// <summary>The ethnicity property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity? Ethnicity { get; set; }
         /// <summary>The gender property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender? Gender { get; set; }
-        /// <summary>The JobLevel property</summary>
+        /// <summary>&apos;M3&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobLevel { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobLevel { get; set; }
 #endif
-        /// <summary>The PeopleManagerReviews property</summary>
+        /// <summary>&apos;People Manager&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PeopleManagerReviews { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PeopleManagerReviews { get; set; }
 #endif
-        /// <summary>The RemoteWorkLocation property</summary>
+        /// <summary>&apos;Ontario&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RemoteWorkLocation { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RemoteWorkLocation { get; set; }
 #endif
-        /// <summary>The SalaryInformation property</summary>
+        /// <summary>&apos;130000&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SalaryInformation { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The sexualOrientation property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation? SexualOrientation { get; set; }
-        /// <summary>The startDate property</summary>
+        /// <summary>&quot;2022-03-08&quot;,</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>The SubDepartments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

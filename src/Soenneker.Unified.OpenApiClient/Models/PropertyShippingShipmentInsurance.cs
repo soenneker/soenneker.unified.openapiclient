@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coverage_amount property</summary>
+        /// <summary>Coverage amount (may differ from insured_value)</summary>
         public double? CoverageAmount { get; set; }
         /// <summary>The coverage_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType? CoverageType { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The insurance_cost property</summary>
+        /// <summary>Cost of insurance</summary>
         public double? InsuranceCost { get; set; }
         /// <summary>The insurance_cost_currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,7 +37,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InsuranceCostCurrency { get; set; }
 #endif
-        /// <summary>The insurance_provider property</summary>
+        /// <summary>Insurance provider name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InsuranceProvider { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InsuranceProvider { get; set; }
 #endif
-        /// <summary>The insurance_provider_code property</summary>
+        /// <summary>Provider code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InsuranceProviderCode { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InsuranceProviderCode { get; set; }
 #endif
-        /// <summary>The insured_value property</summary>
+        /// <summary>Insured value</summary>
         public double? InsuredValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance"/> and sets the default values.

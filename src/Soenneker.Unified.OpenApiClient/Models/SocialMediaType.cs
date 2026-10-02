@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Type of media</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SocialMediaType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PHOTO")]
         #pragma warning disable CS1591

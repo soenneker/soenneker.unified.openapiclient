@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Options { get; set; }
 #endif
-        /// <summary>The public_question property</summary>
+        /// <summary>Question to ask the candidateuser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicQuestion { get; set; }

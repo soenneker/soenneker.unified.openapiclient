@@ -15,9 +15,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The away_score property</summary>
+        /// <summary>The away team&apos;s score</summary>
         public double? AwayScore { get; set; }
-        /// <summary>The away_team_name property</summary>
+        /// <summary>The away team&apos;s name (homeaway providers)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AwayTeamName { get; set; }
@@ -25,9 +25,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AwayTeamName { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this event was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description or notes for the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -35,11 +35,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The duration_minutes property</summary>
+        /// <summary>The scheduled duration, in minutes</summary>
         public double? DurationMinutes { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>When the event ends (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>The group this event belongs to (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -47,9 +47,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GroupId { get; set; }
 #endif
-        /// <summary>The home_score property</summary>
+        /// <summary>The home team&apos;s score</summary>
         public double? HomeScore { get; set; }
-        /// <summary>The home_team_name property</summary>
+        /// <summary>The home team&apos;s name (homeaway providers)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HomeTeamName { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string HomeTeamName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -65,9 +65,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_home property</summary>
+        /// <summary>Whether the connected groupteam is the home side</summary>
         public bool? IsHome { get; set; }
-        /// <summary>The location_id property</summary>
+        /// <summary>The id of the location for this event (reference to ClubsLocation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
-        /// <summary>The location_name property</summary>
+        /// <summary>The name of the location for this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationName { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationName { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The event name (or a &quot;Home vs Away&quot; matchup label)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The opponent_id property</summary>
+        /// <summary>The id of the opposing team (single-opponent providers)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OpponentId { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OpponentId { get; set; }
 #endif
-        /// <summary>The opponent_name property</summary>
+        /// <summary>The name of the opposing team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OpponentName { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OpponentName { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsEventRawProperty? Raw { get; set; }
@@ -115,15 +115,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsEventRawProperty Raw { get; set; }
 #endif
-        /// <summary>The score_against property</summary>
+        /// <summary>The opponent&apos;s score (team-vs-opponent providers)</summary>
         public double? ScoreAgainst { get; set; }
-        /// <summary>The score_for property</summary>
+        /// <summary>The connected groupteam&apos;s score (team-vs-opponent providers)</summary>
         public double? ScoreFor { get; set; }
-        /// <summary>The start_at property</summary>
+        /// <summary>When the event starts (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The event status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsEventStatus? Status { get; set; }
-        /// <summary>The timezone property</summary>
+        /// <summary>The timezone of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }
@@ -131,11 +131,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The event type</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsEventType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this event was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>A URL to the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

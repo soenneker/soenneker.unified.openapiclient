@@ -23,9 +23,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.ScimManager> AdditionalManagers { get; set; }
 #endif
-        /// <summary>The birthday property</summary>
+        /// <summary>1985-07-20</summary>
         public DateTimeOffset? Birthday { get; set; }
-        /// <summary>The costCenter property</summary>
+        /// <summary>Identifies the name of a cost center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CostCenter { get; set; }
 #endif
-        /// <summary>The currency property</summary>
+        /// <summary>User currency</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The department property</summary>
+        /// <summary>Identifies the name of a department.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Department { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Department { get; set; }
 #endif
-        /// <summary>The division property</summary>
+        /// <summary>Identifies the name of a division.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Division { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string EmployeeNumber { get; set; }
 #endif
-        /// <summary>The endDate property</summary>
+        /// <summary>2022-02-25</summary>
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>The gender property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender? Gender { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Level { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>Berlin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager Manager { get; set; }
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>Identifies the name of an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Organization { get; set; }
 #endif
-        /// <summary>The startDate property</summary>
+        /// <summary>2011-03-25</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User"/> and sets the default values.

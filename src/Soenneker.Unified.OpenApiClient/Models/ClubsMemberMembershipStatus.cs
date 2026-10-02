@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The member&apos;s membership status</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ClubsMemberMembershipStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MEMBER")]
         #pragma warning disable CS1591

@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConnectionId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The endapi_response_time property</summary>
         public double? EndapiResponseTime { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Environment { get; set; }
 #endif
-        /// <summary>The error property</summary>
+        /// <summary>The error description (if status code is &gt;= 400)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Error { get; set; }
 #endif
-        /// <summary>The external_xref property</summary>
+        /// <summary>your customer&apos;s user ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalXref { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ExternalXref { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this API call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The integration_type property</summary>
+        /// <summary>The integration type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntegrationType { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Method { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The called name of the API method</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The path property</summary>
+        /// <summary>The called API method&apos;s HTTP verb and route path (PUT /crm/{integration}/deak/{id})</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get; set; }
@@ -100,9 +100,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>The size of the response</summary>
         public double? Size { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The resulting HTTP status code (200)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of API Call being logged</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ApiCallType? Type { get; set; }
         /// <summary>The unified_response_time property</summary>
         public double? UnifiedResponseTime { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string WebhookId { get; set; }
 #endif
-        /// <summary>The workspace_id property</summary>
+        /// <summary>(reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

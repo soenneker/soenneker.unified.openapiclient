@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The purpose property</summary>
+        /// <summary>The consent purpose or objective (eg. marketing, analytics)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Purpose { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Purpose { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The consent status for this purpose</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpConsentStatus? Status { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>When the consent status was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpConsent"/> and sets the default values.

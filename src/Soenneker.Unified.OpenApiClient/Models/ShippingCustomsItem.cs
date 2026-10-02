@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Value per unit</summary>
         public double? Amount { get; set; }
-        /// <summary>The country_of_origin property</summary>
+        /// <summary>Country of origin (ISO code)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryOfOrigin { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Item description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The harmonized_tariff_code property</summary>
+        /// <summary>HS code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HarmonizedTariffCode { get; set; }
@@ -48,9 +48,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string HarmonizedTariffCode { get; set; }
 #endif
-        /// <summary>The quantity property</summary>
+        /// <summary>Quantity</summary>
         public double? Quantity { get; set; }
-        /// <summary>The sku property</summary>
+        /// <summary>SKU</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Sku { get; set; }
 #endif
-        /// <summary>The weight property</summary>
+        /// <summary>Weight per unit</summary>
         public double? Weight { get; set; }
         /// <summary>The weight_unit property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItemWeightUnit? WeightUnit { get; set; }

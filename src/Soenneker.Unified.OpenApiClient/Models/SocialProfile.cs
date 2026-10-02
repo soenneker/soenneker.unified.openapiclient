@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileAddress Address { get; set; }
 #endif
-        /// <summary>The avatar_url property</summary>
+        /// <summary>Profile image URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUrl { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
-        /// <summary>The category property</summary>
+        /// <summary>Primary category of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>When the profile was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Bio or description of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -56,11 +56,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_private property</summary>
+        /// <summary>Whether the profile is private/protected</summary>
         public bool? IsPrivate { get; set; }
-        /// <summary>The is_verified property</summary>
+        /// <summary>Whether the profile is verified</summary>
         public bool? IsVerified { get; set; }
-        /// <summary>The location property</summary>
+        /// <summary>Free-text location/locale string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics Metrics { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The parent_id property</summary>
+        /// <summary>Parent profile id when profiles are nested (e.g. account → location)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ParentId { get; set; }
 #endif
-        /// <summary>The phone property</summary>
+        /// <summary>Contact phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.SocialProfileRawProperty? Raw { get; set; }
@@ -108,9 +108,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.SocialProfileRawProperty Raw { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>When the profile was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>Public URL of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The username property</summary>
+        /// <summary>Handle/username/store code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Username { get; set; }
@@ -126,7 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Username { get; set; }
 #endif
-        /// <summary>The website_url property</summary>
+        /// <summary>External website linked from the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebsiteUrl { get; set; }

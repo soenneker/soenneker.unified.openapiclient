@@ -15,9 +15,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The call-to-action button type</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostCallToActionType? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The URL the call-to-action points to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The event task&apos;s descriptionnote</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -23,9 +23,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The due_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? DueAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The event task&apos;s nametitle/subject</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The priority property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskPriority? Priority { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The event task&apos;s status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTaskStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventTask"/> and sets the default values.

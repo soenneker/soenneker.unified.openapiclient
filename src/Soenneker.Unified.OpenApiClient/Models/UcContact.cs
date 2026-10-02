@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The company property</summary>
+        /// <summary>The company/organization name  of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Company { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this contact object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>An array of email addresses for this contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this contact object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.UcContactRawProperty? Raw { get; set; }
@@ -81,7 +81,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.UcTelephone> Telephones { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The job title of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this contact object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcContact"/> and sets the default values.

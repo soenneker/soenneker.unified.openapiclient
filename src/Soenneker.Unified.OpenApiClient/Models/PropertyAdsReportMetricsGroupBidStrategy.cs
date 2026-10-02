@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType? PerformanceGoalType { get; set; }
         /// <summary>The raise_bid_for_deals property</summary>
         public bool? RaiseBidForDeals { get; set; }
-        /// <summary>The target_roas property</summary>
+        /// <summary>Target ROAS e.g. 2.5 = 250% (Google)</summary>
         public double? TargetRoas { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBidStrategyType? Type { get; set; }

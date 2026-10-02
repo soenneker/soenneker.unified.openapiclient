@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationAnswer> Answers { get; set; }
 #endif
-        /// <summary>The applied_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AppliedAt { get; set; }
         /// <summary>The candidate_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,9 +32,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CandidateId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The hired_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? HiredAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AtsOffer> Offers { get; set; }
 #endif
-        /// <summary>The original_status property</summary>
+        /// <summary>The integration&apos;s original status.  Mostly used to have your customers chose the application status/stage so that your software can trigger an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalStatus { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OriginalStatus { get; set; }
 #endif
-        /// <summary>The original_substatus property</summary>
+        /// <summary>The provider&apos;s secondary/sub status, when distinct from original_status (e.g. UKG Ready hiring_stage)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalSubstatus { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationRawProperty Raw { get; set; }
 #endif
-        /// <summary>The rejected_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? RejectedAt { get; set; }
         /// <summary>The rejected_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsApplicationStatus? Status { get; set; }
-        /// <summary>The summary property</summary>
+        /// <summary>Application personal summary (e.g. Pinpoint Personal Summary)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -120,9 +120,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The user_id property</summary>
+        /// <summary>HR user/employee ID (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

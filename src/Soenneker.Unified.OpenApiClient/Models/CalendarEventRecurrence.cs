@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
+        /// <summary>how many occurrences, defaults to undefined (no limit)</summary>
         public double? Count { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>until date, defaults to undefined (no end date) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>dates to exclude from the recurrence, defaults to undefined (no exclusions)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> IncludedDates { get; set; }
 #endif
-        /// <summary>The interval property</summary>
+        /// <summary>how many &quot;units&quot; between occurrences, defaults to 1</summary>
         public double? Interval { get; set; }
         /// <summary>days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<double?> OnYearDays { get; set; }
 #endif
-        /// <summary>The timezone property</summary>
+        /// <summary>timezone, defaults to undefined (no timezone)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The week_start property</summary>
+        /// <summary>week start day, defaults to undefined (no week start day)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceWeekStart? WeekStart { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence"/> and sets the default values.

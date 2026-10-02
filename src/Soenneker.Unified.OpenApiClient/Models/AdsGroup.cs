@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupBidStrategy BidStrategy { get; set; }
 #endif
-        /// <summary>The billing_event property</summary>
+        /// <summary>Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBillingEvent? BillingEvent { get; set; }
         /// <summary>The budget_allocation_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupBudgetAllocationType? BudgetAllocationType { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The creative_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CreativeIds { get; set; }
 #endif
-        /// <summary>The creative_selection property</summary>
+        /// <summary>Creative rotation strategy (LinkedIn creativeSelection)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupCreativeSelection? CreativeSelection { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The effective_status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupEffectiveStatus? EffectiveStatus { get; set; }
-        /// <summary>The end_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The frequency_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InsertionorderId { get; set; }
 #endif
-        /// <summary>The language_locale property</summary>
+        /// <summary>Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageLocale { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The optimization_goal property</summary>
+        /// <summary>Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupOptimizationGoal? OptimizationGoal { get; set; }
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +152,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupStatus? Status { get; set; }
@@ -166,7 +166,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AdsGroupType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsGroup"/> and sets the default values.

@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Bio { get; set; }
 #endif
-        /// <summary>The company_id property</summary>
+        /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation> Compensation { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The date_of_birth property</summary>
+        /// <summary>YYYYMM/DD</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail> Emails { get; set; }
 #endif
-        /// <summary>The employee_number property</summary>
+        /// <summary>the company&apos;s ID for this employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeNumber { get; set; }
@@ -104,9 +104,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup> Groups { get; set; }
 #endif
-        /// <summary>The has_mfa property</summary>
+        /// <summary>does the user/employee have multi-factor authentication enabled</summary>
         public bool? HasMfa { get; set; }
-        /// <summary>The hired_at property</summary>
+        /// <summary>The employee&apos;s start date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? HiredAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The image_url property</summary>
+        /// <summary>This link expires after 1 hour. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageUrl { get; set; }
@@ -198,7 +198,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship> Relationships { get; set; }
 #endif
-        /// <summary>The salutation property</summary>
+        /// <summary>Mr. Mrs. Ms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Salutation { get; set; }
@@ -228,7 +228,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone> Telephones { get; set; }
 #endif
-        /// <summary>The terminated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? TerminatedAt { get; set; }
         /// <summary>The termination_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -238,9 +238,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TerminationReason { get; set; }
 #endif
-        /// <summary>The timeoff_days_total property</summary>
+        /// <summary>Total time off allowance for the current leave period, in days (when reported by the provider)</summary>
         public double? TimeoffDaysTotal { get; set; }
-        /// <summary>The timeoff_days_used property</summary>
+        /// <summary>Time off days used or booked in the current leave period (when reported by the provider)</summary>
         public double? TimeoffDaysUsed { get; set; }
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -258,7 +258,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee"/> and sets the default values.

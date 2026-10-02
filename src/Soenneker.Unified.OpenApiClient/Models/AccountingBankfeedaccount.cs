@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingBankfeedaccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>ref -&gt; AccountingAccount: the target GL account the feed posts into (reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>The account_number property</summary>
+        /// <summary>full account number where available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumber { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
-        /// <summary>The account_number_last4 property</summary>
+        /// <summary>last-4 when the full number isn&apos;t returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumberLast4 { get; set; }
@@ -36,13 +36,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AccountNumberLast4 { get; set; }
 #endif
-        /// <summary>The account_type property</summary>
+        /// <summary>CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountAccountType? AccountType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The balance property</summary>
+        /// <summary>current balance of the source account</summary>
         public double? Balance { get; set; }
-        /// <summary>The bank_name property</summary>
+        /// <summary>bank / institution name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankName { get; set; }
@@ -50,9 +50,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string BankName { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>creation timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The feed_start_at property</summary>
+        /// <summary>date the feed begins delivering transactions (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? FeedStartAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>account nickname / source name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>ref -&gt; accounting Organization this record belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The original data from the integration&apos;s API</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountRawProperty? Raw { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountRawProperty Raw { get; set; }
 #endif
-        /// <summary>The routing_number property</summary>
+        /// <summary>bank routing number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoutingNumber { get; set; }
@@ -102,9 +102,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RoutingNumber { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>feed state: ACTIVE, INACTIVE</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountStatus? Status { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>last-update timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccount"/> and sets the default values.

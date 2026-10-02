@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress Address { get; set; }
 #endif
-        /// <summary>The bio property</summary>
+        /// <summary>The biography description of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Bio { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Bio { get; set; }
 #endif
-        /// <summary>The birthdate property</summary>
+        /// <summary>The birth date of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Birthdate { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Birthdate { get; set; }
 #endif
-        /// <summary>The company property</summary>
+        /// <summary>The companyorganization name  of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Company { get; set; }
 #endif
-        /// <summary>The company_domain property</summary>
+        /// <summary>The company&apos;s domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyDomain { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyDomain { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this person object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>An array of email addresses for this person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.EnrichEmail> Emails { get; set; }
 #endif
-        /// <summary>The facebook_url property</summary>
+        /// <summary>The Facebook URL of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FacebookUrl { get; set; }
@@ -81,9 +81,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The gender property</summary>
+        /// <summary>The gender of the person</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonGender? Gender { get; set; }
-        /// <summary>The github_url property</summary>
+        /// <summary>The GitHub URL of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GithubUrl { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GithubUrl { get; set; }
 #endif
-        /// <summary>The github_username property</summary>
+        /// <summary>The GitHub username of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GithubUsername { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GithubUsername { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this person object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The image_url property</summary>
+        /// <summary>The image URL of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageUrl { get; set; }
@@ -123,7 +123,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The linkedin_url property</summary>
+        /// <summary>The LinkedIn URL of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkedinUrl { get; set; }
@@ -131,7 +131,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LinkedinUrl { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -139,7 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonRawProperty? Raw { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.EnrichTelephone> Telephones { get; set; }
 #endif
-        /// <summary>The timezone property</summary>
+        /// <summary>The timezone code of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }
@@ -163,7 +163,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The job title of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -171,7 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The twitter_handle property</summary>
+        /// <summary>The twitter handle of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TwitterHandle { get; set; }
@@ -179,7 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TwitterHandle { get; set; }
 #endif
-        /// <summary>The twitter_url property</summary>
+        /// <summary>The twitter URL of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TwitterUrl { get; set; }
@@ -187,9 +187,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TwitterUrl { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this person object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The utc_offset property</summary>
+        /// <summary>The timezone&apos;s hourly offset from UTC of the person</summary>
         public double? UtcOffset { get; set; }
         /// <summary>The work_histories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The sort_order property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQuerySortOrder? SortOrder { get; set; }
-        /// <summary>The sql property</summary>
+        /// <summary>Raw SQL – when set, executed directly (table_id optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sql { get; set; }

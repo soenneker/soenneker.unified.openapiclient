@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem?> Categories { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Environment { get; set; }
 #endif
-        /// <summary>The external_xref property</summary>
+        /// <summary>customer&apos;s user ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalXref { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ExternalXref { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this integration object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string IntegrationName { get; set; }
 #endif
-        /// <summary>The integration_type property</summary>
+        /// <summary>The integration type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntegrationType { get; set; }
@@ -73,13 +73,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string IntegrationType { get; set; }
 #endif
-        /// <summary>The is_paused property</summary>
+        /// <summary>Whether this integration has exceed the monthly limit of the plan</summary>
         public bool? IsPaused { get; set; }
-        /// <summary>The last_healthy_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastHealthyAt { get; set; }
-        /// <summary>The last_unhealthy_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastUnhealthyAt { get; set; }
-        /// <summary>The last_unhealthy_code property</summary>
+        /// <summary>The HTTP status code that caused the last unhealthy status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastUnhealthyCode { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?> Permissions { get; set; }
 #endif
-        /// <summary>The secretsmanager_id property</summary>
+        /// <summary>the ID of the SecretsManager object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretsmanagerId { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SecretsmanagerId { get; set; }
 #endif
-        /// <summary>The secretsmanager_key property</summary>
+        /// <summary>the key/path/name of the secret within the vault</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretsmanagerKey { get; set; }
@@ -111,9 +111,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SecretsmanagerKey { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this integration object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The workspace_id property</summary>
+        /// <summary>(reference to KmsSpace)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceId { get; set; }

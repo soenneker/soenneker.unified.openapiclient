@@ -12,11 +12,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class ShippingTracking : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actual_delivery_at property</summary>
+        /// <summary>Actual delivery timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ActualDeliveryAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The carrier_id property</summary>
+        /// <summary>Reference to the carrier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierId { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CarrierId { get; set; }
 #endif
-        /// <summary>The carrier_status_code property</summary>
+        /// <summary>Carrier&apos;s status code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierStatusCode { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CarrierStatusCode { get; set; }
 #endif
-        /// <summary>The carrier_status_description property</summary>
+        /// <summary>Carrier&apos;s status description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierStatusDescription { get; set; }
@@ -40,9 +40,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CarrierStatusDescription { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this tracking object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The estimated_delivery property</summary>
+        /// <summary>Estimated delivery date</summary>
         public DateTimeOffset? EstimatedDelivery { get; set; }
         /// <summary>Array of tracking events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent> Events { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this tracking object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this tracking</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty? Raw { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty Raw { get; set; }
 #endif
-        /// <summary>The shipment_id property</summary>
+        /// <summary>Reference to the shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipmentId { get; set; }
@@ -76,9 +76,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ShipmentId { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Current status of the shipment</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus? Status { get; set; }
-        /// <summary>The status_description property</summary>
+        /// <summary>Human-readable status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDescription { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string StatusDescription { get; set; }
 #endif
-        /// <summary>The tracking_number property</summary>
+        /// <summary>Tracking number for the shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TrackingNumber { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this tracking object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingTracking"/> and sets the default values.

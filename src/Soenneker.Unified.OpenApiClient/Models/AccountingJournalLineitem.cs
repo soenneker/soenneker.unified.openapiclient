@@ -12,7 +12,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     public partial class AccountingJournalLineitem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>(reference to AccountingAccount)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> CategoryIds { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
+        /// <summary>(reference to AccountingContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The credit_amount property</summary>
         public double? CreditAmount { get; set; }
-        /// <summary>The debit_amount property</summary>
+        /// <summary>will replace total_amount (absolute value)</summary>
         public double? DebitAmount { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The group_id property</summary>
+        /// <summary>points to a HRIS Group (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The invoice_id property</summary>
+        /// <summary>(reference to AccountingInvoice)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceId { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InvoiceId { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>points to a AccountingOrganization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The payment_id property</summary>
+        /// <summary>link to PaymentPayment (reference to PaymentPayment)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentId { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PaymentId { get; set; }
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>(reference to TaskProject)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get; set; }
-        /// <summary>The taxrate_id property</summary>
+        /// <summary>ref -&gt; AccountingTaxrate applied to the line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxrateId { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaxrateId { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>will be a positive value for a debit and negative for a credit</summary>
         public double? TotalAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingJournalLineitem"/> and sets the default values.

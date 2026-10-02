@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum HrisTaxonomyType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "SKILL")]
         #pragma warning disable CS1591

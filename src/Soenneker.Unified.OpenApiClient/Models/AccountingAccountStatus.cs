@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Account status, such as ACTIVE or ARCHIVED</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AccountingAccountStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591

@@ -107,7 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? ExpiresIn { get; set; }
         /// <summary>The expiry_date property</summary>
         public DateTimeOffset? ExpiryDate { get; set; }
-        /// <summary>The key property</summary>
+        /// <summary>the private KEY X.509 certificate in Base64 ASCII format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -139,7 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> OtherAuthInfo { get; set; }
 #endif
-        /// <summary>The pem property</summary>
+        /// <summary>the PEM X.509 certificate in Base64 ASCII format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Pem { get; set; }
@@ -191,7 +191,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TokenUrl { get; set; }
 #endif
-        /// <summary>The user_id property</summary>
+        /// <summary>(reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

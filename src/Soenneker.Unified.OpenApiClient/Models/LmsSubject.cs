@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The rank property</summary>
+        /// <summary>Depth of this subject in the provider&apos;s topic hierarchy (0 = top level)</summary>
         public double? Rank { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsSubject"/> and sets the default values.

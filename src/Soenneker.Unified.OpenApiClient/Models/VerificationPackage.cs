@@ -30,9 +30,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationTime> AverageProcessingTimes { get; set; }
 #endif
-        /// <summary>The cost_amount property</summary>
+        /// <summary>Cost-related information</summary>
         public double? CostAmount { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Detailed description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -52,9 +52,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The has_redirect_url property</summary>
         public bool? HasRedirectUrl { get; set; }
-        /// <summary>The has_target_url property</summary>
+        /// <summary>where the provider will redirect the user to after the verification</summary>
         public bool? HasTargetUrl { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the verification type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The info_url property</summary>
+        /// <summary>where to find additional information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InfoUrl { get; set; }
@@ -70,9 +70,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InfoUrl { get; set; }
 #endif
-        /// <summary>The max_score property</summary>
+        /// <summary>if this verification returns a score, what is the maximum?</summary>
         public double? MaxScore { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the verification type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.VerificationPackageType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>{country}-{state/province/territory} or just {country} 2-digit ISO codes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

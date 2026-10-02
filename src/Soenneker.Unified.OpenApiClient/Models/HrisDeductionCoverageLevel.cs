@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Level selected by employee (e.g. &quot;FAMILY&quot;, &quot;EMPLOYEE_ONLY&quot;, or other)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum HrisDeductionCoverageLevel
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "EMPLOYEE_ONLY")]
         #pragma warning disable CS1591

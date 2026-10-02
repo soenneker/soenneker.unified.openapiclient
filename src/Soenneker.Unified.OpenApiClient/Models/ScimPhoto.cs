@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? Primary { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ScimPhotoType? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

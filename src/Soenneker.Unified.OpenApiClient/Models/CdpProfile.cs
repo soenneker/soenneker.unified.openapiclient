@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCdpProfileAddress Address { get; set; }
 #endif
-        /// <summary>The birthdate property</summary>
+        /// <summary>The birth date of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Birthdate { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Birthdate { get; set; }
 #endif
-        /// <summary>The company property</summary>
+        /// <summary>The company/organization name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company { get; set; }
@@ -46,9 +46,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CdpConsent> Consent { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this profile object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The primary email address of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The first_name property</summary>
+        /// <summary>The first name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -64,9 +64,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The gender property</summary>
+        /// <summary>The gender of the profile</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpProfileGender? Gender { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this profile object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -82,9 +82,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CdpIdentifier> Identifiers { get; set; }
 #endif
-        /// <summary>The is_anonymous property</summary>
+        /// <summary>Whether the profile is anonymous (no known identity)</summary>
         public bool? IsAnonymous { get; set; }
-        /// <summary>The last_name property</summary>
+        /// <summary>The last name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The full name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpProfileRawProperty? Raw { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CdpProfileSegment> Segments { get; set; }
 #endif
-        /// <summary>The source_id property</summary>
+        /// <summary>The cdp_source this profile originated from; points to CdpSource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -132,7 +132,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The telephone property</summary>
+        /// <summary>The primary telephone number of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Telephone { get; set; }
@@ -140,7 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Telephone { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The job title of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -148,7 +148,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this profile object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpProfile"/> and sets the default values.

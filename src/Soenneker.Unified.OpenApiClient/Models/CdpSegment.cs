@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The compute_mode property</summary>
+        /// <summary>How the segment membership is computed (REALTIME or BATCH)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentComputeMode? ComputeMode { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this segment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The definition property</summary>
+        /// <summary>The membership rule/query that defines the segment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Definition { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Definition { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description of the segment/audience</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this segment object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -42,9 +42,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the segment is active/enabled</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the segment/audience</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this segment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentRawProperty? Raw { get; set; }
@@ -60,9 +60,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentRawProperty Raw { get; set; }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>The number of profiles currently in the segment</summary>
         public double? Size { get; set; }
-        /// <summary>The slug property</summary>
+        /// <summary>The data-plane handle/key used to identify segment membership in profiles and destinations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The source_id property</summary>
+        /// <summary>The cdp_source this segment originated from; points to CdpSource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -78,9 +78,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of entity the segment targets (USERS, ACCOUNTS, LINKED)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this segment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CdpSegment"/> and sets the default values.

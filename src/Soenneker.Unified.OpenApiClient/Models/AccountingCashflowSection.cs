@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowItem> Items { get; set; }
 #endif
-        /// <summary>The section_name property</summary>
+        /// <summary>e.g. &quot;Operating Activities&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SectionName { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SectionName { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>Net cash providedused by this section</summary>
         public double? TotalAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection"/> and sets the default values.

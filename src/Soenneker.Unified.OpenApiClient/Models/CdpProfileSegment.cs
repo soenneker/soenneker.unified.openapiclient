@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expires_at property</summary>
+        /// <summary>When the profile&apos;s membership expires (if applicable) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The joined_at property</summary>
+        /// <summary>When the profile joined the segment (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? JoinedAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the segment/audience</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The segment_id property</summary>
+        /// <summary>The segment/audience this profile belongs to; points to CdpSegment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SegmentId { get; set; }

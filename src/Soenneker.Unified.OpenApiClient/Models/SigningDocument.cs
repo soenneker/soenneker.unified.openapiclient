@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completed_at property</summary>
+        /// <summary>When all signatures were collected (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this signing document was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The creator_id property</summary>
+        /// <summary>User who created the signing document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorId { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CreatorId { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Message to signers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The download_url property</summary>
+        /// <summary>URL to download the signed document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DownloadUrl { get; set; }
@@ -42,9 +42,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DownloadUrl { get; set; }
 #endif
-        /// <summary>The expires_at property</summary>
+        /// <summary>Signing deadline (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this signing document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Document/envelope title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty? Raw { get; set; }
@@ -68,11 +68,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty Raw { get; set; }
 #endif
-        /// <summary>The sent_at property</summary>
+        /// <summary>When sent for signature (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>Current status of the signing document</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentStatus? Status { get; set; }
-        /// <summary>The template_id property</summary>
+        /// <summary>If created from a template; points to SigningTemplate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TemplateId { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TemplateId { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this signing document was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.SigningDocument"/> and sets the default values.

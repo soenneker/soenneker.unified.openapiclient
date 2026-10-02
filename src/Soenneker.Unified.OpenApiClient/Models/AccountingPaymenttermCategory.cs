@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>STANDARD (days-based) or DATE_DRIVEN (month-based)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AccountingPaymenttermCategory
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "STANDARD")]
         #pragma warning disable CS1591

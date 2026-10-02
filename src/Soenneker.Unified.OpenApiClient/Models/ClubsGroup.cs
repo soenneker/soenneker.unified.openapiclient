@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyClubsGroupAddress Address { get; set; }
 #endif
-        /// <summary>The cover_image_url property</summary>
+        /// <summary>URL to the group&apos;s cover photo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CoverImageUrl { get; set; }
@@ -39,9 +39,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CoverImageUrl { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this group was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The group&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -49,11 +49,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The following_count property</summary>
+        /// <summary>The number of athletes the group follows</summary>
         public double? FollowingCount { get; set; }
-        /// <summary>The group_type property</summary>
+        /// <summary>The group type</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupGroupType? GroupType { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -61,21 +61,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_admin property</summary>
+        /// <summary>Whether the authenticated user is an admin of the group</summary>
         public bool? IsAdmin { get; set; }
-        /// <summary>The is_featured property</summary>
+        /// <summary>Whether the group is featured</summary>
         public bool? IsFeatured { get; set; }
-        /// <summary>The is_owner property</summary>
+        /// <summary>Whether the authenticated user is the owner of the group</summary>
         public bool? IsOwner { get; set; }
-        /// <summary>The is_private property</summary>
+        /// <summary>Whether the group is private</summary>
         public bool? IsPrivate { get; set; }
-        /// <summary>The is_verified property</summary>
+        /// <summary>Whether the group is verified</summary>
         public bool? IsVerified { get; set; }
-        /// <summary>The member_count property</summary>
+        /// <summary>The number of members in the group</summary>
         public double? MemberCount { get; set; }
-        /// <summary>The membership_status property</summary>
+        /// <summary>The authenticated user&apos;s membership status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupMembershipStatus? MembershipStatus { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The group&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -83,9 +83,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The post_count property</summary>
+        /// <summary>The number of posts in the group</summary>
         public double? PostCount { get; set; }
-        /// <summary>The profile_image_url property</summary>
+        /// <summary>URL to the group&apos;s profile picture</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileImageUrl { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileImageUrl { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupRawProperty? Raw { get; set; }
@@ -101,11 +101,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupRawProperty Raw { get; set; }
 #endif
-        /// <summary>The sport_type property</summary>
+        /// <summary>The primary sport of the group</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupSportType? SportType { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this group was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The group&apos;s vanity URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PaymentRefundTenderType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CARD")]
         #pragma warning disable CS1591

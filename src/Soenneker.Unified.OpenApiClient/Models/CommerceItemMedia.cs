@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The position property</summary>
+        /// <summary>1 is the first</summary>
         public double? Position { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMediaType? Type { get; set; }

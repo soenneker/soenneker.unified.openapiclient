@@ -14,9 +14,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this label object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this label object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,9 +24,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_voided property</summary>
+        /// <summary>Whether label has been voided</summary>
         public bool? IsVoided { get; set; }
-        /// <summary>The label_cost property</summary>
+        /// <summary>Cost to purchase label</summary>
         public double? LabelCost { get; set; }
         /// <summary>The label_cost_currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,9 +36,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LabelCostCurrency { get; set; }
 #endif
-        /// <summary>The label_format property</summary>
+        /// <summary>Format of the label (PDF, PNG, ZPL, EPL2)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat? LabelFormat { get; set; }
-        /// <summary>The label_url property</summary>
+        /// <summary>URL to download the label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LabelUrl { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LabelUrl { get; set; }
 #endif
-        /// <summary>The rate_id property</summary>
+        /// <summary>Rate used for this label; points to ShippingRate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RateId { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RateId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty? Raw { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty Raw { get; set; }
 #endif
-        /// <summary>The service_code property</summary>
+        /// <summary>Service code used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceCode { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ServiceCode { get; set; }
 #endif
-        /// <summary>The shipment_id property</summary>
+        /// <summary>Reference to the shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipmentId { get; set; }
@@ -78,9 +78,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ShipmentId { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the label</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelStatus? Status { get; set; }
-        /// <summary>The tracking_number property</summary>
+        /// <summary>Tracking number for the shipment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingNumber { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TrackingNumber { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this label object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingLabel"/> and sets the default values.

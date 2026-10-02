@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>USER = employee spend; COMPANY = books/purchase expense</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AccountingExpenseType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "USER")]
         #pragma warning disable CS1591

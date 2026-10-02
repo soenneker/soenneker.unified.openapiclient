@@ -14,11 +14,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>STANDARD (days-based) or DATE_DRIVEN (month-based)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymenttermCategory? Category { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The day_of_month_due property</summary>
+        /// <summary>(date-driven) day of month payment is due (1–31)</summary>
         public double? DayOfMonthDue { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,15 +28,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The discount_day_of_month property</summary>
+        /// <summary>(date-driven) pay before this day of month for the discount</summary>
         public double? DiscountDayOfMonth { get; set; }
-        /// <summary>The discount_days property</summary>
+        /// <summary>(standard) days within which an early-pay discount applies</summary>
         public double? DiscountDays { get; set; }
-        /// <summary>The discount_percent property</summary>
+        /// <summary>(standard) early-pay discount rate</summary>
         public double? DiscountPercent { get; set; }
-        /// <summary>The due_days property</summary>
+        /// <summary>(standard) days until payment is due</summary>
         public double? DueDays { get; set; }
-        /// <summary>The due_next_month_days property</summary>
+        /// <summary>(date-driven) if invoiced within N days of month-end, due next month</summary>
         public double? DueNextMonthDays { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>term label, e.g. &quot;Net 30&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymenttermType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentterm"/> and sets the default values.

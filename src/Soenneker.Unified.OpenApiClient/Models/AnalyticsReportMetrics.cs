@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dimension property</summary>
+        /// <summary>new vs returning</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsReportMetricsDimension? Dimension { get; set; }
         /// <summary>The dimension_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DimensionValue { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Traffic metrics</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsReportMetricsType? Type { get; set; }
         /// <summary>The value property</summary>
         public double? Value { get; set; }

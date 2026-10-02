@@ -13,13 +13,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClubsActivity : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The achievement_count property</summary>
+        /// <summary>The number of achievements gained during this activity</summary>
         public double? AchievementCount { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The athlete_count property</summary>
+        /// <summary>The number of athletes that took part in this activity</summary>
         public double? AthleteCount { get; set; }
-        /// <summary>The athlete_id property</summary>
+        /// <summary>The id of the athlete who performed the activity (DetailedActivity only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AthleteId { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AthleteId { get; set; }
 #endif
-        /// <summary>The athlete_name property</summary>
+        /// <summary>The full name of the athlete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AthleteName { get; set; }
@@ -35,21 +35,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AthleteName { get; set; }
 #endif
-        /// <summary>The average_cadence property</summary>
+        /// <summary>The activity&apos;s average cadence</summary>
         public double? AverageCadence { get; set; }
-        /// <summary>The average_heartrate property</summary>
+        /// <summary>The activity&apos;s average heart rate, in beats per minute</summary>
         public double? AverageHeartrate { get; set; }
-        /// <summary>The average_speed property</summary>
+        /// <summary>The activity&apos;s average speed, in meters per second</summary>
         public double? AverageSpeed { get; set; }
-        /// <summary>The average_watts property</summary>
+        /// <summary>The activity&apos;s average power output, in watts</summary>
         public double? AverageWatts { get; set; }
-        /// <summary>The calories property</summary>
+        /// <summary>The number of kilocalories consumed during this activity</summary>
         public double? Calories { get; set; }
-        /// <summary>The comment_count property</summary>
+        /// <summary>The number of comments for this activity</summary>
         public double? CommentCount { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this activity was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the activity (DetailedActivity only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -57,15 +57,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The distance property</summary>
+        /// <summary>The activity&apos;s distance, in meters</summary>
         public double? Distance { get; set; }
-        /// <summary>The elapsed_time property</summary>
+        /// <summary>The activity&apos;s elapsed time, in seconds</summary>
         public double? ElapsedTime { get; set; }
-        /// <summary>The elevation_high property</summary>
+        /// <summary>The activity&apos;s highest elevation, in meters (DetailedActivity only)</summary>
         public double? ElevationHigh { get; set; }
-        /// <summary>The elevation_low property</summary>
+        /// <summary>The activity&apos;s lowest elevation, in meters (DetailedActivity only)</summary>
         public double? ElevationLow { get; set; }
-        /// <summary>The group_id property</summary>
+        /// <summary>The group this activity was listed under (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -73,9 +73,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GroupId { get; set; }
 #endif
-        /// <summary>The has_heartrate property</summary>
+        /// <summary>Whether the activity has heart rate data</summary>
         public bool? HasHeartrate { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this activity (not provided by ClubActivity)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -83,19 +83,19 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_commute property</summary>
+        /// <summary>Whether this activity is a commute</summary>
         public bool? IsCommute { get; set; }
-        /// <summary>The is_manual property</summary>
+        /// <summary>Whether this activity was created manually</summary>
         public bool? IsManual { get; set; }
-        /// <summary>The is_private property</summary>
+        /// <summary>Whether this activity is private</summary>
         public bool? IsPrivate { get; set; }
-        /// <summary>The is_trainer property</summary>
+        /// <summary>Whether this activity was recorded on a training machine</summary>
         public bool? IsTrainer { get; set; }
-        /// <summary>The kilojoules property</summary>
+        /// <summary>The total work done, in kilojoules</summary>
         public double? Kilojoules { get; set; }
-        /// <summary>The kudos_count property</summary>
+        /// <summary>The number of kudos given for this activity</summary>
         public double? KudosCount { get; set; }
-        /// <summary>The map_polyline property</summary>
+        /// <summary>The detailed polyline of the activity&apos;s map</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MapPolyline { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MapPolyline { get; set; }
 #endif
-        /// <summary>The map_summary_polyline property</summary>
+        /// <summary>The summary polyline of the activity&apos;s map</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MapSummaryPolyline { get; set; }
@@ -111,15 +111,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MapSummaryPolyline { get; set; }
 #endif
-        /// <summary>The max_heartrate property</summary>
+        /// <summary>The activity&apos;s max heart rate, in beats per minute</summary>
         public double? MaxHeartrate { get; set; }
-        /// <summary>The max_speed property</summary>
+        /// <summary>The activity&apos;s max speed, in meters per second</summary>
         public double? MaxSpeed { get; set; }
-        /// <summary>The max_watts property</summary>
+        /// <summary>The activity&apos;s max power output, in watts</summary>
         public double? MaxWatts { get; set; }
-        /// <summary>The moving_time property</summary>
+        /// <summary>The activity&apos;s moving time, in seconds</summary>
         public double? MovingTime { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -127,11 +127,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The photo_count property</summary>
+        /// <summary>The number of Instagram photos for this activity</summary>
         public double? PhotoCount { get; set; }
-        /// <summary>The pr_count property</summary>
+        /// <summary>The number of personal records set during this activity</summary>
         public double? PrCount { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty? Raw { get; set; }
@@ -139,11 +139,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty Raw { get; set; }
 #endif
-        /// <summary>The start_at property</summary>
+        /// <summary>When the activity started (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>The suffer_score property</summary>
+        /// <summary>The activity&apos;s relative effort score</summary>
         public double? SufferScore { get; set; }
-        /// <summary>The timezone property</summary>
+        /// <summary>The timezone of the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }
@@ -151,15 +151,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The total_elevation_gain property</summary>
+        /// <summary>The activity&apos;s total elevation gain, in meters</summary>
         public double? TotalElevationGain { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The activity type</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this activity was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The weighted_average_watts property</summary>
+        /// <summary>The activity&apos;s weighted average power output, in watts</summary>
         public double? WeightedAverageWatts { get; set; }
-        /// <summary>The workout_type property</summary>
+        /// <summary>The activity&apos;s workout type</summary>
         public double? WorkoutType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ClubsActivity"/> and sets the default values.

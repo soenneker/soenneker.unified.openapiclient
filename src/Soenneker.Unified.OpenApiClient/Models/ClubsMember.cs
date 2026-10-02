@@ -15,9 +15,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>The date that this member was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The first_name property</summary>
+        /// <summary>The member&apos;s first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The group_id property</summary>
+        /// <summary>The group this member belongs to (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string GroupId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for this member (not provided by Strava)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -41,11 +41,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_admin property</summary>
+        /// <summary>Whether the member is an admin of the group</summary>
         public bool? IsAdmin { get; set; }
-        /// <summary>The is_owner property</summary>
+        /// <summary>Whether the member is the owner of the group</summary>
         public bool? IsOwner { get; set; }
-        /// <summary>The last_name property</summary>
+        /// <summary>The member&apos;s last name (a single initial for Strava)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -53,9 +53,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The membership_status property</summary>
+        /// <summary>The member&apos;s membership status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberMembershipStatus? MembershipStatus { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The full name of the member (first name + last initial for Strava)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>The raw data returned by the integration for this member</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberRawProperty? Raw { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberRawProperty Raw { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>The last date that this member was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ClubsMember"/> and sets the default values.
