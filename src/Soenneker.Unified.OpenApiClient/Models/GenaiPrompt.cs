@@ -88,6 +88,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Responses { get; set; }
 #endif
+        /// <summary>ids of the genai_skill objects (Agent Skills) to make available to the LLM while it answers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SkillIds { get; set; }
+#nullable restore
+#else
+        public List<string> SkillIds { get; set; }
+#endif
         /// <summary>0-1</summary>
         public double? Temperature { get; set; }
         /// <summary>The tokens_used property</summary>
@@ -127,6 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>(global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty.CreateFromDiscriminatorValue); } },
                 { "responses", n => { Responses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "skill_ids", n => { SkillIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tokens_used", n => { TokensUsed = n.GetDoubleValue(); } },
             };
@@ -148,6 +157,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>("questions", Questions);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("responses", Responses);
+            writer.WriteCollectionOfPrimitiveValues<string>("skill_ids", SkillIds);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteDoubleValue("tokens_used", TokensUsed);
             writer.WriteAdditionalData(AdditionalData);

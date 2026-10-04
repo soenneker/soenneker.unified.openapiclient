@@ -5,12 +5,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ListGenaiModelsFieldsParameterItem
+    public enum ListGenaiSkillsFieldsParameterItem
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "created_at")]
+        #pragma warning disable CS1591
+        CreatedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "updated_at")]
+        #pragma warning disable CS1591
+        UpdatedAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "name")]
         #pragma warning disable CS1591
@@ -20,25 +28,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Description,
         #pragma warning restore CS1591
-        [EnumMember(Value = "max_tokens")]
+        [EnumMember(Value = "version")]
         #pragma warning disable CS1591
-        MaxTokens,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "web_url")]
-        #pragma warning disable CS1591
-        WebUrl,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "has_temperature")]
-        #pragma warning disable CS1591
-        HasTemperature,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "has_questions")]
-        #pragma warning disable CS1591
-        HasQuestions,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "has_vision")]
-        #pragma warning disable CS1591
-        HasVision,
+        Version,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

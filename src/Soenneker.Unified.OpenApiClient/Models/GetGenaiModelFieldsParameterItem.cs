@@ -32,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HasTemperature,
         #pragma warning restore CS1591
+        [EnumMember(Value = "has_questions")]
+        #pragma warning disable CS1591
+        HasQuestions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "has_vision")]
+        #pragma warning disable CS1591
+        HasVision,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

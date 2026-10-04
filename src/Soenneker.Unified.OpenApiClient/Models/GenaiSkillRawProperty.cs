@@ -9,45 +9,27 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GenaiContent : IAdditionalDataHolder, IParsable
+    public partial class GenaiSkillRawProperty : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Content { get; set; }
-#nullable restore
-#else
-        public string Content { get; set; }
-#endif
-        /// <summary>Images for the model to evaluate with this message, as base64 data URLs (data:image/png;base64,...). Only for models with has_vision.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Images { get; set; }
-#nullable restore
-#else
-        public List<string> Images { get; set; }
-#endif
-        /// <summary>The role property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole? Role { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiContent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty"/> and sets the default values.
         /// </summary>
-        public GenaiContent()
+        public GenaiSkillRawProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiContent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.GenaiContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.GenaiContent();
+            return new global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +39,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "images", n => { Images = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole>(); } },
             };
         }
         /// <summary>
@@ -69,9 +48,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content", Content);
-            writer.WriteCollectionOfPrimitiveValues<string>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiContentRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

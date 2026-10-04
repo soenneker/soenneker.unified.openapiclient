@@ -7,6 +7,7 @@ using Soenneker.Unified.OpenApiClient.Genai.Item.Embedding;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Model;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Organization;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Prompt;
+using Soenneker.Unified.OpenApiClient.Genai.Item.Skill;
 using Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,11 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.Prompt.PromptRequestBuilder Prompt
         {
             get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Prompt.PromptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The skill property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Genai.Item.Skill.SkillRequestBuilder Skill
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Skill.SkillRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The task property</summary>
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace.TaskRequestBuilder Task

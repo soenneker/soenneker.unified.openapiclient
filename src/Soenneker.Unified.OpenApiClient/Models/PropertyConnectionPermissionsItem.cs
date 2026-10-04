@@ -732,6 +732,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         GenaiOrganizationWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "genai_skill_read")]
+        #pragma warning disable CS1591
+        GenaiSkillRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "genai_skill_write")]
+        #pragma warning disable CS1591
+        GenaiSkillWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messaging_message_read")]
         #pragma warning disable CS1591
         MessagingMessageRead,

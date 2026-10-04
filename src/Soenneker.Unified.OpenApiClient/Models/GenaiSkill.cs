@@ -9,12 +9,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GenaiModel : IAdditionalDataHolder, IParsable
+    public partial class GenaiSkill : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>What the skill does and when to use it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,12 +24,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether the model is a decision model (such as TypeSafe Jev or Cloudflare Clef) that answers the typed questions of a prompt with answers instead of generating text responses.</summary>
-        public bool? HasQuestions { get; set; }
-        /// <summary>Controls randomness of responses. A lower temperature leads to more predictable outputs while a higher temperature results in more varies and sometimes more creative outputs. 0-1</summary>
-        public bool? HasTemperature { get; set; }
-        /// <summary>Whether the model accepts images as input (see the images on each prompt message).</summary>
-        public bool? HasVision { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +32,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The maximum number of tokens that the model can process in a single response. This limits ensures computational efficiency and resource management.</summary>
-        public double? MaxTokens { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,35 +43,37 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty Raw { get; set; }
 #endif
-        /// <summary>The web_url property</summary>
+        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The version that is used when a prompt does not pin one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public string WebUrl { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiSkill"/> and sets the default values.
         /// </summary>
-        public GenaiModel()
+        public GenaiSkill()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiSkill"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.GenaiModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.GenaiSkill CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.GenaiModel();
+            return new global::Soenneker.Unified.OpenApiClient.Models.GenaiSkill();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,15 +83,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "has_questions", n => { HasQuestions = n.GetBoolValue(); } },
-                { "has_temperature", n => { HasTemperature = n.GetBoolValue(); } },
-                { "has_vision", n => { HasVision = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty.CreateFromDiscriminatorValue); } },
-                { "web_url", n => { WebUrl = n.GetStringValue(); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -105,15 +99,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("has_questions", HasQuestions);
-            writer.WriteBoolValue("has_temperature", HasTemperature);
-            writer.WriteBoolValue("has_vision", HasVision);
             writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiModelRawProperty>("raw", Raw);
-            writer.WriteStringValue("web_url", WebUrl);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiSkillRawProperty>("raw", Raw);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
