@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Used only to import existing customer credentials; use &quot;Authorize new connection&quot; instead
+        /// Used only to import existing customer credentials. To connect a new account, use the &quot;Authorize or re-authorize a connection&quot; auth URL instead. To change credentials on an existing connection, use &quot;Update connection&quot;.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.Connection"/></returns>
         /// <param name="body">A connection represents a specific authentication of an integration.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
             return requestInfo;
         }
         /// <summary>
-        /// Used only to import existing customer credentials; use &quot;Authorize new connection&quot; instead
+        /// Used only to import existing customer credentials. To connect a new account, use the &quot;Authorize or re-authorize a connection&quot; auth URL instead. To change credentials on an existing connection, use &quot;Update connection&quot;.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A connection represents a specific authentication of an integration.</param>

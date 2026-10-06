@@ -21,7 +21,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegrationTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspaceId}/{integrationType}{?env*,external_xref*,failure_redirect*,lang*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", pathParameters)
+        public WithIntegrationTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspaceId}/{integrationType}{?connection_id*,env*,external_xref*,failure_redirect*,lang*,reauth_token*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,11 +29,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegrationTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspaceId}/{integrationType}{?env*,external_xref*,failure_redirect*,lang*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", rawUrl)
+        public WithIntegrationTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration/auth/{workspaceId}/{integrationType}{?connection_id*,env*,external_xref*,failure_redirect*,lang*,reauth_token*,redirect*,region*,scopes*,state*,subdomain*,success_redirect*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+        /// Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+        /// Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,11 +79,21 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             return new global::Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item.WithIntegrationTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+        /// Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIntegrationTypeItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>Existing connection ID to re-authorize in place instead of creating a duplicate. Requires reauth_token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("connection_id")]
+            public string? ConnectionId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("connection_id")]
+            public string ConnectionId { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -126,6 +136,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
 #else
             [QueryParameter("lang")]
             public string Lang { get; set; }
+#endif
+            /// <summary>Single-use token from &quot;Create a re-authorization token for a connection&quot; (POST /unified/connection/{id}/reauth); required with connection_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("reauth_token")]
+            public string? ReauthToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("reauth_token")]
+            public string ReauthToken { get; set; }
 #endif
             #pragma warning disable CS1591
             [QueryParameter("redirect")]
