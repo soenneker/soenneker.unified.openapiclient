@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/genai/{connectionId}/task{?fields*,limit*,offset*,order*,query*,raw*,sort*,status*,updated_gte*}", pathParameters)
+        public TaskRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/genai/{connectionId}/task{?agent_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,status*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/genai/{connectionId}/task{?fields*,limit*,offset*,order*,query*,raw*,sort*,status*,updated_gte*}", rawUrl)
+        public TaskRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/genai/{connectionId}/task{?agent_id*,fields*,limit*,offset*,order*,query*,raw*,sort*,status*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,6 +141,16 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.TaskNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaskRequestBuilderGetQueryParameters 
         {
+            /// <summary>The agent ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("agent_id")]
+            public string? AgentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("agent_id")]
+            public string AgentId { get; set; }
+#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
