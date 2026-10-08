@@ -94,6 +94,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
+        /// <summary>US Fair Labor Standards Act classification</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus? FlsaStatus { get; set; }
         /// <summary>The gender property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender? Gender { get; set; }
         /// <summary>Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.</summary>
@@ -174,6 +176,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>how often the employee is paid (eg. BIWEEKLY)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency? PayFrequency { get; set; }
         /// <summary>The pronouns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -298,6 +302,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "employment_status", n => { EmploymentStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>(); } },
                 { "employment_type", n => { EmploymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
+                { "flsa_status", n => { FlsaStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus>(); } },
                 { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender>(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup>(global::Soenneker.Unified.OpenApiClient.Models.HrisGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_mfa", n => { HasMfa = n.GetBoolValue(); } },
@@ -311,6 +316,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "marital_status", n => { MaritalStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus>(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "pay_frequency", n => { PayFrequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency>(); } },
                 { "pronouns", n => { Pronouns = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty.CreateFromDiscriminatorValue); } },
                 { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -349,6 +355,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>("employment_status", EmploymentStatus);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>("employment_type", EmploymentType);
             writer.WriteStringValue("first_name", FirstName);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus>("flsa_status", FlsaStatus);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender>("gender", Gender);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup>("groups", Groups);
             writer.WriteBoolValue("has_mfa", HasMfa);
@@ -362,6 +369,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus>("marital_status", MaritalStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency>("pay_frequency", PayFrequency);
             writer.WriteStringValue("pronouns", Pronouns);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>("relationships", Relationships);

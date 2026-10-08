@@ -76,6 +76,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Status,
         #pragma warning restore CS1591
+        [EnumMember(Value = "title")]
+        #pragma warning disable CS1591
+        Title,
+        #pragma warning restore CS1591
         [EnumMember(Value = "link_urls")]
         #pragma warning disable CS1591
         LinkUrls,

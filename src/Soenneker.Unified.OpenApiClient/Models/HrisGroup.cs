@@ -58,6 +58,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>next pay date when type is PAY_GROUP (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? NextPaidAt { get; set; }
         /// <summary>The parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ParentId { get; set; }
 #endif
+        /// <summary>pay cycle when type is PAY_GROUP</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisGroupPayFrequency? PayFrequency { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +122,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "manager_ids", n => { ManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "next_paid_at", n => { NextPaidAt = n.GetDateTimeOffsetValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
+                { "pay_frequency", n => { PayFrequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupPayFrequency>(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -139,7 +145,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteCollectionOfPrimitiveValues<string>("manager_ids", ManagerIds);
             writer.WriteStringValue("name", Name);
+            writer.WriteDateTimeOffsetValue("next_paid_at", NextPaidAt);
             writer.WriteStringValue("parent_id", ParentId);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupPayFrequency>("pay_frequency", PayFrequency);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisGroupType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

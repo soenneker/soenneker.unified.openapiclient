@@ -37,10 +37,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionCoverageLevel? CoverageLevel { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>percentage or absolute amount (employer&apos;s portion/match)</summary>
+        public double? EmployerAmount { get; set; }
+        /// <summary>The employer_type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionEmployerType? EmployerType { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionFrequency? Frequency { get; set; }
+        /// <summary>set when this deduction is a court-ordered garnishment</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionGarnishmentType? GarnishmentType { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +57,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
+        /// <summary>annual maximum employee amount (always money)</summary>
+        public double? MaxAmount { get; set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +66,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Notes { get; set; }
+#endif
+        /// <summary>the hris_paycode (deduction code) this deduction uses</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaycodeId { get; set; }
+#nullable restore
+#else
+        public string PaycodeId { get; set; }
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,11 +127,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "coverage_level", n => { CoverageLevel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionCoverageLevel>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "employer_amount", n => { EmployerAmount = n.GetDoubleValue(); } },
+                { "employer_type", n => { EmployerType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionEmployerType>(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionFrequency>(); } },
+                { "garnishment_type", n => { GarnishmentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionGarnishmentType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "max_amount", n => { MaxAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
+                { "paycode_id", n => { PaycodeId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionType>(); } },
@@ -135,11 +156,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionCoverageLevel>("coverage_level", CoverageLevel);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDoubleValue("employer_amount", EmployerAmount);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionEmployerType>("employer_type", EmployerType);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionFrequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionGarnishmentType>("garnishment_type", GarnishmentType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteDoubleValue("max_amount", MaxAmount);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("paycode_id", PaycodeId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionType>("type", Type);

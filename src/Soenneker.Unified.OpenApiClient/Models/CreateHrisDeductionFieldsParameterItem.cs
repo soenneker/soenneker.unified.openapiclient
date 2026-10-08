@@ -64,6 +64,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Notes,
         #pragma warning restore CS1591
+        [EnumMember(Value = "employer_amount")]
+        #pragma warning disable CS1591
+        EmployerAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employer_type")]
+        #pragma warning disable CS1591
+        EmployerType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "max_amount")]
+        #pragma warning disable CS1591
+        MaxAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "paycode_id")]
+        #pragma warning disable CS1591
+        PaycodeId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "garnishment_type")]
+        #pragma warning disable CS1591
+        GarnishmentType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

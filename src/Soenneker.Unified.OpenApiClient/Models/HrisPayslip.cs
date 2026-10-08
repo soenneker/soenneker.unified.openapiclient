@@ -40,6 +40,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction Deduction { get; set; }
 #endif
+        /// <summary>total employee deductions (pre and post-tax)</summary>
+        public double? DeductionAmount { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,10 +50,28 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail> Details { get; set; }
 #endif
+        /// <summary>total taxes withheld from the employee</summary>
+        public double? EmployeeTaxAmount { get; set; }
+        /// <summary>total employer benefit contributions</summary>
+        public double? EmployerContributionAmount { get; set; }
+        /// <summary>total employer-paid taxes</summary>
+        public double? EmployerTaxAmount { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>The gross_amount property</summary>
         public double? GrossAmount { get; set; }
+        /// <summary>year-to-date gross pay as of this payslip</summary>
+        public double? GrossYtdAmount { get; set; }
+        /// <summary>the pay group (hris_group of type PAY_GROUP) (reference to HrisGroup)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupId { get; set; }
+#nullable restore
+#else
+        public string GroupId { get; set; }
+#endif
+        /// <summary>total hours paid on this payslip</summary>
+        public double? Hours { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +82,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The net_amount property</summary>
         public double? NetAmount { get; set; }
+        /// <summary>year-to-date net pay as of this payslip</summary>
+        public double? NetYtdAmount { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PaidAt { get; set; }
         /// <summary>The payment_reference property</summary>
@@ -74,6 +96,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The payment_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType? PaymentType { get; set; }
+        /// <summary>the hris_payroll (pay run) this payslip belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PayrollId { get; set; }
+#nullable restore
+#else
+        public string PayrollId { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +114,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipType? Type { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>the employee (reference to HrisEmployee)</summary>
@@ -123,16 +155,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "deduction", n => { Deduction = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction.CreateFromDiscriminatorValue); } },
+                { "deduction_amount", n => { DeductionAmount = n.GetDoubleValue(); } },
                 { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "employee_tax_amount", n => { EmployeeTaxAmount = n.GetDoubleValue(); } },
+                { "employer_contribution_amount", n => { EmployerContributionAmount = n.GetDoubleValue(); } },
+                { "employer_tax_amount", n => { EmployerTaxAmount = n.GetDoubleValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "gross_amount", n => { GrossAmount = n.GetDoubleValue(); } },
+                { "gross_ytd_amount", n => { GrossYtdAmount = n.GetDoubleValue(); } },
+                { "group_id", n => { GroupId = n.GetStringValue(); } },
+                { "hours", n => { Hours = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
+                { "net_ytd_amount", n => { NetYtdAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
                 { "payment_reference", n => { PaymentReference = n.GetStringValue(); } },
                 { "payment_type", n => { PaymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>(); } },
+                { "payroll_id", n => { PayrollId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -148,16 +190,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeduction>("deduction", Deduction);
+            writer.WriteDoubleValue("deduction_amount", DeductionAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail>("details", Details);
+            writer.WriteDoubleValue("employee_tax_amount", EmployeeTaxAmount);
+            writer.WriteDoubleValue("employer_contribution_amount", EmployerContributionAmount);
+            writer.WriteDoubleValue("employer_tax_amount", EmployerTaxAmount);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteDoubleValue("gross_amount", GrossAmount);
+            writer.WriteDoubleValue("gross_ytd_amount", GrossYtdAmount);
+            writer.WriteStringValue("group_id", GroupId);
+            writer.WriteDoubleValue("hours", Hours);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("net_amount", NetAmount);
+            writer.WriteDoubleValue("net_ytd_amount", NetYtdAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteStringValue("payment_reference", PaymentReference);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipPaymentType>("payment_type", PaymentType);
+            writer.WriteStringValue("payroll_id", PayrollId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

@@ -36,5 +36,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SubDepartment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PAY_GROUP")]
+        #pragma warning disable CS1591
+        PayGroup,
+        #pragma warning restore CS1591
     }
 }

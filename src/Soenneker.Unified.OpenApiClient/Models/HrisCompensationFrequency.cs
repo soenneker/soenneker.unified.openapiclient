@@ -36,5 +36,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Week,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BIWEEKLY")]
+        #pragma warning disable CS1591
+        Biweekly,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SEMIMONTHLY")]
+        #pragma warning disable CS1591
+        Semimonthly,
+        #pragma warning restore CS1591
     }
 }

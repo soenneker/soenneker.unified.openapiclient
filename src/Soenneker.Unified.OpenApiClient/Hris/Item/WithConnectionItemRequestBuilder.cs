@@ -12,6 +12,8 @@ using Soenneker.Unified.OpenApiClient.Hris.Item.Document;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Employee;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Group;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Location;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Paycode;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Payroll;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Payslip;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff;
@@ -77,6 +79,16 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Location.LocationRequestBuilder Location
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Location.LocationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The paycode property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Paycode.PaycodeRequestBuilder Paycode
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Paycode.PaycodeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The payroll property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Payroll.PayrollRequestBuilder Payroll
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Payroll.PayrollRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The payslip property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Payslip.PayslipRequestBuilder Payslip

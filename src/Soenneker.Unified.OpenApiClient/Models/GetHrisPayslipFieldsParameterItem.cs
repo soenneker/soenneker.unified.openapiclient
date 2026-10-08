@@ -68,6 +68,46 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Deduction,
         #pragma warning restore CS1591
+        [EnumMember(Value = "payroll_id")]
+        #pragma warning disable CS1591
+        PayrollId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "group_id")]
+        #pragma warning disable CS1591
+        GroupId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hours")]
+        #pragma warning disable CS1591
+        Hours,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employee_tax_amount")]
+        #pragma warning disable CS1591
+        EmployeeTaxAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employer_tax_amount")]
+        #pragma warning disable CS1591
+        EmployerTaxAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deduction_amount")]
+        #pragma warning disable CS1591
+        DeductionAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employer_contribution_amount")]
+        #pragma warning disable CS1591
+        EmployerContributionAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gross_ytd_amount")]
+        #pragma warning disable CS1591
+        GrossYtdAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "net_ytd_amount")]
+        #pragma warning disable CS1591
+        NetYtdAmount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

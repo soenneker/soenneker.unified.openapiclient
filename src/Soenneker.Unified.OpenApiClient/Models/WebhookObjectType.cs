@@ -315,6 +315,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTaxonomy,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_payroll")]
+        #pragma warning disable CS1591
+        HrisPayroll,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_paycode")]
+        #pragma warning disable CS1591
+        HrisPaycode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "martech_list")]
         #pragma warning disable CS1591
         MartechList,

@@ -56,6 +56,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         IsPrimary,
         #pragma warning restore CS1591
+        [EnumMember(Value = "iban")]
+        #pragma warning disable CS1591
+        Iban,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bic")]
+        #pragma warning disable CS1591
+        Bic,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "country_code")]
+        #pragma warning disable CS1591
+        CountryCode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "currency")]
+        #pragma warning disable CS1591
+        Currency,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "split_type")]
+        #pragma warning disable CS1591
+        SplitType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "split_amount")]
+        #pragma warning disable CS1591
+        SplitAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "priority")]
+        #pragma warning disable CS1591
+        Priority,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

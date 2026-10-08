@@ -80,13 +80,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CompanyIds,
         #pragma warning restore CS1591
-        [EnumMember(Value = "metadata")]
-        #pragma warning disable CS1591
-        Metadata,
-        #pragma warning restore CS1591
         [EnumMember(Value = "description")]
         #pragma warning disable CS1591
         Description,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "metadata")]
+        #pragma warning disable CS1591
+        Metadata,
         #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591

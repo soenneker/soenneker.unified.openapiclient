@@ -40,6 +40,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string BankName { get; set; }
 #endif
+        /// <summary>BIC / SWIFT code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Bic { get; set; }
+#nullable restore
+#else
+        public string Bic { get; set; }
+#endif
         /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,8 +56,32 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyId { get; set; }
 #endif
+        /// <summary>ISO 2-digit country code of the bank account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CountryCode { get; set; }
+#nullable restore
+#else
+        public string CountryCode { get; set; }
+#endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>International Bank Account Number (non-US accounts)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Iban { get; set; }
+#nullable restore
+#else
+        public string Iban { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +100,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>order in which split accounts are funded (1 = first)</summary>
+        public double? Priority { get; set; }
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +118,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RoutingNumber { get; set; }
 #endif
+        /// <summary>percentage (when split_type is PERCENTAGE) or money (when FIXED)</summary>
+        public double? SplitAmount { get; set; }
+        /// <summary>how net pay is split into this account when an employee has several accounts</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountSplitType? SplitType { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>employee ID (required for listcreate) (reference to HrisEmployee)</summary>
@@ -123,13 +161,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "account_number_last4", n => { AccountNumberLast4 = n.GetStringValue(); } },
                 { "account_type", n => { AccountType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountAccountType>(); } },
                 { "bank_name", n => { BankName = n.GetStringValue(); } },
+                { "bic", n => { Bic = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
+                { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "iban", n => { Iban = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_primary", n => { IsPrimary = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty.CreateFromDiscriminatorValue); } },
                 { "routing_number", n => { RoutingNumber = n.GetStringValue(); } },
+                { "split_amount", n => { SplitAmount = n.GetDoubleValue(); } },
+                { "split_type", n => { SplitType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountSplitType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -145,13 +190,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("account_number_last4", AccountNumberLast4);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountAccountType>("account_type", AccountType);
             writer.WriteStringValue("bank_name", BankName);
+            writer.WriteStringValue("bic", Bic);
             writer.WriteStringValue("company_id", CompanyId);
+            writer.WriteStringValue("country_code", CountryCode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_primary", IsPrimary);
             writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>("raw", Raw);
             writer.WriteStringValue("routing_number", RoutingNumber);
+            writer.WriteDoubleValue("split_amount", SplitAmount);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountSplitType>("split_type", SplitType);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

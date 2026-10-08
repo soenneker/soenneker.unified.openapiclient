@@ -146,6 +146,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone> Telephones { get; set; }
 #endif
+        /// <summary>The job title of the lead</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
+#endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>(reference to HrisEmployee)</summary>
@@ -199,6 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>(global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -228,6 +237,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmTelephone>("telephones", Telephones);
+            writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

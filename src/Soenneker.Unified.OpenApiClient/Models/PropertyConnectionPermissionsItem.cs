@@ -652,6 +652,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTaxonomyWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_payroll_read")]
+        #pragma warning disable CS1591
+        HrisPayrollRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_payroll_write")]
+        #pragma warning disable CS1591
+        HrisPayrollWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_paycode_read")]
+        #pragma warning disable CS1591
+        HrisPaycodeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_paycode_write")]
+        #pragma warning disable CS1591
+        HrisPaycodeWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "uc_call_read")]
         #pragma warning disable CS1591
         UcCallRead,
@@ -1155,6 +1171,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "signing_template_read")]
         #pragma warning disable CS1591
         SigningTemplateRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "signing_template_write")]
+        #pragma warning disable CS1591
+        SigningTemplateWrite,
         #pragma warning restore CS1591
         [EnumMember(Value = "clubs_group_read")]
         #pragma warning disable CS1591

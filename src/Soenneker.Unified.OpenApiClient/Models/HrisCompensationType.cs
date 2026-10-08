@@ -28,5 +28,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Other,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HOURLY")]
+        #pragma warning disable CS1591
+        Hourly,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMMISSION")]
+        #pragma warning disable CS1591
+        Commission,
+        #pragma warning restore CS1591
     }
 }

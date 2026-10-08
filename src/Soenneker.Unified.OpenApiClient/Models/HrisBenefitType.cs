@@ -72,5 +72,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Other,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RETIREMENT_ROTH")]
+        #pragma warning disable CS1591
+        RetirementRoth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMMUTER")]
+        #pragma warning disable CS1591
+        Commuter,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEPENDENT_CARE")]
+        #pragma warning disable CS1591
+        DependentCare,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PENSION")]
+        #pragma warning disable CS1591
+        Pension,
+        #pragma warning restore CS1591
     }
 }

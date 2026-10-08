@@ -16,8 +16,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
         public double? Amount { get; set; }
+        /// <summary>The benefit_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BenefitId { get; set; }
+#nullable restore
+#else
+        public string BenefitId { get; set; }
+#endif
         /// <summary>The company_amount property</summary>
         public double? CompanyAmount { get; set; }
+        /// <summary>The deduction_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeductionId { get; set; }
+#nullable restore
+#else
+        public string DeductionId { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +44,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The employee_amount property</summary>
         public double? EmployeeAmount { get; set; }
+        /// <summary>The hours property</summary>
+        public double? Hours { get; set; }
+        /// <summary>true when this line is paid by the employer (employer tax or contribution)</summary>
+        public bool? IsEmployer { get; set; }
+        /// <summary>The is_pre_tax property</summary>
+        public bool? IsPreTax { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +58,28 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>integration pay-code label before normalization</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalType { get; set; }
+#nullable restore
+#else
+        public string OriginalType { get; set; }
+#endif
+        /// <summary>the hris_paycode for this line</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaycodeId { get; set; }
+#nullable restore
+#else
+        public string PaycodeId { get; set; }
+#endif
+        /// <summary>pay rate for hourly/unit-based lines</summary>
+        public double? RateAmount { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType? Type { get; set; }
+        /// <summary>year-to-date amount for this line</summary>
+        public double? YtdAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail"/> and sets the default values.
         /// </summary>
@@ -64,11 +106,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "benefit_id", n => { BenefitId = n.GetStringValue(); } },
                 { "company_amount", n => { CompanyAmount = n.GetDoubleValue(); } },
+                { "deduction_id", n => { DeductionId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "employee_amount", n => { EmployeeAmount = n.GetDoubleValue(); } },
+                { "hours", n => { Hours = n.GetDoubleValue(); } },
+                { "is_employer", n => { IsEmployer = n.GetBoolValue(); } },
+                { "is_pre_tax", n => { IsPreTax = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "original_type", n => { OriginalType = n.GetStringValue(); } },
+                { "paycode_id", n => { PaycodeId = n.GetStringValue(); } },
+                { "rate_amount", n => { RateAmount = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>(); } },
+                { "ytd_amount", n => { YtdAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -79,11 +130,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("benefit_id", BenefitId);
             writer.WriteDoubleValue("company_amount", CompanyAmount);
+            writer.WriteStringValue("deduction_id", DeductionId);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("employee_amount", EmployeeAmount);
+            writer.WriteDoubleValue("hours", Hours);
+            writer.WriteBoolValue("is_employer", IsEmployer);
+            writer.WriteBoolValue("is_pre_tax", IsPreTax);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("original_type", OriginalType);
+            writer.WriteStringValue("paycode_id", PaycodeId);
+            writer.WriteDoubleValue("rate_amount", RateAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>("type", Type);
+            writer.WriteDoubleValue("ytd_amount", YtdAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

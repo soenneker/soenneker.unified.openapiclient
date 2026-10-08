@@ -76,5 +76,93 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Reimbursement,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_REGULAR")]
+        #pragma warning disable CS1591
+        EarningRegular,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_DOUBLE_OVERTIME")]
+        #pragma warning disable CS1591
+        EarningDoubleOvertime,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_PTO")]
+        #pragma warning disable CS1591
+        EarningPto,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_SICK")]
+        #pragma warning disable CS1591
+        EarningSick,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_HOLIDAY")]
+        #pragma warning disable CS1591
+        EarningHoliday,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_SEVERANCE")]
+        #pragma warning disable CS1591
+        EarningSeverance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_REIMBURSEMENT")]
+        #pragma warning disable CS1591
+        EarningReimbursement,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAX_SOCIAL_SECURITY")]
+        #pragma warning disable CS1591
+        TaxSocialSecurity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAX_MEDICARE")]
+        #pragma warning disable CS1591
+        TaxMedicare,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAX_UNEMPLOYMENT")]
+        #pragma warning disable CS1591
+        TaxUnemployment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAX_EMPLOYER")]
+        #pragma warning disable CS1591
+        TaxEmployer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_HSA")]
+        #pragma warning disable CS1591
+        PretaxDeductionHsa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_FSA")]
+        #pragma warning disable CS1591
+        PretaxDeductionFsa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_DEPENDENT_CARE")]
+        #pragma warning disable CS1591
+        PretaxDeductionDependentCare,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_COMMUTER")]
+        #pragma warning disable CS1591
+        PretaxDeductionCommuter,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_DENTAL")]
+        #pragma warning disable CS1591
+        PretaxDeductionDental,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_VISION")]
+        #pragma warning disable CS1591
+        PretaxDeductionVision,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_DEDUCTION")]
+        #pragma warning disable CS1591
+        PosttaxDeduction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_RETIREMENT_ROTH")]
+        #pragma warning disable CS1591
+        PosttaxRetirementRoth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_LOAN_REPAYMENT")]
+        #pragma warning disable CS1591
+        PosttaxLoanRepayment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMPLOYER_CONTRIBUTION")]
+        #pragma warning disable CS1591
+        EmployerContribution,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PENSION")]
+        #pragma warning disable CS1591
+        Pension,
+        #pragma warning restore CS1591
     }
 }

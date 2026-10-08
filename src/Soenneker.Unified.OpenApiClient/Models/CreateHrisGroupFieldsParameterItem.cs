@@ -52,6 +52,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CompanyId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pay_frequency")]
+        #pragma warning disable CS1591
+        PayFrequency,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "next_paid_at")]
+        #pragma warning disable CS1591
+        NextPaidAt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,
