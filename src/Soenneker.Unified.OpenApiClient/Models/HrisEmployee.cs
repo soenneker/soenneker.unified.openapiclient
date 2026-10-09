@@ -126,6 +126,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ImageUrl { get; set; }
 #endif
+        /// <summary>the hris_job (position) this employee holds; their primary job when they hold more than one</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JobId { get; set; }
+#nullable restore
+#else
+        public string JobId { get; set; }
+#endif
         /// <summary>The language_locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -309,6 +317,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "hired_at", n => { HiredAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
+                { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>(global::Soenneker.Unified.OpenApiClient.Models.HrisLocation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -362,6 +371,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("hired_at", HiredAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);
+            writer.WriteStringValue("job_id", JobId);
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>("locations", Locations);

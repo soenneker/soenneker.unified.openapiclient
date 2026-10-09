@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public EmployeeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,job_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,27 +43,26 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmployeeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public EmployeeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hris/{connectionId}/employee{?company_id*,fields*,group_id*,job_id*,limit*,location_id*,offset*,order*,query*,raw*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
         /// List all employees
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee&gt;</returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder.EmployeeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder.EmployeeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder.EmployeeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder.EmployeeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an employee
@@ -170,6 +169,16 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Employee
 #else
             [QueryParameter("group_id")]
             public string GroupId { get; set; }
+#endif
+            /// <summary>The job ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("job_id")]
+            public string? JobId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("job_id")]
+            public string JobId { get; set; }
 #endif
             #pragma warning disable CS1591
             [QueryParameter("limit")]

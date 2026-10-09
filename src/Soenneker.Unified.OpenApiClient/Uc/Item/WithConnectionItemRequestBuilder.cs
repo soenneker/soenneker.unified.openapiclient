@@ -6,6 +6,8 @@ using Soenneker.Unified.OpenApiClient.Uc.Item.Call;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Comment;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Contact;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Recording;
+using Soenneker.Unified.OpenApiClient.Uc.Item.Scorecard;
+using Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -37,6 +39,16 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item
         public global::Soenneker.Unified.OpenApiClient.Uc.Item.Recording.RecordingRequestBuilder Recording
         {
             get => new global::Soenneker.Unified.OpenApiClient.Uc.Item.Recording.RecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scorecard property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Uc.Item.Scorecard.ScorecardRequestBuilder Scorecard
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Uc.Item.Scorecard.ScorecardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scorecardtemplate property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate.ScorecardtemplateRequestBuilder Scorecardtemplate
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate.ScorecardtemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Uc.Item.WithConnectionItemRequestBuilder"/> and sets the default values.

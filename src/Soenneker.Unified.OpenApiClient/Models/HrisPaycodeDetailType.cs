@@ -163,5 +163,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Pension,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_CASH_IN_LIEU")]
+        #pragma warning disable CS1591
+        EarningCashInLieu,
+        #pragma warning restore CS1591
     }
 }

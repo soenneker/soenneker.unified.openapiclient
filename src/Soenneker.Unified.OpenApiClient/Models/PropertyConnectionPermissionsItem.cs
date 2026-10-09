@@ -652,6 +652,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTaxonomyWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_job_read")]
+        #pragma warning disable CS1591
+        HrisJobRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_job_write")]
+        #pragma warning disable CS1591
+        HrisJobWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hris_payroll_read")]
         #pragma warning disable CS1591
         HrisPayrollRead,
@@ -667,6 +675,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "hris_paycode_write")]
         #pragma warning disable CS1591
         HrisPaycodeWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_earning_read")]
+        #pragma warning disable CS1591
+        HrisEarningRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_earning_write")]
+        #pragma warning disable CS1591
+        HrisEarningWrite,
         #pragma warning restore CS1591
         [EnumMember(Value = "uc_call_read")]
         #pragma warning disable CS1591
@@ -691,6 +707,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "uc_recording_read")]
         #pragma warning disable CS1591
         UcRecordingRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "uc_scorecard_read")]
+        #pragma warning disable CS1591
+        UcScorecardRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "uc_scorecardtemplate_read")]
+        #pragma warning disable CS1591
+        UcScorecardtemplateRead,
         #pragma warning restore CS1591
         [EnumMember(Value = "storage_file_read")]
         #pragma warning disable CS1591

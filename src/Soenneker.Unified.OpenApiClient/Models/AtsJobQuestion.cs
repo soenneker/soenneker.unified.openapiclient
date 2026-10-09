@@ -30,6 +30,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>latest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? MaxAt { get; set; }
+        /// <summary>maximum answer length (TEXT)</summary>
+        public double? MaxLength { get; set; }
+        /// <summary>maximum answer value (NUMBER)</summary>
+        public double? MaxValue { get; set; }
+        /// <summary>earliest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? MinAt { get; set; }
+        /// <summary>minimum answer length (TEXT)</summary>
+        public double? MinLength { get; set; }
+        /// <summary>minimum answer value (NUMBER)</summary>
+        public double? MinValue { get; set; }
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +49,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Options { get; set; }
+#endif
+        /// <summary>only ask this question when the parent question&apos;s answer is one of these</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ParentAnswerValues { get; set; }
+#nullable restore
+#else
+        public List<string> ParentAnswerValues { get; set; }
+#endif
+        /// <summary>id of the question in this job&apos;s questions list that this question depends on</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId { get; set; }
+#nullable restore
+#else
+        public string ParentId { get; set; }
 #endif
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +113,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "max_at", n => { MaxAt = n.GetDateTimeOffsetValue(); } },
+                { "max_length", n => { MaxLength = n.GetDoubleValue(); } },
+                { "max_value", n => { MaxValue = n.GetDoubleValue(); } },
+                { "min_at", n => { MinAt = n.GetDateTimeOffsetValue(); } },
+                { "min_length", n => { MinLength = n.GetDoubleValue(); } },
+                { "min_value", n => { MinValue = n.GetDoubleValue(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "parent_answer_values", n => { ParentAnswerValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "question", n => { Question = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
@@ -101,7 +137,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("max_at", MaxAt);
+            writer.WriteDoubleValue("max_length", MaxLength);
+            writer.WriteDoubleValue("max_value", MaxValue);
+            writer.WriteDateTimeOffsetValue("min_at", MinAt);
+            writer.WriteDoubleValue("min_length", MinLength);
+            writer.WriteDoubleValue("min_value", MinValue);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
+            writer.WriteCollectionOfPrimitiveValues<string>("parent_answer_values", ParentAnswerValues);
+            writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteStringValue("question", Question);
             writer.WriteBoolValue("required", Required);

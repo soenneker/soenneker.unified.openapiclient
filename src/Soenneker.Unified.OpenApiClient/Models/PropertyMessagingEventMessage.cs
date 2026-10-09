@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingButton> Buttons { get; set; }
 #endif
-        /// <summary>Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.</summary>
+        /// <summary>Represents all channels to which the message is sent. Identifies the channels where the message is posted.  To send to the &quot;Draft&quot; channel/folder, use a channel ID &quot;DRAFT&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingReference>? Channels { get; set; }

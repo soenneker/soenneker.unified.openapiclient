@@ -36,21 +36,20 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static
         /// <summary>
         /// List all items
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceItem&gt;</returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder.Item_staticRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder.Item_staticRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder.Item_staticRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder.Item_staticRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceItem>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an item

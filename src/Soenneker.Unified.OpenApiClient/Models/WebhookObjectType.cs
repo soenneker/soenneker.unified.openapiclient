@@ -315,6 +315,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisTaxonomy,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_job")]
+        #pragma warning disable CS1591
+        HrisJob,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hris_payroll")]
         #pragma warning disable CS1591
         HrisPayroll,
@@ -322,6 +326,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "hris_paycode")]
         #pragma warning disable CS1591
         HrisPaycode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_earning")]
+        #pragma warning disable CS1591
+        HrisEarning,
         #pragma warning restore CS1591
         [EnumMember(Value = "martech_list")]
         #pragma warning disable CS1591
@@ -374,6 +382,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "uc_recording")]
         #pragma warning disable CS1591
         UcRecording,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "uc_scorecard")]
+        #pragma warning disable CS1591
+        UcScorecard,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "uc_scorecardtemplate")]
+        #pragma warning disable CS1591
+        UcScorecardtemplate,
         #pragma warning restore CS1591
         [EnumMember(Value = "enrich_person")]
         #pragma warning disable CS1591

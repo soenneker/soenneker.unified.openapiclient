@@ -9,8 +9,10 @@ using Soenneker.Unified.OpenApiClient.Hris.Item.Company;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Deduction;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Device;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Document;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Earning;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Employee;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Group;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Job;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Location;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Paycode;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Payroll;
@@ -65,6 +67,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Document.DocumentRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The earning property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Earning.EarningRequestBuilder Earning
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Earning.EarningRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The employee property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Employee.EmployeeRequestBuilder Employee
         {
@@ -74,6 +81,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Group.GroupRequestBuilder Group
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The job property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Job.JobRequestBuilder Job
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Job.JobRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The location property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Location.LocationRequestBuilder Location

@@ -49,21 +49,20 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
         /// <summary>
         /// List all connections
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.Connection&gt;</returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.Connection>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.ConnectionRequestBuilder.ConnectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.ConnectionRequestBuilder.ConnectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.Connection>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.ConnectionRequestBuilder.ConnectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.ConnectionRequestBuilder.ConnectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.Connection>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.Connection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Used only to import existing customer credentials. To connect a new account, use the &quot;Authorize or re-authorize a connection&quot; auth URL instead. To change credentials on an existing connection, use &quot;Update connection&quot;.
