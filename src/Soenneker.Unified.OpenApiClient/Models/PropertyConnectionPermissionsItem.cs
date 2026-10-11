@@ -1380,5 +1380,209 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SocialInsightWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "legal_matter_read")]
+        #pragma warning disable CS1591
+        LegalMatterRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_matter_write")]
+        #pragma warning disable CS1591
+        LegalMatterWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_practicearea_read")]
+        #pragma warning disable CS1591
+        LegalPracticeareaRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_practicearea_write")]
+        #pragma warning disable CS1591
+        LegalPracticeareaWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_timeentry_read")]
+        #pragma warning disable CS1591
+        LegalTimeentryRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_timeentry_write")]
+        #pragma warning disable CS1591
+        LegalTimeentryWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_expense_read")]
+        #pragma warning disable CS1591
+        LegalExpenseRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_expense_write")]
+        #pragma warning disable CS1591
+        LegalExpenseWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_instance_read")]
+        #pragma warning disable CS1591
+        ComputeInstanceRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_instance_write")]
+        #pragma warning disable CS1591
+        ComputeInstanceWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_template_read")]
+        #pragma warning disable CS1591
+        ComputeTemplateRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_template_write")]
+        #pragma warning disable CS1591
+        ComputeTemplateWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_gputype_read")]
+        #pragma warning disable CS1591
+        ComputeGputypeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_region_read")]
+        #pragma warning disable CS1591
+        ComputeRegionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_volume_read")]
+        #pragma warning disable CS1591
+        ComputeVolumeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_volume_write")]
+        #pragma warning disable CS1591
+        ComputeVolumeWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_snapshot_read")]
+        #pragma warning disable CS1591
+        ComputeSnapshotRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_snapshot_write")]
+        #pragma warning disable CS1591
+        ComputeSnapshotWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_usage_read")]
+        #pragma warning disable CS1591
+        ComputeUsageRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_key_read")]
+        #pragma warning disable CS1591
+        ComputeKeyRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_key_write")]
+        #pragma warning disable CS1591
+        ComputeKeyWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_service_read")]
+        #pragma warning disable CS1591
+        ComputeServiceRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_service_write")]
+        #pragma warning disable CS1591
+        ComputeServiceWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_deployment_read")]
+        #pragma warning disable CS1591
+        ComputeDeploymentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_deployment_write")]
+        #pragma warning disable CS1591
+        ComputeDeploymentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_domain_read")]
+        #pragma warning disable CS1591
+        ComputeDomainRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_domain_write")]
+        #pragma warning disable CS1591
+        ComputeDomainWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_envvar_read")]
+        #pragma warning disable CS1591
+        ComputeEnvvarRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_envvar_write")]
+        #pragma warning disable CS1591
+        ComputeEnvvarWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_patient_read")]
+        #pragma warning disable CS1591
+        HealthcarePatientRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_patient_write")]
+        #pragma warning disable CS1591
+        HealthcarePatientWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_practitioner_read")]
+        #pragma warning disable CS1591
+        HealthcarePractitionerRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_practitioner_write")]
+        #pragma warning disable CS1591
+        HealthcarePractitionerWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_location_read")]
+        #pragma warning disable CS1591
+        HealthcareLocationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_location_write")]
+        #pragma warning disable CS1591
+        HealthcareLocationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_appointment_read")]
+        #pragma warning disable CS1591
+        HealthcareAppointmentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_appointment_write")]
+        #pragma warning disable CS1591
+        HealthcareAppointmentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_slot_read")]
+        #pragma warning disable CS1591
+        HealthcareSlotRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_slot_write")]
+        #pragma warning disable CS1591
+        HealthcareSlotWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_encounter_read")]
+        #pragma warning disable CS1591
+        HealthcareEncounterRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_encounter_write")]
+        #pragma warning disable CS1591
+        HealthcareEncounterWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_condition_read")]
+        #pragma warning disable CS1591
+        HealthcareConditionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_condition_write")]
+        #pragma warning disable CS1591
+        HealthcareConditionWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_allergy_read")]
+        #pragma warning disable CS1591
+        HealthcareAllergyRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_allergy_write")]
+        #pragma warning disable CS1591
+        HealthcareAllergyWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_medication_read")]
+        #pragma warning disable CS1591
+        HealthcareMedicationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_medication_write")]
+        #pragma warning disable CS1591
+        HealthcareMedicationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_observation_read")]
+        #pragma warning disable CS1591
+        HealthcareObservationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_observation_write")]
+        #pragma warning disable CS1591
+        HealthcareObservationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_immunization_read")]
+        #pragma warning disable CS1591
+        HealthcareImmunizationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_immunization_write")]
+        #pragma warning disable CS1591
+        HealthcareImmunizationWrite,
+        #pragma warning restore CS1591
     }
 }

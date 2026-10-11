@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,26 +43,27 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
         /// List all events
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Calendar.Item.Event.EventRequestBuilder.EventRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Calendar.Item.Event.EventRequestBuilder.EventRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Calendar.Item.Event.EventRequestBuilder.EventRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Calendar.Item.Event.EventRequestBuilder.EventRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CalendarEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Create an event
@@ -177,6 +178,16 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             #pragma warning restore CS1591
+            /// <summary>The matter ID to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("matter_id")]
+            public string? MatterId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("matter_id")]
+            public string MatterId { get; set; }
+#endif
             #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }

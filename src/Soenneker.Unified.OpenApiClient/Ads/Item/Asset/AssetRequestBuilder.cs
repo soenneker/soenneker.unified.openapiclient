@@ -49,20 +49,21 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Asset
         /// <summary>
         /// List all assets
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AdsAsset&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder.AssetRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AdsAsset>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder.AssetRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder.AssetRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AdsAsset>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Asset.AssetRequestBuilder.AssetRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AdsAsset>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AdsAsset.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Create an asset

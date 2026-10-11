@@ -49,20 +49,21 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Feedback
         /// <summary>
         /// List all feedbacks
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.FeedbackRequestBuilder.FeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Create a feedback

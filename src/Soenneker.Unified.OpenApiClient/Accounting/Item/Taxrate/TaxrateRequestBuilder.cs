@@ -49,20 +49,21 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate
         /// <summary>
         /// List all taxrates
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate.TaxrateRequestBuilder.TaxrateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate.TaxrateRequestBuilder.TaxrateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate.TaxrateRequestBuilder.TaxrateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Taxrate.TaxrateRequestBuilder.TaxrateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingTaxrate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Create a taxrate

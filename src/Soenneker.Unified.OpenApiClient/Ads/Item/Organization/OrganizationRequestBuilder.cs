@@ -49,20 +49,21 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Organization
         /// <summary>
         /// List all organizations
         /// </summary>
-        /// <returns>A <see cref="string"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AdsOrganization&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Organization.OrganizationRequestBuilder.OrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AdsOrganization>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Organization.OrganizationRequestBuilder.OrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Organization.OrganizationRequestBuilder.OrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AdsOrganization>> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Ads.Item.Organization.OrganizationRequestBuilder.OrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Unified.OpenApiClient.Models.AdsOrganization>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AdsOrganization.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Create an organization

@@ -100,6 +100,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SendNotifications,
         #pragma warning restore CS1591
+        [EnumMember(Value = "matter_id")]
+        #pragma warning disable CS1591
+        MatterId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

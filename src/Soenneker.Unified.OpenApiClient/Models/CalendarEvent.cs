@@ -86,6 +86,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
+        /// <summary>pointer to Legal Matter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MatterId { get; set; }
+#nullable restore
+#else
+        public string MatterId { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +215,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_free", n => { IsFree = n.GetBoolValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
+                { "matter_id", n => { MatterId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty.CreateFromDiscriminatorValue); } },
@@ -240,6 +249,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_free", IsFree);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("location", Location);
+            writer.WriteStringValue("matter_id", MatterId);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>("organizer", Organizer);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>("raw", Raw);

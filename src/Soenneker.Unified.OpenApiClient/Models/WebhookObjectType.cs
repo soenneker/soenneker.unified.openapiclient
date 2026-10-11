@@ -747,5 +747,113 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SocialInsight,
         #pragma warning restore CS1591
+        [EnumMember(Value = "legal_matter")]
+        #pragma warning disable CS1591
+        LegalMatter,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_practicearea")]
+        #pragma warning disable CS1591
+        LegalPracticearea,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_timeentry")]
+        #pragma warning disable CS1591
+        LegalTimeentry,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "legal_expense")]
+        #pragma warning disable CS1591
+        LegalExpense,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_instance")]
+        #pragma warning disable CS1591
+        ComputeInstance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_template")]
+        #pragma warning disable CS1591
+        ComputeTemplate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_gputype")]
+        #pragma warning disable CS1591
+        ComputeGputype,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_region")]
+        #pragma warning disable CS1591
+        ComputeRegion,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_volume")]
+        #pragma warning disable CS1591
+        ComputeVolume,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_snapshot")]
+        #pragma warning disable CS1591
+        ComputeSnapshot,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_usage")]
+        #pragma warning disable CS1591
+        ComputeUsage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_key")]
+        #pragma warning disable CS1591
+        ComputeKey,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_service")]
+        #pragma warning disable CS1591
+        ComputeService,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_deployment")]
+        #pragma warning disable CS1591
+        ComputeDeployment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_domain")]
+        #pragma warning disable CS1591
+        ComputeDomain,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute_envvar")]
+        #pragma warning disable CS1591
+        ComputeEnvvar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_patient")]
+        #pragma warning disable CS1591
+        HealthcarePatient,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_practitioner")]
+        #pragma warning disable CS1591
+        HealthcarePractitioner,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_location")]
+        #pragma warning disable CS1591
+        HealthcareLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_appointment")]
+        #pragma warning disable CS1591
+        HealthcareAppointment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_slot")]
+        #pragma warning disable CS1591
+        HealthcareSlot,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_encounter")]
+        #pragma warning disable CS1591
+        HealthcareEncounter,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_condition")]
+        #pragma warning disable CS1591
+        HealthcareCondition,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_allergy")]
+        #pragma warning disable CS1591
+        HealthcareAllergy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_medication")]
+        #pragma warning disable CS1591
+        HealthcareMedication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_observation")]
+        #pragma warning disable CS1591
+        HealthcareObservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_immunization")]
+        #pragma warning disable CS1591
+        HealthcareImmunization,
+        #pragma warning restore CS1591
     }
 }

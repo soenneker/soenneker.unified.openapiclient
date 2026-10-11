@@ -15,13 +15,16 @@ using Soenneker.Unified.OpenApiClient.Calendar;
 using Soenneker.Unified.OpenApiClient.Cdp;
 using Soenneker.Unified.OpenApiClient.Clubs;
 using Soenneker.Unified.OpenApiClient.Commerce;
+using Soenneker.Unified.OpenApiClient.Compute;
 using Soenneker.Unified.OpenApiClient.Crm;
 using Soenneker.Unified.OpenApiClient.Datastore;
 using Soenneker.Unified.OpenApiClient.Enrich;
 using Soenneker.Unified.OpenApiClient.Forms;
 using Soenneker.Unified.OpenApiClient.Genai;
+using Soenneker.Unified.OpenApiClient.Healthcare;
 using Soenneker.Unified.OpenApiClient.Hris;
 using Soenneker.Unified.OpenApiClient.Kms;
+using Soenneker.Unified.OpenApiClient.Legal;
 using Soenneker.Unified.OpenApiClient.Lms;
 using Soenneker.Unified.OpenApiClient.Martech;
 using Soenneker.Unified.OpenApiClient.Messaging;
@@ -97,6 +100,11 @@ namespace Soenneker.Unified.OpenApiClient
         {
             get => new global::Soenneker.Unified.OpenApiClient.Commerce.CommerceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The compute property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Compute.ComputeRequestBuilder Compute
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The crm property</summary>
         public global::Soenneker.Unified.OpenApiClient.Crm.CrmRequestBuilder Crm
         {
@@ -122,6 +130,11 @@ namespace Soenneker.Unified.OpenApiClient
         {
             get => new global::Soenneker.Unified.OpenApiClient.Genai.GenaiRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The healthcare property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.HealthcareRequestBuilder Healthcare
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.HealthcareRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The hris property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.HrisRequestBuilder Hris
         {
@@ -131,6 +144,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Kms.KmsRequestBuilder Kms
         {
             get => new global::Soenneker.Unified.OpenApiClient.Kms.KmsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The legal property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Legal.LegalRequestBuilder Legal
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Legal.LegalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lms property</summary>
         public global::Soenneker.Unified.OpenApiClient.Lms.LmsRequestBuilder Lms

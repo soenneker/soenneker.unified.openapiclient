@@ -148,5 +148,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Social,
         #pragma warning restore CS1591
+        [EnumMember(Value = "legal")]
+        #pragma warning disable CS1591
+        Legal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "compute")]
+        #pragma warning disable CS1591
+        Compute,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare")]
+        #pragma warning disable CS1591
+        Healthcare,
+        #pragma warning restore CS1591
     }
 }
