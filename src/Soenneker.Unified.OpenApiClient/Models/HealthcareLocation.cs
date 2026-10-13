@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? Latitude { get; set; }
         /// <summary>Longitude of the location</summary>
         public double? Longitude { get; set; }
-        /// <summary>The metadata property</summary>
+        /// <summary>Custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>? Metadata { get; set; }

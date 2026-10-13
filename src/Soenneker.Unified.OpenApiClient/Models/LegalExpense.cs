@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the expense was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>free-text description of the expense</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ExpenseCode { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>unique identifier for the expense</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -66,9 +66,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InvoiceId { get; set; }
 #endif
-        /// <summary>The is_billable property</summary>
+        /// <summary>whether the expense is billable</summary>
         public bool? IsBillable { get; set; }
-        /// <summary>The is_billed property</summary>
+        /// <summary>whether the expense has been billed</summary>
         public bool? IsBilled { get; set; }
         /// <summary>pointer to the Legal Matter this expense is recorded against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,9 +88,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>unit price</summary>
         public double? PriceAmount { get; set; }
-        /// <summary>The quantity property</summary>
+        /// <summary>number of units</summary>
         public double? Quantity { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>raw data from the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.LegalExpenseRawProperty? Raw { get; set; }
@@ -98,11 +98,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.LegalExpenseRawProperty Raw { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>total amount of the expense</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>hard cost, soft cost or other</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.LegalExpenseType? Type { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the expense was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>HR Employee who incurred or recorded the expense (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

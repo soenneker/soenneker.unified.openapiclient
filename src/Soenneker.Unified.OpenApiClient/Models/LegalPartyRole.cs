@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>the party role on the matter</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum LegalPartyRole
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CLIENT")]
         #pragma warning disable CS1591

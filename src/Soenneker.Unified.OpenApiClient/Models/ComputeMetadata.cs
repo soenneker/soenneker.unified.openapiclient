@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The extra_data property</summary>
+        /// <summary>Additional data about the value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadataExtraData? ExtraData { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The data type of the value</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadataFormat? Format { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The label, tag or metadata identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

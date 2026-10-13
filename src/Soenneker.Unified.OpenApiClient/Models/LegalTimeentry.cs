@@ -24,9 +24,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>billable duration after rounding, in minutes</summary>
         public double? BillableMinutes { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the time entry was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>description of the work performed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>unique identifier for the time entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -58,9 +58,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InvoiceId { get; set; }
 #endif
-        /// <summary>The is_billable property</summary>
+        /// <summary>whether the time entry is billable</summary>
         public bool? IsBillable { get; set; }
-        /// <summary>The is_billed property</summary>
+        /// <summary>whether the time entry has been billed</summary>
         public bool? IsBilled { get; set; }
         /// <summary>pointer to the Legal Matter this time is recorded against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? Minutes { get; set; }
         /// <summary>hourly rate, or the flat amount for flat-rate entries</summary>
         public double? RateAmount { get; set; }
-        /// <summary>The raw property</summary>
+        /// <summary>raw data from the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.LegalTimeentryRawProperty? Raw { get; set; }
@@ -98,9 +98,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaskCode { get; set; }
 #endif
-        /// <summary>The total_amount property</summary>
+        /// <summary>total amount of the time entry</summary>
         public double? TotalAmount { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the time entry was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>HR Employee who is the timekeeper (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

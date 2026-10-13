@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The kind of email address (work, home or other)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum HealthcareEmailType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "WORK")]
         #pragma warning disable CS1591

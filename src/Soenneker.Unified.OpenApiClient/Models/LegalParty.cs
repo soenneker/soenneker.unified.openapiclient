@@ -38,7 +38,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>the party role on the matter</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.LegalPartyRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.LegalParty"/> and sets the default values.

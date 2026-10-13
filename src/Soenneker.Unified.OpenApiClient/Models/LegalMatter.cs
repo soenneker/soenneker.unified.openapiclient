@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The billing_method property</summary>
+        /// <summary>how the matter is billed</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMatterBillingMethod? BillingMethod { get; set; }
         /// <summary>the client&apos;s own reference number for this matter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ClientReference { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the matter was closed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ClosedAt { get; set; }
         /// <summary>CRM Companies that are clients on this matter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,9 +42,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> ContactIds { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the matter was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO 4217 currency code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>free-text description of the matter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>unique identifier for the matter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_billable property</summary>
+        /// <summary>whether the matter is billable</summary>
         public bool? IsBillable { get; set; }
         /// <summary>custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.LegalMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>the matter name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the matter was opened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? OpenedAt { get; set; }
         /// <summary>HR Employee who is the originating attorney (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.LegalParty> Parties { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the matter became pending (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? PendingAt { get; set; }
         /// <summary>pointer to the Legal Practicearea object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PracticeareaId { get; set; }
 #endif
-        /// <summary>The raw property</summary>
+        /// <summary>raw data from the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMatterRawProperty? Raw { get; set; }
@@ -138,11 +138,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Stage { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>the matter status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMatterStatus? Status { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>statute of limitations deadline for the matter (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StatuteOfLimitationsAt { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the matter was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>HR Employee who is the responsible attorney (reference to HrisEmployee)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

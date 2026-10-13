@@ -14,7 +14,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The extra_data property</summary>
+        /// <summary>additional data about the custom field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMetadataExtraData? ExtraData { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMetadataExtraData ExtraData { get; set; }
 #endif
-        /// <summary>The format property</summary>
+        /// <summary>the data type of the value</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMetadataFormat? Format { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>the custom field identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The namespace property</summary>
+        /// <summary>the scope or origin of the custom field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Namespace { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Namespace { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>the custom field key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>the custom field value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.LegalMetadataValue? Value { get; set; }

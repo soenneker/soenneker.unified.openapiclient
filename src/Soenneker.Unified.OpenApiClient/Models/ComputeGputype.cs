@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>vCPUs included in one unit of this type</summary>
         public double? CpuCount { get; set; }
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>When the GPU type was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Local disk in MiB</summary>
         public double? DiskMb { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Sku { get; set; }
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>When the GPU type was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ComputeGputype"/> and sets the default values.

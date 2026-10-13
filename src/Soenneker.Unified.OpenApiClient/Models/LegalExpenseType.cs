@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>hard cost, soft cost or other</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum LegalExpenseType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HARD_COST")]
         #pragma warning disable CS1591

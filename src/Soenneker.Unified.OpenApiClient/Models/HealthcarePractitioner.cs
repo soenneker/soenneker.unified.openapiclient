@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> LocationIds { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>? Metadata { get; set; }

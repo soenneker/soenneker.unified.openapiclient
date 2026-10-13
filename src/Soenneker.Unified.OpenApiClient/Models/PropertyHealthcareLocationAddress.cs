@@ -15,7 +15,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address1 property</summary>
+        /// <summary>First line of the street address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address1 { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Address1 { get; set; }
 #endif
-        /// <summary>The address2 property</summary>
+        /// <summary>Second line of the street address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address2 { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Address2 { get; set; }
 #endif
-        /// <summary>The city property</summary>
+        /// <summary>City or locality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The country property</summary>
+        /// <summary>Country</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The postal_code property</summary>
+        /// <summary>Postal or ZIP code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Regional area (e.g., state in the U.S., province in Canada)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
