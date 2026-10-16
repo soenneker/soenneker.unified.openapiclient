@@ -66,6 +66,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
+        /// <summary>the URL of the virtual/video meeting (eg. Zoom, Google Meet, Microsoft Teams)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingUrl { get; set; }
+#nullable restore
+#else
+        public string MeetingUrl { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +129,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
+                { "meeting_url", n => { MeetingUrl = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewStatus>(); } },
@@ -143,6 +152,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("job_id", JobId);
             writer.WriteStringValue("location", Location);
+            writer.WriteStringValue("meeting_url", MeetingUrl);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewStatus>("status", Status);

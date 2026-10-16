@@ -52,6 +52,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Location,
         #pragma warning restore CS1591
+        [EnumMember(Value = "meeting_url")]
+        #pragma warning disable CS1591
+        MeetingUrl,
+        #pragma warning restore CS1591
         [EnumMember(Value = "external_event_xref")]
         #pragma warning disable CS1591
         ExternalEventXref,
