@@ -83,6 +83,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationName { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The event name (or a &quot;Home vs Away&quot; matchup label)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,6 +189,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_home", n => { IsHome = n.GetBoolValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "location_name", n => { LocationName = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "opponent_id", n => { OpponentId = n.GetStringValue(); } },
                 { "opponent_name", n => { OpponentName = n.GetStringValue(); } },
@@ -215,6 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_home", IsHome);
             writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("location_name", LocationName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("opponent_id", OpponentId);
             writer.WriteStringValue("opponent_name", OpponentName);

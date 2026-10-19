@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTaxonomyRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmTaxonomyRawProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IndustryType>(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmTaxonomyRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.IndustryType>("type", Type);

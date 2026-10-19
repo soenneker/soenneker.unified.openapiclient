@@ -94,6 +94,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MatterId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,6 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "matter_id", n => { MatterId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty.CreateFromDiscriminatorValue); } },
@@ -250,6 +259,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("matter_id", MatterId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventOrganizer>("organizer", Organizer);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>("raw", Raw);

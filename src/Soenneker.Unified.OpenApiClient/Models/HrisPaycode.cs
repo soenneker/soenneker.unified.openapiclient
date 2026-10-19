@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? IsEmployer { get; set; }
         /// <summary>The is_pre_tax property</summary>
         public bool? IsPreTax { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_employer", n => { IsEmployer = n.GetBoolValue(); } },
                 { "is_pre_tax", n => { IsPreTax = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeType>(); } },
@@ -132,6 +141,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_employer", IsEmployer);
             writer.WriteBoolValue("is_pre_tax", IsPreTax);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeType>("type", Type);

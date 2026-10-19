@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>(global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "parent_page_id", n => { ParentPageId = n.GetStringValue(); } },
@@ -124,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("parent_page_id", ParentPageId);

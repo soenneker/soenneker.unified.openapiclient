@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "periods", n => { Periods = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedPeriod>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedPeriod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedpayableRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedpayableRawProperty.CreateFromDiscriminatorValue); } },
@@ -118,6 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedPeriod>("periods", Periods);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedpayableRawProperty>("raw", Raw);

@@ -42,6 +42,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InstanceId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>Display name of the key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
@@ -155,6 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("instance_id", InstanceId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("private_key", PrivateKey);
             writer.WriteStringValue("public_key", PublicKey);

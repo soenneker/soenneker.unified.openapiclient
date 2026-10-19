@@ -52,6 +52,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata> Metadata { get; set; }
+#endif
         /// <summary>Document/envelope title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty.CreateFromDiscriminatorValue); } },
                 { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
@@ -136,6 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("download_url", DownloadUrl);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningDocumentRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("sent_at", SentAt);

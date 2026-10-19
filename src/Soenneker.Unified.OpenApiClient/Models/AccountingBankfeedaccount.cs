@@ -70,6 +70,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>account nickname / source name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,6 +149,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "feed_start_at", n => { FeedStartAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountRawProperty.CreateFromDiscriminatorValue); } },
@@ -166,6 +175,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("feed_start_at", FeedStartAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccountRawProperty>("raw", Raw);

@@ -117,6 +117,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? MaxSpeed { get; set; }
         /// <summary>The activity&apos;s max power output, in watts</summary>
         public double? MaxWatts { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The activity&apos;s moving time, in seconds</summary>
         public double? MovingTime { get; set; }
         /// <summary>The name of the activity</summary>
@@ -216,6 +224,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "max_heartrate", n => { MaxHeartrate = n.GetDoubleValue(); } },
                 { "max_speed", n => { MaxSpeed = n.GetDoubleValue(); } },
                 { "max_watts", n => { MaxWatts = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "moving_time", n => { MovingTime = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "photo_count", n => { PhotoCount = n.GetDoubleValue(); } },
@@ -268,6 +277,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("max_heartrate", MaxHeartrate);
             writer.WriteDoubleValue("max_speed", MaxSpeed);
             writer.WriteDoubleValue("max_watts", MaxWatts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("moving_time", MovingTime);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("photo_count", PhotoCount);

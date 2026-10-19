@@ -62,6 +62,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>The net_amount property</summary>
         public double? NetAmount { get; set; }
         /// <summary>pay/check date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -137,6 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "gross_amount", n => { GrossAmount = n.GetDoubleValue(); } },
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
                 { "payslip_ids", n => { PayslipIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -168,6 +177,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("gross_amount", GrossAmount);
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
             writer.WriteCollectionOfPrimitiveValues<string>("payslip_ids", PayslipIds);

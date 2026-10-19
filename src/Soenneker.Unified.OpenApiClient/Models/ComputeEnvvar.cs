@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Whether the vendor stores the value as a secret</summary>
         public bool? IsSecret { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>Variable name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_secret", n => { IsSecret = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarRawProperty.CreateFromDiscriminatorValue); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
@@ -115,6 +124,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem>("environments", Environments);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_secret", IsSecret);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarRawProperty>("raw", Raw);
             writer.WriteStringValue("service_id", ServiceId);

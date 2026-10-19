@@ -102,6 +102,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LanguageLocale { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +221,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "insertionorder_id", n => { InsertionorderId = n.GetStringValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "optimization_goal", n => { OptimizationGoal = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupOptimizationGoal>(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -254,6 +263,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("insertionorder_id", InsertionorderId);
             writer.WriteStringValue("language_locale", LanguageLocale);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupOptimizationGoal>("optimization_goal", OptimizationGoal);
             writer.WriteStringValue("organization_id", OrganizationId);

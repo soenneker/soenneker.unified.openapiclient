@@ -76,6 +76,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation> Locations { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>the job or position title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +153,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>(global::Soenneker.Unified.OpenApiClient.Models.HrisLocation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisJobRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisJobRawProperty.CreateFromDiscriminatorValue); } },
@@ -169,6 +178,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>("locations", Locations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisJobRawProperty>("raw", Raw);

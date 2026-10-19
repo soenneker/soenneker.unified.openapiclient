@@ -26,6 +26,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Whether this is the service&apos;s primary domain</summary>
         public bool? IsPrimary { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>The hostname (eg. app.example.com)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_primary", n => { IsPrimary = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeDomainRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ComputeDomainRawProperty.CreateFromDiscriminatorValue); } },
                 { "redirect_url", n => { RedirectUrl = n.GetStringValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_primary", IsPrimary);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeDomainRawProperty>("raw", Raw);
             writer.WriteStringValue("redirect_url", RedirectUrl);

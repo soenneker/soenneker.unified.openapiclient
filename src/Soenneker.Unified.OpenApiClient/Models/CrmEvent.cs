@@ -97,6 +97,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting Meeting { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata> Metadata { get; set; }
+#endif
         /// <summary>The note object, when type = note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "lead_ids", n => { LeadIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "marketing_email", n => { MarketingEmail = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail.CreateFromDiscriminatorValue); } },
                 { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "note", n => { Note = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote.CreateFromDiscriminatorValue); } },
                 { "page_view", n => { PageView = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty.CreateFromDiscriminatorValue); } },
@@ -204,6 +213,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("lead_ids", LeadIds);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMarketingEmail>("marketing_email", MarketingEmail);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventMeeting>("meeting", Meeting);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventNote>("note", Note);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmEventPageView>("page_view", PageView);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmEventRawProperty>("raw", Raw);

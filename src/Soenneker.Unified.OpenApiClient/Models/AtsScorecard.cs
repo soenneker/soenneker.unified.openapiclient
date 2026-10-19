@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "interview_id", n => { InterviewId = n.GetStringValue(); } },
                 { "interviewer_id", n => { InterviewerId = n.GetStringValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion>(global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty.CreateFromDiscriminatorValue); } },
                 { "recommendation", n => { Recommendation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRecommendation>(); } },
@@ -146,6 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("interviewer_id", InterviewerId);
             writer.WriteStringValue("interview_id", InterviewId);
             writer.WriteStringValue("job_id", JobId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardQuestion>("questions", Questions);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsScorecardRecommendation>("recommendation", Recommendation);

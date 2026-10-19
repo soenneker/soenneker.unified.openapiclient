@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember> Members { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMember.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MessagingChannelRawProperty.CreateFromDiscriminatorValue); } },
@@ -133,6 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember>("members", Members);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingChannelRawProperty>("raw", Raw);

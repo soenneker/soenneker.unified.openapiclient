@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics>(global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty.CreateFromDiscriminatorValue); } },
@@ -109,6 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsReportMetrics>("metrics", Metrics);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AdsReportRawProperty>("raw", Raw);

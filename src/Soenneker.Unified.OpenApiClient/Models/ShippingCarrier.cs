@@ -42,6 +42,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LogoUrl { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name of the carrier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCarrierRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingCarrierRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -116,6 +125,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("logo_url", LogoUrl);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingCarrierRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

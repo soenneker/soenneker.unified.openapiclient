@@ -75,6 +75,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? MemberCount { get; set; }
         /// <summary>The authenticated user&apos;s membership status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupMembershipStatus? MembershipStatus { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The group&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +161,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
                 { "member_count", n => { MemberCount = n.GetDoubleValue(); } },
                 { "membership_status", n => { MembershipStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupMembershipStatus>(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "post_count", n => { PostCount = n.GetDoubleValue(); } },
                 { "profile_image_url", n => { ProfileImageUrl = n.GetStringValue(); } },
@@ -184,6 +193,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_verified", IsVerified);
             writer.WriteDoubleValue("member_count", MemberCount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsGroupMembershipStatus>("membership_status", MembershipStatus);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("post_count", PostCount);
             writer.WriteStringValue("profile_image_url", ProfileImageUrl);

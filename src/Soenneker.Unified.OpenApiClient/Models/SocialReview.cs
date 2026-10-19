@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata> Metadata { get; set; }
+#endif
         /// <summary>The social profile (page/handle/listing) being reviewed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SocialReviewRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SocialReviewRawProperty.CreateFromDiscriminatorValue); } },
@@ -153,6 +162,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>("metadata", Metadata);
             writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteDoubleValue("rating", Rating);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SocialReviewRawProperty>("raw", Raw);

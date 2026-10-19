@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_private property</summary>
         public bool? IsPrivate { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>(global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "org_id", n => { OrgId = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
@@ -124,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_private", IsPrivate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("org_id", OrgId);
             writer.WriteStringValue("owner", Owner);

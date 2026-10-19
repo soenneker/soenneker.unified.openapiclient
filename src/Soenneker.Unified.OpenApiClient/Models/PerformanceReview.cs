@@ -44,6 +44,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>whether the reviewee acknowledged this review</summary>
         public bool? IsAcknowledged { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata> Metadata { get; set; }
+#endif
         /// <summary>The questions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "cycle_id", n => { CycleId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_acknowledged", n => { IsAcknowledged = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewQuestion>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
                 { "rating_description", n => { RatingDescription = n.GetStringValue(); } },
@@ -162,6 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("cycle_id", CycleId);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_acknowledged", IsAcknowledged);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceReviewQuestion>("questions", Questions);
             writer.WriteDoubleValue("rating", Rating);
             writer.WriteStringValue("rating_description", RatingDescription);

@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> ListIds { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Campaign nametitle</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "from_name", n => { FromName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "list_ids", n => { ListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "preview_text", n => { PreviewText = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty.CreateFromDiscriminatorValue); } },
@@ -155,6 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("from_name", FromName);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("list_ids", ListIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("preview_text", PreviewText);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingCampaignRawProperty>("raw", Raw);

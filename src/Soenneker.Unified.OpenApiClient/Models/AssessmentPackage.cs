@@ -71,6 +71,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Maximum possible score if this assessment returns a score</summary>
         public double? MaxScore { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata> Metadata { get; set; }
+#endif
         /// <summary>Name of the assessment package</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +168,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "info_url", n => { InfoUrl = n.GetStringValue(); } },
                 { "integration_types", n => { IntegrationTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_score", n => { MaxScore = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needs_ip_address", n => { NeedsIpAddress = n.GetBoolValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -188,6 +197,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("info_url", InfoUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("integration_types", IntegrationTypes);
             writer.WriteDoubleValue("max_score", MaxScore);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needs_ip_address", NeedsIpAddress);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameter>("parameters", Parameters);

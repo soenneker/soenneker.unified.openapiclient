@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>Display name of the region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "gpu_models", n => { GpuModels = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -113,6 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem>("gpu_models", GpuModels);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("location", Location);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

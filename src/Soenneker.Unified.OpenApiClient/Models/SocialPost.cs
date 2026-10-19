@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMedia> Media { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata> Metadata { get; set; }
+#endif
         /// <summary>Engagement metrics for the post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMedia>(global::Soenneker.Unified.OpenApiClient.Models.SocialMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics>(global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics.CreateFromDiscriminatorValue); } },
                 { "parent_post_id", n => { ParentPostId = n.GetStringValue(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
@@ -168,6 +177,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language", Language);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics>("metrics", Metrics);
             writer.WriteStringValue("parent_post_id", ParentPostId);
             writer.WriteStringValue("profile_id", ProfileId);

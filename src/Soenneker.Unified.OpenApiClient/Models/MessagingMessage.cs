@@ -116,6 +116,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MessageThreadIdentifier { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "message_html", n => { MessageHtml = n.GetStringValue(); } },
                 { "message_markdown", n => { MessageMarkdown = n.GetStringValue(); } },
                 { "message_thread_identifier", n => { MessageThreadIdentifier = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty.CreateFromDiscriminatorValue); } },
                 { "reactions", n => { Reactions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>(global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -237,6 +246,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("message_html", MessageHtml);
             writer.WriteStringValue("message_markdown", MessageMarkdown);
             writer.WriteStringValue("message_thread_identifier", MessageThreadIdentifier);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingMetadata>("metadata", Metadata);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MessagingMessageRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MessagingReaction>("reactions", Reactions);

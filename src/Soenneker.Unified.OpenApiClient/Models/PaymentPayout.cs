@@ -58,6 +58,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem> Lineitems { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata> Metadata { get; set; }
+#endif
         /// <summary>total_amount minus fee_amount</summary>
         public double? NetAmount { get; set; }
         /// <summary>The notes property</summary>
@@ -120,6 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "fee_amount", n => { FeeAmount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty.CreateFromDiscriminatorValue); } },
@@ -142,6 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("fee_amount", FeeAmount);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutLineitem>("lineitems", Lineitems);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentPayoutRawProperty>("raw", Raw);

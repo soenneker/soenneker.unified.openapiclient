@@ -53,6 +53,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Language { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The list&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +161,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty.CreateFromDiscriminatorValue); } },
                 { "sender_company", n => { SenderCompany = n.GetStringValue(); } },
@@ -179,6 +188,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteStringValue("language", Language);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingListRawProperty>("raw", Raw);
             writer.WriteStringValue("sender_company", SenderCompany);

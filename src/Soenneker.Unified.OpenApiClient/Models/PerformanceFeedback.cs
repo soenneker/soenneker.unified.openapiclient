@@ -42,6 +42,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_visible", n => { IsVisible = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedbackRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedbackRawProperty.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedbackType>(); } },
@@ -119,6 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_visible", IsVisible);
             writer.WriteStringValue("message", Message);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedbackRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedbackType>("type", Type);

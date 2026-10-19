@@ -107,6 +107,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>card/non-cash tips attributed to this attendance record</summary>
         public double? NonCashTipsAmount { get; set; }
         /// <summary>The raw property</summary>
@@ -180,6 +188,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job_name", n => { JobName = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "non_cash_tips_amount", n => { NonCashTipsAmount = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -212,6 +221,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("job_name", JobName);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("non_cash_tips_amount", NonCashTipsAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisAttendanceRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

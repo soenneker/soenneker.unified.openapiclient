@@ -66,6 +66,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderKpi Kpi { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderFrequencyCap.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kpi", n => { Kpi = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderKpi>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderKpi.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderPacing.CreateFromDiscriminatorValue); } },
@@ -167,6 +176,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderFrequencyCap>("frequency_cap", FrequencyCap);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderKpi>("kpi", Kpi);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderPacing>("pacing", Pacing);

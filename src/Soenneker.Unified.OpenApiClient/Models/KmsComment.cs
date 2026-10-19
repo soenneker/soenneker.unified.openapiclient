@@ -34,6 +34,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata> Metadata { get; set; }
+#endif
         /// <summary>(reference to KmsPage)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsCommentContentType>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>(global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsCommentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.KmsCommentRawProperty.CreateFromDiscriminatorValue); } },
@@ -118,6 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.KmsCommentContentType>("content_type", ContentType);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadata>("metadata", Metadata);
             writer.WriteStringValue("page_id", PageId);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsCommentRawProperty>("raw", Raw);

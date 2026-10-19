@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +129,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>(global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -141,6 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);
             writer.WriteStringValue("last_name", LastName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>("telephones", Telephones);

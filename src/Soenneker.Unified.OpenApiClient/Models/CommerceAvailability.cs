@@ -32,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
                 { "staff_user_id", n => { StaffUserId = n.GetStringValue(); } },
@@ -96,6 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceAvailabilityRawProperty>("raw", Raw);
             writer.WriteDoubleValue("size", Size);
             writer.WriteStringValue("staff_user_id", StaffUserId);

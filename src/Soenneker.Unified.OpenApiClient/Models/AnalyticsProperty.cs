@@ -40,6 +40,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsPropertyRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AnalyticsPropertyRawProperty.CreateFromDiscriminatorValue); } },
@@ -121,6 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("industry", Industry);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsPropertyRawProperty>("raw", Raw);

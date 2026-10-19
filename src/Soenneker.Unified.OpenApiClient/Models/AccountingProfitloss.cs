@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The income_total_amount property</summary>
         public double? IncomeTotalAmount { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +138,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "income_sections", n => { IncomeSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "income_total_amount", n => { IncomeTotalAmount = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_income_amount", n => { NetIncomeAmount = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty.CreateFromDiscriminatorValue); } },
@@ -155,6 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossSection>("income_sections", IncomeSections);
             writer.WriteDoubleValue("income_total_amount", IncomeTotalAmount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_income_amount", NetIncomeAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProfitlossRawProperty>("raw", Raw);

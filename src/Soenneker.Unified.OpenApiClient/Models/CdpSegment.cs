@@ -44,6 +44,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Whether the segment is active/enabled</summary>
         public bool? IsActive { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name of the segment/audience</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentRawProperty.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
@@ -135,6 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CdpSegmentRawProperty>("raw", Raw);
             writer.WriteDoubleValue("size", Size);

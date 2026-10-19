@@ -82,6 +82,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Memo { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The organization_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,6 +201,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "memo", n => { Memo = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "payment_method", n => { PaymentMethod = n.GetStringValue(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetStringValue(); } },
@@ -226,6 +235,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingTransactionLineItem>("lineitems", Lineitems);
             writer.WriteStringValue("memo", Memo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("payment_method", PaymentMethod);
             writer.WriteStringValue("payment_terms", PaymentTerms);

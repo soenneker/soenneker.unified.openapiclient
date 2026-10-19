@@ -58,6 +58,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_paid property</summary>
         public bool? IsPaid { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>integration leave-type label before normalization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +141,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_paid", n => { IsPaid = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "original_type", n => { OriginalType = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
@@ -160,6 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_paid", IsPaid);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("original_type", OriginalType);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisTimeoffRawProperty>("raw", Raw);
             writer.WriteStringValue("reason", Reason);

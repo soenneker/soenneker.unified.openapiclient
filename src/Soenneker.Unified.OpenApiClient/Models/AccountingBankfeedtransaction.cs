@@ -92,6 +92,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MerchantName { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>ref -&gt; accounting Organization this record belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_pending", n => { IsPending = n.GetBoolValue(); } },
                 { "merchant_name", n => { MerchantName = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransactionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransactionRawProperty.CreateFromDiscriminatorValue); } },
@@ -189,6 +198,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_pending", IsPending);
             writer.WriteStringValue("merchant_name", MerchantName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransactionRawProperty>("raw", Raw);

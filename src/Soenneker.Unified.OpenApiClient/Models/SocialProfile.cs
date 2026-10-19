@@ -68,6 +68,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata> Metadata { get; set; }
+#endif
         /// <summary>Audience metrics for the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,6 +176,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics>(global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
@@ -195,6 +204,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteBoolValue("is_verified", IsVerified);
             writer.WriteStringValue("location", Location);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics>("metrics", Metrics);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);

@@ -68,6 +68,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Manufacturer { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>device model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +171,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_missing", n => { IsMissing = n.GetBoolValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
@@ -192,6 +201,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_missing", IsMissing);
             writer.WriteStringValue("location_id", LocationId);
             writer.WriteStringValue("manufacturer", Manufacturer);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("os", Os);

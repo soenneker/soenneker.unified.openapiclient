@@ -58,6 +58,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem> Liabilities { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "equity", n => { Equity = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "liabilities", n => { Liabilities = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_assets_amount", n => { NetAssetsAmount = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty.CreateFromDiscriminatorValue); } },
@@ -133,6 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>("equity", Equity);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetItem>("liabilities", Liabilities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_assets_amount", NetAssetsAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingBalancesheetRawProperty>("raw", Raw);

@@ -36,6 +36,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The mime_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "file_size", n => { FileSize = n.GetDoubleValue(); } },
                 { "height", n => { Height = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mime_type", n => { MimeType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -134,6 +143,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("file_size", FileSize);
             writer.WriteDoubleValue("height", Height);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>("metadata", Metadata);
             writer.WriteStringValue("mime_type", MimeType);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);

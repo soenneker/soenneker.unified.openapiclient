@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Agent;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Embedding;
+using Soenneker.Unified.OpenApiClient.Genai.Item.Memory;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Model;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Organization;
 using Soenneker.Unified.OpenApiClient.Genai.Item.Prompt;
@@ -30,6 +31,11 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.Embedding.EmbeddingRequestBuilder Embedding
         {
             get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Embedding.EmbeddingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The memory property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Genai.Item.Memory.MemoryRequestBuilder Memory
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Genai.Item.Memory.MemoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The model property</summary>
         public global::Soenneker.Unified.OpenApiClient.Genai.Item.Model.ModelRequestBuilder Model

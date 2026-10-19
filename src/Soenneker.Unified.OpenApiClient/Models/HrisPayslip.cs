@@ -80,6 +80,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>The net_amount property</summary>
         public double? NetAmount { get; set; }
         /// <summary>year-to-date net pay as of this payslip</summary>
@@ -166,6 +174,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "hours", n => { Hours = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "net_ytd_amount", n => { NetYtdAmount = n.GetDoubleValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
@@ -201,6 +210,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteDoubleValue("hours", Hours);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteDoubleValue("net_ytd_amount", NetYtdAmount);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);

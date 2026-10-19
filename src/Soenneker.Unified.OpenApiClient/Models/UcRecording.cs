@@ -60,6 +60,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingMedia> Media { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingMedia>(global::Soenneker.Unified.OpenApiClient.Models.UcRecordingMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata>(global::Soenneker.Unified.OpenApiClient.Models.UcMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.UcRecordingRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingType>(); } },
@@ -164,6 +173,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingType>("type", Type);

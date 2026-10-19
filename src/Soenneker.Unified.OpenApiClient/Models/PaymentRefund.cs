@@ -32,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "payment_id", n => { PaymentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty.CreateFromDiscriminatorValue); } },
@@ -126,6 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("payment_id", PaymentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PaymentRefundRawProperty>("raw", Raw);

@@ -92,6 +92,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>primary for direct deposit</summary>
         public bool? IsPrimary { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>account nickname (e.g. &quot;BoA Checking&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_primary", n => { IsPrimary = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty.CreateFromDiscriminatorValue); } },
@@ -198,6 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_primary", IsPrimary);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBankaccountRawProperty>("raw", Raw);

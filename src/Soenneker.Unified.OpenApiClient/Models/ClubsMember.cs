@@ -55,6 +55,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The member&apos;s membership status</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberMembershipStatus? MembershipStatus { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The full name of the member (first name + last initial for Strava)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "membership_status", n => { MembershipStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberMembershipStatus>(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -126,6 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_owner", IsOwner);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberMembershipStatus>("membership_status", MembershipStatus);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsMemberRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

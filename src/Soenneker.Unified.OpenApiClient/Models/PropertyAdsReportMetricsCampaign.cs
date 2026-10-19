@@ -88,6 +88,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Labels { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,6 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kpi", n => { Kpi = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "planned_spend_amount", n => { PlannedSpendAmount = n.GetDoubleValue(); } },
@@ -205,6 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignKpi>("kpi", Kpi);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteDoubleValue("planned_spend_amount", PlannedSpendAmount);

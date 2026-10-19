@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "display_order", n => { DisplayOrder = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPipelineRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CrmPipelineRawProperty.CreateFromDiscriminatorValue); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmStage>(global::Soenneker.Unified.OpenApiClient.Models.CrmStage.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -104,6 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("display_order", DisplayOrder);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CrmPipelineRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CrmStage>("stages", Stages);

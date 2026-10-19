@@ -32,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> Metadata { get; set; }
+#endif
         /// <summary>The package_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,6 +202,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "candidate_id", n => { CandidateId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>(global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "package_id", n => { PackageId = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput>(global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_addresses", n => { ProfileAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>(global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -228,6 +237,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("candidate_id", CandidateId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>("metadata", Metadata);
             writer.WriteStringValue("package_id", PackageId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput>("parameters", Parameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>("profile_addresses", ProfileAddresses);

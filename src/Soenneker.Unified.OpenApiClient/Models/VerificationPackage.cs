@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>if this verification returns a score, what is the maximum?</summary>
         public double? MaxScore { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> Metadata { get; set; }
+#endif
         /// <summary>Name of the verification type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +162,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "info_url", n => { InfoUrl = n.GetStringValue(); } },
                 { "max_score", n => { MaxScore = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>(global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needs_ip_address", n => { NeedsIpAddress = n.GetBoolValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameter>(global::Soenneker.Unified.OpenApiClient.Models.VerificationParameter.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -182,6 +191,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("info_url", InfoUrl);
             writer.WriteDoubleValue("max_score", MaxScore);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needs_ip_address", NeedsIpAddress);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameter>("parameters", Parameters);

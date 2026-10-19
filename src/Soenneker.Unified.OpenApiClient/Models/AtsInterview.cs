@@ -74,6 +74,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MeetingUrl { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +138,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "meeting_url", n => { MeetingUrl = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewStatus>(); } },
@@ -153,6 +162,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("job_id", JobId);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("meeting_url", MeetingUrl);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsInterviewStatus>("status", Status);

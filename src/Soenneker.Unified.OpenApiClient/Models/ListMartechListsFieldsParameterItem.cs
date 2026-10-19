@@ -72,6 +72,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SenderPhone,
         #pragma warning restore CS1591
+        [EnumMember(Value = "metadata")]
+        #pragma warning disable CS1591
+        Metadata,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

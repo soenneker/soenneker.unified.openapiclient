@@ -40,6 +40,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordFields>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordFields.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordRawProperty.CreateFromDiscriminatorValue); } },
                 { "row_number", n => { RowNumber = n.GetDoubleValue(); } },
                 { "table_id", n => { TableId = n.GetStringValue(); } },
@@ -106,6 +115,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordFields>("fields", Fields);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordRawProperty>("raw", Raw);
             writer.WriteDoubleValue("row_number", RowNumber);
             writer.WriteStringValue("table_id", TableId);

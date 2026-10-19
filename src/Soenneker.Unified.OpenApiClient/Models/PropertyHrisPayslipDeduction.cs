@@ -59,6 +59,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public bool? IsActive { get; set; }
         /// <summary>annual maximum employee amount (always money)</summary>
         public double? MaxAmount { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "max_amount", n => { MaxAmount = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "paycode_id", n => { PaycodeId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty.CreateFromDiscriminatorValue); } },
@@ -164,6 +173,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteDoubleValue("max_amount", MaxAmount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("paycode_id", PaycodeId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisPayslipDeductionRawProperty>("raw", Raw);

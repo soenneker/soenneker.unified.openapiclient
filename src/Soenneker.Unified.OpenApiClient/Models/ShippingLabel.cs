@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LabelUrl { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Rate used for this label; points to ShippingRate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "label_cost_currency", n => { LabelCostCurrency = n.GetStringValue(); } },
                 { "label_format", n => { LabelFormat = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat>(); } },
                 { "label_url", n => { LabelUrl = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rate_id", n => { RateId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty.CreateFromDiscriminatorValue); } },
                 { "service_code", n => { ServiceCode = n.GetStringValue(); } },
@@ -145,6 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("label_cost_currency", LabelCostCurrency);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelLabelFormat>("label_format", LabelFormat);
             writer.WriteStringValue("label_url", LabelUrl);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>("metadata", Metadata);
             writer.WriteStringValue("rate_id", RateId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingLabelRawProperty>("raw", Raw);
             writer.WriteStringValue("service_code", ServiceCode);

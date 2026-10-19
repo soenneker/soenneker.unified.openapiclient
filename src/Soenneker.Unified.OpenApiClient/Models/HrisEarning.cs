@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEarningFrequency>(); } },
                 { "hours", n => { Hours = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "paycode_id", n => { PaycodeId = n.GetStringValue(); } },
                 { "payroll_id", n => { PayrollId = n.GetStringValue(); } },
@@ -164,6 +173,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEarningFrequency>("frequency", Frequency);
             writer.WriteDoubleValue("hours", Hours);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("paycode_id", PaycodeId);
             writer.WriteStringValue("payroll_id", PayrollId);

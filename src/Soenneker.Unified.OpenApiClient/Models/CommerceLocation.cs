@@ -88,6 +88,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia> Media { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -180,6 +188,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "location_type", n => { LocationType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationLocationType>(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>(global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "price_level", n => { PriceLevel = n.GetStringValue(); } },
@@ -211,6 +220,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceLocationLocationType>("location_type", LocationType);
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceItemMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteStringValue("price_level", PriceLevel);

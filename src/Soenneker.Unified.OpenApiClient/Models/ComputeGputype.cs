@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>System memory in MiB</summary>
         public double? MemoryMb { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>Display name of the type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "gpu_model", n => { GpuModel = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeGputypeGpuModel>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "memory_mb", n => { MemoryMb = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "prices", n => { Prices = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputePrice>(global::Soenneker.Unified.OpenApiClient.Models.ComputePrice.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeGputypeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ComputeGputypeRawProperty.CreateFromDiscriminatorValue); } },
@@ -143,6 +152,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeGputypeGpuModel>("gpu_model", GpuModel);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("memory_mb", MemoryMb);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputePrice>("prices", Prices);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeGputypeRawProperty>("raw", Raw);

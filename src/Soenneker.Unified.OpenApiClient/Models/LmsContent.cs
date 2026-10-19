@@ -108,6 +108,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia> Media { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +217,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsContentLocalization>(global::Soenneker.Unified.OpenApiClient.Models.LmsContentLocalization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>(global::Soenneker.Unified.OpenApiClient.Models.LmsMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
                 { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
@@ -242,6 +251,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsContentLocalization>("localizations", Localizations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider_name", ProviderName);
             writer.WriteDateTimeOffsetValue("published_at", PublishedAt);

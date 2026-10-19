@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentRawProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -146,6 +155,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("job_id", JobId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentRawProperty>("raw", Raw);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

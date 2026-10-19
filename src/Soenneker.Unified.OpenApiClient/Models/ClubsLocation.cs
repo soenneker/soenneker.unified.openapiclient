@@ -45,6 +45,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public double? Latitude { get; set; }
         /// <summary>The longitude</summary>
         public double? Longitude { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The location name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsLocationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ClubsLocationRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephone", n => { Telephone = n.GetStringValue(); } },
@@ -130,6 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ClubsLocationRawProperty>("raw", Raw);
             writer.WriteStringValue("telephone", Telephone);

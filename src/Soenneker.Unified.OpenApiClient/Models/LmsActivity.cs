@@ -54,6 +54,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_completed property</summary>
         public bool? IsCompleted { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The progress_percentage property</summary>
         public double? ProgressPercentage { get; set; }
         /// <summary>The raw property</summary>
@@ -109,6 +117,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "duration_minutes", n => { DurationMinutes = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_completed", n => { IsCompleted = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "progress_percentage", n => { ProgressPercentage = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -131,6 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("duration_minutes", DurationMinutes);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_completed", IsCompleted);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("progress_percentage", ProgressPercentage);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsActivityRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);

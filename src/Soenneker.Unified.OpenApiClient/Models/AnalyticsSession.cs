@@ -98,6 +98,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Medium { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,6 +192,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_conversion", n => { IsConversion = n.GetBoolValue(); } },
                 { "landing_page", n => { LandingPage = n.GetStringValue(); } },
                 { "medium", n => { Medium = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "page_views", n => { PageViews = n.GetDoubleValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
@@ -216,6 +225,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_conversion", IsConversion);
             writer.WriteStringValue("landing_page", LandingPage);
             writer.WriteStringValue("medium", Medium);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadata>("metadata", Metadata);
             writer.WriteStringValue("os", Os);
             writer.WriteDoubleValue("page_views", PageViews);
             writer.WriteStringValue("property_id", PropertyId);

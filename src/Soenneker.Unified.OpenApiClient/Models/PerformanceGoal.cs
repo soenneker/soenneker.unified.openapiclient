@@ -52,6 +52,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata> Metadata { get; set; }
+#endif
         /// <summary>milestones or key results for this goal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "milestones", n => { Milestones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoalMilestone>(global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoalMilestone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
@@ -163,6 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoalMilestone>("milestones", Milestones);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_id", ParentId);

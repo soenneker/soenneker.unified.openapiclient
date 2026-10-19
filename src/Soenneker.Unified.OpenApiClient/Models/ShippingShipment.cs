@@ -90,6 +90,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentLineitem> Lineitems { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Reference to commerce_order or accounting_order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -295,6 +303,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_signature_required", n => { IsSignatureRequired = n.GetBoolValue(); } },
                 { "label_id", n => { LabelId = n.GetStringValue(); } },
                 { "lineitems", n => { Lineitems = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentLineitem>(global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentLineitem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "order_id", n => { OrderId = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "original_shipment_id", n => { OriginalShipmentId = n.GetStringValue(); } },
@@ -344,6 +353,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_signature_required", IsSignatureRequired);
             writer.WriteStringValue("label_id", LabelId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingShipmentLineitem>("lineitems", Lineitems);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>("metadata", Metadata);
             writer.WriteStringValue("order_id", OrderId);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("original_shipment_id", OriginalShipmentId);

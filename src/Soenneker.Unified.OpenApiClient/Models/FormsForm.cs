@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.FormsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.FormsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +135,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "has_shuffle_questions", n => { HasShuffleQuestions = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.FormsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.FormsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "published_url", n => { PublishedUrl = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty.CreateFromDiscriminatorValue); } },
@@ -151,6 +160,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("has_shuffle_questions", HasShuffleQuestions);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.FormsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("published_url", PublishedUrl);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.FormsFormRawProperty>("raw", Raw);

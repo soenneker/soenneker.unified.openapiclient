@@ -26,6 +26,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata> Metadata { get; set; }
+#endif
         /// <summary>The metric being reported</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.SocialInsightMetric? Metric { get; set; }
         /// <summary>The aggregation period of the value</summary>
@@ -84,6 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SocialInsightMetric>(); } },
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SocialInsightPeriod>(); } },
                 { "post_id", n => { PostId = n.GetStringValue(); } },
@@ -102,6 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadata>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SocialInsightMetric>("metric", Metric);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.SocialInsightPeriod>("period", Period);
             writer.WriteStringValue("post_id", PostId);

@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string InstanceId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata> Metadata { get; set; }
+#endif
         /// <summary>Amount consumed, in unit</summary>
         public double? Quantity { get; set; }
         /// <summary>Raw data from integration</summary>
@@ -94,6 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeUsageRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ComputeUsageRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -115,6 +124,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("instance_id", InstanceId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeUsageRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);

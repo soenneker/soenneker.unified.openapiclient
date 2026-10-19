@@ -28,6 +28,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Whether the destination is active/enabled</summary>
         public bool? IsEnabled { get; set; }
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name of the outbound activation destination</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CdpDestinationDirection>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CdpDestinationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CdpDestinationRawProperty.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -109,6 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CdpDestinationDirection>("direction", Direction);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_enabled", IsEnabled);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CdpMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CdpDestinationRawProperty>("raw", Raw);
             writer.WriteStringValue("slug", Slug);

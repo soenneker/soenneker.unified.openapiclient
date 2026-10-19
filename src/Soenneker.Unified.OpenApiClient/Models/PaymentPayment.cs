@@ -124,6 +124,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata> Metadata { get; set; }
+#endif
         /// <summary>total_amount minus fee_amount</summary>
         public double? NetAmount { get; set; }
         /// <summary>The notes property</summary>
@@ -230,6 +238,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "link_id", n => { LinkId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>(global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "net_amount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
@@ -269,6 +278,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteStringValue("link_id", LinkId);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PaymentMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("net_amount", NetAmount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("organization_id", OrganizationId);

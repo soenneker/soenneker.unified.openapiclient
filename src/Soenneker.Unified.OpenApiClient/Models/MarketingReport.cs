@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ListId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Open rate (decimal)</summary>
         public double? OpenRate { get; set; }
         /// <summary>Total opens</summary>
@@ -142,6 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "last_open_at", n => { LastOpenAt = n.GetDateTimeOffsetValue(); } },
                 { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink>(global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "list_id", n => { ListId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "open_rate", n => { OpenRate = n.GetDoubleValue(); } },
                 { "opens_total", n => { OpensTotal = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty.CreateFromDiscriminatorValue); } },
@@ -179,6 +188,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_open_at", LastOpenAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink>("links", Links);
             writer.WriteStringValue("list_id", ListId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>("metadata", Metadata);
             writer.WriteDoubleValue("open_rate", OpenRate);
             writer.WriteDoubleValue("opens_total", OpensTotal);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty>("raw", Raw);

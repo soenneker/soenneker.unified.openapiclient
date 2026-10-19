@@ -56,6 +56,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "item_option_id", n => { ItemOptionId = n.GetStringValue(); } },
                 { "item_variant_id", n => { ItemVariantId = n.GetStringValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -114,6 +123,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("item_option_id", ItemOptionId);
             writer.WriteStringValue("item_variant_id", ItemVariantId);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventoryRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia> Media { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata> Metadata { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "instructors", n => { Instructors = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>(global::Soenneker.Unified.OpenApiClient.Models.LmsMedia.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>(global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty.CreateFromDiscriminatorValue); } },
                 { "students", n => { Students = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>(global::Soenneker.Unified.OpenApiClient.Models.LmsReference.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -142,6 +151,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("instructors", Instructors);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMedia>("media", Media);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsClassRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsReference>("students", Students);

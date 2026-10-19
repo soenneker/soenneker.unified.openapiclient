@@ -40,6 +40,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty.CreateFromDiscriminatorValue); } },
                 { "ticket_id", n => { TicketId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -112,6 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty>("raw", Raw);
             writer.WriteStringValue("ticket_id", TicketId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -60,6 +60,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The raw data returned by the integration for this tracking</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +137,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "estimated_delivery", n => { EstimatedDelivery = n.GetDateTimeOffsetValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent>(global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty.CreateFromDiscriminatorValue); } },
                 { "shipment_id", n => { ShipmentId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus>(); } },
@@ -152,6 +161,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("estimated_delivery", EstimatedDelivery);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingEvent>("events", Events);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingRawProperty>("raw", Raw);
             writer.WriteStringValue("shipment_id", ShipmentId);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingTrackingStatus>("status", Status);

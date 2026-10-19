@@ -64,6 +64,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JoinUrl { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,6 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "is_webcast", n => { IsWebcast = n.GetBoolValue(); } },
                 { "join_url", n => { JoinUrl = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "organizer", n => { Organizer = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>(global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer.CreateFromDiscriminatorValue); } },
                 { "panelist_password", n => { PanelistPassword = n.GetStringValue(); } },
@@ -253,6 +262,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_enabled", IsEnabled);
             writer.WriteBoolValue("is_webcast", IsWebcast);
             writer.WriteStringValue("join_url", JoinUrl);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarWebinarOrganizer>("organizer", Organizer);
             writer.WriteStringValue("panelist_password", PanelistPassword);

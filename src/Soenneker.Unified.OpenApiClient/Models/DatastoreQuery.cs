@@ -22,6 +22,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DatabaseId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata> Metadata { get; set; }
+#endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "query", n => { Query = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQuery>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQuery.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreQueryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.DatastoreQueryRawProperty.CreateFromDiscriminatorValue); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponse>(global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponse.CreateFromDiscriminatorValue); } },
@@ -94,6 +103,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("database_id", DatabaseId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQuery>("query", Query);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DatastoreQueryRawProperty>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponse>("response", Response);

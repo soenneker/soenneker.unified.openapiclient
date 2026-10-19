@@ -46,6 +46,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata> Metadata { get; set; }
+#endif
         /// <summary>Multiple packages (alternative to package)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +125,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "from_address", n => { FromAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "packages", n => { Packages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage>(global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rates", n => { Rates = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate>(global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRawProperty.CreateFromDiscriminatorValue); } },
@@ -136,6 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingRateFromAddress>("from_address", FromAddress);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingPackage>("packages", Packages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRate>("rates", Rates);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingRateRawProperty>("raw", Raw);

@@ -60,6 +60,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata> Metadata { get; set; }
+#endif
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "due_at", n => { DueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -188,6 +197,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("due_at", DueAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TicketingMetadata>("metadata", Metadata);
             writer.WriteStringValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.TicketingTicketRawProperty>("raw", Raw);
             writer.WriteStringValue("source", Source);

@@ -71,6 +71,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection> InvestingSections { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
+#endif
         /// <summary>e.g. &quot;Cash Flow Statement Q1 2020&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +144,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "financing_sections", n => { FinancingSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "investing_sections", n => { InvestingSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "net_change_in_cash_amount", n => { NetChangeInCashAmount = n.GetDoubleValue(); } },
                 { "operating_sections", n => { OperatingSections = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>(global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -161,6 +170,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>("financing_sections", FinancingSections);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>("investing_sections", InvestingSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("net_change_in_cash_amount", NetChangeInCashAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingCashflowSection>("operating_sections", OperatingSections);

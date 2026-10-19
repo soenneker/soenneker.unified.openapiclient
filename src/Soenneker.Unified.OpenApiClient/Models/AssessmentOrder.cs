@@ -72,6 +72,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata> Metadata { get; set; }
+#endif
         /// <summary>Assessment package ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -315,6 +323,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "employee_id", n => { EmployeeId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "package_id", n => { PackageId = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterInput>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile_addresses", n => { ProfileAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAddress>(global::Soenneker.Unified.OpenApiClient.Models.AssessmentAddress.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -365,6 +374,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("employee_id", EmployeeId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("job_id", JobId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadata>("metadata", Metadata);
             writer.WriteStringValue("package_id", PackageId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentParameterInput>("parameters", Parameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AssessmentAddress>("profile_addresses", ProfileAddresses);

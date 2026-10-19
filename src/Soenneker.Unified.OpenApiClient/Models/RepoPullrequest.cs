@@ -42,6 +42,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Labels { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata> Metadata { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +140,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>(global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty.CreateFromDiscriminatorValue); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
@@ -155,6 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.RepoMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.RepoPullrequestRawProperty>("raw", Raw);
             writer.WriteStringValue("repo_id", RepoId);

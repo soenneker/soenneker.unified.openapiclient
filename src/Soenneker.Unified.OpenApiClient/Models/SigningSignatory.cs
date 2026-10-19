@@ -48,6 +48,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>? Metadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata> Metadata { get; set; }
+#endif
         /// <summary>Full name of the signatory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +112,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "document_id", n => { DocumentId = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>(global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetDoubleValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty.CreateFromDiscriminatorValue); } },
@@ -125,6 +134,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SigningMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("order", Order);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SigningSignatoryRawProperty>("raw", Raw);
