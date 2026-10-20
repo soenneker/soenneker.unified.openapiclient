@@ -26,7 +26,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_required property</summary>
+        /// <summary>When true, this metadata slug is required for create for this integration.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataObjects Objects { get; set; }
 #endif
-        /// <summary>This is the unified object type that this metadata is associated with. eg. crm_contact or coomerce_item</summary>
+        /// <summary>This is the unified object type that this metadata is associated with. eg. crm_contact or commerce_item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectType { get; set; }

@@ -50,6 +50,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
+        /// <summary>The first_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstName { get; set; }
+#nullable restore
+#else
+        public string FirstName { get; set; }
+#endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? FirstSeenAt { get; set; }
         /// <summary>The gender property</summary>
@@ -69,6 +77,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Language { get; set; }
+#endif
+        /// <summary>The last_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastName { get; set; }
+#nullable restore
+#else
+        public string LastName { get; set; }
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? LastSeenAt { get; set; }
@@ -151,10 +167,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "first_seen_at", n => { FirstSeenAt = n.GetDateTimeOffsetValue(); } },
                 { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsVisitorGender>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsVisitorMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AnalyticsVisitorMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -180,10 +198,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("country_code", CountryCode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("first_name", FirstName);
             writer.WriteDateTimeOffsetValue("first_seen_at", FirstSeenAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsVisitorGender>("gender", Gender);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("last_name", LastName);
             writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsVisitorMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
