@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
         {
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
             return new global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item.OrderItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderGetQueryParameters 
@@ -191,7 +191,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
 #endif
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderPatchQueryParameters 
@@ -218,7 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order.Item
 #endif
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderPutQueryParameters 

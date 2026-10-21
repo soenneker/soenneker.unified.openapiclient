@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>YYYYMM/DD</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
-        /// <summary>The emails property</summary>
+        /// <summary>The employee&apos;s email addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>? Emails { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? EmploymentStatus { get; set; }
         /// <summary>The employment_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? EmploymentType { get; set; }
-        /// <summary>The first_name property</summary>
+        /// <summary>The employee&apos;s first (given) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LanguageLocale { get; set; }
 #endif
-        /// <summary>The last_name property</summary>
+        /// <summary>The employee&apos;s last (family) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -176,7 +176,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The employee&apos;s full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

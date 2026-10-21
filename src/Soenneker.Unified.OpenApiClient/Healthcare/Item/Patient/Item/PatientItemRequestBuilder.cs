@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
         {
         }
         /// <summary>
-        /// Retrieve a patient
+        /// Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatient.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a patient
+        /// Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +133,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
             return new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item.PatientItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a patient
+        /// Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PatientItemRequestBuilderGetQueryParameters 
@@ -191,7 +191,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
 #endif
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PatientItemRequestBuilderPatchQueryParameters 
@@ -218,7 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient.Item
 #endif
         }
         /// <summary>
-        /// Update a patient
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PatientItemRequestBuilderPutQueryParameters 

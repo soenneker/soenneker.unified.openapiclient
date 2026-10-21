@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
         {
         }
         /// <summary>
-        /// Remove an expensereport
+        /// Deletes the AccountingExpensereport identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an expensereport
+        /// Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingExpensereport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an expensereport
+        /// Deletes the AccountingExpensereport identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an expensereport
+        /// Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item.ExpensereportItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an expensereport
+        /// Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpensereportItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
 #endif
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpensereportItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Expensereport.Item
 #endif
         }
         /// <summary>
-        /// Update an expensereport
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpensereportItemRequestBuilderPutQueryParameters 

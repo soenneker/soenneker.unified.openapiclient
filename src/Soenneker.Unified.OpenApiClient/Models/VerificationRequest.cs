@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The package_id property</summary>
+        /// <summary>The ID of the verification package (the check) to run (a VerificationPackage ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PackageId { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileDateOfBirth { get; set; }
 #endif
-        /// <summary>The profile_emails property</summary>
+        /// <summary>The email addresses of the person being verified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProfileEmails { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ProfileIpAddress { get; set; }
 #endif
-        /// <summary>The profile_name property</summary>
+        /// <summary>The full name of the person being verified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileName { get; set; }

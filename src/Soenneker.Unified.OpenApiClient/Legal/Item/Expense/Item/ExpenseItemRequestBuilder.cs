@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
         {
         }
         /// <summary>
-        /// Remove an expense
+        /// Deletes the LegalExpense identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an expense
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LegalExpense"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LegalExpense>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LegalExpense.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LegalExpense"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LegalExpense>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LegalExpense.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LegalExpense"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LegalExpense>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LegalExpense.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an expense
+        /// Deletes the LegalExpense identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an expense
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
             return new global::Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item.ExpenseItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an expense
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpenseItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
 #endif
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpenseItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Legal.Item.Expense.Item
 #endif
         }
         /// <summary>
-        /// Update an expense
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpenseItemRequestBuilderPutQueryParameters 

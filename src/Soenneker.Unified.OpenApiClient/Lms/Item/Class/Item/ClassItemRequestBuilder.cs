@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
         {
         }
         /// <summary>
-        /// Remove a class
+        /// Deletes the LmsClass identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a class
+        /// Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsClass"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LmsClass>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LmsClass.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsClass"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LmsClass>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LmsClass.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsClass"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LmsClass>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LmsClass.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a class
+        /// Deletes the LmsClass identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a class
+        /// Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
             return new global::Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item.ClassItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a class
+        /// Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
 #endif
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Class.Item
 #endif
         }
         /// <summary>
-        /// Update a class
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassItemRequestBuilderPutQueryParameters 

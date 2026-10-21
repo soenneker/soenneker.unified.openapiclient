@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
         {
         }
         /// <summary>
-        /// List all activities
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.LmsActivity&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create an activity
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider&apos;s API. Returns the created LmsActivity.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.LmsActivity"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.LmsActivity>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.LmsActivity.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all activities
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
             return requestInfo;
         }
         /// <summary>
-        /// Create an activity
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider&apos;s API. Returns the created LmsActivity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
             return new global::Soenneker.Unified.OpenApiClient.Lms.Item.Activity.ActivityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all activities
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivityRequestBuilderGetQueryParameters 
@@ -247,7 +247,7 @@ namespace Soenneker.Unified.OpenApiClient.Lms.Item.Activity
 #endif
         }
         /// <summary>
-        /// Create an activity
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider&apos;s API. Returns the created LmsActivity.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivityRequestBuilderPostQueryParameters 

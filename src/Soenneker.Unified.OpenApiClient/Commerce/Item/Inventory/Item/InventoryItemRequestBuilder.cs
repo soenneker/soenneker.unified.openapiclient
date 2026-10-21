@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
         {
         }
         /// <summary>
-        /// Remove an inventory
+        /// Deletes the CommerceInventory identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an inventory
+        /// Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceInventory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an inventory
+        /// Deletes the CommerceInventory identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an inventory
+        /// Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
             return new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item.InventoryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an inventory
+        /// Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InventoryItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
 #endif
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InventoryItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.Item
 #endif
         }
         /// <summary>
-        /// Update an inventory
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InventoryItemRequestBuilderPutQueryParameters 

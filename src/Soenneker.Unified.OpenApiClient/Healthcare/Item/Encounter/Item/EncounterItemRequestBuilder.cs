@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.Item
         {
         }
         /// <summary>
-        /// Retrieve an encounter
+        /// Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an encounter
+        /// Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.Item
             return new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.Item.EncounterItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an encounter
+        /// Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EncounterItemRequestBuilderGetQueryParameters 

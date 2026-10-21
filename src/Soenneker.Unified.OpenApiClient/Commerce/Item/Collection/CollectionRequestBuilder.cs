@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
         {
         }
         /// <summary>
-        /// List all collections
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a collection
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider&apos;s API. Returns the created CommerceCollection.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection"/></returns>
         /// <param name="body">A collection of items/products/services</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceCollection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all collections
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
             return requestInfo;
         }
         /// <summary>
-        /// Create a collection
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider&apos;s API. Returns the created CommerceCollection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A collection of items/products/services</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
             return new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Collection.CollectionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all collections
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CollectionRequestBuilderGetQueryParameters 
@@ -260,7 +260,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Collection
 #endif
         }
         /// <summary>
-        /// Create a collection
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider&apos;s API. Returns the created CommerceCollection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CollectionRequestBuilderPostQueryParameters 

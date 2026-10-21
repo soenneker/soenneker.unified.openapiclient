@@ -72,7 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string MimeType { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The file or folder name, including the file&apos;s extension</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.StorageFileRawProperty Raw { get; set; }
 #endif
-        /// <summary>The references property</summary>
+        /// <summary>The records the file is attached to (e.g. an invoice or a candidate), each by its id and type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.StorageReference>? References { get; set; }
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Whether this is a file or a folder</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.StorageFileType? Type { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

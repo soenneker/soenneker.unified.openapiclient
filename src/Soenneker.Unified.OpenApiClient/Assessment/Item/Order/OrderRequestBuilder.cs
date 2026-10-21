@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order
         {
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AssessmentOrder.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AssessmentOrder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Assessment.Item.Order
             return new global::Soenneker.Unified.OpenApiClient.Assessment.Item.Order.OrderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AssessmentOrder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderRequestBuilderPostQueryParameters 

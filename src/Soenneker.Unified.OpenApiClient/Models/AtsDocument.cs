@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApplicationId { get; set; }
 #endif
-        /// <summary>The candidate_id property</summary>
+        /// <summary>The ID of the candidate the document belongs to (an AtsCandidate ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CandidateId { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DocumentUrl { get; set; }
 #endif
-        /// <summary>The filename property</summary>
+        /// <summary>The document&apos;s file name, including its extension (e.g. resume.pdf)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filename { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentRawProperty Raw { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The kind of document</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsDocumentType? Type { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item
         {
         }
         /// <summary>
-        /// Retrieve a feedback
+        /// Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceFeedback.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a feedback
+        /// Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item
             return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Feedback.Item.FeedbackItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a feedback
+        /// Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FeedbackItemRequestBuilderGetQueryParameters 

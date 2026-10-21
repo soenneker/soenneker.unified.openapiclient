@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>True when the document amounts already include tax</summary>
         public bool? IsInclusiveOfTax { get; set; }
-        /// <summary>The lineitems property</summary>
+        /// <summary>The invoice&apos;s line items: what is billed, with the quantity, price and amount of each</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>? Lineitems { get; set; }

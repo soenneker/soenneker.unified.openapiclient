@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
         {
         }
         /// <summary>
-        /// Remove a benefit
+        /// Deletes the HrisBenefit identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a benefit
+        /// Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit"/></returns>
         /// <param name="body">Company-wide benefit plans available to employees.</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit"/></returns>
         /// <param name="body">Company-wide benefit plans available to employees.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisBenefit.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a benefit
+        /// Deletes the HrisBenefit identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a benefit
+        /// Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Company-wide benefit plans available to employees.</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Company-wide benefit plans available to employees.</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
             return new global::Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item.BenefitItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a benefit
+        /// Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BenefitItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
 #endif
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BenefitItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Benefit.Item
 #endif
         }
         /// <summary>
-        /// Update a benefit
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BenefitItemRequestBuilderPutQueryParameters 

@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CustomerId { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The note&apos;s text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.TicketingNoteRawProperty Raw { get; set; }
 #endif
-        /// <summary>The ticket_id property</summary>
+        /// <summary>The ID of the ticket the note is added to (a TicketingTicket ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketId { get; set; }

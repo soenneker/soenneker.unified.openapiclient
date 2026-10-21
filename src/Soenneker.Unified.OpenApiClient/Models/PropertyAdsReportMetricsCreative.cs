@@ -38,6 +38,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
+        /// <summary>Carousel cards, in display order</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCard>? Cards { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCard> Cards { get; set; }
+#endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The creative_type property</summary>
@@ -134,7 +142,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The creative&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -248,6 +256,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "asset_urls", n => { AssetUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
+                { "cards", n => { Cards = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCard>(global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCard.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreativeCreativeType>(); } },
                 { "cta", n => { Cta = n.GetStringValue(); } },
@@ -288,6 +297,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("asset_urls", AssetUrls);
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("campaign_id", CampaignId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsCreativeCard>("cards", Cards);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCreativeCreativeType>("creative_type", CreativeType);
             writer.WriteStringValue("cta", Cta);

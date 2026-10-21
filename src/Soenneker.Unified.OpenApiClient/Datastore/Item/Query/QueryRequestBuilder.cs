@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Query
         {
         }
         /// <summary>
-        /// Create a query
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider&apos;s API. Returns the created DatastoreQuery.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DatastoreQuery"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Query
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DatastoreQuery>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DatastoreQuery.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a query
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider&apos;s API. Returns the created DatastoreQuery.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Query
             return new global::Soenneker.Unified.OpenApiClient.Datastore.Item.Query.QueryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create a query
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider&apos;s API. Returns the created DatastoreQuery.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class QueryRequestBuilderPostQueryParameters 

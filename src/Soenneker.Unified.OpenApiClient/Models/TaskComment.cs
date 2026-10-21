@@ -58,7 +58,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string TaskId { get; set; }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>The comment&apos;s text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }

@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? AppliedAt { get; set; }
-        /// <summary>The candidate_id property</summary>
+        /// <summary>The ID of the candidate who is applying (an AtsCandidate ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CandidateId { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The job_id property</summary>
+        /// <summary>The ID of the job being applied to (an AtsJob ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobId { get; set; }

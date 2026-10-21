@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The count property</summary>
         public double? Count { get; set; }
-        /// <summary>The groups property</summary>
+        /// <summary>Each item is one group row: a map of field name to value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryResponseAggregatesGroupsItemProperty2>? Groups { get; set; }

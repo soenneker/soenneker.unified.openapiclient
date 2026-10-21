@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
         {
         }
         /// <summary>
-        /// List all services
+        /// Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.ComputeService&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a service
+        /// Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider&apos;s API. Returns the created ComputeService.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.ComputeService"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ComputeService>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ComputeService.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all services
+        /// Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
             return requestInfo;
         }
         /// <summary>
-        /// Create a service
+        /// Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider&apos;s API. Returns the created ComputeService.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
             return new global::Soenneker.Unified.OpenApiClient.Compute.Item.Service.ServiceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all services
+        /// Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceRequestBuilderGetQueryParameters 
@@ -253,7 +253,7 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Service
 #endif
         }
         /// <summary>
-        /// Create a service
+        /// Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider&apos;s API. Returns the created ComputeService.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceRequestBuilderPostQueryParameters 

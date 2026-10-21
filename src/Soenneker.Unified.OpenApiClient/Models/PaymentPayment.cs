@@ -190,7 +190,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentTenderType? TenderType { get; set; }
         /// <summary>The tip_amount property</summary>
         public double? TipAmount { get; set; }
-        /// <summary>The total_amount property</summary>
+        /// <summary>The amount paid, in the payment&apos;s currency</summary>
         public double? TotalAmount { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PaymentPaymentType? Type { get; set; }

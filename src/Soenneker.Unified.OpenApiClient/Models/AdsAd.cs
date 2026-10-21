@@ -130,7 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The ad&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

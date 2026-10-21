@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lineitems property</summary>
+        /// <summary>The bill&apos;s line items: what is billed, with the quantity, price and amount of each</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingLineitem>? Lineitems { get; set; }

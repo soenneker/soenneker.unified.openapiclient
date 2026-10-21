@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Rate
         {
         }
         /// <summary>
-        /// Create a rate
+        /// Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider&apos;s API. Returns the created ShippingRate.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingRate"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Rate
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ShippingRate>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ShippingRate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a rate
+        /// Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider&apos;s API. Returns the created ShippingRate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Shipping.Item.Rate
             return new global::Soenneker.Unified.OpenApiClient.Shipping.Item.Rate.RateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create a rate
+        /// Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider&apos;s API. Returns the created ShippingRate.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RateRequestBuilderPostQueryParameters 

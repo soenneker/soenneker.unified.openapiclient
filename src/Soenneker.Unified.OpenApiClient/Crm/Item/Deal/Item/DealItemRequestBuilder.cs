@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
         {
         }
         /// <summary>
-        /// Remove a deal
+        /// Deletes the CrmDeal identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a deal
+        /// Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmDeal"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmDeal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmDeal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmDeal"/></returns>
         /// <param name="body">A deal represents an opportunity with companies and/or contacts</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmDeal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmDeal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmDeal"/></returns>
         /// <param name="body">A deal represents an opportunity with companies and/or contacts</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmDeal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmDeal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a deal
+        /// Deletes the CrmDeal identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a deal
+        /// Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A deal represents an opportunity with companies and/or contacts</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A deal represents an opportunity with companies and/or contacts</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
             return new global::Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item.DealItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a deal
+        /// Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DealItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
 #endif
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DealItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Deal.Item
 #endif
         }
         /// <summary>
-        /// Update a deal
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DealItemRequestBuilderPutQueryParameters 

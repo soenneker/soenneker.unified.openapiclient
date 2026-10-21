@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Prompt
         {
         }
         /// <summary>
-        /// Create a prompt
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiPrompt.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Prompt
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.GenaiPrompt.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a prompt
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiPrompt.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Prompt
             return new global::Soenneker.Unified.OpenApiClient.Genai.Item.Prompt.PromptRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create a prompt
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiPrompt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PromptRequestBuilderPostQueryParameters 

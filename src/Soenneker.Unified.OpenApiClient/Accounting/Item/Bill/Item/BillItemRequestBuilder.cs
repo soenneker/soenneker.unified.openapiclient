@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
         {
         }
         /// <summary>
-        /// Remove a bill
+        /// Deletes the AccountingBill identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a bill
+        /// Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBill"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBill>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBill.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBill"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBill>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBill.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBill"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBill>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBill.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a bill
+        /// Deletes the AccountingBill identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a bill
+        /// Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item.BillItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a bill
+        /// Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BillItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
 #endif
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BillItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bill.Item
 #endif
         }
         /// <summary>
-        /// Update a bill
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BillItemRequestBuilderPutQueryParameters 

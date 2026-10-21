@@ -262,7 +262,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ResponseUrl { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The current state of the assessment order</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentOrderStatus? Status { get; set; }
         /// <summary>URL to redirect user to after assessment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

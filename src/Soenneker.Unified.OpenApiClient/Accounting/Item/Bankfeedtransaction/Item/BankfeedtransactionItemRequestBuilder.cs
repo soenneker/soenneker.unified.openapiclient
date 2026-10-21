@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
         {
         }
         /// <summary>
-        /// Remove a bankfeedtransaction
+        /// Deletes the AccountingBankfeedtransaction identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a bankfeedtransaction
+        /// Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedtransaction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a bankfeedtransaction
+        /// Deletes the AccountingBankfeedtransaction identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a bankfeedtransaction
+        /// Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return requestInfo;
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return requestInfo;
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.Item.BankfeedtransactionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a bankfeedtransaction
+        /// Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BankfeedtransactionItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
 #endif
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BankfeedtransactionItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedtransaction.It
 #endif
         }
         /// <summary>
-        /// Update a bankfeedtransaction
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BankfeedtransactionItemRequestBuilderPutQueryParameters 

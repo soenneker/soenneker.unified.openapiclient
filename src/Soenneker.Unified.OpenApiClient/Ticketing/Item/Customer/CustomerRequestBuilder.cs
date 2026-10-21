@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
         {
         }
         /// <summary>
-        /// List all customers
+        /// Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a customer
+        /// Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider&apos;s API. Returns the created TicketingCustomer.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.TicketingCustomer.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all customers
+        /// Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
             return requestInfo;
         }
         /// <summary>
-        /// Create a customer
+        /// Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider&apos;s API. Returns the created TicketingCustomer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
             return new global::Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer.CustomerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all customers
+        /// Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomerRequestBuilderGetQueryParameters 
@@ -217,7 +217,7 @@ namespace Soenneker.Unified.OpenApiClient.Ticketing.Item.Customer
 #endif
         }
         /// <summary>
-        /// Create a customer
+        /// Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider&apos;s API. Returns the created TicketingCustomer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomerRequestBuilderPostQueryParameters 

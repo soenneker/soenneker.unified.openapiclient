@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate
         {
         }
         /// <summary>
-        /// List all scorecardtemplates
+        /// Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.UcScorecardtemplate&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List all scorecardtemplates
+        /// Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate
             return new global::Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate.ScorecardtemplateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all scorecardtemplates
+        /// Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScorecardtemplateRequestBuilderGetQueryParameters 

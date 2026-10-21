@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
         {
         }
         /// <summary>
-        /// List all goals
+        /// Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a goal
+        /// Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider&apos;s API. Returns the created PerformanceGoal.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PerformanceGoal.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all goals
+        /// Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
             return requestInfo;
         }
         /// <summary>
-        /// Create a goal
+        /// Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider&apos;s API. Returns the created PerformanceGoal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
             return new global::Soenneker.Unified.OpenApiClient.Performance.Item.Goal.GoalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all goals
+        /// Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GoalRequestBuilderGetQueryParameters 
@@ -260,7 +260,7 @@ namespace Soenneker.Unified.OpenApiClient.Performance.Item.Goal
 #endif
         }
         /// <summary>
-        /// Create a goal
+        /// Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider&apos;s API. Returns the created PerformanceGoal.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GoalRequestBuilderPostQueryParameters 

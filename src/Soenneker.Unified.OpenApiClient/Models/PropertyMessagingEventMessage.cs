@@ -84,7 +84,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.MessagingMember> MentionedMembers { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>The message body as plain text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }

@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Embedding
         {
         }
         /// <summary>
-        /// Create an embedding
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiEmbedding.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Embedding
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbedding.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an embedding
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiEmbedding.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Genai.Item.Embedding
             return new global::Soenneker.Unified.OpenApiClient.Genai.Item.Embedding.EmbeddingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create an embedding
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider&apos;s API. Returns the created GenaiEmbedding.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmbeddingRequestBuilderPostQueryParameters 

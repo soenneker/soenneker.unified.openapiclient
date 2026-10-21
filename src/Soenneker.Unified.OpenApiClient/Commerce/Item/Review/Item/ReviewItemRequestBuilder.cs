@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
         {
         }
         /// <summary>
-        /// Remove a review
+        /// Deletes the CommerceReview identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a review
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceReview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceReview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceReview"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceReview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CommerceReview"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CommerceReview>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CommerceReview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a review
+        /// Deletes the CommerceReview identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a review
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
             return new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item.ReviewItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a review
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReviewItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
 #endif
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReviewItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item.Review.Item
 #endif
         }
         /// <summary>
-        /// Update a review
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReviewItemRequestBuilderPutQueryParameters 

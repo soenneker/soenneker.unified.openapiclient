@@ -68,7 +68,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string SpaceId { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The page&apos;s title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }

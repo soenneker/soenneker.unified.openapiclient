@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
         {
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +127,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
             return new global::Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderPatchQueryParameters 
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
 #endif
         }
         /// <summary>
-        /// Update an event
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderPutQueryParameters 

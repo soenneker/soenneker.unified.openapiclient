@@ -64,6 +64,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AssetUrls,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cards")]
+        #pragma warning disable CS1591
+        Cards,
+        #pragma warning restore CS1591
         [EnumMember(Value = "link_url")]
         #pragma warning disable CS1591
         LinkUrl,

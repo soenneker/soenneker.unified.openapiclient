@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The query property</summary>
+        /// <summary>What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQuery? Query { get; set; }

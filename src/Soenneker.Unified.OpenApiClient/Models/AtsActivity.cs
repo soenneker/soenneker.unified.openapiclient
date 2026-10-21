@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AtsEmail> Bcc { get; set; }
 #endif
-        /// <summary>The candidate_id property</summary>
+        /// <summary>The ID of the candidate the activity is about (an AtsCandidate ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CandidateId { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The activity&apos;s content, such as the text of a note or the body of an email</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }

@@ -118,7 +118,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The minimum_experience_years property</summary>
         public double? MinimumExperienceYears { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The job&apos;s title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

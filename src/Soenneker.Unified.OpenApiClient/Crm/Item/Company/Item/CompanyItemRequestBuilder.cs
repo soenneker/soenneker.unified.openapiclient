@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
         {
         }
         /// <summary>
-        /// Remove a company
+        /// Deletes the CrmCompany identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a company
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmCompany"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmCompany>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmCompany.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmCompany"/></returns>
         /// <param name="body">A company represents an organization that optionally is associated with a deal and/or contacts</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmCompany>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmCompany.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.CrmCompany"/></returns>
         /// <param name="body">A company represents an organization that optionally is associated with a deal and/or contacts</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.CrmCompany>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.CrmCompany.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a company
+        /// Deletes the CrmCompany identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a company
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A company represents an organization that optionally is associated with a deal and/or contacts</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A company represents an organization that optionally is associated with a deal and/or contacts</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
             return new global::Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item.CompanyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a company
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CompanyItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
 #endif
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CompanyItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Crm.Item.Company.Item
 #endif
         }
         /// <summary>
-        /// Update a company
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CompanyItemRequestBuilderPutQueryParameters 

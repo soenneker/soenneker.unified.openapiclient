@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item
         {
         }
         /// <summary>
-        /// Retrieve a target
+        /// Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AdsTarget"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AdsTarget>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AdsTarget.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a target
+        /// Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item
             return new global::Soenneker.Unified.OpenApiClient.Ads.Item.Target.Item.TargetItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a target
+        /// Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TargetItemRequestBuilderGetQueryParameters 

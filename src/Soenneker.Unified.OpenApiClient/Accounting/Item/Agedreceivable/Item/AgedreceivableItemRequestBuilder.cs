@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.Item
         {
         }
         /// <summary>
-        /// Retrieve an agedreceivable
+        /// Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedreceivable"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedreceivable>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingAgedreceivable.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an agedreceivable
+        /// Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.Item
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Agedreceivable.Item.AgedreceivableItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an agedreceivable
+        /// Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AgedreceivableItemRequestBuilderGetQueryParameters 

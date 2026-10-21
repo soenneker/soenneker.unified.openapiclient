@@ -21,6 +21,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         /// <summary>Gets an item from the Soenneker.Unified.OpenApiClient.accounting.item.order.item collection</summary>
         /// <param name="position">ID of the Order</param>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder this[string position]
         {
             get
@@ -47,11 +48,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         {
         }
         /// <summary>
-        /// List all orders
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,12 +68,13 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingOrder.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,10 +89,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all orders
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -105,11 +109,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             return requestInfo;
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingOrder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder.OrderRequestBuilderPostQueryParameters>>? requestConfiguration = default)
@@ -131,12 +136,13 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all orders
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderRequestBuilderGetQueryParameters 
@@ -250,7 +256,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
 #endif
         }
         /// <summary>
-        /// Create an order
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingOrder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderRequestBuilderPostQueryParameters 

@@ -24,7 +24,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DatabaseId { get; set; }
 #endif
-        /// <summary>The fields property</summary>
+        /// <summary>The record&apos;s values, keyed by the table&apos;s field (column) names; each value is a typed value object (e.g. { &quot;string&quot;: &quot;Acme&quot; } or { &quot;number&quot;: 3 })</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecordFields? Fields { get; set; }

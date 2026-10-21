@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
         {
         }
         /// <summary>
-        /// List all devices
+        /// Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.HrisDevice&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a device
+        /// Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisDevice.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisDevice>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisDevice.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all devices
+        /// Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
             return requestInfo;
         }
         /// <summary>
-        /// Create a device
+        /// Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisDevice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
             return new global::Soenneker.Unified.OpenApiClient.Hris.Item.Device.DeviceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all devices
+        /// Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRequestBuilderGetQueryParameters 
@@ -247,7 +247,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Device
 #endif
         }
         /// <summary>
-        /// Create a device
+        /// Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisDevice.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRequestBuilderPostQueryParameters 

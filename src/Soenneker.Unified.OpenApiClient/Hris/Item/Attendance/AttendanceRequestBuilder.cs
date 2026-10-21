@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
         {
         }
         /// <summary>
-        /// List all attendances
+        /// Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.HrisAttendance&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create an attendance
+        /// Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisAttendance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisAttendance"/></returns>
         /// <param name="body">Also called timesheets</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.HrisAttendance>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.HrisAttendance.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all attendances
+        /// Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
             return requestInfo;
         }
         /// <summary>
-        /// Create an attendance
+        /// Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisAttendance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Also called timesheets</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
             return new global::Soenneker.Unified.OpenApiClient.Hris.Item.Attendance.AttendanceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all attendances
+        /// Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceRequestBuilderGetQueryParameters 
@@ -267,7 +267,7 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item.Attendance
 #endif
         }
         /// <summary>
-        /// Create an attendance
+        /// Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider&apos;s API. Returns the created HrisAttendance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceRequestBuilderPostQueryParameters 

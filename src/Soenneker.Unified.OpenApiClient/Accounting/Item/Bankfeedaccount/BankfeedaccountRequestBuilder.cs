@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
         {
         }
         /// <summary>
-        /// List all bankfeedaccounts
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccount&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a bankfeedaccount
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingBankfeedaccount.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccount"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccount>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingBankfeedaccount.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all bankfeedaccounts
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
             return requestInfo;
         }
         /// <summary>
-        /// Create a bankfeedaccount
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingBankfeedaccount.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount.BankfeedaccountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all bankfeedaccounts
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BankfeedaccountRequestBuilderGetQueryParameters 
@@ -240,7 +240,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Bankfeedaccount
 #endif
         }
         /// <summary>
-        /// Create a bankfeedaccount
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider&apos;s API. Returns the created AccountingBankfeedaccount.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BankfeedaccountRequestBuilderPostQueryParameters 

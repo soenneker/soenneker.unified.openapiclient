@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
         {
         }
         /// <summary>
-        /// Remove a contact
+        /// Deletes the UcContact identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a contact
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcContact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcContact"/></returns>
         /// <param name="body">A contact represents a person that optionally is associated with a call</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcContact"/></returns>
         /// <param name="body">A contact represents a person that optionally is associated with a call</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a contact
+        /// Deletes the UcContact identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a contact
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A contact represents a person that optionally is associated with a call</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A contact represents a person that optionally is associated with a call</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
             return new global::Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item.ContactItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a contact
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContactItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
 #endif
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContactItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Contact.Item
 #endif
         }
         /// <summary>
-        /// Update a contact
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContactItemRequestBuilderPutQueryParameters 

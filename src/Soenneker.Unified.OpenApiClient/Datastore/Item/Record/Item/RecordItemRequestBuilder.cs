@@ -34,7 +34,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
         {
         }
         /// <summary>
-        /// Remove a record
+        /// Deletes the DatastoreRecord identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a record
+        /// Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.DatastoreRecord.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a record
+        /// Deletes the DatastoreRecord identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a record
+        /// Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +169,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
             return new global::Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item.RecordItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a record
+        /// Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordItemRequestBuilderGetQueryParameters 
@@ -227,7 +227,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
 #endif
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordItemRequestBuilderPatchQueryParameters 
@@ -254,7 +254,7 @@ namespace Soenneker.Unified.OpenApiClient.Datastore.Item.Record.Item
 #endif
         }
         /// <summary>
-        /// Update a record
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecordItemRequestBuilderPutQueryParameters 

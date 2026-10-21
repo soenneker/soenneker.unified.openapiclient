@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string McpUrl { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>The conversation to send to the model, in order; each message has a role and its content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>? Messages { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent> Messages { get; set; }
 #endif
-        /// <summary>The model_id property</summary>
+        /// <summary>The ID of the model to use (a GenaiModel ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModelId { get; set; }

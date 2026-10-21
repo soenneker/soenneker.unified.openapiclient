@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
         {
         }
         /// <summary>
-        /// List all pages
+        /// Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.KmsPage&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a page
+        /// Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider&apos;s API. Returns the created KmsPage.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPage"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.KmsPage>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.KmsPage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all pages
+        /// Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
             return requestInfo;
         }
         /// <summary>
-        /// Create a page
+        /// Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider&apos;s API. Returns the created KmsPage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
             return new global::Soenneker.Unified.OpenApiClient.Kms.Item.Page.PageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all pages
+        /// Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PageRequestBuilderGetQueryParameters 
@@ -247,7 +247,7 @@ namespace Soenneker.Unified.OpenApiClient.Kms.Item.Page
 #endif
         }
         /// <summary>
-        /// Create a page
+        /// Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider&apos;s API. Returns the created KmsPage.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PageRequestBuilderPostQueryParameters 

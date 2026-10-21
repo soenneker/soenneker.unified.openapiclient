@@ -34,11 +34,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
         {
         }
         /// <summary>
-        /// Remove an order
+        /// Deletes the AccountingOrder identified by `id`.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,11 +53,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,12 +72,13 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder?> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,12 +93,13 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder?> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,10 +114,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an order
+        /// Deletes the AccountingOrder identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -128,10 +133,11 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -147,11 +153,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
@@ -169,11 +176,12 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">@deprecated; use AccountingSalesorder or AccountingPurchaseorder</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.AccountingOrder body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder.OrderItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
@@ -195,12 +203,13 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item.OrderItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve an order
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderGetQueryParameters 
@@ -227,7 +236,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
 #endif
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderPatchQueryParameters 
@@ -254,7 +263,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order.Item
 #endif
         }
         /// <summary>
-        /// Update an order
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrderItemRequestBuilderPutQueryParameters 

@@ -47,7 +47,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
         {
         }
         /// <summary>
-        /// List all lists
+        /// Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Unified.OpenApiClient.Models.MarketingList&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a list
+        /// Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider&apos;s API. Returns the created MarketingList.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.MarketingList"/></returns>
         /// <param name="body">Mailing List</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MarketingList>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MarketingList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all lists
+        /// Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
             return requestInfo;
         }
         /// <summary>
-        /// Create a list
+        /// Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider&apos;s API. Returns the created MarketingList.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Mailing List</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
             return new global::Soenneker.Unified.OpenApiClient.Martech.Item.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all lists
+        /// Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
@@ -217,7 +217,7 @@ namespace Soenneker.Unified.OpenApiClient.Martech.Item.List
 #endif
         }
         /// <summary>
-        /// Create a list
+        /// Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider&apos;s API. Returns the created MarketingList.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderPostQueryParameters 

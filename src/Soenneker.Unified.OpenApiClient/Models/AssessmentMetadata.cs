@@ -22,9 +22,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadataExtraData ExtraData { get; set; }
 #endif
-        /// <summary>The format property</summary>
+        /// <summary>The data type of the custom field, which determines how `value` is formatted.</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadataFormat? Format { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the custom field definition (from the metadata/metadata endpoint).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Namespace { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The integration&apos;s API name (key) of an existing custom field. List valid slugs for this object with the metadata/metadata endpoint; unknown slugs are rejected by the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The field&apos;s value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Unified.OpenApiClient.Models.AssessmentMetadataValue? Value { get; set; }

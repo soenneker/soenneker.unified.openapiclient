@@ -16,7 +16,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The format property</summary>
+        /// <summary>The data type of the custom field&apos;s values</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.MetadataMetadataFormat? Format { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>When true, this metadata slug is required for create for this integration.</summary>
         public bool? IsRequired { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The display name of the custom field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

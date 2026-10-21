@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
+    /// <summary>The data type of the custom field, which determines how `value` is formatted.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum KmsPageMetadataFormat
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "TEXT")]
         #pragma warning disable CS1591

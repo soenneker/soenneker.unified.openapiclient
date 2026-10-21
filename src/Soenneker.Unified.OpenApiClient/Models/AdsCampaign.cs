@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AdsMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The campaign&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organization_id property</summary>
+        /// <summary>The ID of the ad account the campaign belongs to (an AdsOrganization ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }

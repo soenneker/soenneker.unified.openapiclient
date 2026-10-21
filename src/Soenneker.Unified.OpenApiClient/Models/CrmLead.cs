@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CompanyId { get; set; }
 #endif
-        /// <summary>The company_name property</summary>
+        /// <summary>The name of the company the lead works for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyName { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<string> LinkUrls { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Custom field values. Include only existing custom fields and only the ones being set; omit to leave them unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata>? Metadata { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CrmMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The lead&apos;s full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -50,7 +50,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The emails property</summary>
+        /// <summary>The contact&apos;s email addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingEmail>? Emails { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata> Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The contact&apos;s display name: the company name for a business, or the person&apos;s full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
