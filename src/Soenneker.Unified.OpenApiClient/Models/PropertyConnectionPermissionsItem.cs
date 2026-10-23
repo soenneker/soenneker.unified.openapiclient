@@ -688,6 +688,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UcCallRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "uc_call_write")]
+        #pragma warning disable CS1591
+        UcCallWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "uc_contact_read")]
         #pragma warning disable CS1591
         UcContactRead,

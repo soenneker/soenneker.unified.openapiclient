@@ -14,6 +14,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When the call was answered (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? AnswerAt { get; set; }
         /// <summary>The contact ID for call (reference to UcContact)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,8 +40,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ConversationIdentifier { get; set; }
 #endif
+        /// <summary>What the integration charged for the call</summary>
+        public double? CostAmount { get; set; }
         /// <summary>The date that this call object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>ISO 4217 currency of cost_amount</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Call length in seconds</summary>
+        public double? DurationSeconds { get; set; }
         /// <summary>The end time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Unique identifier for this call object</summary>
@@ -49,6 +63,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>Write-only: what the call does once answered (create/update only; never returned)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcCallInstruction>? Instructions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcCallInstruction> Instructions { get; set; }
 #endif
         /// <summary>The is_private property</summary>
         public bool? IsPrivate { get; set; }
@@ -60,6 +82,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata> Metadata { get; set; }
 #endif
+        /// <summary>The parent call (leg) that this call belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId { get; set; }
+#nullable restore
+#else
+        public string ParentId { get; set; }
+#endif
         /// <summary>The raw data returned by the integration for this call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +100,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>The start time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
+        /// <summary>The current or final status of the call</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.UcCallStatus? Status { get; set; }
         /// <summary>The telephone number called</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,16 +163,23 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "answer_at", n => { AnswerAt = n.GetDateTimeOffsetValue(); } },
                 { "contact_id", n => { ContactId = n.GetStringValue(); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>(global::Soenneker.Unified.OpenApiClient.Models.UcContact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_identifier", n => { ConversationIdentifier = n.GetStringValue(); } },
+                { "cost_amount", n => { CostAmount = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "instructions", n => { Instructions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcCallInstruction>(global::Soenneker.Unified.OpenApiClient.Models.UcCallInstruction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata>(global::Soenneker.Unified.OpenApiClient.Models.UcMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.UcCallRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallStatus>(); } },
                 { "telephone", n => { Telephone = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone>(global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -156,16 +195,23 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("answer_at", AnswerAt);
             writer.WriteStringValue("contact_id", ContactId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcContact>("contacts", Contacts);
             writer.WriteStringValue("conversation_identifier", ConversationIdentifier);
+            writer.WriteDoubleValue("cost_amount", CostAmount);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteDoubleValue("duration_seconds", DurationSeconds);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcCallInstruction>("instructions", Instructions);
             writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadata>("metadata", Metadata);
+            writer.WriteStringValue("parent_id", ParentId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyUcCallTelephone>("telephone", Telephone);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.UcCallType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -72,5 +72,33 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ConversationIdentifier,
         #pragma warning restore CS1591
+        [EnumMember(Value = "status")]
+        #pragma warning disable CS1591
+        Status,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "answer_at")]
+        #pragma warning disable CS1591
+        AnswerAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "duration_seconds")]
+        #pragma warning disable CS1591
+        DurationSeconds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cost_amount")]
+        #pragma warning disable CS1591
+        CostAmount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "currency")]
+        #pragma warning disable CS1591
+        Currency,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "parent_id")]
+        #pragma warning disable CS1591
+        ParentId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "instructions")]
+        #pragma warning disable CS1591
+        Instructions,
+        #pragma warning restore CS1591
     }
 }

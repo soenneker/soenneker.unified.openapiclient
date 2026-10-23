@@ -66,6 +66,26 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
             return collectionResult?.AsList();
         }
         /// <summary>
+        /// Creates a UcCall. Provide the unified UcCall fields in the request body; they are mapped to the provider&apos;s API. Returns the created UcCall.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcCall"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.UcCall?> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.UcCall body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.UcCall> PostAsync(global::Soenneker.Unified.OpenApiClient.Models.UcCall body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.UcCall>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.UcCall.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item&apos;s `id` to retrieve, update, or delete it where those operations are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -82,6 +102,28 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Creates a UcCall. Provide the unified UcCall fields in the request body; they are mapped to the provider&apos;s API. Returns the created UcCall.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.UcCall body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.UcCall body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Uc.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -212,6 +254,33 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item.Call
 #else
             [QueryParameter("user_id")]
             public string UserId { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Creates a UcCall. Provide the unified UcCall fields in the request body; they are mapped to the provider&apos;s API. Returns the created UcCall.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CallRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateUcCallFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.CreateUcCallFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
 #endif
         }
     }
