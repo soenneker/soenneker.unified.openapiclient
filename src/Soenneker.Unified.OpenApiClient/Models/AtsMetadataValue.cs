@@ -8,43 +8,11 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AtsMetadataValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2? AtsMetadataValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2 AtsMetadataValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch3? AtsMetadataValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch3 AtsMetadataValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch4? AtsMetadataValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch4 AtsMetadataValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch5? AtsMetadataValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch5 AtsMetadataValueBranch5 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +20,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1 AtsMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2>? AtsMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2> AtsMetadataValueMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValue();
-            result.AtsMetadataValueBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2();
-            result.AtsMetadataValueBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch3();
-            result.AtsMetadataValueBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch4();
-            result.AtsMetadataValueBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch5();
-            result.AtsMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2> atsMetadataValueMember2Value)
+            {
+                result.AtsMetadataValueMember2 = atsMetadataValueMember2Value;
+            }
+            else {
+                result.AtsMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AtsMetadataValueBranch2 != null || AtsMetadataValueBranch3 != null || AtsMetadataValueBranch4 != null || AtsMetadataValueBranch5 != null || AtsMetadataValueMember1 != null)
+            if(AtsMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AtsMetadataValueBranch2, AtsMetadataValueBranch3, AtsMetadataValueBranch4, AtsMetadataValueBranch5, AtsMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AtsMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueBranch2>(null, AtsMetadataValueBranch2, AtsMetadataValueBranch3, AtsMetadataValueBranch4, AtsMetadataValueBranch5, AtsMetadataValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(AtsMetadataValueMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember2>(null, AtsMetadataValueMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AtsMetadataValueMember1>(null, AtsMetadataValueMember1);
+            }
         }
     }
 }

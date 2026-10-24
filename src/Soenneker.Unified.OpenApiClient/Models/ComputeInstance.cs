@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Lifecycle actions the vendor currently allows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeInstanceAllowedActionsItem?>? AllowedActions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceAllowedActionsItem?>? AllowedActions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeInstanceAllowedActionsItem?> AllowedActions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceAllowedActionsItem?> AllowedActions { get; set; }
 #endif
         /// <summary>CPU architecture</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceArchitecture? Architecture { get; set; }
@@ -241,7 +241,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_actions", n => { AllowedActions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeInstanceAllowedActionsItem>()?.AsList(); } },
+                { "allowed_actions", n => { AllowedActions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceAllowedActionsItem>()?.AsList(); } },
                 { "architecture", n => { Architecture = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceArchitecture>(); } },
                 { "cpu_count", n => { CpuCount = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -291,7 +291,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeInstanceAllowedActionsItem>("allowed_actions", AllowedActions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceAllowedActionsItem>("allowed_actions", AllowedActions);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ComputeInstanceArchitecture>("architecture", Architecture);
             writer.WriteDoubleValue("cpu_count", CpuCount);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

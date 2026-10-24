@@ -77,10 +77,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The employee_roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeEmployeeRolesItem?>? EmployeeRoles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?>? EmployeeRoles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeEmployeeRolesItem?> EmployeeRoles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?> EmployeeRoles { get; set; }
 #endif
         /// <summary>The employment_status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? EmploymentStatus { get; set; }
@@ -306,7 +306,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "date_of_birth", n => { DateOfBirth = n.GetDateTimeOffsetValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "employee_number", n => { EmployeeNumber = n.GetStringValue(); } },
-                { "employee_roles", n => { EmployeeRoles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeEmployeeRolesItem>()?.AsList(); } },
+                { "employee_roles", n => { EmployeeRoles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem>()?.AsList(); } },
                 { "employment_status", n => { EmploymentStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>(); } },
                 { "employment_type", n => { EmploymentType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
@@ -360,7 +360,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("date_of_birth", DateOfBirth);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>("emails", Emails);
             writer.WriteStringValue("employee_number", EmployeeNumber);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeEmployeeRolesItem>("employee_roles", EmployeeRoles);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem>("employee_roles", EmployeeRoles);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>("employment_status", EmploymentStatus);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>("employment_type", EmploymentType);
             writer.WriteStringValue("first_name", FirstName);

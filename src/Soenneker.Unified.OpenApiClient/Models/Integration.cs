@@ -38,10 +38,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The categories of support solutions that this integration has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem?>? Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.IntegrationCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem?> Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.IntegrationCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>button background color for AUTH</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -222,7 +222,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "api", n => { Api = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi.CreateFromDiscriminatorValue); } },
                 { "api_docs_url", n => { ApiDocsUrl = n.GetStringValue(); } },
                 { "beta", n => { Beta = n.GetBoolValue(); } },
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.IntegrationCategoriesItem>()?.AsList(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -260,7 +260,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationApi>("api", Api);
             writer.WriteStringValue("api_docs_url", ApiDocsUrl);
             writer.WriteBoolValue("beta", Beta);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyIntegrationCategoriesItem>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.IntegrationCategoriesItem>("categories", Categories);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);

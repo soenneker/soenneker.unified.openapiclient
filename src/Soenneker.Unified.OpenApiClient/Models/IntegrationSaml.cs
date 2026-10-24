@@ -8,43 +8,15 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntegrationSaml : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2? IntegrationSamlBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2 IntegrationSamlBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch3? IntegrationSamlBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch3 IntegrationSamlBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch4? IntegrationSamlBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch4 IntegrationSamlBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch5? IntegrationSamlBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch5 IntegrationSamlBranch5 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +24,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1 IntegrationSamlMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2>? IntegrationSamlMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2> IntegrationSamlMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSaml();
-            result.IntegrationSamlBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2();
-            result.IntegrationSamlBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch3();
-            result.IntegrationSamlBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch4();
-            result.IntegrationSamlBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch5();
-            result.IntegrationSamlMember1 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2>(global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2> integrationSamlMember2Value)
+            {
+                result.IntegrationSamlMember2 = integrationSamlMember2Value;
+            }
+            else {
+                result.IntegrationSamlMember1 = new global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(IntegrationSamlBranch2 != null || IntegrationSamlBranch3 != null || IntegrationSamlBranch4 != null || IntegrationSamlBranch5 != null || IntegrationSamlMember1 != null)
+            if(IntegrationSamlMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationSamlBranch2, IntegrationSamlBranch3, IntegrationSamlBranch4, IntegrationSamlBranch5, IntegrationSamlMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(IntegrationSamlMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlBranch2>(null, IntegrationSamlBranch2, IntegrationSamlBranch3, IntegrationSamlBranch4, IntegrationSamlBranch5, IntegrationSamlMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(IntegrationSamlMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember2>(null, IntegrationSamlMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.IntegrationSamlMember1>(null, IntegrationSamlMember1);
+            }
         }
     }
 }

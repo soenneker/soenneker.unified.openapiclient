@@ -8,42 +8,22 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VerificationMetadataExtraData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2? VerificationMetadataExtraDataBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2 VerificationMetadataExtraDataBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch3? VerificationMetadataExtraDataBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch3 VerificationMetadataExtraDataBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch4? VerificationMetadataExtraDataBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch4 VerificationMetadataExtraDataBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch5? VerificationMetadataExtraDataBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch5 VerificationMetadataExtraDataBranch5 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1 VerificationMetadataExtraDataMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2>? VerificationMetadataExtraDataMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2> VerificationMetadataExtraDataMember2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraData();
-            result.VerificationMetadataExtraDataBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2();
-            result.VerificationMetadataExtraDataBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch3();
-            result.VerificationMetadataExtraDataBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch4();
-            result.VerificationMetadataExtraDataBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch5();
-            result.VerificationMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2>(global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2> verificationMetadataExtraDataMember2Value)
+            {
+                result.VerificationMetadataExtraDataMember2 = verificationMetadataExtraDataMember2Value;
+            }
+            else {
+                result.VerificationMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(VerificationMetadataExtraDataBranch2 != null || VerificationMetadataExtraDataBranch3 != null || VerificationMetadataExtraDataBranch4 != null || VerificationMetadataExtraDataBranch5 != null || VerificationMetadataExtraDataMember1 != null)
+            if(VerificationMetadataExtraDataMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VerificationMetadataExtraDataBranch2, VerificationMetadataExtraDataBranch3, VerificationMetadataExtraDataBranch4, VerificationMetadataExtraDataBranch5, VerificationMetadataExtraDataMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VerificationMetadataExtraDataMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataBranch2>(null, VerificationMetadataExtraDataBranch2, VerificationMetadataExtraDataBranch3, VerificationMetadataExtraDataBranch4, VerificationMetadataExtraDataBranch5, VerificationMetadataExtraDataMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(VerificationMetadataExtraDataMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember2>(null, VerificationMetadataExtraDataMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadataExtraDataMember1>(null, VerificationMetadataExtraDataMember1);
+            }
         }
     }
 }

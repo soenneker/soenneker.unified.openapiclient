@@ -8,43 +8,15 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HealthcareMetadataExtraData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2? HealthcareMetadataExtraDataBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2 HealthcareMetadataExtraDataBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch3? HealthcareMetadataExtraDataBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch3 HealthcareMetadataExtraDataBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch4? HealthcareMetadataExtraDataBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch4 HealthcareMetadataExtraDataBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch5? HealthcareMetadataExtraDataBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch5 HealthcareMetadataExtraDataBranch5 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +24,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1 HealthcareMetadataExtraDataMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2>? HealthcareMetadataExtraDataMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2> HealthcareMetadataExtraDataMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraData();
-            result.HealthcareMetadataExtraDataBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2();
-            result.HealthcareMetadataExtraDataBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch3();
-            result.HealthcareMetadataExtraDataBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch4();
-            result.HealthcareMetadataExtraDataBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch5();
-            result.HealthcareMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2> healthcareMetadataExtraDataMember2Value)
+            {
+                result.HealthcareMetadataExtraDataMember2 = healthcareMetadataExtraDataMember2Value;
+            }
+            else {
+                result.HealthcareMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(HealthcareMetadataExtraDataBranch2 != null || HealthcareMetadataExtraDataBranch3 != null || HealthcareMetadataExtraDataBranch4 != null || HealthcareMetadataExtraDataBranch5 != null || HealthcareMetadataExtraDataMember1 != null)
+            if(HealthcareMetadataExtraDataMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(HealthcareMetadataExtraDataBranch2, HealthcareMetadataExtraDataBranch3, HealthcareMetadataExtraDataBranch4, HealthcareMetadataExtraDataBranch5, HealthcareMetadataExtraDataMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(HealthcareMetadataExtraDataMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataBranch2>(null, HealthcareMetadataExtraDataBranch2, HealthcareMetadataExtraDataBranch3, HealthcareMetadataExtraDataBranch4, HealthcareMetadataExtraDataBranch5, HealthcareMetadataExtraDataMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(HealthcareMetadataExtraDataMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember2>(null, HealthcareMetadataExtraDataMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadataExtraDataMember1>(null, HealthcareMetadataExtraDataMember1);
+            }
         }
     }
 }

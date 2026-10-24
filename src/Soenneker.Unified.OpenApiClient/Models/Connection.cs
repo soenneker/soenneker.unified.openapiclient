@@ -26,10 +26,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The Integration categories that this connection supports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem?>? Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ConnectionCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem?> Categories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ConnectionCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -90,10 +90,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?>? Permissions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ConnectionPermissionsItem?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem?> Permissions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ConnectionPermissionsItem?> Permissions { get; set; }
 #endif
         /// <summary>the ID of the SecretsManager object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +148,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth>(global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth.CreateFromDiscriminatorValue); } },
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ConnectionCategoriesItem>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "external_xref", n => { ExternalXref = n.GetStringValue(); } },
@@ -159,7 +159,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "last_healthy_at", n => { LastHealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "last_unhealthy_at", n => { LastUnhealthyAt = n.GetDateTimeOffsetValue(); } },
                 { "last_unhealthy_code", n => { LastUnhealthyCode = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>()?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ConnectionPermissionsItem>()?.AsList(); } },
                 { "secretsmanager_id", n => { SecretsmanagerId = n.GetStringValue(); } },
                 { "secretsmanager_key", n => { SecretsmanagerKey = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -174,7 +174,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth>("auth", Auth);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionCategoriesItem>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ConnectionCategoriesItem>("categories", Categories);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("external_xref", ExternalXref);
@@ -185,7 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_healthy_at", LastHealthyAt);
             writer.WriteDateTimeOffsetValue("last_unhealthy_at", LastUnhealthyAt);
             writer.WriteStringValue("last_unhealthy_code", LastUnhealthyCode);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionPermissionsItem>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ConnectionPermissionsItem>("permissions", Permissions);
             writer.WriteStringValue("secretsmanager_id", SecretsmanagerId);
             writer.WriteStringValue("secretsmanager_key", SecretsmanagerKey);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

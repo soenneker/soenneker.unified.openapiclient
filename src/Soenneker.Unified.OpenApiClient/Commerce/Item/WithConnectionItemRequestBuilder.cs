@@ -5,8 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Availability;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Collection;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory;
-using Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id;
-using Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static;
+using Soenneker.Unified.OpenApiClient.Commerce.Item.Item_Escaped;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Itemvariant;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Location;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Reservation;
@@ -39,15 +38,10 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Inventory.InventoryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The item_by_id property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id.Item_by_idRequestBuilder Item_by_id
+        /// <summary>The item property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_Escaped.Item_EscapedRequestBuilder Item
         {
-            get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_by_id.Item_by_idRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The item_static property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder Item_static
-        {
-            get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_static.Item_staticRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The itemvariant property</summary>
         public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Itemvariant.ItemvariantRequestBuilder Itemvariant

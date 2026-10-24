@@ -8,43 +8,11 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsMetadataValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2? AnalyticsMetadataValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2 AnalyticsMetadataValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch3? AnalyticsMetadataValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch3 AnalyticsMetadataValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch4? AnalyticsMetadataValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch4 AnalyticsMetadataValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch5? AnalyticsMetadataValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch5 AnalyticsMetadataValueBranch5 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +20,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1 AnalyticsMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2>? AnalyticsMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2> AnalyticsMetadataValueMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValue();
-            result.AnalyticsMetadataValueBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2();
-            result.AnalyticsMetadataValueBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch3();
-            result.AnalyticsMetadataValueBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch4();
-            result.AnalyticsMetadataValueBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch5();
-            result.AnalyticsMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2> analyticsMetadataValueMember2Value)
+            {
+                result.AnalyticsMetadataValueMember2 = analyticsMetadataValueMember2Value;
+            }
+            else {
+                result.AnalyticsMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AnalyticsMetadataValueBranch2 != null || AnalyticsMetadataValueBranch3 != null || AnalyticsMetadataValueBranch4 != null || AnalyticsMetadataValueBranch5 != null || AnalyticsMetadataValueMember1 != null)
+            if(AnalyticsMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AnalyticsMetadataValueBranch2, AnalyticsMetadataValueBranch3, AnalyticsMetadataValueBranch4, AnalyticsMetadataValueBranch5, AnalyticsMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AnalyticsMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueBranch2>(null, AnalyticsMetadataValueBranch2, AnalyticsMetadataValueBranch3, AnalyticsMetadataValueBranch4, AnalyticsMetadataValueBranch5, AnalyticsMetadataValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(AnalyticsMetadataValueMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember2>(null, AnalyticsMetadataValueMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AnalyticsMetadataValueMember1>(null, AnalyticsMetadataValueMember1);
+            }
         }
     }
 }

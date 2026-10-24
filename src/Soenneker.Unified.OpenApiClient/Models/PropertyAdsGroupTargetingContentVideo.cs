@@ -17,10 +17,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The durations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItem?>? Durations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItemEnum?>? Durations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItem?> Durations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItemEnum?> Durations { get; set; }
 #endif
         /// <summary>The excluded_youtube_channels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The player_sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItem?>? PlayerSizes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItemEnum?>? PlayerSizes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItem?> PlayerSizes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItemEnum?> PlayerSizes { get; set; }
 #endif
         /// <summary>The positions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItem?>? Positions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItemEnum?>? Positions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItem?> Positions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItemEnum?> Positions { get; set; }
 #endif
         /// <summary>The youtube_channels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,11 +95,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "durations", n => { Durations = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItem>()?.AsList(); } },
+                { "durations", n => { Durations = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItemEnum>()?.AsList(); } },
                 { "excluded_youtube_channels", n => { ExcludedYoutubeChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excluded_youtube_videos", n => { ExcludedYoutubeVideos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "player_sizes", n => { PlayerSizes = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItem>()?.AsList(); } },
-                { "positions", n => { Positions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItem>()?.AsList(); } },
+                { "player_sizes", n => { PlayerSizes = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItemEnum>()?.AsList(); } },
+                { "positions", n => { Positions = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItemEnum>()?.AsList(); } },
                 { "youtube_channels", n => { YoutubeChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "youtube_videos", n => { YoutubeVideos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -111,11 +111,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItem>("durations", Durations);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoDurationsItemEnum>("durations", Durations);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_youtube_channels", ExcludedYoutubeChannels);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_youtube_videos", ExcludedYoutubeVideos);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItem>("player_sizes", PlayerSizes);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItem>("positions", Positions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPlayerSizesItemEnum>("player_sizes", PlayerSizes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContentVideoPositionsItemEnum>("positions", Positions);
             writer.WriteCollectionOfPrimitiveValues<string>("youtube_channels", YoutubeChannels);
             writer.WriteCollectionOfPrimitiveValues<string>("youtube_videos", YoutubeVideos);
             writer.WriteAdditionalData(AdditionalData);

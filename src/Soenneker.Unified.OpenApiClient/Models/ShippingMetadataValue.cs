@@ -8,43 +8,15 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShippingMetadataValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2? ShippingMetadataValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2 ShippingMetadataValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch3? ShippingMetadataValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch3 ShippingMetadataValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch4? ShippingMetadataValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch4 ShippingMetadataValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch5? ShippingMetadataValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch5 ShippingMetadataValueBranch5 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +24,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1 ShippingMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2>? ShippingMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2> ShippingMetadataValueMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValue();
-            result.ShippingMetadataValueBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2();
-            result.ShippingMetadataValueBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch3();
-            result.ShippingMetadataValueBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch4();
-            result.ShippingMetadataValueBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch5();
-            result.ShippingMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2> shippingMetadataValueMember2Value)
+            {
+                result.ShippingMetadataValueMember2 = shippingMetadataValueMember2Value;
+            }
+            else {
+                result.ShippingMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ShippingMetadataValueBranch2 != null || ShippingMetadataValueBranch3 != null || ShippingMetadataValueBranch4 != null || ShippingMetadataValueBranch5 != null || ShippingMetadataValueMember1 != null)
+            if(ShippingMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ShippingMetadataValueBranch2, ShippingMetadataValueBranch3, ShippingMetadataValueBranch4, ShippingMetadataValueBranch5, ShippingMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ShippingMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueBranch2>(null, ShippingMetadataValueBranch2, ShippingMetadataValueBranch3, ShippingMetadataValueBranch4, ShippingMetadataValueBranch5, ShippingMetadataValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(ShippingMetadataValueMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember2>(null, ShippingMetadataValueMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.ShippingMetadataValueMember1>(null, ShippingMetadataValueMember1);
+            }
         }
     }
 }

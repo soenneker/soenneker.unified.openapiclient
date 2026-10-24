@@ -8,42 +8,22 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UcMetadataExtraData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2? UcMetadataExtraDataBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2 UcMetadataExtraDataBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch3? UcMetadataExtraDataBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch3 UcMetadataExtraDataBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch4? UcMetadataExtraDataBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch4 UcMetadataExtraDataBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch5? UcMetadataExtraDataBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch5 UcMetadataExtraDataBranch5 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +32,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1 UcMetadataExtraDataMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2>? UcMetadataExtraDataMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2> UcMetadataExtraDataMember2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraData();
-            result.UcMetadataExtraDataBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2();
-            result.UcMetadataExtraDataBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch3();
-            result.UcMetadataExtraDataBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch4();
-            result.UcMetadataExtraDataBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch5();
-            result.UcMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2>(global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2> ucMetadataExtraDataMember2Value)
+            {
+                result.UcMetadataExtraDataMember2 = ucMetadataExtraDataMember2Value;
+            }
+            else {
+                result.UcMetadataExtraDataMember1 = new global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UcMetadataExtraDataBranch2 != null || UcMetadataExtraDataBranch3 != null || UcMetadataExtraDataBranch4 != null || UcMetadataExtraDataBranch5 != null || UcMetadataExtraDataMember1 != null)
+            if(UcMetadataExtraDataMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UcMetadataExtraDataBranch2, UcMetadataExtraDataBranch3, UcMetadataExtraDataBranch4, UcMetadataExtraDataBranch5, UcMetadataExtraDataMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UcMetadataExtraDataMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataBranch2>(null, UcMetadataExtraDataBranch2, UcMetadataExtraDataBranch3, UcMetadataExtraDataBranch4, UcMetadataExtraDataBranch5, UcMetadataExtraDataMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(UcMetadataExtraDataMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember2>(null, UcMetadataExtraDataMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.UcMetadataExtraDataMember1>(null, UcMetadataExtraDataMember1);
+            }
         }
     }
 }

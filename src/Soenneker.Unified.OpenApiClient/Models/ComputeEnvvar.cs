@@ -19,10 +19,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Environments the variable applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem?>? Environments { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarEnvironmentsItem?>? Environments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem?> Environments { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarEnvironmentsItem?> Environments { get; set; }
 #endif
         /// <summary>Unique identifier for the environment variable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem>()?.AsList(); } },
+                { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarEnvironmentsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_secret", n => { IsSecret = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeEnvvarEnvironmentsItem>("environments", Environments);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeEnvvarEnvironmentsItem>("environments", Environments);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_secret", IsSecret);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);

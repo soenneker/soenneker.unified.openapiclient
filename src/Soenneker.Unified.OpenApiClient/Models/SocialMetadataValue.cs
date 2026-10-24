@@ -8,43 +8,15 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SocialMetadataValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2? SocialMetadataValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2 SocialMetadataValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch3? SocialMetadataValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch3 SocialMetadataValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch4? SocialMetadataValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch4 SocialMetadataValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch5? SocialMetadataValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch5 SocialMetadataValueBranch5 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +24,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1 SocialMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2>? SocialMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2> SocialMetadataValueMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValue();
-            result.SocialMetadataValueBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2();
-            result.SocialMetadataValueBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch3();
-            result.SocialMetadataValueBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch4();
-            result.SocialMetadataValueBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch5();
-            result.SocialMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2> socialMetadataValueMember2Value)
+            {
+                result.SocialMetadataValueMember2 = socialMetadataValueMember2Value;
+            }
+            else {
+                result.SocialMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SocialMetadataValueBranch2 != null || SocialMetadataValueBranch3 != null || SocialMetadataValueBranch4 != null || SocialMetadataValueBranch5 != null || SocialMetadataValueMember1 != null)
+            if(SocialMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SocialMetadataValueBranch2, SocialMetadataValueBranch3, SocialMetadataValueBranch4, SocialMetadataValueBranch5, SocialMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SocialMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueBranch2>(null, SocialMetadataValueBranch2, SocialMetadataValueBranch3, SocialMetadataValueBranch4, SocialMetadataValueBranch5, SocialMetadataValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(SocialMetadataValueMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2>(null, SocialMetadataValueMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember1>(null, SocialMetadataValueMember1);
+            }
         }
     }
 }

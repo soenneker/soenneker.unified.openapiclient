@@ -27,10 +27,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>GPU models offered in this region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem?>? GpuModels { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionGpuModelsItem?>? GpuModels { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem?> GpuModels { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionGpuModelsItem?> GpuModels { get; set; }
 #endif
         /// <summary>Unique identifier for the region or data center</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "gpu_models", n => { GpuModels = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem>()?.AsList(); } },
+                { "gpu_models", n => { GpuModels = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionGpuModelsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>(global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -119,7 +119,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country", Country);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyComputeRegionGpuModelsItem>("gpu_models", GpuModels);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeRegionGpuModelsItem>("gpu_models", GpuModels);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("location", Location);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.ComputeMetadata>("metadata", Metadata);

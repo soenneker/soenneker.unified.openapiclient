@@ -8,43 +8,15 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch3"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch4"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch5"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KmsPageMetadataValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2? KmsPageMetadataValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2 KmsPageMetadataValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch3? KmsPageMetadataValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch3 KmsPageMetadataValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch4? KmsPageMetadataValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch4 KmsPageMetadataValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch5? KmsPageMetadataValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch5 KmsPageMetadataValueBranch5 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +24,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1 KmsPageMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2>? KmsPageMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2> KmsPageMetadataValueMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +50,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValue();
-            result.KmsPageMetadataValueBranch2 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2();
-            result.KmsPageMetadataValueBranch3 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch3();
-            result.KmsPageMetadataValueBranch4 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch4();
-            result.KmsPageMetadataValueBranch5 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch5();
-            result.KmsPageMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2> kmsPageMetadataValueMember2Value)
+            {
+                result.KmsPageMetadataValueMember2 = kmsPageMetadataValueMember2Value;
+            }
+            else {
+                result.KmsPageMetadataValueMember1 = new global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +77,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(KmsPageMetadataValueBranch2 != null || KmsPageMetadataValueBranch3 != null || KmsPageMetadataValueBranch4 != null || KmsPageMetadataValueBranch5 != null || KmsPageMetadataValueMember1 != null)
+            if(KmsPageMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(KmsPageMetadataValueBranch2, KmsPageMetadataValueBranch3, KmsPageMetadataValueBranch4, KmsPageMetadataValueBranch5, KmsPageMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(KmsPageMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +90,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueBranch2>(null, KmsPageMetadataValueBranch2, KmsPageMetadataValueBranch3, KmsPageMetadataValueBranch4, KmsPageMetadataValueBranch5, KmsPageMetadataValueMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(KmsPageMetadataValueMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember2>(null, KmsPageMetadataValueMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.KmsPageMetadataValueMember1>(null, KmsPageMetadataValueMember1);
+            }
         }
     }
 }

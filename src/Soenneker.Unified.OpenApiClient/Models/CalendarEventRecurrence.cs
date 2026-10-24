@@ -41,10 +41,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem?>? OnDays { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceOnDaysItem?>? OnDays { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem?> OnDays { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceOnDaysItem?> OnDays { get; set; }
 #endif
         /// <summary>days of the month to repeat on, defaults to undefined (every day), only used if frequency is MONTHLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceFrequency>(); } },
                 { "included_dates", n => { IncludedDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
-                { "on_days", n => { OnDays = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem>()?.AsList(); } },
+                { "on_days", n => { OnDays = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceOnDaysItem>()?.AsList(); } },
                 { "on_month_days", n => { OnMonthDays = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "on_months", n => { OnMonths = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "on_weeks", n => { OnWeeks = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
@@ -141,7 +141,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceFrequency>("frequency", Frequency);
             writer.WriteCollectionOfPrimitiveValues<string>("included_dates", IncludedDates);
             writer.WriteDoubleValue("interval", Interval);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarEventRecurrenceOnDaysItem>("on_days", OnDays);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrenceOnDaysItem>("on_days", OnDays);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_month_days", OnMonthDays);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_months", OnMonths);
             writer.WriteCollectionOfPrimitiveValues<double?>("on_weeks", OnWeeks);
