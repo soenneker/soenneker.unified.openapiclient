@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", pathParameters)
+        public EventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,room_id*,sort*,start_gte*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*}", rawUrl)
+        public EventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/event{?calendar_id*,end_lt*,expand*,fields*,limit*,matter_id*,offset*,order*,query*,raw*,room_id*,sort*,start_gte*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -224,6 +224,16 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Event
 #else
             [QueryParameter("raw")]
             public string Raw { get; set; }
+#endif
+            /// <summary>The room ID to filter by. Returns the events that booked this room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("room_id")]
+            public string? RoomId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("room_id")]
+            public string RoomId { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

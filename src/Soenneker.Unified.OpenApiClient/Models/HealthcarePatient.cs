@@ -30,6 +30,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Birthdate { get; set; }
 #endif
+        /// <summary>Emergency contacts, guardians and other contact persons for the patient</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientContact>? Contacts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientContact> Contacts { get; set; }
+#endif
         /// <summary>When the patient record was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>When the patient died (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -41,6 +49,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEmail> Emails { get; set; }
+#endif
+        /// <summary>Codings for the patient&apos;s ethnicity (e.g. CDC ethnicity codes)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Ethnicities { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Ethnicities { get; set; }
 #endif
         /// <summary>Given name of the patient</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,6 +104,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
+        /// <summary>Marital status of the patient</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientMaritalStatus? MaritalStatus { get; set; }
         /// <summary>Custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +129,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> PractitionerIds { get; set; }
+#endif
+        /// <summary>Codings for the patient&apos;s race (e.g. CDC race codes)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Races { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Races { get; set; }
 #endif
         /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,9 +183,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHealthcarePatientAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHealthcarePatientAddress.CreateFromDiscriminatorValue); } },
                 { "birthdate", n => { Birthdate = n.GetStringValue(); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientContact>(global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientContact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deceased_at", n => { DeceasedAt = n.GetDateTimeOffsetValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEmail>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareEmail.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ethnicities", n => { Ethnicities = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientGender>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -168,9 +196,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_deceased", n => { IsDeceased = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "marital_status", n => { MaritalStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientMaritalStatus>(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "practitioner_ids", n => { PractitionerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "races", n => { Races = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareTelephone>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -185,9 +215,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHealthcarePatientAddress>("address", Address);
             writer.WriteStringValue("birthdate", Birthdate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientContact>("contacts", Contacts);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("deceased_at", DeceasedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEmail>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>("ethnicities", Ethnicities);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientGender>("gender", Gender);
             writer.WriteStringValue("id", Id);
@@ -196,9 +228,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_deceased", IsDeceased);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("last_name", LastName);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientMaritalStatus>("marital_status", MaritalStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("practitioner_ids", PractitionerIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>("races", Races);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcarePatientRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareTelephone>("telephones", Telephones);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -142,6 +142,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string RecurringEventId { get; set; }
 #endif
+        /// <summary>pointers to Calendar Rooms booked for this event</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RoomIds { get; set; }
+#nullable restore
+#else
+        public List<string> RoomIds { get; set; }
+#endif
         /// <summary>The send_notifications property</summary>
         public bool? SendNotifications { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -230,6 +238,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty.CreateFromDiscriminatorValue); } },
                 { "recurrence", n => { Recurrence = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recurring_event_id", n => { RecurringEventId = n.GetStringValue(); } },
+                { "room_ids", n => { RoomIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "send_notifications", n => { SendNotifications = n.GetBoolValue(); } },
                 { "start_at", n => { StartAt = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>(); } },
@@ -265,6 +274,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>("recurrence", Recurrence);
             writer.WriteStringValue("recurring_event_id", RecurringEventId);
+            writer.WriteCollectionOfPrimitiveValues<string>("room_ids", RoomIds);
             writer.WriteBoolValue("send_notifications", SendNotifications);
             writer.WriteStringValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>("status", Status);

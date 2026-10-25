@@ -68,6 +68,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Notes,
         #pragma warning restore CS1591
+        [EnumMember(Value = "is_virtual")]
+        #pragma warning disable CS1591
+        IsVirtual,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "meeting_url")]
+        #pragma warning disable CS1591
+        MeetingUrl,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

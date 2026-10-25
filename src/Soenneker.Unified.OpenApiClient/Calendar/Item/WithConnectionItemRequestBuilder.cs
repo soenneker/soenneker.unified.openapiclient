@@ -6,7 +6,9 @@ using Soenneker.Unified.OpenApiClient.Calendar.Item.Busy;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Calendar;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Event;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Link;
+using Soenneker.Unified.OpenApiClient.Calendar.Item.Location;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Recording;
+using Soenneker.Unified.OpenApiClient.Calendar.Item.Room;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar;
 using System.Collections.Generic;
 using System.IO;
@@ -40,10 +42,20 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Calendar.Item.Link.LinkRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The location property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Location.LocationRequestBuilder Location
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Calendar.Item.Location.LocationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The recording property</summary>
         public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Recording.RecordingRequestBuilder Recording
         {
             get => new global::Soenneker.Unified.OpenApiClient.Calendar.Item.Recording.RecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The room property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Room.RoomRequestBuilder Room
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Calendar.Item.Room.RoomRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webinar property</summary>
         public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Webinar.WebinarRequestBuilder Webinar

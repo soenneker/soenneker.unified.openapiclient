@@ -1032,6 +1032,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CalendarWebinarWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_room_read")]
+        #pragma warning disable CS1591
+        CalendarRoomRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_location_read")]
+        #pragma warning disable CS1591
+        CalendarLocationRead,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enrich_person_read")]
         #pragma warning disable CS1591
         EnrichPersonRead,
@@ -1595,6 +1603,54 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "healthcare_immunization_write")]
         #pragma warning disable CS1591
         HealthcareImmunizationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_document_read")]
+        #pragma warning disable CS1591
+        HealthcareDocumentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_document_write")]
+        #pragma warning disable CS1591
+        HealthcareDocumentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_coverage_read")]
+        #pragma warning disable CS1591
+        HealthcareCoverageRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_coverage_write")]
+        #pragma warning disable CS1591
+        HealthcareCoverageWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_procedure_read")]
+        #pragma warning disable CS1591
+        HealthcareProcedureRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_procedure_write")]
+        #pragma warning disable CS1591
+        HealthcareProcedureWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_report_read")]
+        #pragma warning disable CS1591
+        HealthcareReportRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_report_write")]
+        #pragma warning disable CS1591
+        HealthcareReportWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_careplan_read")]
+        #pragma warning disable CS1591
+        HealthcareCareplanRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_careplan_write")]
+        #pragma warning disable CS1591
+        HealthcareCareplanWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_goal_read")]
+        #pragma warning disable CS1591
+        HealthcareGoalRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_goal_write")]
+        #pragma warning disable CS1591
+        HealthcareGoalWrite,
         #pragma warning restore CS1591
     }
 }

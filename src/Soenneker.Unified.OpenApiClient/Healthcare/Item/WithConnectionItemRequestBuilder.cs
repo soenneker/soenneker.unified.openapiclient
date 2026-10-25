@@ -4,14 +4,20 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Allergy;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Appointment;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Careplan;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Condition;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Coverage;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Document;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Goal;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Immunization;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Location;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Medication;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Observation;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Patient;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Practitioner;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Procedure;
+using Soenneker.Unified.OpenApiClient.Healthcare.Item.Report;
 using Soenneker.Unified.OpenApiClient.Healthcare.Item.Slot;
 using System.Collections.Generic;
 using System.IO;
@@ -35,15 +41,35 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item
         {
             get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Appointment.AppointmentRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The careplan property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Careplan.CareplanRequestBuilder Careplan
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Careplan.CareplanRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The condition property</summary>
         public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Condition.ConditionRequestBuilder Condition
         {
             get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Condition.ConditionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The coverage property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Coverage.CoverageRequestBuilder Coverage
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Coverage.CoverageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The document property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Document.DocumentRequestBuilder Document
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Document.DocumentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The encounter property</summary>
         public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.EncounterRequestBuilder Encounter
         {
             get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Encounter.EncounterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The goal property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Goal.GoalRequestBuilder Goal
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Goal.GoalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The immunization property</summary>
         public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Immunization.ImmunizationRequestBuilder Immunization
@@ -74,6 +100,16 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item
         public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Practitioner.PractitionerRequestBuilder Practitioner
         {
             get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Practitioner.PractitionerRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The procedure property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Procedure.ProcedureRequestBuilder Procedure
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Procedure.ProcedureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The report property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Report.ReportRequestBuilder Report
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The slot property</summary>
         public global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Slot.SlotRequestBuilder Slot

@@ -42,6 +42,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Whether the appointment is a telehealth/virtual visit</summary>
+        public bool? IsVirtual { get; set; }
         /// <summary>Where the appointment takes place</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #nullable restore
 #else
         public string LocationId { get; set; }
+#endif
+        /// <summary>Join link for a telehealth/virtual visit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingUrl { get; set; }
+#nullable restore
+#else
+        public string MeetingUrl { get; set; }
 #endif
         /// <summary>Custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -150,7 +160,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_virtual", n => { IsVirtual = n.GetBoolValue(); } },
                 { "location_id", n => { LocationId = n.GetStringValue(); } },
+                { "meeting_url", n => { MeetingUrl = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "patient_id", n => { PatientId = n.GetStringValue(); } },
@@ -176,7 +188,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_virtual", IsVirtual);
             writer.WriteStringValue("location_id", LocationId);
+            writer.WriteStringValue("meeting_url", MeetingUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("patient_id", PatientId);

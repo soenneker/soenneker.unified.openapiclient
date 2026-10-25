@@ -76,6 +76,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         IsActive,
         #pragma warning restore CS1591
+        [EnumMember(Value = "races")]
+        #pragma warning disable CS1591
+        Races,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ethnicities")]
+        #pragma warning disable CS1591
+        Ethnicities,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "marital_status")]
+        #pragma warning disable CS1591
+        MaritalStatus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "contacts")]
+        #pragma warning disable CS1591
+        Contacts,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

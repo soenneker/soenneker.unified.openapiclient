@@ -559,6 +559,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CalendarWebinar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_room")]
+        #pragma warning disable CS1591
+        CalendarRoom,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_location")]
+        #pragma warning disable CS1591
+        CalendarLocation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ads_organization")]
         #pragma warning disable CS1591
         AdsOrganization,
@@ -858,6 +866,30 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "healthcare_immunization")]
         #pragma warning disable CS1591
         HealthcareImmunization,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_document")]
+        #pragma warning disable CS1591
+        HealthcareDocument,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_coverage")]
+        #pragma warning disable CS1591
+        HealthcareCoverage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_procedure")]
+        #pragma warning disable CS1591
+        HealthcareProcedure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_report")]
+        #pragma warning disable CS1591
+        HealthcareReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_careplan")]
+        #pragma warning disable CS1591
+        HealthcareCareplan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcare_goal")]
+        #pragma warning disable CS1591
+        HealthcareGoal,
         #pragma warning restore CS1591
     }
 }

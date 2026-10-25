@@ -34,6 +34,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Dosage { get; set; }
 #endif
+        /// <summary>Amount of medication per dose</summary>
+        public double? DoseNumber { get; set; }
+        /// <summary>Unit of the dose amount (e.g. mg, tablet)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DoseUnit { get; set; }
+#nullable restore
+#else
+        public string DoseUnit { get; set; }
+#endif
         /// <summary>The encounter in which the medication was ordered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +112,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Number of refills authorized</summary>
         public double? RefillCount { get; set; }
+        /// <summary>How the medication is taken (e.g. oral, intravenous)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Route { get; set; }
+#nullable restore
+#else
+        public string Route { get; set; }
+#endif
         /// <summary>When the patient should start taking the medication (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>Status of the medication order</summary>
@@ -137,6 +155,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "codes", n => { Codes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dosage", n => { Dosage = n.GetStringValue(); } },
+                { "dose_number", n => { DoseNumber = n.GetDoubleValue(); } },
+                { "dose_unit", n => { DoseUnit = n.GetStringValue(); } },
                 { "encounter_id", n => { EncounterId = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -147,6 +167,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "practitioner_id", n => { PractitionerId = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMedicationRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareMedicationRawProperty.CreateFromDiscriminatorValue); } },
                 { "refill_count", n => { RefillCount = n.GetDoubleValue(); } },
+                { "route", n => { Route = n.GetStringValue(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMedicationStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -163,6 +184,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>("codes", Codes);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("dosage", Dosage);
+            writer.WriteDoubleValue("dose_number", DoseNumber);
+            writer.WriteStringValue("dose_unit", DoseUnit);
             writer.WriteStringValue("encounter_id", EncounterId);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteStringValue("id", Id);
@@ -173,6 +196,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("practitioner_id", PractitionerId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMedicationRawProperty>("raw", Raw);
             writer.WriteDoubleValue("refill_count", RefillCount);
+            writer.WriteStringValue("route", Route);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMedicationStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -22,7 +22,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
+        public BusyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,room_id*,sort*,start_gte*,updated_gte*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
+        public BusyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/calendar/{connectionId}/busy{?calendar_id*,end_lt*,fields*,limit*,offset*,order*,query*,raw*,room_id*,sort*,start_gte*,updated_gte*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -156,6 +156,16 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item.Busy
 #else
             [QueryParameter("raw")]
             public string Raw { get; set; }
+#endif
+            /// <summary>The room ID to get availability for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("room_id")]
+            public string? RoomId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("room_id")]
+            public string RoomId { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

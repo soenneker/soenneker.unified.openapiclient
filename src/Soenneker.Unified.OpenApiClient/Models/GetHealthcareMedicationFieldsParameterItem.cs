@@ -68,6 +68,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Notes,
         #pragma warning restore CS1591
+        [EnumMember(Value = "route")]
+        #pragma warning disable CS1591
+        Route,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dose_number")]
+        #pragma warning disable CS1591
+        DoseNumber,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dose_unit")]
+        #pragma warning disable CS1591
+        DoseUnit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,
