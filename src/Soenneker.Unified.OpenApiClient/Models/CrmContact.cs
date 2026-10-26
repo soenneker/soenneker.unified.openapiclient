@@ -23,7 +23,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCrmContactAddress Address { get; set; }
 #endif
-        /// <summary>The companyorganization name  of the contact</summary>
+        /// <summary>The company/organization name  of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.CrmEmail> Emails { get; set; }
 #endif
-        /// <summary>The first_name property</summary>
+        /// <summary>The contact&apos;s first (given) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ImageUrl { get; set; }
 #endif
-        /// <summary>The last_name property</summary>
+        /// <summary>The contact&apos;s last (family) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }

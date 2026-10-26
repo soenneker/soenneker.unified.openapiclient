@@ -39,7 +39,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Birthdate { get; set; }
 #endif
-        /// <summary>The companyorganization name  of the person</summary>
+        /// <summary>The company/organization name  of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company { get; set; }

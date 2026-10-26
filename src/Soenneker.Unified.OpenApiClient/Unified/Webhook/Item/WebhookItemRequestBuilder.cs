@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Models;
+using Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Resume;
 using Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Trigger;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Webhook.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The resume property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Resume.ResumeRequestBuilder Resume
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Resume.ResumeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The trigger property</summary>
         public global::Soenneker.Unified.OpenApiClient.Unified.Webhook.Item.Trigger.TriggerRequestBuilder Trigger
         {
