@@ -12,6 +12,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "created_at")]
+        #pragma warning disable CS1591
+        CreatedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "updated_at")]
+        #pragma warning disable CS1591
+        UpdatedAt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "name")]
         #pragma warning disable CS1591
         Name,
@@ -28,18 +36,6 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Address,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "created_at")]
-        #pragma warning disable CS1591
-        CreatedAt,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "updated_at")]
-        #pragma warning disable CS1591
-        UpdatedAt,
-        #pragma warning restore CS1591
         [EnumMember(Value = "timezone")]
         #pragma warning disable CS1591
         Timezone,
@@ -47,6 +43,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
     }
 }

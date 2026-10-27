@@ -62,7 +62,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2> socialMetadataValueMember2Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.SocialMetadataValueMember2> socialMetadataValueMember2Value)
             {
                 result.SocialMetadataValueMember2 = socialMetadataValueMember2Value;
             }

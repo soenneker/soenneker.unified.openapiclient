@@ -194,7 +194,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Auth.Item.Item
             [QueryParameter("subdomain")]
             public string Subdomain { get; set; }
 #endif
-            /// <summary>The URL where you want the user to be redirect to after a successful authorization.  The connection ID will be appended with (id=&lt;connectionId&gt;) to this URL, as will the state that was provided.</summary>
+            /// <summary>The URL where you want the user to be redirect to after a successful authorization.  The connection ID will be appended with (id=&lt;connectionId&gt;) to this URL, as will the state that was provided. When the workspace has trusted_domains configured, this host must be on that list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("success_redirect")]

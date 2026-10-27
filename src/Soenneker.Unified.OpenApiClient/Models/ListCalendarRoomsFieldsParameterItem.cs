@@ -12,9 +12,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "created_at")]
+        #pragma warning disable CS1591
+        CreatedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "updated_at")]
+        #pragma warning disable CS1591
+        UpdatedAt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "name")]
         #pragma warning disable CS1591
         Name,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "type")]
+        #pragma warning disable CS1591
+        Type,
         #pragma warning restore CS1591
         [EnumMember(Value = "capacity")]
         #pragma warning disable CS1591
@@ -24,29 +36,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         LocationId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "raw")]
-        #pragma warning disable CS1591
-        Raw,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "created_at")]
-        #pragma warning disable CS1591
-        CreatedAt,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "updated_at")]
-        #pragma warning disable CS1591
-        UpdatedAt,
-        #pragma warning restore CS1591
         [EnumMember(Value = "description")]
         #pragma warning disable CS1591
         Description,
         #pragma warning restore CS1591
-        [EnumMember(Value = "type")]
-        #pragma warning disable CS1591
-        Type,
-        #pragma warning restore CS1591
         [EnumMember(Value = "email")]
         #pragma warning disable CS1591
         Email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "raw")]
+        #pragma warning disable CS1591
+        Raw,
         #pragma warning restore CS1591
         [EnumMember(Value = "calendar_id")]
         #pragma warning disable CS1591

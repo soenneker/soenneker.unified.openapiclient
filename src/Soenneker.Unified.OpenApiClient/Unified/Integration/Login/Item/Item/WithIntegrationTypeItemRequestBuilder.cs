@@ -121,7 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration.Login.Item.Item
             [QueryParameter("state")]
             public string State { get; set; }
 #endif
-            /// <summary>The URL where you want the user to be redirect to after a successful authentication/sign-in.  A &quot;jwt&quot; parameter will be appended to the URL which will contain a name and email of the user who just signed-in.</summary>
+            /// <summary>The URL where you want the user to be redirect to after a successful authentication/sign-in.  A &quot;jwt&quot; parameter will be appended to the URL which will contain a name and email of the user who just signed-in (and a redirect claim matching this URL). When the workspace has trusted_domains configured, this host must be on that list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("success_redirect")]
