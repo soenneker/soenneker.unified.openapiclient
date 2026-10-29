@@ -1652,5 +1652,61 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HealthcareGoalWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "property_listing_read")]
+        #pragma warning disable CS1591
+        PropertyListingRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_listing_write")]
+        #pragma warning disable CS1591
+        PropertyListingWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_unittype_read")]
+        #pragma warning disable CS1591
+        PropertyUnittypeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_guest_read")]
+        #pragma warning disable CS1591
+        PropertyGuestRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_guest_write")]
+        #pragma warning disable CS1591
+        PropertyGuestWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_reservation_read")]
+        #pragma warning disable CS1591
+        PropertyReservationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_reservation_write")]
+        #pragma warning disable CS1591
+        PropertyReservationWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_availability_read")]
+        #pragma warning disable CS1591
+        PropertyAvailabilityRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_quote_read")]
+        #pragma warning disable CS1591
+        PropertyQuoteRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_quote_write")]
+        #pragma warning disable CS1591
+        PropertyQuoteWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_review_read")]
+        #pragma warning disable CS1591
+        PropertyReviewRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_review_write")]
+        #pragma warning disable CS1591
+        PropertyReviewWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_conversation_read")]
+        #pragma warning disable CS1591
+        PropertyConversationRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_conversation_write")]
+        #pragma warning disable CS1591
+        PropertyConversationWrite,
+        #pragma warning restore CS1591
     }
 }

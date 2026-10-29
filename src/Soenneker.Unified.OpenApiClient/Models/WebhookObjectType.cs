@@ -891,5 +891,37 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HealthcareGoal,
         #pragma warning restore CS1591
+        [EnumMember(Value = "property_listing")]
+        #pragma warning disable CS1591
+        PropertyListing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_unittype")]
+        #pragma warning disable CS1591
+        PropertyUnittype,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_guest")]
+        #pragma warning disable CS1591
+        PropertyGuest,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_reservation")]
+        #pragma warning disable CS1591
+        PropertyReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_availability")]
+        #pragma warning disable CS1591
+        PropertyAvailability,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_quote")]
+        #pragma warning disable CS1591
+        PropertyQuote,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_review")]
+        #pragma warning disable CS1591
+        PropertyReview,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "property_conversation")]
+        #pragma warning disable CS1591
+        PropertyConversation,
+        #pragma warning restore CS1591
     }
 }

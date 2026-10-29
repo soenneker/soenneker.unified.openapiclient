@@ -160,5 +160,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Healthcare,
         #pragma warning restore CS1591
+        [EnumMember(Value = "property")]
+        #pragma warning disable CS1591
+        Property,
+        #pragma warning restore CS1591
     }
 }
