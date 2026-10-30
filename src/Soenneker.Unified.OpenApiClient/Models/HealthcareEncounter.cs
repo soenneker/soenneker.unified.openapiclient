@@ -11,93 +11,139 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HealthcareEncounter : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("appointment_id") is { } nullNodeAppointmentId && nullNodeAppointmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentId = null;
+            if (parseNode.GetChildNode("condition_ids") is { } nullNodeConditionIds && nullNodeConditionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionIds = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("end_at") is { } nullNodeEndAt && nullNodeEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("location_id") is { } nullNodeLocationId && nullNodeLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("patient_id") is { } nullNodePatientId && nullNodePatientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PatientId = null;
+            if (parseNode.GetChildNode("practitioner_ids") is { } nullNodePractitionerIds && nullNodePractitionerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PractitionerIds = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("reasons") is { } nullNodeReasons && nullNodeReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reasons = null;
+            if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The appointment that scheduled this encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppointmentId { get; set; }
+        public string? AppointmentId { get => _explicitNullValueAppointmentId; set { _explicitNullValueAppointmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_id"); else _explicitNullProperties?.Remove("appointment_id"); } }
+        private string? _explicitNullValueAppointmentId = default!;
 #nullable restore
 #else
-        public string AppointmentId { get; set; }
+        public string AppointmentId { get => _explicitNullValueAppointmentId; set { _explicitNullValueAppointmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_id"); else _explicitNullProperties?.Remove("appointment_id"); } }
+        private string _explicitNullValueAppointmentId = default!;
 #endif
         /// <summary>Conditions diagnosed or addressed during the encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConditionIds { get; set; }
+        public List<string>? ConditionIds { get => _explicitNullValueConditionIds; set { _explicitNullValueConditionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_ids"); else _explicitNullProperties?.Remove("condition_ids"); } }
+        private List<string>? _explicitNullValueConditionIds = default!;
 #nullable restore
 #else
-        public List<string> ConditionIds { get; set; }
+        public List<string> ConditionIds { get => _explicitNullValueConditionIds; set { _explicitNullValueConditionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_ids"); else _explicitNullProperties?.Remove("condition_ids"); } }
+        private List<string> _explicitNullValueConditionIds = default!;
 #endif
         /// <summary>When the encounter record was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>When the encounter ended (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? EndAt { get; set; }
+        public DateTimeOffset? EndAt { get => _explicitNullValueEndAt; set { _explicitNullValueEndAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_at"); else _explicitNullProperties?.Remove("end_at"); } }
+        private DateTimeOffset? _explicitNullValueEndAt = default!;
         /// <summary>Unique identifier for the encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Where the encounter took place</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationId { get; set; }
+        public string? LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
+        private string? _explicitNullValueLocationId = default!;
 #nullable restore
 #else
-        public string LocationId { get; set; }
+        public string LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
+        private string _explicitNullValueLocationId = default!;
 #endif
         /// <summary>Custom field values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>? Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata> Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareMetadata> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The patient seen in the encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PatientId { get; set; }
+        public string? PatientId { get => _explicitNullValuePatientId; set { _explicitNullValuePatientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patient_id"); else _explicitNullProperties?.Remove("patient_id"); } }
+        private string? _explicitNullValuePatientId = default!;
 #nullable restore
 #else
-        public string PatientId { get; set; }
+        public string PatientId { get => _explicitNullValuePatientId; set { _explicitNullValuePatientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patient_id"); else _explicitNullProperties?.Remove("patient_id"); } }
+        private string _explicitNullValuePatientId = default!;
 #endif
         /// <summary>The practitioners who participated in the encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PractitionerIds { get; set; }
+        public List<string>? PractitionerIds { get => _explicitNullValuePractitionerIds; set { _explicitNullValuePractitionerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("practitioner_ids"); else _explicitNullProperties?.Remove("practitioner_ids"); } }
+        private List<string>? _explicitNullValuePractitionerIds = default!;
 #nullable restore
 #else
-        public List<string> PractitionerIds { get; set; }
+        public List<string> PractitionerIds { get => _explicitNullValuePractitionerIds; set { _explicitNullValuePractitionerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("practitioner_ids"); else _explicitNullProperties?.Remove("practitioner_ids"); } }
+        private List<string> _explicitNullValuePractitionerIds = default!;
 #endif
         /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterRawProperty _explicitNullValueRaw = default!;
 #endif
         /// <summary>Codings for the reason for the encounter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Reasons { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? _explicitNullValueReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Reasons { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> _explicitNullValueReasons = default!;
 #endif
         /// <summary>When the encounter started (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? StartAt { get; set; }
+        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
+        private DateTimeOffset? _explicitNullValueStartAt = default!;
         /// <summary>Status of the encounter</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterStatus? Status { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterStatus? _explicitNullValueStatus = default!;
         /// <summary>Class of the encounter (e.g. ambulatory, inpatient)</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterType? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterType? _explicitNullValueType = default!;
         /// <summary>When the encounter record was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter"/> and sets the default values.
         /// </summary>
@@ -113,7 +159,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareEncounterType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

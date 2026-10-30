@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
@@ -71,7 +71,7 @@ namespace Soenneker.Unified.OpenApiClient.Messaging.Item.Event.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.MessagingEvent.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.

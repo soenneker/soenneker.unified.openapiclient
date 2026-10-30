@@ -11,267 +11,392 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HrisEmployee : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("bio") is { } nullNodeBio && nullNodeBio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bio = null;
+            if (parseNode.GetChildNode("company_id") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
+            if (parseNode.GetChildNode("compensation") is { } nullNodeCompensation && nullNodeCompensation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compensation = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
+            if (parseNode.GetChildNode("employee_number") is { } nullNodeEmployeeNumber && nullNodeEmployeeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeNumber = null;
+            if (parseNode.GetChildNode("employee_roles") is { } nullNodeEmployeeRoles && nullNodeEmployeeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeRoles = null;
+            if (parseNode.GetChildNode("employment_status") is { } nullNodeEmploymentStatus && nullNodeEmploymentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentStatus = null;
+            if (parseNode.GetChildNode("employment_type") is { } nullNodeEmploymentType && nullNodeEmploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentType = null;
+            if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("flsa_status") is { } nullNodeFlsaStatus && nullNodeFlsaStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlsaStatus = null;
+            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
+            if (parseNode.GetChildNode("has_mfa") is { } nullNodeHasMfa && nullNodeHasMfa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMfa = null;
+            if (parseNode.GetChildNode("hired_at") is { } nullNodeHiredAt && nullNodeHiredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiredAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("language_locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
+            if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("manager_id") is { } nullNodeManagerId && nullNodeManagerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManagerId = null;
+            if (parseNode.GetChildNode("marital_status") is { } nullNodeMaritalStatus && nullNodeMaritalStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaritalStatus = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("pronouns") is { } nullNodePronouns && nullNodePronouns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pronouns = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("relationships") is { } nullNodeRelationships && nullNodeRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationships = null;
+            if (parseNode.GetChildNode("salutation") is { } nullNodeSalutation && nullNodeSalutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Salutation = null;
+            if (parseNode.GetChildNode("ssn_sin") is { } nullNodeSsnSin && nullNodeSsnSin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsnSin = null;
+            if (parseNode.GetChildNode("storage_quota_allocated") is { } nullNodeStorageQuotaAllocated && nullNodeStorageQuotaAllocated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageQuotaAllocated = null;
+            if (parseNode.GetChildNode("storage_quota_available") is { } nullNodeStorageQuotaAvailable && nullNodeStorageQuotaAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageQuotaAvailable = null;
+            if (parseNode.GetChildNode("storage_quota_used") is { } nullNodeStorageQuotaUsed && nullNodeStorageQuotaUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageQuotaUsed = null;
+            if (parseNode.GetChildNode("telephones") is { } nullNodeTelephones && nullNodeTelephones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Telephones = null;
+            if (parseNode.GetChildNode("terminated_at") is { } nullNodeTerminatedAt && nullNodeTerminatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminatedAt = null;
+            if (parseNode.GetChildNode("termination_reason") is { } nullNodeTerminationReason && nullNodeTerminationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminationReason = null;
+            if (parseNode.GetChildNode("timeoff_days_total") is { } nullNodeTimeoffDaysTotal && nullNodeTimeoffDaysTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoffDaysTotal = null;
+            if (parseNode.GetChildNode("timeoff_days_used") is { } nullNodeTimeoffDaysUsed && nullNodeTimeoffDaysUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoffDaysUsed = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress? Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress Address { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The bio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bio { get; set; }
+        public string? Bio { get => _explicitNullValueBio; set { _explicitNullValueBio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bio"); else _explicitNullProperties?.Remove("bio"); } }
+        private string? _explicitNullValueBio = default!;
 #nullable restore
 #else
-        public string Bio { get; set; }
+        public string Bio { get => _explicitNullValueBio; set { _explicitNullValueBio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bio"); else _explicitNullProperties?.Remove("bio"); } }
+        private string _explicitNullValueBio = default!;
 #endif
         /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyId { get; set; }
+        public string? CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_id"); else _explicitNullProperties?.Remove("company_id"); } }
+        private string? _explicitNullValueCompanyId = default!;
 #nullable restore
 #else
-        public string CompanyId { get; set; }
+        public string CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_id"); else _explicitNullProperties?.Remove("company_id"); } }
+        private string _explicitNullValueCompanyId = default!;
 #endif
         /// <summary>The compensation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation>? Compensation { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation>? Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation>? _explicitNullValueCompensation = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation> Compensation { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation> Compensation { get => _explicitNullValueCompensation; set { _explicitNullValueCompensation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compensation"); else _explicitNullProperties?.Remove("compensation"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisCompensation> _explicitNullValueCompensation = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>YYYYMM/DD</summary>
-        public DateTimeOffset? DateOfBirth { get; set; }
+        public DateTimeOffset? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private DateTimeOffset? _explicitNullValueDateOfBirth = default!;
         /// <summary>The employee&apos;s email addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>? Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail>? _explicitNullValueEmails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail> Emails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmail> _explicitNullValueEmails = default!;
 #endif
         /// <summary>the company&apos;s ID for this employee</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeNumber { get; set; }
+        public string? EmployeeNumber { get => _explicitNullValueEmployeeNumber; set { _explicitNullValueEmployeeNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_number"); else _explicitNullProperties?.Remove("employee_number"); } }
+        private string? _explicitNullValueEmployeeNumber = default!;
 #nullable restore
 #else
-        public string EmployeeNumber { get; set; }
+        public string EmployeeNumber { get => _explicitNullValueEmployeeNumber; set { _explicitNullValueEmployeeNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_number"); else _explicitNullProperties?.Remove("employee_number"); } }
+        private string _explicitNullValueEmployeeNumber = default!;
 #endif
         /// <summary>The employee_roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?>? EmployeeRoles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?>? EmployeeRoles { get => _explicitNullValueEmployeeRoles; set { _explicitNullValueEmployeeRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_roles"); else _explicitNullProperties?.Remove("employee_roles"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?>? _explicitNullValueEmployeeRoles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?> EmployeeRoles { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?> EmployeeRoles { get => _explicitNullValueEmployeeRoles; set { _explicitNullValueEmployeeRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_roles"); else _explicitNullProperties?.Remove("employee_roles"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem?> _explicitNullValueEmployeeRoles = default!;
 #endif
         /// <summary>The employment_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? EmploymentStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_status"); else _explicitNullProperties?.Remove("employment_status"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? _explicitNullValueEmploymentStatus = default!;
         /// <summary>The employment_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? EmploymentType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? EmploymentType { get => _explicitNullValueEmploymentType; set { _explicitNullValueEmploymentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_type"); else _explicitNullProperties?.Remove("employment_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? _explicitNullValueEmploymentType = default!;
         /// <summary>The employee&apos;s first (given) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>US Fair Labor Standards Act classification</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus? FlsaStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus? FlsaStatus { get => _explicitNullValueFlsaStatus; set { _explicitNullValueFlsaStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flsa_status"); else _explicitNullProperties?.Remove("flsa_status"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus? _explicitNullValueFlsaStatus = default!;
         /// <summary>The gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeGender? _explicitNullValueGender = default!;
         /// <summary>Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup>? Groups { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup>? _explicitNullValueGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup> Groups { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisGroup> _explicitNullValueGroups = default!;
 #endif
         /// <summary>does the user/employee have multi-factor authentication enabled</summary>
-        public bool? HasMfa { get; set; }
+        public bool? HasMfa { get => _explicitNullValueHasMfa; set { _explicitNullValueHasMfa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_mfa"); else _explicitNullProperties?.Remove("has_mfa"); } }
+        private bool? _explicitNullValueHasMfa = default!;
         /// <summary>The employee&apos;s start date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? HiredAt { get; set; }
+        public DateTimeOffset? HiredAt { get => _explicitNullValueHiredAt; set { _explicitNullValueHiredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hired_at"); else _explicitNullProperties?.Remove("hired_at"); } }
+        private DateTimeOffset? _explicitNullValueHiredAt = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>This link expires after 1 hour. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageUrl { get; set; }
+        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private string? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private string _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>the hris_job (position) this employee holds; their primary job when they hold more than one</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId { get; set; }
+        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        private string? _explicitNullValueJobId = default!;
 #nullable restore
 #else
-        public string JobId { get; set; }
+        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        private string _explicitNullValueJobId = default!;
 #endif
         /// <summary>The language_locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageLocale { get; set; }
+        public string? LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_locale"); else _explicitNullProperties?.Remove("language_locale"); } }
+        private string? _explicitNullValueLanguageLocale = default!;
 #nullable restore
 #else
-        public string LanguageLocale { get; set; }
+        public string LanguageLocale { get => _explicitNullValueLanguageLocale; set { _explicitNullValueLanguageLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_locale"); else _explicitNullProperties?.Remove("language_locale"); } }
+        private string _explicitNullValueLanguageLocale = default!;
 #endif
         /// <summary>The employee&apos;s last (family) name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>? Locations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation> Locations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation> Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation> _explicitNullValueLocations = default!;
 #endif
         /// <summary>The manager_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagerId { get; set; }
+        public string? ManagerId { get => _explicitNullValueManagerId; set { _explicitNullValueManagerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager_id"); else _explicitNullProperties?.Remove("manager_id"); } }
+        private string? _explicitNullValueManagerId = default!;
 #nullable restore
 #else
-        public string ManagerId { get; set; }
+        public string ManagerId { get => _explicitNullValueManagerId; set { _explicitNullValueManagerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager_id"); else _explicitNullProperties?.Remove("manager_id"); } }
+        private string _explicitNullValueManagerId = default!;
 #endif
         /// <summary>The marital_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus? MaritalStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus? MaritalStatus { get => _explicitNullValueMaritalStatus; set { _explicitNullValueMaritalStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marital_status"); else _explicitNullProperties?.Remove("marital_status"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus? _explicitNullValueMaritalStatus = default!;
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The employee&apos;s full name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>how often the employee is paid (eg. BIWEEKLY)</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency? PayFrequency { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency? _explicitNullValuePayFrequency = default!;
         /// <summary>The pronouns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pronouns { get; set; }
+        public string? Pronouns { get => _explicitNullValuePronouns; set { _explicitNullValuePronouns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronouns"); else _explicitNullProperties?.Remove("pronouns"); } }
+        private string? _explicitNullValuePronouns = default!;
 #nullable restore
 #else
-        public string Pronouns { get; set; }
+        public string Pronouns { get => _explicitNullValuePronouns; set { _explicitNullValuePronouns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronouns"); else _explicitNullProperties?.Remove("pronouns"); } }
+        private string _explicitNullValuePronouns = default!;
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty _explicitNullValueRaw = default!;
 #endif
         /// <summary>the employee&apos;s personal relationships (eg. emergency contacts, spouse, dependants, ...)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>? Relationships { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>? Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>? _explicitNullValueRelationships = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship> Relationships { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship> Relationships { get => _explicitNullValueRelationships; set { _explicitNullValueRelationships = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relationships"); else _explicitNullProperties?.Remove("relationships"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship> _explicitNullValueRelationships = default!;
 #endif
         /// <summary>Mr. Mrs. Ms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Salutation { get; set; }
+        public string? Salutation { get => _explicitNullValueSalutation; set { _explicitNullValueSalutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salutation"); else _explicitNullProperties?.Remove("salutation"); } }
+        private string? _explicitNullValueSalutation = default!;
 #nullable restore
 #else
-        public string Salutation { get; set; }
+        public string Salutation { get => _explicitNullValueSalutation; set { _explicitNullValueSalutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salutation"); else _explicitNullProperties?.Remove("salutation"); } }
+        private string _explicitNullValueSalutation = default!;
 #endif
         /// <summary>The ssn_sin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SsnSin { get; set; }
+        public string? SsnSin { get => _explicitNullValueSsnSin; set { _explicitNullValueSsnSin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssn_sin"); else _explicitNullProperties?.Remove("ssn_sin"); } }
+        private string? _explicitNullValueSsnSin = default!;
 #nullable restore
 #else
-        public string SsnSin { get; set; }
+        public string SsnSin { get => _explicitNullValueSsnSin; set { _explicitNullValueSsnSin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssn_sin"); else _explicitNullProperties?.Remove("ssn_sin"); } }
+        private string _explicitNullValueSsnSin = default!;
 #endif
         /// <summary>The storage_quota_allocated property</summary>
-        public double? StorageQuotaAllocated { get; set; }
+        public double? StorageQuotaAllocated { get => _explicitNullValueStorageQuotaAllocated; set { _explicitNullValueStorageQuotaAllocated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_quota_allocated"); else _explicitNullProperties?.Remove("storage_quota_allocated"); } }
+        private double? _explicitNullValueStorageQuotaAllocated = default!;
         /// <summary>The storage_quota_available property</summary>
-        public double? StorageQuotaAvailable { get; set; }
+        public double? StorageQuotaAvailable { get => _explicitNullValueStorageQuotaAvailable; set { _explicitNullValueStorageQuotaAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_quota_available"); else _explicitNullProperties?.Remove("storage_quota_available"); } }
+        private double? _explicitNullValueStorageQuotaAvailable = default!;
         /// <summary>The storage_quota_used property</summary>
-        public double? StorageQuotaUsed { get; set; }
+        public double? StorageQuotaUsed { get => _explicitNullValueStorageQuotaUsed; set { _explicitNullValueStorageQuotaUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_quota_used"); else _explicitNullProperties?.Remove("storage_quota_used"); } }
+        private double? _explicitNullValueStorageQuotaUsed = default!;
         /// <summary>The telephones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>? Telephones { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>? Telephones { get => _explicitNullValueTelephones; set { _explicitNullValueTelephones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephones"); else _explicitNullProperties?.Remove("telephones"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone>? _explicitNullValueTelephones = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone> Telephones { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone> Telephones { get => _explicitNullValueTelephones; set { _explicitNullValueTelephones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephones"); else _explicitNullProperties?.Remove("telephones"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisTelephone> _explicitNullValueTelephones = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? TerminatedAt { get; set; }
+        public DateTimeOffset? TerminatedAt { get => _explicitNullValueTerminatedAt; set { _explicitNullValueTerminatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminated_at"); else _explicitNullProperties?.Remove("terminated_at"); } }
+        private DateTimeOffset? _explicitNullValueTerminatedAt = default!;
         /// <summary>The termination_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TerminationReason { get; set; }
+        public string? TerminationReason { get => _explicitNullValueTerminationReason; set { _explicitNullValueTerminationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termination_reason"); else _explicitNullProperties?.Remove("termination_reason"); } }
+        private string? _explicitNullValueTerminationReason = default!;
 #nullable restore
 #else
-        public string TerminationReason { get; set; }
+        public string TerminationReason { get => _explicitNullValueTerminationReason; set { _explicitNullValueTerminationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termination_reason"); else _explicitNullProperties?.Remove("termination_reason"); } }
+        private string _explicitNullValueTerminationReason = default!;
 #endif
         /// <summary>Total time off allowance for the current leave period, in days (when reported by the provider)</summary>
-        public double? TimeoffDaysTotal { get; set; }
+        public double? TimeoffDaysTotal { get => _explicitNullValueTimeoffDaysTotal; set { _explicitNullValueTimeoffDaysTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoff_days_total"); else _explicitNullProperties?.Remove("timeoff_days_total"); } }
+        private double? _explicitNullValueTimeoffDaysTotal = default!;
         /// <summary>Time off days used or booked in the current leave period (when reported by the provider)</summary>
-        public double? TimeoffDaysUsed { get; set; }
+        public double? TimeoffDaysUsed { get => _explicitNullValueTimeoffDaysUsed; set { _explicitNullValueTimeoffDaysUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeoff_days_used"); else _explicitNullProperties?.Remove("timeoff_days_used"); } }
+        private double? _explicitNullValueTimeoffDaysUsed = default!;
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee"/> and sets the default values.
         /// </summary>
@@ -287,7 +412,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.HrisEmployee(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -396,6 +521,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

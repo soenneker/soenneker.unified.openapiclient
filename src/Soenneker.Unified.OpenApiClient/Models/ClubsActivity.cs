@@ -12,163 +12,269 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClubsActivity : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("achievement_count") is { } nullNodeAchievementCount && nullNodeAchievementCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchievementCount = null;
+            if (parseNode.GetChildNode("athlete_count") is { } nullNodeAthleteCount && nullNodeAthleteCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AthleteCount = null;
+            if (parseNode.GetChildNode("athlete_id") is { } nullNodeAthleteId && nullNodeAthleteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AthleteId = null;
+            if (parseNode.GetChildNode("athlete_name") is { } nullNodeAthleteName && nullNodeAthleteName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AthleteName = null;
+            if (parseNode.GetChildNode("average_cadence") is { } nullNodeAverageCadence && nullNodeAverageCadence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageCadence = null;
+            if (parseNode.GetChildNode("average_heartrate") is { } nullNodeAverageHeartrate && nullNodeAverageHeartrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageHeartrate = null;
+            if (parseNode.GetChildNode("average_speed") is { } nullNodeAverageSpeed && nullNodeAverageSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageSpeed = null;
+            if (parseNode.GetChildNode("average_watts") is { } nullNodeAverageWatts && nullNodeAverageWatts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageWatts = null;
+            if (parseNode.GetChildNode("calories") is { } nullNodeCalories && nullNodeCalories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calories = null;
+            if (parseNode.GetChildNode("comment_count") is { } nullNodeCommentCount && nullNodeCommentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentCount = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("distance") is { } nullNodeDistance && nullNodeDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distance = null;
+            if (parseNode.GetChildNode("elapsed_time") is { } nullNodeElapsedTime && nullNodeElapsedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElapsedTime = null;
+            if (parseNode.GetChildNode("elevation_high") is { } nullNodeElevationHigh && nullNodeElevationHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElevationHigh = null;
+            if (parseNode.GetChildNode("elevation_low") is { } nullNodeElevationLow && nullNodeElevationLow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ElevationLow = null;
+            if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("has_heartrate") is { } nullNodeHasHeartrate && nullNodeHasHeartrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasHeartrate = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_commute") is { } nullNodeIsCommute && nullNodeIsCommute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCommute = null;
+            if (parseNode.GetChildNode("is_manual") is { } nullNodeIsManual && nullNodeIsManual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsManual = null;
+            if (parseNode.GetChildNode("is_private") is { } nullNodeIsPrivate && nullNodeIsPrivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrivate = null;
+            if (parseNode.GetChildNode("is_trainer") is { } nullNodeIsTrainer && nullNodeIsTrainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTrainer = null;
+            if (parseNode.GetChildNode("kilojoules") is { } nullNodeKilojoules && nullNodeKilojoules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kilojoules = null;
+            if (parseNode.GetChildNode("kudos_count") is { } nullNodeKudosCount && nullNodeKudosCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KudosCount = null;
+            if (parseNode.GetChildNode("map_polyline") is { } nullNodeMapPolyline && nullNodeMapPolyline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapPolyline = null;
+            if (parseNode.GetChildNode("map_summary_polyline") is { } nullNodeMapSummaryPolyline && nullNodeMapSummaryPolyline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapSummaryPolyline = null;
+            if (parseNode.GetChildNode("max_heartrate") is { } nullNodeMaxHeartrate && nullNodeMaxHeartrate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxHeartrate = null;
+            if (parseNode.GetChildNode("max_speed") is { } nullNodeMaxSpeed && nullNodeMaxSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSpeed = null;
+            if (parseNode.GetChildNode("max_watts") is { } nullNodeMaxWatts && nullNodeMaxWatts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxWatts = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("moving_time") is { } nullNodeMovingTime && nullNodeMovingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovingTime = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("photo_count") is { } nullNodePhotoCount && nullNodePhotoCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoCount = null;
+            if (parseNode.GetChildNode("pr_count") is { } nullNodePrCount && nullNodePrCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrCount = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
+            if (parseNode.GetChildNode("suffer_score") is { } nullNodeSufferScore && nullNodeSufferScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SufferScore = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("total_elevation_gain") is { } nullNodeTotalElevationGain && nullNodeTotalElevationGain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalElevationGain = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("weighted_average_watts") is { } nullNodeWeightedAverageWatts && nullNodeWeightedAverageWatts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeightedAverageWatts = null;
+            if (parseNode.GetChildNode("workout_type") is { } nullNodeWorkoutType && nullNodeWorkoutType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkoutType = null;
+        }
+
         /// <summary>The number of achievements gained during this activity</summary>
-        public double? AchievementCount { get; set; }
+        public double? AchievementCount { get => _explicitNullValueAchievementCount; set { _explicitNullValueAchievementCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("achievement_count"); else _explicitNullProperties?.Remove("achievement_count"); } }
+        private double? _explicitNullValueAchievementCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of athletes that took part in this activity</summary>
-        public double? AthleteCount { get; set; }
+        public double? AthleteCount { get => _explicitNullValueAthleteCount; set { _explicitNullValueAthleteCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("athlete_count"); else _explicitNullProperties?.Remove("athlete_count"); } }
+        private double? _explicitNullValueAthleteCount = default!;
         /// <summary>The id of the athlete who performed the activity (DetailedActivity only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AthleteId { get; set; }
+        public string? AthleteId { get => _explicitNullValueAthleteId; set { _explicitNullValueAthleteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("athlete_id"); else _explicitNullProperties?.Remove("athlete_id"); } }
+        private string? _explicitNullValueAthleteId = default!;
 #nullable restore
 #else
-        public string AthleteId { get; set; }
+        public string AthleteId { get => _explicitNullValueAthleteId; set { _explicitNullValueAthleteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("athlete_id"); else _explicitNullProperties?.Remove("athlete_id"); } }
+        private string _explicitNullValueAthleteId = default!;
 #endif
         /// <summary>The full name of the athlete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AthleteName { get; set; }
+        public string? AthleteName { get => _explicitNullValueAthleteName; set { _explicitNullValueAthleteName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("athlete_name"); else _explicitNullProperties?.Remove("athlete_name"); } }
+        private string? _explicitNullValueAthleteName = default!;
 #nullable restore
 #else
-        public string AthleteName { get; set; }
+        public string AthleteName { get => _explicitNullValueAthleteName; set { _explicitNullValueAthleteName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("athlete_name"); else _explicitNullProperties?.Remove("athlete_name"); } }
+        private string _explicitNullValueAthleteName = default!;
 #endif
         /// <summary>The activity&apos;s average cadence</summary>
-        public double? AverageCadence { get; set; }
+        public double? AverageCadence { get => _explicitNullValueAverageCadence; set { _explicitNullValueAverageCadence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_cadence"); else _explicitNullProperties?.Remove("average_cadence"); } }
+        private double? _explicitNullValueAverageCadence = default!;
         /// <summary>The activity&apos;s average heart rate, in beats per minute</summary>
-        public double? AverageHeartrate { get; set; }
+        public double? AverageHeartrate { get => _explicitNullValueAverageHeartrate; set { _explicitNullValueAverageHeartrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_heartrate"); else _explicitNullProperties?.Remove("average_heartrate"); } }
+        private double? _explicitNullValueAverageHeartrate = default!;
         /// <summary>The activity&apos;s average speed, in meters per second</summary>
-        public double? AverageSpeed { get; set; }
+        public double? AverageSpeed { get => _explicitNullValueAverageSpeed; set { _explicitNullValueAverageSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_speed"); else _explicitNullProperties?.Remove("average_speed"); } }
+        private double? _explicitNullValueAverageSpeed = default!;
         /// <summary>The activity&apos;s average power output, in watts</summary>
-        public double? AverageWatts { get; set; }
+        public double? AverageWatts { get => _explicitNullValueAverageWatts; set { _explicitNullValueAverageWatts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_watts"); else _explicitNullProperties?.Remove("average_watts"); } }
+        private double? _explicitNullValueAverageWatts = default!;
         /// <summary>The number of kilocalories consumed during this activity</summary>
-        public double? Calories { get; set; }
+        public double? Calories { get => _explicitNullValueCalories; set { _explicitNullValueCalories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calories"); else _explicitNullProperties?.Remove("calories"); } }
+        private double? _explicitNullValueCalories = default!;
         /// <summary>The number of comments for this activity</summary>
-        public double? CommentCount { get; set; }
+        public double? CommentCount { get => _explicitNullValueCommentCount; set { _explicitNullValueCommentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment_count"); else _explicitNullProperties?.Remove("comment_count"); } }
+        private double? _explicitNullValueCommentCount = default!;
         /// <summary>The date that this activity was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The description of the activity (DetailedActivity only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The activity&apos;s distance, in meters</summary>
-        public double? Distance { get; set; }
+        public double? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
+        private double? _explicitNullValueDistance = default!;
         /// <summary>The activity&apos;s elapsed time, in seconds</summary>
-        public double? ElapsedTime { get; set; }
+        public double? ElapsedTime { get => _explicitNullValueElapsedTime; set { _explicitNullValueElapsedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elapsed_time"); else _explicitNullProperties?.Remove("elapsed_time"); } }
+        private double? _explicitNullValueElapsedTime = default!;
         /// <summary>The activity&apos;s highest elevation, in meters (DetailedActivity only)</summary>
-        public double? ElevationHigh { get; set; }
+        public double? ElevationHigh { get => _explicitNullValueElevationHigh; set { _explicitNullValueElevationHigh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation_high"); else _explicitNullProperties?.Remove("elevation_high"); } }
+        private double? _explicitNullValueElevationHigh = default!;
         /// <summary>The activity&apos;s lowest elevation, in meters (DetailedActivity only)</summary>
-        public double? ElevationLow { get; set; }
+        public double? ElevationLow { get => _explicitNullValueElevationLow; set { _explicitNullValueElevationLow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation_low"); else _explicitNullProperties?.Remove("elevation_low"); } }
+        private double? _explicitNullValueElevationLow = default!;
         /// <summary>The group this activity was listed under (reference to HrisGroup)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get; set; }
+        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        private string? _explicitNullValueGroupId = default!;
 #nullable restore
 #else
-        public string GroupId { get; set; }
+        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        private string _explicitNullValueGroupId = default!;
 #endif
         /// <summary>Whether the activity has heart rate data</summary>
-        public bool? HasHeartrate { get; set; }
+        public bool? HasHeartrate { get => _explicitNullValueHasHeartrate; set { _explicitNullValueHasHeartrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_heartrate"); else _explicitNullProperties?.Remove("has_heartrate"); } }
+        private bool? _explicitNullValueHasHeartrate = default!;
         /// <summary>Unique identifier for this activity (not provided by ClubActivity)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether this activity is a commute</summary>
-        public bool? IsCommute { get; set; }
+        public bool? IsCommute { get => _explicitNullValueIsCommute; set { _explicitNullValueIsCommute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_commute"); else _explicitNullProperties?.Remove("is_commute"); } }
+        private bool? _explicitNullValueIsCommute = default!;
         /// <summary>Whether this activity was created manually</summary>
-        public bool? IsManual { get; set; }
+        public bool? IsManual { get => _explicitNullValueIsManual; set { _explicitNullValueIsManual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_manual"); else _explicitNullProperties?.Remove("is_manual"); } }
+        private bool? _explicitNullValueIsManual = default!;
         /// <summary>Whether this activity is private</summary>
-        public bool? IsPrivate { get; set; }
+        public bool? IsPrivate { get => _explicitNullValueIsPrivate; set { _explicitNullValueIsPrivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_private"); else _explicitNullProperties?.Remove("is_private"); } }
+        private bool? _explicitNullValueIsPrivate = default!;
         /// <summary>Whether this activity was recorded on a training machine</summary>
-        public bool? IsTrainer { get; set; }
+        public bool? IsTrainer { get => _explicitNullValueIsTrainer; set { _explicitNullValueIsTrainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_trainer"); else _explicitNullProperties?.Remove("is_trainer"); } }
+        private bool? _explicitNullValueIsTrainer = default!;
         /// <summary>The total work done, in kilojoules</summary>
-        public double? Kilojoules { get; set; }
+        public double? Kilojoules { get => _explicitNullValueKilojoules; set { _explicitNullValueKilojoules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kilojoules"); else _explicitNullProperties?.Remove("kilojoules"); } }
+        private double? _explicitNullValueKilojoules = default!;
         /// <summary>The number of kudos given for this activity</summary>
-        public double? KudosCount { get; set; }
+        public double? KudosCount { get => _explicitNullValueKudosCount; set { _explicitNullValueKudosCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kudos_count"); else _explicitNullProperties?.Remove("kudos_count"); } }
+        private double? _explicitNullValueKudosCount = default!;
         /// <summary>The detailed polyline of the activity&apos;s map</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MapPolyline { get; set; }
+        public string? MapPolyline { get => _explicitNullValueMapPolyline; set { _explicitNullValueMapPolyline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_polyline"); else _explicitNullProperties?.Remove("map_polyline"); } }
+        private string? _explicitNullValueMapPolyline = default!;
 #nullable restore
 #else
-        public string MapPolyline { get; set; }
+        public string MapPolyline { get => _explicitNullValueMapPolyline; set { _explicitNullValueMapPolyline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_polyline"); else _explicitNullProperties?.Remove("map_polyline"); } }
+        private string _explicitNullValueMapPolyline = default!;
 #endif
         /// <summary>The summary polyline of the activity&apos;s map</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MapSummaryPolyline { get; set; }
+        public string? MapSummaryPolyline { get => _explicitNullValueMapSummaryPolyline; set { _explicitNullValueMapSummaryPolyline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_summary_polyline"); else _explicitNullProperties?.Remove("map_summary_polyline"); } }
+        private string? _explicitNullValueMapSummaryPolyline = default!;
 #nullable restore
 #else
-        public string MapSummaryPolyline { get; set; }
+        public string MapSummaryPolyline { get => _explicitNullValueMapSummaryPolyline; set { _explicitNullValueMapSummaryPolyline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_summary_polyline"); else _explicitNullProperties?.Remove("map_summary_polyline"); } }
+        private string _explicitNullValueMapSummaryPolyline = default!;
 #endif
         /// <summary>The activity&apos;s max heart rate, in beats per minute</summary>
-        public double? MaxHeartrate { get; set; }
+        public double? MaxHeartrate { get => _explicitNullValueMaxHeartrate; set { _explicitNullValueMaxHeartrate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_heartrate"); else _explicitNullProperties?.Remove("max_heartrate"); } }
+        private double? _explicitNullValueMaxHeartrate = default!;
         /// <summary>The activity&apos;s max speed, in meters per second</summary>
-        public double? MaxSpeed { get; set; }
+        public double? MaxSpeed { get => _explicitNullValueMaxSpeed; set { _explicitNullValueMaxSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_speed"); else _explicitNullProperties?.Remove("max_speed"); } }
+        private double? _explicitNullValueMaxSpeed = default!;
         /// <summary>The activity&apos;s max power output, in watts</summary>
-        public double? MaxWatts { get; set; }
+        public double? MaxWatts { get => _explicitNullValueMaxWatts; set { _explicitNullValueMaxWatts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_watts"); else _explicitNullProperties?.Remove("max_watts"); } }
+        private double? _explicitNullValueMaxWatts = default!;
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.ClubsMetadata> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The activity&apos;s moving time, in seconds</summary>
-        public double? MovingTime { get; set; }
+        public double? MovingTime { get => _explicitNullValueMovingTime; set { _explicitNullValueMovingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moving_time"); else _explicitNullProperties?.Remove("moving_time"); } }
+        private double? _explicitNullValueMovingTime = default!;
         /// <summary>The name of the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The number of Instagram photos for this activity</summary>
-        public double? PhotoCount { get; set; }
+        public double? PhotoCount { get => _explicitNullValuePhotoCount; set { _explicitNullValuePhotoCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_count"); else _explicitNullProperties?.Remove("photo_count"); } }
+        private double? _explicitNullValuePhotoCount = default!;
         /// <summary>The number of personal records set during this activity</summary>
-        public double? PrCount { get; set; }
+        public double? PrCount { get => _explicitNullValuePrCount; set { _explicitNullValuePrCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pr_count"); else _explicitNullProperties?.Remove("pr_count"); } }
+        private double? _explicitNullValuePrCount = default!;
         /// <summary>The raw data returned by the integration for this activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityRawProperty _explicitNullValueRaw = default!;
 #endif
         /// <summary>When the activity started (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? StartAt { get; set; }
+        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
+        private DateTimeOffset? _explicitNullValueStartAt = default!;
         /// <summary>The activity&apos;s relative effort score</summary>
-        public double? SufferScore { get; set; }
+        public double? SufferScore { get => _explicitNullValueSufferScore; set { _explicitNullValueSufferScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffer_score"); else _explicitNullProperties?.Remove("suffer_score"); } }
+        private double? _explicitNullValueSufferScore = default!;
         /// <summary>The timezone of the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>The activity&apos;s total elevation gain, in meters</summary>
-        public double? TotalElevationGain { get; set; }
+        public double? TotalElevationGain { get => _explicitNullValueTotalElevationGain; set { _explicitNullValueTotalElevationGain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_elevation_gain"); else _explicitNullProperties?.Remove("total_elevation_gain"); } }
+        private double? _explicitNullValueTotalElevationGain = default!;
         /// <summary>The activity type</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityType? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.ClubsActivityType? _explicitNullValueType = default!;
         /// <summary>The last date that this activity was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>The activity&apos;s weighted average power output, in watts</summary>
-        public double? WeightedAverageWatts { get; set; }
+        public double? WeightedAverageWatts { get => _explicitNullValueWeightedAverageWatts; set { _explicitNullValueWeightedAverageWatts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weighted_average_watts"); else _explicitNullProperties?.Remove("weighted_average_watts"); } }
+        private double? _explicitNullValueWeightedAverageWatts = default!;
         /// <summary>The activity&apos;s workout type</summary>
-        public double? WorkoutType { get; set; }
+        public double? WorkoutType { get => _explicitNullValueWorkoutType; set { _explicitNullValueWorkoutType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workout_type"); else _explicitNullProperties?.Remove("workout_type"); } }
+        private double? _explicitNullValueWorkoutType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.ClubsActivity"/> and sets the default values.
         /// </summary>
@@ -184,7 +290,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.ClubsActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.ClubsActivity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.ClubsActivity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -291,6 +397,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDoubleValue("weighted_average_watts", WeightedAverageWatts);
             writer.WriteDoubleValue("workout_type", WorkoutType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

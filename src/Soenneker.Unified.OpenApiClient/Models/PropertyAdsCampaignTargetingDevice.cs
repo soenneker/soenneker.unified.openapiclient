@@ -11,40 +11,59 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyAdsCampaignTargetingDevice : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("carriers") is { } nullNodeCarriers && nullNodeCarriers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Carriers = null;
+            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+            if (parseNode.GetChildNode("user_device") is { } nullNodeUserDevice && nullNodeUserDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDevice = null;
+            if (parseNode.GetChildNode("user_os") is { } nullNodeUserOs && nullNodeUserOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserOs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The carriers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Carriers { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueCarriers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Carriers { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Carriers { get => _explicitNullValueCarriers; set { _explicitNullValueCarriers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carriers"); else _explicitNullProperties?.Remove("carriers"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueCarriers = default!;
 #endif
         /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Types { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Types { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueTypes = default!;
 #endif
         /// <summary>The user_device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserDevice { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserDevice { get => _explicitNullValueUserDevice; set { _explicitNullValueUserDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_device"); else _explicitNullProperties?.Remove("user_device"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueUserDevice = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserDevice { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserDevice { get => _explicitNullValueUserDevice; set { _explicitNullValueUserDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_device"); else _explicitNullProperties?.Remove("user_device"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueUserDevice = default!;
 #endif
         /// <summary>The user_os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserOs { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UserOs { get => _explicitNullValueUserOs; set { _explicitNullValueUserOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_os"); else _explicitNullProperties?.Remove("user_os"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueUserOs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserOs { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UserOs { get => _explicitNullValueUserOs; set { _explicitNullValueUserOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_os"); else _explicitNullProperties?.Remove("user_os"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueUserOs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingDevice"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingDevice();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingDevice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("types", Types);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("user_device", UserDevice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("user_os", UserOs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

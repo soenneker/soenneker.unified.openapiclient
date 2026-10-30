@@ -11,64 +11,92 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyAdsReportMetricsCampaignTargetingContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excluded_keywords") is { } nullNodeExcludedKeywords && nullNodeExcludedKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedKeywords = null;
+            if (parseNode.GetChildNode("excluded_topics") is { } nullNodeExcludedTopics && nullNodeExcludedTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedTopics = null;
+            if (parseNode.GetChildNode("excluded_urls") is { } nullNodeExcludedUrls && nullNodeExcludedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedUrls = null;
+            if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
+            if (parseNode.GetChildNode("topics") is { } nullNodeTopics && nullNodeTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topics = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+            if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The excluded_keywords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? ExcludedKeywords { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? _explicitNullValueExcludedKeywords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> ExcludedKeywords { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> ExcludedKeywords { get => _explicitNullValueExcludedKeywords; set { _explicitNullValueExcludedKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_keywords"); else _explicitNullProperties?.Remove("excluded_keywords"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> _explicitNullValueExcludedKeywords = default!;
 #endif
         /// <summary>The excluded_topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedTopics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedTopics { get => _explicitNullValueExcludedTopics; set { _explicitNullValueExcludedTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_topics"); else _explicitNullProperties?.Remove("excluded_topics"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedTopics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedTopics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedTopics { get => _explicitNullValueExcludedTopics; set { _explicitNullValueExcludedTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_topics"); else _explicitNullProperties?.Remove("excluded_topics"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedTopics = default!;
 #endif
         /// <summary>The excluded_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedUrls { get; set; }
+        public List<string>? ExcludedUrls { get => _explicitNullValueExcludedUrls; set { _explicitNullValueExcludedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_urls"); else _explicitNullProperties?.Remove("excluded_urls"); } }
+        private List<string>? _explicitNullValueExcludedUrls = default!;
 #nullable restore
 #else
-        public List<string> ExcludedUrls { get; set; }
+        public List<string> ExcludedUrls { get => _explicitNullValueExcludedUrls; set { _explicitNullValueExcludedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_urls"); else _explicitNullProperties?.Remove("excluded_urls"); } }
+        private List<string> _explicitNullValueExcludedUrls = default!;
 #endif
         /// <summary>The keywords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? Keywords { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword>? _explicitNullValueKeywords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> Keywords { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsKeyword> _explicitNullValueKeywords = default!;
 #endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Topics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueTopics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Topics { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueTopics = default!;
 #endif
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get; set; }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get; set; }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo? Video { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo Video { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo _explicitNullValueVideo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("topics", Topics);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContentVideo>("video", Video);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

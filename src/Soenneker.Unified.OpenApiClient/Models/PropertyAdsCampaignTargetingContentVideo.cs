@@ -11,64 +11,92 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyAdsCampaignTargetingContentVideo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("durations") is { } nullNodeDurations && nullNodeDurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Durations = null;
+            if (parseNode.GetChildNode("excluded_youtube_channels") is { } nullNodeExcludedYoutubeChannels && nullNodeExcludedYoutubeChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedYoutubeChannels = null;
+            if (parseNode.GetChildNode("excluded_youtube_videos") is { } nullNodeExcludedYoutubeVideos && nullNodeExcludedYoutubeVideos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedYoutubeVideos = null;
+            if (parseNode.GetChildNode("player_sizes") is { } nullNodePlayerSizes && nullNodePlayerSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayerSizes = null;
+            if (parseNode.GetChildNode("positions") is { } nullNodePositions && nullNodePositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Positions = null;
+            if (parseNode.GetChildNode("youtube_channels") is { } nullNodeYoutubeChannels && nullNodeYoutubeChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeChannels = null;
+            if (parseNode.GetChildNode("youtube_videos") is { } nullNodeYoutubeVideos && nullNodeYoutubeVideos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeVideos = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The durations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?>? Durations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?>? Durations { get => _explicitNullValueDurations; set { _explicitNullValueDurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durations"); else _explicitNullProperties?.Remove("durations"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?>? _explicitNullValueDurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?> Durations { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?> Durations { get => _explicitNullValueDurations; set { _explicitNullValueDurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durations"); else _explicitNullProperties?.Remove("durations"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoDurationsItemEnum?> _explicitNullValueDurations = default!;
 #endif
         /// <summary>The excluded_youtube_channels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedYoutubeChannels { get; set; }
+        public List<string>? ExcludedYoutubeChannels { get => _explicitNullValueExcludedYoutubeChannels; set { _explicitNullValueExcludedYoutubeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_youtube_channels"); else _explicitNullProperties?.Remove("excluded_youtube_channels"); } }
+        private List<string>? _explicitNullValueExcludedYoutubeChannels = default!;
 #nullable restore
 #else
-        public List<string> ExcludedYoutubeChannels { get; set; }
+        public List<string> ExcludedYoutubeChannels { get => _explicitNullValueExcludedYoutubeChannels; set { _explicitNullValueExcludedYoutubeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_youtube_channels"); else _explicitNullProperties?.Remove("excluded_youtube_channels"); } }
+        private List<string> _explicitNullValueExcludedYoutubeChannels = default!;
 #endif
         /// <summary>The excluded_youtube_videos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedYoutubeVideos { get; set; }
+        public List<string>? ExcludedYoutubeVideos { get => _explicitNullValueExcludedYoutubeVideos; set { _explicitNullValueExcludedYoutubeVideos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_youtube_videos"); else _explicitNullProperties?.Remove("excluded_youtube_videos"); } }
+        private List<string>? _explicitNullValueExcludedYoutubeVideos = default!;
 #nullable restore
 #else
-        public List<string> ExcludedYoutubeVideos { get; set; }
+        public List<string> ExcludedYoutubeVideos { get => _explicitNullValueExcludedYoutubeVideos; set { _explicitNullValueExcludedYoutubeVideos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_youtube_videos"); else _explicitNullProperties?.Remove("excluded_youtube_videos"); } }
+        private List<string> _explicitNullValueExcludedYoutubeVideos = default!;
 #endif
         /// <summary>The player_sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?>? PlayerSizes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?>? PlayerSizes { get => _explicitNullValuePlayerSizes; set { _explicitNullValuePlayerSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("player_sizes"); else _explicitNullProperties?.Remove("player_sizes"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?>? _explicitNullValuePlayerSizes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?> PlayerSizes { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?> PlayerSizes { get => _explicitNullValuePlayerSizes; set { _explicitNullValuePlayerSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("player_sizes"); else _explicitNullProperties?.Remove("player_sizes"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPlayerSizesItemEnum?> _explicitNullValuePlayerSizes = default!;
 #endif
         /// <summary>The positions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?>? Positions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?>? Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?>? _explicitNullValuePositions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?> Positions { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?> Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum?> _explicitNullValuePositions = default!;
 #endif
         /// <summary>The youtube_channels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? YoutubeChannels { get; set; }
+        public List<string>? YoutubeChannels { get => _explicitNullValueYoutubeChannels; set { _explicitNullValueYoutubeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_channels"); else _explicitNullProperties?.Remove("youtube_channels"); } }
+        private List<string>? _explicitNullValueYoutubeChannels = default!;
 #nullable restore
 #else
-        public List<string> YoutubeChannels { get; set; }
+        public List<string> YoutubeChannels { get => _explicitNullValueYoutubeChannels; set { _explicitNullValueYoutubeChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_channels"); else _explicitNullProperties?.Remove("youtube_channels"); } }
+        private List<string> _explicitNullValueYoutubeChannels = default!;
 #endif
         /// <summary>The youtube_videos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? YoutubeVideos { get; set; }
+        public List<string>? YoutubeVideos { get => _explicitNullValueYoutubeVideos; set { _explicitNullValueYoutubeVideos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_videos"); else _explicitNullProperties?.Remove("youtube_videos"); } }
+        private List<string>? _explicitNullValueYoutubeVideos = default!;
 #nullable restore
 #else
-        public List<string> YoutubeVideos { get; set; }
+        public List<string> YoutubeVideos { get => _explicitNullValueYoutubeVideos; set { _explicitNullValueYoutubeVideos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_videos"); else _explicitNullProperties?.Remove("youtube_videos"); } }
+        private List<string> _explicitNullValueYoutubeVideos = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideo"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingContentVideoPositionsItemEnum>("positions", Positions);
             writer.WriteCollectionOfPrimitiveValues<string>("youtube_channels", YoutubeChannels);
             writer.WriteCollectionOfPrimitiveValues<string>("youtube_videos", YoutubeVideos);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

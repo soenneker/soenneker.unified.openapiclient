@@ -11,103 +11,174 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MarketingReport : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("abuse_reports") is { } nullNodeAbuseReports && nullNodeAbuseReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbuseReports = null;
+            if (parseNode.GetChildNode("campaign_id") is { } nullNodeCampaignId && nullNodeCampaignId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignId = null;
+            if (parseNode.GetChildNode("click_rate") is { } nullNodeClickRate && nullNodeClickRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickRate = null;
+            if (parseNode.GetChildNode("clicks_total") is { } nullNodeClicksTotal && nullNodeClicksTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClicksTotal = null;
+            if (parseNode.GetChildNode("emails_sent") is { } nullNodeEmailsSent && nullNodeEmailsSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailsSent = null;
+            if (parseNode.GetChildNode("end_at") is { } nullNodeEndAt && nullNodeEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAt = null;
+            if (parseNode.GetChildNode("forwards_count") is { } nullNodeForwardsCount && nullNodeForwardsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardsCount = null;
+            if (parseNode.GetChildNode("forwards_opens") is { } nullNodeForwardsOpens && nullNodeForwardsOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardsOpens = null;
+            if (parseNode.GetChildNode("hard_bounces") is { } nullNodeHardBounces && nullNodeHardBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HardBounces = null;
+            if (parseNode.GetChildNode("human_open_rate") is { } nullNodeHumanOpenRate && nullNodeHumanOpenRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanOpenRate = null;
+            if (parseNode.GetChildNode("human_opens_total") is { } nullNodeHumanOpensTotal && nullNodeHumanOpensTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanOpensTotal = null;
+            if (parseNode.GetChildNode("human_unique_opens") is { } nullNodeHumanUniqueOpens && nullNodeHumanUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanUniqueOpens = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_click_at") is { } nullNodeLastClickAt && nullNodeLastClickAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastClickAt = null;
+            if (parseNode.GetChildNode("last_open_at") is { } nullNodeLastOpenAt && nullNodeLastOpenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastOpenAt = null;
+            if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("list_id") is { } nullNodeListId && nullNodeListId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("open_rate") is { } nullNodeOpenRate && nullNodeOpenRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenRate = null;
+            if (parseNode.GetChildNode("opens_total") is { } nullNodeOpensTotal && nullNodeOpensTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpensTotal = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("sent_at") is { } nullNodeSentAt && nullNodeSentAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAt = null;
+            if (parseNode.GetChildNode("soft_bounces") is { } nullNodeSoftBounces && nullNodeSoftBounces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftBounces = null;
+            if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
+            if (parseNode.GetChildNode("syntax_errors") is { } nullNodeSyntaxErrors && nullNodeSyntaxErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntaxErrors = null;
+            if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
+            if (parseNode.GetChildNode("unique_opens") is { } nullNodeUniqueOpens && nullNodeUniqueOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueOpens = null;
+            if (parseNode.GetChildNode("unique_subscriber_clicks") is { } nullNodeUniqueSubscriberClicks && nullNodeUniqueSubscriberClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueSubscriberClicks = null;
+            if (parseNode.GetChildNode("unsubscribed") is { } nullNodeUnsubscribed && nullNodeUnsubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unsubscribed = null;
+        }
+
         /// <summary>Number of abuse reports</summary>
-        public double? AbuseReports { get; set; }
+        public double? AbuseReports { get => _explicitNullValueAbuseReports; set { _explicitNullValueAbuseReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abuse_reports"); else _explicitNullProperties?.Remove("abuse_reports"); } }
+        private double? _explicitNullValueAbuseReports = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Associated campaign ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignId { get; set; }
+        public string? CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
+        private string? _explicitNullValueCampaignId = default!;
 #nullable restore
 #else
-        public string CampaignId { get; set; }
+        public string CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
+        private string _explicitNullValueCampaignId = default!;
 #endif
         /// <summary>Click rate (decimal)</summary>
-        public double? ClickRate { get; set; }
+        public double? ClickRate { get => _explicitNullValueClickRate; set { _explicitNullValueClickRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_rate"); else _explicitNullProperties?.Remove("click_rate"); } }
+        private double? _explicitNullValueClickRate = default!;
         /// <summary>Total clicks</summary>
-        public double? ClicksTotal { get; set; }
+        public double? ClicksTotal { get => _explicitNullValueClicksTotal; set { _explicitNullValueClicksTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks_total"); else _explicitNullProperties?.Remove("clicks_total"); } }
+        private double? _explicitNullValueClicksTotal = default!;
         /// <summary>Total emails sent</summary>
-        public double? EmailsSent { get; set; }
+        public double? EmailsSent { get => _explicitNullValueEmailsSent; set { _explicitNullValueEmailsSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails_sent"); else _explicitNullProperties?.Remove("emails_sent"); } }
+        private double? _explicitNullValueEmailsSent = default!;
         /// <summary>End time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? EndAt { get; set; }
+        public DateTimeOffset? EndAt { get => _explicitNullValueEndAt; set { _explicitNullValueEndAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_at"); else _explicitNullProperties?.Remove("end_at"); } }
+        private DateTimeOffset? _explicitNullValueEndAt = default!;
         /// <summary>Forward count</summary>
-        public double? ForwardsCount { get; set; }
+        public double? ForwardsCount { get => _explicitNullValueForwardsCount; set { _explicitNullValueForwardsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwards_count"); else _explicitNullProperties?.Remove("forwards_count"); } }
+        private double? _explicitNullValueForwardsCount = default!;
         /// <summary>Forwards opened</summary>
-        public double? ForwardsOpens { get; set; }
+        public double? ForwardsOpens { get => _explicitNullValueForwardsOpens; set { _explicitNullValueForwardsOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwards_opens"); else _explicitNullProperties?.Remove("forwards_opens"); } }
+        private double? _explicitNullValueForwardsOpens = default!;
         /// <summary>Hard bounce count</summary>
-        public double? HardBounces { get; set; }
+        public double? HardBounces { get => _explicitNullValueHardBounces; set { _explicitNullValueHardBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hard_bounces"); else _explicitNullProperties?.Remove("hard_bounces"); } }
+        private double? _explicitNullValueHardBounces = default!;
         /// <summary>Open rate (decimal) excluding automated/bot/proxy opens</summary>
-        public double? HumanOpenRate { get; set; }
+        public double? HumanOpenRate { get => _explicitNullValueHumanOpenRate; set { _explicitNullValueHumanOpenRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_open_rate"); else _explicitNullProperties?.Remove("human_open_rate"); } }
+        private double? _explicitNullValueHumanOpenRate = default!;
         /// <summary>Total opens excluding automated/bot/proxy (e.g. Apple Mail Privacy Protection) opens</summary>
-        public double? HumanOpensTotal { get; set; }
+        public double? HumanOpensTotal { get => _explicitNullValueHumanOpensTotal; set { _explicitNullValueHumanOpensTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_opens_total"); else _explicitNullProperties?.Remove("human_opens_total"); } }
+        private double? _explicitNullValueHumanOpensTotal = default!;
         /// <summary>Unique opens excluding automated/bot/proxy opens</summary>
-        public double? HumanUniqueOpens { get; set; }
+        public double? HumanUniqueOpens { get => _explicitNullValueHumanUniqueOpens; set { _explicitNullValueHumanUniqueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_unique_opens"); else _explicitNullProperties?.Remove("human_unique_opens"); } }
+        private double? _explicitNullValueHumanUniqueOpens = default!;
         /// <summary>Unique identifier for the campaign report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? LastClickAt { get; set; }
+        public DateTimeOffset? LastClickAt { get => _explicitNullValueLastClickAt; set { _explicitNullValueLastClickAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_click_at"); else _explicitNullProperties?.Remove("last_click_at"); } }
+        private DateTimeOffset? _explicitNullValueLastClickAt = default!;
         /// <summary>Last open timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? LastOpenAt { get; set; }
+        public DateTimeOffset? LastOpenAt { get => _explicitNullValueLastOpenAt; set { _explicitNullValueLastOpenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_open_at"); else _explicitNullProperties?.Remove("last_open_at"); } }
+        private DateTimeOffset? _explicitNullValueLastOpenAt = default!;
         /// <summary>URL-specific click data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink>? Links { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink>? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink> Links { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.MarketingReportLink> _explicitNullValueLinks = default!;
 #endif
         /// <summary>Associated list ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListId { get; set; }
+        public string? ListId { get => _explicitNullValueListId; set { _explicitNullValueListId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_id"); else _explicitNullProperties?.Remove("list_id"); } }
+        private string? _explicitNullValueListId = default!;
 #nullable restore
 #else
-        public string ListId { get; set; }
+        public string ListId { get => _explicitNullValueListId; set { _explicitNullValueListId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_id"); else _explicitNullProperties?.Remove("list_id"); } }
+        private string _explicitNullValueListId = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.MarketingMetadata> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Open rate (decimal)</summary>
-        public double? OpenRate { get; set; }
+        public double? OpenRate { get => _explicitNullValueOpenRate; set { _explicitNullValueOpenRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_rate"); else _explicitNullProperties?.Remove("open_rate"); } }
+        private double? _explicitNullValueOpenRate = default!;
         /// <summary>Total opens</summary>
-        public double? OpensTotal { get; set; }
+        public double? OpensTotal { get => _explicitNullValueOpensTotal; set { _explicitNullValueOpensTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opens_total"); else _explicitNullProperties?.Remove("opens_total"); } }
+        private double? _explicitNullValueOpensTotal = default!;
         /// <summary>Raw data from integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.MarketingReportRawProperty _explicitNullValueRaw = default!;
 #endif
         /// <summary>Send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? SentAt { get; set; }
+        public DateTimeOffset? SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        private DateTimeOffset? _explicitNullValueSentAt = default!;
         /// <summary>Soft bounce count</summary>
-        public double? SoftBounces { get; set; }
+        public double? SoftBounces { get => _explicitNullValueSoftBounces; set { _explicitNullValueSoftBounces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_bounces"); else _explicitNullProperties?.Remove("soft_bounces"); } }
+        private double? _explicitNullValueSoftBounces = default!;
         /// <summary>Start time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? StartAt { get; set; }
+        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
+        private DateTimeOffset? _explicitNullValueStartAt = default!;
         /// <summary>Syntax error count</summary>
-        public double? SyntaxErrors { get; set; }
+        public double? SyntaxErrors { get => _explicitNullValueSyntaxErrors; set { _explicitNullValueSyntaxErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_errors"); else _explicitNullProperties?.Remove("syntax_errors"); } }
+        private double? _explicitNullValueSyntaxErrors = default!;
         /// <summary>Unique clicks</summary>
-        public double? UniqueClicks { get; set; }
+        public double? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
+        private double? _explicitNullValueUniqueClicks = default!;
         /// <summary>Unique opens</summary>
-        public double? UniqueOpens { get; set; }
+        public double? UniqueOpens { get => _explicitNullValueUniqueOpens; set { _explicitNullValueUniqueOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_opens"); else _explicitNullProperties?.Remove("unique_opens"); } }
+        private double? _explicitNullValueUniqueOpens = default!;
         /// <summary>Unique subscriber clicks</summary>
-        public double? UniqueSubscriberClicks { get; set; }
+        public double? UniqueSubscriberClicks { get => _explicitNullValueUniqueSubscriberClicks; set { _explicitNullValueUniqueSubscriberClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_subscriber_clicks"); else _explicitNullProperties?.Remove("unique_subscriber_clicks"); } }
+        private double? _explicitNullValueUniqueSubscriberClicks = default!;
         /// <summary>Number of unsubscribes</summary>
-        public double? Unsubscribed { get; set; }
+        public double? Unsubscribed { get => _explicitNullValueUnsubscribed; set { _explicitNullValueUnsubscribed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsubscribed"); else _explicitNullProperties?.Remove("unsubscribed"); } }
+        private double? _explicitNullValueUnsubscribed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.MarketingReport"/> and sets the default values.
         /// </summary>
@@ -123,7 +194,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.MarketingReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.MarketingReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.MarketingReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,6 +271,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("unique_opens", UniqueOpens);
             writer.WriteDoubleValue("unique_subscriber_clicks", UniqueSubscriberClicks);
             writer.WriteDoubleValue("unsubscribed", Unsubscribed);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

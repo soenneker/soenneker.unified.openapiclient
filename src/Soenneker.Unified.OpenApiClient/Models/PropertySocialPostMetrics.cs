@@ -12,21 +12,40 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertySocialPostMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bookmark_count") is { } nullNodeBookmarkCount && nullNodeBookmarkCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookmarkCount = null;
+            if (parseNode.GetChildNode("comment_count") is { } nullNodeCommentCount && nullNodeCommentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentCount = null;
+            if (parseNode.GetChildNode("like_count") is { } nullNodeLikeCount && nullNodeLikeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikeCount = null;
+            if (parseNode.GetChildNode("quote_count") is { } nullNodeQuoteCount && nullNodeQuoteCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteCount = null;
+            if (parseNode.GetChildNode("share_count") is { } nullNodeShareCount && nullNodeShareCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareCount = null;
+            if (parseNode.GetChildNode("view_count") is { } nullNodeViewCount && nullNodeViewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of bookmarks/saves</summary>
-        public double? BookmarkCount { get; set; }
+        public double? BookmarkCount { get => _explicitNullValueBookmarkCount; set { _explicitNullValueBookmarkCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmark_count"); else _explicitNullProperties?.Remove("bookmark_count"); } }
+        private double? _explicitNullValueBookmarkCount = default!;
         /// <summary>Number of comments/replies</summary>
-        public double? CommentCount { get; set; }
+        public double? CommentCount { get => _explicitNullValueCommentCount; set { _explicitNullValueCommentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment_count"); else _explicitNullProperties?.Remove("comment_count"); } }
+        private double? _explicitNullValueCommentCount = default!;
         /// <summary>Number of likes/reactions</summary>
-        public double? LikeCount { get; set; }
+        public double? LikeCount { get => _explicitNullValueLikeCount; set { _explicitNullValueLikeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("like_count"); else _explicitNullProperties?.Remove("like_count"); } }
+        private double? _explicitNullValueLikeCount = default!;
         /// <summary>Number of quotes</summary>
-        public double? QuoteCount { get; set; }
+        public double? QuoteCount { get => _explicitNullValueQuoteCount; set { _explicitNullValueQuoteCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_count"); else _explicitNullProperties?.Remove("quote_count"); } }
+        private double? _explicitNullValueQuoteCount = default!;
         /// <summary>Number of shares/reposts</summary>
-        public double? ShareCount { get; set; }
+        public double? ShareCount { get => _explicitNullValueShareCount; set { _explicitNullValueShareCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_count"); else _explicitNullProperties?.Remove("share_count"); } }
+        private double? _explicitNullValueShareCount = default!;
         /// <summary>Number of views/impressions</summary>
-        public double? ViewCount { get; set; }
+        public double? ViewCount { get => _explicitNullValueViewCount; set { _explicitNullValueViewCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_count"); else _explicitNullProperties?.Remove("view_count"); } }
+        private double? _explicitNullValueViewCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertySocialPostMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("quote_count", QuoteCount);
             writer.WriteDoubleValue("share_count", ShareCount);
             writer.WriteDoubleValue("view_count", ViewCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

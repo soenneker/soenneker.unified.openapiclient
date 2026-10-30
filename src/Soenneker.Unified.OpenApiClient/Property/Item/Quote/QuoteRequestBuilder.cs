@@ -51,7 +51,7 @@ namespace Soenneker.Unified.OpenApiClient.Property.Item.Quote
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PropertyQuote>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PropertyQuote.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.PropertyQuote>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.PropertyQuote.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a PropertyQuote. Provide the unified PropertyQuote fields in the request body; they are mapped to the provider&apos;s API. Returns the created PropertyQuote.

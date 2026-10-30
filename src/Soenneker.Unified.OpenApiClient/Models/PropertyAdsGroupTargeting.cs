@@ -11,88 +11,125 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyAdsGroupTargeting : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audience") is { } nullNodeAudience && nullNodeAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audience = null;
+            if (parseNode.GetChildNode("brand_safety") is { } nullNodeBrandSafety && nullNodeBrandSafety.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandSafety = null;
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("demographic") is { } nullNodeDemographic && nullNodeDemographic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Demographic = null;
+            if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("geographic") is { } nullNodeGeographic && nullNodeGeographic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geographic = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("optimization") is { } nullNodeOptimization && nullNodeOptimization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Optimization = null;
+            if (parseNode.GetChildNode("placement") is { } nullNodePlacement && nullNodePlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placement = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audience property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience? Audience { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience? Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience? _explicitNullValueAudience = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience Audience { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingAudience _explicitNullValueAudience = default!;
 #endif
         /// <summary>Brand safety (Meta: excluded_publisher_categories, etc.; Google</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety? BrandSafety { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety? BrandSafety { get => _explicitNullValueBrandSafety; set { _explicitNullValueBrandSafety = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_safety"); else _explicitNullProperties?.Remove("brand_safety"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety? _explicitNullValueBrandSafety = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety BrandSafety { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety BrandSafety { get => _explicitNullValueBrandSafety; set { _explicitNullValueBrandSafety = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_safety"); else _explicitNullProperties?.Remove("brand_safety"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety _explicitNullValueBrandSafety = default!;
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent? Content { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent Content { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingContent _explicitNullValueContent = default!;
 #endif
         /// <summary>Demographic targeting (Meta: age_min, age_max, genders)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic? Demographic { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic? Demographic { get => _explicitNullValueDemographic; set { _explicitNullValueDemographic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographic"); else _explicitNullProperties?.Remove("demographic"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic? _explicitNullValueDemographic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic Demographic { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic Demographic { get => _explicitNullValueDemographic; set { _explicitNullValueDemographic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("demographic"); else _explicitNullProperties?.Remove("demographic"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic _explicitNullValueDemographic = default!;
 #endif
         /// <summary>The device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice? Device { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice? _explicitNullValueDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice Device { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDevice _explicitNullValueDevice = default!;
 #endif
         /// <summary>The geographic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic? Geographic { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic? Geographic { get => _explicitNullValueGeographic; set { _explicitNullValueGeographic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geographic"); else _explicitNullProperties?.Remove("geographic"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic? _explicitNullValueGeographic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic Geographic { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic Geographic { get => _explicitNullValueGeographic; set { _explicitNullValueGeographic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geographic"); else _explicitNullProperties?.Remove("geographic"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingGeographic _explicitNullValueGeographic = default!;
 #endif
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Language { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Language { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueLanguage = default!;
 #endif
         /// <summary>Optimization (Meta: targeting_automation; Google: observation vs targeting mode)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization? Optimization { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization? Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization? _explicitNullValueOptimization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization Optimization { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization _explicitNullValueOptimization = default!;
 #endif
         /// <summary>The placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement? Placement { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement? Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement? _explicitNullValuePlacement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement Placement { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement _explicitNullValuePlacement = default!;
 #endif
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>? Schedule { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule> Schedule { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule> _explicitNullValueSchedule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting"/> and sets the default values.
@@ -109,7 +146,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargeting(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +185,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingOptimization>("optimization", Optimization);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingPlacement>("placement", Placement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>("schedule", Schedule);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

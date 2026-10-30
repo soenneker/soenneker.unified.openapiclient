@@ -12,48 +12,70 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyAdsGroupTargetingBrandSafety : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block_list_ids") is { } nullNodeBlockListIds && nullNodeBlockListIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockListIds = null;
+            if (parseNode.GetChildNode("brand_safety_content_filter_levels") is { } nullNodeBrandSafetyContentFilterLevels && nullNodeBrandSafetyContentFilterLevels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandSafetyContentFilterLevels = null;
+            if (parseNode.GetChildNode("excluded_content_labels") is { } nullNodeExcludedContentLabels && nullNodeExcludedContentLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedContentLabels = null;
+            if (parseNode.GetChildNode("excluded_publisher_categories") is { } nullNodeExcludedPublisherCategories && nullNodeExcludedPublisherCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedPublisherCategories = null;
+            if (parseNode.GetChildNode("publisher_visibility_categories") is { } nullNodePublisherVisibilityCategories && nullNodePublisherVisibilityCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublisherVisibilityCategories = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The block_list_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlockListIds { get; set; }
+        public List<string>? BlockListIds { get => _explicitNullValueBlockListIds; set { _explicitNullValueBlockListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_list_ids"); else _explicitNullProperties?.Remove("block_list_ids"); } }
+        private List<string>? _explicitNullValueBlockListIds = default!;
 #nullable restore
 #else
-        public List<string> BlockListIds { get; set; }
+        public List<string> BlockListIds { get => _explicitNullValueBlockListIds; set { _explicitNullValueBlockListIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_list_ids"); else _explicitNullProperties?.Remove("block_list_ids"); } }
+        private List<string> _explicitNullValueBlockListIds = default!;
 #endif
         /// <summary>The brand_safety_content_filter_levels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BrandSafetyContentFilterLevels { get; set; }
+        public List<string>? BrandSafetyContentFilterLevels { get => _explicitNullValueBrandSafetyContentFilterLevels; set { _explicitNullValueBrandSafetyContentFilterLevels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_safety_content_filter_levels"); else _explicitNullProperties?.Remove("brand_safety_content_filter_levels"); } }
+        private List<string>? _explicitNullValueBrandSafetyContentFilterLevels = default!;
 #nullable restore
 #else
-        public List<string> BrandSafetyContentFilterLevels { get; set; }
+        public List<string> BrandSafetyContentFilterLevels { get => _explicitNullValueBrandSafetyContentFilterLevels; set { _explicitNullValueBrandSafetyContentFilterLevels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_safety_content_filter_levels"); else _explicitNullProperties?.Remove("brand_safety_content_filter_levels"); } }
+        private List<string> _explicitNullValueBrandSafetyContentFilterLevels = default!;
 #endif
         /// <summary>Google Ads ContentLabelType</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedContentLabels { get; set; }
+        public List<string>? ExcludedContentLabels { get => _explicitNullValueExcludedContentLabels; set { _explicitNullValueExcludedContentLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_content_labels"); else _explicitNullProperties?.Remove("excluded_content_labels"); } }
+        private List<string>? _explicitNullValueExcludedContentLabels = default!;
 #nullable restore
 #else
-        public List<string> ExcludedContentLabels { get; set; }
+        public List<string> ExcludedContentLabels { get => _explicitNullValueExcludedContentLabels; set { _explicitNullValueExcludedContentLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_content_labels"); else _explicitNullProperties?.Remove("excluded_content_labels"); } }
+        private List<string> _explicitNullValueExcludedContentLabels = default!;
 #endif
         /// <summary>The excluded_publisher_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedPublisherCategories { get; set; }
+        public List<string>? ExcludedPublisherCategories { get => _explicitNullValueExcludedPublisherCategories; set { _explicitNullValueExcludedPublisherCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_publisher_categories"); else _explicitNullProperties?.Remove("excluded_publisher_categories"); } }
+        private List<string>? _explicitNullValueExcludedPublisherCategories = default!;
 #nullable restore
 #else
-        public List<string> ExcludedPublisherCategories { get; set; }
+        public List<string> ExcludedPublisherCategories { get => _explicitNullValueExcludedPublisherCategories; set { _explicitNullValueExcludedPublisherCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_publisher_categories"); else _explicitNullProperties?.Remove("excluded_publisher_categories"); } }
+        private List<string> _explicitNullValueExcludedPublisherCategories = default!;
 #endif
         /// <summary>The publisher_visibility_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?>? PublisherVisibilityCategories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?>? PublisherVisibilityCategories { get => _explicitNullValuePublisherVisibilityCategories; set { _explicitNullValuePublisherVisibilityCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher_visibility_categories"); else _explicitNullProperties?.Remove("publisher_visibility_categories"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?>? _explicitNullValuePublisherVisibilityCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?> PublisherVisibilityCategories { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?> PublisherVisibilityCategories { get => _explicitNullValuePublisherVisibilityCategories; set { _explicitNullValuePublisherVisibilityCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher_visibility_categories"); else _explicitNullProperties?.Remove("publisher_visibility_categories"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum?> _explicitNullValuePublisherVisibilityCategories = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafety(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_content_labels", ExcludedContentLabels);
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_publisher_categories", ExcludedPublisherCategories);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategoriesItemEnum>("publisher_visibility_categories", PublisherVisibilityCategories);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

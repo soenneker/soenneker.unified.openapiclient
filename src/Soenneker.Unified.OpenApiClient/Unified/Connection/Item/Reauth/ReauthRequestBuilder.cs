@@ -49,7 +49,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item.Reauth
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ConnectionReauth>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ConnectionReauth.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ConnectionReauth>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ConnectionReauth.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the &quot;Authorize or re-authorize a connection&quot; URL with connection_id and reauth_token.

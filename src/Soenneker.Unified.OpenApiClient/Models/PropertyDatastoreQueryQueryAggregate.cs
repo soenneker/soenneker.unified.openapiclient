@@ -11,50 +11,74 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyDatastoreQueryQueryAggregate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avg") is { } nullNodeAvg && nullNodeAvg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avg = null;
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("sum") is { } nullNodeSum && nullNodeSum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sum = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg? Avg { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg? Avg { get => _explicitNullValueAvg; set { _explicitNullValueAvg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg"); else _explicitNullProperties?.Remove("avg"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg? _explicitNullValueAvg = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg Avg { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg Avg { get => _explicitNullValueAvg; set { _explicitNullValueAvg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg"); else _explicitNullProperties?.Remove("avg"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateAvg _explicitNullValueAvg = default!;
 #endif
         /// <summary>The count property</summary>
-        public bool? Count { get; set; }
+        public bool? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private bool? _explicitNullValueCount = default!;
         /// <summary>The group_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupBy { get; set; }
+        public List<string>? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private List<string>? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public List<string> GroupBy { get; set; }
+        public List<string> GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private List<string> _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>The max property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax? Max { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax? _explicitNullValueMax = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax Max { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax _explicitNullValueMax = default!;
 #endif
         /// <summary>The min property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin? Min { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin? _explicitNullValueMin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin Min { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin _explicitNullValueMin = default!;
 #endif
         /// <summary>The sum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum? Sum { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum? Sum { get => _explicitNullValueSum; set { _explicitNullValueSum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum"); else _explicitNullProperties?.Remove("sum"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum? _explicitNullValueSum = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum Sum { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum Sum { get => _explicitNullValueSum; set { _explicitNullValueSum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum"); else _explicitNullProperties?.Remove("sum"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum _explicitNullValueSum = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregate"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMax>("max", Max);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateMin>("min", Min);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreQueryQueryAggregateSum>("sum", Sum);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

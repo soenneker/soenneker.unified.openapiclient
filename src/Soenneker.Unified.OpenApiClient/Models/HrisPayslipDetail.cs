@@ -11,75 +11,118 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HrisPayslipDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("benefit_id") is { } nullNodeBenefitId && nullNodeBenefitId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BenefitId = null;
+            if (parseNode.GetChildNode("company_amount") is { } nullNodeCompanyAmount && nullNodeCompanyAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyAmount = null;
+            if (parseNode.GetChildNode("deduction_id") is { } nullNodeDeductionId && nullNodeDeductionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeductionId = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("employee_amount") is { } nullNodeEmployeeAmount && nullNodeEmployeeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeAmount = null;
+            if (parseNode.GetChildNode("hours") is { } nullNodeHours && nullNodeHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hours = null;
+            if (parseNode.GetChildNode("is_employer") is { } nullNodeIsEmployer && nullNodeIsEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEmployer = null;
+            if (parseNode.GetChildNode("is_pre_tax") is { } nullNodeIsPreTax && nullNodeIsPreTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPreTax = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("original_type") is { } nullNodeOriginalType && nullNodeOriginalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalType = null;
+            if (parseNode.GetChildNode("paycode_id") is { } nullNodePaycodeId && nullNodePaycodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaycodeId = null;
+            if (parseNode.GetChildNode("rate_amount") is { } nullNodeRateAmount && nullNodeRateAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateAmount = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("ytd_amount") is { } nullNodeYtdAmount && nullNodeYtdAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>The benefit_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BenefitId { get; set; }
+        public string? BenefitId { get => _explicitNullValueBenefitId; set { _explicitNullValueBenefitId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("benefit_id"); else _explicitNullProperties?.Remove("benefit_id"); } }
+        private string? _explicitNullValueBenefitId = default!;
 #nullable restore
 #else
-        public string BenefitId { get; set; }
+        public string BenefitId { get => _explicitNullValueBenefitId; set { _explicitNullValueBenefitId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("benefit_id"); else _explicitNullProperties?.Remove("benefit_id"); } }
+        private string _explicitNullValueBenefitId = default!;
 #endif
         /// <summary>The company_amount property</summary>
-        public double? CompanyAmount { get; set; }
+        public double? CompanyAmount { get => _explicitNullValueCompanyAmount; set { _explicitNullValueCompanyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_amount"); else _explicitNullProperties?.Remove("company_amount"); } }
+        private double? _explicitNullValueCompanyAmount = default!;
         /// <summary>The deduction_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeductionId { get; set; }
+        public string? DeductionId { get => _explicitNullValueDeductionId; set { _explicitNullValueDeductionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduction_id"); else _explicitNullProperties?.Remove("deduction_id"); } }
+        private string? _explicitNullValueDeductionId = default!;
 #nullable restore
 #else
-        public string DeductionId { get; set; }
+        public string DeductionId { get => _explicitNullValueDeductionId; set { _explicitNullValueDeductionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduction_id"); else _explicitNullProperties?.Remove("deduction_id"); } }
+        private string _explicitNullValueDeductionId = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The employee_amount property</summary>
-        public double? EmployeeAmount { get; set; }
+        public double? EmployeeAmount { get => _explicitNullValueEmployeeAmount; set { _explicitNullValueEmployeeAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_amount"); else _explicitNullProperties?.Remove("employee_amount"); } }
+        private double? _explicitNullValueEmployeeAmount = default!;
         /// <summary>The hours property</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get => _explicitNullValueHours; set { _explicitNullValueHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hours"); else _explicitNullProperties?.Remove("hours"); } }
+        private double? _explicitNullValueHours = default!;
         /// <summary>true when this line is paid by the employer (employer tax or contribution)</summary>
-        public bool? IsEmployer { get; set; }
+        public bool? IsEmployer { get => _explicitNullValueIsEmployer; set { _explicitNullValueIsEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_employer"); else _explicitNullProperties?.Remove("is_employer"); } }
+        private bool? _explicitNullValueIsEmployer = default!;
         /// <summary>The is_pre_tax property</summary>
-        public bool? IsPreTax { get; set; }
+        public bool? IsPreTax { get => _explicitNullValueIsPreTax; set { _explicitNullValueIsPreTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_pre_tax"); else _explicitNullProperties?.Remove("is_pre_tax"); } }
+        private bool? _explicitNullValueIsPreTax = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>integration pay-code label before normalization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalType { get; set; }
+        public string? OriginalType { get => _explicitNullValueOriginalType; set { _explicitNullValueOriginalType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_type"); else _explicitNullProperties?.Remove("original_type"); } }
+        private string? _explicitNullValueOriginalType = default!;
 #nullable restore
 #else
-        public string OriginalType { get; set; }
+        public string OriginalType { get => _explicitNullValueOriginalType; set { _explicitNullValueOriginalType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_type"); else _explicitNullProperties?.Remove("original_type"); } }
+        private string _explicitNullValueOriginalType = default!;
 #endif
         /// <summary>the hris_paycode for this line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaycodeId { get; set; }
+        public string? PaycodeId { get => _explicitNullValuePaycodeId; set { _explicitNullValuePaycodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paycode_id"); else _explicitNullProperties?.Remove("paycode_id"); } }
+        private string? _explicitNullValuePaycodeId = default!;
 #nullable restore
 #else
-        public string PaycodeId { get; set; }
+        public string PaycodeId { get => _explicitNullValuePaycodeId; set { _explicitNullValuePaycodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paycode_id"); else _explicitNullProperties?.Remove("paycode_id"); } }
+        private string _explicitNullValuePaycodeId = default!;
 #endif
         /// <summary>pay rate for hourly/unit-based lines</summary>
-        public double? RateAmount { get; set; }
+        public double? RateAmount { get => _explicitNullValueRateAmount; set { _explicitNullValueRateAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_amount"); else _explicitNullProperties?.Remove("rate_amount"); } }
+        private double? _explicitNullValueRateAmount = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType? _explicitNullValueType = default!;
         /// <summary>year-to-date amount for this line</summary>
-        public double? YtdAmount { get; set; }
+        public double? YtdAmount { get => _explicitNullValueYtdAmount; set { _explicitNullValueYtdAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_amount"); else _explicitNullProperties?.Remove("ytd_amount"); } }
+        private double? _explicitNullValueYtdAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail"/> and sets the default values.
         /// </summary>
@@ -95,7 +138,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,6 +187,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("rate_amount", RateAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>("type", Type);
             writer.WriteDoubleValue("ytd_amount", YtdAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

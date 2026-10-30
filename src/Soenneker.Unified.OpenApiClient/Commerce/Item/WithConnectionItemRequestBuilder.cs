@@ -9,6 +9,7 @@ using Soenneker.Unified.OpenApiClient.Commerce.Item.Item_Escaped;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Itemvariant;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Location;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Reservation;
+using Soenneker.Unified.OpenApiClient.Commerce.Item.Return;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Review;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Saleschannel;
 using System.Collections.Generic;
@@ -57,6 +58,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item
         public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Reservation.ReservationRequestBuilder Reservation
         {
             get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Reservation.ReservationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The return property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Return.ReturnRequestBuilder Return
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Return.ReturnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The review property</summary>
         public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Review.ReviewRequestBuilder Review

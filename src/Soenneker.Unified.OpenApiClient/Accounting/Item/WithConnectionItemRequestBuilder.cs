@@ -119,6 +119,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Journal.JournalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The order property</summary>
+        [Obsolete("")]
         public global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder Order
         {
             get => new global::Soenneker.Unified.OpenApiClient.Accounting.Item.Order.OrderRequestBuilder(PathParameters, RequestAdapter);

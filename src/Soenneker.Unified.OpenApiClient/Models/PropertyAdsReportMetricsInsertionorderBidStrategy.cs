@@ -12,40 +12,69 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyAdsReportMetricsInsertionorderBidStrategy : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_bidding_algorithm_id") is { } nullNodeCustomBiddingAlgorithmId && nullNodeCustomBiddingAlgorithmId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomBiddingAlgorithmId = null;
+            if (parseNode.GetChildNode("fixed_bid_amount") is { } nullNodeFixedBidAmount && nullNodeFixedBidAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedBidAmount = null;
+            if (parseNode.GetChildNode("max_average_cpm_bid_amount") is { } nullNodeMaxAverageCpmBidAmount && nullNodeMaxAverageCpmBidAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAverageCpmBidAmount = null;
+            if (parseNode.GetChildNode("performance_goal_amount") is { } nullNodePerformanceGoalAmount && nullNodePerformanceGoalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceGoalAmount = null;
+            if (parseNode.GetChildNode("performance_goal_type") is { } nullNodePerformanceGoalType && nullNodePerformanceGoalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceGoalType = null;
+            if (parseNode.GetChildNode("raise_bid_for_deals") is { } nullNodeRaiseBidForDeals && nullNodeRaiseBidForDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RaiseBidForDeals = null;
+            if (parseNode.GetChildNode("target_roas") is { } nullNodeTargetRoas && nullNodeTargetRoas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetRoas = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("youtube_and_partners_type") is { } nullNodeYoutubeAndPartnersType && nullNodeYoutubeAndPartnersType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeAndPartnersType = null;
+            if (parseNode.GetChildNode("youtube_and_partners_value") is { } nullNodeYoutubeAndPartnersValue && nullNodeYoutubeAndPartnersValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeAndPartnersValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom_bidding_algorithm_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomBiddingAlgorithmId { get; set; }
+        public string? CustomBiddingAlgorithmId { get => _explicitNullValueCustomBiddingAlgorithmId; set { _explicitNullValueCustomBiddingAlgorithmId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bidding_algorithm_id"); else _explicitNullProperties?.Remove("custom_bidding_algorithm_id"); } }
+        private string? _explicitNullValueCustomBiddingAlgorithmId = default!;
 #nullable restore
 #else
-        public string CustomBiddingAlgorithmId { get; set; }
+        public string CustomBiddingAlgorithmId { get => _explicitNullValueCustomBiddingAlgorithmId; set { _explicitNullValueCustomBiddingAlgorithmId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_bidding_algorithm_id"); else _explicitNullProperties?.Remove("custom_bidding_algorithm_id"); } }
+        private string _explicitNullValueCustomBiddingAlgorithmId = default!;
 #endif
         /// <summary>The fixed_bid_amount property</summary>
-        public double? FixedBidAmount { get; set; }
+        public double? FixedBidAmount { get => _explicitNullValueFixedBidAmount; set { _explicitNullValueFixedBidAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixed_bid_amount"); else _explicitNullProperties?.Remove("fixed_bid_amount"); } }
+        private double? _explicitNullValueFixedBidAmount = default!;
         /// <summary>The max_average_cpm_bid_amount property</summary>
-        public double? MaxAverageCpmBidAmount { get; set; }
+        public double? MaxAverageCpmBidAmount { get => _explicitNullValueMaxAverageCpmBidAmount; set { _explicitNullValueMaxAverageCpmBidAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_average_cpm_bid_amount"); else _explicitNullProperties?.Remove("max_average_cpm_bid_amount"); } }
+        private double? _explicitNullValueMaxAverageCpmBidAmount = default!;
         /// <summary>The performance_goal_amount property</summary>
-        public double? PerformanceGoalAmount { get; set; }
+        public double? PerformanceGoalAmount { get => _explicitNullValuePerformanceGoalAmount; set { _explicitNullValuePerformanceGoalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_goal_amount"); else _explicitNullProperties?.Remove("performance_goal_amount"); } }
+        private double? _explicitNullValuePerformanceGoalAmount = default!;
         /// <summary>The performance_goal_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType? PerformanceGoalType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType? PerformanceGoalType { get => _explicitNullValuePerformanceGoalType; set { _explicitNullValuePerformanceGoalType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performance_goal_type"); else _explicitNullProperties?.Remove("performance_goal_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType? _explicitNullValuePerformanceGoalType = default!;
         /// <summary>The raise_bid_for_deals property</summary>
-        public bool? RaiseBidForDeals { get; set; }
+        public bool? RaiseBidForDeals { get => _explicitNullValueRaiseBidForDeals; set { _explicitNullValueRaiseBidForDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raise_bid_for_deals"); else _explicitNullProperties?.Remove("raise_bid_for_deals"); } }
+        private bool? _explicitNullValueRaiseBidForDeals = default!;
         /// <summary>Target ROAS e.g. 2.5 = 250% (Google)</summary>
-        public double? TargetRoas { get; set; }
+        public double? TargetRoas { get => _explicitNullValueTargetRoas; set { _explicitNullValueTargetRoas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_roas"); else _explicitNullProperties?.Remove("target_roas"); } }
+        private double? _explicitNullValueTargetRoas = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyType? Type { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyType? _explicitNullValueType = default!;
         /// <summary>The youtube_and_partners_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType? YoutubeAndPartnersType { get => _explicitNullValueYoutubeAndPartnersType; set { _explicitNullValueYoutubeAndPartnersType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_and_partners_type"); else _explicitNullProperties?.Remove("youtube_and_partners_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType? _explicitNullValueYoutubeAndPartnersType = default!;
         /// <summary>The youtube_and_partners_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YoutubeAndPartnersValue { get; set; }
+        public string? YoutubeAndPartnersValue { get => _explicitNullValueYoutubeAndPartnersValue; set { _explicitNullValueYoutubeAndPartnersValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_and_partners_value"); else _explicitNullProperties?.Remove("youtube_and_partners_value"); } }
+        private string? _explicitNullValueYoutubeAndPartnersValue = default!;
 #nullable restore
 #else
-        public string YoutubeAndPartnersValue { get; set; }
+        public string YoutubeAndPartnersValue { get => _explicitNullValueYoutubeAndPartnersValue; set { _explicitNullValueYoutubeAndPartnersValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_and_partners_value"); else _explicitNullProperties?.Remove("youtube_and_partners_value"); } }
+        private string _explicitNullValueYoutubeAndPartnersValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategy"/> and sets the default values.
@@ -62,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategy();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategy(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +130,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType>("youtube_and_partners_type", YoutubeAndPartnersType);
             writer.WriteStringValue("youtube_and_partners_value", YoutubeAndPartnersValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

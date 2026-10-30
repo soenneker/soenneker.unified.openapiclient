@@ -11,58 +11,90 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("birthDate") is { } nullNodeBirthDate && nullNodeBirthDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BirthDate = null;
+            if (parseNode.GetChildNode("ethnicity") is { } nullNodeEthnicity && nullNodeEthnicity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ethnicity = null;
+            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("Job Level") is { } nullNodeJobLevel && nullNodeJobLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobLevel = null;
+            if (parseNode.GetChildNode("People Manager (Reviews)") is { } nullNodePeopleManagerReviews && nullNodePeopleManagerReviews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeopleManagerReviews = null;
+            if (parseNode.GetChildNode("Remote Work - Location") is { } nullNodeRemoteWorkLocation && nullNodeRemoteWorkLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteWorkLocation = null;
+            if (parseNode.GetChildNode("Salary Information") is { } nullNodeSalaryInformation && nullNodeSalaryInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalaryInformation = null;
+            if (parseNode.GetChildNode("sexualOrientation") is { } nullNodeSexualOrientation && nullNodeSexualOrientation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SexualOrientation = null;
+            if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("Sub Departments") is { } nullNodeSubDepartments && nullNodeSubDepartments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubDepartments = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&quot;1987-10-06&quot;,</summary>
-        public DateTimeOffset? BirthDate { get; set; }
+        public DateTimeOffset? BirthDate { get => _explicitNullValueBirthDate; set { _explicitNullValueBirthDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("birthDate"); else _explicitNullProperties?.Remove("birthDate"); } }
+        private DateTimeOffset? _explicitNullValueBirthDate = default!;
         /// <summary>The ethnicity property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity? Ethnicity { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity? Ethnicity { get => _explicitNullValueEthnicity; set { _explicitNullValueEthnicity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ethnicity"); else _explicitNullProperties?.Remove("ethnicity"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserEthnicity? _explicitNullValueEthnicity = default!;
         /// <summary>The gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender? Gender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender? _explicitNullValueGender = default!;
         /// <summary>&apos;M3&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobLevel { get; set; }
+        public string? JobLevel { get => _explicitNullValueJobLevel; set { _explicitNullValueJobLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job Level"); else _explicitNullProperties?.Remove("Job Level"); } }
+        private string? _explicitNullValueJobLevel = default!;
 #nullable restore
 #else
-        public string JobLevel { get; set; }
+        public string JobLevel { get => _explicitNullValueJobLevel; set { _explicitNullValueJobLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job Level"); else _explicitNullProperties?.Remove("Job Level"); } }
+        private string _explicitNullValueJobLevel = default!;
 #endif
         /// <summary>&apos;People Manager&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeopleManagerReviews { get; set; }
+        public string? PeopleManagerReviews { get => _explicitNullValuePeopleManagerReviews; set { _explicitNullValuePeopleManagerReviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("People Manager (Reviews)"); else _explicitNullProperties?.Remove("People Manager (Reviews)"); } }
+        private string? _explicitNullValuePeopleManagerReviews = default!;
 #nullable restore
 #else
-        public string PeopleManagerReviews { get; set; }
+        public string PeopleManagerReviews { get => _explicitNullValuePeopleManagerReviews; set { _explicitNullValuePeopleManagerReviews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("People Manager (Reviews)"); else _explicitNullProperties?.Remove("People Manager (Reviews)"); } }
+        private string _explicitNullValuePeopleManagerReviews = default!;
 #endif
         /// <summary>&apos;Ontario&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteWorkLocation { get; set; }
+        public string? RemoteWorkLocation { get => _explicitNullValueRemoteWorkLocation; set { _explicitNullValueRemoteWorkLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Remote Work - Location"); else _explicitNullProperties?.Remove("Remote Work - Location"); } }
+        private string? _explicitNullValueRemoteWorkLocation = default!;
 #nullable restore
 #else
-        public string RemoteWorkLocation { get; set; }
+        public string RemoteWorkLocation { get => _explicitNullValueRemoteWorkLocation; set { _explicitNullValueRemoteWorkLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Remote Work - Location"); else _explicitNullProperties?.Remove("Remote Work - Location"); } }
+        private string _explicitNullValueRemoteWorkLocation = default!;
 #endif
         /// <summary>&apos;130000&apos;,</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalaryInformation { get; set; }
+        public string? SalaryInformation { get => _explicitNullValueSalaryInformation; set { _explicitNullValueSalaryInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Salary Information"); else _explicitNullProperties?.Remove("Salary Information"); } }
+        private string? _explicitNullValueSalaryInformation = default!;
 #nullable restore
 #else
-        public string SalaryInformation { get; set; }
+        public string SalaryInformation { get => _explicitNullValueSalaryInformation; set { _explicitNullValueSalaryInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Salary Information"); else _explicitNullProperties?.Remove("Salary Information"); } }
+        private string _explicitNullValueSalaryInformation = default!;
 #endif
         /// <summary>The sexualOrientation property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation? SexualOrientation { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation? SexualOrientation { get => _explicitNullValueSexualOrientation; set { _explicitNullValueSexualOrientation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexualOrientation"); else _explicitNullProperties?.Remove("sexualOrientation"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation? _explicitNullValueSexualOrientation = default!;
         /// <summary>&quot;2022-03-08&quot;,</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        private DateTimeOffset? _explicitNullValueStartDate = default!;
         /// <summary>The SubDepartments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubDepartments { get; set; }
+        public string? SubDepartments { get => _explicitNullValueSubDepartments; set { _explicitNullValueSubDepartments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Sub Departments"); else _explicitNullProperties?.Remove("Sub Departments"); } }
+        private string? _explicitNullValueSubDepartments = default!;
 #nullable restore
 #else
-        public string SubDepartments { get; set; }
+        public string SubDepartments { get => _explicitNullValueSubDepartments; set { _explicitNullValueSubDepartments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Sub Departments"); else _explicitNullProperties?.Remove("Sub Departments"); } }
+        private string _explicitNullValueSubDepartments = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User"/> and sets the default values.
@@ -79,7 +111,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +150,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserSexualOrientation>("sexualOrientation", SexualOrientation);
             writer.WriteDateTimeOffsetValue("startDate", StartDate);
             writer.WriteStringValue("Sub Departments", SubDepartments);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

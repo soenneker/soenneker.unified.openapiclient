@@ -12,15 +12,28 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertySocialProfileMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("follower_count") is { } nullNodeFollowerCount && nullNodeFollowerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowerCount = null;
+            if (parseNode.GetChildNode("following_count") is { } nullNodeFollowingCount && nullNodeFollowingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowingCount = null;
+            if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of followers</summary>
-        public double? FollowerCount { get; set; }
+        public double? FollowerCount { get => _explicitNullValueFollowerCount; set { _explicitNullValueFollowerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follower_count"); else _explicitNullProperties?.Remove("follower_count"); } }
+        private double? _explicitNullValueFollowerCount = default!;
         /// <summary>Number of accounts this profile follows</summary>
-        public double? FollowingCount { get; set; }
+        public double? FollowingCount { get => _explicitNullValueFollowingCount; set { _explicitNullValueFollowingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following_count"); else _explicitNullProperties?.Remove("following_count"); } }
+        private double? _explicitNullValueFollowingCount = default!;
         /// <summary>Total number of posts published by this profile</summary>
-        public double? PostCount { get; set; }
+        public double? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
+        private double? _explicitNullValuePostCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("follower_count", FollowerCount);
             writer.WriteDoubleValue("following_count", FollowingCount);
             writer.WriteDoubleValue("post_count", PostCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

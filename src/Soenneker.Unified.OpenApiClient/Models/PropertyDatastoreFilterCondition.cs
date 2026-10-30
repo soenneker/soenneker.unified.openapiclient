@@ -11,100 +11,144 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyDatastoreFilterCondition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contains") is { } nullNodeContains && nullNodeContains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contains = null;
+            if (parseNode.GetChildNode("eq") is { } nullNodeEq && nullNodeEq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eq = null;
+            if (parseNode.GetChildNode("gt") is { } nullNodeGt && nullNodeGt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gt = null;
+            if (parseNode.GetChildNode("gte") is { } nullNodeGte && nullNodeGte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gte = null;
+            if (parseNode.GetChildNode("ilike") is { } nullNodeIlike && nullNodeIlike.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ilike = null;
+            if (parseNode.GetChildNode("in") is { } nullNodeIn && nullNodeIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) In = null;
+            if (parseNode.GetChildNode("is_not_null") is { } nullNodeIsNotNull && nullNodeIsNotNull.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNotNull = null;
+            if (parseNode.GetChildNode("is_null") is { } nullNodeIsNull && nullNodeIsNull.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNull = null;
+            if (parseNode.GetChildNode("like") is { } nullNodeLike && nullNodeLike.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Like = null;
+            if (parseNode.GetChildNode("lt") is { } nullNodeLt && nullNodeLt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lt = null;
+            if (parseNode.GetChildNode("lte") is { } nullNodeLte && nullNodeLte.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lte = null;
+            if (parseNode.GetChildNode("neq") is { } nullNodeNeq && nullNodeNeq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Neq = null;
+            if (parseNode.GetChildNode("not_contains") is { } nullNodeNotContains && nullNodeNotContains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotContains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains? Contains { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains? Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains? _explicitNullValueContains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains Contains { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains Contains { get => _explicitNullValueContains; set { _explicitNullValueContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contains"); else _explicitNullProperties?.Remove("contains"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionContains _explicitNullValueContains = default!;
 #endif
         /// <summary>The eq property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq? Eq { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq? Eq { get => _explicitNullValueEq; set { _explicitNullValueEq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eq"); else _explicitNullProperties?.Remove("eq"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq? _explicitNullValueEq = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq Eq { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq Eq { get => _explicitNullValueEq; set { _explicitNullValueEq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eq"); else _explicitNullProperties?.Remove("eq"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionEq _explicitNullValueEq = default!;
 #endif
         /// <summary>The gt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt? Gt { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt? Gt { get => _explicitNullValueGt; set { _explicitNullValueGt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt"); else _explicitNullProperties?.Remove("gt"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt? _explicitNullValueGt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt Gt { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt Gt { get => _explicitNullValueGt; set { _explicitNullValueGt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gt"); else _explicitNullProperties?.Remove("gt"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGt _explicitNullValueGt = default!;
 #endif
         /// <summary>The gte property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte? Gte { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte? Gte { get => _explicitNullValueGte; set { _explicitNullValueGte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gte"); else _explicitNullProperties?.Remove("gte"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte? _explicitNullValueGte = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte Gte { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte Gte { get => _explicitNullValueGte; set { _explicitNullValueGte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gte"); else _explicitNullProperties?.Remove("gte"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionGte _explicitNullValueGte = default!;
 #endif
         /// <summary>The ilike property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike? Ilike { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike? Ilike { get => _explicitNullValueIlike; set { _explicitNullValueIlike = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ilike"); else _explicitNullProperties?.Remove("ilike"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike? _explicitNullValueIlike = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike Ilike { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike Ilike { get => _explicitNullValueIlike; set { _explicitNullValueIlike = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ilike"); else _explicitNullProperties?.Remove("ilike"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionIlike _explicitNullValueIlike = default!;
 #endif
         /// <summary>The in property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue>? In { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue>? In { get => _explicitNullValueIn; set { _explicitNullValueIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in"); else _explicitNullProperties?.Remove("in"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue>? _explicitNullValueIn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue> In { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue> In { get => _explicitNullValueIn; set { _explicitNullValueIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in"); else _explicitNullProperties?.Remove("in"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.DatastoreFieldValue> _explicitNullValueIn = default!;
 #endif
         /// <summary>The is_not_null property</summary>
-        public bool? IsNotNull { get; set; }
+        public bool? IsNotNull { get => _explicitNullValueIsNotNull; set { _explicitNullValueIsNotNull = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_not_null"); else _explicitNullProperties?.Remove("is_not_null"); } }
+        private bool? _explicitNullValueIsNotNull = default!;
         /// <summary>The is_null property</summary>
-        public bool? IsNull { get; set; }
+        public bool? IsNull { get => _explicitNullValueIsNull; set { _explicitNullValueIsNull = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_null"); else _explicitNullProperties?.Remove("is_null"); } }
+        private bool? _explicitNullValueIsNull = default!;
         /// <summary>The like property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike? Like { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike? Like { get => _explicitNullValueLike; set { _explicitNullValueLike = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("like"); else _explicitNullProperties?.Remove("like"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike? _explicitNullValueLike = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike Like { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike Like { get => _explicitNullValueLike; set { _explicitNullValueLike = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("like"); else _explicitNullProperties?.Remove("like"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLike _explicitNullValueLike = default!;
 #endif
         /// <summary>The lt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt? Lt { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt? Lt { get => _explicitNullValueLt; set { _explicitNullValueLt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lt"); else _explicitNullProperties?.Remove("lt"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt? _explicitNullValueLt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt Lt { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt Lt { get => _explicitNullValueLt; set { _explicitNullValueLt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lt"); else _explicitNullProperties?.Remove("lt"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLt _explicitNullValueLt = default!;
 #endif
         /// <summary>The lte property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte? Lte { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte? Lte { get => _explicitNullValueLte; set { _explicitNullValueLte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte"); else _explicitNullProperties?.Remove("lte"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte? _explicitNullValueLte = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte Lte { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte Lte { get => _explicitNullValueLte; set { _explicitNullValueLte = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lte"); else _explicitNullProperties?.Remove("lte"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte _explicitNullValueLte = default!;
 #endif
         /// <summary>The neq property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq? Neq { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq? Neq { get => _explicitNullValueNeq; set { _explicitNullValueNeq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neq"); else _explicitNullProperties?.Remove("neq"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq? _explicitNullValueNeq = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq Neq { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq Neq { get => _explicitNullValueNeq; set { _explicitNullValueNeq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neq"); else _explicitNullProperties?.Remove("neq"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq _explicitNullValueNeq = default!;
 #endif
         /// <summary>The not_contains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains? NotContains { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains? NotContains { get => _explicitNullValueNotContains; set { _explicitNullValueNotContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_contains"); else _explicitNullProperties?.Remove("not_contains"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains? _explicitNullValueNotContains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains NotContains { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains NotContains { get => _explicitNullValueNotContains; set { _explicitNullValueNotContains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_contains"); else _explicitNullProperties?.Remove("not_contains"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains _explicitNullValueNotContains = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterCondition"/> and sets the default values.
@@ -121,7 +165,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterCondition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterCondition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,6 +210,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionLte>("lte", Lte);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNeq>("neq", Neq);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyDatastoreFilterConditionNotContains>("not_contains", NotContains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

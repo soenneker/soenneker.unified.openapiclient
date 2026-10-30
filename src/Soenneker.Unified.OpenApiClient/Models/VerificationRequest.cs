@@ -11,169 +11,246 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VerificationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("candidate_id") is { } nullNodeCandidateId && nullNodeCandidateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CandidateId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("package_id") is { } nullNodePackageId && nullNodePackageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageId = null;
+            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("profile_addresses") is { } nullNodeProfileAddresses && nullNodeProfileAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileAddresses = null;
+            if (parseNode.GetChildNode("profile_date_of_birth") is { } nullNodeProfileDateOfBirth && nullNodeProfileDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileDateOfBirth = null;
+            if (parseNode.GetChildNode("profile_emails") is { } nullNodeProfileEmails && nullNodeProfileEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileEmails = null;
+            if (parseNode.GetChildNode("profile_gender") is { } nullNodeProfileGender && nullNodeProfileGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileGender = null;
+            if (parseNode.GetChildNode("profile_ip_address") is { } nullNodeProfileIpAddress && nullNodeProfileIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileIpAddress = null;
+            if (parseNode.GetChildNode("profile_name") is { } nullNodeProfileName && nullNodeProfileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileName = null;
+            if (parseNode.GetChildNode("profile_national_identifier") is { } nullNodeProfileNationalIdentifier && nullNodeProfileNationalIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileNationalIdentifier = null;
+            if (parseNode.GetChildNode("profile_telephones") is { } nullNodeProfileTelephones && nullNodeProfileTelephones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileTelephones = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("response_completed_at") is { } nullNodeResponseCompletedAt && nullNodeResponseCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseCompletedAt = null;
+            if (parseNode.GetChildNode("response_details") is { } nullNodeResponseDetails && nullNodeResponseDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseDetails = null;
+            if (parseNode.GetChildNode("response_download_urls") is { } nullNodeResponseDownloadUrls && nullNodeResponseDownloadUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseDownloadUrls = null;
+            if (parseNode.GetChildNode("response_expires_at") is { } nullNodeResponseExpiresAt && nullNodeResponseExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseExpiresAt = null;
+            if (parseNode.GetChildNode("response_issued_at") is { } nullNodeResponseIssuedAt && nullNodeResponseIssuedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseIssuedAt = null;
+            if (parseNode.GetChildNode("response_redirect_url") is { } nullNodeResponseRedirectUrl && nullNodeResponseRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseRedirectUrl = null;
+            if (parseNode.GetChildNode("response_score") is { } nullNodeResponseScore && nullNodeResponseScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseScore = null;
+            if (parseNode.GetChildNode("response_source") is { } nullNodeResponseSource && nullNodeResponseSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseSource = null;
+            if (parseNode.GetChildNode("response_status") is { } nullNodeResponseStatus && nullNodeResponseStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseStatus = null;
+            if (parseNode.GetChildNode("target_url") is { } nullNodeTargetUrl && nullNodeTargetUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetUrl = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>points to ATS Candidate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CandidateId { get; set; }
+        public string? CandidateId { get => _explicitNullValueCandidateId; set { _explicitNullValueCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_id"); else _explicitNullProperties?.Remove("candidate_id"); } }
+        private string? _explicitNullValueCandidateId = default!;
 #nullable restore
 #else
-        public string CandidateId { get; set; }
+        public string CandidateId { get => _explicitNullValueCandidateId; set { _explicitNullValueCandidateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("candidate_id"); else _explicitNullProperties?.Remove("candidate_id"); } }
+        private string _explicitNullValueCandidateId = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>? Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> Metadata { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationMetadata> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The ID of the verification package (the check) to run (a VerificationPackage ID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId { get; set; }
+        public string? PackageId { get => _explicitNullValuePackageId; set { _explicitNullValuePackageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_id"); else _explicitNullProperties?.Remove("package_id"); } }
+        private string? _explicitNullValuePackageId = default!;
 #nullable restore
 #else
-        public string PackageId { get; set; }
+        public string PackageId { get => _explicitNullValuePackageId; set { _explicitNullValuePackageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package_id"); else _explicitNullProperties?.Remove("package_id"); } }
+        private string _explicitNullValuePackageId = default!;
 #endif
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput>? Parameters { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput>? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput>? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput> Parameters { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput> Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationParameterInput> _explicitNullValueParameters = default!;
 #endif
         /// <summary>The profile_addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>? ProfileAddresses { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>? ProfileAddresses { get => _explicitNullValueProfileAddresses; set { _explicitNullValueProfileAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_addresses"); else _explicitNullProperties?.Remove("profile_addresses"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress>? _explicitNullValueProfileAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress> ProfileAddresses { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress> ProfileAddresses { get => _explicitNullValueProfileAddresses; set { _explicitNullValueProfileAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_addresses"); else _explicitNullProperties?.Remove("profile_addresses"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationAddress> _explicitNullValueProfileAddresses = default!;
 #endif
         /// <summary>YYYY-MM-DD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileDateOfBirth { get; set; }
+        public string? ProfileDateOfBirth { get => _explicitNullValueProfileDateOfBirth; set { _explicitNullValueProfileDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_date_of_birth"); else _explicitNullProperties?.Remove("profile_date_of_birth"); } }
+        private string? _explicitNullValueProfileDateOfBirth = default!;
 #nullable restore
 #else
-        public string ProfileDateOfBirth { get; set; }
+        public string ProfileDateOfBirth { get => _explicitNullValueProfileDateOfBirth; set { _explicitNullValueProfileDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_date_of_birth"); else _explicitNullProperties?.Remove("profile_date_of_birth"); } }
+        private string _explicitNullValueProfileDateOfBirth = default!;
 #endif
         /// <summary>The email addresses of the person being verified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProfileEmails { get; set; }
+        public List<string>? ProfileEmails { get => _explicitNullValueProfileEmails; set { _explicitNullValueProfileEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_emails"); else _explicitNullProperties?.Remove("profile_emails"); } }
+        private List<string>? _explicitNullValueProfileEmails = default!;
 #nullable restore
 #else
-        public List<string> ProfileEmails { get; set; }
+        public List<string> ProfileEmails { get => _explicitNullValueProfileEmails; set { _explicitNullValueProfileEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_emails"); else _explicitNullProperties?.Remove("profile_emails"); } }
+        private List<string> _explicitNullValueProfileEmails = default!;
 #endif
         /// <summary>The profile_gender property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender? ProfileGender { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender? ProfileGender { get => _explicitNullValueProfileGender; set { _explicitNullValueProfileGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_gender"); else _explicitNullProperties?.Remove("profile_gender"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestProfileGender? _explicitNullValueProfileGender = default!;
         /// <summary>XXX.XXX.XXX.XXX</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileIpAddress { get; set; }
+        public string? ProfileIpAddress { get => _explicitNullValueProfileIpAddress; set { _explicitNullValueProfileIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_ip_address"); else _explicitNullProperties?.Remove("profile_ip_address"); } }
+        private string? _explicitNullValueProfileIpAddress = default!;
 #nullable restore
 #else
-        public string ProfileIpAddress { get; set; }
+        public string ProfileIpAddress { get => _explicitNullValueProfileIpAddress; set { _explicitNullValueProfileIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_ip_address"); else _explicitNullProperties?.Remove("profile_ip_address"); } }
+        private string _explicitNullValueProfileIpAddress = default!;
 #endif
         /// <summary>The full name of the person being verified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileName { get; set; }
+        public string? ProfileName { get => _explicitNullValueProfileName; set { _explicitNullValueProfileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_name"); else _explicitNullProperties?.Remove("profile_name"); } }
+        private string? _explicitNullValueProfileName = default!;
 #nullable restore
 #else
-        public string ProfileName { get; set; }
+        public string ProfileName { get => _explicitNullValueProfileName; set { _explicitNullValueProfileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_name"); else _explicitNullProperties?.Remove("profile_name"); } }
+        private string _explicitNullValueProfileName = default!;
 #endif
         /// <summary>The profile_national_identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileNationalIdentifier { get; set; }
+        public string? ProfileNationalIdentifier { get => _explicitNullValueProfileNationalIdentifier; set { _explicitNullValueProfileNationalIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_national_identifier"); else _explicitNullProperties?.Remove("profile_national_identifier"); } }
+        private string? _explicitNullValueProfileNationalIdentifier = default!;
 #nullable restore
 #else
-        public string ProfileNationalIdentifier { get; set; }
+        public string ProfileNationalIdentifier { get => _explicitNullValueProfileNationalIdentifier; set { _explicitNullValueProfileNationalIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_national_identifier"); else _explicitNullProperties?.Remove("profile_national_identifier"); } }
+        private string _explicitNullValueProfileNationalIdentifier = default!;
 #endif
         /// <summary>The profile_telephones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProfileTelephones { get; set; }
+        public List<string>? ProfileTelephones { get => _explicitNullValueProfileTelephones; set { _explicitNullValueProfileTelephones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_telephones"); else _explicitNullProperties?.Remove("profile_telephones"); } }
+        private List<string>? _explicitNullValueProfileTelephones = default!;
 #nullable restore
 #else
-        public List<string> ProfileTelephones { get; set; }
+        public List<string> ProfileTelephones { get => _explicitNullValueProfileTelephones; set { _explicitNullValueProfileTelephones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_telephones"); else _explicitNullProperties?.Remove("profile_telephones"); } }
+        private List<string> _explicitNullValueProfileTelephones = default!;
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty? Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty Raw { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestRawProperty _explicitNullValueRaw = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? ResponseCompletedAt { get; set; }
+        public DateTimeOffset? ResponseCompletedAt { get => _explicitNullValueResponseCompletedAt; set { _explicitNullValueResponseCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_completed_at"); else _explicitNullProperties?.Remove("response_completed_at"); } }
+        private DateTimeOffset? _explicitNullValueResponseCompletedAt = default!;
         /// <summary>The response_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail>? ResponseDetails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail>? ResponseDetails { get => _explicitNullValueResponseDetails; set { _explicitNullValueResponseDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_details"); else _explicitNullProperties?.Remove("response_details"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail>? _explicitNullValueResponseDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail> ResponseDetails { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail> ResponseDetails { get => _explicitNullValueResponseDetails; set { _explicitNullValueResponseDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_details"); else _explicitNullProperties?.Remove("response_details"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.VerificationResponseDetail> _explicitNullValueResponseDetails = default!;
 #endif
         /// <summary>report download</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseDownloadUrls { get; set; }
+        public List<string>? ResponseDownloadUrls { get => _explicitNullValueResponseDownloadUrls; set { _explicitNullValueResponseDownloadUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_download_urls"); else _explicitNullProperties?.Remove("response_download_urls"); } }
+        private List<string>? _explicitNullValueResponseDownloadUrls = default!;
 #nullable restore
 #else
-        public List<string> ResponseDownloadUrls { get; set; }
+        public List<string> ResponseDownloadUrls { get => _explicitNullValueResponseDownloadUrls; set { _explicitNullValueResponseDownloadUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_download_urls"); else _explicitNullProperties?.Remove("response_download_urls"); } }
+        private List<string> _explicitNullValueResponseDownloadUrls = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? ResponseExpiresAt { get; set; }
+        public DateTimeOffset? ResponseExpiresAt { get => _explicitNullValueResponseExpiresAt; set { _explicitNullValueResponseExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_expires_at"); else _explicitNullProperties?.Remove("response_expires_at"); } }
+        private DateTimeOffset? _explicitNullValueResponseExpiresAt = default!;
         /// <summary>datetime that identify was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? ResponseIssuedAt { get; set; }
+        public DateTimeOffset? ResponseIssuedAt { get => _explicitNullValueResponseIssuedAt; set { _explicitNullValueResponseIssuedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_issued_at"); else _explicitNullProperties?.Remove("response_issued_at"); } }
+        private DateTimeOffset? _explicitNullValueResponseIssuedAt = default!;
         /// <summary>Most modern IDV providers (like Onfido, Veriff, Jumio, ID.me). Background Check Providers, such as Checkr, GoodHire, Sterling, and HireRight. Credit bureaus and services often require direct user consent and information. This allows them to properly handle disclosures required by regulations like FCRA. Employment and Education Verification need users to confirm previous employers and schools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResponseRedirectUrl { get; set; }
+        public string? ResponseRedirectUrl { get => _explicitNullValueResponseRedirectUrl; set { _explicitNullValueResponseRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_redirect_url"); else _explicitNullProperties?.Remove("response_redirect_url"); } }
+        private string? _explicitNullValueResponseRedirectUrl = default!;
 #nullable restore
 #else
-        public string ResponseRedirectUrl { get; set; }
+        public string ResponseRedirectUrl { get => _explicitNullValueResponseRedirectUrl; set { _explicitNullValueResponseRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_redirect_url"); else _explicitNullProperties?.Remove("response_redirect_url"); } }
+        private string _explicitNullValueResponseRedirectUrl = default!;
 #endif
         /// <summary>Identity verification services provide confidence scores (e.g., 0-100), Credit checks return specific numeric scores (e.g., FICO score 300-850), Fraud prevention tools use risk scores (e.g., 1-999)</summary>
-        public double? ResponseScore { get; set; }
+        public double? ResponseScore { get => _explicitNullValueResponseScore; set { _explicitNullValueResponseScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_score"); else _explicitNullProperties?.Remove("response_score"); } }
+        private double? _explicitNullValueResponseScore = default!;
         /// <summary>The response_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResponseSource { get; set; }
+        public string? ResponseSource { get => _explicitNullValueResponseSource; set { _explicitNullValueResponseSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_source"); else _explicitNullProperties?.Remove("response_source"); } }
+        private string? _explicitNullValueResponseSource = default!;
 #nullable restore
 #else
-        public string ResponseSource { get; set; }
+        public string ResponseSource { get => _explicitNullValueResponseSource; set { _explicitNullValueResponseSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_source"); else _explicitNullProperties?.Remove("response_source"); } }
+        private string _explicitNullValueResponseSource = default!;
 #endif
         /// <summary>Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus? ResponseStatus { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus? ResponseStatus { get => _explicitNullValueResponseStatus; set { _explicitNullValueResponseStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_status"); else _explicitNullProperties?.Remove("response_status"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus? _explicitNullValueResponseStatus = default!;
         /// <summary>The target_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetUrl { get; set; }
+        public string? TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string? _explicitNullValueTargetUrl = default!;
 #nullable restore
 #else
-        public string TargetUrl { get; set; }
+        public string TargetUrl { get => _explicitNullValueTargetUrl; set { _explicitNullValueTargetUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_url"); else _explicitNullProperties?.Remove("target_url"); } }
+        private string _explicitNullValueTargetUrl = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest"/> and sets the default values.
         /// </summary>
@@ -189,7 +266,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.VerificationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -260,6 +337,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.VerificationRequestResponseStatus>("response_status", ResponseStatus);
             writer.WriteStringValue("target_url", TargetUrl);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

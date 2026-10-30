@@ -11,19 +11,36 @@ namespace Soenneker.Unified.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PropertyAdsGroupFrequencyCap : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_unlimited") is { } nullNodeIsUnlimited && nullNodeIsUnlimited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUnlimited = null;
+            if (parseNode.GetChildNode("max_impressions") is { } nullNodeMaxImpressions && nullNodeMaxImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxImpressions = null;
+            if (parseNode.GetChildNode("max_views") is { } nullNodeMaxViews && nullNodeMaxViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxViews = null;
+            if (parseNode.GetChildNode("time_unit") is { } nullNodeTimeUnit && nullNodeTimeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnit = null;
+            if (parseNode.GetChildNode("time_unit_count") is { } nullNodeTimeUnitCount && nullNodeTimeUnitCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnitCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_unlimited property</summary>
-        public bool? IsUnlimited { get; set; }
+        public bool? IsUnlimited { get => _explicitNullValueIsUnlimited; set { _explicitNullValueIsUnlimited = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_unlimited"); else _explicitNullProperties?.Remove("is_unlimited"); } }
+        private bool? _explicitNullValueIsUnlimited = default!;
         /// <summary>The max_impressions property</summary>
-        public double? MaxImpressions { get; set; }
+        public double? MaxImpressions { get => _explicitNullValueMaxImpressions; set { _explicitNullValueMaxImpressions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_impressions"); else _explicitNullProperties?.Remove("max_impressions"); } }
+        private double? _explicitNullValueMaxImpressions = default!;
         /// <summary>The max_views property</summary>
-        public double? MaxViews { get; set; }
+        public double? MaxViews { get => _explicitNullValueMaxViews; set { _explicitNullValueMaxViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_views"); else _explicitNullProperties?.Remove("max_views"); } }
+        private double? _explicitNullValueMaxViews = default!;
         /// <summary>The time_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCapTimeUnit? TimeUnit { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCapTimeUnit? TimeUnit { get => _explicitNullValueTimeUnit; set { _explicitNullValueTimeUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit"); else _explicitNullProperties?.Remove("time_unit"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCapTimeUnit? _explicitNullValueTimeUnit = default!;
         /// <summary>The time_unit_count property</summary>
-        public double? TimeUnitCount { get; set; }
+        public double? TimeUnitCount { get => _explicitNullValueTimeUnitCount; set { _explicitNullValueTimeUnitCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit_count"); else _explicitNullProperties?.Remove("time_unit_count"); } }
+        private double? _explicitNullValueTimeUnitCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCap(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("max_views", MaxViews);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupFrequencyCapTimeUnit>("time_unit", TimeUnit);
             writer.WriteDoubleValue("time_unit_count", TimeUnitCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

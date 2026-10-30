@@ -12,49 +12,76 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyShippingShipmentInsurance : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coverage_amount") is { } nullNodeCoverageAmount && nullNodeCoverageAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverageAmount = null;
+            if (parseNode.GetChildNode("coverage_type") is { } nullNodeCoverageType && nullNodeCoverageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverageType = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("insurance_cost") is { } nullNodeInsuranceCost && nullNodeInsuranceCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsuranceCost = null;
+            if (parseNode.GetChildNode("insurance_cost_currency") is { } nullNodeInsuranceCostCurrency && nullNodeInsuranceCostCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsuranceCostCurrency = null;
+            if (parseNode.GetChildNode("insurance_provider") is { } nullNodeInsuranceProvider && nullNodeInsuranceProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsuranceProvider = null;
+            if (parseNode.GetChildNode("insurance_provider_code") is { } nullNodeInsuranceProviderCode && nullNodeInsuranceProviderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsuranceProviderCode = null;
+            if (parseNode.GetChildNode("insured_value") is { } nullNodeInsuredValue && nullNodeInsuredValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsuredValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Coverage amount (may differ from insured_value)</summary>
-        public double? CoverageAmount { get; set; }
+        public double? CoverageAmount { get => _explicitNullValueCoverageAmount; set { _explicitNullValueCoverageAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage_amount"); else _explicitNullProperties?.Remove("coverage_amount"); } }
+        private double? _explicitNullValueCoverageAmount = default!;
         /// <summary>The coverage_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType? CoverageType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType? CoverageType { get => _explicitNullValueCoverageType; set { _explicitNullValueCoverageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage_type"); else _explicitNullProperties?.Remove("coverage_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsuranceCoverageType? _explicitNullValueCoverageType = default!;
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Cost of insurance</summary>
-        public double? InsuranceCost { get; set; }
+        public double? InsuranceCost { get => _explicitNullValueInsuranceCost; set { _explicitNullValueInsuranceCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_cost"); else _explicitNullProperties?.Remove("insurance_cost"); } }
+        private double? _explicitNullValueInsuranceCost = default!;
         /// <summary>The insurance_cost_currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InsuranceCostCurrency { get; set; }
+        public string? InsuranceCostCurrency { get => _explicitNullValueInsuranceCostCurrency; set { _explicitNullValueInsuranceCostCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_cost_currency"); else _explicitNullProperties?.Remove("insurance_cost_currency"); } }
+        private string? _explicitNullValueInsuranceCostCurrency = default!;
 #nullable restore
 #else
-        public string InsuranceCostCurrency { get; set; }
+        public string InsuranceCostCurrency { get => _explicitNullValueInsuranceCostCurrency; set { _explicitNullValueInsuranceCostCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_cost_currency"); else _explicitNullProperties?.Remove("insurance_cost_currency"); } }
+        private string _explicitNullValueInsuranceCostCurrency = default!;
 #endif
         /// <summary>Insurance provider name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InsuranceProvider { get; set; }
+        public string? InsuranceProvider { get => _explicitNullValueInsuranceProvider; set { _explicitNullValueInsuranceProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_provider"); else _explicitNullProperties?.Remove("insurance_provider"); } }
+        private string? _explicitNullValueInsuranceProvider = default!;
 #nullable restore
 #else
-        public string InsuranceProvider { get; set; }
+        public string InsuranceProvider { get => _explicitNullValueInsuranceProvider; set { _explicitNullValueInsuranceProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_provider"); else _explicitNullProperties?.Remove("insurance_provider"); } }
+        private string _explicitNullValueInsuranceProvider = default!;
 #endif
         /// <summary>Provider code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InsuranceProviderCode { get; set; }
+        public string? InsuranceProviderCode { get => _explicitNullValueInsuranceProviderCode; set { _explicitNullValueInsuranceProviderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_provider_code"); else _explicitNullProperties?.Remove("insurance_provider_code"); } }
+        private string? _explicitNullValueInsuranceProviderCode = default!;
 #nullable restore
 #else
-        public string InsuranceProviderCode { get; set; }
+        public string InsuranceProviderCode { get => _explicitNullValueInsuranceProviderCode; set { _explicitNullValueInsuranceProviderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance_provider_code"); else _explicitNullProperties?.Remove("insurance_provider_code"); } }
+        private string _explicitNullValueInsuranceProviderCode = default!;
 #endif
         /// <summary>Insured value</summary>
-        public double? InsuredValue { get; set; }
+        public double? InsuredValue { get => _explicitNullValueInsuredValue; set { _explicitNullValueInsuredValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insured_value"); else _explicitNullProperties?.Remove("insured_value"); } }
+        private double? _explicitNullValueInsuredValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance"/> and sets the default values.
         /// </summary>
@@ -70,7 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentInsurance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("insurance_provider", InsuranceProvider);
             writer.WriteStringValue("insurance_provider_code", InsuranceProviderCode);
             writer.WriteDoubleValue("insured_value", InsuredValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

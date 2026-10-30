@@ -12,83 +12,124 @@ namespace Soenneker.Unified.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyShippingShipmentCustoms : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("contents_type") is { } nullNodeContentsType && nullNodeContentsType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentsType = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("duties_paid_by") is { } nullNodeDutiesPaidBy && nullNodeDutiesPaidBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DutiesPaidBy = null;
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("non_delivery_option") is { } nullNodeNonDeliveryOption && nullNodeNonDeliveryOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonDeliveryOption = null;
+            if (parseNode.GetChildNode("recipient_eori") is { } nullNodeRecipientEori && nullNodeRecipientEori.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientEori = null;
+            if (parseNode.GetChildNode("recipient_tax_number") is { } nullNodeRecipientTaxNumber && nullNodeRecipientTaxNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientTaxNumber = null;
+            if (parseNode.GetChildNode("restrictions") is { } nullNodeRestrictions && nullNodeRestrictions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restrictions = null;
+            if (parseNode.GetChildNode("shipper_eori") is { } nullNodeShipperEori && nullNodeShipperEori.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipperEori = null;
+            if (parseNode.GetChildNode("shipper_tax_number") is { } nullNodeShipperTaxNumber && nullNodeShipperTaxNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShipperTaxNumber = null;
+            if (parseNode.GetChildNode("taxes_paid_by") is { } nullNodeTaxesPaidBy && nullNodeTaxesPaidBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxesPaidBy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Customs declared value</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>The contents_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType? ContentsType { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType? ContentsType { get => _explicitNullValueContentsType; set { _explicitNullValueContentsType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contents_type"); else _explicitNullProperties?.Remove("contents_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsContentsType? _explicitNullValueContentsType = default!;
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Explanation of contents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The duties_paid_by property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy? DutiesPaidBy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy? DutiesPaidBy { get => _explicitNullValueDutiesPaidBy; set { _explicitNullValueDutiesPaidBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duties_paid_by"); else _explicitNullProperties?.Remove("duties_paid_by"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsDutiesPaidBy? _explicitNullValueDutiesPaidBy = default!;
         /// <summary>Customs items</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem>? Items { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem> Items { get; set; }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.ShippingCustomsItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>The non_delivery_option property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption? NonDeliveryOption { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption? NonDeliveryOption { get => _explicitNullValueNonDeliveryOption; set { _explicitNullValueNonDeliveryOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_delivery_option"); else _explicitNullProperties?.Remove("non_delivery_option"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsNonDeliveryOption? _explicitNullValueNonDeliveryOption = default!;
         /// <summary>Importer EORI number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientEori { get; set; }
+        public string? RecipientEori { get => _explicitNullValueRecipientEori; set { _explicitNullValueRecipientEori = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_eori"); else _explicitNullProperties?.Remove("recipient_eori"); } }
+        private string? _explicitNullValueRecipientEori = default!;
 #nullable restore
 #else
-        public string RecipientEori { get; set; }
+        public string RecipientEori { get => _explicitNullValueRecipientEori; set { _explicitNullValueRecipientEori = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_eori"); else _explicitNullProperties?.Remove("recipient_eori"); } }
+        private string _explicitNullValueRecipientEori = default!;
 #endif
         /// <summary>Importer tax ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientTaxNumber { get; set; }
+        public string? RecipientTaxNumber { get => _explicitNullValueRecipientTaxNumber; set { _explicitNullValueRecipientTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_tax_number"); else _explicitNullProperties?.Remove("recipient_tax_number"); } }
+        private string? _explicitNullValueRecipientTaxNumber = default!;
 #nullable restore
 #else
-        public string RecipientTaxNumber { get; set; }
+        public string RecipientTaxNumber { get => _explicitNullValueRecipientTaxNumber; set { _explicitNullValueRecipientTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_tax_number"); else _explicitNullProperties?.Remove("recipient_tax_number"); } }
+        private string _explicitNullValueRecipientTaxNumber = default!;
 #endif
         /// <summary>Any restrictions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Restrictions { get; set; }
+        public List<string>? Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
+        private List<string>? _explicitNullValueRestrictions = default!;
 #nullable restore
 #else
-        public List<string> Restrictions { get; set; }
+        public List<string> Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
+        private List<string> _explicitNullValueRestrictions = default!;
 #endif
         /// <summary>Exporter EORI number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipperEori { get; set; }
+        public string? ShipperEori { get => _explicitNullValueShipperEori; set { _explicitNullValueShipperEori = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipper_eori"); else _explicitNullProperties?.Remove("shipper_eori"); } }
+        private string? _explicitNullValueShipperEori = default!;
 #nullable restore
 #else
-        public string ShipperEori { get; set; }
+        public string ShipperEori { get => _explicitNullValueShipperEori; set { _explicitNullValueShipperEori = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipper_eori"); else _explicitNullProperties?.Remove("shipper_eori"); } }
+        private string _explicitNullValueShipperEori = default!;
 #endif
         /// <summary>Exporter tax ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipperTaxNumber { get; set; }
+        public string? ShipperTaxNumber { get => _explicitNullValueShipperTaxNumber; set { _explicitNullValueShipperTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipper_tax_number"); else _explicitNullProperties?.Remove("shipper_tax_number"); } }
+        private string? _explicitNullValueShipperTaxNumber = default!;
 #nullable restore
 #else
-        public string ShipperTaxNumber { get; set; }
+        public string ShipperTaxNumber { get => _explicitNullValueShipperTaxNumber; set { _explicitNullValueShipperTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shipper_tax_number"); else _explicitNullProperties?.Remove("shipper_tax_number"); } }
+        private string _explicitNullValueShipperTaxNumber = default!;
 #endif
         /// <summary>The taxes_paid_by property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy? TaxesPaidBy { get; set; }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy? TaxesPaidBy { get => _explicitNullValueTaxesPaidBy; set { _explicitNullValueTaxesPaidBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxes_paid_by"); else _explicitNullProperties?.Remove("taxes_paid_by"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy? _explicitNullValueTaxesPaidBy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms"/> and sets the default values.
         /// </summary>
@@ -104,7 +145,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public static global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustoms(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -149,6 +190,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("shipper_eori", ShipperEori);
             writer.WriteStringValue("shipper_tax_number", ShipperTaxNumber);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyShippingShipmentCustomsTaxesPaidBy>("taxes_paid_by", TaxesPaidBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
