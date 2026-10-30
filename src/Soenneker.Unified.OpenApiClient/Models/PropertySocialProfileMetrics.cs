@@ -18,21 +18,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("follower_count") is { } nullNodeFollowerCount && nullNodeFollowerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowerCount = null;
-            if (parseNode.GetChildNode("following_count") is { } nullNodeFollowingCount && nullNodeFollowingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowingCount = null;
-            if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
+            if (parseNode.GetChildNode("follower_count") is null) { _explicitNullValueFollowerCount = default!; _explicitNullProperties?.Remove("follower_count"); }
+            else if (parseNode.GetChildNode("follower_count") is { } nullNodeFollowerCount && nullNodeFollowerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowerCount = null;
+            if (parseNode.GetChildNode("following_count") is null) { _explicitNullValueFollowingCount = default!; _explicitNullProperties?.Remove("following_count"); }
+            else if (parseNode.GetChildNode("following_count") is { } nullNodeFollowingCount && nullNodeFollowingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowingCount = null;
+            if (parseNode.GetChildNode("post_count") is null) { _explicitNullValuePostCount = default!; _explicitNullProperties?.Remove("post_count"); }
+            else if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of followers</summary>
-        public double? FollowerCount { get => _explicitNullValueFollowerCount; set { _explicitNullValueFollowerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follower_count"); else _explicitNullProperties?.Remove("follower_count"); } }
+        public double? FollowerCount { get => _explicitNullValueFollowerCount; set { _explicitNullValueFollowerCount = value; AdditionalData?.Remove("follower_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follower_count"); else _explicitNullProperties?.Remove("follower_count"); } }
         private double? _explicitNullValueFollowerCount = default!;
         /// <summary>Number of accounts this profile follows</summary>
-        public double? FollowingCount { get => _explicitNullValueFollowingCount; set { _explicitNullValueFollowingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following_count"); else _explicitNullProperties?.Remove("following_count"); } }
+        public double? FollowingCount { get => _explicitNullValueFollowingCount; set { _explicitNullValueFollowingCount = value; AdditionalData?.Remove("following_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following_count"); else _explicitNullProperties?.Remove("following_count"); } }
         private double? _explicitNullValueFollowingCount = default!;
         /// <summary>Total number of posts published by this profile</summary>
-        public double? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
+        public double? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; AdditionalData?.Remove("post_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
         private double? _explicitNullValuePostCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertySocialProfileMetrics"/> and sets the default values.

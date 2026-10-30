@@ -17,23 +17,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("milliseconds") is { } nullNodeMilliseconds && nullNodeMilliseconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Milliseconds = null;
-            if (parseNode.GetChildNode("valid_regions") is { } nullNodeValidRegions && nullNodeValidRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidRegions = null;
+            if (parseNode.GetChildNode("milliseconds") is null) { _explicitNullValueMilliseconds = default!; _explicitNullProperties?.Remove("milliseconds"); }
+            else if (parseNode.GetChildNode("milliseconds") is { } nullNodeMilliseconds && nullNodeMilliseconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Milliseconds = null;
+            if (parseNode.GetChildNode("valid_regions") is null) { _explicitNullValueValidRegions = default!; _explicitNullProperties?.Remove("valid_regions"); }
+            else if (parseNode.GetChildNode("valid_regions") is { } nullNodeValidRegions && nullNodeValidRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidRegions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The milliseconds property</summary>
-        public double? Milliseconds { get => _explicitNullValueMilliseconds; set { _explicitNullValueMilliseconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("milliseconds"); else _explicitNullProperties?.Remove("milliseconds"); } }
+        public double? Milliseconds { get => _explicitNullValueMilliseconds; set { _explicitNullValueMilliseconds = value; AdditionalData?.Remove("milliseconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("milliseconds"); else _explicitNullProperties?.Remove("milliseconds"); } }
         private double? _explicitNullValueMilliseconds = default!;
         /// <summary>{country}-{stateprovince/territory} or just {country} 2-digit ISO codes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ValidRegions { get => _explicitNullValueValidRegions; set { _explicitNullValueValidRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_regions"); else _explicitNullProperties?.Remove("valid_regions"); } }
+        public List<string>? ValidRegions { get => _explicitNullValueValidRegions; set { _explicitNullValueValidRegions = value; AdditionalData?.Remove("valid_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_regions"); else _explicitNullProperties?.Remove("valid_regions"); } }
         private List<string>? _explicitNullValueValidRegions = default!;
 #nullable restore
 #else
-        public List<string> ValidRegions { get => _explicitNullValueValidRegions; set { _explicitNullValueValidRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_regions"); else _explicitNullProperties?.Remove("valid_regions"); } }
+        public List<string> ValidRegions { get => _explicitNullValueValidRegions; set { _explicitNullValueValidRegions = value; AdditionalData?.Remove("valid_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_regions"); else _explicitNullProperties?.Remove("valid_regions"); } }
         private List<string> _explicitNullValueValidRegions = default!;
 #endif
         /// <summary>

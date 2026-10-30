@@ -17,39 +17,45 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("click_percentage") is { } nullNodeClickPercentage && nullNodeClickPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickPercentage = null;
-            if (parseNode.GetChildNode("last_click_at") is { } nullNodeLastClickAt && nullNodeLastClickAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastClickAt = null;
-            if (parseNode.GetChildNode("total_clicks") is { } nullNodeTotalClicks && nullNodeTotalClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalClicks = null;
-            if (parseNode.GetChildNode("unique_click_percentage") is { } nullNodeUniqueClickPercentage && nullNodeUniqueClickPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClickPercentage = null;
-            if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("click_percentage") is null) { _explicitNullValueClickPercentage = default!; _explicitNullProperties?.Remove("click_percentage"); }
+            else if (parseNode.GetChildNode("click_percentage") is { } nullNodeClickPercentage && nullNodeClickPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickPercentage = null;
+            if (parseNode.GetChildNode("last_click_at") is null) { _explicitNullValueLastClickAt = default!; _explicitNullProperties?.Remove("last_click_at"); }
+            else if (parseNode.GetChildNode("last_click_at") is { } nullNodeLastClickAt && nullNodeLastClickAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastClickAt = null;
+            if (parseNode.GetChildNode("total_clicks") is null) { _explicitNullValueTotalClicks = default!; _explicitNullProperties?.Remove("total_clicks"); }
+            else if (parseNode.GetChildNode("total_clicks") is { } nullNodeTotalClicks && nullNodeTotalClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalClicks = null;
+            if (parseNode.GetChildNode("unique_click_percentage") is null) { _explicitNullValueUniqueClickPercentage = default!; _explicitNullProperties?.Remove("unique_click_percentage"); }
+            else if (parseNode.GetChildNode("unique_click_percentage") is { } nullNodeUniqueClickPercentage && nullNodeUniqueClickPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClickPercentage = null;
+            if (parseNode.GetChildNode("unique_clicks") is null) { _explicitNullValueUniqueClicks = default!; _explicitNullProperties?.Remove("unique_clicks"); }
+            else if (parseNode.GetChildNode("unique_clicks") is { } nullNodeUniqueClicks && nullNodeUniqueClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueClicks = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Percentage of total clicks</summary>
-        public double? ClickPercentage { get => _explicitNullValueClickPercentage; set { _explicitNullValueClickPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_percentage"); else _explicitNullProperties?.Remove("click_percentage"); } }
+        public double? ClickPercentage { get => _explicitNullValueClickPercentage; set { _explicitNullValueClickPercentage = value; AdditionalData?.Remove("click_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click_percentage"); else _explicitNullProperties?.Remove("click_percentage"); } }
         private double? _explicitNullValueClickPercentage = default!;
         /// <summary>Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? LastClickAt { get => _explicitNullValueLastClickAt; set { _explicitNullValueLastClickAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_click_at"); else _explicitNullProperties?.Remove("last_click_at"); } }
+        public DateTimeOffset? LastClickAt { get => _explicitNullValueLastClickAt; set { _explicitNullValueLastClickAt = value; AdditionalData?.Remove("last_click_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_click_at"); else _explicitNullProperties?.Remove("last_click_at"); } }
         private DateTimeOffset? _explicitNullValueLastClickAt = default!;
         /// <summary>Total clicks on this link</summary>
-        public double? TotalClicks { get => _explicitNullValueTotalClicks; set { _explicitNullValueTotalClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_clicks"); else _explicitNullProperties?.Remove("total_clicks"); } }
+        public double? TotalClicks { get => _explicitNullValueTotalClicks; set { _explicitNullValueTotalClicks = value; AdditionalData?.Remove("total_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_clicks"); else _explicitNullProperties?.Remove("total_clicks"); } }
         private double? _explicitNullValueTotalClicks = default!;
         /// <summary>Percentage of unique clicks</summary>
-        public double? UniqueClickPercentage { get => _explicitNullValueUniqueClickPercentage; set { _explicitNullValueUniqueClickPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_click_percentage"); else _explicitNullProperties?.Remove("unique_click_percentage"); } }
+        public double? UniqueClickPercentage { get => _explicitNullValueUniqueClickPercentage; set { _explicitNullValueUniqueClickPercentage = value; AdditionalData?.Remove("unique_click_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_click_percentage"); else _explicitNullProperties?.Remove("unique_click_percentage"); } }
         private double? _explicitNullValueUniqueClickPercentage = default!;
         /// <summary>Unique clicks on this link</summary>
-        public double? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
+        public double? UniqueClicks { get => _explicitNullValueUniqueClicks; set { _explicitNullValueUniqueClicks = value; AdditionalData?.Remove("unique_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_clicks"); else _explicitNullProperties?.Remove("unique_clicks"); } }
         private double? _explicitNullValueUniqueClicks = default!;
         /// <summary>The URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

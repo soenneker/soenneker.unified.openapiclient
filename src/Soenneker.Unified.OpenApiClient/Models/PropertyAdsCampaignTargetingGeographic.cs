@@ -17,18 +17,30 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cities") is { } nullNodeCities && nullNodeCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cities = null;
-            if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
-            if (parseNode.GetChildNode("excluded_cities") is { } nullNodeExcludedCities && nullNodeExcludedCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCities = null;
-            if (parseNode.GetChildNode("excluded_countries") is { } nullNodeExcludedCountries && nullNodeExcludedCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCountries = null;
-            if (parseNode.GetChildNode("excluded_postal_codes") is { } nullNodeExcludedPostalCodes && nullNodeExcludedPostalCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedPostalCodes = null;
-            if (parseNode.GetChildNode("excluded_regions") is { } nullNodeExcludedRegions && nullNodeExcludedRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedRegions = null;
-            if (parseNode.GetChildNode("excluded_us_dmas") is { } nullNodeExcludedUsDmas && nullNodeExcludedUsDmas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedUsDmas = null;
-            if (parseNode.GetChildNode("location_types") is { } nullNodeLocationTypes && nullNodeLocationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationTypes = null;
-            if (parseNode.GetChildNode("postal_codes") is { } nullNodePostalCodes && nullNodePostalCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCodes = null;
-            if (parseNode.GetChildNode("presence_type") is { } nullNodePresenceType && nullNodePresenceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresenceType = null;
-            if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
-            if (parseNode.GetChildNode("us_dmas") is { } nullNodeUsDmas && nullNodeUsDmas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsDmas = null;
+            if (parseNode.GetChildNode("cities") is null) { _explicitNullValueCities = default!; _explicitNullProperties?.Remove("cities"); }
+            else if (parseNode.GetChildNode("cities") is { } nullNodeCities && nullNodeCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cities = null;
+            if (parseNode.GetChildNode("countries") is null) { _explicitNullValueCountries = default!; _explicitNullProperties?.Remove("countries"); }
+            else if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
+            if (parseNode.GetChildNode("excluded_cities") is null) { _explicitNullValueExcludedCities = default!; _explicitNullProperties?.Remove("excluded_cities"); }
+            else if (parseNode.GetChildNode("excluded_cities") is { } nullNodeExcludedCities && nullNodeExcludedCities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCities = null;
+            if (parseNode.GetChildNode("excluded_countries") is null) { _explicitNullValueExcludedCountries = default!; _explicitNullProperties?.Remove("excluded_countries"); }
+            else if (parseNode.GetChildNode("excluded_countries") is { } nullNodeExcludedCountries && nullNodeExcludedCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCountries = null;
+            if (parseNode.GetChildNode("excluded_postal_codes") is null) { _explicitNullValueExcludedPostalCodes = default!; _explicitNullProperties?.Remove("excluded_postal_codes"); }
+            else if (parseNode.GetChildNode("excluded_postal_codes") is { } nullNodeExcludedPostalCodes && nullNodeExcludedPostalCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedPostalCodes = null;
+            if (parseNode.GetChildNode("excluded_regions") is null) { _explicitNullValueExcludedRegions = default!; _explicitNullProperties?.Remove("excluded_regions"); }
+            else if (parseNode.GetChildNode("excluded_regions") is { } nullNodeExcludedRegions && nullNodeExcludedRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedRegions = null;
+            if (parseNode.GetChildNode("excluded_us_dmas") is null) { _explicitNullValueExcludedUsDmas = default!; _explicitNullProperties?.Remove("excluded_us_dmas"); }
+            else if (parseNode.GetChildNode("excluded_us_dmas") is { } nullNodeExcludedUsDmas && nullNodeExcludedUsDmas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedUsDmas = null;
+            if (parseNode.GetChildNode("location_types") is null) { _explicitNullValueLocationTypes = default!; _explicitNullProperties?.Remove("location_types"); }
+            else if (parseNode.GetChildNode("location_types") is { } nullNodeLocationTypes && nullNodeLocationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationTypes = null;
+            if (parseNode.GetChildNode("postal_codes") is null) { _explicitNullValuePostalCodes = default!; _explicitNullProperties?.Remove("postal_codes"); }
+            else if (parseNode.GetChildNode("postal_codes") is { } nullNodePostalCodes && nullNodePostalCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCodes = null;
+            if (parseNode.GetChildNode("presence_type") is null) { _explicitNullValuePresenceType = default!; _explicitNullProperties?.Remove("presence_type"); }
+            else if (parseNode.GetChildNode("presence_type") is { } nullNodePresenceType && nullNodePresenceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresenceType = null;
+            if (parseNode.GetChildNode("regions") is null) { _explicitNullValueRegions = default!; _explicitNullProperties?.Remove("regions"); }
+            else if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
+            if (parseNode.GetChildNode("us_dmas") is null) { _explicitNullValueUsDmas = default!; _explicitNullProperties?.Remove("us_dmas"); }
+            else if (parseNode.GetChildNode("us_dmas") is { } nullNodeUsDmas && nullNodeUsDmas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsDmas = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,114 +48,114 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The cities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? Cities { get => _explicitNullValueCities; set { _explicitNullValueCities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cities"); else _explicitNullProperties?.Remove("cities"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? Cities { get => _explicitNullValueCities; set { _explicitNullValueCities = value; AdditionalData?.Remove("cities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cities"); else _explicitNullProperties?.Remove("cities"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? _explicitNullValueCities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> Cities { get => _explicitNullValueCities; set { _explicitNullValueCities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cities"); else _explicitNullProperties?.Remove("cities"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> Cities { get => _explicitNullValueCities; set { _explicitNullValueCities = value; AdditionalData?.Remove("cities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cities"); else _explicitNullProperties?.Remove("cities"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> _explicitNullValueCities = default!;
 #endif
         /// <summary>The countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueCountries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueCountries = default!;
 #endif
         /// <summary>The excluded_cities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? ExcludedCities { get => _explicitNullValueExcludedCities; set { _explicitNullValueExcludedCities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_cities"); else _explicitNullProperties?.Remove("excluded_cities"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? ExcludedCities { get => _explicitNullValueExcludedCities; set { _explicitNullValueExcludedCities = value; AdditionalData?.Remove("excluded_cities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_cities"); else _explicitNullProperties?.Remove("excluded_cities"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>? _explicitNullValueExcludedCities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> ExcludedCities { get => _explicitNullValueExcludedCities; set { _explicitNullValueExcludedCities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_cities"); else _explicitNullProperties?.Remove("excluded_cities"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> ExcludedCities { get => _explicitNullValueExcludedCities; set { _explicitNullValueExcludedCities = value; AdditionalData?.Remove("excluded_cities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_cities"); else _explicitNullProperties?.Remove("excluded_cities"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.CityTarget> _explicitNullValueExcludedCities = default!;
 #endif
         /// <summary>The excluded_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedCountries { get => _explicitNullValueExcludedCountries; set { _explicitNullValueExcludedCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_countries"); else _explicitNullProperties?.Remove("excluded_countries"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedCountries { get => _explicitNullValueExcludedCountries; set { _explicitNullValueExcludedCountries = value; AdditionalData?.Remove("excluded_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_countries"); else _explicitNullProperties?.Remove("excluded_countries"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedCountries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedCountries { get => _explicitNullValueExcludedCountries; set { _explicitNullValueExcludedCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_countries"); else _explicitNullProperties?.Remove("excluded_countries"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedCountries { get => _explicitNullValueExcludedCountries; set { _explicitNullValueExcludedCountries = value; AdditionalData?.Remove("excluded_countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_countries"); else _explicitNullProperties?.Remove("excluded_countries"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedCountries = default!;
 #endif
         /// <summary>The excluded_postal_codes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedPostalCodes { get => _explicitNullValueExcludedPostalCodes; set { _explicitNullValueExcludedPostalCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_postal_codes"); else _explicitNullProperties?.Remove("excluded_postal_codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedPostalCodes { get => _explicitNullValueExcludedPostalCodes; set { _explicitNullValueExcludedPostalCodes = value; AdditionalData?.Remove("excluded_postal_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_postal_codes"); else _explicitNullProperties?.Remove("excluded_postal_codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedPostalCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedPostalCodes { get => _explicitNullValueExcludedPostalCodes; set { _explicitNullValueExcludedPostalCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_postal_codes"); else _explicitNullProperties?.Remove("excluded_postal_codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedPostalCodes { get => _explicitNullValueExcludedPostalCodes; set { _explicitNullValueExcludedPostalCodes = value; AdditionalData?.Remove("excluded_postal_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_postal_codes"); else _explicitNullProperties?.Remove("excluded_postal_codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedPostalCodes = default!;
 #endif
         /// <summary>The excluded_regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedRegions { get => _explicitNullValueExcludedRegions; set { _explicitNullValueExcludedRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_regions"); else _explicitNullProperties?.Remove("excluded_regions"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedRegions { get => _explicitNullValueExcludedRegions; set { _explicitNullValueExcludedRegions = value; AdditionalData?.Remove("excluded_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_regions"); else _explicitNullProperties?.Remove("excluded_regions"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedRegions { get => _explicitNullValueExcludedRegions; set { _explicitNullValueExcludedRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_regions"); else _explicitNullProperties?.Remove("excluded_regions"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedRegions { get => _explicitNullValueExcludedRegions; set { _explicitNullValueExcludedRegions = value; AdditionalData?.Remove("excluded_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_regions"); else _explicitNullProperties?.Remove("excluded_regions"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedRegions = default!;
 #endif
         /// <summary>The excluded_us_dmas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedUsDmas { get => _explicitNullValueExcludedUsDmas; set { _explicitNullValueExcludedUsDmas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_us_dmas"); else _explicitNullProperties?.Remove("excluded_us_dmas"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedUsDmas { get => _explicitNullValueExcludedUsDmas; set { _explicitNullValueExcludedUsDmas = value; AdditionalData?.Remove("excluded_us_dmas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_us_dmas"); else _explicitNullProperties?.Remove("excluded_us_dmas"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedUsDmas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedUsDmas { get => _explicitNullValueExcludedUsDmas; set { _explicitNullValueExcludedUsDmas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_us_dmas"); else _explicitNullProperties?.Remove("excluded_us_dmas"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedUsDmas { get => _explicitNullValueExcludedUsDmas; set { _explicitNullValueExcludedUsDmas = value; AdditionalData?.Remove("excluded_us_dmas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_us_dmas"); else _explicitNullProperties?.Remove("excluded_us_dmas"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedUsDmas = default!;
 #endif
         /// <summary>The location_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?>? LocationTypes { get => _explicitNullValueLocationTypes; set { _explicitNullValueLocationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_types"); else _explicitNullProperties?.Remove("location_types"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?>? LocationTypes { get => _explicitNullValueLocationTypes; set { _explicitNullValueLocationTypes = value; AdditionalData?.Remove("location_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_types"); else _explicitNullProperties?.Remove("location_types"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?>? _explicitNullValueLocationTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?> LocationTypes { get => _explicitNullValueLocationTypes; set { _explicitNullValueLocationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_types"); else _explicitNullProperties?.Remove("location_types"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?> LocationTypes { get => _explicitNullValueLocationTypes; set { _explicitNullValueLocationTypes = value; AdditionalData?.Remove("location_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_types"); else _explicitNullProperties?.Remove("location_types"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum?> _explicitNullValueLocationTypes = default!;
 #endif
         /// <summary>The postal_codes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? PostalCodes { get => _explicitNullValuePostalCodes; set { _explicitNullValuePostalCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_codes"); else _explicitNullProperties?.Remove("postal_codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? PostalCodes { get => _explicitNullValuePostalCodes; set { _explicitNullValuePostalCodes = value; AdditionalData?.Remove("postal_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_codes"); else _explicitNullProperties?.Remove("postal_codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValuePostalCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> PostalCodes { get => _explicitNullValuePostalCodes; set { _explicitNullValuePostalCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_codes"); else _explicitNullProperties?.Remove("postal_codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> PostalCodes { get => _explicitNullValuePostalCodes; set { _explicitNullValuePostalCodes = value; AdditionalData?.Remove("postal_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_codes"); else _explicitNullProperties?.Remove("postal_codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValuePostalCodes = default!;
 #endif
         /// <summary>The presence_type property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicPresenceType? PresenceType { get => _explicitNullValuePresenceType; set { _explicitNullValuePresenceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_type"); else _explicitNullProperties?.Remove("presence_type"); } }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicPresenceType? PresenceType { get => _explicitNullValuePresenceType; set { _explicitNullValuePresenceType = value; AdditionalData?.Remove("presence_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_type"); else _explicitNullProperties?.Remove("presence_type"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicPresenceType? _explicitNullValuePresenceType = default!;
         /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueRegions = default!;
 #endif
         /// <summary>The us_dmas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UsDmas { get => _explicitNullValueUsDmas; set { _explicitNullValueUsDmas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("us_dmas"); else _explicitNullProperties?.Remove("us_dmas"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? UsDmas { get => _explicitNullValueUsDmas; set { _explicitNullValueUsDmas = value; AdditionalData?.Remove("us_dmas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("us_dmas"); else _explicitNullProperties?.Remove("us_dmas"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueUsDmas = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UsDmas { get => _explicitNullValueUsDmas; set { _explicitNullValueUsDmas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("us_dmas"); else _explicitNullProperties?.Remove("us_dmas"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> UsDmas { get => _explicitNullValueUsDmas; set { _explicitNullValueUsDmas = value; AdditionalData?.Remove("us_dmas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("us_dmas"); else _explicitNullProperties?.Remove("us_dmas"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueUsDmas = default!;
 #endif
         /// <summary>
@@ -180,7 +192,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "excluded_us_dmas", n => { ExcludedUsDmas = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "location_types", n => { LocationTypes = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicLocationTypesItemEnum>()?.AsList(); } },
                 { "postal_codes", n => { PostalCodes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "presence_type", n => { PresenceType = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicPresenceType>(); } },
+                { "presence_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsCampaignTargetingGeographicPresenceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePresenceType = default; _explicitNullProperties?.Remove("presence_type"); AdditionalData["presence_type"] = unknown; } else { PresenceType = parsed; AdditionalData.Remove("presence_type"); } } },
                 { "regions", n => { Regions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "us_dmas", n => { UsDmas = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };

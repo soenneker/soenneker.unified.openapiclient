@@ -18,25 +18,29 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("age_max") is { } nullNodeAgeMax && nullNodeAgeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeMax = null;
-            if (parseNode.GetChildNode("age_min") is { } nullNodeAgeMin && nullNodeAgeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeMin = null;
-            if (parseNode.GetChildNode("female") is { } nullNodeFemale && nullNodeFemale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Female = null;
-            if (parseNode.GetChildNode("male") is { } nullNodeMale && nullNodeMale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Male = null;
+            if (parseNode.GetChildNode("age_max") is null) { _explicitNullValueAgeMax = default!; _explicitNullProperties?.Remove("age_max"); }
+            else if (parseNode.GetChildNode("age_max") is { } nullNodeAgeMax && nullNodeAgeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeMax = null;
+            if (parseNode.GetChildNode("age_min") is null) { _explicitNullValueAgeMin = default!; _explicitNullProperties?.Remove("age_min"); }
+            else if (parseNode.GetChildNode("age_min") is { } nullNodeAgeMin && nullNodeAgeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeMin = null;
+            if (parseNode.GetChildNode("female") is null) { _explicitNullValueFemale = default!; _explicitNullProperties?.Remove("female"); }
+            else if (parseNode.GetChildNode("female") is { } nullNodeFemale && nullNodeFemale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Female = null;
+            if (parseNode.GetChildNode("male") is null) { _explicitNullValueMale = default!; _explicitNullProperties?.Remove("male"); }
+            else if (parseNode.GetChildNode("male") is { } nullNodeMale && nullNodeMale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Male = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The age_max property</summary>
-        public double? AgeMax { get => _explicitNullValueAgeMax; set { _explicitNullValueAgeMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_max"); else _explicitNullProperties?.Remove("age_max"); } }
+        public double? AgeMax { get => _explicitNullValueAgeMax; set { _explicitNullValueAgeMax = value; AdditionalData?.Remove("age_max"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_max"); else _explicitNullProperties?.Remove("age_max"); } }
         private double? _explicitNullValueAgeMax = default!;
         /// <summary>The age_min property</summary>
-        public double? AgeMin { get => _explicitNullValueAgeMin; set { _explicitNullValueAgeMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_min"); else _explicitNullProperties?.Remove("age_min"); } }
+        public double? AgeMin { get => _explicitNullValueAgeMin; set { _explicitNullValueAgeMin = value; AdditionalData?.Remove("age_min"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_min"); else _explicitNullProperties?.Remove("age_min"); } }
         private double? _explicitNullValueAgeMin = default!;
         /// <summary>The female property</summary>
-        public bool? Female { get => _explicitNullValueFemale; set { _explicitNullValueFemale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("female"); else _explicitNullProperties?.Remove("female"); } }
+        public bool? Female { get => _explicitNullValueFemale; set { _explicitNullValueFemale = value; AdditionalData?.Remove("female"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("female"); else _explicitNullProperties?.Remove("female"); } }
         private bool? _explicitNullValueFemale = default!;
         /// <summary>The male property</summary>
-        public bool? Male { get => _explicitNullValueMale; set { _explicitNullValueMale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("male"); else _explicitNullProperties?.Remove("male"); } }
+        public bool? Male { get => _explicitNullValueMale; set { _explicitNullValueMale = value; AdditionalData?.Remove("male"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("male"); else _explicitNullProperties?.Remove("male"); } }
         private bool? _explicitNullValueMale = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsGroupTargetingDemographic"/> and sets the default values.

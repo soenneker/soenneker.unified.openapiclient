@@ -18,25 +18,29 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("advantage_audience") is { } nullNodeAdvantageAudience && nullNodeAdvantageAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvantageAudience = null;
-            if (parseNode.GetChildNode("advantage_placements") is { } nullNodeAdvantagePlacements && nullNodeAdvantagePlacements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvantagePlacements = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("targeting_optimization_expansion_all") is { } nullNodeTargetingOptimizationExpansionAll && nullNodeTargetingOptimizationExpansionAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingOptimizationExpansionAll = null;
+            if (parseNode.GetChildNode("advantage_audience") is null) { _explicitNullValueAdvantageAudience = default!; _explicitNullProperties?.Remove("advantage_audience"); }
+            else if (parseNode.GetChildNode("advantage_audience") is { } nullNodeAdvantageAudience && nullNodeAdvantageAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvantageAudience = null;
+            if (parseNode.GetChildNode("advantage_placements") is null) { _explicitNullValueAdvantagePlacements = default!; _explicitNullProperties?.Remove("advantage_placements"); }
+            else if (parseNode.GetChildNode("advantage_placements") is { } nullNodeAdvantagePlacements && nullNodeAdvantagePlacements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvantagePlacements = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("targeting_optimization_expansion_all") is null) { _explicitNullValueTargetingOptimizationExpansionAll = default!; _explicitNullProperties?.Remove("targeting_optimization_expansion_all"); }
+            else if (parseNode.GetChildNode("targeting_optimization_expansion_all") is { } nullNodeTargetingOptimizationExpansionAll && nullNodeTargetingOptimizationExpansionAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetingOptimizationExpansionAll = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The advantage_audience property</summary>
-        public bool? AdvantageAudience { get => _explicitNullValueAdvantageAudience; set { _explicitNullValueAdvantageAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advantage_audience"); else _explicitNullProperties?.Remove("advantage_audience"); } }
+        public bool? AdvantageAudience { get => _explicitNullValueAdvantageAudience; set { _explicitNullValueAdvantageAudience = value; AdditionalData?.Remove("advantage_audience"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advantage_audience"); else _explicitNullProperties?.Remove("advantage_audience"); } }
         private bool? _explicitNullValueAdvantageAudience = default!;
         /// <summary>The advantage_placements property</summary>
-        public bool? AdvantagePlacements { get => _explicitNullValueAdvantagePlacements; set { _explicitNullValueAdvantagePlacements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advantage_placements"); else _explicitNullProperties?.Remove("advantage_placements"); } }
+        public bool? AdvantagePlacements { get => _explicitNullValueAdvantagePlacements; set { _explicitNullValueAdvantagePlacements = value; AdditionalData?.Remove("advantage_placements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advantage_placements"); else _explicitNullProperties?.Remove("advantage_placements"); } }
         private bool? _explicitNullValueAdvantagePlacements = default!;
         /// <summary>Google: bid_only falsetrue</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimizationMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimizationMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimizationMode? _explicitNullValueMode = default!;
         /// <summary>The targeting_optimization_expansion_all property</summary>
-        public bool? TargetingOptimizationExpansionAll { get => _explicitNullValueTargetingOptimizationExpansionAll; set { _explicitNullValueTargetingOptimizationExpansionAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeting_optimization_expansion_all"); else _explicitNullProperties?.Remove("targeting_optimization_expansion_all"); } }
+        public bool? TargetingOptimizationExpansionAll { get => _explicitNullValueTargetingOptimizationExpansionAll; set { _explicitNullValueTargetingOptimizationExpansionAll = value; AdditionalData?.Remove("targeting_optimization_expansion_all"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targeting_optimization_expansion_all"); else _explicitNullProperties?.Remove("targeting_optimization_expansion_all"); } }
         private bool? _explicitNullValueTargetingOptimizationExpansionAll = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimization"/> and sets the default values.
@@ -65,7 +69,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "advantage_audience", n => { AdvantageAudience = n.GetBoolValue(); } },
                 { "advantage_placements", n => { AdvantagePlacements = n.GetBoolValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimizationMode>(); } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimizationMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "targeting_optimization_expansion_all", n => { TargetingOptimizationExpansionAll = n.GetBoolValue(); } },
             };
         }

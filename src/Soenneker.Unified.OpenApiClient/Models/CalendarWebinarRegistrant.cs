@@ -17,11 +17,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("registered_at") is { } nullNodeRegisteredAt && nullNodeRegisteredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredAt = null;
-            if (parseNode.GetChildNode("registration_reference") is { } nullNodeRegistrationReference && nullNodeRegistrationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationReference = null;
-            if (parseNode.GetChildNode("registration_status") is { } nullNodeRegistrationStatus && nullNodeRegistrationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationStatus = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("registered_at") is null) { _explicitNullValueRegisteredAt = default!; _explicitNullProperties?.Remove("registered_at"); }
+            else if (parseNode.GetChildNode("registered_at") is { } nullNodeRegisteredAt && nullNodeRegisteredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredAt = null;
+            if (parseNode.GetChildNode("registration_reference") is null) { _explicitNullValueRegistrationReference = default!; _explicitNullProperties?.Remove("registration_reference"); }
+            else if (parseNode.GetChildNode("registration_reference") is { } nullNodeRegistrationReference && nullNodeRegistrationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationReference = null;
+            if (parseNode.GetChildNode("registration_status") is null) { _explicitNullValueRegistrationStatus = default!; _explicitNullProperties?.Remove("registration_status"); }
+            else if (parseNode.GetChildNode("registration_status") is { } nullNodeRegistrationStatus && nullNodeRegistrationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? RegisteredAt { get => _explicitNullValueRegisteredAt; set { _explicitNullValueRegisteredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registered_at"); else _explicitNullProperties?.Remove("registered_at"); } }
+        public DateTimeOffset? RegisteredAt { get => _explicitNullValueRegisteredAt; set { _explicitNullValueRegisteredAt = value; AdditionalData?.Remove("registered_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registered_at"); else _explicitNullProperties?.Remove("registered_at"); } }
         private DateTimeOffset? _explicitNullValueRegisteredAt = default!;
         /// <summary>The registration_reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationReference { get => _explicitNullValueRegistrationReference; set { _explicitNullValueRegistrationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_reference"); else _explicitNullProperties?.Remove("registration_reference"); } }
+        public string? RegistrationReference { get => _explicitNullValueRegistrationReference; set { _explicitNullValueRegistrationReference = value; AdditionalData?.Remove("registration_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_reference"); else _explicitNullProperties?.Remove("registration_reference"); } }
         private string? _explicitNullValueRegistrationReference = default!;
 #nullable restore
 #else
-        public string RegistrationReference { get => _explicitNullValueRegistrationReference; set { _explicitNullValueRegistrationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_reference"); else _explicitNullProperties?.Remove("registration_reference"); } }
+        public string RegistrationReference { get => _explicitNullValueRegistrationReference; set { _explicitNullValueRegistrationReference = value; AdditionalData?.Remove("registration_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_reference"); else _explicitNullProperties?.Remove("registration_reference"); } }
         private string _explicitNullValueRegistrationReference = default!;
 #endif
         /// <summary>The registration_status property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus? RegistrationStatus { get => _explicitNullValueRegistrationStatus; set { _explicitNullValueRegistrationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_status"); else _explicitNullProperties?.Remove("registration_status"); } }
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus? RegistrationStatus { get => _explicitNullValueRegistrationStatus; set { _explicitNullValueRegistrationStatus = value; AdditionalData?.Remove("registration_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_status"); else _explicitNullProperties?.Remove("registration_status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus? _explicitNullValueRegistrationStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrant"/> and sets the default values.
@@ -91,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "registered_at", n => { RegisteredAt = n.GetDateTimeOffsetValue(); } },
                 { "registration_reference", n => { RegistrationReference = n.GetStringValue(); } },
-                { "registration_status", n => { RegistrationStatus = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus>(); } },
+                { "registration_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarWebinarRegistrantRegistrationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegistrationStatus = default; _explicitNullProperties?.Remove("registration_status"); AdditionalData["registration_status"] = unknown; } else { RegistrationStatus = parsed; AdditionalData.Remove("registration_status"); } } },
             };
         }
         /// <summary>

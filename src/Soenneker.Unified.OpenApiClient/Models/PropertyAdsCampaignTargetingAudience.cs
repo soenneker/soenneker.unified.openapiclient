@@ -17,14 +17,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("behaviors") is { } nullNodeBehaviors && nullNodeBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behaviors = null;
-            if (parseNode.GetChildNode("combination_spec") is { } nullNodeCombinationSpec && nullNodeCombinationSpec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CombinationSpec = null;
-            if (parseNode.GetChildNode("custom_audiences") is { } nullNodeCustomAudiences && nullNodeCustomAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAudiences = null;
-            if (parseNode.GetChildNode("excluded_behaviors") is { } nullNodeExcludedBehaviors && nullNodeExcludedBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedBehaviors = null;
-            if (parseNode.GetChildNode("excluded_custom_audiences") is { } nullNodeExcludedCustomAudiences && nullNodeExcludedCustomAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCustomAudiences = null;
-            if (parseNode.GetChildNode("excluded_interests") is { } nullNodeExcludedInterests && nullNodeExcludedInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedInterests = null;
-            if (parseNode.GetChildNode("interests") is { } nullNodeInterests && nullNodeInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interests = null;
-            if (parseNode.GetChildNode("lookalike_audiences") is { } nullNodeLookalikeAudiences && nullNodeLookalikeAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookalikeAudiences = null;
+            if (parseNode.GetChildNode("behaviors") is null) { _explicitNullValueBehaviors = default!; _explicitNullProperties?.Remove("behaviors"); }
+            else if (parseNode.GetChildNode("behaviors") is { } nullNodeBehaviors && nullNodeBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behaviors = null;
+            if (parseNode.GetChildNode("combination_spec") is null) { _explicitNullValueCombinationSpec = default!; _explicitNullProperties?.Remove("combination_spec"); }
+            else if (parseNode.GetChildNode("combination_spec") is { } nullNodeCombinationSpec && nullNodeCombinationSpec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CombinationSpec = null;
+            if (parseNode.GetChildNode("custom_audiences") is null) { _explicitNullValueCustomAudiences = default!; _explicitNullProperties?.Remove("custom_audiences"); }
+            else if (parseNode.GetChildNode("custom_audiences") is { } nullNodeCustomAudiences && nullNodeCustomAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAudiences = null;
+            if (parseNode.GetChildNode("excluded_behaviors") is null) { _explicitNullValueExcludedBehaviors = default!; _explicitNullProperties?.Remove("excluded_behaviors"); }
+            else if (parseNode.GetChildNode("excluded_behaviors") is { } nullNodeExcludedBehaviors && nullNodeExcludedBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedBehaviors = null;
+            if (parseNode.GetChildNode("excluded_custom_audiences") is null) { _explicitNullValueExcludedCustomAudiences = default!; _explicitNullProperties?.Remove("excluded_custom_audiences"); }
+            else if (parseNode.GetChildNode("excluded_custom_audiences") is { } nullNodeExcludedCustomAudiences && nullNodeExcludedCustomAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCustomAudiences = null;
+            if (parseNode.GetChildNode("excluded_interests") is null) { _explicitNullValueExcludedInterests = default!; _explicitNullProperties?.Remove("excluded_interests"); }
+            else if (parseNode.GetChildNode("excluded_interests") is { } nullNodeExcludedInterests && nullNodeExcludedInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedInterests = null;
+            if (parseNode.GetChildNode("interests") is null) { _explicitNullValueInterests = default!; _explicitNullProperties?.Remove("interests"); }
+            else if (parseNode.GetChildNode("interests") is { } nullNodeInterests && nullNodeInterests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interests = null;
+            if (parseNode.GetChildNode("lookalike_audiences") is null) { _explicitNullValueLookalikeAudiences = default!; _explicitNullProperties?.Remove("lookalike_audiences"); }
+            else if (parseNode.GetChildNode("lookalike_audiences") is { } nullNodeLookalikeAudiences && nullNodeLookalikeAudiences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookalikeAudiences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,81 +40,81 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; AdditionalData?.Remove("behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueBehaviors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; AdditionalData?.Remove("behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueBehaviors = default!;
 #endif
         /// <summary>The combination_spec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination>? CombinationSpec { get => _explicitNullValueCombinationSpec; set { _explicitNullValueCombinationSpec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combination_spec"); else _explicitNullProperties?.Remove("combination_spec"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination>? CombinationSpec { get => _explicitNullValueCombinationSpec; set { _explicitNullValueCombinationSpec = value; AdditionalData?.Remove("combination_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combination_spec"); else _explicitNullProperties?.Remove("combination_spec"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination>? _explicitNullValueCombinationSpec = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination> CombinationSpec { get => _explicitNullValueCombinationSpec; set { _explicitNullValueCombinationSpec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combination_spec"); else _explicitNullProperties?.Remove("combination_spec"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination> CombinationSpec { get => _explicitNullValueCombinationSpec; set { _explicitNullValueCombinationSpec = value; AdditionalData?.Remove("combination_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combination_spec"); else _explicitNullProperties?.Remove("combination_spec"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.AudienceCombination> _explicitNullValueCombinationSpec = default!;
 #endif
         /// <summary>The custom_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? CustomAudiences { get => _explicitNullValueCustomAudiences; set { _explicitNullValueCustomAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audiences"); else _explicitNullProperties?.Remove("custom_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? CustomAudiences { get => _explicitNullValueCustomAudiences; set { _explicitNullValueCustomAudiences = value; AdditionalData?.Remove("custom_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audiences"); else _explicitNullProperties?.Remove("custom_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueCustomAudiences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> CustomAudiences { get => _explicitNullValueCustomAudiences; set { _explicitNullValueCustomAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audiences"); else _explicitNullProperties?.Remove("custom_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> CustomAudiences { get => _explicitNullValueCustomAudiences; set { _explicitNullValueCustomAudiences = value; AdditionalData?.Remove("custom_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_audiences"); else _explicitNullProperties?.Remove("custom_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueCustomAudiences = default!;
 #endif
         /// <summary>The excluded_behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedBehaviors { get => _explicitNullValueExcludedBehaviors; set { _explicitNullValueExcludedBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_behaviors"); else _explicitNullProperties?.Remove("excluded_behaviors"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedBehaviors { get => _explicitNullValueExcludedBehaviors; set { _explicitNullValueExcludedBehaviors = value; AdditionalData?.Remove("excluded_behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_behaviors"); else _explicitNullProperties?.Remove("excluded_behaviors"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedBehaviors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedBehaviors { get => _explicitNullValueExcludedBehaviors; set { _explicitNullValueExcludedBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_behaviors"); else _explicitNullProperties?.Remove("excluded_behaviors"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedBehaviors { get => _explicitNullValueExcludedBehaviors; set { _explicitNullValueExcludedBehaviors = value; AdditionalData?.Remove("excluded_behaviors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_behaviors"); else _explicitNullProperties?.Remove("excluded_behaviors"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedBehaviors = default!;
 #endif
         /// <summary>The excluded_custom_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedCustomAudiences { get => _explicitNullValueExcludedCustomAudiences; set { _explicitNullValueExcludedCustomAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audiences"); else _explicitNullProperties?.Remove("excluded_custom_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedCustomAudiences { get => _explicitNullValueExcludedCustomAudiences; set { _explicitNullValueExcludedCustomAudiences = value; AdditionalData?.Remove("excluded_custom_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audiences"); else _explicitNullProperties?.Remove("excluded_custom_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedCustomAudiences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedCustomAudiences { get => _explicitNullValueExcludedCustomAudiences; set { _explicitNullValueExcludedCustomAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audiences"); else _explicitNullProperties?.Remove("excluded_custom_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedCustomAudiences { get => _explicitNullValueExcludedCustomAudiences; set { _explicitNullValueExcludedCustomAudiences = value; AdditionalData?.Remove("excluded_custom_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_custom_audiences"); else _explicitNullProperties?.Remove("excluded_custom_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedCustomAudiences = default!;
 #endif
         /// <summary>The excluded_interests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; AdditionalData?.Remove("excluded_interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueExcludedInterests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> ExcludedInterests { get => _explicitNullValueExcludedInterests; set { _explicitNullValueExcludedInterests = value; AdditionalData?.Remove("excluded_interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_interests"); else _explicitNullProperties?.Remove("excluded_interests"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueExcludedInterests = default!;
 #endif
         /// <summary>The interests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; AdditionalData?.Remove("interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>? _explicitNullValueInterests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> Interests { get => _explicitNullValueInterests; set { _explicitNullValueInterests = value; AdditionalData?.Remove("interests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interests"); else _explicitNullProperties?.Remove("interests"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.TargetRef> _explicitNullValueInterests = default!;
 #endif
         /// <summary>The lookalike_audiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience>? LookalikeAudiences { get => _explicitNullValueLookalikeAudiences; set { _explicitNullValueLookalikeAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_audiences"); else _explicitNullProperties?.Remove("lookalike_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience>? LookalikeAudiences { get => _explicitNullValueLookalikeAudiences; set { _explicitNullValueLookalikeAudiences = value; AdditionalData?.Remove("lookalike_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_audiences"); else _explicitNullProperties?.Remove("lookalike_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience>? _explicitNullValueLookalikeAudiences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience> LookalikeAudiences { get => _explicitNullValueLookalikeAudiences; set { _explicitNullValueLookalikeAudiences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_audiences"); else _explicitNullProperties?.Remove("lookalike_audiences"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience> LookalikeAudiences { get => _explicitNullValueLookalikeAudiences; set { _explicitNullValueLookalikeAudiences = value; AdditionalData?.Remove("lookalike_audiences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookalike_audiences"); else _explicitNullProperties?.Remove("lookalike_audiences"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.LookalikeAudience> _explicitNullValueLookalikeAudiences = default!;
 #endif
         /// <summary>

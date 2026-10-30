@@ -17,29 +17,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_unlimited") is { } nullNodeIsUnlimited && nullNodeIsUnlimited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUnlimited = null;
-            if (parseNode.GetChildNode("max_impressions") is { } nullNodeMaxImpressions && nullNodeMaxImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxImpressions = null;
-            if (parseNode.GetChildNode("max_views") is { } nullNodeMaxViews && nullNodeMaxViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxViews = null;
-            if (parseNode.GetChildNode("time_unit") is { } nullNodeTimeUnit && nullNodeTimeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnit = null;
-            if (parseNode.GetChildNode("time_unit_count") is { } nullNodeTimeUnitCount && nullNodeTimeUnitCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnitCount = null;
+            if (parseNode.GetChildNode("is_unlimited") is null) { _explicitNullValueIsUnlimited = default!; _explicitNullProperties?.Remove("is_unlimited"); }
+            else if (parseNode.GetChildNode("is_unlimited") is { } nullNodeIsUnlimited && nullNodeIsUnlimited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUnlimited = null;
+            if (parseNode.GetChildNode("max_impressions") is null) { _explicitNullValueMaxImpressions = default!; _explicitNullProperties?.Remove("max_impressions"); }
+            else if (parseNode.GetChildNode("max_impressions") is { } nullNodeMaxImpressions && nullNodeMaxImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxImpressions = null;
+            if (parseNode.GetChildNode("max_views") is null) { _explicitNullValueMaxViews = default!; _explicitNullProperties?.Remove("max_views"); }
+            else if (parseNode.GetChildNode("max_views") is { } nullNodeMaxViews && nullNodeMaxViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxViews = null;
+            if (parseNode.GetChildNode("time_unit") is null) { _explicitNullValueTimeUnit = default!; _explicitNullProperties?.Remove("time_unit"); }
+            else if (parseNode.GetChildNode("time_unit") is { } nullNodeTimeUnit && nullNodeTimeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnit = null;
+            if (parseNode.GetChildNode("time_unit_count") is null) { _explicitNullValueTimeUnitCount = default!; _explicitNullProperties?.Remove("time_unit_count"); }
+            else if (parseNode.GetChildNode("time_unit_count") is { } nullNodeTimeUnitCount && nullNodeTimeUnitCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeUnitCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_unlimited property</summary>
-        public bool? IsUnlimited { get => _explicitNullValueIsUnlimited; set { _explicitNullValueIsUnlimited = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_unlimited"); else _explicitNullProperties?.Remove("is_unlimited"); } }
+        public bool? IsUnlimited { get => _explicitNullValueIsUnlimited; set { _explicitNullValueIsUnlimited = value; AdditionalData?.Remove("is_unlimited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_unlimited"); else _explicitNullProperties?.Remove("is_unlimited"); } }
         private bool? _explicitNullValueIsUnlimited = default!;
         /// <summary>The max_impressions property</summary>
-        public double? MaxImpressions { get => _explicitNullValueMaxImpressions; set { _explicitNullValueMaxImpressions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_impressions"); else _explicitNullProperties?.Remove("max_impressions"); } }
+        public double? MaxImpressions { get => _explicitNullValueMaxImpressions; set { _explicitNullValueMaxImpressions = value; AdditionalData?.Remove("max_impressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_impressions"); else _explicitNullProperties?.Remove("max_impressions"); } }
         private double? _explicitNullValueMaxImpressions = default!;
         /// <summary>The max_views property</summary>
-        public double? MaxViews { get => _explicitNullValueMaxViews; set { _explicitNullValueMaxViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_views"); else _explicitNullProperties?.Remove("max_views"); } }
+        public double? MaxViews { get => _explicitNullValueMaxViews; set { _explicitNullValueMaxViews = value; AdditionalData?.Remove("max_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_views"); else _explicitNullProperties?.Remove("max_views"); } }
         private double? _explicitNullValueMaxViews = default!;
         /// <summary>The time_unit property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit? TimeUnit { get => _explicitNullValueTimeUnit; set { _explicitNullValueTimeUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit"); else _explicitNullProperties?.Remove("time_unit"); } }
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit? TimeUnit { get => _explicitNullValueTimeUnit; set { _explicitNullValueTimeUnit = value; AdditionalData?.Remove("time_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit"); else _explicitNullProperties?.Remove("time_unit"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit? _explicitNullValueTimeUnit = default!;
         /// <summary>The time_unit_count property</summary>
-        public double? TimeUnitCount { get => _explicitNullValueTimeUnitCount; set { _explicitNullValueTimeUnitCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit_count"); else _explicitNullProperties?.Remove("time_unit_count"); } }
+        public double? TimeUnitCount { get => _explicitNullValueTimeUnitCount; set { _explicitNullValueTimeUnitCount = value; AdditionalData?.Remove("time_unit_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_unit_count"); else _explicitNullProperties?.Remove("time_unit_count"); } }
         private double? _explicitNullValueTimeUnitCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCap"/> and sets the default values.
@@ -69,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_unlimited", n => { IsUnlimited = n.GetBoolValue(); } },
                 { "max_impressions", n => { MaxImpressions = n.GetDoubleValue(); } },
                 { "max_views", n => { MaxViews = n.GetDoubleValue(); } },
-                { "time_unit", n => { TimeUnit = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit>(); } },
+                { "time_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTimeUnit = default; _explicitNullProperties?.Remove("time_unit"); AdditionalData["time_unit"] = unknown; } else { TimeUnit = parsed; AdditionalData.Remove("time_unit"); } } },
                 { "time_unit_count", n => { TimeUnitCount = n.GetDoubleValue(); } },
             };
         }

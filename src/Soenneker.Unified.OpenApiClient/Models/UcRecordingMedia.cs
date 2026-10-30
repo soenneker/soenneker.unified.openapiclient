@@ -17,60 +17,66 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("end_at") is { } nullNodeEndAt && nullNodeEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAt = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("recording_download_url") is { } nullNodeRecordingDownloadUrl && nullNodeRecordingDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingDownloadUrl = null;
-            if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
-            if (parseNode.GetChildNode("transcript_download_url") is { } nullNodeTranscriptDownloadUrl && nullNodeTranscriptDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptDownloadUrl = null;
-            if (parseNode.GetChildNode("transcripts") is { } nullNodeTranscripts && nullNodeTranscripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcripts = null;
+            if (parseNode.GetChildNode("end_at") is null) { _explicitNullValueEndAt = default!; _explicitNullProperties?.Remove("end_at"); }
+            else if (parseNode.GetChildNode("end_at") is { } nullNodeEndAt && nullNodeEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAt = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("recording_download_url") is null) { _explicitNullValueRecordingDownloadUrl = default!; _explicitNullProperties?.Remove("recording_download_url"); }
+            else if (parseNode.GetChildNode("recording_download_url") is { } nullNodeRecordingDownloadUrl && nullNodeRecordingDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingDownloadUrl = null;
+            if (parseNode.GetChildNode("start_at") is null) { _explicitNullValueStartAt = default!; _explicitNullProperties?.Remove("start_at"); }
+            else if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
+            if (parseNode.GetChildNode("transcript_download_url") is null) { _explicitNullValueTranscriptDownloadUrl = default!; _explicitNullProperties?.Remove("transcript_download_url"); }
+            else if (parseNode.GetChildNode("transcript_download_url") is { } nullNodeTranscriptDownloadUrl && nullNodeTranscriptDownloadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptDownloadUrl = null;
+            if (parseNode.GetChildNode("transcripts") is null) { _explicitNullValueTranscripts = default!; _explicitNullProperties?.Remove("transcripts"); }
+            else if (parseNode.GetChildNode("transcripts") is { } nullNodeTranscripts && nullNodeTranscripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcripts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? EndAt { get => _explicitNullValueEndAt; set { _explicitNullValueEndAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_at"); else _explicitNullProperties?.Remove("end_at"); } }
+        public DateTimeOffset? EndAt { get => _explicitNullValueEndAt; set { _explicitNullValueEndAt = value; AdditionalData?.Remove("end_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_at"); else _explicitNullProperties?.Remove("end_at"); } }
         private DateTimeOffset? _explicitNullValueEndAt = default!;
         /// <summary>two digit ISO code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The recording_download_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordingDownloadUrl { get => _explicitNullValueRecordingDownloadUrl; set { _explicitNullValueRecordingDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_download_url"); else _explicitNullProperties?.Remove("recording_download_url"); } }
+        public string? RecordingDownloadUrl { get => _explicitNullValueRecordingDownloadUrl; set { _explicitNullValueRecordingDownloadUrl = value; AdditionalData?.Remove("recording_download_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_download_url"); else _explicitNullProperties?.Remove("recording_download_url"); } }
         private string? _explicitNullValueRecordingDownloadUrl = default!;
 #nullable restore
 #else
-        public string RecordingDownloadUrl { get => _explicitNullValueRecordingDownloadUrl; set { _explicitNullValueRecordingDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_download_url"); else _explicitNullProperties?.Remove("recording_download_url"); } }
+        public string RecordingDownloadUrl { get => _explicitNullValueRecordingDownloadUrl; set { _explicitNullValueRecordingDownloadUrl = value; AdditionalData?.Remove("recording_download_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_download_url"); else _explicitNullProperties?.Remove("recording_download_url"); } }
         private string _explicitNullValueRecordingDownloadUrl = default!;
 #endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
-        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
+        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; AdditionalData?.Remove("start_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
         private DateTimeOffset? _explicitNullValueStartAt = default!;
         /// <summary>The transcript_download_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TranscriptDownloadUrl { get => _explicitNullValueTranscriptDownloadUrl; set { _explicitNullValueTranscriptDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_download_url"); else _explicitNullProperties?.Remove("transcript_download_url"); } }
+        public string? TranscriptDownloadUrl { get => _explicitNullValueTranscriptDownloadUrl; set { _explicitNullValueTranscriptDownloadUrl = value; AdditionalData?.Remove("transcript_download_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_download_url"); else _explicitNullProperties?.Remove("transcript_download_url"); } }
         private string? _explicitNullValueTranscriptDownloadUrl = default!;
 #nullable restore
 #else
-        public string TranscriptDownloadUrl { get => _explicitNullValueTranscriptDownloadUrl; set { _explicitNullValueTranscriptDownloadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_download_url"); else _explicitNullProperties?.Remove("transcript_download_url"); } }
+        public string TranscriptDownloadUrl { get => _explicitNullValueTranscriptDownloadUrl; set { _explicitNullValueTranscriptDownloadUrl = value; AdditionalData?.Remove("transcript_download_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_download_url"); else _explicitNullProperties?.Remove("transcript_download_url"); } }
         private string _explicitNullValueTranscriptDownloadUrl = default!;
 #endif
         /// <summary>The transcripts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript>? Transcripts { get => _explicitNullValueTranscripts; set { _explicitNullValueTranscripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcripts"); else _explicitNullProperties?.Remove("transcripts"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript>? Transcripts { get => _explicitNullValueTranscripts; set { _explicitNullValueTranscripts = value; AdditionalData?.Remove("transcripts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcripts"); else _explicitNullProperties?.Remove("transcripts"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript>? _explicitNullValueTranscripts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript> Transcripts { get => _explicitNullValueTranscripts; set { _explicitNullValueTranscripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcripts"); else _explicitNullProperties?.Remove("transcripts"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript> Transcripts { get => _explicitNullValueTranscripts; set { _explicitNullValueTranscripts = value; AdditionalData?.Remove("transcripts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcripts"); else _explicitNullProperties?.Remove("transcripts"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.UcRecordingTranscript> _explicitNullValueTranscripts = default!;
 #endif
         /// <summary>

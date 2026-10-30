@@ -17,12 +17,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("codes") is { } nullNodeCodes && nullNodeCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Codes = null;
-            if (parseNode.GetChildNode("interpretation") is { } nullNodeInterpretation && nullNodeInterpretation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interpretation = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("value_number") is { } nullNodeValueNumber && nullNodeValueNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueNumber = null;
-            if (parseNode.GetChildNode("value_text") is { } nullNodeValueText && nullNodeValueText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueText = null;
-            if (parseNode.GetChildNode("value_unit") is { } nullNodeValueUnit && nullNodeValueUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueUnit = null;
+            if (parseNode.GetChildNode("codes") is null) { _explicitNullValueCodes = default!; _explicitNullProperties?.Remove("codes"); }
+            else if (parseNode.GetChildNode("codes") is { } nullNodeCodes && nullNodeCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Codes = null;
+            if (parseNode.GetChildNode("interpretation") is null) { _explicitNullValueInterpretation = default!; _explicitNullProperties?.Remove("interpretation"); }
+            else if (parseNode.GetChildNode("interpretation") is { } nullNodeInterpretation && nullNodeInterpretation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interpretation = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("value_number") is null) { _explicitNullValueValueNumber = default!; _explicitNullProperties?.Remove("value_number"); }
+            else if (parseNode.GetChildNode("value_number") is { } nullNodeValueNumber && nullNodeValueNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueNumber = null;
+            if (parseNode.GetChildNode("value_text") is null) { _explicitNullValueValueText = default!; _explicitNullProperties?.Remove("value_text"); }
+            else if (parseNode.GetChildNode("value_text") is { } nullNodeValueText && nullNodeValueText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueText = null;
+            if (parseNode.GetChildNode("value_unit") is null) { _explicitNullValueValueUnit = default!; _explicitNullProperties?.Remove("value_unit"); }
+            else if (parseNode.GetChildNode("value_unit") is { } nullNodeValueUnit && nullNodeValueUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueUnit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,47 +36,47 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Codings for the component (e.g. LOINC)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Codes { get => _explicitNullValueCodes; set { _explicitNullValueCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codes"); else _explicitNullProperties?.Remove("codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? Codes { get => _explicitNullValueCodes; set { _explicitNullValueCodes = value; AdditionalData?.Remove("codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codes"); else _explicitNullProperties?.Remove("codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>? _explicitNullValueCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Codes { get => _explicitNullValueCodes; set { _explicitNullValueCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codes"); else _explicitNullProperties?.Remove("codes"); } }
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> Codes { get => _explicitNullValueCodes; set { _explicitNullValueCodes = value; AdditionalData?.Remove("codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codes"); else _explicitNullProperties?.Remove("codes"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode> _explicitNullValueCodes = default!;
 #endif
         /// <summary>Interpretation of the component value</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation? Interpretation { get => _explicitNullValueInterpretation; set { _explicitNullValueInterpretation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interpretation"); else _explicitNullProperties?.Remove("interpretation"); } }
+        public global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation? Interpretation { get => _explicitNullValueInterpretation; set { _explicitNullValueInterpretation = value; AdditionalData?.Remove("interpretation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interpretation"); else _explicitNullProperties?.Remove("interpretation"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation? _explicitNullValueInterpretation = default!;
         /// <summary>Human-readable name of the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Numeric component value</summary>
-        public double? ValueNumber { get => _explicitNullValueValueNumber; set { _explicitNullValueValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_number"); else _explicitNullProperties?.Remove("value_number"); } }
+        public double? ValueNumber { get => _explicitNullValueValueNumber; set { _explicitNullValueValueNumber = value; AdditionalData?.Remove("value_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_number"); else _explicitNullProperties?.Remove("value_number"); } }
         private double? _explicitNullValueValueNumber = default!;
         /// <summary>Text or coded component value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueText { get => _explicitNullValueValueText; set { _explicitNullValueValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_text"); else _explicitNullProperties?.Remove("value_text"); } }
+        public string? ValueText { get => _explicitNullValueValueText; set { _explicitNullValueValueText = value; AdditionalData?.Remove("value_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_text"); else _explicitNullProperties?.Remove("value_text"); } }
         private string? _explicitNullValueValueText = default!;
 #nullable restore
 #else
-        public string ValueText { get => _explicitNullValueValueText; set { _explicitNullValueValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_text"); else _explicitNullProperties?.Remove("value_text"); } }
+        public string ValueText { get => _explicitNullValueValueText; set { _explicitNullValueValueText = value; AdditionalData?.Remove("value_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_text"); else _explicitNullProperties?.Remove("value_text"); } }
         private string _explicitNullValueValueText = default!;
 #endif
         /// <summary>Unit of the numeric component value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_unit"); else _explicitNullProperties?.Remove("value_unit"); } }
+        public string? ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; AdditionalData?.Remove("value_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_unit"); else _explicitNullProperties?.Remove("value_unit"); } }
         private string? _explicitNullValueValueUnit = default!;
 #nullable restore
 #else
-        public string ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_unit"); else _explicitNullProperties?.Remove("value_unit"); } }
+        public string ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; AdditionalData?.Remove("value_unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_unit"); else _explicitNullProperties?.Remove("value_unit"); } }
         private string _explicitNullValueValueUnit = default!;
 #endif
         /// <summary>
@@ -99,7 +105,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "codes", n => { Codes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "interpretation", n => { Interpretation = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation>(); } },
+                { "interpretation", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInterpretation = default; _explicitNullProperties?.Remove("interpretation"); AdditionalData["interpretation"] = unknown; } else { Interpretation = parsed; AdditionalData.Remove("interpretation"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "value_number", n => { ValueNumber = n.GetDoubleValue(); } },
                 { "value_text", n => { ValueText = n.GetStringValue(); } },
