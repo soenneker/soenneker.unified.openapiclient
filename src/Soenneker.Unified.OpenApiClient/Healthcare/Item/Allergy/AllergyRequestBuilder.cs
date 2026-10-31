@@ -79,7 +79,7 @@ namespace Soenneker.Unified.OpenApiClient.Healthcare.Item.Allergy
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Healthcare.Item.Allergy.AllergyRequestBuilder.AllergyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.unified.to", "/healthcare/{connectionId}/allergy", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
