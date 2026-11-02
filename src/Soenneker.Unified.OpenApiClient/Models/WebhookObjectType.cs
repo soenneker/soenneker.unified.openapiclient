@@ -927,5 +927,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PropertyConversation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "plm_part")]
+        #pragma warning disable CS1591
+        PlmPart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_bomline")]
+        #pragma warning disable CS1591
+        PlmBomline,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_document")]
+        #pragma warning disable CS1591
+        PlmDocument,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_change")]
+        #pragma warning disable CS1591
+        PlmChange,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_category")]
+        #pragma warning disable CS1591
+        PlmCategory,
+        #pragma warning restore CS1591
     }
 }

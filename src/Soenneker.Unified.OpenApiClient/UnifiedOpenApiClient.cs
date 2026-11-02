@@ -32,6 +32,7 @@ using Soenneker.Unified.OpenApiClient.Metadata;
 using Soenneker.Unified.OpenApiClient.Passthrough;
 using Soenneker.Unified.OpenApiClient.Payment;
 using Soenneker.Unified.OpenApiClient.Performance;
+using Soenneker.Unified.OpenApiClient.Plm;
 using Soenneker.Unified.OpenApiClient.Property;
 using Soenneker.Unified.OpenApiClient.Repo;
 using Soenneker.Unified.OpenApiClient.Scim;
@@ -186,6 +187,11 @@ namespace Soenneker.Unified.OpenApiClient
         {
             get => new global::Soenneker.Unified.OpenApiClient.Performance.PerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The plm property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Plm.PlmRequestBuilder Plm
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Plm.PlmRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The property property</summary>
         public global::Soenneker.Unified.OpenApiClient.Property.PropertyRequestBuilder Property
         {
@@ -257,7 +263,7 @@ namespace Soenneker.Unified.OpenApiClient
             ApiClientBuilder.RegisterDefaultSerializer<FormSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<MultipartSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
-            ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
+            global::Soenneker.OpenApi.Generated.OpenApiTextParseNodeFactory.Register();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {

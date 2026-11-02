@@ -1716,5 +1716,45 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PropertyConversationWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "plm_part_read")]
+        #pragma warning disable CS1591
+        PlmPartRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_part_write")]
+        #pragma warning disable CS1591
+        PlmPartWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_bomline_read")]
+        #pragma warning disable CS1591
+        PlmBomlineRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_bomline_write")]
+        #pragma warning disable CS1591
+        PlmBomlineWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_document_read")]
+        #pragma warning disable CS1591
+        PlmDocumentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_document_write")]
+        #pragma warning disable CS1591
+        PlmDocumentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_change_read")]
+        #pragma warning disable CS1591
+        PlmChangeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_change_write")]
+        #pragma warning disable CS1591
+        PlmChangeWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_category_read")]
+        #pragma warning disable CS1591
+        PlmCategoryRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plm_category_write")]
+        #pragma warning disable CS1591
+        PlmCategoryWrite,
+        #pragma warning restore CS1591
     }
 }

@@ -164,5 +164,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Property,
         #pragma warning restore CS1591
+        [EnumMember(Value = "plm")]
+        #pragma warning disable CS1591
+        Plm,
+        #pragma warning restore CS1591
     }
 }
