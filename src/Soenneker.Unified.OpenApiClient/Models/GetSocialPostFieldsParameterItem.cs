@@ -24,9 +24,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         ProfileId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "parent_post_id")]
+        [EnumMember(Value = "parent_id")]
         #pragma warning disable CS1591
-        ParentPostId,
+        ParentId,
         #pragma warning restore CS1591
         [EnumMember(Value = "title")]
         #pragma warning disable CS1591

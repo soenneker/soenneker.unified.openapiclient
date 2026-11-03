@@ -55,8 +55,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("recurrence") is { } nullNodeRecurrence && nullNodeRecurrence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recurrence = null;
             if (parseNode.GetChildNode("recurring_event_id") is null) { _explicitNullValueRecurringEventId = default!; _explicitNullProperties?.Remove("recurring_event_id"); }
             else if (parseNode.GetChildNode("recurring_event_id") is { } nullNodeRecurringEventId && nullNodeRecurringEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringEventId = null;
-            if (parseNode.GetChildNode("room_ids") is null) { _explicitNullValueRoomIds = default!; _explicitNullProperties?.Remove("room_ids"); }
-            else if (parseNode.GetChildNode("room_ids") is { } nullNodeRoomIds && nullNodeRoomIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoomIds = null;
+            if (parseNode.GetChildNode("rooms") is null) { _explicitNullValueRooms = default!; _explicitNullProperties?.Remove("rooms"); }
+            else if (parseNode.GetChildNode("rooms") is { } nullNodeRooms && nullNodeRooms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rooms = null;
             if (parseNode.GetChildNode("send_notifications") is null) { _explicitNullValueSendNotifications = default!; _explicitNullProperties?.Remove("send_notifications"); }
             else if (parseNode.GetChildNode("send_notifications") is { } nullNodeSendNotifications && nullNodeSendNotifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendNotifications = null;
             if (parseNode.GetChildNode("start_at") is null) { _explicitNullValueStartAt = default!; _explicitNullProperties?.Remove("start_at"); }
@@ -237,15 +237,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string RecurringEventId { get => _explicitNullValueRecurringEventId; set { _explicitNullValueRecurringEventId = value; AdditionalData?.Remove("recurring_event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_event_id"); else _explicitNullProperties?.Remove("recurring_event_id"); } }
         private string _explicitNullValueRecurringEventId = default!;
 #endif
-        /// <summary>pointers to Calendar Rooms booked for this event</summary>
+        /// <summary>Calendar Rooms booked for this event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoomIds { get => _explicitNullValueRoomIds; set { _explicitNullValueRoomIds = value; AdditionalData?.Remove("room_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_ids"); else _explicitNullProperties?.Remove("room_ids"); } }
-        private List<string>? _explicitNullValueRoomIds = default!;
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference>? Rooms { get => _explicitNullValueRooms; set { _explicitNullValueRooms = value; AdditionalData?.Remove("rooms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rooms"); else _explicitNullProperties?.Remove("rooms"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference>? _explicitNullValueRooms = default!;
 #nullable restore
 #else
-        public List<string> RoomIds { get => _explicitNullValueRoomIds; set { _explicitNullValueRoomIds = value; AdditionalData?.Remove("room_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("room_ids"); else _explicitNullProperties?.Remove("room_ids"); } }
-        private List<string> _explicitNullValueRoomIds = default!;
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference> Rooms { get => _explicitNullValueRooms; set { _explicitNullValueRooms = value; AdditionalData?.Remove("rooms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rooms"); else _explicitNullProperties?.Remove("rooms"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference> _explicitNullValueRooms = default!;
 #endif
         /// <summary>The send_notifications property</summary>
         public bool? SendNotifications { get => _explicitNullValueSendNotifications; set { _explicitNullValueSendNotifications = value; AdditionalData?.Remove("send_notifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_notifications"); else _explicitNullProperties?.Remove("send_notifications"); } }
@@ -347,7 +347,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty.CreateFromDiscriminatorValue); } },
                 { "recurrence", n => { Recurrence = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>(global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recurring_event_id", n => { RecurringEventId = n.GetStringValue(); } },
-                { "room_ids", n => { RoomIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rooms", n => { Rooms = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference>(global::Soenneker.Unified.OpenApiClient.Models.CalendarReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "send_notifications", n => { SendNotifications = n.GetBoolValue(); } },
                 { "start_at", n => { StartAt = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
@@ -383,7 +383,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventRecurrence>("recurrence", Recurrence);
             writer.WriteStringValue("recurring_event_id", RecurringEventId);
-            writer.WriteCollectionOfPrimitiveValues<string>("room_ids", RoomIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CalendarReference>("rooms", Rooms);
             writer.WriteBoolValue("send_notifications", SendNotifications);
             writer.WriteStringValue("start_at", StartAt);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarEventStatus>("status", Status);
