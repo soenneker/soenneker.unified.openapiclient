@@ -46,7 +46,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration{?active*,categories*,env*,limit*,offset*,summary*,type*,updated_gte*}", pathParameters)
+        public IntegrationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration{?active*,categories*,env*,limit*,object_types*,offset*,summary*,type*,types*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration{?active*,categories*,env*,limit*,offset*,summary*,type*,updated_gte*}", rawUrl)
+        public IntegrationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/integration{?active*,categories*,env*,limit*,object_types*,offset*,summary*,type*,types*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -140,6 +140,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             #pragma warning restore CS1591
+            /// <summary>Only return support and OAuth2 scopes for these object types (e.g. crm_contact,crm_deal), to keep the response small</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("object_types")]
+            public string[]? ObjectTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("object_types")]
+            public string[] ObjectTypes { get; set; }
+#endif
             #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
@@ -157,6 +167,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Integration
 #else
             [QueryParameter("type")]
             public string Type { get; set; }
+#endif
+            /// <summary>Filter the results for only these integration types (e.g. hubspot,salesforce)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("types")]
+            public string[]? Types { get; set; }
+#nullable restore
+#else
+            [QueryParameter("types")]
+            public string[] Types { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
