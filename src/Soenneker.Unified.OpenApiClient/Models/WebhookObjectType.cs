@@ -563,6 +563,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CalendarWebinar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_bot")]
+        #pragma warning disable CS1591
+        CalendarBot,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_botevent")]
+        #pragma warning disable CS1591
+        CalendarBotevent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "calendar_room")]
         #pragma warning disable CS1591
         CalendarRoom,

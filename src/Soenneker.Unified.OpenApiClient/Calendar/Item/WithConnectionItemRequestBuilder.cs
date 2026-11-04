@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Calendar.Item.Bot;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Busy;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Calendar;
 using Soenneker.Unified.OpenApiClient.Calendar.Item.Event;
@@ -22,6 +23,11 @@ namespace Soenneker.Unified.OpenApiClient.Calendar.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConnectionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bot property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Bot.BotRequestBuilder Bot
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Calendar.Item.Bot.BotRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The busy property</summary>
         public global::Soenneker.Unified.OpenApiClient.Calendar.Item.Busy.BusyRequestBuilder Busy
         {

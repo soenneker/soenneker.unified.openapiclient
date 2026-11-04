@@ -1040,6 +1040,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CalendarWebinarWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_bot_read")]
+        #pragma warning disable CS1591
+        CalendarBotRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_bot_write")]
+        #pragma warning disable CS1591
+        CalendarBotWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calendar_botevent_read")]
+        #pragma warning disable CS1591
+        CalendarBoteventRead,
+        #pragma warning restore CS1591
         [EnumMember(Value = "calendar_room_read")]
         #pragma warning disable CS1591
         CalendarRoomRead,
