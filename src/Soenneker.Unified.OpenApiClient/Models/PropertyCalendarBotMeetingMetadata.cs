@@ -60,7 +60,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string HostName { get => _explicitNullValueHostName; set { _explicitNullValueHostName = value; AdditionalData?.Remove("host_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_name"); else _explicitNullProperties?.Remove("host_name"); } }
         private string _explicitNullValueHostName = default!;
 #endif
-        /// <summary>The meeting_identifier property</summary>
+        /// <summary>Platform-specific meeting identifier (not a unified object ref)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MeetingIdentifier { get => _explicitNullValueMeetingIdentifier; set { _explicitNullValueMeetingIdentifier = value; AdditionalData?.Remove("meeting_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_identifier"); else _explicitNullProperties?.Remove("meeting_identifier"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The participant_count property</summary>
         public double? ParticipantCount { get => _explicitNullValueParticipantCount; set { _explicitNullValueParticipantCount = value; AdditionalData?.Remove("participant_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_count"); else _explicitNullProperties?.Remove("participant_count"); } }
         private double? _explicitNullValueParticipantCount = default!;
-        /// <summary>The platform property</summary>
+        /// <summary>&apos;zoom&apos;, &apos;webex&apos;, &apos;google_meet&apos;, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }

@@ -68,10 +68,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>When the bot left (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? EndedAt { get => _explicitNullValueEndedAt; set { _explicitNullValueEndedAt = value; AdditionalData?.Remove("ended_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ended_at"); else _explicitNullProperties?.Remove("ended_at"); } }
         private DateTimeOffset? _explicitNullValueEndedAt = default!;
-        /// <summary>(reference to CalendarEvent)</summary>
+        /// <summary>Reference to calendar_event if scheduled via calendar (reference to CalendarEvent)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>When to join the meeting (for scheduled bots) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? JoinAt { get => _explicitNullValueJoinAt; set { _explicitNullValueJoinAt = value; AdditionalData?.Remove("join_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("join_at"); else _explicitNullProperties?.Remove("join_at"); } }
         private DateTimeOffset? _explicitNullValueJoinAt = default!;
         /// <summary>The meeting_metadata property</summary>
@@ -104,7 +104,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotMeetingMetadata MeetingMetadata { get => _explicitNullValueMeetingMetadata; set { _explicitNullValueMeetingMetadata = value; AdditionalData?.Remove("meeting_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_metadata"); else _explicitNullProperties?.Remove("meeting_metadata"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotMeetingMetadata _explicitNullValueMeetingMetadata = default!;
 #endif
-        /// <summary>The meeting_url property</summary>
+        /// <summary>URL of the meeting to join</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MeetingUrl { get => _explicitNullValueMeetingUrl; set { _explicitNullValueMeetingUrl = value; AdditionalData?.Remove("meeting_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_url"); else _explicitNullProperties?.Remove("meeting_url"); } }
@@ -114,7 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string MeetingUrl { get => _explicitNullValueMeetingUrl; set { _explicitNullValueMeetingUrl = value; AdditionalData?.Remove("meeting_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_url"); else _explicitNullProperties?.Remove("meeting_url"); } }
         private string _explicitNullValueMeetingUrl = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name for the bot in the meeting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -154,7 +154,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfig RecordingConfig { get => _explicitNullValueRecordingConfig; set { _explicitNullValueRecordingConfig = value; AdditionalData?.Remove("recording_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_config"); else _explicitNullProperties?.Remove("recording_config"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfig _explicitNullValueRecordingConfig = default!;
 #endif
-        /// <summary>The recording_id property</summary>
+        /// <summary>Reference to calendar_recording when ready</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; AdditionalData?.Remove("recording_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
@@ -164,13 +164,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; AdditionalData?.Remove("recording_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
         private string _explicitNullValueRecordingId = default!;
 #endif
-        /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>When the bot actually joined (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
         private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CalendarBotStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.CalendarBotStatus? _explicitNullValueStatus = default!;
-        /// <summary>The status_changes property</summary>
+        /// <summary>History of status changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Unified.OpenApiClient.Models.CalendarBotStatusChange>? StatusChanges { get => _explicitNullValueStatusChanges; set { _explicitNullValueStatusChanges = value; AdditionalData?.Remove("status_changes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_changes"); else _explicitNullProperties?.Remove("status_changes"); } }

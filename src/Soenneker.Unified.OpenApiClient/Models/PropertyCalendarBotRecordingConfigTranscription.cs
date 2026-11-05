@@ -31,13 +31,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enable_speaker_labels property</summary>
+        /// <summary>Whether to identify speakers in transcript</summary>
         public bool? EnableSpeakerLabels { get => _explicitNullValueEnableSpeakerLabels; set { _explicitNullValueEnableSpeakerLabels = value; AdditionalData?.Remove("enable_speaker_labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_speaker_labels"); else _explicitNullProperties?.Remove("enable_speaker_labels"); } }
         private bool? _explicitNullValueEnableSpeakerLabels = default!;
-        /// <summary>The enable_word_timestamps property</summary>
+        /// <summary>Whether to include word-level timestamps</summary>
         public bool? EnableWordTimestamps { get => _explicitNullValueEnableWordTimestamps; set { _explicitNullValueEnableWordTimestamps = value; AdditionalData?.Remove("enable_word_timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_word_timestamps"); else _explicitNullProperties?.Remove("enable_word_timestamps"); } }
         private bool? _explicitNullValueEnableWordTimestamps = default!;
-        /// <summary>The language property</summary>
+        /// <summary>ISO language code (e.g., &apos;en-US&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }

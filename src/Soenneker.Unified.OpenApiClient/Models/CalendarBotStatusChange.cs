@@ -32,7 +32,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? ChangedAt { get => _explicitNullValueChangedAt; set { _explicitNullValueChangedAt = value; AdditionalData?.Remove("changed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_at"); else _explicitNullProperties?.Remove("changed_at"); } }
         private DateTimeOffset? _explicitNullValueChangedAt = default!;
-        /// <summary>The message property</summary>
+        /// <summary>Human-readable status message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.CalendarBotStatusChangeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.CalendarBotStatusChangeStatus? _explicitNullValueStatus = default!;
-        /// <summary>The sub_code property</summary>
+        /// <summary>Platform-specific status sub-code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubCode { get => _explicitNullValueSubCode; set { _explicitNullValueSubCode = value; AdditionalData?.Remove("sub_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_code"); else _explicitNullProperties?.Remove("sub_code"); } }

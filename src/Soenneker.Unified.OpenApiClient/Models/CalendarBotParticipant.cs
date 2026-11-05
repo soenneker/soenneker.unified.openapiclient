@@ -69,7 +69,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The is_bot property</summary>
+        /// <summary>Whether this participant is a bot</summary>
         public bool? IsBot { get => _explicitNullValueIsBot; set { _explicitNullValueIsBot = value; AdditionalData?.Remove("is_bot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_bot"); else _explicitNullProperties?.Remove("is_bot"); } }
         private bool? _explicitNullValueIsBot = default!;
         /// <summary>The is_cohost property</summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_host property</summary>
         public bool? IsHost { get => _explicitNullValueIsHost; set { _explicitNullValueIsHost = value; AdditionalData?.Remove("is_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_host"); else _explicitNullProperties?.Remove("is_host"); } }
         private bool? _explicitNullValueIsHost = default!;
-        /// <summary>The is_self property</summary>
+        /// <summary>Whether this participant is the current bot</summary>
         public bool? IsSelf { get => _explicitNullValueIsSelf; set { _explicitNullValueIsSelf = value; AdditionalData?.Remove("is_self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_self"); else _explicitNullProperties?.Remove("is_self"); } }
         private bool? _explicitNullValueIsSelf = default!;
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Platform-specific participant identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -107,23 +107,23 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The platform_metadata property</summary>
+        /// <summary>Platform-specific metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData? PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData? _explicitNullValuePlatformMetadata = default!;
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata? PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata? _explicitNullValuePlatformMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData _explicitNullValuePlatformMetadata = default!;
+        public global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata _explicitNullValuePlatformMetadata = default!;
 #endif
-        /// <summary>The screenshare_on property</summary>
+        /// <summary>Whether participant is sharing screen</summary>
         public bool? ScreenshareOn { get => _explicitNullValueScreenshareOn; set { _explicitNullValueScreenshareOn = value; AdditionalData?.Remove("screenshare_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshare_on"); else _explicitNullProperties?.Remove("screenshare_on"); } }
         private bool? _explicitNullValueScreenshareOn = default!;
-        /// <summary>The speaking property</summary>
+        /// <summary>Whether participant is currently speaking</summary>
         public bool? Speaking { get => _explicitNullValueSpeaking; set { _explicitNullValueSpeaking = value; AdditionalData?.Remove("speaking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaking"); else _explicitNullProperties?.Remove("speaking"); } }
         private bool? _explicitNullValueSpeaking = default!;
-        /// <summary>The webcam_on property</summary>
+        /// <summary>Whether participant&apos;s webcam is on</summary>
         public bool? WebcamOn { get => _explicitNullValueWebcamOn; set { _explicitNullValueWebcamOn = value; AdditionalData?.Remove("webcam_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webcam_on"); else _explicitNullProperties?.Remove("webcam_on"); } }
         private bool? _explicitNullValueWebcamOn = default!;
         /// <summary>
@@ -161,7 +161,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "left_at", n => { LeftAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
-                { "platform_metadata", n => { PlatformMetadata = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData.CreateFromDiscriminatorValue); } },
+                { "platform_metadata", n => { PlatformMetadata = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata>(global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata.CreateFromDiscriminatorValue); } },
                 { "screenshare_on", n => { ScreenshareOn = n.GetBoolValue(); } },
                 { "speaking", n => { Speaking = n.GetBoolValue(); } },
                 { "webcam_on", n => { WebcamOn = n.GetBoolValue(); } },
@@ -184,7 +184,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("left_at", LeftAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("platform", Platform);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadataExtraData>("platform_metadata", PlatformMetadata);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.CalendarBotParticipantPlatformMetadata>("platform_metadata", PlatformMetadata);
             writer.WriteBoolValue("screenshare_on", ScreenshareOn);
             writer.WriteBoolValue("speaking", Speaking);
             writer.WriteBoolValue("webcam_on", WebcamOn);

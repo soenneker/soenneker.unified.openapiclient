@@ -27,13 +27,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detect_bots property</summary>
+        /// <summary>Whether to leave if only bots remain</summary>
         public bool? DetectBots { get => _explicitNullValueDetectBots; set { _explicitNullValueDetectBots = value; AdditionalData?.Remove("detect_bots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect_bots"); else _explicitNullProperties?.Remove("detect_bots"); } }
         private bool? _explicitNullValueDetectBots = default!;
-        /// <summary>The no_participants_timeout property</summary>
+        /// <summary>Seconds to wait when no other participants before leaving (default: 2)</summary>
         public double? NoParticipantsTimeout { get => _explicitNullValueNoParticipantsTimeout; set { _explicitNullValueNoParticipantsTimeout = value; AdditionalData?.Remove("no_participants_timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_participants_timeout"); else _explicitNullProperties?.Remove("no_participants_timeout"); } }
         private double? _explicitNullValueNoParticipantsTimeout = default!;
-        /// <summary>The waiting_room_timeout property</summary>
+        /// <summary>Seconds to wait in waiting room before leaving (default: 1200)</summary>
         public double? WaitingRoomTimeout { get => _explicitNullValueWaitingRoomTimeout; set { _explicitNullValueWaitingRoomTimeout = value; AdditionalData?.Remove("waiting_room_timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waiting_room_timeout"); else _explicitNullProperties?.Remove("waiting_room_timeout"); } }
         private double? _explicitNullValueWaitingRoomTimeout = default!;
         /// <summary>
