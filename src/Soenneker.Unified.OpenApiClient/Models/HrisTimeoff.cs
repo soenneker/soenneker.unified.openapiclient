@@ -21,6 +21,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("approved_at") is { } nullNodeApprovedAt && nullNodeApprovedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovedAt = null;
             if (parseNode.GetChildNode("approver_user_id") is null) { _explicitNullValueApproverUserId = default!; _explicitNullProperties?.Remove("approver_user_id"); }
             else if (parseNode.GetChildNode("approver_user_id") is { } nullNodeApproverUserId && nullNodeApproverUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverUserId = null;
+            if (parseNode.GetChildNode("attachments") is null) { _explicitNullValueAttachments = default!; _explicitNullProperties?.Remove("attachments"); }
+            else if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
             if (parseNode.GetChildNode("comments") is null) { _explicitNullValueComments = default!; _explicitNullProperties?.Remove("comments"); }
             else if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
             if (parseNode.GetChildNode("company_id") is null) { _explicitNullValueCompanyId = default!; _explicitNullProperties?.Remove("company_id"); }
@@ -71,6 +73,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ApproverUserId { get => _explicitNullValueApproverUserId; set { _explicitNullValueApproverUserId = value; AdditionalData?.Remove("approver_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_user_id"); else _explicitNullProperties?.Remove("approver_user_id"); } }
         private string _explicitNullValueApproverUserId = default!;
+#endif
+        /// <summary>supporting documents (eg. doctor&apos;s notes) attached to the leave request</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment>? _explicitNullValueAttachments = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment> _explicitNullValueAttachments = default!;
 #endif
         /// <summary>The comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,6 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 { "approved_at", n => { ApprovedAt = n.GetDateTimeOffsetValue(); } },
                 { "approver_user_id", n => { ApproverUserId = n.GetStringValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment>(global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -234,6 +247,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("approved_at", ApprovedAt);
             writer.WriteStringValue("approver_user_id", ApproverUserId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisAttachment>("attachments", Attachments);
             writer.WriteStringValue("comments", Comments);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

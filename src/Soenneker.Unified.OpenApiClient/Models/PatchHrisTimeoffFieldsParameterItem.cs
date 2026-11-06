@@ -76,6 +76,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DurationType,
         #pragma warning restore CS1591
+        [EnumMember(Value = "attachments")]
+        #pragma warning disable CS1591
+        Attachments,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

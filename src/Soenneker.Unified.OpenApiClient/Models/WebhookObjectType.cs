@@ -375,6 +375,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         UcContact,
         #pragma warning restore CS1591
+        [EnumMember(Value = "uc_fax")]
+        #pragma warning disable CS1591
+        UcFax,
+        #pragma warning restore CS1591
         [EnumMember(Value = "uc_call")]
         #pragma warning disable CS1591
         UcCall,

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Call;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Comment;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Contact;
+using Soenneker.Unified.OpenApiClient.Uc.Item.Fax;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Recording;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Scorecard;
 using Soenneker.Unified.OpenApiClient.Uc.Item.Scorecardtemplate;
@@ -34,6 +35,11 @@ namespace Soenneker.Unified.OpenApiClient.Uc.Item
         public global::Soenneker.Unified.OpenApiClient.Uc.Item.Contact.ContactRequestBuilder Contact
         {
             get => new global::Soenneker.Unified.OpenApiClient.Uc.Item.Contact.ContactRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fax property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Uc.Item.Fax.FaxRequestBuilder Fax
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Uc.Item.Fax.FaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The recording property</summary>
         public global::Soenneker.Unified.OpenApiClient.Uc.Item.Recording.RecordingRequestBuilder Recording
