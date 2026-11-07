@@ -175,6 +175,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CommerceReservation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "commerce_table")]
+        #pragma warning disable CS1591
+        CommerceTable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "commerce_return")]
         #pragma warning disable CS1591
         CommerceReturn,

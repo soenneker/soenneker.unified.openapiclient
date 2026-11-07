@@ -12,6 +12,7 @@ using Soenneker.Unified.OpenApiClient.Commerce.Item.Reservation;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Return;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Review;
 using Soenneker.Unified.OpenApiClient.Commerce.Item.Saleschannel;
+using Soenneker.Unified.OpenApiClient.Commerce.Item.Table;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -73,6 +74,11 @@ namespace Soenneker.Unified.OpenApiClient.Commerce.Item
         public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Saleschannel.SaleschannelRequestBuilder Saleschannel
         {
             get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Saleschannel.SaleschannelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The table property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Commerce.Item.Table.TableRequestBuilder Table
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Commerce.Item.Table.TableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Commerce.Item.WithConnectionItemRequestBuilder"/> and sets the default values.

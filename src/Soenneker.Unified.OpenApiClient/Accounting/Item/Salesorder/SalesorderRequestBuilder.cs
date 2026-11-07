@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesorderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/salesorder{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", pathParameters)
+        public SalesorderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/salesorder{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,status*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesorderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/salesorder{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,updated_gte*}", rawUrl)
+        public SalesorderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/salesorder{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,status*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -224,6 +224,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Salesorder
             [QueryParameter("sort")]
             public string Sort { get; set; }
             #pragma warning restore CS1591
+#endif
+            /// <summary>The status to filter by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
 #endif
             /// <summary>Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

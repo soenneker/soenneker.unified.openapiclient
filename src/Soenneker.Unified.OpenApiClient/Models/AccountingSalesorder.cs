@@ -19,6 +19,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
             else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("balance_amount") is null) { _explicitNullValueBalanceAmount = default!; _explicitNullProperties?.Remove("balance_amount"); }
+            else if (parseNode.GetChildNode("balance_amount") is { } nullNodeBalanceAmount && nullNodeBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAmount = null;
             if (parseNode.GetChildNode("billing_address") is null) { _explicitNullValueBillingAddress = default!; _explicitNullProperties?.Remove("billing_address"); }
             else if (parseNode.GetChildNode("billing_address") is { } nullNodeBillingAddress && nullNodeBillingAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddress = null;
             if (parseNode.GetChildNode("category_ids") is null) { _explicitNullValueCategoryIds = default!; _explicitNullProperties?.Remove("category_ids"); }
@@ -55,6 +57,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("order_number") is { } nullNodeOrderNumber && nullNodeOrderNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderNumber = null;
             if (parseNode.GetChildNode("organization_id") is null) { _explicitNullValueOrganizationId = default!; _explicitNullProperties?.Remove("organization_id"); }
             else if (parseNode.GetChildNode("organization_id") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("paid_amount") is null) { _explicitNullValuePaidAmount = default!; _explicitNullProperties?.Remove("paid_amount"); }
+            else if (parseNode.GetChildNode("paid_amount") is { } nullNodePaidAmount && nullNodePaidAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidAmount = null;
             if (parseNode.GetChildNode("payments") is null) { _explicitNullValuePayments = default!; _explicitNullProperties?.Remove("payments"); }
             else if (parseNode.GetChildNode("payments") is { } nullNodePayments && nullNodePayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payments = null;
             if (parseNode.GetChildNode("posted_at") is null) { _explicitNullValuePostedAt = default!; _explicitNullProperties?.Remove("posted_at"); }
@@ -75,6 +79,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("subscription_id") is { } nullNodeSubscriptionId && nullNodeSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionId = null;
             if (parseNode.GetChildNode("subtotal_amount") is null) { _explicitNullValueSubtotalAmount = default!; _explicitNullProperties?.Remove("subtotal_amount"); }
             else if (parseNode.GetChildNode("subtotal_amount") is { } nullNodeSubtotalAmount && nullNodeSubtotalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubtotalAmount = null;
+            if (parseNode.GetChildNode("table_id") is null) { _explicitNullValueTableId = default!; _explicitNullProperties?.Remove("table_id"); }
+            else if (parseNode.GetChildNode("table_id") is { } nullNodeTableId && nullNodeTableId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableId = null;
             if (parseNode.GetChildNode("tax_amount") is null) { _explicitNullValueTaxAmount = default!; _explicitNullProperties?.Remove("tax_amount"); }
             else if (parseNode.GetChildNode("tax_amount") is { } nullNodeTaxAmount && nullNodeTaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxAmount = null;
             if (parseNode.GetChildNode("tip_amount") is null) { _explicitNullValueTipAmount = default!; _explicitNullProperties?.Remove("tip_amount"); }
@@ -97,6 +103,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>amount still owed on the order total_amount - paid_amount</summary>
+        public double? BalanceAmount { get => _explicitNullValueBalanceAmount; set { _explicitNullValueBalanceAmount = value; AdditionalData?.Remove("balance_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_amount"); else _explicitNullProperties?.Remove("balance_amount"); } }
+        private double? _explicitNullValueBalanceAmount = default!;
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -242,6 +251,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organization_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_id"); else _explicitNullProperties?.Remove("organization_id"); } }
         private string _explicitNullValueOrganizationId = default!;
 #endif
+        /// <summary>total of the payments applied so far</summary>
+        public double? PaidAmount { get => _explicitNullValuePaidAmount; set { _explicitNullValuePaidAmount = value; AdditionalData?.Remove("paid_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paid_amount"); else _explicitNullProperties?.Remove("paid_amount"); } }
+        private double? _explicitNullValuePaidAmount = default!;
         /// <summary>read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -307,6 +319,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>pre-tax, pre-tip amount</summary>
         public double? SubtotalAmount { get => _explicitNullValueSubtotalAmount; set { _explicitNullValueSubtotalAmount = value; AdditionalData?.Remove("subtotal_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal_amount"); else _explicitNullProperties?.Remove("subtotal_amount"); } }
         private double? _explicitNullValueSubtotalAmount = default!;
+        /// <summary>reference to a commerce_table restaurant table the order is seated at</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TableId { get => _explicitNullValueTableId; set { _explicitNullValueTableId = value; AdditionalData?.Remove("table_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_id"); else _explicitNullProperties?.Remove("table_id"); } }
+        private string? _explicitNullValueTableId = default!;
+#nullable restore
+#else
+        public string TableId { get => _explicitNullValueTableId; set { _explicitNullValueTableId = value; AdditionalData?.Remove("table_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_id"); else _explicitNullProperties?.Remove("table_id"); } }
+        private string _explicitNullValueTableId = default!;
+#endif
         /// <summary>The tax_amount property</summary>
         public double? TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; AdditionalData?.Remove("tax_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_amount"); else _explicitNullProperties?.Remove("tax_amount"); } }
         private double? _explicitNullValueTaxAmount = default!;
@@ -345,6 +367,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress.CreateFromDiscriminatorValue); } },
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
@@ -363,6 +386,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>(global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "order_number", n => { OrderNumber = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
+                { "paid_amount", n => { PaidAmount = n.GetDoubleValue(); } },
                 { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>(global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "posted_at", n => { PostedAt = n.GetDateTimeOffsetValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty.CreateFromDiscriminatorValue); } },
@@ -373,6 +397,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subtotal_amount", n => { SubtotalAmount = n.GetDoubleValue(); } },
+                { "table_id", n => { TableId = n.GetStringValue(); } },
                 { "tax_amount", n => { TaxAmount = n.GetDoubleValue(); } },
                 { "tip_amount", n => { TipAmount = n.GetDoubleValue(); } },
                 { "total_amount", n => { TotalAmount = n.GetDoubleValue(); } },
@@ -387,6 +412,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>("billing_address", BillingAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);
@@ -405,6 +431,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingMetadata>("metadata", Metadata);
             writer.WriteStringValue("order_number", OrderNumber);
             writer.WriteStringValue("organization_id", OrganizationId);
+            writer.WriteDoubleValue("paid_amount", PaidAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AccountingPaymentReference>("payments", Payments);
             writer.WriteDateTimeOffsetValue("posted_at", PostedAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderRawProperty>("raw", Raw);
@@ -415,6 +442,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingSalesorderStatus>("status", Status);
             writer.WriteStringValue("subscription_id", SubscriptionId);
             writer.WriteDoubleValue("subtotal_amount", SubtotalAmount);
+            writer.WriteStringValue("table_id", TableId);
             writer.WriteDoubleValue("tax_amount", TaxAmount);
             writer.WriteDoubleValue("tip_amount", TipAmount);
             writer.WriteDoubleValue("total_amount", TotalAmount);
