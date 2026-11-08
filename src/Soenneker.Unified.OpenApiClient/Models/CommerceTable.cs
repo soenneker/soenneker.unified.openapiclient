@@ -57,7 +57,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>number of seatsguests the table is set up for</summary>
+        /// <summary>number of seats/guests the table is set up for</summary>
         public double? Capacity { get => _explicitNullValueCapacity; set { _explicitNullValueCapacity = value; AdditionalData?.Remove("capacity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capacity"); else _explicitNullProperties?.Remove("capacity"); } }
         private double? _explicitNullValueCapacity = default!;
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>the providers identifier of that floorplansection</summary>
+        /// <summary>the provider&apos;s identifier of that floorplan/section</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FloorplanIdentifier { get => _explicitNullValueFloorplanIdentifier; set { _explicitNullValueFloorplanIdentifier = value; AdditionalData?.Remove("floorplan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("floorplan_identifier"); else _explicitNullProperties?.Remove("floorplan_identifier"); } }
@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string FloorplanIdentifier { get => _explicitNullValueFloorplanIdentifier; set { _explicitNullValueFloorplanIdentifier = value; AdditionalData?.Remove("floorplan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("floorplan_identifier"); else _explicitNullProperties?.Remove("floorplan_identifier"); } }
         private string _explicitNullValueFloorplanIdentifier = default!;
 #endif
-        /// <summary>floorplan section or dining area the table belongs to</summary>
+        /// <summary>floorplan, section or dining area the table belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FloorplanName { get => _explicitNullValueFloorplanName; set { _explicitNullValueFloorplanName = value; AdditionalData?.Remove("floorplan_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("floorplan_name"); else _explicitNullProperties?.Remove("floorplan_name"); } }
@@ -119,7 +119,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceTableLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyCommerceTableLayout _explicitNullValueLayout = default!;
 #endif
-        /// <summary>reference to a commerce_location the restaurantsite (reference to CommerceLocation)</summary>
+        /// <summary>reference to a commerce_location (the restaurant/site) (reference to CommerceLocation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; AdditionalData?.Remove("location_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
@@ -139,7 +139,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.CommerceMetadata> _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>display label of the table eg Table 1 or Patio 4</summary>
+        /// <summary>display label of the table, e.g. &quot;Table 1&quot; or &quot;Patio 4&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -149,7 +149,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>human-facing table number shown on the POS string as some systems use alphanumeric labels</summary>
+        /// <summary>human-facing table number shown on the POS (string, as some systems use alphanumeric labels)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
@@ -159,7 +159,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string _explicitNullValueNumber = default!;
 #endif
-        /// <summary>when the current party was seated earliest open order (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        /// <summary>when the current party was seated (earliest open order) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? OccupiedAt { get => _explicitNullValueOccupiedAt; set { _explicitNullValueOccupiedAt = value; AdditionalData?.Remove("occupied_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occupied_at"); else _explicitNullProperties?.Remove("occupied_at"); } }
         private DateTimeOffset? _explicitNullValueOccupiedAt = default!;
         /// <summary>The raw property</summary>
@@ -172,7 +172,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.CommerceTableRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.CommerceTableRawProperty _explicitNullValueRaw = default!;
 #endif
-        /// <summary>open orderschecks currently on the table references accounting_salesorder</summary>
+        /// <summary>open orders/checks currently on the table; references accounting_salesorder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SalesorderIds { get => _explicitNullValueSalesorderIds; set { _explicitNullValueSalesorderIds = value; AdditionalData?.Remove("salesorder_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesorder_ids"); else _explicitNullProperties?.Remove("salesorder_ids"); } }

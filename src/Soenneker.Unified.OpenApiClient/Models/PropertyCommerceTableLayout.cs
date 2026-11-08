@@ -46,10 +46,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The width property</summary>
         public double? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; AdditionalData?.Remove("width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
         private double? _explicitNullValueWidth = default!;
-        /// <summary>horizontal position on the floorplan in the providers floorplan units</summary>
+        /// <summary>horizontal position on the floorplan, in the provider&apos;s floorplan units</summary>
         public double? X { get => _explicitNullValueX; set { _explicitNullValueX = value; AdditionalData?.Remove("x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
         private double? _explicitNullValueX = default!;
-        /// <summary>vertical position on the floorplan in the providers floorplan units</summary>
+        /// <summary>vertical position on the floorplan, in the provider&apos;s floorplan units</summary>
         public double? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; AdditionalData?.Remove("y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
         private double? _explicitNullValueY = default!;
         /// <summary>
