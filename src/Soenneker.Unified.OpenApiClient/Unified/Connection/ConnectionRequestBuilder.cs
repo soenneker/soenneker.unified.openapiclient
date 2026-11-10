@@ -35,7 +35,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection{?categories*,env*,external_xref*,limit*,offset*,order*,sort*,updated_gte*}", pathParameters)
+        public ConnectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection{?categories*,env*,external_xref*,fields*,limit*,offset*,order*,sort*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection{?categories*,env*,external_xref*,limit*,offset*,order*,sort*,updated_gte*}", rawUrl)
+        public ConnectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection{?categories*,env*,external_xref*,fields*,limit*,offset*,order*,sort*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -173,6 +173,16 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection
 #else
             [QueryParameter("external_xref")]
             public string ExternalXref { get; set; }
+#endif
+            /// <summary>Fields to return. Leave out auth to get connection metadata without credentials</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedConnectionsFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.ListUnifiedConnectionsFieldsParameterItem[] Fields { get; set; }
 #endif
             #pragma warning disable CS1591
             [QueryParameter("limit")]

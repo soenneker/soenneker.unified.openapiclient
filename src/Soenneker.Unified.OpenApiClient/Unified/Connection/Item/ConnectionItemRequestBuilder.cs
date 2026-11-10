@@ -28,7 +28,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection/{id}", pathParameters)
+        public ConnectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection/{id}{?fields*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection/{id}", rawUrl)
+        public ConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/unified/connection/{id}{?fields*}", rawUrl)
         {
         }
         /// <summary>
@@ -65,11 +65,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.Connection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.Connection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder.ConnectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Unified.OpenApiClient.Models.Connection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.Connection> GetAsync(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder.ConnectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -140,11 +140,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder.ConnectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder.ConnectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -204,6 +204,23 @@ namespace Soenneker.Unified.OpenApiClient.Unified.Connection.Item
         public global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Unified.OpenApiClient.Unified.Connection.Item.ConnectionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieve connection
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ConnectionItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Fields to return. Leave out auth to get connection metadata without credentials</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.GetUnifiedConnectionFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.GetUnifiedConnectionFieldsParameterItem[] Fields { get; set; }
+#endif
         }
     }
 }

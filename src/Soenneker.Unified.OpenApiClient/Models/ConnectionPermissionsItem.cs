@@ -1436,6 +1436,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SocialInsightWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "social_comment_read")]
+        #pragma warning disable CS1591
+        SocialCommentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "social_comment_write")]
+        #pragma warning disable CS1591
+        SocialCommentWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "legal_matter_read")]
         #pragma warning disable CS1591
         LegalMatterRead,

@@ -37,10 +37,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("external_identifier") is { } nullNodeExternalIdentifier && nullNodeExternalIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIdentifier = null;
             if (parseNode.GetChildNode("first_name") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("first_name"); }
             else if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("has_do_not_contact") is null) { _explicitNullValueHasDoNotContact = default!; _explicitNullProperties?.Remove("has_do_not_contact"); }
+            else if (parseNode.GetChildNode("has_do_not_contact") is { } nullNodeHasDoNotContact && nullNodeHasDoNotContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDoNotContact = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("image_url") is null) { _explicitNullValueImageUrl = default!; _explicitNullProperties?.Remove("image_url"); }
             else if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("is_private") is null) { _explicitNullValueIsPrivate = default!; _explicitNullProperties?.Remove("is_private"); }
+            else if (parseNode.GetChildNode("is_private") is { } nullNodeIsPrivate && nullNodeIsPrivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrivate = null;
             if (parseNode.GetChildNode("job_ids") is null) { _explicitNullValueJobIds = default!; _explicitNullProperties?.Remove("job_ids"); }
             else if (parseNode.GetChildNode("job_ids") is { } nullNodeJobIds && nullNodeJobIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobIds = null;
             if (parseNode.GetChildNode("last_name") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("last_name"); }
@@ -165,6 +169,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("first_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
         private string _explicitNullValueFirstName = default!;
 #endif
+        /// <summary>Whether the candidate must not be contacted for outreach</summary>
+        public bool? HasDoNotContact { get => _explicitNullValueHasDoNotContact; set { _explicitNullValueHasDoNotContact = value; AdditionalData?.Remove("has_do_not_contact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_do_not_contact"); else _explicitNullProperties?.Remove("has_do_not_contact"); } }
+        private bool? _explicitNullValueHasDoNotContact = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,6 +192,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("image_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
         private string _explicitNullValueImageUrl = default!;
 #endif
+        /// <summary>Whether the candidate is confidential / private (visible only to permitted users)</summary>
+        public bool? IsPrivate { get => _explicitNullValueIsPrivate; set { _explicitNullValueIsPrivate = value; AdditionalData?.Remove("is_private"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_private"); else _explicitNullProperties?.Remove("is_private"); } }
+        private bool? _explicitNullValueIsPrivate = default!;
         /// <summary>The job_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -376,8 +386,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "experiences", n => { Experiences = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateExperience>(global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateExperience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "external_identifier", n => { ExternalIdentifier = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
+                { "has_do_not_contact", n => { HasDoNotContact = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
+                { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "job_ids", n => { JobIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "link_urls", n => { LinkUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -414,8 +426,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsCandidateExperience>("experiences", Experiences);
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
             writer.WriteStringValue("first_name", FirstName);
+            writer.WriteBoolValue("has_do_not_contact", HasDoNotContact);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image_url", ImageUrl);
+            writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteCollectionOfPrimitiveValues<string>("job_ids", JobIds);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfPrimitiveValues<string>("link_urls", LinkUrls);

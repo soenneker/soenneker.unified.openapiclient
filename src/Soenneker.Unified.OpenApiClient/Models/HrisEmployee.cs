@@ -164,7 +164,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
-        /// <summary>YYYYMM/DD</summary>
+        /// <summary>YYYY-MM-DD</summary>
         public DateTimeOffset? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; AdditionalData?.Remove("date_of_birth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
         private DateTimeOffset? _explicitNullValueDateOfBirth = default!;
         /// <summary>The employee&apos;s email addresses</summary>

@@ -120,6 +120,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Summary,
         #pragma warning restore CS1591
+        [EnumMember(Value = "is_private")]
+        #pragma warning disable CS1591
+        IsPrivate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "has_do_not_contact")]
+        #pragma warning disable CS1591
+        HasDoNotContact,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

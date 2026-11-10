@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Unified.OpenApiClient.Social.Item.Comment;
 using Soenneker.Unified.OpenApiClient.Social.Item.Insight;
 using Soenneker.Unified.OpenApiClient.Social.Item.Post;
 using Soenneker.Unified.OpenApiClient.Social.Item.Profile;
@@ -18,6 +19,11 @@ namespace Soenneker.Unified.OpenApiClient.Social.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConnectionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The comment property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Social.Item.Comment.CommentRequestBuilder Comment
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Social.Item.Comment.CommentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The insight property</summary>
         public global::Soenneker.Unified.OpenApiClient.Social.Item.Insight.InsightRequestBuilder Insight
         {

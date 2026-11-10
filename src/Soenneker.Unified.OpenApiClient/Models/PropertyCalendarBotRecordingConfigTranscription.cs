@@ -51,8 +51,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionMode? _explicitNullValueMode = default!;
         /// <summary>The provider property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionProvider? _explicitNullValueProvider = default!;
+        public global::Soenneker.Unified.OpenApiClient.Models.MeetingCaptionsProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.MeetingCaptionsProvider? _explicitNullValueProvider = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscription"/> and sets the default values.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "enable_word_timestamps", n => { EnableWordTimestamps = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MeetingCaptionsProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("enable_word_timestamps", EnableWordTimestamps);
             writer.WriteStringValue("language", Language);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionMode>("mode", Mode);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyCalendarBotRecordingConfigTranscriptionProvider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.MeetingCaptionsProvider>("provider", Provider);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

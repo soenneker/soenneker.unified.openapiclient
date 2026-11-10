@@ -825,6 +825,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("signing_template_read") is { } nullNodeSigningTemplateRead && nullNodeSigningTemplateRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningTemplateRead = null;
             if (parseNode.GetChildNode("signing_template_write") is null) { _explicitNullValueSigningTemplateWrite = default!; _explicitNullProperties?.Remove("signing_template_write"); }
             else if (parseNode.GetChildNode("signing_template_write") is { } nullNodeSigningTemplateWrite && nullNodeSigningTemplateWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningTemplateWrite = null;
+            if (parseNode.GetChildNode("social_comment_read") is null) { _explicitNullValueSocialCommentRead = default!; _explicitNullProperties?.Remove("social_comment_read"); }
+            else if (parseNode.GetChildNode("social_comment_read") is { } nullNodeSocialCommentRead && nullNodeSocialCommentRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialCommentRead = null;
+            if (parseNode.GetChildNode("social_comment_write") is null) { _explicitNullValueSocialCommentWrite = default!; _explicitNullProperties?.Remove("social_comment_write"); }
+            else if (parseNode.GetChildNode("social_comment_write") is { } nullNodeSocialCommentWrite && nullNodeSocialCommentWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialCommentWrite = null;
             if (parseNode.GetChildNode("social_insight_read") is null) { _explicitNullValueSocialInsightRead = default!; _explicitNullProperties?.Remove("social_insight_read"); }
             else if (parseNode.GetChildNode("social_insight_read") is { } nullNodeSocialInsightRead && nullNodeSocialInsightRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialInsightRead = null;
             if (parseNode.GetChildNode("social_insight_write") is null) { _explicitNullValueSocialInsightWrite = default!; _explicitNullProperties?.Remove("social_insight_write"); }
@@ -4949,6 +4953,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string SigningTemplateWrite { get => _explicitNullValueSigningTemplateWrite; set { _explicitNullValueSigningTemplateWrite = value; AdditionalData?.Remove("signing_template_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_template_write"); else _explicitNullProperties?.Remove("signing_template_write"); } }
         private string _explicitNullValueSigningTemplateWrite = default!;
 #endif
+        /// <summary>The social_comment_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SocialCommentRead { get => _explicitNullValueSocialCommentRead; set { _explicitNullValueSocialCommentRead = value; AdditionalData?.Remove("social_comment_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_comment_read"); else _explicitNullProperties?.Remove("social_comment_read"); } }
+        private string? _explicitNullValueSocialCommentRead = default!;
+#nullable restore
+#else
+        public string SocialCommentRead { get => _explicitNullValueSocialCommentRead; set { _explicitNullValueSocialCommentRead = value; AdditionalData?.Remove("social_comment_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_comment_read"); else _explicitNullProperties?.Remove("social_comment_read"); } }
+        private string _explicitNullValueSocialCommentRead = default!;
+#endif
+        /// <summary>The social_comment_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SocialCommentWrite { get => _explicitNullValueSocialCommentWrite; set { _explicitNullValueSocialCommentWrite = value; AdditionalData?.Remove("social_comment_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_comment_write"); else _explicitNullProperties?.Remove("social_comment_write"); } }
+        private string? _explicitNullValueSocialCommentWrite = default!;
+#nullable restore
+#else
+        public string SocialCommentWrite { get => _explicitNullValueSocialCommentWrite; set { _explicitNullValueSocialCommentWrite = value; AdditionalData?.Remove("social_comment_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_comment_write"); else _explicitNullProperties?.Remove("social_comment_write"); } }
+        private string _explicitNullValueSocialCommentWrite = default!;
+#endif
         /// <summary>The social_insight_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -5778,6 +5802,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "signing_signatory_write", n => { SigningSignatoryWrite = n.GetStringValue(); } },
                 { "signing_template_read", n => { SigningTemplateRead = n.GetStringValue(); } },
                 { "signing_template_write", n => { SigningTemplateWrite = n.GetStringValue(); } },
+                { "social_comment_read", n => { SocialCommentRead = n.GetStringValue(); } },
+                { "social_comment_write", n => { SocialCommentWrite = n.GetStringValue(); } },
                 { "social_insight_read", n => { SocialInsightRead = n.GetStringValue(); } },
                 { "social_insight_write", n => { SocialInsightWrite = n.GetStringValue(); } },
                 { "social_post_read", n => { SocialPostRead = n.GetStringValue(); } },
@@ -6231,6 +6257,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("signing_signatory_write", SigningSignatoryWrite);
             writer.WriteStringValue("signing_template_read", SigningTemplateRead);
             writer.WriteStringValue("signing_template_write", SigningTemplateWrite);
+            writer.WriteStringValue("social_comment_read", SocialCommentRead);
+            writer.WriteStringValue("social_comment_write", SocialCommentWrite);
             writer.WriteStringValue("social_insight_read", SocialInsightRead);
             writer.WriteStringValue("social_insight_write", SocialInsightWrite);
             writer.WriteStringValue("social_post_read", SocialPostRead);
