@@ -1152,6 +1152,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         AdsPromotedRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ads_inventory_read")]
+        #pragma warning disable CS1591
+        AdsInventoryRead,
+        #pragma warning restore CS1591
         [EnumMember(Value = "analytics_property_read")]
         #pragma warning disable CS1591
         AnalyticsPropertyRead,

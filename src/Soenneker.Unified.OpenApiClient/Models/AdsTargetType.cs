@@ -59,5 +59,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         OsVersion,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM_KEY")]
+        #pragma warning disable CS1591
+        CustomKey,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM_VALUE")]
+        #pragma warning disable CS1591
+        CustomValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BROWSER")]
+        #pragma warning disable CS1591
+        Browser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPERATING_SYSTEM")]
+        #pragma warning disable CS1591
+        OperatingSystem,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEVICE_CATEGORY")]
+        #pragma warning disable CS1591
+        DeviceCategory,
+        #pragma warning restore CS1591
     }
 }

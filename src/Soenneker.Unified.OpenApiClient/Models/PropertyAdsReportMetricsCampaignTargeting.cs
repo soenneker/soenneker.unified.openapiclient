@@ -23,12 +23,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("brand_safety") is { } nullNodeBrandSafety && nullNodeBrandSafety.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandSafety = null;
             if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
             else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("custom") is null) { _explicitNullValueCustom = default!; _explicitNullProperties?.Remove("custom"); }
+            else if (parseNode.GetChildNode("custom") is { } nullNodeCustom && nullNodeCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Custom = null;
             if (parseNode.GetChildNode("demographic") is null) { _explicitNullValueDemographic = default!; _explicitNullProperties?.Remove("demographic"); }
             else if (parseNode.GetChildNode("demographic") is { } nullNodeDemographic && nullNodeDemographic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Demographic = null;
             if (parseNode.GetChildNode("device") is null) { _explicitNullValueDevice = default!; _explicitNullProperties?.Remove("device"); }
             else if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
             if (parseNode.GetChildNode("geographic") is null) { _explicitNullValueGeographic = default!; _explicitNullProperties?.Remove("geographic"); }
             else if (parseNode.GetChildNode("geographic") is { } nullNodeGeographic && nullNodeGeographic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geographic = null;
+            if (parseNode.GetChildNode("inventory") is null) { _explicitNullValueInventory = default!; _explicitNullProperties?.Remove("inventory"); }
+            else if (parseNode.GetChildNode("inventory") is { } nullNodeInventory && nullNodeInventory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inventory = null;
             if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
             else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
             if (parseNode.GetChildNode("optimization") is null) { _explicitNullValueOptimization = default!; _explicitNullProperties?.Remove("optimization"); }
@@ -71,6 +75,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent _explicitNullValueContent = default!;
 #endif
+        /// <summary>Key-value targeting; clauses are ANDed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting>? Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; AdditionalData?.Remove("custom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting>? _explicitNullValueCustom = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting> Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; AdditionalData?.Remove("custom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting> _explicitNullValueCustom = default!;
+#endif
         /// <summary>Demographic targeting (Meta: age_min, age_max, genders)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +114,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic Geographic { get => _explicitNullValueGeographic; set { _explicitNullValueGeographic = value; AdditionalData?.Remove("geographic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geographic"); else _explicitNullProperties?.Remove("geographic"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic _explicitNullValueGeographic = default!;
+#endif
+        /// <summary>Publisher inventory (ad units, placements) to include / exclude</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory? Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; AdditionalData?.Remove("inventory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory? _explicitNullValueInventory = default!;
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; AdditionalData?.Remove("inventory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory _explicitNullValueInventory = default!;
 #endif
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,9 +193,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "audience", n => { Audience = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingAudience>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingAudience.CreateFromDiscriminatorValue); } },
                 { "brand_safety", n => { BrandSafety = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety.CreateFromDiscriminatorValue); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent.CreateFromDiscriminatorValue); } },
+                { "custom", n => { Custom = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting>(global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "demographic", n => { Demographic = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDemographic>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDemographic.CreateFromDiscriminatorValue); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDevice>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDevice.CreateFromDiscriminatorValue); } },
                 { "geographic", n => { Geographic = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic.CreateFromDiscriminatorValue); } },
+                { "inventory", n => { Inventory = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingOptimization>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingOptimization.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingPlacement>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingPlacement.CreateFromDiscriminatorValue); } },
@@ -188,9 +214,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingAudience>("audience", Audience);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingBrandSafety>("brand_safety", BrandSafety);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingContent>("content", Content);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CustomTargeting>("custom", Custom);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDemographic>("demographic", Demographic);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingDevice>("device", Device);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingGeographic>("geographic", Geographic);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingInventory>("inventory", Inventory);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>("language", Language);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingOptimization>("optimization", Optimization);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignTargetingPlacement>("placement", Placement);

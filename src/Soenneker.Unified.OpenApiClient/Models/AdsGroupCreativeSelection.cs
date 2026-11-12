@@ -15,5 +15,13 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         RoundRobin,
         #pragma warning restore CS1591
+        [EnumMember(Value = "WEIGHTED")]
+        #pragma warning disable CS1591
+        Weighted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SEQUENTIAL")]
+        #pragma warning disable CS1591
+        Sequential,
+        #pragma warning restore CS1591
     }
 }

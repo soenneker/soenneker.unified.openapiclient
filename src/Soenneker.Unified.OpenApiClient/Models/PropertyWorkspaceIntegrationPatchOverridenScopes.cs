@@ -151,6 +151,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("ads_insertionorder_read") is { } nullNodeAdsInsertionorderRead && nullNodeAdsInsertionorderRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdsInsertionorderRead = null;
             if (parseNode.GetChildNode("ads_insertionorder_write") is null) { _explicitNullValueAdsInsertionorderWrite = default!; _explicitNullProperties?.Remove("ads_insertionorder_write"); }
             else if (parseNode.GetChildNode("ads_insertionorder_write") is { } nullNodeAdsInsertionorderWrite && nullNodeAdsInsertionorderWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdsInsertionorderWrite = null;
+            if (parseNode.GetChildNode("ads_inventory_read") is null) { _explicitNullValueAdsInventoryRead = default!; _explicitNullProperties?.Remove("ads_inventory_read"); }
+            else if (parseNode.GetChildNode("ads_inventory_read") is { } nullNodeAdsInventoryRead && nullNodeAdsInventoryRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdsInventoryRead = null;
             if (parseNode.GetChildNode("ads_organization_read") is null) { _explicitNullValueAdsOrganizationRead = default!; _explicitNullProperties?.Remove("ads_organization_read"); }
             else if (parseNode.GetChildNode("ads_organization_read") is { } nullNodeAdsOrganizationRead && nullNodeAdsOrganizationRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdsOrganizationRead = null;
             if (parseNode.GetChildNode("ads_organization_write") is null) { _explicitNullValueAdsOrganizationWrite = default!; _explicitNullProperties?.Remove("ads_organization_write"); }
@@ -1582,6 +1584,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string AdsInsertionorderWrite { get => _explicitNullValueAdsInsertionorderWrite; set { _explicitNullValueAdsInsertionorderWrite = value; AdditionalData?.Remove("ads_insertionorder_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ads_insertionorder_write"); else _explicitNullProperties?.Remove("ads_insertionorder_write"); } }
         private string _explicitNullValueAdsInsertionorderWrite = default!;
+#endif
+        /// <summary>The ads_inventory_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AdsInventoryRead { get => _explicitNullValueAdsInventoryRead; set { _explicitNullValueAdsInventoryRead = value; AdditionalData?.Remove("ads_inventory_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ads_inventory_read"); else _explicitNullProperties?.Remove("ads_inventory_read"); } }
+        private string? _explicitNullValueAdsInventoryRead = default!;
+#nullable restore
+#else
+        public string AdsInventoryRead { get => _explicitNullValueAdsInventoryRead; set { _explicitNullValueAdsInventoryRead = value; AdditionalData?.Remove("ads_inventory_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ads_inventory_read"); else _explicitNullProperties?.Remove("ads_inventory_read"); } }
+        private string _explicitNullValueAdsInventoryRead = default!;
 #endif
         /// <summary>The ads_organization_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -5465,6 +5477,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "ads_group_write", n => { AdsGroupWrite = n.GetStringValue(); } },
                 { "ads_insertionorder_read", n => { AdsInsertionorderRead = n.GetStringValue(); } },
                 { "ads_insertionorder_write", n => { AdsInsertionorderWrite = n.GetStringValue(); } },
+                { "ads_inventory_read", n => { AdsInventoryRead = n.GetStringValue(); } },
                 { "ads_organization_read", n => { AdsOrganizationRead = n.GetStringValue(); } },
                 { "ads_organization_write", n => { AdsOrganizationWrite = n.GetStringValue(); } },
                 { "ads_promoted_read", n => { AdsPromotedRead = n.GetStringValue(); } },
@@ -5920,6 +5933,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("ads_group_write", AdsGroupWrite);
             writer.WriteStringValue("ads_insertionorder_read", AdsInsertionorderRead);
             writer.WriteStringValue("ads_insertionorder_write", AdsInsertionorderWrite);
+            writer.WriteStringValue("ads_inventory_read", AdsInventoryRead);
             writer.WriteStringValue("ads_organization_read", AdsOrganizationRead);
             writer.WriteStringValue("ads_organization_write", AdsOrganizationWrite);
             writer.WriteStringValue("ads_promoted_read", AdsPromotedRead);

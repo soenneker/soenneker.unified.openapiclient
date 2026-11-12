@@ -8,6 +8,7 @@ using Soenneker.Unified.OpenApiClient.Ads.Item.Campaign;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Creative;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Group;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Insertionorder;
+using Soenneker.Unified.OpenApiClient.Ads.Item.Inventory;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Organization;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Promoted;
 using Soenneker.Unified.OpenApiClient.Ads.Item.Report;
@@ -53,6 +54,11 @@ namespace Soenneker.Unified.OpenApiClient.Ads.Item
         public global::Soenneker.Unified.OpenApiClient.Ads.Item.Insertionorder.InsertionorderRequestBuilder Insertionorder
         {
             get => new global::Soenneker.Unified.OpenApiClient.Ads.Item.Insertionorder.InsertionorderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The inventory property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Ads.Item.Inventory.InventoryRequestBuilder Inventory
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Ads.Item.Inventory.InventoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organization property</summary>
         public global::Soenneker.Unified.OpenApiClient.Ads.Item.Organization.OrganizationRequestBuilder Organization

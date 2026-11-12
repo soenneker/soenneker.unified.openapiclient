@@ -140,5 +140,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Raw,
         #pragma warning restore CS1591
+        [EnumMember(Value = "delivery_type")]
+        #pragma warning disable CS1591
+        DeliveryType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "priority")]
+        #pragma warning disable CS1591
+        Priority,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cost_type")]
+        #pragma warning disable CS1591
+        CostType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "delivery_goal")]
+        #pragma warning disable CS1591
+        DeliveryGoal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "creative_sizes")]
+        #pragma warning disable CS1591
+        CreativeSizes,
+        #pragma warning restore CS1591
     }
 }

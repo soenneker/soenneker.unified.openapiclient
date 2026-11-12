@@ -35,14 +35,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("budget_unit") is { } nullNodeBudgetUnit && nullNodeBudgetUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetUnit = null;
             if (parseNode.GetChildNode("campaign_id") is null) { _explicitNullValueCampaignId = default!; _explicitNullProperties?.Remove("campaign_id"); }
             else if (parseNode.GetChildNode("campaign_id") is { } nullNodeCampaignId && nullNodeCampaignId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignId = null;
+            if (parseNode.GetChildNode("cost_type") is null) { _explicitNullValueCostType = default!; _explicitNullProperties?.Remove("cost_type"); }
+            else if (parseNode.GetChildNode("cost_type") is { } nullNodeCostType && nullNodeCostType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostType = null;
             if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("creative_ids") is null) { _explicitNullValueCreativeIds = default!; _explicitNullProperties?.Remove("creative_ids"); }
             else if (parseNode.GetChildNode("creative_ids") is { } nullNodeCreativeIds && nullNodeCreativeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreativeIds = null;
             if (parseNode.GetChildNode("creative_selection") is null) { _explicitNullValueCreativeSelection = default!; _explicitNullProperties?.Remove("creative_selection"); }
             else if (parseNode.GetChildNode("creative_selection") is { } nullNodeCreativeSelection && nullNodeCreativeSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreativeSelection = null;
+            if (parseNode.GetChildNode("creative_sizes") is null) { _explicitNullValueCreativeSizes = default!; _explicitNullProperties?.Remove("creative_sizes"); }
+            else if (parseNode.GetChildNode("creative_sizes") is { } nullNodeCreativeSizes && nullNodeCreativeSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreativeSizes = null;
             if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
             else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("delivery_goal") is null) { _explicitNullValueDeliveryGoal = default!; _explicitNullProperties?.Remove("delivery_goal"); }
+            else if (parseNode.GetChildNode("delivery_goal") is { } nullNodeDeliveryGoal && nullNodeDeliveryGoal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryGoal = null;
+            if (parseNode.GetChildNode("delivery_type") is null) { _explicitNullValueDeliveryType = default!; _explicitNullProperties?.Remove("delivery_type"); }
+            else if (parseNode.GetChildNode("delivery_type") is { } nullNodeDeliveryType && nullNodeDeliveryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryType = null;
             if (parseNode.GetChildNode("effective_status") is null) { _explicitNullValueEffectiveStatus = default!; _explicitNullProperties?.Remove("effective_status"); }
             else if (parseNode.GetChildNode("effective_status") is { } nullNodeEffectiveStatus && nullNodeEffectiveStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveStatus = null;
             if (parseNode.GetChildNode("end_at") is null) { _explicitNullValueEndAt = default!; _explicitNullProperties?.Remove("end_at"); }
@@ -69,6 +77,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("pacing") is { } nullNodePacing && nullNodePacing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pacing = null;
             if (parseNode.GetChildNode("parent_id") is null) { _explicitNullValueParentId = default!; _explicitNullProperties?.Remove("parent_id"); }
             else if (parseNode.GetChildNode("parent_id") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
+            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
+            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
             if (parseNode.GetChildNode("promoted") is null) { _explicitNullValuePromoted = default!; _explicitNullProperties?.Remove("promoted"); }
             else if (parseNode.GetChildNode("promoted") is { } nullNodePromoted && nullNodePromoted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promoted = null;
             if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
@@ -128,6 +138,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; AdditionalData?.Remove("campaign_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
         private string _explicitNullValueCampaignId = default!;
 #endif
+        /// <summary>How the line item is priced (Google Ad Manager costType)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType? CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; AdditionalData?.Remove("cost_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType? _explicitNullValueCostType = default!;
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
@@ -144,6 +157,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>Creative rotation strategy (LinkedIn creativeSelection)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection? CreativeSelection { get => _explicitNullValueCreativeSelection; set { _explicitNullValueCreativeSelection = value; AdditionalData?.Remove("creative_selection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative_selection"); else _explicitNullProperties?.Remove("creative_selection"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection? _explicitNullValueCreativeSelection = default!;
+        /// <summary>Expected creative sizes (Google Ad Manager creativePlaceholders)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsSize>? CreativeSizes { get => _explicitNullValueCreativeSizes; set { _explicitNullValueCreativeSizes = value; AdditionalData?.Remove("creative_sizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative_sizes"); else _explicitNullProperties?.Remove("creative_sizes"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsSize>? _explicitNullValueCreativeSizes = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsSize> CreativeSizes { get => _explicitNullValueCreativeSizes; set { _explicitNullValueCreativeSizes = value; AdditionalData?.Remove("creative_sizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creative_sizes"); else _explicitNullProperties?.Remove("creative_sizes"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsSize> _explicitNullValueCreativeSizes = default!;
+#endif
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +177,19 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
+        /// <summary>Booked delivery goal (Google Ad Manager goal)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal? DeliveryGoal { get => _explicitNullValueDeliveryGoal; set { _explicitNullValueDeliveryGoal = value; AdditionalData?.Remove("delivery_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_goal"); else _explicitNullProperties?.Remove("delivery_goal"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal? _explicitNullValueDeliveryGoal = default!;
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal DeliveryGoal { get => _explicitNullValueDeliveryGoal; set { _explicitNullValueDeliveryGoal = value; AdditionalData?.Remove("delivery_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_goal"); else _explicitNullProperties?.Remove("delivery_goal"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal _explicitNullValueDeliveryGoal = default!;
+#endif
+        /// <summary>Ad server line item type / delivery class (Google Ad Manager lineItemType)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryType? DeliveryType { get => _explicitNullValueDeliveryType; set { _explicitNullValueDeliveryType = value; AdditionalData?.Remove("delivery_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_type"); else _explicitNullProperties?.Remove("delivery_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryType? _explicitNullValueDeliveryType = default!;
         /// <summary>The effective_status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus? EffectiveStatus { get => _explicitNullValueEffectiveStatus; set { _explicitNullValueEffectiveStatus = value; AdditionalData?.Remove("effective_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_status"); else _explicitNullProperties?.Remove("effective_status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus? _explicitNullValueEffectiveStatus = default!;
@@ -256,6 +292,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_id"); else _explicitNullProperties?.Remove("parent_id"); } }
         private string _explicitNullValueParentId = default!;
 #endif
+        /// <summary>Ad server delivery priority, lower serves first (Google Ad Manager priority, Kevel priority)</summary>
+        public double? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private double? _explicitNullValuePriority = default!;
         /// <summary>The promoted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -332,10 +371,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "budget_period", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBudgetPeriod = default; _explicitNullProperties?.Remove("budget_period"); AdditionalData["budget_period"] = unknown; } else { BudgetPeriod = parsed; AdditionalData.Remove("budget_period"); } } },
                 { "budget_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBudgetUnit = default; _explicitNullProperties?.Remove("budget_unit"); AdditionalData["budget_unit"] = unknown; } else { BudgetUnit = parsed; AdditionalData.Remove("budget_unit"); } } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
+                { "cost_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCostType = default; _explicitNullProperties?.Remove("cost_type"); AdditionalData["cost_type"] = unknown; } else { CostType = parsed; AdditionalData.Remove("cost_type"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_ids", n => { CreativeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "creative_selection", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreativeSelection = default; _explicitNullProperties?.Remove("creative_selection"); AdditionalData["creative_selection"] = unknown; } else { CreativeSelection = parsed; AdditionalData.Remove("creative_selection"); } } },
+                { "creative_sizes", n => { CreativeSizes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsSize>(global::Soenneker.Unified.OpenApiClient.Models.AdsSize.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "delivery_goal", n => { DeliveryGoal = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal.CreateFromDiscriminatorValue); } },
+                { "delivery_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeliveryType = default; _explicitNullProperties?.Remove("delivery_type"); AdditionalData["delivery_type"] = unknown; } else { DeliveryType = parsed; AdditionalData.Remove("delivery_type"); } } },
                 { "effective_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveStatus = default; _explicitNullProperties?.Remove("effective_status"); AdditionalData["effective_status"] = unknown; } else { EffectiveStatus = parsed; AdditionalData.Remove("effective_status"); } } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "frequency_cap", n => { FrequencyCap = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap.CreateFromDiscriminatorValue); } },
@@ -349,6 +392,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupPacing>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupPacing.CreateFromDiscriminatorValue); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "promoted", n => { Promoted = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>(global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupRawProperty.CreateFromDiscriminatorValue); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -374,10 +418,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetPeriod>("budget_period", BudgetPeriod);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetUnit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_id", CampaignId);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType>("cost_type", CostType);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("creative_ids", CreativeIds);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCreativeSelection>("creative_selection", CreativeSelection);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsSize>("creative_sizes", CreativeSizes);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryGoal>("delivery_goal", DeliveryGoal);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupDeliveryType>("delivery_type", DeliveryType);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupEffectiveStatus>("effective_status", EffectiveStatus);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupFrequencyCap>("frequency_cap", FrequencyCap);
@@ -391,6 +439,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupPacing>("pacing", Pacing);
             writer.WriteStringValue("parent_id", ParentId);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsPromoted>("promoted", Promoted);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupRawProperty>("raw", Raw);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
