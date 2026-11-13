@@ -771,6 +771,22 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("property_review_write") is { } nullNodePropertyReviewWrite && nullNodePropertyReviewWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyReviewWrite = null;
             if (parseNode.GetChildNode("property_unittype_read") is null) { _explicitNullValuePropertyUnittypeRead = default!; _explicitNullProperties?.Remove("property_unittype_read"); }
             else if (parseNode.GetChildNode("property_unittype_read") is { } nullNodePropertyUnittypeRead && nullNodePropertyUnittypeRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyUnittypeRead = null;
+            if (parseNode.GetChildNode("qms_action_read") is null) { _explicitNullValueQmsActionRead = default!; _explicitNullProperties?.Remove("qms_action_read"); }
+            else if (parseNode.GetChildNode("qms_action_read") is { } nullNodeQmsActionRead && nullNodeQmsActionRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsActionRead = null;
+            if (parseNode.GetChildNode("qms_action_write") is null) { _explicitNullValueQmsActionWrite = default!; _explicitNullProperties?.Remove("qms_action_write"); }
+            else if (parseNode.GetChildNode("qms_action_write") is { } nullNodeQmsActionWrite && nullNodeQmsActionWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsActionWrite = null;
+            if (parseNode.GetChildNode("qms_audit_read") is null) { _explicitNullValueQmsAuditRead = default!; _explicitNullProperties?.Remove("qms_audit_read"); }
+            else if (parseNode.GetChildNode("qms_audit_read") is { } nullNodeQmsAuditRead && nullNodeQmsAuditRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsAuditRead = null;
+            if (parseNode.GetChildNode("qms_audit_write") is null) { _explicitNullValueQmsAuditWrite = default!; _explicitNullProperties?.Remove("qms_audit_write"); }
+            else if (parseNode.GetChildNode("qms_audit_write") is { } nullNodeQmsAuditWrite && nullNodeQmsAuditWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsAuditWrite = null;
+            if (parseNode.GetChildNode("qms_inspection_read") is null) { _explicitNullValueQmsInspectionRead = default!; _explicitNullProperties?.Remove("qms_inspection_read"); }
+            else if (parseNode.GetChildNode("qms_inspection_read") is { } nullNodeQmsInspectionRead && nullNodeQmsInspectionRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsInspectionRead = null;
+            if (parseNode.GetChildNode("qms_inspection_write") is null) { _explicitNullValueQmsInspectionWrite = default!; _explicitNullProperties?.Remove("qms_inspection_write"); }
+            else if (parseNode.GetChildNode("qms_inspection_write") is { } nullNodeQmsInspectionWrite && nullNodeQmsInspectionWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsInspectionWrite = null;
+            if (parseNode.GetChildNode("qms_issue_read") is null) { _explicitNullValueQmsIssueRead = default!; _explicitNullProperties?.Remove("qms_issue_read"); }
+            else if (parseNode.GetChildNode("qms_issue_read") is { } nullNodeQmsIssueRead && nullNodeQmsIssueRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsIssueRead = null;
+            if (parseNode.GetChildNode("qms_issue_write") is null) { _explicitNullValueQmsIssueWrite = default!; _explicitNullProperties?.Remove("qms_issue_write"); }
+            else if (parseNode.GetChildNode("qms_issue_write") is { } nullNodeQmsIssueWrite && nullNodeQmsIssueWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QmsIssueWrite = null;
             if (parseNode.GetChildNode("repo_branch_read") is null) { _explicitNullValueRepoBranchRead = default!; _explicitNullProperties?.Remove("repo_branch_read"); }
             else if (parseNode.GetChildNode("repo_branch_read") is { } nullNodeRepoBranchRead && nullNodeRepoBranchRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoBranchRead = null;
             if (parseNode.GetChildNode("repo_branch_write") is null) { _explicitNullValueRepoBranchWrite = default!; _explicitNullProperties?.Remove("repo_branch_write"); }
@@ -4685,6 +4701,86 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string PropertyUnittypeRead { get => _explicitNullValuePropertyUnittypeRead; set { _explicitNullValuePropertyUnittypeRead = value; AdditionalData?.Remove("property_unittype_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_unittype_read"); else _explicitNullProperties?.Remove("property_unittype_read"); } }
         private string _explicitNullValuePropertyUnittypeRead = default!;
 #endif
+        /// <summary>The qms_action_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsActionRead { get => _explicitNullValueQmsActionRead; set { _explicitNullValueQmsActionRead = value; AdditionalData?.Remove("qms_action_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_action_read"); else _explicitNullProperties?.Remove("qms_action_read"); } }
+        private string? _explicitNullValueQmsActionRead = default!;
+#nullable restore
+#else
+        public string QmsActionRead { get => _explicitNullValueQmsActionRead; set { _explicitNullValueQmsActionRead = value; AdditionalData?.Remove("qms_action_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_action_read"); else _explicitNullProperties?.Remove("qms_action_read"); } }
+        private string _explicitNullValueQmsActionRead = default!;
+#endif
+        /// <summary>The qms_action_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsActionWrite { get => _explicitNullValueQmsActionWrite; set { _explicitNullValueQmsActionWrite = value; AdditionalData?.Remove("qms_action_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_action_write"); else _explicitNullProperties?.Remove("qms_action_write"); } }
+        private string? _explicitNullValueQmsActionWrite = default!;
+#nullable restore
+#else
+        public string QmsActionWrite { get => _explicitNullValueQmsActionWrite; set { _explicitNullValueQmsActionWrite = value; AdditionalData?.Remove("qms_action_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_action_write"); else _explicitNullProperties?.Remove("qms_action_write"); } }
+        private string _explicitNullValueQmsActionWrite = default!;
+#endif
+        /// <summary>The qms_audit_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsAuditRead { get => _explicitNullValueQmsAuditRead; set { _explicitNullValueQmsAuditRead = value; AdditionalData?.Remove("qms_audit_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_audit_read"); else _explicitNullProperties?.Remove("qms_audit_read"); } }
+        private string? _explicitNullValueQmsAuditRead = default!;
+#nullable restore
+#else
+        public string QmsAuditRead { get => _explicitNullValueQmsAuditRead; set { _explicitNullValueQmsAuditRead = value; AdditionalData?.Remove("qms_audit_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_audit_read"); else _explicitNullProperties?.Remove("qms_audit_read"); } }
+        private string _explicitNullValueQmsAuditRead = default!;
+#endif
+        /// <summary>The qms_audit_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsAuditWrite { get => _explicitNullValueQmsAuditWrite; set { _explicitNullValueQmsAuditWrite = value; AdditionalData?.Remove("qms_audit_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_audit_write"); else _explicitNullProperties?.Remove("qms_audit_write"); } }
+        private string? _explicitNullValueQmsAuditWrite = default!;
+#nullable restore
+#else
+        public string QmsAuditWrite { get => _explicitNullValueQmsAuditWrite; set { _explicitNullValueQmsAuditWrite = value; AdditionalData?.Remove("qms_audit_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_audit_write"); else _explicitNullProperties?.Remove("qms_audit_write"); } }
+        private string _explicitNullValueQmsAuditWrite = default!;
+#endif
+        /// <summary>The qms_inspection_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsInspectionRead { get => _explicitNullValueQmsInspectionRead; set { _explicitNullValueQmsInspectionRead = value; AdditionalData?.Remove("qms_inspection_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_inspection_read"); else _explicitNullProperties?.Remove("qms_inspection_read"); } }
+        private string? _explicitNullValueQmsInspectionRead = default!;
+#nullable restore
+#else
+        public string QmsInspectionRead { get => _explicitNullValueQmsInspectionRead; set { _explicitNullValueQmsInspectionRead = value; AdditionalData?.Remove("qms_inspection_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_inspection_read"); else _explicitNullProperties?.Remove("qms_inspection_read"); } }
+        private string _explicitNullValueQmsInspectionRead = default!;
+#endif
+        /// <summary>The qms_inspection_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsInspectionWrite { get => _explicitNullValueQmsInspectionWrite; set { _explicitNullValueQmsInspectionWrite = value; AdditionalData?.Remove("qms_inspection_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_inspection_write"); else _explicitNullProperties?.Remove("qms_inspection_write"); } }
+        private string? _explicitNullValueQmsInspectionWrite = default!;
+#nullable restore
+#else
+        public string QmsInspectionWrite { get => _explicitNullValueQmsInspectionWrite; set { _explicitNullValueQmsInspectionWrite = value; AdditionalData?.Remove("qms_inspection_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_inspection_write"); else _explicitNullProperties?.Remove("qms_inspection_write"); } }
+        private string _explicitNullValueQmsInspectionWrite = default!;
+#endif
+        /// <summary>The qms_issue_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsIssueRead { get => _explicitNullValueQmsIssueRead; set { _explicitNullValueQmsIssueRead = value; AdditionalData?.Remove("qms_issue_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_issue_read"); else _explicitNullProperties?.Remove("qms_issue_read"); } }
+        private string? _explicitNullValueQmsIssueRead = default!;
+#nullable restore
+#else
+        public string QmsIssueRead { get => _explicitNullValueQmsIssueRead; set { _explicitNullValueQmsIssueRead = value; AdditionalData?.Remove("qms_issue_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_issue_read"); else _explicitNullProperties?.Remove("qms_issue_read"); } }
+        private string _explicitNullValueQmsIssueRead = default!;
+#endif
+        /// <summary>The qms_issue_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QmsIssueWrite { get => _explicitNullValueQmsIssueWrite; set { _explicitNullValueQmsIssueWrite = value; AdditionalData?.Remove("qms_issue_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_issue_write"); else _explicitNullProperties?.Remove("qms_issue_write"); } }
+        private string? _explicitNullValueQmsIssueWrite = default!;
+#nullable restore
+#else
+        public string QmsIssueWrite { get => _explicitNullValueQmsIssueWrite; set { _explicitNullValueQmsIssueWrite = value; AdditionalData?.Remove("qms_issue_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qms_issue_write"); else _explicitNullProperties?.Remove("qms_issue_write"); } }
+        private string _explicitNullValueQmsIssueWrite = default!;
+#endif
         /// <summary>The repo_branch_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -5787,6 +5883,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "property_review_read", n => { PropertyReviewRead = n.GetStringValue(); } },
                 { "property_review_write", n => { PropertyReviewWrite = n.GetStringValue(); } },
                 { "property_unittype_read", n => { PropertyUnittypeRead = n.GetStringValue(); } },
+                { "qms_action_read", n => { QmsActionRead = n.GetStringValue(); } },
+                { "qms_action_write", n => { QmsActionWrite = n.GetStringValue(); } },
+                { "qms_audit_read", n => { QmsAuditRead = n.GetStringValue(); } },
+                { "qms_audit_write", n => { QmsAuditWrite = n.GetStringValue(); } },
+                { "qms_inspection_read", n => { QmsInspectionRead = n.GetStringValue(); } },
+                { "qms_inspection_write", n => { QmsInspectionWrite = n.GetStringValue(); } },
+                { "qms_issue_read", n => { QmsIssueRead = n.GetStringValue(); } },
+                { "qms_issue_write", n => { QmsIssueWrite = n.GetStringValue(); } },
                 { "repo_branch_read", n => { RepoBranchRead = n.GetStringValue(); } },
                 { "repo_branch_write", n => { RepoBranchWrite = n.GetStringValue(); } },
                 { "repo_commit_read", n => { RepoCommitRead = n.GetStringValue(); } },
@@ -6243,6 +6347,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("property_review_read", PropertyReviewRead);
             writer.WriteStringValue("property_review_write", PropertyReviewWrite);
             writer.WriteStringValue("property_unittype_read", PropertyUnittypeRead);
+            writer.WriteStringValue("qms_action_read", QmsActionRead);
+            writer.WriteStringValue("qms_action_write", QmsActionWrite);
+            writer.WriteStringValue("qms_audit_read", QmsAuditRead);
+            writer.WriteStringValue("qms_audit_write", QmsAuditWrite);
+            writer.WriteStringValue("qms_inspection_read", QmsInspectionRead);
+            writer.WriteStringValue("qms_inspection_write", QmsInspectionWrite);
+            writer.WriteStringValue("qms_issue_read", QmsIssueRead);
+            writer.WriteStringValue("qms_issue_write", QmsIssueWrite);
             writer.WriteStringValue("repo_branch_read", RepoBranchRead);
             writer.WriteStringValue("repo_branch_write", RepoBranchWrite);
             writer.WriteStringValue("repo_commit_read", RepoCommitRead);

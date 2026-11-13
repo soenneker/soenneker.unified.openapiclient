@@ -1796,5 +1796,37 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PlmCategoryWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qms_issue_read")]
+        #pragma warning disable CS1591
+        QmsIssueRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_issue_write")]
+        #pragma warning disable CS1591
+        QmsIssueWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_action_read")]
+        #pragma warning disable CS1591
+        QmsActionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_action_write")]
+        #pragma warning disable CS1591
+        QmsActionWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_inspection_read")]
+        #pragma warning disable CS1591
+        QmsInspectionRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_inspection_write")]
+        #pragma warning disable CS1591
+        QmsInspectionWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_audit_read")]
+        #pragma warning disable CS1591
+        QmsAuditRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_audit_write")]
+        #pragma warning disable CS1591
+        QmsAuditWrite,
+        #pragma warning restore CS1591
     }
 }

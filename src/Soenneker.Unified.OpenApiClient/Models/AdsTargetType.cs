@@ -79,5 +79,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DeviceCategory,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EXCHANGE")]
+        #pragma warning disable CS1591
+        Exchange,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEAL")]
+        #pragma warning disable CS1591
+        Deal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEAL_GROUP")]
+        #pragma warning disable CS1591
+        DealGroup,
+        #pragma warning restore CS1591
     }
 }

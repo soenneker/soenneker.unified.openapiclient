@@ -34,6 +34,7 @@ using Soenneker.Unified.OpenApiClient.Payment;
 using Soenneker.Unified.OpenApiClient.Performance;
 using Soenneker.Unified.OpenApiClient.Plm;
 using Soenneker.Unified.OpenApiClient.Property;
+using Soenneker.Unified.OpenApiClient.Qms;
 using Soenneker.Unified.OpenApiClient.Repo;
 using Soenneker.Unified.OpenApiClient.Scim;
 using Soenneker.Unified.OpenApiClient.Shipping;
@@ -196,6 +197,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Property.PropertyRequestBuilder Property
         {
             get => new global::Soenneker.Unified.OpenApiClient.Property.PropertyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The qms property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Qms.QmsRequestBuilder Qms
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Qms.QmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repo property</summary>
         public global::Soenneker.Unified.OpenApiClient.Repo.RepoRequestBuilder Repo

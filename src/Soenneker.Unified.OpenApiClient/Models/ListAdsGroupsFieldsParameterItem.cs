@@ -160,5 +160,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         CreativeSizes,
         #pragma warning restore CS1591
+        [EnumMember(Value = "conversion_tracking")]
+        #pragma warning disable CS1591
+        ConversionTracking,
+        #pragma warning restore CS1591
     }
 }

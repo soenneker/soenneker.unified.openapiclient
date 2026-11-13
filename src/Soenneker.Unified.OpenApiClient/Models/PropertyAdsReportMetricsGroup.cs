@@ -35,6 +35,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("budget_unit") is { } nullNodeBudgetUnit && nullNodeBudgetUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BudgetUnit = null;
             if (parseNode.GetChildNode("campaign_id") is null) { _explicitNullValueCampaignId = default!; _explicitNullProperties?.Remove("campaign_id"); }
             else if (parseNode.GetChildNode("campaign_id") is { } nullNodeCampaignId && nullNodeCampaignId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignId = null;
+            if (parseNode.GetChildNode("conversion_tracking") is null) { _explicitNullValueConversionTracking = default!; _explicitNullProperties?.Remove("conversion_tracking"); }
+            else if (parseNode.GetChildNode("conversion_tracking") is { } nullNodeConversionTracking && nullNodeConversionTracking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionTracking = null;
             if (parseNode.GetChildNode("cost_type") is null) { _explicitNullValueCostType = default!; _explicitNullProperties?.Remove("cost_type"); }
             else if (parseNode.GetChildNode("cost_type") is { } nullNodeCostType && nullNodeCostType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostType = null;
             if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
@@ -137,6 +139,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; AdditionalData?.Remove("campaign_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
         private string _explicitNullValueCampaignId = default!;
+#endif
+        /// <summary>Conversion trackers counted for this group (DV360 Floodlight activities, Pinterest conversion tag)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking>? ConversionTracking { get => _explicitNullValueConversionTracking; set { _explicitNullValueConversionTracking = value; AdditionalData?.Remove("conversion_tracking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_tracking"); else _explicitNullProperties?.Remove("conversion_tracking"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking>? _explicitNullValueConversionTracking = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking> ConversionTracking { get => _explicitNullValueConversionTracking; set { _explicitNullValueConversionTracking = value; AdditionalData?.Remove("conversion_tracking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_tracking"); else _explicitNullProperties?.Remove("conversion_tracking"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking> _explicitNullValueConversionTracking = default!;
 #endif
         /// <summary>How the line item is priced (Google Ad Manager costType)</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType? CostType { get => _explicitNullValueCostType; set { _explicitNullValueCostType = value; AdditionalData?.Remove("cost_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_type"); else _explicitNullProperties?.Remove("cost_type"); } }
@@ -371,6 +383,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "budget_period", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBudgetPeriod = default; _explicitNullProperties?.Remove("budget_period"); AdditionalData["budget_period"] = unknown; } else { BudgetPeriod = parsed; AdditionalData.Remove("budget_period"); } } },
                 { "budget_unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBudgetUnit = default; _explicitNullProperties?.Remove("budget_unit"); AdditionalData["budget_unit"] = unknown; } else { BudgetUnit = parsed; AdditionalData.Remove("budget_unit"); } } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
+                { "conversion_tracking", n => { ConversionTracking = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking>(global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cost_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCostType = default; _explicitNullProperties?.Remove("cost_type"); AdditionalData["cost_type"] = unknown; } else { CostType = parsed; AdditionalData.Remove("cost_type"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creative_ids", n => { CreativeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -418,6 +431,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetPeriod>("budget_period", BudgetPeriod);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupBudgetUnit>("budget_unit", BudgetUnit);
             writer.WriteStringValue("campaign_id", CampaignId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsConversionTracking>("conversion_tracking", ConversionTracking);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupCostType>("cost_type", CostType);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("creative_ids", CreativeIds);

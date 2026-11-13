@@ -41,6 +41,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("placement") is { } nullNodePlacement && nullNodePlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placement = null;
             if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
             else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("supply") is null) { _explicitNullValueSupply = default!; _explicitNullProperties?.Remove("supply"); }
+            else if (parseNode.GetChildNode("supply") is { } nullNodeSupply && nullNodeSupply.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Supply = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -165,6 +167,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule> _explicitNullValueSchedule = default!;
 #endif
+        /// <summary>Buy-side inventory: exchanges, deals, deal groups and seller authorization (DSPs)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply? Supply { get => _explicitNullValueSupply; set { _explicitNullValueSupply = value; AdditionalData?.Remove("supply"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supply"); else _explicitNullProperties?.Remove("supply"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply? _explicitNullValueSupply = default!;
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply Supply { get => _explicitNullValueSupply; set { _explicitNullValueSupply = value; AdditionalData?.Remove("supply"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supply"); else _explicitNullProperties?.Remove("supply"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply _explicitNullValueSupply = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargeting"/> and sets the default values.
         /// </summary>
@@ -202,6 +214,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimization>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimization.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingPlacement>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingPlacement.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>(global::Soenneker.Unified.OpenApiClient.Models.AdSchedule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "supply", n => { Supply = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -223,6 +236,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingOptimization>("optimization", Optimization);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingPlacement>("placement", Placement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupply>("supply", Supply);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

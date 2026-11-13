@@ -971,5 +971,21 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PlmCategory,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qms_issue")]
+        #pragma warning disable CS1591
+        QmsIssue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_action")]
+        #pragma warning disable CS1591
+        QmsAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_inspection")]
+        #pragma warning disable CS1591
+        QmsInspection,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qms_audit")]
+        #pragma warning disable CS1591
+        QmsAudit,
+        #pragma warning restore CS1591
     }
 }
