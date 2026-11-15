@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// A nonconformance, complaint, audit finding or problem report
+    /// A nonconformance, complaint, audit finding or other quality issue
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QmsIssue : IAdditionalDataHolder, IParsable
@@ -122,7 +122,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>What to do with the nonconforming material</summary>
+        /// <summary>The disposition property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsIssueDisposition? Disposition { get => _explicitNullValueDisposition; set { _explicitNullValueDisposition = value; AdditionalData?.Remove("disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disposition"); else _explicitNullProperties?.Remove("disposition"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsIssueDisposition? _explicitNullValueDisposition = default!;
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
@@ -234,10 +234,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The severity property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsIssueSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; AdditionalData?.Remove("severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsIssueSeverity? _explicitNullValueSeverity = default!;
-        /// <summary>Where a quality issue was found</summary>
+        /// <summary>The source property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsIssueSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsIssueSource? _explicitNullValueSource = default!;
-        /// <summary>Normalized status of a quality record</summary>
+        /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsIssueStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsIssueStatus? _explicitNullValueStatus = default!;
         /// <summary>The supplier_name property</summary>

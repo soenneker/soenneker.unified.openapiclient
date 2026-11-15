@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
-    /// <summary>Normalized status of a quality record</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum QmsAuditStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "OPEN")]
         #pragma warning disable CS1591

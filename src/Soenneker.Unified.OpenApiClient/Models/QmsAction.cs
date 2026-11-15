@@ -207,7 +207,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string RootCause { get => _explicitNullValueRootCause; set { _explicitNullValueRootCause = value; AdditionalData?.Remove("root_cause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_cause"); else _explicitNullProperties?.Remove("root_cause"); } }
         private string _explicitNullValueRootCause = default!;
 #endif
-        /// <summary>Normalized status of a quality record</summary>
+        /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsActionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsActionStatus? _explicitNullValueStatus = default!;
         /// <summary>The supplier_name property</summary>

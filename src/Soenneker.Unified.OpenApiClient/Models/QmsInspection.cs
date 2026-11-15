@@ -256,7 +256,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; AdditionalData?.Remove("serial_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serial_number"); else _explicitNullProperties?.Remove("serial_number"); } }
         private string _explicitNullValueSerialNumber = default!;
 #endif
-        /// <summary>Normalized status of a quality record</summary>
+        /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsInspectionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsInspectionStatus? _explicitNullValueStatus = default!;
         /// <summary>The supplier_name property</summary>

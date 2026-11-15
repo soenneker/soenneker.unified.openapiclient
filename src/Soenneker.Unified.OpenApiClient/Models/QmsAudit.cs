@@ -203,7 +203,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; AdditionalData?.Remove("start_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
         private DateTimeOffset? _explicitNullValueStartAt = default!;
-        /// <summary>Normalized status of a quality record</summary>
+        /// <summary>The status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.QmsAuditStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.QmsAuditStatus? _explicitNullValueStatus = default!;
         /// <summary>The supplier_name property</summary>

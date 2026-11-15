@@ -69,7 +69,7 @@ namespace Soenneker.Unified.OpenApiClient.Qms.Item.Issue
         /// Creates a QmsIssue. Provide the unified QmsIssue fields in the request body; they are mapped to the provider&apos;s API. Returns the created QmsIssue.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.QmsIssue"/></returns>
-        /// <param name="body">A nonconformance, complaint, audit finding or problem report</param>
+        /// <param name="body">A nonconformance, complaint, audit finding or other quality issue</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.Unified.OpenApiClient.Qms.Item.Issue
         /// Creates a QmsIssue. Provide the unified QmsIssue fields in the request body; they are mapped to the provider&apos;s API. Returns the created QmsIssue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A nonconformance, complaint, audit finding or problem report</param>
+        /// <param name="body">A nonconformance, complaint, audit finding or other quality issue</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -64,5 +64,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Raw,
         #pragma warning restore CS1591
+        [EnumMember(Value = "content")]
+        #pragma warning disable CS1591
+        Content,
+        #pragma warning restore CS1591
     }
 }
