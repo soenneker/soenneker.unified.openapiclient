@@ -70,6 +70,46 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot?> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot> PatchAsync(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot?> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot> PutAsync(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot>(requestInfo, global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Deletes the ComputeSnapshot identified by `id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -107,6 +147,50 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item
             return requestInfo;
         }
         /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Unified.OpenApiClient.Models.ComputeSnapshot body, Action<RequestConfiguration<global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder.SnapshotItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item.SnapshotItemRequestBuilder"/></returns>
@@ -130,6 +214,60 @@ namespace Soenneker.Unified.OpenApiClient.Compute.Item.Snapshot.Item
 #else
             [QueryParameter("fields")]
             public global::Soenneker.Unified.OpenApiClient.Models.GetComputeSnapshotFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SnapshotItemRequestBuilderPatchQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchComputeSnapshotFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.PatchComputeSnapshotFieldsParameterItem[] Fields { get; set; }
+#endif
+            /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw")]
+            public string? Raw { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw")]
+            public string Raw { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SnapshotItemRequestBuilderPutQueryParameters 
+        {
+            /// <summary>Fields to return</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateComputeSnapshotFieldsParameterItem[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public global::Soenneker.Unified.OpenApiClient.Models.UpdateComputeSnapshotFieldsParameterItem[] Fields { get; set; }
 #endif
             /// <summary>Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -597,6 +597,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("hris_taxonomy_read") is { } nullNodeHrisTaxonomyRead && nullNodeHrisTaxonomyRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrisTaxonomyRead = null;
             if (parseNode.GetChildNode("hris_taxonomy_write") is null) { _explicitNullValueHrisTaxonomyWrite = default!; _explicitNullProperties?.Remove("hris_taxonomy_write"); }
             else if (parseNode.GetChildNode("hris_taxonomy_write") is { } nullNodeHrisTaxonomyWrite && nullNodeHrisTaxonomyWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrisTaxonomyWrite = null;
+            if (parseNode.GetChildNode("hris_taxwithholding_read") is null) { _explicitNullValueHrisTaxwithholdingRead = default!; _explicitNullProperties?.Remove("hris_taxwithholding_read"); }
+            else if (parseNode.GetChildNode("hris_taxwithholding_read") is { } nullNodeHrisTaxwithholdingRead && nullNodeHrisTaxwithholdingRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrisTaxwithholdingRead = null;
+            if (parseNode.GetChildNode("hris_taxwithholding_write") is null) { _explicitNullValueHrisTaxwithholdingWrite = default!; _explicitNullProperties?.Remove("hris_taxwithholding_write"); }
+            else if (parseNode.GetChildNode("hris_taxwithholding_write") is { } nullNodeHrisTaxwithholdingWrite && nullNodeHrisTaxwithholdingWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrisTaxwithholdingWrite = null;
             if (parseNode.GetChildNode("hris_timeoff_read") is null) { _explicitNullValueHrisTimeoffRead = default!; _explicitNullProperties?.Remove("hris_timeoff_read"); }
             else if (parseNode.GetChildNode("hris_timeoff_read") is { } nullNodeHrisTimeoffRead && nullNodeHrisTimeoffRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HrisTimeoffRead = null;
             if (parseNode.GetChildNode("hris_timeoff_write") is null) { _explicitNullValueHrisTimeoffWrite = default!; _explicitNullProperties?.Remove("hris_timeoff_write"); }
@@ -3831,6 +3835,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string HrisTaxonomyWrite { get => _explicitNullValueHrisTaxonomyWrite; set { _explicitNullValueHrisTaxonomyWrite = value; AdditionalData?.Remove("hris_taxonomy_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hris_taxonomy_write"); else _explicitNullProperties?.Remove("hris_taxonomy_write"); } }
         private string _explicitNullValueHrisTaxonomyWrite = default!;
 #endif
+        /// <summary>The hris_taxwithholding_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HrisTaxwithholdingRead { get => _explicitNullValueHrisTaxwithholdingRead; set { _explicitNullValueHrisTaxwithholdingRead = value; AdditionalData?.Remove("hris_taxwithholding_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hris_taxwithholding_read"); else _explicitNullProperties?.Remove("hris_taxwithholding_read"); } }
+        private string? _explicitNullValueHrisTaxwithholdingRead = default!;
+#nullable restore
+#else
+        public string HrisTaxwithholdingRead { get => _explicitNullValueHrisTaxwithholdingRead; set { _explicitNullValueHrisTaxwithholdingRead = value; AdditionalData?.Remove("hris_taxwithholding_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hris_taxwithholding_read"); else _explicitNullProperties?.Remove("hris_taxwithholding_read"); } }
+        private string _explicitNullValueHrisTaxwithholdingRead = default!;
+#endif
+        /// <summary>The hris_taxwithholding_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HrisTaxwithholdingWrite { get => _explicitNullValueHrisTaxwithholdingWrite; set { _explicitNullValueHrisTaxwithholdingWrite = value; AdditionalData?.Remove("hris_taxwithholding_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hris_taxwithholding_write"); else _explicitNullProperties?.Remove("hris_taxwithholding_write"); } }
+        private string? _explicitNullValueHrisTaxwithholdingWrite = default!;
+#nullable restore
+#else
+        public string HrisTaxwithholdingWrite { get => _explicitNullValueHrisTaxwithholdingWrite; set { _explicitNullValueHrisTaxwithholdingWrite = value; AdditionalData?.Remove("hris_taxwithholding_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hris_taxwithholding_write"); else _explicitNullProperties?.Remove("hris_taxwithholding_write"); } }
+        private string _explicitNullValueHrisTaxwithholdingWrite = default!;
+#endif
         /// <summary>The hris_timeoff_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -5796,6 +5820,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "hris_payslip_write", n => { HrisPayslipWrite = n.GetStringValue(); } },
                 { "hris_taxonomy_read", n => { HrisTaxonomyRead = n.GetStringValue(); } },
                 { "hris_taxonomy_write", n => { HrisTaxonomyWrite = n.GetStringValue(); } },
+                { "hris_taxwithholding_read", n => { HrisTaxwithholdingRead = n.GetStringValue(); } },
+                { "hris_taxwithholding_write", n => { HrisTaxwithholdingWrite = n.GetStringValue(); } },
                 { "hris_timeoff_read", n => { HrisTimeoffRead = n.GetStringValue(); } },
                 { "hris_timeoff_write", n => { HrisTimeoffWrite = n.GetStringValue(); } },
                 { "hris_timeshift_read", n => { HrisTimeshiftRead = n.GetStringValue(); } },
@@ -6260,6 +6286,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("hris_payslip_write", HrisPayslipWrite);
             writer.WriteStringValue("hris_taxonomy_read", HrisTaxonomyRead);
             writer.WriteStringValue("hris_taxonomy_write", HrisTaxonomyWrite);
+            writer.WriteStringValue("hris_taxwithholding_read", HrisTaxwithholdingRead);
+            writer.WriteStringValue("hris_taxwithholding_write", HrisTaxwithholdingWrite);
             writer.WriteStringValue("hris_timeoff_read", HrisTimeoffRead);
             writer.WriteStringValue("hris_timeoff_write", HrisTimeoffWrite);
             writer.WriteStringValue("hris_timeshift_read", HrisTimeshiftRead);

@@ -18,6 +18,7 @@ using Soenneker.Unified.OpenApiClient.Hris.Item.Paycode;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Payroll;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Payslip;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy;
+using Soenneker.Unified.OpenApiClient.Hris.Item.Taxwithholding;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff;
 using Soenneker.Unified.OpenApiClient.Hris.Item.Timeshift;
 using System.Collections.Generic;
@@ -111,6 +112,11 @@ namespace Soenneker.Unified.OpenApiClient.Hris.Item
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder Taxonomy
         {
             get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxonomy.TaxonomyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The taxwithholding property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxwithholding.TaxwithholdingRequestBuilder Taxwithholding
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Hris.Item.Taxwithholding.TaxwithholdingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeoff property</summary>
         public global::Soenneker.Unified.OpenApiClient.Hris.Item.Timeoff.TimeoffRequestBuilder Timeoff

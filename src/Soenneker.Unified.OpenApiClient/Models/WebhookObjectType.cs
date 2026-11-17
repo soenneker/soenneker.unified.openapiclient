@@ -339,6 +339,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisEarning,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_taxwithholding")]
+        #pragma warning disable CS1591
+        HrisTaxwithholding,
+        #pragma warning restore CS1591
         [EnumMember(Value = "martech_list")]
         #pragma warning disable CS1591
         MartechList,

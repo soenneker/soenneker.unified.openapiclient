@@ -700,6 +700,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         HrisEarningWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hris_taxwithholding_read")]
+        #pragma warning disable CS1591
+        HrisTaxwithholdingRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hris_taxwithholding_write")]
+        #pragma warning disable CS1591
+        HrisTaxwithholdingWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "uc_call_read")]
         #pragma warning disable CS1591
         UcCallRead,
