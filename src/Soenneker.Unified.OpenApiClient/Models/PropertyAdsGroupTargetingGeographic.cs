@@ -181,7 +181,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "cities", n => { Cities = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.CityTarget>(global::Soenneker.Unified.OpenApiClient.Models.CityTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "countries", n => { Countries = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },

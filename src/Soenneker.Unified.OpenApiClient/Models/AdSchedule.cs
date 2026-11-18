@@ -74,7 +74,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "bid_modifier", n => { BidModifier = n.GetDoubleValue(); } },
                 { "day_of_week", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AdScheduleDayOfWeek>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDayOfWeek = default; _explicitNullProperties?.Remove("day_of_week"); AdditionalData["day_of_week"] = unknown; } else { DayOfWeek = parsed; AdditionalData.Remove("day_of_week"); } } },

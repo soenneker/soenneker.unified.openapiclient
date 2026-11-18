@@ -88,7 +88,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "contact", n => { Contact = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingAgedRowContact>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingAgedRowContact.CreateFromDiscriminatorValue); } },

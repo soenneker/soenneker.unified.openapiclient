@@ -86,7 +86,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "authorized_seller_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsGroupTargetingSupplyAuthorizedSellerStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorizedSellerStatus = default; _explicitNullProperties?.Remove("authorized_seller_status"); AdditionalData["authorized_seller_status"] = unknown; } else { AuthorizedSellerStatus = parsed; AdditionalData.Remove("authorized_seller_status"); } } },
                 { "deal_groups", n => { DealGroups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.TargetRef>(global::Soenneker.Unified.OpenApiClient.Models.TargetRef.CreateFromDiscriminatorValue)?.AsList(); } },

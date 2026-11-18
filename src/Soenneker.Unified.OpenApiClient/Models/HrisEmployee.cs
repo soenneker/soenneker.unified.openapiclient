@@ -465,7 +465,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(45)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress.CreateFromDiscriminatorValue); } },
                 { "bio", n => { Bio = n.GetStringValue(); } },

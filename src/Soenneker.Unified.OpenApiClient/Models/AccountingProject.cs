@@ -305,7 +305,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(34)
             {
                 { "actual_cost_amount", n => { ActualCostAmount = n.GetDoubleValue(); } },
                 { "billing_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AccountingProjectBillingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBillingType = default; _explicitNullProperties?.Remove("billing_type"); AdditionalData["billing_type"] = unknown; } else { BillingType = parsed; AdditionalData.Remove("billing_type"); } } },

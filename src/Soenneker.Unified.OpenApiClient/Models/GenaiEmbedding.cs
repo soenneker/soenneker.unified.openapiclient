@@ -136,7 +136,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dimension", n => { Dimension = n.GetDoubleValue(); } },

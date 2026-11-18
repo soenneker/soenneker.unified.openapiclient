@@ -83,7 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "market", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.ComputePriceMarket>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMarket = default; _explicitNullProperties?.Remove("market"); AdditionalData["market"] = unknown; } else { Market = parsed; AdditionalData.Remove("market"); } } },

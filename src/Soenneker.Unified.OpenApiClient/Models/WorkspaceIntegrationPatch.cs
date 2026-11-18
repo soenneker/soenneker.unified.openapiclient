@@ -278,7 +278,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "api_url", n => { ApiUrl = n.GetStringValue(); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyWorkspaceIntegrationPatchAuth>(global::Soenneker.Unified.OpenApiClient.Models.PropertyWorkspaceIntegrationPatchAuth.CreateFromDiscriminatorValue); } },

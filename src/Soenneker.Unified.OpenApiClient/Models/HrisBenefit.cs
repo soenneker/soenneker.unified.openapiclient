@@ -179,7 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "coverage_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCoverageLevel = default; _explicitNullProperties?.Remove("coverage_level"); AdditionalData["coverage_level"] = unknown; } else { CoverageLevel = parsed; AdditionalData.Remove("coverage_level"); } } },

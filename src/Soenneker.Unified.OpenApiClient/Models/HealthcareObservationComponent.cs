@@ -102,7 +102,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "codes", n => { Codes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "interpretation", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareObservationComponentInterpretation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInterpretation = default; _explicitNullProperties?.Remove("interpretation"); AdditionalData["interpretation"] = unknown; } else { Interpretation = parsed; AdditionalData.Remove("interpretation"); } } },

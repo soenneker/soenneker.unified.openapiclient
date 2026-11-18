@@ -258,7 +258,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(26)
             {
                 { "advertising_channel_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsReportMetricsCampaignAdvertisingChannelType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAdvertisingChannelType = default; _explicitNullProperties?.Remove("advertising_channel_type"); AdditionalData["advertising_channel_type"] = unknown; } else { AdvertisingChannelType = parsed; AdditionalData.Remove("advertising_channel_type"); } } },
                 { "budget_amount", n => { BudgetAmount = n.GetDoubleValue(); } },

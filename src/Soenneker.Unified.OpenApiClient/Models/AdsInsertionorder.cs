@@ -208,7 +208,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "bid_strategy", n => { BidStrategy = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAdsInsertionorderBidStrategy.CreateFromDiscriminatorValue); } },
                 { "budget_segments", n => { BudgetSegments = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment>(global::Soenneker.Unified.OpenApiClient.Models.AdsInsertionorderBudgetSegment.CreateFromDiscriminatorValue)?.AsList(); } },

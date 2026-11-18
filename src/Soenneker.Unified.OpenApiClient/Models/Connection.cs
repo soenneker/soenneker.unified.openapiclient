@@ -215,7 +215,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth>(global::Soenneker.Unified.OpenApiClient.Models.PropertyConnectionAuth.CreateFromDiscriminatorValue); } },
                 { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.ConnectionCategoriesItem>()?.AsList(); } },

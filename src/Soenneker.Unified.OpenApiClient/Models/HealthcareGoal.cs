@@ -182,7 +182,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "achievement_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HealthcareGoalAchievementStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAchievementStatus = default; _explicitNullProperties?.Remove("achievement_status"); AdditionalData["achievement_status"] = unknown; } else { AchievementStatus = parsed; AdditionalData.Remove("achievement_status"); } } },
                 { "codes", n => { Codes = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode>(global::Soenneker.Unified.OpenApiClient.Models.HealthcareCode.CreateFromDiscriminatorValue)?.AsList(); } },
