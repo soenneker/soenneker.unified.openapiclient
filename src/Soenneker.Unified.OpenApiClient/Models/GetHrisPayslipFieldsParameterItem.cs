@@ -108,6 +108,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         NetYtdAmount,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ytd_hours")]
+        #pragma warning disable CS1591
+        YtdHours,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

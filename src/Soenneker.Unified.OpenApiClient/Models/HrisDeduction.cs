@@ -42,6 +42,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("is_active") is null) { _explicitNullValueIsActive = default!; _explicitNullProperties?.Remove("is_active"); }
             else if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("loan_identifier") is null) { _explicitNullValueLoanIdentifier = default!; _explicitNullProperties?.Remove("loan_identifier"); }
+            else if (parseNode.GetChildNode("loan_identifier") is { } nullNodeLoanIdentifier && nullNodeLoanIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifier = null;
             if (parseNode.GetChildNode("max_amount") is null) { _explicitNullValueMaxAmount = default!; _explicitNullProperties?.Remove("max_amount"); }
             else if (parseNode.GetChildNode("max_amount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
@@ -121,6 +123,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_active property</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
+        /// <summary>the payroll system&apos;s identifier for the retirement-plan loan this deduction repays</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoanIdentifier { get => _explicitNullValueLoanIdentifier; set { _explicitNullValueLoanIdentifier = value; AdditionalData?.Remove("loan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_identifier"); else _explicitNullProperties?.Remove("loan_identifier"); } }
+        private string? _explicitNullValueLoanIdentifier = default!;
+#nullable restore
+#else
+        public string LoanIdentifier { get => _explicitNullValueLoanIdentifier; set { _explicitNullValueLoanIdentifier = value; AdditionalData?.Remove("loan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_identifier"); else _explicitNullProperties?.Remove("loan_identifier"); } }
+        private string _explicitNullValueLoanIdentifier = default!;
+#endif
         /// <summary>annual maximum employee amount (always money)</summary>
         public double? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("max_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_amount"); else _explicitNullProperties?.Remove("max_amount"); } }
         private double? _explicitNullValueMaxAmount = default!;
@@ -206,7 +218,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(21)
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "benefit_id", n => { BenefitId = n.GetStringValue(); } },
@@ -220,6 +232,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "garnishment_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionGarnishmentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGarnishmentType = default; _explicitNullProperties?.Remove("garnishment_type"); AdditionalData["garnishment_type"] = unknown; } else { GarnishmentType = parsed; AdditionalData.Remove("garnishment_type"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "loan_identifier", n => { LoanIdentifier = n.GetStringValue(); } },
                 { "max_amount", n => { MaxAmount = n.GetDoubleValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
@@ -250,6 +263,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisDeductionGarnishmentType>("garnishment_type", GarnishmentType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteStringValue("loan_identifier", LoanIdentifier);
             writer.WriteDoubleValue("max_amount", MaxAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("notes", Notes);

@@ -68,6 +68,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Currency,
         #pragma warning restore CS1591
+        [EnumMember(Value = "code")]
+        #pragma warning disable CS1591
+        Code,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "retirement_plan_type")]
+        #pragma warning disable CS1591
+        RetirementPlanType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employer_contribution_category")]
+        #pragma warning disable CS1591
+        EmployerContributionCategory,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

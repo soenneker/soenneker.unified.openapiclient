@@ -18,6 +18,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
             if (parseNode.GetChildNode("company_id") is null) { _explicitNullValueCompanyId = default!; _explicitNullProperties?.Remove("company_id"); }
             else if (parseNode.GetChildNode("company_id") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
             if (parseNode.GetChildNode("coverage_level") is null) { _explicitNullValueCoverageLevel = default!; _explicitNullProperties?.Remove("coverage_level"); }
@@ -30,6 +32,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("employer_contribution_amount") is null) { _explicitNullValueEmployerContributionAmount = default!; _explicitNullProperties?.Remove("employer_contribution_amount"); }
             else if (parseNode.GetChildNode("employer_contribution_amount") is { } nullNodeEmployerContributionAmount && nullNodeEmployerContributionAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployerContributionAmount = null;
+            if (parseNode.GetChildNode("employer_contribution_category") is null) { _explicitNullValueEmployerContributionCategory = default!; _explicitNullProperties?.Remove("employer_contribution_category"); }
+            else if (parseNode.GetChildNode("employer_contribution_category") is { } nullNodeEmployerContributionCategory && nullNodeEmployerContributionCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployerContributionCategory = null;
             if (parseNode.GetChildNode("employer_contribution_max_amount") is null) { _explicitNullValueEmployerContributionMaxAmount = default!; _explicitNullProperties?.Remove("employer_contribution_max_amount"); }
             else if (parseNode.GetChildNode("employer_contribution_max_amount") is { } nullNodeEmployerContributionMaxAmount && nullNodeEmployerContributionMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployerContributionMaxAmount = null;
             if (parseNode.GetChildNode("employer_contribution_type") is null) { _explicitNullValueEmployerContributionType = default!; _explicitNullProperties?.Remove("employer_contribution_type"); }
@@ -46,6 +50,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
             else if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("retirement_plan_type") is null) { _explicitNullValueRetirementPlanType = default!; _explicitNullProperties?.Remove("retirement_plan_type"); }
+            else if (parseNode.GetChildNode("retirement_plan_type") is { } nullNodeRetirementPlanType && nullNodeRetirementPlanType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetirementPlanType = null;
             if (parseNode.GetChildNode("tax") is null) { _explicitNullValueTax = default!; _explicitNullProperties?.Remove("tax"); }
             else if (parseNode.GetChildNode("tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
             if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
@@ -56,6 +62,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>the payroll system&apos;s code for this benefit plan</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string? _explicitNullValueCode = default!;
+#nullable restore
+#else
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string _explicitNullValueCode = default!;
+#endif
         /// <summary>(reference to HrisCompany)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +111,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>percentage or money</summary>
         public double? EmployerContributionAmount { get => _explicitNullValueEmployerContributionAmount; set { _explicitNullValueEmployerContributionAmount = value; AdditionalData?.Remove("employer_contribution_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_contribution_amount"); else _explicitNullProperties?.Remove("employer_contribution_amount"); } }
         private double? _explicitNullValueEmployerContributionAmount = default!;
+        /// <summary>kind of employer retirement contribution (eg. MATCH, SAFE_HARBOR_MATCH, PROFIT_SHARING)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionCategory? EmployerContributionCategory { get => _explicitNullValueEmployerContributionCategory; set { _explicitNullValueEmployerContributionCategory = value; AdditionalData?.Remove("employer_contribution_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_contribution_category"); else _explicitNullProperties?.Remove("employer_contribution_category"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionCategory? _explicitNullValueEmployerContributionCategory = default!;
         /// <summary>always money</summary>
         public double? EmployerContributionMaxAmount { get => _explicitNullValueEmployerContributionMaxAmount; set { _explicitNullValueEmployerContributionMaxAmount = value; AdditionalData?.Remove("employer_contribution_max_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_contribution_max_amount"); else _explicitNullProperties?.Remove("employer_contribution_max_amount"); } }
         private double? _explicitNullValueEmployerContributionMaxAmount = default!;
@@ -147,6 +166,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty _explicitNullValueRaw = default!;
 #endif
+        /// <summary>the retirement plan this benefit belongs to (for RETIREMENT* types)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRetirementPlanType? RetirementPlanType { get => _explicitNullValueRetirementPlanType; set { _explicitNullValueRetirementPlanType = value; AdditionalData?.Remove("retirement_plan_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retirement_plan_type"); else _explicitNullProperties?.Remove("retirement_plan_type"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRetirementPlanType? _explicitNullValueRetirementPlanType = default!;
         /// <summary>Tax describes the tax treatment of the benefit</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax? _explicitNullValueTax = default!;
@@ -179,14 +201,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(17)
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
+                { "code", n => { Code = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
                 { "coverage_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCoverageLevel = default; _explicitNullProperties?.Remove("coverage_level"); AdditionalData["coverage_level"] = unknown; } else { CoverageLevel = parsed; AdditionalData.Remove("coverage_level"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "employer_contribution_amount", n => { EmployerContributionAmount = n.GetDoubleValue(); } },
+                { "employer_contribution_category", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmployerContributionCategory = default; _explicitNullProperties?.Remove("employer_contribution_category"); AdditionalData["employer_contribution_category"] = unknown; } else { EmployerContributionCategory = parsed; AdditionalData.Remove("employer_contribution_category"); } } },
                 { "employer_contribution_max_amount", n => { EmployerContributionMaxAmount = n.GetDoubleValue(); } },
                 { "employer_contribution_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmployerContributionType = default; _explicitNullProperties?.Remove("employer_contribution_type"); AdditionalData["employer_contribution_type"] = unknown; } else { EmployerContributionType = parsed; AdditionalData.Remove("employer_contribution_type"); } } },
                 { "frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequency = default; _explicitNullProperties?.Remove("frequency"); AdditionalData["frequency"] = unknown; } else { Frequency = parsed; AdditionalData.Remove("frequency"); } } },
@@ -195,6 +219,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty.CreateFromDiscriminatorValue); } },
+                { "retirement_plan_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRetirementPlanType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRetirementPlanType = default; _explicitNullProperties?.Remove("retirement_plan_type"); AdditionalData["retirement_plan_type"] = unknown; } else { RetirementPlanType = parsed; AdditionalData.Remove("retirement_plan_type"); } } },
                 { "tax", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTax = default; _explicitNullProperties?.Remove("tax"); AdditionalData["tax"] = unknown; } else { Tax = parsed; AdditionalData.Remove("tax"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -207,12 +232,14 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("code", Code);
             writer.WriteStringValue("company_id", CompanyId);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitCoverageLevel>("coverage_level", CoverageLevel);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("employer_contribution_amount", EmployerContributionAmount);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionCategory>("employer_contribution_category", EmployerContributionCategory);
             writer.WriteDoubleValue("employer_contribution_max_amount", EmployerContributionMaxAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitEmployerContributionType>("employer_contribution_type", EmployerContributionType);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitFrequency>("frequency", Frequency);
@@ -221,6 +248,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRawProperty>("raw", Raw);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitRetirementPlanType>("retirement_plan_type", RetirementPlanType);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitTax>("tax", Tax);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisBenefitType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

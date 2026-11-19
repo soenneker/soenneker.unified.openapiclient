@@ -35,6 +35,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("is_employer") is { } nullNodeIsEmployer && nullNodeIsEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEmployer = null;
             if (parseNode.GetChildNode("is_pre_tax") is null) { _explicitNullValueIsPreTax = default!; _explicitNullProperties?.Remove("is_pre_tax"); }
             else if (parseNode.GetChildNode("is_pre_tax") is { } nullNodeIsPreTax && nullNodeIsPreTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPreTax = null;
+            if (parseNode.GetChildNode("is_retirement_eligible") is null) { _explicitNullValueIsRetirementEligible = default!; _explicitNullProperties?.Remove("is_retirement_eligible"); }
+            else if (parseNode.GetChildNode("is_retirement_eligible") is { } nullNodeIsRetirementEligible && nullNodeIsRetirementEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRetirementEligible = null;
+            if (parseNode.GetChildNode("loan_identifier") is null) { _explicitNullValueLoanIdentifier = default!; _explicitNullProperties?.Remove("loan_identifier"); }
+            else if (parseNode.GetChildNode("loan_identifier") is { } nullNodeLoanIdentifier && nullNodeLoanIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifier = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("original_type") is null) { _explicitNullValueOriginalType = default!; _explicitNullProperties?.Remove("original_type"); }
@@ -47,6 +51,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("ytd_amount") is null) { _explicitNullValueYtdAmount = default!; _explicitNullProperties?.Remove("ytd_amount"); }
             else if (parseNode.GetChildNode("ytd_amount") is { } nullNodeYtdAmount && nullNodeYtdAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdAmount = null;
+            if (parseNode.GetChildNode("ytd_hours") is null) { _explicitNullValueYtdHours = default!; _explicitNullProperties?.Remove("ytd_hours"); }
+            else if (parseNode.GetChildNode("ytd_hours") is { } nullNodeYtdHours && nullNodeYtdHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -99,6 +105,19 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_pre_tax property</summary>
         public bool? IsPreTax { get => _explicitNullValueIsPreTax; set { _explicitNullValueIsPreTax = value; AdditionalData?.Remove("is_pre_tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_pre_tax"); else _explicitNullProperties?.Remove("is_pre_tax"); } }
         private bool? _explicitNullValueIsPreTax = default!;
+        /// <summary>true when this line counts as retirement-plan compensation</summary>
+        public bool? IsRetirementEligible { get => _explicitNullValueIsRetirementEligible; set { _explicitNullValueIsRetirementEligible = value; AdditionalData?.Remove("is_retirement_eligible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_retirement_eligible"); else _explicitNullProperties?.Remove("is_retirement_eligible"); } }
+        private bool? _explicitNullValueIsRetirementEligible = default!;
+        /// <summary>the payroll system&apos;s identifier for the retirement-plan loan this line repays</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoanIdentifier { get => _explicitNullValueLoanIdentifier; set { _explicitNullValueLoanIdentifier = value; AdditionalData?.Remove("loan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_identifier"); else _explicitNullProperties?.Remove("loan_identifier"); } }
+        private string? _explicitNullValueLoanIdentifier = default!;
+#nullable restore
+#else
+        public string LoanIdentifier { get => _explicitNullValueLoanIdentifier; set { _explicitNullValueLoanIdentifier = value; AdditionalData?.Remove("loan_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_identifier"); else _explicitNullProperties?.Remove("loan_identifier"); } }
+        private string _explicitNullValueLoanIdentifier = default!;
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +157,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>year-to-date amount for this line</summary>
         public double? YtdAmount { get => _explicitNullValueYtdAmount; set { _explicitNullValueYtdAmount = value; AdditionalData?.Remove("ytd_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_amount"); else _explicitNullProperties?.Remove("ytd_amount"); } }
         private double? _explicitNullValueYtdAmount = default!;
+        /// <summary>year-to-date hours for this line</summary>
+        public double? YtdHours { get => _explicitNullValueYtdHours; set { _explicitNullValueYtdHours = value; AdditionalData?.Remove("ytd_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_hours"); else _explicitNullProperties?.Remove("ytd_hours"); } }
+        private double? _explicitNullValueYtdHours = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetail"/> and sets the default values.
         /// </summary>
@@ -161,7 +183,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(15)
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "benefit_id", n => { BenefitId = n.GetStringValue(); } },
@@ -172,12 +194,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "hours", n => { Hours = n.GetDoubleValue(); } },
                 { "is_employer", n => { IsEmployer = n.GetBoolValue(); } },
                 { "is_pre_tax", n => { IsPreTax = n.GetBoolValue(); } },
+                { "is_retirement_eligible", n => { IsRetirementEligible = n.GetBoolValue(); } },
+                { "loan_identifier", n => { LoanIdentifier = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "original_type", n => { OriginalType = n.GetStringValue(); } },
                 { "paycode_id", n => { PaycodeId = n.GetStringValue(); } },
                 { "rate_amount", n => { RateAmount = n.GetDoubleValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "ytd_amount", n => { YtdAmount = n.GetDoubleValue(); } },
+                { "ytd_hours", n => { YtdHours = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -196,12 +221,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDoubleValue("hours", Hours);
             writer.WriteBoolValue("is_employer", IsEmployer);
             writer.WriteBoolValue("is_pre_tax", IsPreTax);
+            writer.WriteBoolValue("is_retirement_eligible", IsRetirementEligible);
+            writer.WriteStringValue("loan_identifier", LoanIdentifier);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("original_type", OriginalType);
             writer.WriteStringValue("paycode_id", PaycodeId);
             writer.WriteDoubleValue("rate_amount", RateAmount);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPayslipDetailType>("type", Type);
             writer.WriteDoubleValue("ytd_amount", YtdAmount);
+            writer.WriteDoubleValue("ytd_hours", YtdHours);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -39,6 +39,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("employee_roles") is { } nullNodeEmployeeRoles && nullNodeEmployeeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeRoles = null;
             if (parseNode.GetChildNode("employment_status") is null) { _explicitNullValueEmploymentStatus = default!; _explicitNullProperties?.Remove("employment_status"); }
             else if (parseNode.GetChildNode("employment_status") is { } nullNodeEmploymentStatus && nullNodeEmploymentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentStatus = null;
+            if (parseNode.GetChildNode("employment_status_reason") is null) { _explicitNullValueEmploymentStatusReason = default!; _explicitNullProperties?.Remove("employment_status_reason"); }
+            else if (parseNode.GetChildNode("employment_status_reason") is { } nullNodeEmploymentStatusReason && nullNodeEmploymentStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentStatusReason = null;
             if (parseNode.GetChildNode("employment_type") is null) { _explicitNullValueEmploymentType = default!; _explicitNullProperties?.Remove("employment_type"); }
             else if (parseNode.GetChildNode("employment_type") is { } nullNodeEmploymentType && nullNodeEmploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentType = null;
             if (parseNode.GetChildNode("first_name") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("first_name"); }
@@ -63,6 +65,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("language_locale") is { } nullNodeLanguageLocale && nullNodeLanguageLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageLocale = null;
             if (parseNode.GetChildNode("last_name") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("last_name"); }
             else if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("leave_end_at") is null) { _explicitNullValueLeaveEndAt = default!; _explicitNullProperties?.Remove("leave_end_at"); }
+            else if (parseNode.GetChildNode("leave_end_at") is { } nullNodeLeaveEndAt && nullNodeLeaveEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaveEndAt = null;
+            if (parseNode.GetChildNode("leave_start_at") is null) { _explicitNullValueLeaveStartAt = default!; _explicitNullProperties?.Remove("leave_start_at"); }
+            else if (parseNode.GetChildNode("leave_start_at") is { } nullNodeLeaveStartAt && nullNodeLeaveStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaveStartAt = null;
             if (parseNode.GetChildNode("locations") is null) { _explicitNullValueLocations = default!; _explicitNullProperties?.Remove("locations"); }
             else if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
             if (parseNode.GetChildNode("manager_id") is null) { _explicitNullValueManagerId = default!; _explicitNullProperties?.Remove("manager_id"); }
@@ -79,10 +85,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("pronouns") is { } nullNodePronouns && nullNodePronouns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pronouns = null;
             if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
             else if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("rehired_at") is null) { _explicitNullValueRehiredAt = default!; _explicitNullProperties?.Remove("rehired_at"); }
+            else if (parseNode.GetChildNode("rehired_at") is { } nullNodeRehiredAt && nullNodeRehiredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RehiredAt = null;
             if (parseNode.GetChildNode("relationships") is null) { _explicitNullValueRelationships = default!; _explicitNullProperties?.Remove("relationships"); }
             else if (parseNode.GetChildNode("relationships") is { } nullNodeRelationships && nullNodeRelationships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relationships = null;
             if (parseNode.GetChildNode("salutation") is null) { _explicitNullValueSalutation = default!; _explicitNullProperties?.Remove("salutation"); }
             else if (parseNode.GetChildNode("salutation") is { } nullNodeSalutation && nullNodeSalutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Salutation = null;
+            if (parseNode.GetChildNode("seniority_started_at") is null) { _explicitNullValueSeniorityStartedAt = default!; _explicitNullProperties?.Remove("seniority_started_at"); }
+            else if (parseNode.GetChildNode("seniority_started_at") is { } nullNodeSeniorityStartedAt && nullNodeSeniorityStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeniorityStartedAt = null;
+            if (parseNode.GetChildNode("service_started_at") is null) { _explicitNullValueServiceStartedAt = default!; _explicitNullProperties?.Remove("service_started_at"); }
+            else if (parseNode.GetChildNode("service_started_at") is { } nullNodeServiceStartedAt && nullNodeServiceStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceStartedAt = null;
             if (parseNode.GetChildNode("ssn_sin") is null) { _explicitNullValueSsnSin = default!; _explicitNullProperties?.Remove("ssn_sin"); }
             else if (parseNode.GetChildNode("ssn_sin") is { } nullNodeSsnSin && nullNodeSsnSin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsnSin = null;
             if (parseNode.GetChildNode("storage_quota_allocated") is null) { _explicitNullValueStorageQuotaAllocated = default!; _explicitNullProperties?.Remove("storage_quota_allocated"); }
@@ -200,6 +212,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The employment_status property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? EmploymentStatus { get => _explicitNullValueEmploymentStatus; set { _explicitNullValueEmploymentStatus = value; AdditionalData?.Remove("employment_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_status"); else _explicitNullProperties?.Remove("employment_status"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus? _explicitNullValueEmploymentStatus = default!;
+        /// <summary>why the employee is not actively working (eg. LEAVE, TERMINATED, RETIRED)</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatusReason? EmploymentStatusReason { get => _explicitNullValueEmploymentStatusReason; set { _explicitNullValueEmploymentStatusReason = value; AdditionalData?.Remove("employment_status_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_status_reason"); else _explicitNullProperties?.Remove("employment_status_reason"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatusReason? _explicitNullValueEmploymentStatusReason = default!;
         /// <summary>The employment_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? EmploymentType { get => _explicitNullValueEmploymentType; set { _explicitNullValueEmploymentType = value; AdditionalData?.Remove("employment_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_type"); else _explicitNullProperties?.Remove("employment_type"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType? _explicitNullValueEmploymentType = default!;
@@ -285,6 +300,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("last_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
         private string _explicitNullValueLastName = default!;
 #endif
+        /// <summary>expected or actual end of the current leave of absence (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? LeaveEndAt { get => _explicitNullValueLeaveEndAt; set { _explicitNullValueLeaveEndAt = value; AdditionalData?.Remove("leave_end_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leave_end_at"); else _explicitNullProperties?.Remove("leave_end_at"); } }
+        private DateTimeOffset? _explicitNullValueLeaveEndAt = default!;
+        /// <summary>start of the current leave of absence (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? LeaveStartAt { get => _explicitNullValueLeaveStartAt; set { _explicitNullValueLeaveStartAt = value; AdditionalData?.Remove("leave_start_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leave_start_at"); else _explicitNullProperties?.Remove("leave_start_at"); } }
+        private DateTimeOffset? _explicitNullValueLeaveStartAt = default!;
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -351,6 +372,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty _explicitNullValueRaw = default!;
 #endif
+        /// <summary>most recent rehire date (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? RehiredAt { get => _explicitNullValueRehiredAt; set { _explicitNullValueRehiredAt = value; AdditionalData?.Remove("rehired_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rehired_at"); else _explicitNullProperties?.Remove("rehired_at"); } }
+        private DateTimeOffset? _explicitNullValueRehiredAt = default!;
         /// <summary>the employee&apos;s personal relationships (eg. emergency contacts, spouse, dependants, ...)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -371,6 +395,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Salutation { get => _explicitNullValueSalutation; set { _explicitNullValueSalutation = value; AdditionalData?.Remove("salutation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salutation"); else _explicitNullProperties?.Remove("salutation"); } }
         private string _explicitNullValueSalutation = default!;
 #endif
+        /// <summary>seniority date (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? SeniorityStartedAt { get => _explicitNullValueSeniorityStartedAt; set { _explicitNullValueSeniorityStartedAt = value; AdditionalData?.Remove("seniority_started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seniority_started_at"); else _explicitNullProperties?.Remove("seniority_started_at"); } }
+        private DateTimeOffset? _explicitNullValueSeniorityStartedAt = default!;
+        /// <summary>adjusted service date used for benefits eligibility and vesting (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+        public DateTimeOffset? ServiceStartedAt { get => _explicitNullValueServiceStartedAt; set { _explicitNullValueServiceStartedAt = value; AdditionalData?.Remove("service_started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_started_at"); else _explicitNullProperties?.Remove("service_started_at"); } }
+        private DateTimeOffset? _explicitNullValueServiceStartedAt = default!;
         /// <summary>The ssn_sin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -465,7 +495,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(45)
+            return new Dictionary<string, Action<IParseNode>>(51)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyHrisEmployeeAddress.CreateFromDiscriminatorValue); } },
                 { "bio", n => { Bio = n.GetStringValue(); } },
@@ -478,6 +508,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "employee_number", n => { EmployeeNumber = n.GetStringValue(); } },
                 { "employee_roles", n => { EmployeeRoles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem>()?.AsList(); } },
                 { "employment_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmploymentStatus = default; _explicitNullProperties?.Remove("employment_status"); AdditionalData["employment_status"] = unknown; } else { EmploymentStatus = parsed; AdditionalData.Remove("employment_status"); } } },
+                { "employment_status_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatusReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmploymentStatusReason = default; _explicitNullProperties?.Remove("employment_status_reason"); AdditionalData["employment_status_reason"] = unknown; } else { EmploymentStatusReason = parsed; AdditionalData.Remove("employment_status_reason"); } } },
                 { "employment_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmploymentType = default; _explicitNullProperties?.Remove("employment_type"); AdditionalData["employment_type"] = unknown; } else { EmploymentType = parsed; AdditionalData.Remove("employment_type"); } } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "flsa_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFlsaStatus = default; _explicitNullProperties?.Remove("flsa_status"); AdditionalData["flsa_status"] = unknown; } else { FlsaStatus = parsed; AdditionalData.Remove("flsa_status"); } } },
@@ -490,6 +521,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "language_locale", n => { LanguageLocale = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "leave_end_at", n => { LeaveEndAt = n.GetDateTimeOffsetValue(); } },
+                { "leave_start_at", n => { LeaveStartAt = n.GetDateTimeOffsetValue(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>(global::Soenneker.Unified.OpenApiClient.Models.HrisLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "manager_id", n => { ManagerId = n.GetStringValue(); } },
                 { "marital_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMaritalStatus = default; _explicitNullProperties?.Remove("marital_status"); AdditionalData["marital_status"] = unknown; } else { MaritalStatus = parsed; AdditionalData.Remove("marital_status"); } } },
@@ -498,8 +531,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
                 { "pronouns", n => { Pronouns = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty.CreateFromDiscriminatorValue); } },
+                { "rehired_at", n => { RehiredAt = n.GetDateTimeOffsetValue(); } },
                 { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>(global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "salutation", n => { Salutation = n.GetStringValue(); } },
+                { "seniority_started_at", n => { SeniorityStartedAt = n.GetDateTimeOffsetValue(); } },
+                { "service_started_at", n => { ServiceStartedAt = n.GetDateTimeOffsetValue(); } },
                 { "ssn_sin", n => { SsnSin = n.GetStringValue(); } },
                 { "storage_quota_allocated", n => { StorageQuotaAllocated = n.GetDoubleValue(); } },
                 { "storage_quota_available", n => { StorageQuotaAvailable = n.GetDoubleValue(); } },
@@ -532,6 +568,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("employee_number", EmployeeNumber);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmployeeRolesItem>("employee_roles", EmployeeRoles);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatus>("employment_status", EmploymentStatus);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentStatusReason>("employment_status_reason", EmploymentStatusReason);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeEmploymentType>("employment_type", EmploymentType);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeFlsaStatus>("flsa_status", FlsaStatus);
@@ -544,6 +581,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("job_id", JobId);
             writer.WriteStringValue("language_locale", LanguageLocale);
             writer.WriteStringValue("last_name", LastName);
+            writer.WriteDateTimeOffsetValue("leave_end_at", LeaveEndAt);
+            writer.WriteDateTimeOffsetValue("leave_start_at", LeaveStartAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisLocation>("locations", Locations);
             writer.WriteStringValue("manager_id", ManagerId);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeMaritalStatus>("marital_status", MaritalStatus);
@@ -552,8 +591,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeePayFrequency>("pay_frequency", PayFrequency);
             writer.WriteStringValue("pronouns", Pronouns);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeeRawProperty>("raw", Raw);
+            writer.WriteDateTimeOffsetValue("rehired_at", RehiredAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisEmployeerelationship>("relationships", Relationships);
             writer.WriteStringValue("salutation", Salutation);
+            writer.WriteDateTimeOffsetValue("seniority_started_at", SeniorityStartedAt);
+            writer.WriteDateTimeOffsetValue("service_started_at", ServiceStartedAt);
             writer.WriteStringValue("ssn_sin", SsnSin);
             writer.WriteDoubleValue("storage_quota_allocated", StorageQuotaAllocated);
             writer.WriteDoubleValue("storage_quota_available", StorageQuotaAvailable);

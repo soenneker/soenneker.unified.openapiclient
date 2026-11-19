@@ -35,6 +35,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("is_employer") is { } nullNodeIsEmployer && nullNodeIsEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEmployer = null;
             if (parseNode.GetChildNode("is_pre_tax") is null) { _explicitNullValueIsPreTax = default!; _explicitNullProperties?.Remove("is_pre_tax"); }
             else if (parseNode.GetChildNode("is_pre_tax") is { } nullNodeIsPreTax && nullNodeIsPreTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPreTax = null;
+            if (parseNode.GetChildNode("is_retirement_eligible") is null) { _explicitNullValueIsRetirementEligible = default!; _explicitNullProperties?.Remove("is_retirement_eligible"); }
+            else if (parseNode.GetChildNode("is_retirement_eligible") is { } nullNodeIsRetirementEligible && nullNodeIsRetirementEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRetirementEligible = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
             else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -104,6 +106,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_pre_tax property</summary>
         public bool? IsPreTax { get => _explicitNullValueIsPreTax; set { _explicitNullValueIsPreTax = value; AdditionalData?.Remove("is_pre_tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_pre_tax"); else _explicitNullProperties?.Remove("is_pre_tax"); } }
         private bool? _explicitNullValueIsPreTax = default!;
+        /// <summary>true when earnings under this code count as retirement-plan compensation</summary>
+        public bool? IsRetirementEligible { get => _explicitNullValueIsRetirementEligible; set { _explicitNullValueIsRetirementEligible = value; AdditionalData?.Remove("is_retirement_eligible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_retirement_eligible"); else _explicitNullProperties?.Remove("is_retirement_eligible"); } }
+        private bool? _explicitNullValueIsRetirementEligible = default!;
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,7 +168,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(14)
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "company_id", n => { CompanyId = n.GetStringValue(); } },
@@ -174,6 +179,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_employer", n => { IsEmployer = n.GetBoolValue(); } },
                 { "is_pre_tax", n => { IsPreTax = n.GetBoolValue(); } },
+                { "is_retirement_eligible", n => { IsRetirementEligible = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>(global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty.CreateFromDiscriminatorValue); } },
@@ -197,6 +203,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_employer", IsEmployer);
             writer.WriteBoolValue("is_pre_tax", IsPreTax);
+            writer.WriteBoolValue("is_retirement_eligible", IsRetirementEligible);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.HrisMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.HrisPaycodeRawProperty>("raw", Raw);

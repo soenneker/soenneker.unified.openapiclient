@@ -184,6 +184,30 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PayFrequency,
         #pragma warning restore CS1591
+        [EnumMember(Value = "rehired_at")]
+        #pragma warning disable CS1591
+        RehiredAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "service_started_at")]
+        #pragma warning disable CS1591
+        ServiceStartedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "seniority_started_at")]
+        #pragma warning disable CS1591
+        SeniorityStartedAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "leave_start_at")]
+        #pragma warning disable CS1591
+        LeaveStartAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "leave_end_at")]
+        #pragma warning disable CS1591
+        LeaveEndAt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "employment_status_reason")]
+        #pragma warning disable CS1591
+        EmploymentStatusReason,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

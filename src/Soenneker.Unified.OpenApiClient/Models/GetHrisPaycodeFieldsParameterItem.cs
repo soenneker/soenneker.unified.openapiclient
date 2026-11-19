@@ -56,6 +56,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         IsActive,
         #pragma warning restore CS1591
+        [EnumMember(Value = "is_retirement_eligible")]
+        #pragma warning disable CS1591
+        IsRetirementEligible,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

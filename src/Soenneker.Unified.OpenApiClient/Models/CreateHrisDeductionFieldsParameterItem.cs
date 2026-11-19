@@ -84,6 +84,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         GarnishmentType,
         #pragma warning restore CS1591
+        [EnumMember(Value = "loan_identifier")]
+        #pragma warning disable CS1591
+        LoanIdentifier,
+        #pragma warning restore CS1591
         [EnumMember(Value = "metadata")]
         #pragma warning disable CS1591
         Metadata,

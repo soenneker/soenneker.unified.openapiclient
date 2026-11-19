@@ -168,5 +168,41 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         EarningCashInLieu,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PRETAX_DEDUCTION_RETIREMENT_CATCHUP")]
+        #pragma warning disable CS1591
+        PretaxDeductionRetirementCatchup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_RETIREMENT_ROTH_CATCHUP")]
+        #pragma warning disable CS1591
+        PosttaxRetirementRothCatchup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_RETIREMENT_AFTER_TAX")]
+        #pragma warning disable CS1591
+        PosttaxRetirementAfterTax,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMPLOYER_CONTRIBUTION_RETIREMENT")]
+        #pragma warning disable CS1591
+        EmployerContributionRetirement,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMPLOYER_CONTRIBUTION_HSA")]
+        #pragma warning disable CS1591
+        EmployerContributionHsa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMPLOYER_CONTRIBUTION_FSA")]
+        #pragma warning disable CS1591
+        EmployerContributionFsa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_DEDUCTION_COLLEGE_SAVINGS")]
+        #pragma warning disable CS1591
+        PosttaxDeductionCollegeSavings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_DEDUCTION_UNION_DUES")]
+        #pragma warning disable CS1591
+        PosttaxDeductionUnionDues,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POSTTAX_DEDUCTION_EWA_REPAYMENT")]
+        #pragma warning disable CS1591
+        PosttaxDeductionEwaRepayment,
+        #pragma warning restore CS1591
     }
 }

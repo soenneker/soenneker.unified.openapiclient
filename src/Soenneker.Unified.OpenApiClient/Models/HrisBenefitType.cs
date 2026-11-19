@@ -88,5 +88,29 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Pension,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RETIREMENT_CATCHUP")]
+        #pragma warning disable CS1591
+        RetirementCatchup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RETIREMENT_ROTH_CATCHUP")]
+        #pragma warning disable CS1591
+        RetirementRothCatchup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RETIREMENT_AFTER_TAX")]
+        #pragma warning disable CS1591
+        RetirementAfterTax,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COLLEGE_SAVINGS")]
+        #pragma warning disable CS1591
+        CollegeSavings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EARNED_WAGE_ACCESS")]
+        #pragma warning disable CS1591
+        EarnedWageAccess,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNION_DUES")]
+        #pragma warning disable CS1591
+        UnionDues,
+        #pragma warning restore CS1591
     }
 }
