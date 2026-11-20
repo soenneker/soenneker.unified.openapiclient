@@ -172,5 +172,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Qms,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fhir")]
+        #pragma warning disable CS1591
+        Fhir,
+        #pragma warning restore CS1591
     }
 }

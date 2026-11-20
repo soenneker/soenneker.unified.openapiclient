@@ -19,6 +19,7 @@ using Soenneker.Unified.OpenApiClient.Compute;
 using Soenneker.Unified.OpenApiClient.Crm;
 using Soenneker.Unified.OpenApiClient.Datastore;
 using Soenneker.Unified.OpenApiClient.Enrich;
+using Soenneker.Unified.OpenApiClient.Fhir;
 using Soenneker.Unified.OpenApiClient.Forms;
 using Soenneker.Unified.OpenApiClient.Genai;
 using Soenneker.Unified.OpenApiClient.Healthcare;
@@ -122,6 +123,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Enrich.EnrichRequestBuilder Enrich
         {
             get => new global::Soenneker.Unified.OpenApiClient.Enrich.EnrichRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fhir property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Fhir.FhirRequestBuilder Fhir
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Fhir.FhirRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forms property</summary>
         public global::Soenneker.Unified.OpenApiClient.Forms.FormsRequestBuilder Forms

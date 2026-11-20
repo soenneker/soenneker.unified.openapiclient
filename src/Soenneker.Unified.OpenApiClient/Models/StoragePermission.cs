@@ -21,6 +21,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
             if (parseNode.GetChildNode("is_hidden") is null) { _explicitNullValueIsHidden = default!; _explicitNullProperties?.Remove("is_hidden"); }
             else if (parseNode.GetChildNode("is_hidden") is { } nullNodeIsHidden && nullNodeIsHidden.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsHidden = null;
+            if (parseNode.GetChildNode("is_organization") is null) { _explicitNullValueIsOrganization = default!; _explicitNullProperties?.Remove("is_organization"); }
+            else if (parseNode.GetChildNode("is_organization") is { } nullNodeIsOrganization && nullNodeIsOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOrganization = null;
             if (parseNode.GetChildNode("is_public") is null) { _explicitNullValueIsPublic = default!; _explicitNullProperties?.Remove("is_public"); }
             else if (parseNode.GetChildNode("is_public") is { } nullNodeIsPublic && nullNodeIsPublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPublic = null;
             if (parseNode.GetChildNode("roles") is null) { _explicitNullValueRoles = default!; _explicitNullProperties?.Remove("roles"); }
@@ -44,6 +46,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The is_hidden property</summary>
         public bool? IsHidden { get => _explicitNullValueIsHidden; set { _explicitNullValueIsHidden = value; AdditionalData?.Remove("is_hidden"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_hidden"); else _explicitNullProperties?.Remove("is_hidden"); } }
         private bool? _explicitNullValueIsHidden = default!;
+        /// <summary>Shared with everyone in the owner&apos;s organization/domain/enterprise (e.g. Google Drive domain, Box company or Microsoft organization sharing links)</summary>
+        public bool? IsOrganization { get => _explicitNullValueIsOrganization; set { _explicitNullValueIsOrganization = value; AdditionalData?.Remove("is_organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_organization"); else _explicitNullProperties?.Remove("is_organization"); } }
+        private bool? _explicitNullValueIsOrganization = default!;
         /// <summary>The is_public property</summary>
         public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; AdditionalData?.Remove("is_public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_public"); else _explicitNullProperties?.Remove("is_public"); } }
         private bool? _explicitNullValueIsPublic = default!;
@@ -90,10 +95,11 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "is_hidden", n => { IsHidden = n.GetBoolValue(); } },
+                { "is_organization", n => { IsOrganization = n.GetBoolValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermissionRolesItem>()?.AsList(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -108,6 +114,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteBoolValue("is_hidden", IsHidden);
+            writer.WriteBoolValue("is_organization", IsOrganization);
             writer.WriteBoolValue("is_public", IsPublic);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Unified.OpenApiClient.Models.StoragePermissionRolesItem>("roles", Roles);
             writer.WriteStringValue("user_id", UserId);
