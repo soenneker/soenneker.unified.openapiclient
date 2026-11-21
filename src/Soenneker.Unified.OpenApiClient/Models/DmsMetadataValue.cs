@@ -9,10 +9,10 @@ using System;
 namespace Soenneker.Unified.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2&gt;
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PlmMetadataValue : IComposedTypeWrapper, IParsable
+    public partial class DmsMetadataValue : IComposedTypeWrapper, IParsable
     , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
@@ -21,24 +21,24 @@ namespace Soenneker.Unified.OpenApiClient.Models
 
         /// <summary>Composed type representation for type <see cref="bool"/></summary>
         public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1? DmsMetadataValueMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1 DmsMetadataValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2>? DmsMetadataValueMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2> DmsMetadataValueMember2 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1? PlmMetadataValueMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1 PlmMetadataValueMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2>? PlmMetadataValueMember2 { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2> PlmMetadataValueMember2 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,12 +50,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue();
+            var result = new global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue();
             if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool booleanValue)
             {
                 result.Boolean = booleanValue;
@@ -68,9 +68,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2> plmMetadataValueMember2Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2>(global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2> dmsMetadataValueMember2Value)
             {
-                result.PlmMetadataValueMember2 = plmMetadataValueMember2Value;
+                result.DmsMetadataValueMember2 = dmsMetadataValueMember2Value;
             }
             else {
                 
@@ -80,9 +80,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.Boolean == null && result.Double == null && result.PlmMetadataValueMember1 == null && result.PlmMetadataValueMember2 == null && result.String == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.PlmMetadataValueMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1(), parseNode);
-            if (result.Boolean == null && result.Double == null && result.PlmMetadataValueMember1 == null && result.PlmMetadataValueMember2 == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.Boolean == null && result.DmsMetadataValueMember1 == null && result.DmsMetadataValueMember2 == null && result.Double == null && result.String == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.DmsMetadataValueMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1(), parseNode);
+            if (result.Boolean == null && result.DmsMetadataValueMember1 == null && result.DmsMetadataValueMember2 == null && result.Double == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -93,9 +93,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(PlmMetadataValueMember1 != null)
+            if(DmsMetadataValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PlmMetadataValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DmsMetadataValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -106,14 +106,14 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (Boolean == null && Double == null && PlmMetadataValueMember1 == null && PlmMetadataValueMember2 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (Boolean == null && DmsMetadataValueMember1 == null && DmsMetadataValueMember2 == null && Double == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (Boolean != null) selectedUnionBranches++;
+            if (DmsMetadataValueMember1 != null) selectedUnionBranches++;
+            if (DmsMetadataValueMember2 != null) selectedUnionBranches++;
             if (Double != null) selectedUnionBranches++;
-            if (PlmMetadataValueMember1 != null) selectedUnionBranches++;
-            if (PlmMetadataValueMember2 != null) selectedUnionBranches++;
             if (String != null) selectedUnionBranches++;
-            if (PlmMetadataValueMember1 != null && selectedUnionBranches == 1) { if (PlmMetadataValueMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PlmMetadataValueMember1); return; }
+            if (DmsMetadataValueMember1 != null && selectedUnionBranches == 1) { if (DmsMetadataValueMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DmsMetadataValueMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Boolean != null)
@@ -128,13 +128,13 @@ return result;
             {
                 writer.WriteStringValue(null, String);
             }
-            else if(PlmMetadataValueMember2 != null)
+            else if(DmsMetadataValueMember2 != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember2>(null, PlmMetadataValueMember2);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember2>(null, DmsMetadataValueMember2);
             }
             else {
-                if (PlmMetadataValueMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValueMember1>(null, PlmMetadataValueMember1);
+                if (DmsMetadataValueMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValueMember1>(null, DmsMetadataValueMember1);
             }
         }
     }

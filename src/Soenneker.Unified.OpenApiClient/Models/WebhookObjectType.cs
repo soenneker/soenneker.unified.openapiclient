@@ -991,5 +991,33 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         QmsAudit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehicle")]
+        #pragma warning disable CS1591
+        DmsVehicle,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehiclesale")]
+        #pragma warning disable CS1591
+        DmsVehiclesale,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_repairorder")]
+        #pragma warning disable CS1591
+        DmsRepairorder,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_appointment")]
+        #pragma warning disable CS1591
+        DmsAppointment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_part")]
+        #pragma warning disable CS1591
+        DmsPart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_partsale")]
+        #pragma warning disable CS1591
+        DmsPartsale,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_opcode")]
+        #pragma warning disable CS1591
+        DmsOpcode,
+        #pragma warning restore CS1591
     }
 }

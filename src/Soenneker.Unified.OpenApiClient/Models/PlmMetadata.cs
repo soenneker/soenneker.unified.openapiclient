@@ -79,12 +79,12 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The field&apos;s value, typed by `format`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue _explicitNullValueValue = default!;
+        public global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PlmMetadata"/> and sets the default values.
@@ -116,7 +116,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue>(global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue>(global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PlmMetadataValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.DmsMetadataValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

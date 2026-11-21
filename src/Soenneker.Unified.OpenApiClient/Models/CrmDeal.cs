@@ -58,6 +58,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
             else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("vehicle_ids") is null) { _explicitNullValueVehicleIds = default!; _explicitNullProperties?.Remove("vehicle_ids"); }
+            else if (parseNode.GetChildNode("vehicle_ids") is { } nullNodeVehicleIds && nullNodeVehicleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VehicleIds = null;
             if (parseNode.GetChildNode("won_reason") is null) { _explicitNullValueWonReason = default!; _explicitNullProperties?.Remove("won_reason"); }
             else if (parseNode.GetChildNode("won_reason") is { } nullNodeWonReason && nullNodeWonReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WonReason = null;
         }
@@ -222,6 +224,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private string _explicitNullValueUserId = default!;
 #endif
+        /// <summary>DMS Vehicles this deal is for</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? VehicleIds { get => _explicitNullValueVehicleIds; set { _explicitNullValueVehicleIds = value; AdditionalData?.Remove("vehicle_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vehicle_ids"); else _explicitNullProperties?.Remove("vehicle_ids"); } }
+        private List<string>? _explicitNullValueVehicleIds = default!;
+#nullable restore
+#else
+        public List<string> VehicleIds { get => _explicitNullValueVehicleIds; set { _explicitNullValueVehicleIds = value; AdditionalData?.Remove("vehicle_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vehicle_ids"); else _explicitNullProperties?.Remove("vehicle_ids"); } }
+        private List<string> _explicitNullValueVehicleIds = default!;
+#endif
         /// <summary>The won_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -255,7 +267,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(21)
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
@@ -277,6 +289,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "vehicle_ids", n => { VehicleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "won_reason", n => { WonReason = n.GetStringValue(); } },
             };
         }
@@ -307,6 +320,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteCollectionOfPrimitiveValues<string>("vehicle_ids", VehicleIds);
             writer.WriteStringValue("won_reason", WonReason);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

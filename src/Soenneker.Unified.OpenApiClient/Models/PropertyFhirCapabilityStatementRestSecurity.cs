@@ -20,6 +20,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
+            else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,6 +35,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
+#endif
+        /// <summary>Security services supported (SMART-on-FHIR)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept>? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept>? _explicitNullValueService = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept> Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept> _explicitNullValueService = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Unified.OpenApiClient.Models.PropertyFhirCapabilityStatementRestSecurity"/> and sets the default values.
@@ -60,6 +72,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept>(global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -70,6 +83,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.FhirCodeableConcept>("service", Service);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

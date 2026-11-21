@@ -1836,5 +1836,61 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         QmsAuditWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehicle_read")]
+        #pragma warning disable CS1591
+        DmsVehicleRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehicle_write")]
+        #pragma warning disable CS1591
+        DmsVehicleWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehiclesale_read")]
+        #pragma warning disable CS1591
+        DmsVehiclesaleRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_vehiclesale_write")]
+        #pragma warning disable CS1591
+        DmsVehiclesaleWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_repairorder_read")]
+        #pragma warning disable CS1591
+        DmsRepairorderRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_repairorder_write")]
+        #pragma warning disable CS1591
+        DmsRepairorderWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_appointment_read")]
+        #pragma warning disable CS1591
+        DmsAppointmentRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_appointment_write")]
+        #pragma warning disable CS1591
+        DmsAppointmentWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_part_read")]
+        #pragma warning disable CS1591
+        DmsPartRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_part_write")]
+        #pragma warning disable CS1591
+        DmsPartWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_partsale_read")]
+        #pragma warning disable CS1591
+        DmsPartsaleRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_partsale_write")]
+        #pragma warning disable CS1591
+        DmsPartsaleWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_opcode_read")]
+        #pragma warning disable CS1591
+        DmsOpcodeRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dms_opcode_write")]
+        #pragma warning disable CS1591
+        DmsOpcodeWrite,
+        #pragma warning restore CS1591
     }
 }

@@ -18,6 +18,7 @@ using Soenneker.Unified.OpenApiClient.Commerce;
 using Soenneker.Unified.OpenApiClient.Compute;
 using Soenneker.Unified.OpenApiClient.Crm;
 using Soenneker.Unified.OpenApiClient.Datastore;
+using Soenneker.Unified.OpenApiClient.Dms;
 using Soenneker.Unified.OpenApiClient.Enrich;
 using Soenneker.Unified.OpenApiClient.Fhir;
 using Soenneker.Unified.OpenApiClient.Forms;
@@ -118,6 +119,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Datastore.DatastoreRequestBuilder Datastore
         {
             get => new global::Soenneker.Unified.OpenApiClient.Datastore.DatastoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dms property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Dms.DmsRequestBuilder Dms
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Dms.DmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enrich property</summary>
         public global::Soenneker.Unified.OpenApiClient.Enrich.EnrichRequestBuilder Enrich

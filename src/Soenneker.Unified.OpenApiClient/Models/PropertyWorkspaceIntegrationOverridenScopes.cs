@@ -423,6 +423,34 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("datastore_table_read") is { } nullNodeDatastoreTableRead && nullNodeDatastoreTableRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatastoreTableRead = null;
             if (parseNode.GetChildNode("datastore_table_write") is null) { _explicitNullValueDatastoreTableWrite = default!; _explicitNullProperties?.Remove("datastore_table_write"); }
             else if (parseNode.GetChildNode("datastore_table_write") is { } nullNodeDatastoreTableWrite && nullNodeDatastoreTableWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatastoreTableWrite = null;
+            if (parseNode.GetChildNode("dms_appointment_read") is null) { _explicitNullValueDmsAppointmentRead = default!; _explicitNullProperties?.Remove("dms_appointment_read"); }
+            else if (parseNode.GetChildNode("dms_appointment_read") is { } nullNodeDmsAppointmentRead && nullNodeDmsAppointmentRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsAppointmentRead = null;
+            if (parseNode.GetChildNode("dms_appointment_write") is null) { _explicitNullValueDmsAppointmentWrite = default!; _explicitNullProperties?.Remove("dms_appointment_write"); }
+            else if (parseNode.GetChildNode("dms_appointment_write") is { } nullNodeDmsAppointmentWrite && nullNodeDmsAppointmentWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsAppointmentWrite = null;
+            if (parseNode.GetChildNode("dms_opcode_read") is null) { _explicitNullValueDmsOpcodeRead = default!; _explicitNullProperties?.Remove("dms_opcode_read"); }
+            else if (parseNode.GetChildNode("dms_opcode_read") is { } nullNodeDmsOpcodeRead && nullNodeDmsOpcodeRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsOpcodeRead = null;
+            if (parseNode.GetChildNode("dms_opcode_write") is null) { _explicitNullValueDmsOpcodeWrite = default!; _explicitNullProperties?.Remove("dms_opcode_write"); }
+            else if (parseNode.GetChildNode("dms_opcode_write") is { } nullNodeDmsOpcodeWrite && nullNodeDmsOpcodeWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsOpcodeWrite = null;
+            if (parseNode.GetChildNode("dms_part_read") is null) { _explicitNullValueDmsPartRead = default!; _explicitNullProperties?.Remove("dms_part_read"); }
+            else if (parseNode.GetChildNode("dms_part_read") is { } nullNodeDmsPartRead && nullNodeDmsPartRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsPartRead = null;
+            if (parseNode.GetChildNode("dms_partsale_read") is null) { _explicitNullValueDmsPartsaleRead = default!; _explicitNullProperties?.Remove("dms_partsale_read"); }
+            else if (parseNode.GetChildNode("dms_partsale_read") is { } nullNodeDmsPartsaleRead && nullNodeDmsPartsaleRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsPartsaleRead = null;
+            if (parseNode.GetChildNode("dms_partsale_write") is null) { _explicitNullValueDmsPartsaleWrite = default!; _explicitNullProperties?.Remove("dms_partsale_write"); }
+            else if (parseNode.GetChildNode("dms_partsale_write") is { } nullNodeDmsPartsaleWrite && nullNodeDmsPartsaleWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsPartsaleWrite = null;
+            if (parseNode.GetChildNode("dms_part_write") is null) { _explicitNullValueDmsPartWrite = default!; _explicitNullProperties?.Remove("dms_part_write"); }
+            else if (parseNode.GetChildNode("dms_part_write") is { } nullNodeDmsPartWrite && nullNodeDmsPartWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsPartWrite = null;
+            if (parseNode.GetChildNode("dms_repairorder_read") is null) { _explicitNullValueDmsRepairorderRead = default!; _explicitNullProperties?.Remove("dms_repairorder_read"); }
+            else if (parseNode.GetChildNode("dms_repairorder_read") is { } nullNodeDmsRepairorderRead && nullNodeDmsRepairorderRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsRepairorderRead = null;
+            if (parseNode.GetChildNode("dms_repairorder_write") is null) { _explicitNullValueDmsRepairorderWrite = default!; _explicitNullProperties?.Remove("dms_repairorder_write"); }
+            else if (parseNode.GetChildNode("dms_repairorder_write") is { } nullNodeDmsRepairorderWrite && nullNodeDmsRepairorderWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsRepairorderWrite = null;
+            if (parseNode.GetChildNode("dms_vehicle_read") is null) { _explicitNullValueDmsVehicleRead = default!; _explicitNullProperties?.Remove("dms_vehicle_read"); }
+            else if (parseNode.GetChildNode("dms_vehicle_read") is { } nullNodeDmsVehicleRead && nullNodeDmsVehicleRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsVehicleRead = null;
+            if (parseNode.GetChildNode("dms_vehiclesale_read") is null) { _explicitNullValueDmsVehiclesaleRead = default!; _explicitNullProperties?.Remove("dms_vehiclesale_read"); }
+            else if (parseNode.GetChildNode("dms_vehiclesale_read") is { } nullNodeDmsVehiclesaleRead && nullNodeDmsVehiclesaleRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsVehiclesaleRead = null;
+            if (parseNode.GetChildNode("dms_vehiclesale_write") is null) { _explicitNullValueDmsVehiclesaleWrite = default!; _explicitNullProperties?.Remove("dms_vehiclesale_write"); }
+            else if (parseNode.GetChildNode("dms_vehiclesale_write") is { } nullNodeDmsVehiclesaleWrite && nullNodeDmsVehiclesaleWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsVehiclesaleWrite = null;
+            if (parseNode.GetChildNode("dms_vehicle_write") is null) { _explicitNullValueDmsVehicleWrite = default!; _explicitNullProperties?.Remove("dms_vehicle_write"); }
+            else if (parseNode.GetChildNode("dms_vehicle_write") is { } nullNodeDmsVehicleWrite && nullNodeDmsVehicleWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmsVehicleWrite = null;
             if (parseNode.GetChildNode("enrich_company_read") is null) { _explicitNullValueEnrichCompanyRead = default!; _explicitNullProperties?.Remove("enrich_company_read"); }
             else if (parseNode.GetChildNode("enrich_company_read") is { } nullNodeEnrichCompanyRead && nullNodeEnrichCompanyRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrichCompanyRead = null;
             if (parseNode.GetChildNode("enrich_person_read") is null) { _explicitNullValueEnrichPersonRead = default!; _explicitNullProperties?.Remove("enrich_person_read"); }
@@ -2964,6 +2992,146 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string DatastoreTableWrite { get => _explicitNullValueDatastoreTableWrite; set { _explicitNullValueDatastoreTableWrite = value; AdditionalData?.Remove("datastore_table_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datastore_table_write"); else _explicitNullProperties?.Remove("datastore_table_write"); } }
         private string _explicitNullValueDatastoreTableWrite = default!;
+#endif
+        /// <summary>The dms_appointment_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsAppointmentRead { get => _explicitNullValueDmsAppointmentRead; set { _explicitNullValueDmsAppointmentRead = value; AdditionalData?.Remove("dms_appointment_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_appointment_read"); else _explicitNullProperties?.Remove("dms_appointment_read"); } }
+        private string? _explicitNullValueDmsAppointmentRead = default!;
+#nullable restore
+#else
+        public string DmsAppointmentRead { get => _explicitNullValueDmsAppointmentRead; set { _explicitNullValueDmsAppointmentRead = value; AdditionalData?.Remove("dms_appointment_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_appointment_read"); else _explicitNullProperties?.Remove("dms_appointment_read"); } }
+        private string _explicitNullValueDmsAppointmentRead = default!;
+#endif
+        /// <summary>The dms_appointment_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsAppointmentWrite { get => _explicitNullValueDmsAppointmentWrite; set { _explicitNullValueDmsAppointmentWrite = value; AdditionalData?.Remove("dms_appointment_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_appointment_write"); else _explicitNullProperties?.Remove("dms_appointment_write"); } }
+        private string? _explicitNullValueDmsAppointmentWrite = default!;
+#nullable restore
+#else
+        public string DmsAppointmentWrite { get => _explicitNullValueDmsAppointmentWrite; set { _explicitNullValueDmsAppointmentWrite = value; AdditionalData?.Remove("dms_appointment_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_appointment_write"); else _explicitNullProperties?.Remove("dms_appointment_write"); } }
+        private string _explicitNullValueDmsAppointmentWrite = default!;
+#endif
+        /// <summary>The dms_opcode_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsOpcodeRead { get => _explicitNullValueDmsOpcodeRead; set { _explicitNullValueDmsOpcodeRead = value; AdditionalData?.Remove("dms_opcode_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_opcode_read"); else _explicitNullProperties?.Remove("dms_opcode_read"); } }
+        private string? _explicitNullValueDmsOpcodeRead = default!;
+#nullable restore
+#else
+        public string DmsOpcodeRead { get => _explicitNullValueDmsOpcodeRead; set { _explicitNullValueDmsOpcodeRead = value; AdditionalData?.Remove("dms_opcode_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_opcode_read"); else _explicitNullProperties?.Remove("dms_opcode_read"); } }
+        private string _explicitNullValueDmsOpcodeRead = default!;
+#endif
+        /// <summary>The dms_opcode_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsOpcodeWrite { get => _explicitNullValueDmsOpcodeWrite; set { _explicitNullValueDmsOpcodeWrite = value; AdditionalData?.Remove("dms_opcode_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_opcode_write"); else _explicitNullProperties?.Remove("dms_opcode_write"); } }
+        private string? _explicitNullValueDmsOpcodeWrite = default!;
+#nullable restore
+#else
+        public string DmsOpcodeWrite { get => _explicitNullValueDmsOpcodeWrite; set { _explicitNullValueDmsOpcodeWrite = value; AdditionalData?.Remove("dms_opcode_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_opcode_write"); else _explicitNullProperties?.Remove("dms_opcode_write"); } }
+        private string _explicitNullValueDmsOpcodeWrite = default!;
+#endif
+        /// <summary>The dms_part_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsPartRead { get => _explicitNullValueDmsPartRead; set { _explicitNullValueDmsPartRead = value; AdditionalData?.Remove("dms_part_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_part_read"); else _explicitNullProperties?.Remove("dms_part_read"); } }
+        private string? _explicitNullValueDmsPartRead = default!;
+#nullable restore
+#else
+        public string DmsPartRead { get => _explicitNullValueDmsPartRead; set { _explicitNullValueDmsPartRead = value; AdditionalData?.Remove("dms_part_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_part_read"); else _explicitNullProperties?.Remove("dms_part_read"); } }
+        private string _explicitNullValueDmsPartRead = default!;
+#endif
+        /// <summary>The dms_partsale_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsPartsaleRead { get => _explicitNullValueDmsPartsaleRead; set { _explicitNullValueDmsPartsaleRead = value; AdditionalData?.Remove("dms_partsale_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_partsale_read"); else _explicitNullProperties?.Remove("dms_partsale_read"); } }
+        private string? _explicitNullValueDmsPartsaleRead = default!;
+#nullable restore
+#else
+        public string DmsPartsaleRead { get => _explicitNullValueDmsPartsaleRead; set { _explicitNullValueDmsPartsaleRead = value; AdditionalData?.Remove("dms_partsale_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_partsale_read"); else _explicitNullProperties?.Remove("dms_partsale_read"); } }
+        private string _explicitNullValueDmsPartsaleRead = default!;
+#endif
+        /// <summary>The dms_partsale_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsPartsaleWrite { get => _explicitNullValueDmsPartsaleWrite; set { _explicitNullValueDmsPartsaleWrite = value; AdditionalData?.Remove("dms_partsale_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_partsale_write"); else _explicitNullProperties?.Remove("dms_partsale_write"); } }
+        private string? _explicitNullValueDmsPartsaleWrite = default!;
+#nullable restore
+#else
+        public string DmsPartsaleWrite { get => _explicitNullValueDmsPartsaleWrite; set { _explicitNullValueDmsPartsaleWrite = value; AdditionalData?.Remove("dms_partsale_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_partsale_write"); else _explicitNullProperties?.Remove("dms_partsale_write"); } }
+        private string _explicitNullValueDmsPartsaleWrite = default!;
+#endif
+        /// <summary>The dms_part_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsPartWrite { get => _explicitNullValueDmsPartWrite; set { _explicitNullValueDmsPartWrite = value; AdditionalData?.Remove("dms_part_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_part_write"); else _explicitNullProperties?.Remove("dms_part_write"); } }
+        private string? _explicitNullValueDmsPartWrite = default!;
+#nullable restore
+#else
+        public string DmsPartWrite { get => _explicitNullValueDmsPartWrite; set { _explicitNullValueDmsPartWrite = value; AdditionalData?.Remove("dms_part_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_part_write"); else _explicitNullProperties?.Remove("dms_part_write"); } }
+        private string _explicitNullValueDmsPartWrite = default!;
+#endif
+        /// <summary>The dms_repairorder_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsRepairorderRead { get => _explicitNullValueDmsRepairorderRead; set { _explicitNullValueDmsRepairorderRead = value; AdditionalData?.Remove("dms_repairorder_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_repairorder_read"); else _explicitNullProperties?.Remove("dms_repairorder_read"); } }
+        private string? _explicitNullValueDmsRepairorderRead = default!;
+#nullable restore
+#else
+        public string DmsRepairorderRead { get => _explicitNullValueDmsRepairorderRead; set { _explicitNullValueDmsRepairorderRead = value; AdditionalData?.Remove("dms_repairorder_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_repairorder_read"); else _explicitNullProperties?.Remove("dms_repairorder_read"); } }
+        private string _explicitNullValueDmsRepairorderRead = default!;
+#endif
+        /// <summary>The dms_repairorder_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsRepairorderWrite { get => _explicitNullValueDmsRepairorderWrite; set { _explicitNullValueDmsRepairorderWrite = value; AdditionalData?.Remove("dms_repairorder_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_repairorder_write"); else _explicitNullProperties?.Remove("dms_repairorder_write"); } }
+        private string? _explicitNullValueDmsRepairorderWrite = default!;
+#nullable restore
+#else
+        public string DmsRepairorderWrite { get => _explicitNullValueDmsRepairorderWrite; set { _explicitNullValueDmsRepairorderWrite = value; AdditionalData?.Remove("dms_repairorder_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_repairorder_write"); else _explicitNullProperties?.Remove("dms_repairorder_write"); } }
+        private string _explicitNullValueDmsRepairorderWrite = default!;
+#endif
+        /// <summary>The dms_vehicle_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsVehicleRead { get => _explicitNullValueDmsVehicleRead; set { _explicitNullValueDmsVehicleRead = value; AdditionalData?.Remove("dms_vehicle_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehicle_read"); else _explicitNullProperties?.Remove("dms_vehicle_read"); } }
+        private string? _explicitNullValueDmsVehicleRead = default!;
+#nullable restore
+#else
+        public string DmsVehicleRead { get => _explicitNullValueDmsVehicleRead; set { _explicitNullValueDmsVehicleRead = value; AdditionalData?.Remove("dms_vehicle_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehicle_read"); else _explicitNullProperties?.Remove("dms_vehicle_read"); } }
+        private string _explicitNullValueDmsVehicleRead = default!;
+#endif
+        /// <summary>The dms_vehiclesale_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsVehiclesaleRead { get => _explicitNullValueDmsVehiclesaleRead; set { _explicitNullValueDmsVehiclesaleRead = value; AdditionalData?.Remove("dms_vehiclesale_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehiclesale_read"); else _explicitNullProperties?.Remove("dms_vehiclesale_read"); } }
+        private string? _explicitNullValueDmsVehiclesaleRead = default!;
+#nullable restore
+#else
+        public string DmsVehiclesaleRead { get => _explicitNullValueDmsVehiclesaleRead; set { _explicitNullValueDmsVehiclesaleRead = value; AdditionalData?.Remove("dms_vehiclesale_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehiclesale_read"); else _explicitNullProperties?.Remove("dms_vehiclesale_read"); } }
+        private string _explicitNullValueDmsVehiclesaleRead = default!;
+#endif
+        /// <summary>The dms_vehiclesale_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsVehiclesaleWrite { get => _explicitNullValueDmsVehiclesaleWrite; set { _explicitNullValueDmsVehiclesaleWrite = value; AdditionalData?.Remove("dms_vehiclesale_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehiclesale_write"); else _explicitNullProperties?.Remove("dms_vehiclesale_write"); } }
+        private string? _explicitNullValueDmsVehiclesaleWrite = default!;
+#nullable restore
+#else
+        public string DmsVehiclesaleWrite { get => _explicitNullValueDmsVehiclesaleWrite; set { _explicitNullValueDmsVehiclesaleWrite = value; AdditionalData?.Remove("dms_vehiclesale_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehiclesale_write"); else _explicitNullProperties?.Remove("dms_vehiclesale_write"); } }
+        private string _explicitNullValueDmsVehiclesaleWrite = default!;
+#endif
+        /// <summary>The dms_vehicle_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DmsVehicleWrite { get => _explicitNullValueDmsVehicleWrite; set { _explicitNullValueDmsVehicleWrite = value; AdditionalData?.Remove("dms_vehicle_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehicle_write"); else _explicitNullProperties?.Remove("dms_vehicle_write"); } }
+        private string? _explicitNullValueDmsVehicleWrite = default!;
+#nullable restore
+#else
+        public string DmsVehicleWrite { get => _explicitNullValueDmsVehicleWrite; set { _explicitNullValueDmsVehicleWrite = value; AdditionalData?.Remove("dms_vehicle_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dms_vehicle_write"); else _explicitNullProperties?.Remove("dms_vehicle_write"); } }
+        private string _explicitNullValueDmsVehicleWrite = default!;
 #endif
         /// <summary>The enrich_company_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -5528,7 +5696,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(457)
+            return new Dictionary<string, Action<IParseNode>>(471)
             {
                 { "accounting_account_read", n => { AccountingAccountRead = n.GetStringValue(); } },
                 { "accounting_account_write", n => { AccountingAccountWrite = n.GetStringValue(); } },
@@ -5733,6 +5901,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "datastore_record_write", n => { DatastoreRecordWrite = n.GetStringValue(); } },
                 { "datastore_table_read", n => { DatastoreTableRead = n.GetStringValue(); } },
                 { "datastore_table_write", n => { DatastoreTableWrite = n.GetStringValue(); } },
+                { "dms_appointment_read", n => { DmsAppointmentRead = n.GetStringValue(); } },
+                { "dms_appointment_write", n => { DmsAppointmentWrite = n.GetStringValue(); } },
+                { "dms_opcode_read", n => { DmsOpcodeRead = n.GetStringValue(); } },
+                { "dms_opcode_write", n => { DmsOpcodeWrite = n.GetStringValue(); } },
+                { "dms_part_read", n => { DmsPartRead = n.GetStringValue(); } },
+                { "dms_part_write", n => { DmsPartWrite = n.GetStringValue(); } },
+                { "dms_partsale_read", n => { DmsPartsaleRead = n.GetStringValue(); } },
+                { "dms_partsale_write", n => { DmsPartsaleWrite = n.GetStringValue(); } },
+                { "dms_repairorder_read", n => { DmsRepairorderRead = n.GetStringValue(); } },
+                { "dms_repairorder_write", n => { DmsRepairorderWrite = n.GetStringValue(); } },
+                { "dms_vehicle_read", n => { DmsVehicleRead = n.GetStringValue(); } },
+                { "dms_vehicle_write", n => { DmsVehicleWrite = n.GetStringValue(); } },
+                { "dms_vehiclesale_read", n => { DmsVehiclesaleRead = n.GetStringValue(); } },
+                { "dms_vehiclesale_write", n => { DmsVehiclesaleWrite = n.GetStringValue(); } },
                 { "enrich_company_read", n => { EnrichCompanyRead = n.GetStringValue(); } },
                 { "enrich_person_read", n => { EnrichPersonRead = n.GetStringValue(); } },
                 { "forms_form_read", n => { FormsFormRead = n.GetStringValue(); } },
@@ -6199,6 +6381,20 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("datastore_record_write", DatastoreRecordWrite);
             writer.WriteStringValue("datastore_table_read", DatastoreTableRead);
             writer.WriteStringValue("datastore_table_write", DatastoreTableWrite);
+            writer.WriteStringValue("dms_appointment_read", DmsAppointmentRead);
+            writer.WriteStringValue("dms_appointment_write", DmsAppointmentWrite);
+            writer.WriteStringValue("dms_opcode_read", DmsOpcodeRead);
+            writer.WriteStringValue("dms_opcode_write", DmsOpcodeWrite);
+            writer.WriteStringValue("dms_part_read", DmsPartRead);
+            writer.WriteStringValue("dms_partsale_read", DmsPartsaleRead);
+            writer.WriteStringValue("dms_partsale_write", DmsPartsaleWrite);
+            writer.WriteStringValue("dms_part_write", DmsPartWrite);
+            writer.WriteStringValue("dms_repairorder_read", DmsRepairorderRead);
+            writer.WriteStringValue("dms_repairorder_write", DmsRepairorderWrite);
+            writer.WriteStringValue("dms_vehicle_read", DmsVehicleRead);
+            writer.WriteStringValue("dms_vehiclesale_read", DmsVehiclesaleRead);
+            writer.WriteStringValue("dms_vehiclesale_write", DmsVehiclesaleWrite);
+            writer.WriteStringValue("dms_vehicle_write", DmsVehicleWrite);
             writer.WriteStringValue("enrich_company_read", EnrichCompanyRead);
             writer.WriteStringValue("enrich_person_read", EnrichPersonRead);
             writer.WriteStringValue("forms_form_read", FormsFormRead);
