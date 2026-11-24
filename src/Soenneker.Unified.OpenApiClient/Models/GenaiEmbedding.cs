@@ -23,8 +23,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("dimension") is { } nullNodeDimension && nullNodeDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimension = null;
             if (parseNode.GetChildNode("embeddings") is null) { _explicitNullValueEmbeddings = default!; _explicitNullProperties?.Remove("embeddings"); }
             else if (parseNode.GetChildNode("embeddings") is { } nullNodeEmbeddings && nullNodeEmbeddings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Embeddings = null;
-            if (parseNode.GetChildNode("enconding_format") is null) { _explicitNullValueEncondingFormat = default!; _explicitNullProperties?.Remove("enconding_format"); }
-            else if (parseNode.GetChildNode("enconding_format") is { } nullNodeEncondingFormat && nullNodeEncondingFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncondingFormat = null;
+            if (parseNode.GetChildNode("encoding_format") is null) { _explicitNullValueEncodingFormat = default!; _explicitNullProperties?.Remove("encoding_format"); }
+            else if (parseNode.GetChildNode("encoding_format") is { } nullNodeEncodingFormat && nullNodeEncodingFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodingFormat = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("max_tokens") is null) { _explicitNullValueMaxTokens = default!; _explicitNullProperties?.Remove("max_tokens"); }
@@ -64,9 +64,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Embeddings { get => _explicitNullValueEmbeddings; set { _explicitNullValueEmbeddings = value; AdditionalData?.Remove("embeddings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embeddings"); else _explicitNullProperties?.Remove("embeddings"); } }
         private string _explicitNullValueEmbeddings = default!;
 #endif
-        /// <summary>The enconding_format property</summary>
-        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat? EncondingFormat { get => _explicitNullValueEncondingFormat; set { _explicitNullValueEncondingFormat = value; AdditionalData?.Remove("enconding_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enconding_format"); else _explicitNullProperties?.Remove("enconding_format"); } }
-        private global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat? _explicitNullValueEncondingFormat = default!;
+        /// <summary>The encoding_format property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncodingFormat? EncodingFormat { get => _explicitNullValueEncodingFormat; set { _explicitNullValueEncodingFormat = value; AdditionalData?.Remove("encoding_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding_format"); else _explicitNullProperties?.Remove("encoding_format"); } }
+        private global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncodingFormat? _explicitNullValueEncodingFormat = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +141,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dimension", n => { Dimension = n.GetDoubleValue(); } },
                 { "embeddings", n => { Embeddings = n.GetStringValue(); } },
-                { "enconding_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEncondingFormat = default; _explicitNullProperties?.Remove("enconding_format"); AdditionalData["enconding_format"] = unknown; } else { EncondingFormat = parsed; AdditionalData.Remove("enconding_format"); } } },
+                { "encoding_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncodingFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEncodingFormat = default; _explicitNullProperties?.Remove("encoding_format"); AdditionalData["encoding_format"] = unknown; } else { EncodingFormat = parsed; AdditionalData.Remove("encoding_format"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
@@ -160,7 +160,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingContent>("content", Content);
             writer.WriteDoubleValue("dimension", Dimension);
             writer.WriteStringValue("embeddings", Embeddings);
-            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncondingFormat>("enconding_format", EncondingFormat);
+            writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiEmbeddingEncodingFormat>("encoding_format", EncodingFormat);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("model_id", ModelId);

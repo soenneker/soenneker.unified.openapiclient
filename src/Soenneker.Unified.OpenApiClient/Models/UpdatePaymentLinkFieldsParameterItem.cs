@@ -68,5 +68,17 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Raw,
         #pragma warning restore CS1591
+        [EnumMember(Value = "contact_name")]
+        #pragma warning disable CS1591
+        ContactName,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "contact_email")]
+        #pragma warning disable CS1591
+        ContactEmail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "contact_phone")]
+        #pragma warning disable CS1591
+        ContactPhone,
+        #pragma warning restore CS1591
     }
 }

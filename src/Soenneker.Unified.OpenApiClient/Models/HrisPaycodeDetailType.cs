@@ -203,5 +203,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         PosttaxDeductionEwaRepayment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EARNING_TAXABLE_BENEFIT")]
+        #pragma warning disable CS1591
+        EarningTaxableBenefit,
+        #pragma warning restore CS1591
     }
 }

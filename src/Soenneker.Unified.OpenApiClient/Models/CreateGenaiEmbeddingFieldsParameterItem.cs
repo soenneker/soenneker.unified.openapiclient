@@ -16,9 +16,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Content,
         #pragma warning restore CS1591
-        [EnumMember(Value = "enconding_format")]
+        [EnumMember(Value = "encoding_format")]
         #pragma warning disable CS1591
-        EncondingFormat,
+        EncodingFormat,
         #pragma warning restore CS1591
         [EnumMember(Value = "type")]
         #pragma warning disable CS1591
