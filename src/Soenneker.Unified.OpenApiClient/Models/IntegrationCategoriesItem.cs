@@ -180,5 +180,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Fhir,
         #pragma warning restore CS1591
+        [EnumMember(Value = "printing")]
+        #pragma warning disable CS1591
+        Printing,
+        #pragma warning restore CS1591
     }
 }

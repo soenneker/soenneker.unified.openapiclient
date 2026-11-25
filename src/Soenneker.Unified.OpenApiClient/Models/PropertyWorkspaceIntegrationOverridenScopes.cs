@@ -775,6 +775,26 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("plm_part_read") is { } nullNodePlmPartRead && nullNodePlmPartRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlmPartRead = null;
             if (parseNode.GetChildNode("plm_part_write") is null) { _explicitNullValuePlmPartWrite = default!; _explicitNullProperties?.Remove("plm_part_write"); }
             else if (parseNode.GetChildNode("plm_part_write") is { } nullNodePlmPartWrite && nullNodePlmPartWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlmPartWrite = null;
+            if (parseNode.GetChildNode("printing_file_read") is null) { _explicitNullValuePrintingFileRead = default!; _explicitNullProperties?.Remove("printing_file_read"); }
+            else if (parseNode.GetChildNode("printing_file_read") is { } nullNodePrintingFileRead && nullNodePrintingFileRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingFileRead = null;
+            if (parseNode.GetChildNode("printing_file_write") is null) { _explicitNullValuePrintingFileWrite = default!; _explicitNullProperties?.Remove("printing_file_write"); }
+            else if (parseNode.GetChildNode("printing_file_write") is { } nullNodePrintingFileWrite && nullNodePrintingFileWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingFileWrite = null;
+            if (parseNode.GetChildNode("printing_order_read") is null) { _explicitNullValuePrintingOrderRead = default!; _explicitNullProperties?.Remove("printing_order_read"); }
+            else if (parseNode.GetChildNode("printing_order_read") is { } nullNodePrintingOrderRead && nullNodePrintingOrderRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingOrderRead = null;
+            if (parseNode.GetChildNode("printing_order_write") is null) { _explicitNullValuePrintingOrderWrite = default!; _explicitNullProperties?.Remove("printing_order_write"); }
+            else if (parseNode.GetChildNode("printing_order_write") is { } nullNodePrintingOrderWrite && nullNodePrintingOrderWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingOrderWrite = null;
+            if (parseNode.GetChildNode("printing_product_read") is null) { _explicitNullValuePrintingProductRead = default!; _explicitNullProperties?.Remove("printing_product_read"); }
+            else if (parseNode.GetChildNode("printing_product_read") is { } nullNodePrintingProductRead && nullNodePrintingProductRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingProductRead = null;
+            if (parseNode.GetChildNode("printing_product_write") is null) { _explicitNullValuePrintingProductWrite = default!; _explicitNullProperties?.Remove("printing_product_write"); }
+            else if (parseNode.GetChildNode("printing_product_write") is { } nullNodePrintingProductWrite && nullNodePrintingProductWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingProductWrite = null;
+            if (parseNode.GetChildNode("printing_quote_read") is null) { _explicitNullValuePrintingQuoteRead = default!; _explicitNullProperties?.Remove("printing_quote_read"); }
+            else if (parseNode.GetChildNode("printing_quote_read") is { } nullNodePrintingQuoteRead && nullNodePrintingQuoteRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingQuoteRead = null;
+            if (parseNode.GetChildNode("printing_quote_write") is null) { _explicitNullValuePrintingQuoteWrite = default!; _explicitNullProperties?.Remove("printing_quote_write"); }
+            else if (parseNode.GetChildNode("printing_quote_write") is { } nullNodePrintingQuoteWrite && nullNodePrintingQuoteWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingQuoteWrite = null;
+            if (parseNode.GetChildNode("printing_template_read") is null) { _explicitNullValuePrintingTemplateRead = default!; _explicitNullProperties?.Remove("printing_template_read"); }
+            else if (parseNode.GetChildNode("printing_template_read") is { } nullNodePrintingTemplateRead && nullNodePrintingTemplateRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingTemplateRead = null;
+            if (parseNode.GetChildNode("printing_template_write") is null) { _explicitNullValuePrintingTemplateWrite = default!; _explicitNullProperties?.Remove("printing_template_write"); }
+            else if (parseNode.GetChildNode("printing_template_write") is { } nullNodePrintingTemplateWrite && nullNodePrintingTemplateWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintingTemplateWrite = null;
             if (parseNode.GetChildNode("property_availability_read") is null) { _explicitNullValuePropertyAvailabilityRead = default!; _explicitNullProperties?.Remove("property_availability_read"); }
             else if (parseNode.GetChildNode("property_availability_read") is { } nullNodePropertyAvailabilityRead && nullNodePropertyAvailabilityRead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyAvailabilityRead = null;
             if (parseNode.GetChildNode("property_conversation_read") is null) { _explicitNullValuePropertyConversationRead = default!; _explicitNullProperties?.Remove("property_conversation_read"); }
@@ -4753,6 +4773,106 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string PlmPartWrite { get => _explicitNullValuePlmPartWrite; set { _explicitNullValuePlmPartWrite = value; AdditionalData?.Remove("plm_part_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plm_part_write"); else _explicitNullProperties?.Remove("plm_part_write"); } }
         private string _explicitNullValuePlmPartWrite = default!;
 #endif
+        /// <summary>The printing_file_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingFileRead { get => _explicitNullValuePrintingFileRead; set { _explicitNullValuePrintingFileRead = value; AdditionalData?.Remove("printing_file_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_file_read"); else _explicitNullProperties?.Remove("printing_file_read"); } }
+        private string? _explicitNullValuePrintingFileRead = default!;
+#nullable restore
+#else
+        public string PrintingFileRead { get => _explicitNullValuePrintingFileRead; set { _explicitNullValuePrintingFileRead = value; AdditionalData?.Remove("printing_file_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_file_read"); else _explicitNullProperties?.Remove("printing_file_read"); } }
+        private string _explicitNullValuePrintingFileRead = default!;
+#endif
+        /// <summary>The printing_file_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingFileWrite { get => _explicitNullValuePrintingFileWrite; set { _explicitNullValuePrintingFileWrite = value; AdditionalData?.Remove("printing_file_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_file_write"); else _explicitNullProperties?.Remove("printing_file_write"); } }
+        private string? _explicitNullValuePrintingFileWrite = default!;
+#nullable restore
+#else
+        public string PrintingFileWrite { get => _explicitNullValuePrintingFileWrite; set { _explicitNullValuePrintingFileWrite = value; AdditionalData?.Remove("printing_file_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_file_write"); else _explicitNullProperties?.Remove("printing_file_write"); } }
+        private string _explicitNullValuePrintingFileWrite = default!;
+#endif
+        /// <summary>The printing_order_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingOrderRead { get => _explicitNullValuePrintingOrderRead; set { _explicitNullValuePrintingOrderRead = value; AdditionalData?.Remove("printing_order_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_order_read"); else _explicitNullProperties?.Remove("printing_order_read"); } }
+        private string? _explicitNullValuePrintingOrderRead = default!;
+#nullable restore
+#else
+        public string PrintingOrderRead { get => _explicitNullValuePrintingOrderRead; set { _explicitNullValuePrintingOrderRead = value; AdditionalData?.Remove("printing_order_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_order_read"); else _explicitNullProperties?.Remove("printing_order_read"); } }
+        private string _explicitNullValuePrintingOrderRead = default!;
+#endif
+        /// <summary>The printing_order_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingOrderWrite { get => _explicitNullValuePrintingOrderWrite; set { _explicitNullValuePrintingOrderWrite = value; AdditionalData?.Remove("printing_order_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_order_write"); else _explicitNullProperties?.Remove("printing_order_write"); } }
+        private string? _explicitNullValuePrintingOrderWrite = default!;
+#nullable restore
+#else
+        public string PrintingOrderWrite { get => _explicitNullValuePrintingOrderWrite; set { _explicitNullValuePrintingOrderWrite = value; AdditionalData?.Remove("printing_order_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_order_write"); else _explicitNullProperties?.Remove("printing_order_write"); } }
+        private string _explicitNullValuePrintingOrderWrite = default!;
+#endif
+        /// <summary>The printing_product_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingProductRead { get => _explicitNullValuePrintingProductRead; set { _explicitNullValuePrintingProductRead = value; AdditionalData?.Remove("printing_product_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_product_read"); else _explicitNullProperties?.Remove("printing_product_read"); } }
+        private string? _explicitNullValuePrintingProductRead = default!;
+#nullable restore
+#else
+        public string PrintingProductRead { get => _explicitNullValuePrintingProductRead; set { _explicitNullValuePrintingProductRead = value; AdditionalData?.Remove("printing_product_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_product_read"); else _explicitNullProperties?.Remove("printing_product_read"); } }
+        private string _explicitNullValuePrintingProductRead = default!;
+#endif
+        /// <summary>The printing_product_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingProductWrite { get => _explicitNullValuePrintingProductWrite; set { _explicitNullValuePrintingProductWrite = value; AdditionalData?.Remove("printing_product_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_product_write"); else _explicitNullProperties?.Remove("printing_product_write"); } }
+        private string? _explicitNullValuePrintingProductWrite = default!;
+#nullable restore
+#else
+        public string PrintingProductWrite { get => _explicitNullValuePrintingProductWrite; set { _explicitNullValuePrintingProductWrite = value; AdditionalData?.Remove("printing_product_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_product_write"); else _explicitNullProperties?.Remove("printing_product_write"); } }
+        private string _explicitNullValuePrintingProductWrite = default!;
+#endif
+        /// <summary>The printing_quote_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingQuoteRead { get => _explicitNullValuePrintingQuoteRead; set { _explicitNullValuePrintingQuoteRead = value; AdditionalData?.Remove("printing_quote_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_quote_read"); else _explicitNullProperties?.Remove("printing_quote_read"); } }
+        private string? _explicitNullValuePrintingQuoteRead = default!;
+#nullable restore
+#else
+        public string PrintingQuoteRead { get => _explicitNullValuePrintingQuoteRead; set { _explicitNullValuePrintingQuoteRead = value; AdditionalData?.Remove("printing_quote_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_quote_read"); else _explicitNullProperties?.Remove("printing_quote_read"); } }
+        private string _explicitNullValuePrintingQuoteRead = default!;
+#endif
+        /// <summary>The printing_quote_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingQuoteWrite { get => _explicitNullValuePrintingQuoteWrite; set { _explicitNullValuePrintingQuoteWrite = value; AdditionalData?.Remove("printing_quote_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_quote_write"); else _explicitNullProperties?.Remove("printing_quote_write"); } }
+        private string? _explicitNullValuePrintingQuoteWrite = default!;
+#nullable restore
+#else
+        public string PrintingQuoteWrite { get => _explicitNullValuePrintingQuoteWrite; set { _explicitNullValuePrintingQuoteWrite = value; AdditionalData?.Remove("printing_quote_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_quote_write"); else _explicitNullProperties?.Remove("printing_quote_write"); } }
+        private string _explicitNullValuePrintingQuoteWrite = default!;
+#endif
+        /// <summary>The printing_template_read property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingTemplateRead { get => _explicitNullValuePrintingTemplateRead; set { _explicitNullValuePrintingTemplateRead = value; AdditionalData?.Remove("printing_template_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_template_read"); else _explicitNullProperties?.Remove("printing_template_read"); } }
+        private string? _explicitNullValuePrintingTemplateRead = default!;
+#nullable restore
+#else
+        public string PrintingTemplateRead { get => _explicitNullValuePrintingTemplateRead; set { _explicitNullValuePrintingTemplateRead = value; AdditionalData?.Remove("printing_template_read"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_template_read"); else _explicitNullProperties?.Remove("printing_template_read"); } }
+        private string _explicitNullValuePrintingTemplateRead = default!;
+#endif
+        /// <summary>The printing_template_write property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintingTemplateWrite { get => _explicitNullValuePrintingTemplateWrite; set { _explicitNullValuePrintingTemplateWrite = value; AdditionalData?.Remove("printing_template_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_template_write"); else _explicitNullProperties?.Remove("printing_template_write"); } }
+        private string? _explicitNullValuePrintingTemplateWrite = default!;
+#nullable restore
+#else
+        public string PrintingTemplateWrite { get => _explicitNullValuePrintingTemplateWrite; set { _explicitNullValuePrintingTemplateWrite = value; AdditionalData?.Remove("printing_template_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("printing_template_write"); else _explicitNullProperties?.Remove("printing_template_write"); } }
+        private string _explicitNullValuePrintingTemplateWrite = default!;
+#endif
         /// <summary>The property_availability_read property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -5696,7 +5816,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(471)
+            return new Dictionary<string, Action<IParseNode>>(481)
             {
                 { "accounting_account_read", n => { AccountingAccountRead = n.GetStringValue(); } },
                 { "accounting_account_write", n => { AccountingAccountWrite = n.GetStringValue(); } },
@@ -6077,6 +6197,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "plm_document_write", n => { PlmDocumentWrite = n.GetStringValue(); } },
                 { "plm_part_read", n => { PlmPartRead = n.GetStringValue(); } },
                 { "plm_part_write", n => { PlmPartWrite = n.GetStringValue(); } },
+                { "printing_file_read", n => { PrintingFileRead = n.GetStringValue(); } },
+                { "printing_file_write", n => { PrintingFileWrite = n.GetStringValue(); } },
+                { "printing_order_read", n => { PrintingOrderRead = n.GetStringValue(); } },
+                { "printing_order_write", n => { PrintingOrderWrite = n.GetStringValue(); } },
+                { "printing_product_read", n => { PrintingProductRead = n.GetStringValue(); } },
+                { "printing_product_write", n => { PrintingProductWrite = n.GetStringValue(); } },
+                { "printing_quote_read", n => { PrintingQuoteRead = n.GetStringValue(); } },
+                { "printing_quote_write", n => { PrintingQuoteWrite = n.GetStringValue(); } },
+                { "printing_template_read", n => { PrintingTemplateRead = n.GetStringValue(); } },
+                { "printing_template_write", n => { PrintingTemplateWrite = n.GetStringValue(); } },
                 { "property_availability_read", n => { PropertyAvailabilityRead = n.GetStringValue(); } },
                 { "property_conversation_read", n => { PropertyConversationRead = n.GetStringValue(); } },
                 { "property_conversation_write", n => { PropertyConversationWrite = n.GetStringValue(); } },
@@ -6557,6 +6687,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("plm_document_write", PlmDocumentWrite);
             writer.WriteStringValue("plm_part_read", PlmPartRead);
             writer.WriteStringValue("plm_part_write", PlmPartWrite);
+            writer.WriteStringValue("printing_file_read", PrintingFileRead);
+            writer.WriteStringValue("printing_file_write", PrintingFileWrite);
+            writer.WriteStringValue("printing_order_read", PrintingOrderRead);
+            writer.WriteStringValue("printing_order_write", PrintingOrderWrite);
+            writer.WriteStringValue("printing_product_read", PrintingProductRead);
+            writer.WriteStringValue("printing_product_write", PrintingProductWrite);
+            writer.WriteStringValue("printing_quote_read", PrintingQuoteRead);
+            writer.WriteStringValue("printing_quote_write", PrintingQuoteWrite);
+            writer.WriteStringValue("printing_template_read", PrintingTemplateRead);
+            writer.WriteStringValue("printing_template_write", PrintingTemplateWrite);
             writer.WriteStringValue("property_availability_read", PropertyAvailabilityRead);
             writer.WriteStringValue("property_conversation_read", PropertyConversationRead);
             writer.WriteStringValue("property_conversation_write", PropertyConversationWrite);

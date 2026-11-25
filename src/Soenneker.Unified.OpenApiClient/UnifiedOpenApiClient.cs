@@ -35,6 +35,7 @@ using Soenneker.Unified.OpenApiClient.Passthrough;
 using Soenneker.Unified.OpenApiClient.Payment;
 using Soenneker.Unified.OpenApiClient.Performance;
 using Soenneker.Unified.OpenApiClient.Plm;
+using Soenneker.Unified.OpenApiClient.Printing;
 using Soenneker.Unified.OpenApiClient.Property;
 using Soenneker.Unified.OpenApiClient.Qms;
 using Soenneker.Unified.OpenApiClient.Repo;
@@ -204,6 +205,11 @@ namespace Soenneker.Unified.OpenApiClient
         public global::Soenneker.Unified.OpenApiClient.Plm.PlmRequestBuilder Plm
         {
             get => new global::Soenneker.Unified.OpenApiClient.Plm.PlmRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The printing property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Printing.PrintingRequestBuilder Printing
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Printing.PrintingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The property property</summary>
         public global::Soenneker.Unified.OpenApiClient.Property.PropertyRequestBuilder Property

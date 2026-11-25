@@ -1019,5 +1019,25 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DmsOpcode,
         #pragma warning restore CS1591
+        [EnumMember(Value = "printing_product")]
+        #pragma warning disable CS1591
+        PrintingProduct,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_template")]
+        #pragma warning disable CS1591
+        PrintingTemplate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_file")]
+        #pragma warning disable CS1591
+        PrintingFile,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_quote")]
+        #pragma warning disable CS1591
+        PrintingQuote,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_order")]
+        #pragma warning disable CS1591
+        PrintingOrder,
+        #pragma warning restore CS1591
     }
 }

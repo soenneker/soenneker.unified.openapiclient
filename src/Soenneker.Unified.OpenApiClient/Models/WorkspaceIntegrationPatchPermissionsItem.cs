@@ -1892,5 +1892,45 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         DmsOpcodeWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "printing_product_read")]
+        #pragma warning disable CS1591
+        PrintingProductRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_product_write")]
+        #pragma warning disable CS1591
+        PrintingProductWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_template_read")]
+        #pragma warning disable CS1591
+        PrintingTemplateRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_template_write")]
+        #pragma warning disable CS1591
+        PrintingTemplateWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_file_read")]
+        #pragma warning disable CS1591
+        PrintingFileRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_file_write")]
+        #pragma warning disable CS1591
+        PrintingFileWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_quote_read")]
+        #pragma warning disable CS1591
+        PrintingQuoteRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_quote_write")]
+        #pragma warning disable CS1591
+        PrintingQuoteWrite,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_order_read")]
+        #pragma warning disable CS1591
+        PrintingOrderRead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "printing_order_write")]
+        #pragma warning disable CS1591
+        PrintingOrderWrite,
+        #pragma warning restore CS1591
     }
 }
