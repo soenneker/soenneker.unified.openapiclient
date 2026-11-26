@@ -48,6 +48,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Metadata,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fees")]
+        #pragma warning disable CS1591
+        Fees,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

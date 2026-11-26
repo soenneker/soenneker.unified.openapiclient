@@ -31,6 +31,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("employment_type") is null) { _explicitNullValueEmploymentType = default!; _explicitNullProperties?.Remove("employment_type"); }
             else if (parseNode.GetChildNode("employment_type") is { } nullNodeEmploymentType && nullNodeEmploymentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentType = null;
+            if (parseNode.GetChildNode("fees") is null) { _explicitNullValueFees = default!; _explicitNullProperties?.Remove("fees"); }
+            else if (parseNode.GetChildNode("fees") is { } nullNodeFees && nullNodeFees.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fees = null;
             if (parseNode.GetChildNode("groups") is null) { _explicitNullValueGroups = default!; _explicitNullProperties?.Remove("groups"); }
             else if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
             if (parseNode.GetChildNode("hiring_manager_ids") is null) { _explicitNullValueHiringManagerIds = default!; _explicitNullProperties?.Remove("hiring_manager_ids"); }
@@ -130,6 +132,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <summary>The employment_type property</summary>
         public global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType? EmploymentType { get => _explicitNullValueEmploymentType; set { _explicitNullValueEmploymentType = value; AdditionalData?.Remove("employment_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_type"); else _explicitNullProperties?.Remove("employment_type"); } }
         private global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType? _explicitNullValueEmploymentType = default!;
+        /// <summary>The placement fee agreed with the client for this job</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsFee>? Fees { get => _explicitNullValueFees; set { _explicitNullValueFees = value; AdditionalData?.Remove("fees"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fees"); else _explicitNullProperties?.Remove("fees"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AtsFee>? _explicitNullValueFees = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Unified.OpenApiClient.Models.AtsFee> Fees { get => _explicitNullValueFees; set { _explicitNullValueFees = value; AdditionalData?.Remove("fees"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fees"); else _explicitNullProperties?.Remove("fees"); } }
+        private List<global::Soenneker.Unified.OpenApiClient.Models.AtsFee> _explicitNullValueFees = default!;
+#endif
         /// <summary>The departments/divisions/teams that this job belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -348,7 +360,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(30)
+            return new Dictionary<string, Action<IParseNode>>(31)
             {
                 { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsAddress>(global::Soenneker.Unified.OpenApiClient.Models.AtsAddress.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
@@ -357,6 +369,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "employment_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmploymentType = default; _explicitNullProperties?.Remove("employment_type"); AdditionalData["employment_type"] = unknown; } else { EmploymentType = parsed; AdditionalData.Remove("employment_type"); } } },
+                { "fees", n => { Fees = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsFee>(global::Soenneker.Unified.OpenApiClient.Models.AtsFee.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>(global::Soenneker.Unified.OpenApiClient.Models.AtsGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hiring_manager_ids", n => { HiringManagerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hiring_managers", n => { HiringManagers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>(global::Soenneker.Unified.OpenApiClient.Models.AtsReference.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -396,6 +409,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Unified.OpenApiClient.Models.AtsJobEmploymentType>("employment_type", EmploymentType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsFee>("fees", Fees);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsGroup>("groups", Groups);
             writer.WriteCollectionOfPrimitiveValues<string>("hiring_manager_ids", HiringManagerIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.AtsReference>("hiring_managers", HiringManagers);
