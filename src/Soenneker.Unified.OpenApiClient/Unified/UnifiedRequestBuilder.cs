@@ -8,6 +8,7 @@ using Soenneker.Unified.OpenApiClient.Unified.EnvironmentNamespace;
 using Soenneker.Unified.OpenApiClient.Unified.Integration;
 using Soenneker.Unified.OpenApiClient.Unified.Issue;
 using Soenneker.Unified.OpenApiClient.Unified.Notification;
+using Soenneker.Unified.OpenApiClient.Unified.Person;
 using Soenneker.Unified.OpenApiClient.Unified.Secretsmanager;
 using Soenneker.Unified.OpenApiClient.Unified.Webhook;
 using Soenneker.Unified.OpenApiClient.Unified.Workspaceintegration;
@@ -52,6 +53,11 @@ namespace Soenneker.Unified.OpenApiClient.Unified
         public global::Soenneker.Unified.OpenApiClient.Unified.Notification.NotificationRequestBuilder Notification
         {
             get => new global::Soenneker.Unified.OpenApiClient.Unified.Notification.NotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The person property</summary>
+        public global::Soenneker.Unified.OpenApiClient.Unified.Person.PersonRequestBuilder Person
+        {
+            get => new global::Soenneker.Unified.OpenApiClient.Unified.Person.PersonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secretsmanager property</summary>
         public global::Soenneker.Unified.OpenApiClient.Unified.Secretsmanager.SecretsmanagerRequestBuilder Secretsmanager

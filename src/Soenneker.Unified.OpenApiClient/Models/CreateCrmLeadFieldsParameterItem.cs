@@ -96,5 +96,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         Raw,
         #pragma warning restore CS1591
+        [EnumMember(Value = "__unified_person_ids")]
+        #pragma warning disable CS1591
+        UnifiedPersonIds,
+        #pragma warning restore CS1591
     }
 }

@@ -88,5 +88,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         WebhookUnpaused,
         #pragma warning restore CS1591
+        [EnumMember(Value = "UNIFIED_PERSON_MERGED")]
+        #pragma warning disable CS1591
+        UnifiedPersonMerged,
+        #pragma warning restore CS1591
     }
 }

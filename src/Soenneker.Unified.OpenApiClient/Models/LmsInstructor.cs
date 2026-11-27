@@ -39,6 +39,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("telephones") is { } nullNodeTelephones && nullNodeTelephones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Telephones = null;
             if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
             else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("__unified_person_ids") is null) { _explicitNullValueUnifiedPersonIds = default!; _explicitNullProperties?.Remove("__unified_person_ids"); }
+            else if (parseNode.GetChildNode("__unified_person_ids") is { } nullNodeUnifiedPersonIds && nullNodeUnifiedPersonIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnifiedPersonIds = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
@@ -148,6 +150,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
+        /// <summary>Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UnifiedPersonIds { get => _explicitNullValueUnifiedPersonIds; set { _explicitNullValueUnifiedPersonIds = value; AdditionalData?.Remove("__unified_person_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__unified_person_ids"); else _explicitNullProperties?.Remove("__unified_person_ids"); } }
+        private List<string>? _explicitNullValueUnifiedPersonIds = default!;
+#nullable restore
+#else
+        public List<string> UnifiedPersonIds { get => _explicitNullValueUnifiedPersonIds; set { _explicitNullValueUnifiedPersonIds = value; AdditionalData?.Remove("__unified_person_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__unified_person_ids"); else _explicitNullProperties?.Remove("__unified_person_ids"); } }
+        private List<string> _explicitNullValueUnifiedPersonIds = default!;
+#endif
         /// <summary>(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -174,7 +186,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(12)
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorEmailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -187,6 +199,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty.CreateFromDiscriminatorValue); } },
                 { "telephones", n => { Telephones = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>(global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "__unified_person_ids", n => { UnifiedPersonIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -208,6 +221,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.LmsInstructorRawProperty>("raw", Raw);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.LmsTelephone>("telephones", Telephones);
             writer.WriteStringValue("title", Title);
+            writer.WriteCollectionOfPrimitiveValues<string>("__unified_person_ids", UnifiedPersonIds);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

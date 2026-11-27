@@ -56,6 +56,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         #pragma warning disable CS1591
         SkillIds,
         #pragma warning restore CS1591
+        [EnumMember(Value = "id")]
+        #pragma warning disable CS1591
+        Id,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "parent_id")]
+        #pragma warning disable CS1591
+        ParentId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "has_thread")]
+        #pragma warning disable CS1591
+        HasThread,
+        #pragma warning restore CS1591
         [EnumMember(Value = "raw")]
         #pragma warning disable CS1591
         Raw,

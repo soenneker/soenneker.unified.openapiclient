@@ -19,6 +19,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
             else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("balance_amount") is null) { _explicitNullValueBalanceAmount = default!; _explicitNullProperties?.Remove("balance_amount"); }
+            else if (parseNode.GetChildNode("balance_amount") is { } nullNodeBalanceAmount && nullNodeBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAmount = null;
             if (parseNode.GetChildNode("billing_address") is null) { _explicitNullValueBillingAddress = default!; _explicitNullProperties?.Remove("billing_address"); }
             else if (parseNode.GetChildNode("billing_address") is { } nullNodeBillingAddress && nullNodeBillingAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddress = null;
             if (parseNode.GetChildNode("category_ids") is null) { _explicitNullValueCategoryIds = default!; _explicitNullProperties?.Remove("category_ids"); }
@@ -101,6 +103,9 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>amount still owed on the order (total_amount - paid_amount)</summary>
+        public double? BalanceAmount { get => _explicitNullValueBalanceAmount; set { _explicitNullValueBalanceAmount = value; AdditionalData?.Remove("balance_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_amount"); else _explicitNullProperties?.Remove("balance_amount"); } }
+        private double? _explicitNullValueBalanceAmount = default!;
         /// <summary>The billing_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -359,9 +364,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(35)
+            return new Dictionary<string, Action<IParseNode>>(36)
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "balance_amount", n => { BalanceAmount = n.GetDoubleValue(); } },
                 { "billing_address", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress.CreateFromDiscriminatorValue); } },
                 { "category_ids", n => { CategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
@@ -406,6 +412,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteDoubleValue("balance_amount", BalanceAmount);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyAccountingSalesorderBillingAddress>("billing_address", BillingAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("category_ids", CategoryIds);
             writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);

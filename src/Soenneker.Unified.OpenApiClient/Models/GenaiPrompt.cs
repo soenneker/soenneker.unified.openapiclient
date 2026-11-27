@@ -19,6 +19,10 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("answers") is null) { _explicitNullValueAnswers = default!; _explicitNullProperties?.Remove("answers"); }
             else if (parseNode.GetChildNode("answers") is { } nullNodeAnswers && nullNodeAnswers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Answers = null;
+            if (parseNode.GetChildNode("has_thread") is null) { _explicitNullValueHasThread = default!; _explicitNullProperties?.Remove("has_thread"); }
+            else if (parseNode.GetChildNode("has_thread") is { } nullNodeHasThread && nullNodeHasThread.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasThread = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("max_tokens") is null) { _explicitNullValueMaxTokens = default!; _explicitNullProperties?.Remove("max_tokens"); }
             else if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
             if (parseNode.GetChildNode("mcp_authorization_token") is null) { _explicitNullValueMcpAuthorizationToken = default!; _explicitNullProperties?.Remove("mcp_authorization_token"); }
@@ -31,6 +35,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
             if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
             else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("parent_id") is null) { _explicitNullValueParentId = default!; _explicitNullProperties?.Remove("parent_id"); }
+            else if (parseNode.GetChildNode("parent_id") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
             if (parseNode.GetChildNode("questions") is null) { _explicitNullValueQuestions = default!; _explicitNullProperties?.Remove("questions"); }
             else if (parseNode.GetChildNode("questions") is { } nullNodeQuestions && nullNodeQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Questions = null;
             if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
@@ -56,6 +62,19 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer> Answers { get => _explicitNullValueAnswers; set { _explicitNullValueAnswers = value; AdditionalData?.Remove("answers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answers"); else _explicitNullProperties?.Remove("answers"); } }
         private List<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer> _explicitNullValueAnswers = default!;
+#endif
+        /// <summary>Ask the LLM API to keep this conversation so that a later prompt can continue it with parent_id (eg. Anthropic message threads, which are kept for about 5 minutes).</summary>
+        public bool? HasThread { get => _explicitNullValueHasThread; set { _explicitNullValueHasThread = value; AdditionalData?.Remove("has_thread"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_thread"); else _explicitNullProperties?.Remove("has_thread"); } }
+        private bool? _explicitNullValueHasThread = default!;
+        /// <summary>The id of this prompt, returned by the LLM API. Send it as parent_id on the next prompt to continue the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
+#nullable restore
+#else
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>a float between 0-1</summary>
         public double? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; AdditionalData?.Remove("max_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
@@ -109,6 +128,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
 #else
         public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private string _explicitNullValueModelId = default!;
+#endif
+        /// <summary>The id of the previous prompt (genai_prompt) that this prompt continues. When set, messages holds only the new messages; the LLM API keeps the earlier ones (eg. Anthropic message threads, OpenAI previous_response_id). If the LLM API no longer has that prompt, send the full conversation again without parent_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_id"); else _explicitNullProperties?.Remove("parent_id"); } }
+        private string? _explicitNullValueParentId = default!;
+#nullable restore
+#else
+        public string ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_id"); else _explicitNullProperties?.Remove("parent_id"); } }
+        private string _explicitNullValueParentId = default!;
 #endif
         /// <summary>Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,15 +208,18 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(13)
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "answers", n => { Answers = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer>(global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "has_thread", n => { HasThread = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetDoubleValue(); } },
                 { "mcp_authorization_token", n => { McpAuthorizationToken = n.GetStringValue(); } },
                 { "mcp_deferred_tools", n => { McpDeferredTools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mcp_url", n => { McpUrl = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>(global::Soenneker.Unified.OpenApiClient.Models.GenaiContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
+                { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>(global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>(global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty.CreateFromDiscriminatorValue); } },
                 { "responses", n => { Responses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -204,12 +236,15 @@ namespace Soenneker.Unified.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiAnswer>("answers", Answers);
+            writer.WriteBoolValue("has_thread", HasThread);
+            writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("max_tokens", MaxTokens);
             writer.WriteStringValue("mcp_authorization_token", McpAuthorizationToken);
             writer.WriteCollectionOfPrimitiveValues<string>("mcp_deferred_tools", McpDeferredTools);
             writer.WriteStringValue("mcp_url", McpUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiContent>("messages", Messages);
             writer.WriteStringValue("model_id", ModelId);
+            writer.WriteStringValue("parent_id", ParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.GenaiQuestion>("questions", Questions);
             writer.WriteObjectValue<global::Soenneker.Unified.OpenApiClient.Models.GenaiPromptRawProperty>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("responses", Responses);

@@ -64,6 +64,8 @@ namespace Soenneker.Unified.OpenApiClient.Models
             else if (parseNode.GetChildNode("twitter_handle") is { } nullNodeTwitterHandle && nullNodeTwitterHandle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterHandle = null;
             if (parseNode.GetChildNode("twitter_url") is null) { _explicitNullValueTwitterUrl = default!; _explicitNullProperties?.Remove("twitter_url"); }
             else if (parseNode.GetChildNode("twitter_url") is { } nullNodeTwitterUrl && nullNodeTwitterUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterUrl = null;
+            if (parseNode.GetChildNode("__unified_person_ids") is null) { _explicitNullValueUnifiedPersonIds = default!; _explicitNullProperties?.Remove("__unified_person_ids"); }
+            else if (parseNode.GetChildNode("__unified_person_ids") is { } nullNodeUnifiedPersonIds && nullNodeUnifiedPersonIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnifiedPersonIds = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("utc_offset") is null) { _explicitNullValueUtcOffset = default!; _explicitNullProperties?.Remove("utc_offset"); }
@@ -290,6 +292,16 @@ namespace Soenneker.Unified.OpenApiClient.Models
         public string TwitterUrl { get => _explicitNullValueTwitterUrl; set { _explicitNullValueTwitterUrl = value; AdditionalData?.Remove("twitter_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_url"); else _explicitNullProperties?.Remove("twitter_url"); } }
         private string _explicitNullValueTwitterUrl = default!;
 #endif
+        /// <summary>Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UnifiedPersonIds { get => _explicitNullValueUnifiedPersonIds; set { _explicitNullValueUnifiedPersonIds = value; AdditionalData?.Remove("__unified_person_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__unified_person_ids"); else _explicitNullProperties?.Remove("__unified_person_ids"); } }
+        private List<string>? _explicitNullValueUnifiedPersonIds = default!;
+#nullable restore
+#else
+        public List<string> UnifiedPersonIds { get => _explicitNullValueUnifiedPersonIds; set { _explicitNullValueUnifiedPersonIds = value; AdditionalData?.Remove("__unified_person_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__unified_person_ids"); else _explicitNullProperties?.Remove("__unified_person_ids"); } }
+        private List<string> _explicitNullValueUnifiedPersonIds = default!;
+#endif
         /// <summary>The last date that this person object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -329,7 +341,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(26)
+            return new Dictionary<string, Action<IParseNode>>(27)
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress>(global::Soenneker.Unified.OpenApiClient.Models.PropertyEnrichPersonAddress.CreateFromDiscriminatorValue); } },
                 { "bio", n => { Bio = n.GetStringValue(); } },
@@ -354,6 +366,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "twitter_handle", n => { TwitterHandle = n.GetStringValue(); } },
                 { "twitter_url", n => { TwitterUrl = n.GetStringValue(); } },
+                { "__unified_person_ids", n => { UnifiedPersonIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "utc_offset", n => { UtcOffset = n.GetDoubleValue(); } },
                 { "work_histories", n => { WorkHistories = n.GetCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonWorkHistory>(global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonWorkHistory.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -389,6 +402,7 @@ namespace Soenneker.Unified.OpenApiClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("twitter_handle", TwitterHandle);
             writer.WriteStringValue("twitter_url", TwitterUrl);
+            writer.WriteCollectionOfPrimitiveValues<string>("__unified_person_ids", UnifiedPersonIds);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDoubleValue("utc_offset", UtcOffset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Unified.OpenApiClient.Models.EnrichPersonWorkHistory>("work_histories", WorkHistories);

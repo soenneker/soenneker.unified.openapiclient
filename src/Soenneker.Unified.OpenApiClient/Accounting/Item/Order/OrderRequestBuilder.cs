@@ -36,7 +36,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", pathParameters)
+        public OrderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,type*,updated_gte*}", rawUrl)
+        public OrderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounting/{connectionId}/order{?contact_id*,end_lt*,fields*,limit*,offset*,order*,org_id*,query*,raw*,sort*,start_gte*,status*,type*,updated_gte*}", rawUrl)
         {
         }
         /// <summary>
@@ -157,6 +157,16 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             [QueryParameter("contact_id")]
             public string ContactId { get; set; }
 #endif
+            /// <summary>The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("end_lt")]
+            public string? EndLt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end_lt")]
+            public string EndLt { get; set; }
+#endif
             /// <summary>Fields to return</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -229,6 +239,29 @@ namespace Soenneker.Unified.OpenApiClient.Accounting.Item.Order
             #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string Sort { get; set; }
+            #pragma warning restore CS1591
+#endif
+            /// <summary>The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("start_gte")]
+            public string? StartGte { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start_gte")]
+            public string StartGte { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("status")]
+            public string Status { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
